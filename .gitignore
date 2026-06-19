@@ -41,3 +41,8 @@ app-example
 # generated native folders
 /ios
 /android
+
+# secret keys and environment files — never commit these
+.env
+.env.*
+!.env.example
