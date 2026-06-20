@@ -33,6 +33,7 @@ export default function RootLayout() {
       <Stack.Screen name="dictation" options={{ title: "Dictation" }} />
       <Stack.Screen name="review" options={{ title: "Review & edit" }} />
       <Stack.Screen name="submission" options={{ title: "Submit" }} />
+      <Stack.Screen name="settings" options={{ title: "Profile & Settings" }} />
     </Stack>
   );
 }

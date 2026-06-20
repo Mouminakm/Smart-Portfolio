@@ -5,12 +5,18 @@
 // data-driven from your platform schema, and each will eventually tell the
 // Dictation screen which set of fields to load.
 
+import { Link } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 import AppButton from "../components/AppButton";
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
+      {/* Temporary — replaced by the bottom tab bar in the next step. */}
+      <Link href="/settings" style={styles.settingsLink}>
+        Profile & settings ›
+      </Link>
+
       <Text style={styles.title}>What would you like to dictate?</Text>
 
       {/* Context "pill": which portfolio this entry will go to. Static for now;
@@ -42,6 +48,13 @@ const styles = StyleSheet.create({
     color: "#1a1a1a",
     textAlign: "center",
     marginBottom: 20,
+  },
+  settingsLink: {
+    alignSelf: "flex-end",
+    color: "#2563eb",
+    fontSize: 14,
+    fontWeight: "600",
+    marginBottom: 8,
   },
   // A rounded "pill" badge, centred horizontally (alignSelf: "center").
   contextPill: {
