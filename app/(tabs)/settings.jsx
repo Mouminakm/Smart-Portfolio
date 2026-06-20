@@ -1,22 +1,18 @@
-// app/settings.jsx
-// Profile & Settings — the account hub (spec S2).
-// Static shell: values are placeholders; each section becomes real across
-// Phases 3–8. Built from the reusable <SettingsRow> component.
+// app/(tabs)/settings.jsx
+// Profile & Settings — the account hub (spec S2). Now a tab.
 
 import { ScrollView, StyleSheet, Text } from "react-native";
-import SettingsRow from "../components/SettingsRow";
+import SettingsRow from "../../components/SettingsRow"; // ../../ to climb out of (tabs)
 
 export default function SettingsScreen() {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      {/* Specialty drives which entry types and fields the app shows (S2). */}
       <Text style={styles.sectionHeading}>Specialty & training</Text>
       <SettingsRow label="Discipline" value="Surgical" />
       <SettingsRow label="Specialty" value="Trauma & Orthopaedics" />
       <SettingsRow label="Training level" value="ST3" />
       <SettingsRow label="Curriculum" value="JCST 2021" />
 
-      {/* The chosen platform sets the submission target and field schema. */}
       <Text style={styles.sectionHeading}>Portfolio</Text>
       <SettingsRow label="Platform(s)" value="eLogbook + ISCP" />
 

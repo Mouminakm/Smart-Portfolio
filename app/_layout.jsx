@@ -1,39 +1,33 @@
 // app/_layout.jsx
-// This file configures the app's navigation. Named "_layout" and sitting at
-// the top of app/, it wraps EVERY screen. It isn't a screen itself.
-//
-// <Stack> is the "stack navigator" we've been using: screens are pushed on
-// top of one another (like a stack of cards), which is why a link slides a
-// new screen in and a back arrow appears. Here we configure its header bar.
+// The root navigator: a STACK holding onboarding, the tabbed main app,
+// and the dictation flow that stacks on top of the tabs.
 
 import { Stack } from "expo-router";
 
 export default function RootLayout() {
   return (
     <Stack
-      // screenOptions applies to EVERY screen, unless a screen overrides it.
       screenOptions={{
-        headerStyle: { backgroundColor: "#ffffff" }, // white header bar
-        headerShadowVisible: false, // remove the faint line under the bar
-        headerTintColor: "#1a1a1a", // colour of the title text and back arrow
+        headerStyle: { backgroundColor: "#ffffff" },
+        headerShadowVisible: false,
+        headerTintColor: "#1a1a1a",
       }}
     >
-      {/* Each <Stack.Screen> targets one screen by its file name (without
-          the .jsx) and sets options just for that screen. */}
-
-      {/* Welcome is the entry screen — hide the header bar completely. */}
+      {/* Onboarding screens (shown before the main app) */}
       <Stack.Screen name="index" options={{ headerShown: false }} />
-
-      {/* Friendly titles replace the raw file names on the other screens. */}
       <Stack.Screen name="sign-in" options={{ title: "Create account" }} />
       <Stack.Screen name="email-sign-in" options={{ title: "Sign in" }} />
       <Stack.Screen name="profile-setup" options={{ title: "Profile setup" }} />
       <Stack.Screen name="permissions" options={{ title: "Before you start" }} />
-      <Stack.Screen name="home" options={{ title: "New entry" }} />
+
+      {/* The tabbed main app. headerShown:false because the tab navigator
+          provides its OWN header — without this you'd get two stacked headers. */}
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+
+      {/* The dictation flow — these stack on TOP of the tabs when opened. */}
       <Stack.Screen name="dictation" options={{ title: "Dictation" }} />
       <Stack.Screen name="review" options={{ title: "Review & edit" }} />
       <Stack.Screen name="submission" options={{ title: "Submit" }} />
-      <Stack.Screen name="settings" options={{ title: "Profile & Settings" }} />
     </Stack>
   );
 }
