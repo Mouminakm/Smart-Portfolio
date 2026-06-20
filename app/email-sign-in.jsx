@@ -1,0 +1,100 @@
+// app/email-sign-in.jsx
+// Onboarding screen 2b — Sign in with email & password (spec S1).
+// Static shell: you can type into the boxes, but what you type isn't
+// captured or checked yet — that needs "state" (a lesson coming soon)
+// and real auth via Firebase (Phase 3).
+
+import { Link } from "expo-router";
+import { StyleSheet, Text, TextInput, View } from "react-native";
+
+export default function EmailSignInScreen() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Sign in</Text>
+      <Text style={styles.subtitle}>Welcome back. Enter your details to continue.</Text>
+
+      {/* TextInput is the building block for a typeable box.
+          keyboardType shows an email-friendly keyboard; autoCapitalize "none"
+          stops it capitalising the first letter of the email. */}
+      <Text style={styles.label}>Email</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="you@example.com"
+        placeholderTextColor="#aaaaaa"
+        keyboardType="email-address"
+        autoCapitalize="none"
+      />
+
+      {/* secureTextEntry masks the characters as dots. */}
+      <Text style={styles.label}>Password</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Your password"
+        placeholderTextColor="#aaaaaa"
+        secureTextEntry={true}
+        autoCapitalize="none"
+      />
+
+      {/* "Keep me signed in" — placeholder for now. The square is just a
+          visual; making it tick on and off needs state (coming soon). */}
+      <View style={styles.rememberRow}>
+        <View style={styles.checkbox} />
+        <Text style={styles.rememberText}>Keep me signed in</Text>
+      </View>
+
+      {/* Placeholder action: advances the flow for now. */}
+      <Link href="/profile-setup" style={styles.button}>
+        Sign in
+      </Link>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    padding: 24,
+    backgroundColor: "#ffffff",
+  },
+  title: { fontSize: 28, fontWeight: "bold", color: "#1a1a1a", textAlign: "center" },
+  subtitle: {
+    fontSize: 16,
+    color: "#555555",
+    textAlign: "center",
+    lineHeight: 24,
+    marginTop: 12,
+    marginBottom: 32,
+  },
+  label: { fontSize: 13, fontWeight: "600", color: "#1a1a1a", marginBottom: 6 },
+  input: {
+    borderWidth: 1,
+    borderColor: "#cccccc",
+    borderRadius: 10,
+    paddingVertical: 12,
+    paddingHorizontal: 14,
+    fontSize: 16,
+    color: "#1a1a1a",
+    marginBottom: 18,
+  },
+  rememberRow: { flexDirection: "row", alignItems: "center", marginBottom: 28 },
+  checkbox: {
+    width: 22,
+    height: 22,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: "#cccccc",
+    marginRight: 10,
+  },
+  rememberText: { fontSize: 15, color: "#1a1a1a" },
+  button: {
+    backgroundColor: "#2563eb",
+    color: "#ffffff",
+    fontSize: 16,
+    fontWeight: "600",
+    textAlign: "center",
+    paddingVertical: 14,
+    borderRadius: 10,
+    overflow: "hidden",
+  },
+});

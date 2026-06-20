@@ -1,51 +1,133 @@
 // app/index.jsx
-// The Onboarding screen — the first thing a new user sees.
-// In Expo Router, the file named "index" inside "app" is automatically
-// the app's starting screen, so this is what loads first.
+// Onboarding screen 1 — Welcome & how it works (spec S1).
+// The "index" file in app/ is the app's starting screen.
 
-// Bring in the building blocks we need from React Native:
-//  - View: a container/box that holds and arranges other things.
-//  - Text: displays words (all visible text must sit inside a <Text>).
-//  - StyleSheet: a tidy way to define styling, kept separate from the layout.
+import { Link } from "expo-router"; // lets a tap travel to another screen
 import { StyleSheet, Text, View } from "react-native";
 
-// A component = a function that returns what to show on screen.
-// "export default" makes this the screen Expo Router renders for this route.
-export default function OnboardingScreen() {
+export default function WelcomeScreen() {
   return (
-    // The outer View fills the screen and centres everything inside it.
     <View style={styles.container}>
+      {/* Headline + value proposition */}
       <Text style={styles.title}>Smart Portfolio</Text>
-
       <Text style={styles.subtitle}>
-        Dictate your portfolio and elogbook entries by voice — then review and
+        Dictate your logbook and portfolio entries by voice, then review and
         submit them to your training portfolio.
       </Text>
+
+      {/* "How it works" — four short steps */}
+      <Text style={styles.sectionHeading}>How it works</Text>
+
+      <View style={styles.step}>
+        <Text style={styles.stepNumber}>1</Text>
+        <View style={styles.stepTextWrap}>
+          <Text style={styles.stepLabel}>Speak</Text>
+          <Text style={styles.stepDesc}>Dictate your entry in your own words.</Text>
+        </View>
+      </View>
+
+      <View style={styles.step}>
+        <Text style={styles.stepNumber}>2</Text>
+        <View style={styles.stepTextWrap}>
+          <Text style={styles.stepLabel}>Structure</Text>
+          <Text style={styles.stepDesc}>AI sorts what you said into the right fields.</Text>
+        </View>
+      </View>
+
+      <View style={styles.step}>
+        <Text style={styles.stepNumber}>3</Text>
+        <View style={styles.stepTextWrap}>
+          <Text style={styles.stepLabel}>Review</Text>
+          <Text style={styles.stepDesc}>Check and edit everything before it goes anywhere.</Text>
+        </View>
+      </View>
+
+      <View style={styles.step}>
+        <Text style={styles.stepNumber}>4</Text>
+        <View style={styles.stepTextWrap}>
+          <Text style={styles.stepLabel}>Submit</Text>
+          <Text style={styles.stepDesc}>Your portfolio site opens pre-filled; you submit there.</Text>
+        </View>
+      </View>
+
+      {/* Forward button. We build its destination, /sign-in, in the next step. */}
+      <Link href="/sign-in" style={styles.button}>
+        Get started
+      </Link>
     </View>
   );
 }
 
-// Styles live here. StyleSheet.create lets us name a set of styles and
-// reuse them above with style={styles.NAME}. React Native arranges things
-// using a system called Flexbox; the comments below say what each line does.
 const styles = StyleSheet.create({
   container: {
-    flex: 1, // fill all available space on the screen
-    justifyContent: "center", // centre children top-to-bottom
-    alignItems: "center", // centre children left-to-right
-    padding: 24, // breathing room from the screen edges
-    backgroundColor: "#ffffff", // white background
+    flex: 1,
+    justifyContent: "center",
+    padding: 24,
+    backgroundColor: "#ffffff",
   },
   title: {
     fontSize: 32,
     fontWeight: "bold",
-    marginBottom: 12, // space below the title
     color: "#1a1a1a",
+    textAlign: "center",
   },
   subtitle: {
     fontSize: 16,
-    textAlign: "center", // centre the wrapped lines of text
     color: "#555555",
-    lineHeight: 24, // a little space between lines, for readability
+    textAlign: "center",
+    lineHeight: 24,
+    marginTop: 12,
+    marginBottom: 32,
+  },
+  sectionHeading: {
+    fontSize: 14,
+    fontWeight: "600",
+    color: "#888888",
+    textTransform: "uppercase",
+    letterSpacing: 1,
+    marginBottom: 16,
+  },
+  // Each step is a ROW: flexDirection "row" arranges children left-to-right
+  // (the default is top-to-bottom). So the number sits beside its text.
+  step: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 16,
+  },
+  stepNumber: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#ffffff",
+    backgroundColor: "#2563eb",
+    width: 28,
+    height: 28,
+    borderRadius: 14, // half of width/height makes a circle
+    textAlign: "center",
+    lineHeight: 28, // vertically centres the number in the circle
+    marginRight: 14,
+  },
+  stepTextWrap: {
+    flex: 1, // take the remaining width so long text wraps neatly
+  },
+  stepLabel: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: "#1a1a1a",
+  },
+  stepDesc: {
+    fontSize: 14,
+    color: "#666666",
+    marginTop: 2,
+  },
+  button: {
+    backgroundColor: "#2563eb",
+    color: "#ffffff",
+    fontSize: 16,
+    fontWeight: "600",
+    textAlign: "center",
+    paddingVertical: 14,
+    borderRadius: 10,
+    overflow: "hidden",
+    marginTop: 32,
   },
 });
