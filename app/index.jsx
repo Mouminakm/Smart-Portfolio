@@ -2,8 +2,8 @@
 // Onboarding screen 1 — Welcome & how it works (spec S1).
 // The "index" file in app/ is the app's starting screen.
 
-import { Link } from "expo-router"; // lets a tap travel to another screen
 import { StyleSheet, Text, View } from "react-native";
+import AppButton from "../components/AppButton";
 
 export default function WelcomeScreen() {
   return (
@@ -51,9 +51,7 @@ export default function WelcomeScreen() {
       </View>
 
       {/* Forward button. We build its destination, /sign-in, in the next step. */}
-      <Link href="/sign-in" style={styles.button}>
-        Get started
-      </Link>
+      <AppButton href="/sign-in">Get started</AppButton>
     </View>
   );
 }

@@ -3,8 +3,8 @@
 // Static shell: the consent box and mic request become real in Phase 4.
 // This is the last onboarding screen; its button ends the flow for now.
 
-import { Link } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
+import AppButton from "../components/AppButton";
 
 export default function PermissionsScreen() {
   return (
@@ -45,9 +45,7 @@ export default function PermissionsScreen() {
 
       {/* End of onboarding. For now this loops back to Welcome ("/").
           Later this will enter the main app and mark onboarding complete. */}
-      <Link href="/" style={styles.button}>
-        Finish setup
-      </Link>
+      <AppButton href="/home">Finish setup</AppButton>
     </View>
   );
 }

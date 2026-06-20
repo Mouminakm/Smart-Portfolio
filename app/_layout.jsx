@@ -29,6 +29,10 @@ export default function RootLayout() {
       <Stack.Screen name="email-sign-in" options={{ title: "Sign in" }} />
       <Stack.Screen name="profile-setup" options={{ title: "Profile setup" }} />
       <Stack.Screen name="permissions" options={{ title: "Before you start" }} />
+      <Stack.Screen name="home" options={{ title: "New entry" }} />
+      <Stack.Screen name="dictation" options={{ title: "Dictation" }} />
+      <Stack.Screen name="review" options={{ title: "Review & edit" }} />
+      <Stack.Screen name="submission" options={{ title: "Submit" }} />
     </Stack>
   );
 }

@@ -4,8 +4,9 @@
 // captured or checked yet — that needs "state" (a lesson coming soon)
 // and real auth via Firebase (Phase 3).
 
-import { Link } from "expo-router";
 import { StyleSheet, Text, TextInput, View } from "react-native";
+import AppButton from "../components/AppButton";
+
 
 export default function EmailSignInScreen() {
   return (
@@ -43,9 +44,7 @@ export default function EmailSignInScreen() {
       </View>
 
       {/* Placeholder action: advances the flow for now. */}
-      <Link href="/profile-setup" style={styles.button}>
-        Sign in
-      </Link>
+      <AppButton href="/profile-setup">Sign in</AppButton>
     </View>
   );
 }
