@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { Animated, Pressable, StyleSheet, Text, View } from "react-native";
 import AppButton from "../components/AppButton";
 
-const HOLD_DURATION = 3000; // milliseconds you must hold to finish
+const HOLD_DURATION = 1000; // milliseconds you must hold to finish
 
 export default function DictationScreen() {
   // ---- STATE ----
