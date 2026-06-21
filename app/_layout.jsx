@@ -34,6 +34,7 @@ function RootNavigator() {
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="sign-in" options={{ title: "Create account" }} />
         <Stack.Screen name="email-sign-in" options={{ title: "Sign in" }} />
+        <Stack.Screen name="email-sign-up" options={{ title: "Sign up" }} />
         <Stack.Screen name="profile-setup" options={{ title: "Profile setup" }} />
         <Stack.Screen name="permissions" options={{ title: "Before you start" }} />
       </Stack.Protected>

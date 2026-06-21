@@ -1,8 +1,7 @@
 // app/sign-in.jsx
-// Onboarding screen 2 — Create your account (spec S1).
-// Static shell. Google/Apple are the primary way to create an account;
-// a "Sign in" link leads to the email/password screen for returning users.
-// Real auth (Firebase) gets wired up in Phase 3.
+// Onboarding — Create your account (spec S1).
+// Email sign-up is the working path. Google/Apple remain placeholders until
+// the development-build phase. "Sign in" leads existing users to email sign-in.
 
 import { Link } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
@@ -16,17 +15,19 @@ export default function SignInScreen() {
         anything on your behalf.
       </Text>
 
-      {/* Primary: create an account with Google or Apple.
-          For now these just advance to Profile setup (placeholder). */}
+      {/* The working path: create an account with email. */}
+      <Link href="/email-sign-up" style={styles.emailButton}>
+        Sign up with email
+      </Link>
+
+      {/* Placeholders for now — wired up in the development-build phase. */}
       <Link href="/profile-setup" style={styles.googleButton}>
         Sign up with Google
       </Link>
-
       <Link href="/profile-setup" style={styles.appleButton}>
         Sign up with Apple
       </Link>
 
-      {/* Secondary: existing users go to the email/password sign-in screen. */}
       <Text style={styles.existingText}>Already have an account?</Text>
       <Link href="/email-sign-in" style={styles.signInButton}>
         Sign in
@@ -50,6 +51,18 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     marginTop: 12,
     marginBottom: 40,
+  },
+  // The primary (blue) button — email sign-up.
+  emailButton: {
+    backgroundColor: "#2563eb",
+    borderRadius: 10,
+    paddingVertical: 14,
+    marginBottom: 14,
+    fontSize: 16,
+    fontWeight: "600",
+    color: "#ffffff",
+    textAlign: "center",
+    overflow: "hidden",
   },
   googleButton: {
     borderWidth: 1,
@@ -80,7 +93,6 @@ const styles = StyleSheet.create({
     marginTop: 32,
     marginBottom: 8,
   },
-  // A text-style (secondary) button, so it reads as less prominent than sign-up.
   signInButton: {
     fontSize: 16,
     fontWeight: "600",

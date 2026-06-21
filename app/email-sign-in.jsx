@@ -4,7 +4,16 @@
 // and shows friendly errors. On success, the auth gate redirects automatically.
 
 import { useState } from "react";
-import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import {
+  KeyboardAvoidingView,
+  Platform,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
 import AppButton from "../components/AppButton";
 import { useAuth } from "../contexts/AuthContext";
 
@@ -44,8 +53,16 @@ export default function EmailSignInScreen() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Sign in</Text>
+    <KeyboardAvoidingView
+      style={styles.flex}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      keyboardVerticalOffset={Platform.OS === "ios" ? 90 : 0}
+    >
+      <ScrollView
+        contentContainerStyle={styles.container}
+        keyboardShouldPersistTaps="handled"
+      >
+        <Text style={styles.title}>Sign in</Text>
       <Text style={styles.subtitle}>Welcome back. Enter your details to continue.</Text>
 
       <Text style={styles.label}>Email</Text>
@@ -84,7 +101,8 @@ export default function EmailSignInScreen() {
       <AppButton onPress={handleSignIn}>
         {isBusy ? "Signing in…" : "Sign in"}
       </AppButton>
-    </View>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 }
 
@@ -107,8 +125,9 @@ function friendlyError(code) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: "center", padding: 24, backgroundColor: "#ffffff" },
-  title: { fontSize: 28, fontWeight: "bold", color: "#1a1a1a", textAlign: "center" },
+  flex: { flex: 1, backgroundColor: "#ffffff" },
+  container: { flexGrow: 1, justifyContent: "center", padding: 24, backgroundColor: "#ffffff" },
+    title: { fontSize: 28, fontWeight: "bold", color: "#1a1a1a", textAlign: "center" },
   subtitle: {
     fontSize: 16,
     color: "#555555",
