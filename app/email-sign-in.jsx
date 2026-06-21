@@ -4,11 +4,13 @@
 // captured or checked yet — that needs "state" (a lesson coming soon)
 // and real auth via Firebase (Phase 3).
 
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import { useState } from "react";
+import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import AppButton from "../components/AppButton";
 
 
 export default function EmailSignInScreen() {
+    const [keepSignedIn, setKeepSignedIn] = useState(false);
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Sign in</Text>
@@ -38,10 +40,19 @@ export default function EmailSignInScreen() {
 
       {/* "Keep me signed in" — placeholder for now. The square is just a
           visual; making it tick on and off needs state (coming soon). */}
-      <View style={styles.rememberRow}>
-        <View style={styles.checkbox} />
+      {/* Pressable makes the whole row tappable. onPress flips the state to
+          its opposite — (v) => !v means "whatever it was, make it the other".
+          When keepSignedIn is true we add the checkboxChecked style (blue fill)
+          and show a white tick inside. */}
+      <Pressable
+        style={styles.rememberRow}
+        onPress={() => setKeepSignedIn((v) => !v)}
+      >
+        <View style={[styles.checkbox, keepSignedIn && styles.checkboxChecked]}>
+          {keepSignedIn && <Text style={styles.checkmark}>✓</Text>}
+        </View>
         <Text style={styles.rememberText}>Keep me signed in</Text>
-      </View>
+      </Pressable>
 
       {/* Placeholder action: advances the flow for now. */}
       <AppButton href="/profile-setup">Sign in</AppButton>
@@ -95,5 +106,17 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     borderRadius: 10,
     overflow: "hidden",
+  },
+  checkboxChecked: {
+    backgroundColor: "#2563eb", // blue fill when ticked
+    borderColor: "#2563eb",
+  },
+  // Centre the tick inside the square.
+  checkmark: {
+    color: "#ffffff",
+    fontSize: 14,
+    fontWeight: "700",
+    textAlign: "center",
+    lineHeight: 20,
   },
 });
