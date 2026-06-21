@@ -1,36 +1,23 @@
 // app/dictation.jsx
 // Core loop screen — Dictation (spec S3).
-// Tap the round button = record/pause. HOLD it for 3s = finish recording.
-// On finish, a Review button replaces the record control.
-// Real audio + live tick-off arrive in Phase 4 / Phase 5.
+// Checklist is rendered from the schema as a single flat list, in the schema's
+// own order. Fields flagged showOptions display their choices in brackets.
+// Tap = record/pause; hold 1s = finish.
 
 import { useEffect, useRef, useState } from "react";
-import { Animated, Pressable, StyleSheet, Text, View } from "react-native";
+import { Animated, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import AppButton from "../components/AppButton";
+import schema from "../schemas/elogbook_neurosurgery_operation_log.json";
 
 const HOLD_DURATION = 1000; // milliseconds you must hold to finish
 
 export default function DictationScreen() {
-  // ---- STATE ----
-  // status holds ONE of three words. Changing it re-draws the screen.
   const [status, setStatus] = useState("paused"); // "recording" | "paused" | "finished"
-  // Whether the finger is currently held down (used to coordinate the visuals).
   const [isHolding, setIsHolding] = useState(false);
 
-  // Placeholder checklist (hard-coded; comes from the schema in Phase 2).
-  const fields = [
-    "Date of operation",
-    "Procedure",
-    "Level of supervision",
-    "Operative role",
-    "Reflection / learning points",
-  ];
-
-  // ---- Recording pulse (from last step) ----
+  // ---- Recording pulse ----
   const pulse = useRef(new Animated.Value(0)).current;
   useEffect(() => {
-    // Pulse only while actively recording AND not mid-hold (so it doesn't
-    // clash with the charge ring during a hold).
     if (status === "recording" && !isHolding) {
       Animated.loop(
         Animated.sequence([
@@ -47,16 +34,11 @@ export default function DictationScreen() {
   const pulseOpacity = pulse.interpolate({ inputRange: [0, 1], outputRange: [0.4, 0] });
 
   // ---- Hold-to-finish ----
-  // holdProgress runs 0 -> 1 over HOLD_DURATION. It drives the button growth
-  // and the charge ring, AND its completion tells us the hold finished.
   const holdProgress = useRef(new Animated.Value(0)).current;
-  // A ref flag (survives re-draws, doesn't trigger one) to remember whether
-  // the hold completed, so we don't also treat the release as a tap.
   const holdCompleted = useRef(false);
 
-  // Finger goes DOWN: begin the 3-second charge.
   function startHold() {
-    if (status === "finished") return; // nothing to do once finished
+    if (status === "finished") return;
     holdCompleted.current = false;
     setIsHolding(true);
     holdProgress.setValue(0);
@@ -65,8 +47,6 @@ export default function DictationScreen() {
       duration: HOLD_DURATION,
       useNativeDriver: true,
     }).start(({ finished }) => {
-      // This callback runs when the animation ENDS. "finished: true" means it
-      // ran the full 3s uninterrupted -> the user held long enough. Finish.
       if (finished) {
         holdCompleted.current = true;
         setIsHolding(false);
@@ -75,55 +55,76 @@ export default function DictationScreen() {
     });
   }
 
-  // Finger comes UP: either the hold completed, or it was a short tap.
   function endHold() {
     if (status === "finished") return;
-    if (holdCompleted.current) return; // hold already finished it; do nothing
-
-    // Released early -> cancel the charge and treat it as a normal TAP.
+    if (holdCompleted.current) return;
     holdProgress.stopAnimation();
     Animated.timing(holdProgress, { toValue: 0, duration: 150, useNativeDriver: true }).start();
     setIsHolding(false);
-    // A tap toggles between recording and paused.
     setStatus((current) => (current === "recording" ? "paused" : "recording"));
   }
 
-  // Turn hold progress into a growing button and an expanding charge ring.
   const buttonScale = holdProgress.interpolate({ inputRange: [0, 1], outputRange: [1, 1.5] });
   const chargeScale = holdProgress.interpolate({ inputRange: [0, 1], outputRange: [1.15, 1.75] });
   const chargeOpacity = holdProgress.interpolate({ inputRange: [0, 1], outputRange: [0, 1] });
 
-  // The hint under the button changes with the situation.
   let hint = "Tap to record · hold to finish";
   if (isHolding) hint = "Keep holding to finish…";
   else if (status === "recording") hint = "Recording — tap to pause · hold to finish";
 
+  // One checklist row. If the field is flagged showOptions and has options,
+  // we build a "(a / b / c)" hint from the option labels. We take the part
+  // before any ":" so long labels (like CEPOD's) show just the keyword —
+  // "Elective: Surgery at convenient time" becomes "Elective".
+  function FieldRow({ field }) {
+    const optionsHint =
+      field.showOptions && field.options
+        ? field.options.map((o) => o.label.split(":")[0].trim()).join(" / ")
+        : null;
+
+    return (
+      <View style={styles.fieldRow}>
+        <View style={styles.pendingCircle} />
+        <View style={styles.fieldTextWrap}>
+          <Text style={styles.fieldText}>{field.label}</Text>
+          {/* Only renders when there's a hint to show. */}
+          {optionsHint && <Text style={styles.optionsHint}>({optionsHint})</Text>}
+        </View>
+      </View>
+    );
+  }
+
   return (
     <View style={styles.container}>
-      {/* ===== TOP TWO-THIRDS: field checklist ===== */}
+      {/* ===== TOP TWO-THIRDS: checklist (scrollable) ===== */}
       <View style={styles.checklistArea}>
-        <Text style={styles.checklistHeading}>Fields to capture</Text>
+      <ScrollView contentContainerStyle={styles.checklistContent}>
+          <Text style={styles.schemaContext}>
+            {schema.platform} · {schema.entryType.replace("_", " ")}
+          </Text>
 
-        {fields.map((field, index) => (
-          <View key={index} style={styles.fieldRow}>
-            <View style={styles.pendingCircle} />
-            <Text style={styles.fieldText}>{field}</Text>
+          {/* Privacy notice (spec F11): the app never records patient
+              identifiers. If the portfolio needs a patient ID, the user
+              adds it directly on the website at the submission step. */}
+          <View style={styles.noticeBanner}>
+            <Text style={styles.noticeText}>
+              Patient ID should not be recorded to keep the app free of patient-identifiable details. 
+
+              If your portfolio requires one, you'll have to enter it manually on the website at the submission step.
+            
+            </Text>
           </View>
-        ))}
 
-        <Text style={styles.transcriptHint}>
-          {status === "finished"
-            ? "Recording complete."
-            : status === "recording"
-            ? "Listening… your words will appear here."
-            : "Tap the button below and start speaking."}
-        </Text>
+          {/* One flat list, straight from the schema, in its original order. */}
+          {schema.fields.map((field) => (
+            <FieldRow key={field.id} field={field} />
+          ))}
+        </ScrollView>
       </View>
 
       {/* ===== BOTTOM ONE-THIRD: record control ===== */}
       <View style={styles.controlArea}>
         {status === "finished" ? (
-          // Finished: replace the record control with a Review button.
           <>
             <Text style={styles.doneText}>Recording finished</Text>
             <AppButton href="/review" style={{ paddingHorizontal: 40 }}>
@@ -132,22 +133,18 @@ export default function DictationScreen() {
           </>
         ) : (
           <>
-            {/* Recording pulse (behind the button) */}
             <Animated.View
               style={[
                 styles.pulseRing,
                 { transform: [{ scale: pulseScale }], opacity: pulseOpacity },
               ]}
             />
-            {/* Charge ring — fills/expands as you hold */}
             <Animated.View
               style={[
                 styles.chargeRing,
                 { transform: [{ scale: chargeScale }], opacity: chargeOpacity },
               ]}
             />
-
-            {/* The round button. onPressIn/onPressOut drive the hold logic. */}
             <Pressable onPressIn={startHold} onPressOut={endHold}>
               <Animated.View
                 style={[
@@ -161,7 +158,6 @@ export default function DictationScreen() {
                 </Text>
               </Animated.View>
             </Pressable>
-
             <Text style={styles.controlHint}>{hint}</Text>
           </>
         )}
@@ -173,26 +169,39 @@ export default function DictationScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#ffffff" },
 
-  checklistArea: { flex: 2, padding: 24, paddingTop: 32 },
-  checklistHeading: {
-    fontSize: 14,
+  checklistArea: { flex: 2 },
+  checklistContent: { padding: 24, paddingTop: 28, paddingBottom: 16 },
+  schemaContext: {
+    fontSize: 12,
     fontWeight: "600",
-    color: "#888888",
-    textTransform: "uppercase",
-    letterSpacing: 1,
+    color: "#2563eb",
+    textTransform: "capitalize",
     marginBottom: 16,
   },
-  fieldRow: { flexDirection: "row", alignItems: "center", marginBottom: 16 },
+  noticeBanner: {
+    backgroundColor: "#eff6ff", // soft blue "info" background
+    borderWidth: 1,
+    borderColor: "#bfdbfe",
+    borderRadius: 10,
+    padding: 12,
+    marginBottom: 20,
+  },
+  noticeText: { fontSize: 13, color: "#1e40af", lineHeight: 19 },
+  // alignItems flex-start so the circle lines up with the first line of text
+  // (some rows now have a second line for the options hint).
+  fieldRow: { flexDirection: "row", alignItems: "flex-start", marginBottom: 16 },
   pendingCircle: {
-    width: 22,
-    height: 22,
-    borderRadius: 11,
+    width: 20,
+    height: 20,
+    borderRadius: 10,
     borderWidth: 2,
     borderColor: "#cccccc",
     marginRight: 14,
+    marginTop: 1,
   },
-  fieldText: { fontSize: 16, color: "#1a1a1a" },
-  transcriptHint: { fontSize: 14, color: "#aaaaaa", fontStyle: "italic", marginTop: 20 },
+  fieldTextWrap: { flex: 1 },
+  fieldText: { fontSize: 15, color: "#1a1a1a" },
+  optionsHint: { fontSize: 12, color: "#999999", marginTop: 2 },
 
   controlArea: {
     flex: 1,
@@ -225,7 +234,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  recordButtonActive: { backgroundColor: "#dc2626" }, // red while recording
+  recordButtonActive: { backgroundColor: "#dc2626" },
   recordButtonText: { color: "#ffffff", fontSize: 16, fontWeight: "700" },
   controlHint: { fontSize: 13, color: "#888888", marginTop: 16, textAlign: "center" },
   doneText: { fontSize: 16, fontWeight: "600", color: "#1a1a1a", marginBottom: 16 },

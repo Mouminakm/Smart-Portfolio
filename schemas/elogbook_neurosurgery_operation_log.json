@@ -1,0 +1,502 @@
+{
+  "schemaId": "elogbook_neurosurgery_operation_log",
+  "platform": "elogbook",
+  "discipline": "surgical",
+  "specialty": "neurosurgery",
+  "entryType": "operation_log",
+  "harvested_from": "eLogbook 'Add operation' page (Specialty = Neurosurgery)",
+  "harvested_date": "2026-06-21",
+  "requiredFlagsAreInferred": true,
+  "notes": "eLogbook is an Angular app: required fields are enforced by JavaScript, not the HTML 'required' attribute. 'required' here is INFERRED (selects opening on 'Please select...' and core operative fields) and must be confirmed against a live test account. Selectors use element id (eLogbook has no name attributes). Radio Yes/No fields are selected by targeting the specific option selector, not by setting a value. options_source values point to companion data files / runtime account data.",
+  "fieldCount": 21,
+  "fields": [
+    {
+      "id": "AppPatientAgeDateofBirth_ageyears",
+      "label": "Patient Age \u2014 Years",
+      "type": "number",
+      "required": true,
+      "selector": "#AppPatientAgeDateofBirth_ageyears",
+      "inputType": "number",
+      "extractionHints": [
+        "age",
+        "years old",
+        "year old"
+      ]
+    },
+    {
+      "id": "dateofoperation",
+      "label": "Date of Operation",
+      "type": "date",
+      "required": true,
+      "selector": "#dateofoperation",
+      "inputType": "date",
+      "extractionHints": [
+        "date",
+        "when",
+        "performed on",
+        "operated on"
+      ]
+    },
+    {
+      "id": "private",
+      "label": "Private",
+      "type": "boolean",
+      "required": false,
+      "selector": "#private",
+      "inputType": "checkbox",
+      "extractionHints": [
+        "private",
+        "private patient"
+      ]
+    },
+    {
+      "id": "cepod",
+      "label": "CEPOD (urgency)",
+      "type": "enum",
+      "required": true,
+      "selector": "#cepod",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "4",
+          "label": "Elective: Surgery at convenient time"
+        },
+        {
+          "value": "1",
+          "label": "Scheduled: Early surgery e.g. malignancy (<3 wks)"
+        },
+        {
+          "value": "2",
+          "label": "Urgent: Surgery ASAP after resus (<24 hr)"
+        },
+        {
+          "value": "3",
+          "label": "Emergency: Immediate surgery within 1hr"
+        }
+      ],
+      "extractionHints": [
+        "cepod",
+        "elective",
+        "scheduled",
+        "urgent",
+        "emergency"
+      ],
+      "showOptions": true
+    },
+    {
+      "id": "asagrade",
+      "label": "ASA Grade",
+      "type": "enum",
+      "required": true,
+      "selector": "#asagrade",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "1",
+          "label": "Fit and Well"
+        },
+        {
+          "value": "2",
+          "label": "Mild Systemic Disease"
+        },
+        {
+          "value": "3",
+          "label": "Significant Systemic Disease"
+        },
+        {
+          "value": "4",
+          "label": "Life Threatening Disease"
+        },
+        {
+          "value": "5",
+          "label": "Not Expected to Survive 24hrs"
+        }
+      ],
+      "extractionHints": [
+        "asa",
+        "asa grade",
+        "fit and well"
+      ]
+    },
+    {
+      "id": "operationspecialty",
+      "label": "Specialty",
+      "type": "enum",
+      "required": true,
+      "selector": "#operationspecialty",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "CardiacSur",
+          "label": "Cardiothoracic Surgery"
+        },
+        {
+          "value": "GeneralSur",
+          "label": "General Surgery"
+        },
+        {
+          "value": "NeuroSurg",
+          "label": "Neurosurgery"
+        },
+        {
+          "value": "Ophth",
+          "label": "Ophthalmology"
+        },
+        {
+          "value": "OralandMax",
+          "label": "Oral and Maxillofacial surgery"
+        },
+        {
+          "value": "OralSurg",
+          "label": "Oral Surgery"
+        },
+        {
+          "value": "Otolaryngo",
+          "label": "Otolaryngology"
+        },
+        {
+          "value": "Paediatric",
+          "label": "Paediatric Surgery"
+        },
+        {
+          "value": "PlasticSur",
+          "label": "Plastic Surgery"
+        },
+        {
+          "value": "Ortho",
+          "label": "Trauma and Orthopaedic Surgery"
+        },
+        {
+          "value": "Urology",
+          "label": "Urology"
+        },
+        {
+          "value": "Vascular",
+          "label": "Vascular"
+        }
+      ],
+      "extractionHints": [
+        "specialty"
+      ],
+      "notes": "Pre-set to Neurosurgery for this schema; drives which procedure list and specialty fields appear."
+    },
+    {
+      "id": "operationregion",
+      "label": "Surgical region",
+      "type": "enum",
+      "required": false,
+      "appOnly": true,
+      "submitsToPlatform": false,
+      "options": [
+        {
+          "value": "Cranial",
+          "label": "Cranial"
+        },
+        {
+          "value": "Spinal",
+          "label": "Spinal"
+        },
+        {
+          "value": "Peripheral Nerve",
+          "label": "Peripheral Nerve"
+        },
+        {
+          "value": "Other",
+          "label": "Other"
+        }
+      ],
+      "showOptions": true,
+      "extractionHints": [
+        "cranial",
+        "spinal",
+        "peripheral nerve",
+        "region",
+        "approach"
+      ],
+      "notes": "App-only helper to scope the procedure picker and give the AI category context. NOT a real eLogbook form field \u2014 not submitted to the platform (no selector). Narrows the procedure list in elogbook_neurosurgery_procedures.json, whose top-level tree is Cranial/Spinal/Peripheral Nerve/Other."
+    },
+    {
+      "id": "procedure",
+      "label": "Operation / Procedure",
+      "type": "lookup",
+      "required": true,
+      "selector": "#operationsAccordion-Typeahead",
+      "inputType": "autocomplete",
+      "selectedValueSelector": "#operationsAccordion-SelectedValue",
+      "options_source": "elogbook_neurosurgery_procedures",
+      "searchModeSelector": "#selectSearchCategory",
+      "searchModes": [
+        "Operation Description",
+        "OPCS",
+        "OPCS2"
+      ],
+      "extractionHints": [
+        "operation",
+        "procedure",
+        "I did a",
+        "performed"
+      ],
+      "notes": "Typeahead. Selected procedure resolves to a data-nodeid (see options_source file). Can search by name, OPCS or OPCS2 code."
+    },
+    {
+      "id": "hospitalsAccordion",
+      "label": "Hospital",
+      "type": "lookup",
+      "required": true,
+      "selector": "#hospitalsAccordion-Typeahead",
+      "inputType": "autocomplete",
+      "selectedValueSelector": "#hospitalsAccordion-SelectedValue",
+      "options_source": "account_specific__user_hospitals",
+      "extractionHints": [
+        "hospital",
+        "at",
+        "site"
+      ],
+      "notes": "Account-specific list resolved from the user's authenticated session \u2014 not hard-coded."
+    },
+    {
+      "id": "responsibleconsultant",
+      "label": "Responsible Consultant",
+      "type": "enum",
+      "required": true,
+      "selector": "#responsibleconsultant",
+      "inputType": "select",
+      "options_source": "account_specific__user_consultants",
+      "extractionHints": [
+        "consultant",
+        "under",
+        "supervising consultant",
+        "responsible consultant"
+      ],
+      "notes": "ACCOUNT-SPECIFIC: real consultant names/IDs from the user's own hospital. Resolved at runtime from the user's session; never bundled in the app."
+    },
+    {
+      "id": "supervision",
+      "label": "Level of Supervision",
+      "type": "enum",
+      "required": true,
+      "selector": "#supervision",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "1",
+          "label": "Assisting"
+        },
+        {
+          "value": "2",
+          "label": "Supervised-trainer scrubbed"
+        },
+        {
+          "value": "3",
+          "label": "Supervised-trainer unscrubbed but in theatre"
+        },
+        {
+          "value": "4",
+          "label": "Performed"
+        },
+        {
+          "value": "5",
+          "label": "Training a trainee"
+        },
+        {
+          "value": "10",
+          "label": "Observed"
+        }
+      ],
+      "extractionHints": [
+        "supervised",
+        "trainer scrubbed",
+        "unscrubbed",
+        "performed",
+        "assisting",
+        "observed"
+      ],
+      "showOptions": true
+    },
+    {
+      "id": "ishubcase",
+      "label": "Is hub case",
+      "type": "enum",
+      "required": false,
+      "selector": "#ishubcase",
+      "inputType": "radio",
+      "options": [
+        {
+          "label": "Unknown",
+          "selector": "#ishubcase0"
+        },
+        {
+          "label": "No",
+          "selector": "#ishubcase1"
+        },
+        {
+          "label": "Yes",
+          "selector": "#ishubcase2"
+        }
+      ],
+      "extractionHints": [
+        "hub case"
+      ]
+    },
+    {
+      "id": "microscope",
+      "label": "Microscope",
+      "type": "boolean",
+      "required": false,
+      "selector": "#microscope",
+      "inputType": "radio",
+      "options": [
+        {
+          "label": "No",
+          "selector": "#microscope0"
+        },
+        {
+          "label": "Yes",
+          "selector": "#microscope1"
+        }
+      ],
+      "extractionHints": [
+        "microscope",
+        "microscopic",
+        "operating microscope"
+      ],
+      "specialtySpecific": true
+    },
+    {
+      "id": "endoscope",
+      "label": "Endoscope",
+      "type": "boolean",
+      "required": false,
+      "selector": "#endoscope",
+      "inputType": "radio",
+      "options": [
+        {
+          "label": "No",
+          "selector": "#endoscope0"
+        },
+        {
+          "label": "Yes",
+          "selector": "#endoscope1"
+        }
+      ],
+      "extractionHints": [
+        "endoscope",
+        "endoscopic"
+      ],
+      "specialtySpecific": true
+    },
+    {
+      "id": "imageguidanceinclstereotaxis",
+      "label": "Image guidance (incl. stereotaxis)",
+      "type": "boolean",
+      "required": false,
+      "selector": "#imageguidanceinclstereotaxis",
+      "inputType": "radio",
+      "options": [
+        {
+          "label": "No",
+          "selector": "#imageguidanceinclstereotaxis0"
+        },
+        {
+          "label": "Yes",
+          "selector": "#imageguidanceinclstereotaxis1"
+        }
+      ],
+      "extractionHints": [
+        "image guidance",
+        "neuronavigation",
+        "stereotaxis",
+        "stereotactic"
+      ],
+      "specialtySpecific": true
+    },
+    {
+      "id": "spinalfixationnotcagealone",
+      "label": "Spinal fixation (not cage alone)",
+      "type": "boolean",
+      "required": false,
+      "selector": "#spinalfixationnotcagealone",
+      "inputType": "radio",
+      "options": [
+        {
+          "label": "No",
+          "selector": "#spinalfixationnotcagealone0"
+        },
+        {
+          "label": "Yes",
+          "selector": "#spinalfixationnotcagealone1"
+        }
+      ],
+      "extractionHints": [
+        "spinal fixation",
+        "instrumentation",
+        "pedicle screws"
+      ],
+      "specialtySpecific": true
+    },
+    {
+      "id": "roboticsurgery",
+      "label": "Robotic Surgery",
+      "type": "boolean",
+      "required": false,
+      "selector": "#roboticsurgery",
+      "inputType": "checkbox",
+      "extractionHints": [
+        "robotic",
+        "robot assisted"
+      ]
+    },
+    {
+      "id": "minimalaccess",
+      "label": "Minimal Access",
+      "type": "boolean",
+      "required": false,
+      "selector": "#minimalaccess",
+      "inputType": "checkbox",
+      "extractionHints": [
+        "minimal access",
+        "minimally invasive",
+        "keyhole"
+      ]
+    },
+    {
+      "id": "complicationscheck",
+      "label": "Complications Check",
+      "type": "boolean",
+      "required": false,
+      "selector": "#complicationscheck",
+      "inputType": "checkbox",
+      "extractionHints": [
+        "complication",
+        "complications"
+      ]
+    },
+    {
+      "id": "complicationnotes",
+      "label": "Complication Notes",
+      "type": "longtext",
+      "required": false,
+      "selector": "#complicationnotes",
+      "inputType": "textarea",
+      "extractionHints": [
+        "complication",
+        "what went wrong"
+      ]
+    },
+    {
+      "id": "operationnotes",
+      "label": "Operation Notes",
+      "type": "longtext",
+      "required": false,
+      "selector": "#operationnotes",
+      "inputType": "textarea",
+      "isReflection": false,
+      "extractionHints": [
+        "notes",
+        "operation notes",
+        "details"
+      ],
+      "notes": "Free-text operative notes; candidate home for guarded reflection (F5) in a later phase."
+    }
+  ]
+}
