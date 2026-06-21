@@ -1,10 +1,16 @@
 // app/(tabs)/settings.jsx
 // Profile & Settings — the account hub (spec S2). Now a tab.
 
-import { ScrollView, StyleSheet, Text } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
+import AppButton from "../../components/AppButton";
 import SettingsRow from "../../components/SettingsRow"; // ../../ to climb out of (tabs)
+import { useAuth } from "../../contexts/AuthContext"; // sign out function
+
+
 
 export default function SettingsScreen() {
+  const { signOut } = useAuth();
+
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <Text style={styles.sectionHeading}>Specialty & training</Text>
@@ -32,6 +38,10 @@ export default function SettingsScreen() {
       <Text style={styles.sectionHeading}>Preferences</Text>
       <SettingsRow label="Reflection detail" value="Low" />
       <SettingsRow label="Notifications" value="On" />
+
+      <View style={{ marginTop: 28 }}>
+        <AppButton onPress={signOut}>Sign out</AppButton>
+      </View>
     </ScrollView>
   );
 }

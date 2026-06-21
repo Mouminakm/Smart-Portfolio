@@ -5,7 +5,11 @@
 
 import { StyleSheet, Text, View } from "react-native";
 import AppButton from "../components/AppButton";
+import { useAuth } from "../contexts/AuthContext";
+
 export default function PermissionsScreen() {
+  const { signIn } = useAuth();
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Before you start</Text>
@@ -44,7 +48,7 @@ export default function PermissionsScreen() {
 
       {/* End of onboarding. For now this loops back to Welcome ("/").
           Later this will enter the main app and mark onboarding complete. */}
-      <AppButton href="/home">Finish setup</AppButton>
+      <AppButton onPress={signIn}>Finish setup</AppButton>
     </View>
   );
 }
