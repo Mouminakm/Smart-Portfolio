@@ -5,7 +5,6 @@
 
 import { StyleSheet, Text, View } from "react-native";
 import AppButton from "../components/AppButton";
-
 export default function PermissionsScreen() {
   return (
     <View style={styles.container}>

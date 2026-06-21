@@ -1,10 +1,16 @@
 // app/_layout.jsx
-// The root navigator: a STACK holding onboarding, the tabbed main app,
-// and the dictation flow that stacks on top of the tabs.
+// Root navigator. Wraps the app in the auth context, then uses Stack.Protected
+// to show the main app only when signed in, and onboarding only when signed out.
 
 import { Stack } from "expo-router";
+import { AuthProvider, useAuth } from "../contexts/AuthContext";
 
-export default function RootLayout() {
+// The navigator reads auth state, so it must live INSIDE the provider — that's
+// why it's a separate component from RootLayout below (a component can't read a
+// context that it itself renders the provider for).
+function RootNavigator() {
+  const { isSignedIn } = useAuth();
+
   return (
     <Stack
       screenOptions={{
@@ -13,21 +19,33 @@ export default function RootLayout() {
         headerTintColor: "#1a1a1a",
       }}
     >
-      {/* Onboarding screens (shown before the main app) */}
-      <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="sign-in" options={{ title: "Create account" }} />
-      <Stack.Screen name="email-sign-in" options={{ title: "Sign in" }} />
-      <Stack.Screen name="profile-setup" options={{ title: "Profile setup" }} />
-      <Stack.Screen name="permissions" options={{ title: "Before you start" }} />
+      {/* PROTECTED — only reachable when signed IN. When isSignedIn flips to
+          true, the router automatically lands the user on the first screen
+          here, (tabs) → Home. */}
+      <Stack.Protected guard={isSignedIn}>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="dictation" options={{ title: "Dictation" }} />
+        <Stack.Screen name="review" options={{ title: "Review & edit" }} />
+        <Stack.Screen name="submission" options={{ title: "Submit" }} />
+      </Stack.Protected>
 
-      {/* The tabbed main app. headerShown:false because the tab navigator
-          provides its OWN header — without this you'd get two stacked headers. */}
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-
-      {/* The dictation flow — these stack on TOP of the tabs when opened. */}
-      <Stack.Screen name="dictation" options={{ title: "Dictation" }} />
-      <Stack.Screen name="review" options={{ title: "Review & edit" }} />
-      <Stack.Screen name="submission" options={{ title: "Submit" }} />
+      {/* PUBLIC — only reachable when signed OUT. The onboarding flow. */}
+      <Stack.Protected guard={!isSignedIn}>
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="sign-in" options={{ title: "Create account" }} />
+        <Stack.Screen name="email-sign-in" options={{ title: "Sign in" }} />
+        <Stack.Screen name="profile-setup" options={{ title: "Profile setup" }} />
+        <Stack.Screen name="permissions" options={{ title: "Before you start" }} />
+      </Stack.Protected>
     </Stack>
+  );
+}
+
+// RootLayout wraps everything in the provider, then renders the navigator.
+export default function RootLayout() {
+  return (
+    <AuthProvider>
+      <RootNavigator />
+    </AuthProvider>
   );
 }
