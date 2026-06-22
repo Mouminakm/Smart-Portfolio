@@ -25,6 +25,7 @@ function RootNavigator() {
       {/* Signed in AND setup done -> the main app. */}
       <Stack.Protected guard={!isLoading && isSignedIn && hasCompletedOnboarding}>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="edit-profile" options={{ title: "Edit profile" }} />
         <Stack.Screen name="dictation" options={{ title: "Dictation" }} />
         <Stack.Screen name="review" options={{ title: "Review & edit" }} />
         <Stack.Screen name="submission" options={{ title: "Submit" }} />

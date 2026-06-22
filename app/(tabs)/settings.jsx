@@ -1,8 +1,9 @@
 // app/(tabs)/settings.jsx
-// Profile & Settings (spec S2). Now LOADS the signed-in user's saved profile
-// from Firestore and shows their real GMC / training number.
+// Profile & Settings (spec S2). Shows the saved profile (reloaded each time the
+// screen is focused) with an Edit button to change it.
 
-import { useEffect, useState } from "react";
+import { useFocusEffect, useRouter } from "expo-router";
+import { useCallback, useState } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import AppButton from "../../components/AppButton";
 import SettingsRow from "../../components/SettingsRow";
@@ -11,57 +12,63 @@ import { loadProfile } from "../../profile";
 
 export default function SettingsScreen() {
   const { user, signOut } = useAuth();
-  const [profile, setProfile] = useState(null); // saved profile, once loaded
+  const router = useRouter();
+  const [profile, setProfile] = useState(null);
 
-  // Load this user's profile once, when the screen first appears.
-  useEffect(() => {
-    async function load() {
-      if (user) {
-        const data = await loadProfile(user.uid);
-        setProfile(data); // null if they haven't saved one yet
+  // Reload the profile every time this screen is focused — including returning
+  // from Edit profile — so changes show immediately. useCallback keeps the same
+  // function across renders so the effect doesn't loop.
+  useFocusEffect(
+    useCallback(() => {
+      async function load() {
+        if (user) {
+          const data = await loadProfile(user.uid);
+          setProfile(data);
+        }
       }
-    }
-    load();
-  }, [user]); // re-run if the user changes
+      load();
+    }, [user])
+  );
 
-  // Small helper: show the saved value, or a fallback if not set/loaded yet.
   function show(value) {
     return value ? value : "Not set";
   }
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+      <View style={styles.editWrap}>
+        <AppButton onPress={() => router.push("/edit-profile")}>Edit profile</AppButton>
+      </View>
+
       <Text style={styles.sectionHeading}>Specialty & training</Text>
-      <SettingsRow label="Discipline" value="Surgical" />
-      <SettingsRow label="Specialty" value="Trauma & Orthopaedics" />
-      <SettingsRow label="Training level" value="ST3" />
-      <SettingsRow label="Curriculum" value="JCST 2021" />
+      <SettingsRow label="Specialty" value={show(profile && profile.specialty)} />
 
       <Text style={styles.sectionHeading}>Portfolio</Text>
-      <SettingsRow label="Platform(s)" value="eLogbook + ISCP" />
+      <SettingsRow
+        label="Platform(s)"
+        value={show(profile && profile.portfolios && profile.portfolios.join(", "))}
+      />
 
       <Text style={styles.sectionHeading}>Subscription</Text>
       <SettingsRow label="Plan" value="Free trial" />
 
       <Text style={styles.sectionHeading}>Account</Text>
-      {/* The user's email comes straight from their auth account. */}
       <SettingsRow label="Email" value={show(user && user.email)} />
-      {/* These two now come from the saved profile in Firestore. */}
       <SettingsRow label="GMC number" value={show(profile && profile.gmcNumber)} />
-      <SettingsRow
-        label="Training number (NTN)"
-        value={show(profile && profile.trainingNumber)}
-      />
+      <SettingsRow label="Training number (NTN)" value={show(profile && profile.trainingNumber)} />
 
       <Text style={styles.sectionHeading}>Privacy & data</Text>
       <SettingsRow label="Data consent" value="Granted" />
       <SettingsRow label="Delete my data" value="" />
 
       <Text style={styles.sectionHeading}>Preferences</Text>
-      <SettingsRow label="Reflection detail" value="Low" />
+      <SettingsRow
+        label="Reflection detail"
+        value={(profile && profile.reflectionDetail) || "Low"}
+      />
       <SettingsRow label="Notifications" value="On" />
 
-      <View style={{ marginTop: 28 }}>
+      <View style={styles.signOutWrap}>
         <AppButton onPress={signOut}>Sign out</AppButton>
       </View>
     </ScrollView>
@@ -71,6 +78,7 @@ export default function SettingsScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#ffffff" },
   content: { padding: 24, paddingBottom: 40 },
+  editWrap: { marginBottom: 8 },
   sectionHeading: {
     fontSize: 13,
     fontWeight: "700",
@@ -80,4 +88,5 @@ const styles = StyleSheet.create({
     marginTop: 24,
     marginBottom: 4,
   },
+  signOutWrap: { marginTop: 28 },
 });
