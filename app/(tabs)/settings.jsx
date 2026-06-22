@@ -67,7 +67,9 @@ export default function SettingsScreen() {
         value={(profile && profile.reflectionDetail) || "Low"}
       />
       <SettingsRow label="Notifications" value="On" />
-
+      <View style={{ marginTop: 24 }}>
+        <AppButton onPress={() => router.push("/record-test")}>🎙 Test recording (dev)</AppButton>
+      </View>
       <View style={styles.signOutWrap}>
         <AppButton onPress={signOut}>Sign out</AppButton>
       </View>
