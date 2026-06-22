@@ -1,49 +1,111 @@
 // app/profile-setup.jsx
 // Onboarding screen 3 — Profile setup (spec S1).
-// Now built from the reusable <ProfileField> component.
+// Specialty (single picker) + portfolios (multi-select, up to two) + GMC/training.
 
-import { Link } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
-// Import our component. "../" climbs up out of app/ to the project root,
-// then into components/. No ".jsx" on the end — it's added automatically.
-import ProfileField from "../components/ProfileField";
+import { useRouter } from "expo-router";
+import { useState } from "react";
+import {
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+} from "react-native";
+import AppButton from "../components/AppButton";
+import MultiPickerField from "../components/MultiPickerField";
+import PickerField from "../components/PickerField";
+import { useAuth } from "../contexts/AuthContext";
+import { UK_PORTFOLIOS } from "../data/portfolios";
+import { UK_SPECIALTIES } from "../data/specialties";
+import { saveProfile } from "../profile";
 
 export default function ProfileSetupScreen() {
+  const { user } = useAuth();
+  const router = useRouter();
+
+  const [specialty, setSpecialty] = useState("");
+  const [portfolios, setPortfolios] = useState([]); // an array — up to two platforms
+  const [gmcNumber, setGmcNumber] = useState("");
+  const [trainingNumber, setTrainingNumber] = useState("");
+  const [isBusy, setIsBusy] = useState(false);
+
+  async function handleContinue() {
+    setIsBusy(true);
+    try {
+      if (user) {
+        await saveProfile(user.uid, { specialty, portfolios, gmcNumber, trainingNumber });
+      }
+      router.push("/permissions");
+    } catch (error) {
+      router.push("/permissions"); // don't trap them if the save fails
+    } finally {
+      setIsBusy(false);
+    }
+  }
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Set up your profile</Text>
-      <Text style={styles.subtitle}>
-        This tells the app which entry types and fields apply to you.
-      </Text>
+    <KeyboardAvoidingView
+      style={styles.flex}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      keyboardVerticalOffset={Platform.OS === "ios" ? 90 : 0}
+    >
+      <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
+        <Text style={styles.title}>Set up your profile</Text>
+        <Text style={styles.subtitle}>
+          This tells the app which entry types and fields apply to you.
+        </Text>
 
-      {/* Same component each time; different text passed in through props.
-          Compare this to the five long blocks we had before. */}
-      <ProfileField label="Discipline" placeholder="Medical or Surgical" />
-      <ProfileField
-        label="Specialty / training programme"
-        placeholder="e.g. Trauma & Orthopaedics"
-      />
-      <ProfileField label="Portfolio platform" placeholder="e.g. eLogbook + ISCP" />
-      <ProfileField label="GMC number (optional)" placeholder="7-digit number" />
-      <ProfileField
-        label="Training number / NTN (optional)"
-        placeholder="Your national training number"
-      />
+        {/* Specialty — single-choice picker from the UK list. */}
+        <PickerField
+          label="Specialty / training programme"
+          placeholder="Select your specialty"
+          options={UK_SPECIALTIES}
+          value={specialty}
+          onSelect={setSpecialty}
+        />
 
-      <Link href="/permissions" style={styles.button}>
-        Continue
-      </Link>
-    </View>
+        {/* Portfolio — multi-select, up to two platforms. */}
+        <MultiPickerField
+          label="Portfolio platform(s)"
+          placeholder="Select up to two"
+          options={UK_PORTFOLIOS}
+          selected={portfolios}
+          onChange={setPortfolios}
+          maxSelect={2}
+        />
+
+        <Text style={styles.label}>GMC number (optional)</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="7-digit number"
+          placeholderTextColor="#aaaaaa"
+          keyboardType="number-pad"
+          value={gmcNumber}
+          onChangeText={setGmcNumber}
+        />
+
+        <Text style={styles.label}>Training number / NTN (optional)</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Your national training number"
+          placeholderTextColor="#aaaaaa"
+          autoCapitalize="characters"
+          value={trainingNumber}
+          onChangeText={setTrainingNumber}
+        />
+
+        <AppButton onPress={handleContinue}>
+          {isBusy ? "Saving…" : "Continue"}
+        </AppButton>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 24,
-    paddingTop: 60,
-    backgroundColor: "#ffffff",
-  },
+  flex: { flex: 1, backgroundColor: "#ffffff" },
+  container: { flexGrow: 1, padding: 24, paddingTop: 60, backgroundColor: "#ffffff" },
   title: { fontSize: 28, fontWeight: "bold", color: "#1a1a1a", textAlign: "center" },
   subtitle: {
     fontSize: 16,
@@ -53,16 +115,15 @@ const styles = StyleSheet.create({
     marginTop: 12,
     marginBottom: 28,
   },
-  // The field styles now live in ProfileField.jsx, so they're gone from here.
-  button: {
-    backgroundColor: "#2563eb",
-    color: "#ffffff",
-    fontSize: 16,
-    fontWeight: "600",
-    textAlign: "center",
-    paddingVertical: 14,
+  label: { fontSize: 13, fontWeight: "600", color: "#1a1a1a", marginBottom: 6, marginTop: 4 },
+  input: {
+    borderWidth: 1,
+    borderColor: "#cccccc",
     borderRadius: 10,
-    overflow: "hidden",
-    marginTop: 20,
+    paddingVertical: 12,
+    paddingHorizontal: 14,
+    fontSize: 16,
+    color: "#1a1a1a",
+    marginBottom: 18,
   },
 });

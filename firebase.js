@@ -4,6 +4,7 @@
 
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 // Read the config from the environment (.env). process.env is how code reads
 // environment values; the EXPO_PUBLIC_ prefix is what makes them available.
@@ -22,3 +23,4 @@ const app = initializeApp(firebaseConfig);
 // Get the Authentication service and export it so other files (like our
 // AuthContext) can call sign-in / sign-out on it.
 export const auth = getAuth(app);
+export const db = getFirestore(app);

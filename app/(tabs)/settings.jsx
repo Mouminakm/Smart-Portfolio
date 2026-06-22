@@ -1,15 +1,33 @@
 // app/(tabs)/settings.jsx
-// Profile & Settings — the account hub (spec S2). Now a tab.
+// Profile & Settings (spec S2). Now LOADS the signed-in user's saved profile
+// from Firestore and shows their real GMC / training number.
 
+import { useEffect, useState } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import AppButton from "../../components/AppButton";
-import SettingsRow from "../../components/SettingsRow"; // ../../ to climb out of (tabs)
-import { useAuth } from "../../contexts/AuthContext"; // sign out function
-
-
+import SettingsRow from "../../components/SettingsRow";
+import { useAuth } from "../../contexts/AuthContext";
+import { loadProfile } from "../../profile";
 
 export default function SettingsScreen() {
-  const { signOut } = useAuth();
+  const { user, signOut } = useAuth();
+  const [profile, setProfile] = useState(null); // saved profile, once loaded
+
+  // Load this user's profile once, when the screen first appears.
+  useEffect(() => {
+    async function load() {
+      if (user) {
+        const data = await loadProfile(user.uid);
+        setProfile(data); // null if they haven't saved one yet
+      }
+    }
+    load();
+  }, [user]); // re-run if the user changes
+
+  // Small helper: show the saved value, or a fallback if not set/loaded yet.
+  function show(value) {
+    return value ? value : "Not set";
+  }
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
@@ -26,10 +44,14 @@ export default function SettingsScreen() {
       <SettingsRow label="Plan" value="Free trial" />
 
       <Text style={styles.sectionHeading}>Account</Text>
-      <SettingsRow label="Name" value="Not set" />
-      <SettingsRow label="Signed in with" value="Google" />
-      <SettingsRow label="GMC number" value="Not set" />
-      <SettingsRow label="Training number (NTN)" value="Not set" />
+      {/* The user's email comes straight from their auth account. */}
+      <SettingsRow label="Email" value={show(user && user.email)} />
+      {/* These two now come from the saved profile in Firestore. */}
+      <SettingsRow label="GMC number" value={show(profile && profile.gmcNumber)} />
+      <SettingsRow
+        label="Training number (NTN)"
+        value={show(profile && profile.trainingNumber)}
+      />
 
       <Text style={styles.sectionHeading}>Privacy & data</Text>
       <SettingsRow label="Data consent" value="Granted" />

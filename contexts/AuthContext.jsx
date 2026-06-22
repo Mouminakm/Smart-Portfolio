@@ -1,7 +1,7 @@
 // contexts/AuthContext.jsx
-// Real authentication via Firebase. Exposes isSignedIn plus signUp / signIn /
-// signOut, and listens to Firebase so isSignedIn stays accurate — including
-// restoring a previous session when the app restarts.
+// Real Firebase auth + onboarding-completion tracking.
+// Exposes: isSignedIn, hasCompletedOnboarding, isLoading, user,
+//          signUp / signIn / signOut / completeOnboarding.
 
 import {
   createUserWithEmailAndPassword,
@@ -10,53 +10,70 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { createContext, useContext, useEffect, useState } from "react";
-import { auth } from "../firebase"; // the auth service we set up in Stage 2
+import { auth } from "../firebase";
+import { loadProfile, saveProfile } from "../profile";
 
 const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
-  // user holds Firebase's user object when signed in, or null when not.
   const [user, setUser] = useState(null);
-  // isLoading is true until Firebase has told us the initial state (so we
-  // don't flash the wrong screen on launch while it checks for a session).
-  const [isLoading, setIsLoading] = useState(true);
+  const [hasCompletedOnboarding, setHasCompletedOnboarding] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // true while we check things
 
-  // Subscribe to Firebase auth changes ONCE when the app starts.
   useEffect(() => {
-    // onAuthStateChanged calls our function now and on every future change.
-    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
-      setUser(firebaseUser); // a user object, or null
-      setIsLoading(false); // we now know the real state
-    });
-    // Cleanup: stop listening if this component is ever removed.
-    return unsubscribe;
-  }, []); // [] = run this setup only once
+    // Runs on launch and whenever sign-in state changes.
+    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+      setIsLoading(true);
+      setUser(firebaseUser);
 
-  // Create a new account. async because it waits on Firebase; throws on
-  // failure (e.g. email already in use), which the screen will catch.
+      if (firebaseUser) {
+        // Read their profile to see if they've finished setup.
+        try {
+          const profile = await loadProfile(firebaseUser.uid);
+          setHasCompletedOnboarding(!!(profile && profile.onboardingComplete));
+        } catch (e) {
+          setHasCompletedOnboarding(false);
+        }
+      } else {
+        setHasCompletedOnboarding(false);
+      }
+
+      setIsLoading(false); // done checking — safe to route
+    });
+    return unsubscribe;
+  }, []);
+
   async function signUp(email, password) {
     await createUserWithEmailAndPassword(auth, email, password);
+    // The listener above fires next and finds no profile -> routes to setup.
   }
 
-  // Sign an existing user in.
   async function signIn(email, password) {
     await signInWithEmailAndPassword(auth, email, password);
+    // The listener fires and routes based on their saved onboarding flag.
   }
 
-  // Sign out.
   async function signOut() {
     await firebaseSignOut(auth);
   }
 
-  // isSignedIn is simply "do we have a user?". The "!!" turns the user object
-  // (or null) into a clean true/false.
+  // Called when the user taps "Finish setup" — saves the flag, enters the app.
+  async function completeOnboarding() {
+    if (user) {
+      await saveProfile(user.uid, { onboardingComplete: true });
+    }
+    setHasCompletedOnboarding(true);
+  }
+
   const value = {
     isSignedIn: !!user,
+    hasCompletedOnboarding,
     isLoading,
     user,
     signUp,
     signIn,
     signOut,
+    completeOnboarding,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

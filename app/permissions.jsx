@@ -2,14 +2,23 @@
 // Onboarding screen 4 — Permissions & consent (spec S1, F11).
 // Static shell: the consent box and mic request become real in Phase 4.
 // This is the last onboarding screen; its button ends the flow for now.
-
+import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import AppButton from "../components/AppButton";
 import { useAuth } from "../contexts/AuthContext";
 
 export default function PermissionsScreen() {
-  const { signIn } = useAuth();
+  const { completeOnboarding } = useAuth();
+  const [isBusy, setIsBusy] = useState(false);
 
+  async function handleFinish() {
+    setIsBusy(true);
+    try {
+      await completeOnboarding(); // saves the flag; the gate then enters the app
+    } catch (error) {
+      setIsBusy(false);
+    }
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Before you start</Text>
@@ -48,7 +57,9 @@ export default function PermissionsScreen() {
 
       {/* End of onboarding. For now this loops back to Welcome ("/").
           Later this will enter the main app and mark onboarding complete. */}
-      <AppButton onPress={signIn}>Finish setup</AppButton>
+      <AppButton onPress={handleFinish}>
+        {isBusy ? "Finishing…" : "Finish setup"}
+      </AppButton>
     </View>
   );
 }
