@@ -13,6 +13,8 @@ import {
 import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import AppButton from "../components/AppButton";
+// Paste the Function URL that `firebase deploy` printed, between the quotes.
+const PING_URL = "https://ping-2nfo2acdaa-nw.a.run.app";
 
 export default function RecordTestScreen() {
   // The recorder, set to good-quality audio.
@@ -22,6 +24,7 @@ export default function RecordTestScreen() {
 
   const [recordingUri, setRecordingUri] = useState(null); // saved file, once we have one
   const [statusText, setStatusText] = useState("Tap Record to start.");
+  const [pingResult, setPingResult] = useState("");
 
   // A player bound to the latest recording, so we can play it back.
   const player = useAudioPlayer(recordingUri ? { uri: recordingUri } : undefined);
@@ -48,7 +51,18 @@ export default function RecordTestScreen() {
     setRecordingUri(recorder.uri);
     setStatusText("Recorded! Tap Play to hear it back.");
   }
-
+// Calls our backend's ping function over the internet and shows the reply.
+  // fetch() makes the request; await waits for it; .json() reads the JSON body.
+  async function pingBackend() {
+    try {
+      setPingResult("Pinging…");
+      const response = await fetch(PING_URL);
+      const data = await response.json();
+      setPingResult(data.message + "\n" + data.time);
+    } catch (e) {
+      setPingResult("Failed: " + e.message);
+    }
+  }
   function playRecording() {
     player.seekTo(0); // back to the start
     player.play();
@@ -61,6 +75,10 @@ export default function RecordTestScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Recording test</Text>
       <Text style={styles.status}>{statusText}</Text>
+      <View style={{ height: 8 }} />
+      <AppButton onPress={pingBackend}>Ping backend</AppButton>
+      {pingResult ? <Text style={styles.uri}>{pingResult}</Text> : null}
+      <View style={{ height: 24 }} />
 
       {isRecording ? (
         <AppButton onPress={stopRecording}>Stop</AppButton>
