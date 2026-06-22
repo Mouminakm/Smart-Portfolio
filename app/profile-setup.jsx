@@ -29,8 +29,18 @@ export default function ProfileSetupScreen() {
   const [gmcNumber, setGmcNumber] = useState("");
   const [trainingNumber, setTrainingNumber] = useState("");
   const [isBusy, setIsBusy] = useState(false);
-
-  async function handleContinue() {
+  const [errorMessage, setErrorMessage] = useState("");
+async function handleContinue() {
+    // Required fields must be set before continuing.
+    if (!specialty) {
+      setErrorMessage("Please choose your specialty.");
+      return;
+    }
+    if (portfolios.length === 0) {
+      setErrorMessage("Please choose at least one portfolio platform.");
+      return;
+    }
+    setErrorMessage("");
     setIsBusy(true);
     try {
       if (user) {
@@ -95,6 +105,8 @@ export default function ProfileSetupScreen() {
           onChangeText={setTrainingNumber}
         />
 
+        {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
+
         <AppButton onPress={handleContinue}>
           {isBusy ? "Saving…" : "Continue"}
         </AppButton>
@@ -126,4 +138,5 @@ const styles = StyleSheet.create({
     color: "#1a1a1a",
     marginBottom: 18,
   },
+  error: { color: "#dc2626", fontSize: 14, marginBottom: 14, textAlign: "center" },
 });

@@ -48,14 +48,20 @@ export default function MultiPickerField({
 
             <FlatList
               data={options}
-              keyExtractor={(item) => item}
+              keyExtractor={(item) => item.name}              
               style={styles.list}
               renderItem={({ item }) => {
-                const isSelected = selected.includes(item);
-                // grey out unticked rows once we've hit the limit
-                const isDisabled = !isSelected && selected.length >= maxSelect;
+                const isSelected = selected.includes(item.name);
+                // Disabled if: not available yet, OR we've hit the limit and this
+                // one isn't already chosen.
+                const atLimit = !isSelected && selected.length >= maxSelect;
+                const isDisabled = !item.available || atLimit;
                 return (
-                  <Pressable style={styles.option} onPress={() => toggle(item)} disabled={isDisabled}>
+                  <Pressable
+                    style={styles.option}
+                    onPress={() => toggle(item.name)}
+                    disabled={isDisabled}
+                  >
                     <View style={[styles.checkbox, isSelected && styles.checkboxChecked]}>
                       {isSelected && <Text style={styles.checkmark}>✓</Text>}
                     </View>
@@ -66,8 +72,10 @@ export default function MultiPickerField({
                         isDisabled && styles.optionDisabled,
                       ]}
                     >
-                      {item}
+                      {item.name}
                     </Text>
+                    {/* "coming soon" tag on platforms we don't support yet */}
+                    {!item.available && <Text style={styles.comingSoon}>coming soon</Text>}
                   </Pressable>
                 );
               }}
@@ -133,5 +141,6 @@ const styles = StyleSheet.create({
   optionText: { fontSize: 16, color: "#1a1a1a", flex: 1 },
   optionSelected: { fontWeight: "700", color: "#2563eb" },
   optionDisabled: { color: "#cccccc" },
+  comingSoon: { fontSize: 12, color: "#aaaaaa", fontStyle: "italic", marginLeft: 8 },
   doneWrap: { marginTop: 16 },
 });
