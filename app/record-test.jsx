@@ -14,9 +14,11 @@ import { File } from "expo-file-system";
 import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import AppButton from "../components/AppButton";
+import schema from "../schemas/elogbook_neurosurgery_operation_log.json";
 // Paste the Function URL that `firebase deploy` printed, between the quotes.
 const PING_URL = "https://ping-2nfo2acdaa-nw.a.run.app";
 const TRANSCRIBE_URL = "https://europe-west2-smart-portfolio-d9c94.cloudfunctions.net/transcribe";
+const PARSE_URL = "https://europe-west2-smart-portfolio-d9c94.cloudfunctions.net/parse";
 
 
 export default function RecordTestScreen() {
@@ -29,6 +31,7 @@ export default function RecordTestScreen() {
   const [statusText, setStatusText] = useState("Tap Record to start.");
   const [pingResult, setPingResult] = useState("");
   const [transcript, setTranscript] = useState("");
+  const [parsedFields, setParsedFields] = useState(null);
 
   // A player bound to the latest recording, so we can play it back.
   const player = useAudioPlayer(recordingUri ? { uri: recordingUri } : undefined);
@@ -96,6 +99,35 @@ export default function RecordTestScreen() {
       setStatusText("Transcription failed.");
     }
   }
+  // Send the transcript (plus our schema's field list) to the backend, which
+  // asks Claude to return structured { fieldId: value } data. Show the result.
+  async function parseTranscript() {
+    if (!transcript) return;
+    try {
+      setParsedFields(null);
+      setStatusText("Extracting fields…");
+
+      // Send only the bits Claude needs: each field's id and label.
+      const fieldsForClaude = schema.fields.map((f) => ({ id: f.id, label: f.label }));
+
+      const response = await fetch(PARSE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ transcript, fields: fieldsForClaude }),
+      });
+      const data = await response.json();
+
+      if (data.fields) {
+        setParsedFields(data.fields);
+        setStatusText("Fields extracted.");
+        } else {
+        setStatusText("Parse failed: " + (data.error || "unknown"));
+        setTranscript("RAW REPLY:\n" + (data.raw || JSON.stringify(data)));
+      }
+    } catch (e) {
+      setStatusText("Parse failed: " + e.message);
+    }
+  }
   function playRecording() {
     player.seekTo(0); // back to the start
     player.play();
@@ -126,6 +158,19 @@ export default function RecordTestScreen() {
           <View style={{ height: 12 }} />
           <AppButton onPress={transcribeRecording}>Transcribe</AppButton>
           {transcript ? <Text style={styles.transcript}>{transcript}</Text> : null}
+          {transcript ? (
+            <>
+              <View style={{ height: 12 }} />
+              <AppButton onPress={parseTranscript}>Extract fields (AI)</AppButton>
+            </>
+          ) : null}
+          {parsedFields
+            ? schema.fields.map((f) => (
+                <Text key={f.id} style={styles.field}>
+                  {f.label}: {parsedFields[f.id] ? parsedFields[f.id] : "—"}
+                </Text>
+              ))
+            : null}
           <Text style={styles.uri}>{"Saved file:\n" + recordingUri}</Text>
         </>
       ) : null}
@@ -139,4 +184,5 @@ const styles = StyleSheet.create({
   status: { fontSize: 15, color: "#555555", textAlign: "center", marginBottom: 28 },
   uri: { fontSize: 12, color: "#888888", marginTop: 24, textAlign: "center" },
   transcript: { fontSize: 15, color: "#1a1a1a", marginTop: 20, textAlign: "center", lineHeight: 22 },
+  field: { fontSize: 14, color: "#1a1a1a", marginTop: 6, alignSelf: "stretch" },
 });
