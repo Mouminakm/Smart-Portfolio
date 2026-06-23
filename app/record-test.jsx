@@ -12,9 +12,19 @@ import {
 } from "expo-audio";
 import { File } from "expo-file-system";
 import { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import {
+    KeyboardAvoidingView,
+    Platform,
+    Pressable,
+    ScrollView,
+    StyleSheet,
+    Text,
+    TextInput,
+    View,
+} from "react-native";
 import AppButton from "../components/AppButton";
 import schema from "../schemas/elogbook_neurosurgery_operation_log.json";
+
 // Paste the Function URL that `firebase deploy` printed, between the quotes.
 const PING_URL = "https://ping-2nfo2acdaa-nw.a.run.app";
 const TRANSCRIBE_URL = "https://europe-west2-smart-portfolio-d9c94.cloudfunctions.net/transcribe";
@@ -31,8 +41,8 @@ export default function RecordTestScreen() {
   const [statusText, setStatusText] = useState("Tap Record to start.");
   const [pingResult, setPingResult] = useState("");
   const [transcript, setTranscript] = useState("");
-  const [parsedFields, setParsedFields] = useState(null);
-
+  const [fieldValues, setFieldValues] = useState(null); // editable values: id -> text
+  const [confirmed, setConfirmed] = useState({});        // ticked state: id -> true/false
   // A player bound to the latest recording, so we can play it back.
   const player = useAudioPlayer(recordingUri ? { uri: recordingUri } : undefined);
 
@@ -99,12 +109,20 @@ export default function RecordTestScreen() {
       setStatusText("Transcription failed.");
     }
   }
+  // Update one field's value as the user types.
+  function updateField(id, value) {
+    setFieldValues((prev) => ({ ...prev, [id]: value }));
+  }
+
+  // Tick or untick a field as "confirmed".
+  function toggleConfirmed(id) {
+    setConfirmed((prev) => ({ ...prev, [id]: !prev[id] }));
+  }
   // Send the transcript (plus our schema's field list) to the backend, which
   // asks Claude to return structured { fieldId: value } data. Show the result.
   async function parseTranscript() {
     if (!transcript) return;
     try {
-      setParsedFields(null);
       setStatusText("Extracting fields…");
 
       // Send only the bits Claude needs: each field's id and label.
@@ -118,11 +136,23 @@ export default function RecordTestScreen() {
       const data = await response.json();
 
       if (data.fields) {
-        setParsedFields(data.fields);
-        setStatusText("Fields extracted.");
-        } else {
+        // Seed an editable value for every schema field: Claude's answer, or
+        // an empty string if it didn't mention that field. Tick (confirm) any
+        // field that came back with a value; leave empty ones unticked.
+        const seeded = {};
+        const seededTicks = {};
+        schema.fields.forEach((f) => {
+          const value = data.fields[f.id] || "";
+          seeded[f.id] = value;
+          if (value !== "") {
+            seededTicks[f.id] = true; // has a value -> start confirmed
+          }
+        });
+        setFieldValues(seeded);
+        setConfirmed(seededTicks);
+        setStatusText("Fields extracted — review, untick or edit below.");
+      } else {
         setStatusText("Parse failed: " + (data.error || "unknown"));
-        setTranscript("RAW REPLY:\n" + (data.raw || JSON.stringify(data)));
       }
     } catch (e) {
       setStatusText("Parse failed: " + e.message);
@@ -137,8 +167,16 @@ export default function RecordTestScreen() {
   const isRecording = recorderState.isRecording;
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Recording test</Text>
+    <KeyboardAvoidingView
+      style={styles.flex}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      keyboardVerticalOffset={Platform.OS === "ios" ? 90 : 0}
+    >
+      <ScrollView
+        contentContainerStyle={styles.container}
+        keyboardShouldPersistTaps="handled"
+      >
+        <Text style={styles.title}>Recording test</Text>
       <Text style={styles.status}>{statusText}</Text>
       <View style={{ height: 8 }} />
       <AppButton onPress={pingBackend}>Ping backend</AppButton>
@@ -164,25 +202,56 @@ export default function RecordTestScreen() {
               <AppButton onPress={parseTranscript}>Extract fields (AI)</AppButton>
             </>
           ) : null}
-          {parsedFields
+          {fieldValues
             ? schema.fields.map((f) => (
-                <Text key={f.id} style={styles.field}>
-                  {f.label}: {parsedFields[f.id] ? parsedFields[f.id] : "—"}
-                </Text>
+                <View key={f.id} style={styles.fieldRow}>
+                  {/* Tap to tick this field as confirmed. */}
+                  <Pressable
+                    style={[styles.tick, confirmed[f.id] && styles.tickOn]}
+                    onPress={() => toggleConfirmed(f.id)}
+                  >
+                    {confirmed[f.id] ? <Text style={styles.tickMark}>✓</Text> : null}
+                  </Pressable>
+                  <View style={styles.fieldBody}>
+                    <Text style={styles.fieldLabel}>{f.label}</Text>
+                    <TextInput
+                      style={styles.fieldInput}
+                      value={fieldValues[f.id]}
+                      onChangeText={(t) => updateField(f.id, t)}
+                      placeholder="—"
+                      placeholderTextColor="#bbbbbb"
+                      multiline
+                    />
+                  </View>
+                </View>
               ))
             : null}
           <Text style={styles.uri}>{"Saved file:\n" + recordingUri}</Text>
-        </>
+          </>
       ) : null}
-    </View>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: "center", padding: 24, backgroundColor: "#ffffff" },
+  flex: { flex: 1, backgroundColor: "#ffffff" },
+  container: { flexGrow: 1, padding: 24, paddingTop: 40, backgroundColor: "#ffffff" },
   title: { fontSize: 24, fontWeight: "bold", color: "#1a1a1a", textAlign: "center", marginBottom: 12 },
   status: { fontSize: 15, color: "#555555", textAlign: "center", marginBottom: 28 },
   uri: { fontSize: 12, color: "#888888", marginTop: 24, textAlign: "center" },
   transcript: { fontSize: 15, color: "#1a1a1a", marginTop: 20, textAlign: "center", lineHeight: 22 },
-  field: { fontSize: 14, color: "#1a1a1a", marginTop: 6, alignSelf: "stretch" },
+  fieldRow: { flexDirection: "row", alignItems: "flex-start", alignSelf: "stretch", marginTop: 14 },
+  tick: {
+    width: 24, height: 24, borderRadius: 6, borderWidth: 1, borderColor: "#cccccc",
+    marginRight: 10, marginTop: 22, alignItems: "center", justifyContent: "center",
+  },
+  tickOn: { backgroundColor: "#2563eb", borderColor: "#2563eb" },
+  tickMark: { color: "#ffffff", fontSize: 14, fontWeight: "700" },
+  fieldBody: { flex: 1 },
+  fieldLabel: { fontSize: 13, fontWeight: "600", color: "#1a1a1a", marginBottom: 4 },
+  fieldInput: {
+    borderWidth: 1, borderColor: "#dddddd", borderRadius: 8,
+    paddingVertical: 8, paddingHorizontal: 10, fontSize: 15, color: "#1a1a1a",
+  },
 });
