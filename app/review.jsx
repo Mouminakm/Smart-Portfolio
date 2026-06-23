@@ -1,74 +1,139 @@
 // app/review.jsx
 // Core loop screen — Review & edit (spec F7).
-// After dictation, the user checks and fixes every field before submitting.
-// Static shell: values are placeholders; real editing arrives in Phase 5.
+// Reads the entry from the shared context (filled by Dictation), shows every
+// field as editable + tickable, starts with all fields ticked, and offers a
+// top "Approve all / Clear all" toggle. Nothing proceeds until the user goes on.
 
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { useEffect } from "react";
+import {
+  KeyboardAvoidingView,
+  Platform,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
 import AppButton from "../components/AppButton";
+import { useEntry } from "../contexts/EntryContext";
+import schema from "../schemas/elogbook_neurosurgery_operation_log.json";
 
 export default function ReviewScreen() {
-  // Placeholder "captured" values. In Phase 5 these come from the AI output.
-  const captured = [
-    { label: "Date of operation", value: "14 June 2026" },
-    { label: "Procedure", value: "Dynamic hip screw" },
-    { label: "Level of supervision", value: "Supervised – trainer scrubbed" },
-    { label: "Operative role", value: "Performed" },
-    { label: "Reflection / learning points", value: "Tap to review the paraphrased reflection." },
-  ];
+  const { fieldValues, setFieldValues, confirmed, setConfirmed } = useEntry();
+
+  // When the screen opens, tick every field as the baseline (the user unticks
+  // anything they want to revisit). Runs once on mount.
+  useEffect(() => {
+    const allTicked = {};
+    schema.fields.forEach((f) => {
+      allTicked[f.id] = true;
+    });
+    setConfirmed(allTicked);
+  }, []);
+
+  function updateField(id, value) {
+    setFieldValues((prev) => ({ ...prev, [id]: value }));
+  }
+
+  function toggleConfirmed(id) {
+    setConfirmed((prev) => ({ ...prev, [id]: !prev[id] }));
+  }
+
+  // Are all fields currently ticked? Drives the top toggle's label/behaviour.
+  const allConfirmed = schema.fields.every((f) => confirmed[f.id]);
+
+  function toggleAll() {
+    const next = {};
+    schema.fields.forEach((f) => {
+      next[f.id] = !allConfirmed; // if all on -> turn all off, else turn all on
+    });
+    setConfirmed(next);
+  }
 
   return (
-    // ScrollView lets the content scroll if it's taller than the screen —
-    // important here, since a full set of fields plus a button can overflow.
-    // (A plain View doesn't scroll; anything past the bottom edge is unreachable.)
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      <Text style={styles.title}>Review your entry</Text>
-      <Text style={styles.subtitle}>
-        Check each field and fix anything before submitting. Nothing is sent
-        until you confirm.
-      </Text>
+    <KeyboardAvoidingView
+      style={styles.flex}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      keyboardVerticalOffset={Platform.OS === "ios" ? 90 : 0}
+    >
+      <ScrollView style={styles.container} contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
+        <Text style={styles.title}>Review your entry</Text>
+        <Text style={styles.subtitle}>
+          Every field is ticked. Untick or edit anything that needs a change.
+          Nothing is sent until you continue.
+        </Text>
 
-      {captured.map((item, index) => (
-        <View key={index} style={styles.fieldCard}>
-          <Text style={styles.fieldLabel}>{item.label}</Text>
-          <Text style={styles.fieldValue}>{item.value}</Text>
-          {/* "Edit" is a visual cue for now; tappable editing comes in Phase 5. */}
-          <Text style={styles.editHint}>Edit</Text>
-        </View>
-      ))}
+        {/* Top control: approve all / clear all. */}
+        <Pressable style={styles.approveAll} onPress={toggleAll}>
+          <View style={[styles.tick, allConfirmed && styles.tickOn]}>
+            {allConfirmed ? <Text style={styles.tickMark}>✓</Text> : null}
+          </View>
+          <Text style={styles.approveAllText}>
+            {allConfirmed ? "Clear all ticks" : "Approve all"}
+          </Text>
+        </Pressable>
 
-      {/* Forward to submission. We build /submission next. */}
-      <AppButton href="/submission">Looks good — continue</AppButton>
-    </ScrollView>
+        {/* One editable, tickable row per schema field. */}
+        {schema.fields.map((f) => (
+          <View key={f.id} style={styles.fieldRow}>
+            <Pressable
+              style={[styles.tick, confirmed[f.id] && styles.tickOn]}
+              onPress={() => toggleConfirmed(f.id)}
+            >
+              {confirmed[f.id] ? <Text style={styles.tickMark}>✓</Text> : null}
+            </Pressable>
+            <View style={styles.fieldBody}>
+              <Text style={styles.fieldLabel}>{f.label}</Text>
+              <TextInput
+                style={styles.fieldInput}
+                value={fieldValues[f.id] || ""}
+                onChangeText={(t) => updateField(f.id, t)}
+                placeholder="—"
+                placeholderTextColor="#bbbbbb"
+                multiline
+              />
+            </View>
+          </View>
+        ))}
+
+        <View style={{ height: 20 }} />
+        <AppButton href="/submission">Looks good — continue</AppButton>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 }
 
 const styles = StyleSheet.create({
+  flex: { flex: 1, backgroundColor: "#ffffff" },
   container: { flex: 1, backgroundColor: "#ffffff" },
-  // On a ScrollView, padding goes on contentContainerStyle, not style.
   content: { padding: 24, paddingTop: 32, paddingBottom: 40 },
   title: { fontSize: 26, fontWeight: "bold", color: "#1a1a1a", textAlign: "center" },
-  subtitle: {
-    fontSize: 15,
-    color: "#555555",
-    textAlign: "center",
-    lineHeight: 22,
-    marginTop: 10,
-    marginBottom: 24,
-  },
-  fieldCard: {
+  subtitle: { fontSize: 15, color: "#555555", textAlign: "center", lineHeight: 22, marginTop: 10, marginBottom: 20 },
+
+  approveAll: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#eff6ff",
     borderWidth: 1,
-    borderColor: "#e2e2e2",
+    borderColor: "#bfdbfe",
     borderRadius: 10,
-    padding: 14,
-    marginBottom: 12,
+    padding: 12,
+    marginBottom: 18,
   },
-  fieldLabel: { fontSize: 13, fontWeight: "600", color: "#888888" },
-  fieldValue: { fontSize: 16, color: "#1a1a1a", marginTop: 4 },
-  editHint: {
-    fontSize: 13,
-    fontWeight: "600",
-    color: "#2563eb",
-    marginTop: 8,
+  approveAllText: { fontSize: 15, fontWeight: "600", color: "#1e40af", marginLeft: 10 },
+
+  fieldRow: { flexDirection: "row", alignItems: "flex-start", marginBottom: 14 },
+  tick: {
+    width: 24, height: 24, borderRadius: 6, borderWidth: 1, borderColor: "#cccccc",
+    alignItems: "center", justifyContent: "center",
   },
-  button: {}, // (unused here; AppButton carries its own styling)
+  tickOn: { backgroundColor: "#2563eb", borderColor: "#2563eb" },
+  tickMark: { color: "#ffffff", fontSize: 14, fontWeight: "700" },
+  fieldBody: { flex: 1, marginLeft: 10 },
+  fieldLabel: { fontSize: 13, fontWeight: "600", color: "#1a1a1a", marginBottom: 4 },
+  fieldInput: {
+    borderWidth: 1, borderColor: "#dddddd", borderRadius: 8,
+    paddingVertical: 8, paddingHorizontal: 10, fontSize: 15, color: "#1a1a1a",
+  },
 });
