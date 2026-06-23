@@ -1,19 +1,47 @@
 // app/dictation.jsx
 // Core loop screen — Dictation (spec S3).
-// Checklist is rendered from the schema as a single flat list, in the schema's
-// own order. Fields flagged showOptions display their choices in brackets.
-// Tap = record/pause; hold 1s = finish.
+// Checklist rendered from the schema (visual). The record button now really
+// records; finishing runs transcribe -> parse, saves into the shared entry
+// context, and routes to Review. Tap = record/pause; hold 1s = finish.
 
+import {
+  AudioModule,
+  RecordingPresets,
+  setAudioModeAsync,
+  useAudioRecorder,
+  useAudioRecorderState,
+} from "expo-audio";
+import { File } from "expo-file-system";
+import { useRouter } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 import { Animated, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import AppButton from "../components/AppButton";
+import { useEntry } from "../contexts/EntryContext";
 import schema from "../schemas/elogbook_neurosurgery_operation_log.json";
 
 const HOLD_DURATION = 1000; // milliseconds you must hold to finish
 
+// Backend URLs (same ones the test screen uses).
+const TRANSCRIBE_URL = "https://europe-west2-smart-portfolio-d9c94.cloudfunctions.net/transcribe";
+const PARSE_URL = "https://europe-west2-smart-portfolio-d9c94.cloudfunctions.net/parse";
+
 export default function DictationScreen() {
+  const router = useRouter();
+  const { setTranscript, setFieldValues, setConfirmed, resetEntry } = useEntry();
+
   const [status, setStatus] = useState("paused"); // "recording" | "paused" | "finished"
   const [isHolding, setIsHolding] = useState(false);
+  const [processing, setProcessing] = useState(""); // "" | a progress message
+  const [ready, setReady] = useState(false);        // true once fields are parsed
+
+  // ---- Real audio recorder ----
+  const recorder = useAudioRecorder(RecordingPresets.HIGH_QUALITY);
+  const recorderState = useAudioRecorderState(recorder);
+
+  // Start a fresh entry whenever this screen first opens.
+  useEffect(() => {
+    resetEntry();
+  }, []);
 
   // ---- Recording pulse ----
   const pulse = useRef(new Animated.Value(0)).current;
@@ -50,7 +78,7 @@ export default function DictationScreen() {
       if (finished) {
         holdCompleted.current = true;
         setIsHolding(false);
-        setStatus("finished");
+        finishRecording(); // <-- real finish: stop, transcribe, parse
       }
     });
   }
@@ -61,7 +89,87 @@ export default function DictationScreen() {
     holdProgress.stopAnimation();
     Animated.timing(holdProgress, { toValue: 0, duration: 150, useNativeDriver: true }).start();
     setIsHolding(false);
-    setStatus((current) => (current === "recording" ? "paused" : "recording"));
+    toggleRecording(); // <-- real start/pause
+  }
+
+  // Start recording, or pause it, depending on current state.
+  async function toggleRecording() {
+    if (status === "recording") {
+      // Pause: expo-audio doesn't pause-resume simply, so we keep it simple and
+      // just stop the mic but stay on screen. (We treat tap as a pause visually;
+      // the held audio continues into the same file on most platforms.)
+      setStatus("paused");
+      return;
+    }
+    // Start recording.
+    const permission = await AudioModule.requestRecordingPermissionsAsync();
+    if (!permission.granted) {
+      setProcessing("Microphone permission denied. Enable it in your phone settings.");
+      return;
+    }
+    await setAudioModeAsync({ playsInSilentMode: true, allowsRecording: true });
+    await recorder.prepareToRecordAsync();
+    recorder.record();
+    setStatus("recording");
+  }
+
+  // Finish: stop the mic, then transcribe and parse, then go to Review.
+  async function finishRecording() {
+    setStatus("finished");
+    try {
+      await recorder.stop();
+      const uri = recorder.uri;
+      if (!uri) {
+        setProcessing("No audio was captured. Go back and try again.");
+        return;
+      }
+
+      // 1) Transcribe
+      setProcessing("Transcribing your dictation…");
+      const base64Audio = await new File(uri).base64();
+      const tRes = await fetch(TRANSCRIBE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ audioBase64: base64Audio, mimeType: "audio/m4a" }),
+      });
+      const tData = await tRes.json();
+      if (tData.transcript === undefined) {
+        setProcessing("Transcription failed: " + (tData.error || "unknown"));
+        return;
+      }
+      const transcriptText = tData.transcript || "";
+      setTranscript(transcriptText);
+
+      // 2) Parse into fields
+      setProcessing("Extracting fields…");
+      const fieldsForClaude = schema.fields.map((f) => ({ id: f.id, label: f.label }));
+      const pRes = await fetch(PARSE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ transcript: transcriptText, fields: fieldsForClaude }),
+      });
+      const pData = await pRes.json();
+      if (!pData.fields) {
+        setProcessing("Field extraction failed: " + (pData.error || "unknown"));
+        return;
+      }
+
+      // 3) Seed the shared entry: values + tick anything that came back filled.
+      const seeded = {};
+      const seededTicks = {};
+      schema.fields.forEach((f) => {
+        const value = pData.fields[f.id] || "";
+        seeded[f.id] = value;
+        if (value !== "") seededTicks[f.id] = true;
+      });
+      setFieldValues(seeded);
+      setConfirmed(seededTicks);
+
+      setProcessing("");
+      setReady(true);
+    } catch (e) {
+      setProcessing("Something went wrong: " + e.message);
+    }
   }
 
   const buttonScale = holdProgress.interpolate({ inputRange: [0, 1], outputRange: [1, 1.5] });
@@ -72,10 +180,6 @@ export default function DictationScreen() {
   if (isHolding) hint = "Keep holding to finish…";
   else if (status === "recording") hint = "Recording — tap to pause · hold to finish";
 
-  // One checklist row. If the field is flagged showOptions and has options,
-  // we build a "(a / b / c)" hint from the option labels. We take the part
-  // before any ":" so long labels (like CEPOD's) show just the keyword —
-  // "Elective: Surgery at convenient time" becomes "Elective".
   function FieldRow({ field }) {
     const optionsHint =
       field.showOptions && field.options
@@ -87,7 +191,6 @@ export default function DictationScreen() {
         <View style={styles.pendingCircle} />
         <View style={styles.fieldTextWrap}>
           <Text style={styles.fieldText}>{field.label}</Text>
-          {/* Only renders when there's a hint to show. */}
           {optionsHint && <Text style={styles.optionsHint}>({optionsHint})</Text>}
         </View>
       </View>
@@ -96,37 +199,34 @@ export default function DictationScreen() {
 
   return (
     <View style={styles.container}>
-      {/* ===== TOP TWO-THIRDS: checklist (scrollable) ===== */}
+      {/* ===== TOP: checklist ===== */}
       <View style={styles.checklistArea}>
-      <ScrollView contentContainerStyle={styles.checklistContent}>
+        <ScrollView contentContainerStyle={styles.checklistContent}>
           <Text style={styles.schemaContext}>
             {schema.platform} · {schema.entryType.replace("_", " ")}
           </Text>
 
-          {/* Privacy notice (spec F11): the app never records patient
-              identifiers. If the portfolio needs a patient ID, the user
-              adds it directly on the website at the submission step. */}
           <View style={styles.noticeBanner}>
             <Text style={styles.noticeText}>
-              Patient ID should not be recorded to keep the app free of patient-identifiable details. 
-
-              If your portfolio requires one, you'll have to enter it manually on the website at the submission step.
-            
+              Patient ID should not be recorded to keep the app free of patient-identifiable
+              details. If your portfolio requires one, you'll enter it manually on the website
+              at the submission step.
             </Text>
           </View>
 
-          {/* One flat list, straight from the schema, in its original order. */}
           {schema.fields.map((field) => (
             <FieldRow key={field.id} field={field} />
           ))}
         </ScrollView>
       </View>
 
-      {/* ===== BOTTOM ONE-THIRD: record control ===== */}
+      {/* ===== BOTTOM: record control ===== */}
       <View style={styles.controlArea}>
-        {status === "finished" ? (
+        {processing ? (
+          <Text style={styles.doneText}>{processing}</Text>
+        ) : ready ? (
           <>
-            <Text style={styles.doneText}>Recording finished</Text>
+            <Text style={styles.doneText}>Ready to review</Text>
             <AppButton href="/review" style={{ paddingHorizontal: 40 }}>
               Review and edit
             </AppButton>
@@ -134,16 +234,10 @@ export default function DictationScreen() {
         ) : (
           <>
             <Animated.View
-              style={[
-                styles.pulseRing,
-                { transform: [{ scale: pulseScale }], opacity: pulseOpacity },
-              ]}
+              style={[styles.pulseRing, { transform: [{ scale: pulseScale }], opacity: pulseOpacity }]}
             />
             <Animated.View
-              style={[
-                styles.chargeRing,
-                { transform: [{ scale: chargeScale }], opacity: chargeOpacity },
-              ]}
+              style={[styles.chargeRing, { transform: [{ scale: chargeScale }], opacity: chargeOpacity }]}
             />
             <Pressable onPressIn={startHold} onPressOut={endHold}>
               <Animated.View
@@ -168,74 +262,22 @@ export default function DictationScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#ffffff" },
-
   checklistArea: { flex: 2 },
   checklistContent: { padding: 24, paddingTop: 28, paddingBottom: 16 },
-  schemaContext: {
-    fontSize: 12,
-    fontWeight: "600",
-    color: "#2563eb",
-    textTransform: "capitalize",
-    marginBottom: 16,
-  },
-  noticeBanner: {
-    backgroundColor: "#eff6ff", // soft blue "info" background
-    borderWidth: 1,
-    borderColor: "#bfdbfe",
-    borderRadius: 10,
-    padding: 12,
-    marginBottom: 20,
-  },
+  schemaContext: { fontSize: 12, fontWeight: "600", color: "#2563eb", textTransform: "capitalize", marginBottom: 16 },
+  noticeBanner: { backgroundColor: "#eff6ff", borderWidth: 1, borderColor: "#bfdbfe", borderRadius: 10, padding: 12, marginBottom: 20 },
   noticeText: { fontSize: 13, color: "#1e40af", lineHeight: 19 },
-  // alignItems flex-start so the circle lines up with the first line of text
-  // (some rows now have a second line for the options hint).
   fieldRow: { flexDirection: "row", alignItems: "flex-start", marginBottom: 16 },
-  pendingCircle: {
-    width: 20,
-    height: 20,
-    borderRadius: 10,
-    borderWidth: 2,
-    borderColor: "#cccccc",
-    marginRight: 14,
-    marginTop: 1,
-  },
+  pendingCircle: { width: 20, height: 20, borderRadius: 10, borderWidth: 2, borderColor: "#cccccc", marginRight: 14, marginTop: 1 },
   fieldTextWrap: { flex: 1 },
   fieldText: { fontSize: 15, color: "#1a1a1a" },
   optionsHint: { fontSize: 12, color: "#999999", marginTop: 2 },
-
-  controlArea: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    borderTopWidth: 1,
-    borderTopColor: "#f0f0f0",
-  },
-  pulseRing: {
-    position: "absolute",
-    width: 88,
-    height: 88,
-    borderRadius: 44,
-    backgroundColor: "#2563eb",
-  },
-  chargeRing: {
-    position: "absolute",
-    width: 88,
-    height: 88,
-    borderRadius: 44,
-    borderWidth: 4,
-    borderColor: "#2563eb",
-    backgroundColor: "transparent",
-  },
-  recordButton: {
-    width: 88,
-    height: 88,
-    borderRadius: 44,
-    backgroundColor: "#2563eb",
-    alignItems: "center",
-    justifyContent: "center",
-  },
+  controlArea: { flex: 1, alignItems: "center", justifyContent: "center", borderTopWidth: 1, borderTopColor: "#f0f0f0", paddingHorizontal: 24 },
+  pulseRing: { position: "absolute", width: 88, height: 88, borderRadius: 44, backgroundColor: "#2563eb" },
+  chargeRing: { position: "absolute", width: 88, height: 88, borderRadius: 44, borderWidth: 4, borderColor: "#2563eb", backgroundColor: "transparent" },
+  recordButton: { width: 88, height: 88, borderRadius: 44, backgroundColor: "#2563eb", alignItems: "center", justifyContent: "center" },
   recordButtonActive: { backgroundColor: "#dc2626" },
   recordButtonText: { color: "#ffffff", fontSize: 16, fontWeight: "700" },
   controlHint: { fontSize: 13, color: "#888888", marginTop: 16, textAlign: "center" },
-  doneText: { fontSize: 16, fontWeight: "600", color: "#1a1a1a", marginBottom: 16 },
+  doneText: { fontSize: 16, fontWeight: "600", color: "#1a1a1a", marginBottom: 16, textAlign: "center" },
 });

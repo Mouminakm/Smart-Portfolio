@@ -4,6 +4,7 @@
 
 import { Stack } from "expo-router";
 import { AuthProvider, useAuth } from "../contexts/AuthContext";
+import { EntryProvider } from "../contexts/EntryContext";
 
 function RootNavigator() {
   const { isSignedIn, hasCompletedOnboarding, isLoading } = useAuth();
@@ -52,7 +53,9 @@ function RootNavigator() {
 export default function RootLayout() {
   return (
     <AuthProvider>
-      <RootNavigator />
+      <EntryProvider>
+        <RootNavigator />
+      </EntryProvider>
     </AuthProvider>
   );
 }
