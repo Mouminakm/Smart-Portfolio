@@ -10,11 +10,14 @@ import {
     useAudioRecorder,
     useAudioRecorderState,
 } from "expo-audio";
+import { File } from "expo-file-system";
 import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import AppButton from "../components/AppButton";
 // Paste the Function URL that `firebase deploy` printed, between the quotes.
 const PING_URL = "https://ping-2nfo2acdaa-nw.a.run.app";
+const TRANSCRIBE_URL = "https://europe-west2-smart-portfolio-d9c94.cloudfunctions.net/transcribe";
+
 
 export default function RecordTestScreen() {
   // The recorder, set to good-quality audio.
@@ -25,6 +28,7 @@ export default function RecordTestScreen() {
   const [recordingUri, setRecordingUri] = useState(null); // saved file, once we have one
   const [statusText, setStatusText] = useState("Tap Record to start.");
   const [pingResult, setPingResult] = useState("");
+  const [transcript, setTranscript] = useState("");
 
   // A player bound to the latest recording, so we can play it back.
   const player = useAudioPlayer(recordingUri ? { uri: recordingUri } : undefined);
@@ -63,6 +67,35 @@ export default function RecordTestScreen() {
       setPingResult("Failed: " + e.message);
     }
   }
+  // Read the recorded file as base64 text, send it to our backend (which
+  // forwards it to Deepgram), and show the transcript that comes back.
+  async function transcribeRecording() {
+    if (!recordingUri) return;
+    try {
+      setTranscript("");
+      setStatusText("Transcribing…");
+      // new File(uri).base64() reads the file's contents as a base64 string.
+      const base64Audio = await new File(recordingUri).base64();
+
+      const response = await fetch(TRANSCRIBE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ audioBase64: base64Audio, mimeType: "audio/m4a" }),
+      });
+      const data = await response.json();
+
+      if (data.transcript !== undefined) {
+        setTranscript(data.transcript || "(no speech detected)");
+        setStatusText("Done.");
+      } else {
+        setTranscript("Error: " + (data.error || "unknown"));
+        setStatusText("Transcription failed.");
+      }
+    } catch (e) {
+      setTranscript("Failed: " + e.message);
+      setStatusText("Transcription failed.");
+    }
+  }
   function playRecording() {
     player.seekTo(0); // back to the start
     player.play();
@@ -90,6 +123,9 @@ export default function RecordTestScreen() {
         <>
           <View style={{ height: 12 }} />
           <AppButton onPress={playRecording}>Play recording</AppButton>
+          <View style={{ height: 12 }} />
+          <AppButton onPress={transcribeRecording}>Transcribe</AppButton>
+          {transcript ? <Text style={styles.transcript}>{transcript}</Text> : null}
           <Text style={styles.uri}>{"Saved file:\n" + recordingUri}</Text>
         </>
       ) : null}
@@ -102,4 +138,5 @@ const styles = StyleSheet.create({
   title: { fontSize: 24, fontWeight: "bold", color: "#1a1a1a", textAlign: "center", marginBottom: 12 },
   status: { fontSize: 15, color: "#555555", textAlign: "center", marginBottom: 28 },
   uri: { fontSize: 12, color: "#888888", marginTop: 24, textAlign: "center" },
+  transcript: { fontSize: 15, color: "#1a1a1a", marginTop: 20, textAlign: "center", lineHeight: 22 },
 });
