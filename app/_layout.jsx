@@ -28,6 +28,7 @@ function RootNavigator() {
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="edit-profile" options={{ title: "Edit profile" }} />
         <Stack.Screen name="record-test" options={{ title: "Recording test" }} />
+        <Stack.Screen name="webview-test" options={{ title: "eLogbook test" }} />
         <Stack.Screen name="dictation" options={{ title: "Dictation" }} />
         <Stack.Screen name="review" options={{ title: "Review & edit" }} />
         <Stack.Screen name="submission" options={{ title: "Submit" }} />
