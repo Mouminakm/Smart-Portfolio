@@ -1,15 +1,13 @@
 // app/webview-test.jsx
-// Phase 7, stage 3: inject the EASY-LAYER fills (text/date/textarea + selects)
-// into the live eLogbook form on demand, and report which fields landed.
-// Waits for the form to exist first (Angular renders it late).
+// Phase 7: easy layer (text/select) + MEDIUM layer (checkbox/radio) injection
+// into the live eLogbook Add Operation form, with per-field reporting.
 
 import { useRef, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { WebView } from "react-native-webview";
 import AppButton from "../components/AppButton";
 
-// --- Test values (hard-coded for now; no real patient data) ---
-// Selects use the EXACT visible option text from our schema/DOM capture.
+// --- Test values (hard-coded; no real patient data) ---
 const TEST_VALUES = {
   text: {
     "#dateofoperation": "23-06-2026",
@@ -21,10 +19,40 @@ const TEST_VALUES = {
     "#asagrade": "Fit and Well",
     "#supervision": "Performed",
   },
+  // Checkboxes: selector -> true/false
+  checkboxes: {
+    "#private": false,
+    "#roboticsurgery": false,
+    "#minimalaccess": true,
+    "#complicationscheck": false,
+  },
+  // Radio groups: each is a list of { label, selector }, plus the chosen value.
+  radios: [
+    {
+      value: "Yes",
+      options: [
+        { label: "No", selector: "#endoscope0" },
+        { label: "Yes", selector: "#endoscope1" },
+      ],
+    },
+    {
+      value: "No",
+      options: [
+        { label: "No", selector: "#microscope0" },
+        { label: "Yes", selector: "#microscope1" },
+      ],
+    },
+    {
+      value: "No",
+      options: [
+        { label: "Unknown", selector: "#ishubcase0" },
+        { label: "No", selector: "#ishubcase1" },
+        { label: "Yes", selector: "#ishubcase2" },
+      ],
+    },
+  ],
 };
 
-// This whole function is sent INTO the page and run there when we tap Fill.
-// It waits for the form, fills the easy fields, and posts back a report.
 function buildFillScript(values) {
   return `
   (function() {
@@ -47,10 +75,24 @@ function buildFillScript(values) {
       sel.value = match.value; fireInput(sel);
       return { selector: selector, ok: true };
     }
+    function setCheckbox(selector, value) {
+      var el = document.querySelector(selector);
+      if (!el) return { selector: selector, ok: false, reason: 'not found' };
+      el.checked = !!value; fireInput(el);
+      return { selector: selector, ok: true, note: value ? 'checked' : 'unchecked' };
+    }
+    function setRadio(options, value) {
+      var target = String(value).trim().toLowerCase();
+      var choice = options.find(function(o){ return o.label.trim().toLowerCase() === target; });
+      if (!choice) return { ok: false, reason: 'no radio option matches: ' + value };
+      var el = document.querySelector(choice.selector);
+      if (!el) return { selector: choice.selector, ok: false, reason: 'not found' };
+      el.checked = true; fireInput(el);
+      return { selector: choice.selector, ok: true };
+    }
 
     var values = ${JSON.stringify(values)};
 
-    // Wait for the form to exist (a known field), then fill. Poll up to ~15s.
     var tries = 0;
     function run() {
       tries++;
@@ -62,6 +104,8 @@ function buildFillScript(values) {
       var results = [];
       Object.keys(values.text).forEach(function(sel){ results.push(fillText(sel, values.text[sel])); });
       Object.keys(values.selects).forEach(function(sel){ results.push(selectByLabel(sel, values.selects[sel])); });
+      Object.keys(values.checkboxes).forEach(function(sel){ results.push(setCheckbox(sel, values.checkboxes[sel])); });
+      values.radios.forEach(function(r){ results.push(setRadio(r.options, r.value)); });
       window.ReactNativeWebView.postMessage(JSON.stringify({ type:'fill', results: results }));
     }
     run();
@@ -72,14 +116,14 @@ function buildFillScript(values) {
 
 export default function WebViewTestScreen() {
   const webRef = useRef(null);
-  const [report, setReport] = useState("Log in and go to the Add Operation form, then tap Fill.");
-// Navigate the WebView to the Add Operation form (works once logged in).
-const FORM_URL = "https://client.elogbook.org/eLogbook/Operations/OperationMaintain/Add";
-function goToForm() {
-  setReport("Going to the Add Operation form…");
-  // Tell the page to navigate. If not logged in, eLogbook will show login.
-  webRef.current.injectJavaScript(`window.location.href = ${JSON.stringify(FORM_URL)}; true;`);
-}
+  const [report, setReport] = useState("Open the Add Operation form, then tap Fill.");
+
+  const FORM_URL = "https://client.elogbook.org/eLogbook/Operations/OperationMaintain/Add";
+  function goToForm() {
+    setReport("Going to the Add Operation form…");
+    webRef.current.injectJavaScript(`window.location.href = ${JSON.stringify(FORM_URL)}; true;`);
+  }
+
   function fillForm() {
     setReport("Filling…");
     webRef.current.injectJavaScript(buildFillScript(TEST_VALUES));
@@ -92,9 +136,8 @@ function goToForm() {
         if (data.error) {
           setReport("Fill failed: " + data.error);
         } else {
-          // Build a readable per-field summary.
           const lines = data.results.map(
-            (r) => (r.ok ? "✓ " : "✗ ") + r.selector + (r.ok ? "" : " — " + r.reason)
+            (r) => (r.ok ? "✓ " : "✗ ") + (r.selector || "(radio)") + (r.ok ? (r.note ? " (" + r.note + ")" : "") : " — " + r.reason)
           );
           setReport(lines.join("\n"));
         }
@@ -120,7 +163,7 @@ function goToForm() {
 
       <WebView
         ref={webRef}
-        source={{ uri: "https://client.elogbook.org/eLogbook/Operations/OperationMaintain/Add" }}
+        source={{ uri: FORM_URL }}
         style={styles.web}
         sharedCookiesEnabled
         thirdPartyCookiesEnabled
@@ -134,7 +177,7 @@ const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#ffffff" },
   banner: { fontSize: 13, fontWeight: "600", color: "#2563eb", textAlign: "center", paddingVertical: 6 },
   controls: { paddingHorizontal: 16, paddingBottom: 6 },
-  reportPanel: { backgroundColor: "#f3f4f6", padding: 10, borderTopWidth: 1, borderTopColor: "#e5e7eb", maxHeight: 160 },
+  reportPanel: { backgroundColor: "#f3f4f6", padding: 10, borderTopWidth: 1, borderTopColor: "#e5e7eb", maxHeight: 200 },
   reportText: { fontSize: 11, color: "#1a1a1a", fontFamily: "monospace" },
   web: { flex: 1 },
 });
