@@ -200,7 +200,10 @@ export default function DictationScreen() {
       <View style={styles.fieldRow}>
         <View style={styles.pendingCircle} />
         <View style={styles.fieldTextWrap}>
-          <Text style={styles.fieldText}>{field.label}</Text>
+          <Text style={styles.fieldText}>
+            {field.label}
+            {field.required ? <Text style={styles.required}> *</Text> : null}
+          </Text>
           {optionsHint && <Text style={styles.optionsHint}>({optionsHint})</Text>}
         </View>
       </View>
@@ -212,8 +215,10 @@ export default function DictationScreen() {
       {/* ===== TOP: checklist ===== */}
       <View style={styles.checklistArea}>
         <ScrollView contentContainerStyle={styles.checklistContent}>
-          <Text style={styles.schemaContext}>
-            {schema.platform} · {schema.entryType.replace("_", " ")}
+        <Text style={styles.explainer}>
+            Speak naturally to fill these fields. Items marked
+            <Text style={styles.required}> *</Text> are required by eLogbook.
+            You can review and edit everything on the eLogbook form before saving.
           </Text>
 
           <View style={styles.noticeBanner}>
@@ -224,9 +229,11 @@ export default function DictationScreen() {
             </Text>
           </View>
 
-          {schema.fields.map((field) => (
-            <FieldRow key={field.id} field={field} />
-          ))}
+          {schema.fields
+            .filter((field) => field.id !== "AppPatientAgeDateofBirth_ageyears" && !field.appOnly)
+            .map((field) => (
+              <FieldRow key={field.id} field={field} />
+            ))}
         </ScrollView>
       </View>
 
@@ -236,9 +243,9 @@ export default function DictationScreen() {
           <Text style={styles.doneText}>{processing}</Text>
         ) : ready ? (
           <>
-            <Text style={styles.doneText}>Ready to review</Text>
-            <AppButton href="/review" style={{ paddingHorizontal: 40 }}>
-              Review and edit
+            <Text style={styles.doneText}>Ready to fill eLogbook</Text>
+            <AppButton href="/submission" style={{ paddingHorizontal: 40 }}>
+              Open in eLogbook
             </AppButton>
           </>
         ) : (
