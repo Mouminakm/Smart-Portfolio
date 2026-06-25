@@ -1,8 +1,8 @@
 // app/webview-test.jsx
 // Phase 7 injection test bench.
 //   - Fill form (test): easy (text/select) + medium (checkbox/radio)
-//   - Fill procedure (test): zero-tap typeahead selection via __ngContext__ changeModel
-//   - Fill hospital (test): same zero-tap mechanism, hospital typeahead
+//   - Fill procedure/hospital (test): zero-tap typeahead via __ngContext__ changeModel
+//   - Fill consultant (test): account-specific select matched by name
 
 import { useRef, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
@@ -42,6 +42,9 @@ const TEST_HOSPITAL = {
   name: "James Paget University Hospital (Great Yarmouth)",
 };
 
+// A name as the user might store it; we match it against the live dropdown.
+const TEST_CONSULTANT = "Christopher Uff";
+
 // ---- easy + medium fill ----
 function buildFillScript(values) {
   return `
@@ -70,11 +73,8 @@ function buildFillScript(values) {
 }
 
 // ---- shared zero-tap typeahead selector via __ngContext__ ----
-// Works for both procedure and hospital: finds the ngx-bootstrap directive +
-// eLogbook wrapper in the input's Angular context, types the query, waits for
-// _matches, then calls changeModel(match) — the component's real selection.
 function buildTypeaheadScript(opts) {
-  // opts: { searchSel, id, searchText, kind }  (kind = 'procedure' | 'hospital')
+  // opts: { kind, searchSel, id, searchText }
   return `
   (function() {
     var o = ${JSON.stringify(opts)};
@@ -102,7 +102,6 @@ function buildTypeaheadScript(opts) {
     if(!found.directive){ report(false, o.kind + ' typeahead directive not found'); return; }
     var directive = found.directive, wrapper = found.wrapper;
 
-    // Type the query via the native setter so the directive runs its own search.
     var proto = Object.getPrototypeOf(input);
     var desc = Object.getOwnPropertyDescriptor(proto, 'value');
     desc.set.call(input, o.searchText);
@@ -114,20 +113,51 @@ function buildTypeaheadScript(opts) {
       var matches = directive._matches || [];
       var match = matches.find(function(m){ return m && m.item && String(m.item.id) === String(o.id); });
       if(match){
-        directive.changeModel(match);                                  // real selection
-        if(wrapper && typeof wrapper.onTypeaheadSelect === 'function'){ // belt-and-braces
-          try { wrapper.onTypeaheadSelect(match); } catch(e){}
-        }
+        directive.changeModel(match);
+        if(wrapper && typeof wrapper.onTypeaheadSelect === 'function'){ try { wrapper.onTypeaheadSelect(match); } catch(e){} }
         setTimeout(function(){
           var sel = wrapper ? wrapper.selectedNodeId : '(no wrapper)';
           report(true, 'selected; wrapper.selectedNodeId=' + sel);
         }, 300);
         return;
       }
-      if(tries < 40) return setTimeout(poll, 200); // ~8s
+      if(tries < 40) return setTimeout(poll, 200);
       report(false, o.kind + ' matches never populated (count: ' + matches.length + ')');
     }
     poll();
+  })();
+  true;
+  `;
+}
+
+// ---- responsibleconsultant: account-specific <select>, matched by name text ----
+function buildConsultantScript(name) {
+  return `
+  (function() {
+    function fireInput(el){ el.dispatchEvent(new Event('input',{bubbles:true})); el.dispatchEvent(new Event('change',{bubbles:true})); }
+    var name = ${JSON.stringify(name)};
+
+    function report(ok, detail){
+      window.ReactNativeWebView.postMessage(JSON.stringify({ type:'consultant', ok:ok, detail:detail||'' }));
+    }
+
+    var sel = document.querySelector('#responsibleconsultant');
+    if(!sel){ report(false, 'responsibleconsultant not found'); return; }
+
+    var target = name.trim().toLowerCase();
+    var matches = Array.from(sel.options).filter(function(o){
+      return o.value !== 'UNKNOWN' && o.text.toLowerCase().indexOf(target) !== -1;
+    });
+
+    if(matches.length === 1){
+      sel.value = matches[0].value;
+      fireInput(sel);
+      report(true, 'selected: ' + matches[0].text);
+    } else if(matches.length === 0){
+      report(false, 'no match for "' + name + '" — leave for user');
+    } else {
+      report(false, matches.length + ' matches for "' + name + '" — ambiguous, leave for user');
+    }
   })();
   true;
   `;
@@ -163,6 +193,10 @@ export default function WebViewTestScreen() {
       searchText: TEST_HOSPITAL.searchText,
     }));
   }
+  function fillConsultant() {
+    setReport("Setting consultant…");
+    webRef.current.injectJavaScript(buildConsultantScript(TEST_CONSULTANT));
+  }
 
   function handleMessage(event) {
     try {
@@ -174,6 +208,8 @@ export default function WebViewTestScreen() {
         setReport((data.ok ? "✓ Procedure " : "✗ Procedure — ") + data.detail);
       } else if (data.type === "hospital") {
         setReport((data.ok ? "✓ Hospital " : "✗ Hospital — ") + data.detail);
+      } else if (data.type === "consultant") {
+        setReport((data.ok ? "✓ Consultant " : "✗ Consultant — ") + data.detail);
       }
     } catch (e) {
       setReport("Raw: " + event.nativeEvent.data);
@@ -191,6 +227,8 @@ export default function WebViewTestScreen() {
         <AppButton onPress={fillProcedure}>Fill procedure (test)</AppButton>
         <View style={{ height: 6 }} />
         <AppButton onPress={fillHospital}>Fill hospital (test)</AppButton>
+        <View style={{ height: 6 }} />
+        <AppButton onPress={fillConsultant}>Fill consultant (test)</AppButton>
       </View>
       <View style={styles.reportPanel}>
         <Text style={styles.reportText}>{report}</Text>
