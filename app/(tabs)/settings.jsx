@@ -1,7 +1,4 @@
 // app/(tabs)/settings.jsx
-// Profile & Settings (spec S2). Shows the saved profile (reloaded each time the
-// screen is focused) with an Edit button to change it.
-
 import { useFocusEffect, useRouter } from "expo-router";
 import { useCallback, useState } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
@@ -15,9 +12,6 @@ export default function SettingsScreen() {
   const router = useRouter();
   const [profile, setProfile] = useState(null);
 
-  // Reload the profile every time this screen is focused — including returning
-  // from Edit profile — so changes show immediately. useCallback keeps the same
-  // function across renders so the effect doesn't loop.
   useFocusEffect(
     useCallback(() => {
       async function load() {

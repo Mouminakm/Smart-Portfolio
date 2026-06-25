@@ -142,7 +142,17 @@ export default function DictationScreen() {
 
       // 2) Parse into fields
       setProcessing("Extracting fields…");
-      const fieldsForClaude = schema.fields.map((f) => ({ id: f.id, label: f.label }));
+      // Send the FULL field definitions (including options + inputType) so the
+      // parse function can tell Claude the exact allowed values per field.
+      // Skip app-only fields (not real platform fields) to keep the prompt tight.
+      const fieldsForClaude = schema.fields
+        .filter((f) => !f.appOnly && f.submitsToPlatform !== false)
+        .map((f) => ({
+          id: f.id,
+          label: f.label,
+          inputType: f.inputType,
+          options: f.options || undefined,
+        }));
       const pRes = await fetch(PARSE_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

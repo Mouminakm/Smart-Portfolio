@@ -17,10 +17,19 @@ import {
 } from "react-native";
 import AppButton from "../components/AppButton";
 import { useEntry } from "../contexts/EntryContext";
+
+import { buildInjectionPlan } from "../lib/buildInjectionPlan";
 import schema from "../schemas/elogbook_neurosurgery_operation_log.json";
 
 export default function ReviewScreen() {
   const { fieldValues, setFieldValues, confirmed, setConfirmed } = useEntry();
+
+  // TEMP (Phase 7 wiring): run the translator on the real entry and log the
+  // resulting injection plan, so we can verify it before wiring to injection.
+  useEffect(() => {
+    const plan = buildInjectionPlan(fieldValues, schema);
+    console.log("INJECTION PLAN:", JSON.stringify(plan, null, 2));
+  }, [fieldValues]);
 
   // When the screen opens, tick every field as the baseline (the user unticks
   // anything they want to revisit). Runs once on mount.
@@ -131,7 +140,6 @@ const styles = StyleSheet.create({
   tickOn: { backgroundColor: "#2563eb", borderColor: "#2563eb" },
   tickMark: { color: "#ffffff", fontSize: 14, fontWeight: "700" },
   fieldBody: { flex: 1, marginLeft: 10 },
-  fieldLabel: { fontSize: 13, fontWeight: "600", color: "#1a1a1a", marginBottom: 4 },
   fieldInput: {
     borderWidth: 1, borderColor: "#dddddd", borderRadius: 8,
     paddingVertical: 8, paddingHorizontal: 10, fontSize: 15, color: "#1a1a1a",

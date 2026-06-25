@@ -101,19 +101,53 @@ exports.parse = onRequest(
           return;
         }
   
-        // Build a compact description of the fields we want filled, so Claude
-        // knows exactly which keys to return and what each one means.
+        // Build a description of each field. For fields with a fixed option
+        // list, show Claude the EXACT allowed labels and require it to return
+        // one of them verbatim (or empty) — so we get "Mild Systemic Disease",
+        // not "ASA 2". For radio/checkbox booleans, constrain to Yes/No.
         const fieldList = fields
-          .map((f) => `- ${f.id} (${f.label})`)
+          .map((f) => {
+            // enum/select with options -> list the exact labels
+            if (f.options && f.options.length) {
+              // Show "value=label" so Claude can map spoken grades/codes
+              // (e.g. "ASA 2") to the right label ("Mild Systemic Disease").
+              const opts = f.options.map((o) => `${o.value}="${o.label}"`).join(", ");
+              return `- ${f.id} (${f.label}): choose EXACTLY one label from [${opts}]. ` +
+                     `If the dictation gives a number/code (e.g. "ASA 2"), match it to that value. ` +
+                     `Return the LABEL text only, or "" if not mentioned.`;
+            }
+            // radio with options (e.g. Yes/No, or Unknown/No/Yes)
+            if (f.inputType === "radio" && f.options && f.options.length) {
+              const labels = f.options.map((o) => `"${o.label}"`).join(", ");
+              return `- ${f.id} (${f.label}): choose EXACTLY one of [${labels}] or "".`;
+            }
+            // checkbox boolean
+            if (f.inputType === "checkbox") {
+              return `- ${f.id} (${f.label}): "Yes" or "No" or "".`;
+            }
+            // dates: ask for UK numeric format explicitly
+            if (f.inputType === "date") {
+              return `- ${f.id} (${f.label}): a date in dd-mm-yyyy format (e.g. "25-06-2026"), or "" if not mentioned. Convert spoken dates like "the 25th of June 2026" to this format.`;
+            }
+            // free text / number / autocomplete
+            return `- ${f.id} (${f.label}): free text, or "" if not mentioned.`;
+          })
           .join("\n");
   
         // The system prompt sets the rules. The big one: return ONLY JSON.
         const systemPrompt =
           "You extract structured data from a doctor's dictated surgical logbook entry. " +
-          "You are given a transcript and a list of field ids. " +
-          "Return ONLY a JSON object whose keys are the field ids and whose values are " +
-          "the information from the transcript. If a field is not mentioned, use an empty " +
-          "string. Do not include any text, explanation, or markdown — only the JSON object.";
+          "You are given a transcript and a list of fields with their allowed values. " +
+          "Return ONLY a JSON object whose keys are the field ids and whose values come " +
+          "from the transcript. " +
+          "CRITICAL RULES: " +
+          "(1) For any field that lists allowed values in [square brackets], you MUST return " +
+          "one of those values copied EXACTLY (character for character), or an empty string. " +
+          "Never invent a value that is not in the list. " +
+          "(2) If the transcript does not clearly indicate a field, return an empty string for it — " +
+          "do not guess. " +
+          "(3) For names (e.g. consultant), return the full name as spoken, not an abbreviation. " +
+          "(4) Output ONLY the JSON object — no text, explanation, or markdown.";
   
         const userPrompt =
           `Transcript:\n${transcript}\n\nFields to extract:\n${fieldList}`;
