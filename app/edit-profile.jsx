@@ -1,20 +1,22 @@
 // app/edit-profile.jsx
-// Edit the signed-in user's saved profile: specialty, platforms, GMC number,
-// reflection detail. Pre-fills from Firestore, saves back, returns to Settings.
+// Edit the signed-in user's saved profile: specialty, platforms, consultants,
+// GMC number, reflection detail. Pre-fills from Firestore, saves back, returns
+// to Settings.
 
 import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import {
-    ActivityIndicator,
-    KeyboardAvoidingView,
-    Platform,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TextInput,
-    View,
+  ActivityIndicator,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
 } from "react-native";
 import AppButton from "../components/AppButton";
+import ConsultantListField from "../components/ConsultantListField";
 import MultiPickerField from "../components/MultiPickerField";
 import PickerField from "../components/PickerField";
 import { useAuth } from "../contexts/AuthContext";
@@ -31,6 +33,7 @@ export default function EditProfileScreen() {
   // Editable copies of the saved values, seeded from Firestore below.
   const [specialty, setSpecialty] = useState("");
   const [portfolios, setPortfolios] = useState([]);
+  const [consultants, setConsultants] = useState([]);
   const [gmcNumber, setGmcNumber] = useState("");
   const [reflectionDetail, setReflectionDetail] = useState("Low");
 
@@ -47,6 +50,7 @@ export default function EditProfileScreen() {
         if (p) {
           setSpecialty(p.specialty || "");
           setPortfolios(p.portfolios || []);
+          setConsultants(p.consultants || []);
           setGmcNumber(p.gmcNumber || "");
           setReflectionDetail(p.reflectionDetail || "Low");
         }
@@ -65,12 +69,16 @@ export default function EditProfileScreen() {
       setErrorMessage("Please choose at least one portfolio platform.");
       return;
     }
+    if (consultants.length === 0) {
+      setErrorMessage("Please add at least one consultant you work with.");
+      return;
+    }
     setErrorMessage("");
     setIsSaving(true);
     try {
       // merge:true (in saveProfile) leaves other fields — training number,
       // the onboarding flag — untouched.
-      await saveProfile(user.uid, { specialty, portfolios, gmcNumber, reflectionDetail });
+      await saveProfile(user.uid, { specialty, portfolios, consultants, gmcNumber, reflectionDetail });
       router.back(); // return to Settings, which reloads and shows the changes
     } catch (error) {
       setIsSaving(false);
@@ -109,6 +117,13 @@ export default function EditProfileScreen() {
           selected={portfolios}
           onChange={setPortfolios}
           maxSelect={2}
+        />
+
+        {/* Consultants the user works with — at least one required. */}
+        <ConsultantListField
+          label="Consultants you work with"
+          value={consultants}
+          onChange={setConsultants}
         />
 
         <PickerField

@@ -42,6 +42,10 @@ export default function SettingsScreen() {
 
       <Text style={styles.sectionHeading}>Specialty & training</Text>
       <SettingsRow label="Specialty" value={show(profile && profile.specialty)} />
+      <SettingsRow
+        label="Consultants"
+        value={show(profile && profile.consultants && profile.consultants.join(", "))}
+      />
 
       <Text style={styles.sectionHeading}>Portfolio</Text>
       <SettingsRow

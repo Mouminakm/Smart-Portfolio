@@ -13,6 +13,7 @@ import {
   TextInput,
 } from "react-native";
 import AppButton from "../components/AppButton";
+import ConsultantListField from "../components/ConsultantListField";
 import MultiPickerField from "../components/MultiPickerField";
 import PickerField from "../components/PickerField";
 import { useAuth } from "../contexts/AuthContext";
@@ -30,6 +31,7 @@ export default function ProfileSetupScreen() {
   const [trainingNumber, setTrainingNumber] = useState("");
   const [isBusy, setIsBusy] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [consultants, setConsultants] = useState([]); // names of consultants the user works with
 async function handleContinue() {
     // Required fields must be set before continuing.
     if (!specialty) {
@@ -40,11 +42,15 @@ async function handleContinue() {
       setErrorMessage("Please choose at least one portfolio platform.");
       return;
     }
+    if (consultants.length === 0) {
+      setErrorMessage("Please add at least one consultant you work with.");
+      return;
+    }
     setErrorMessage("");
     setIsBusy(true);
     try {
       if (user) {
-        await saveProfile(user.uid, { specialty, portfolios, gmcNumber, trainingNumber });
+        await saveProfile(user.uid, { specialty, portfolios, gmcNumber, trainingNumber, consultants });
       }
       router.push("/permissions");
     } catch (error) {
@@ -84,7 +90,12 @@ async function handleContinue() {
           onChange={setPortfolios}
           maxSelect={2}
         />
-
+        {/* Consultants the user works with — at least one required. */}
+        <ConsultantListField
+          label="Consultants you work with"
+          value={consultants}
+          onChange={setConsultants}
+        />
         <Text style={styles.label}>GMC number (optional)</Text>
         <TextInput
           style={styles.input}
