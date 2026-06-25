@@ -1,9 +1,8 @@
 // app/webview-test.jsx
 // Phase 7 injection test bench.
 //   - Fill form (test): easy (text/select) + medium (checkbox/radio)
-//   - Fill procedure (test): Option B injects the FULL PROCEDURE NAME into the
-//     typeahead box (+ node-id into hidden), verifies the box shows the name;
-//     if it didn't truly take, falls back to Option A (click the node-id button).
+//   - Fill procedure (test): zero-tap typeahead selection via __ngContext__ changeModel
+//   - Fill hospital (test): same zero-tap mechanism, hospital typeahead
 
 import { useRef, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
@@ -37,6 +36,12 @@ const TEST_PROCEDURE = {
   fullName: "Endoscopic Third Ventriculostomy (Cranial-Csf Circulation)",
 };
 
+const TEST_HOSPITAL = {
+  id: "2278",
+  searchText: "James Paget",
+  name: "James Paget University Hospital (Great Yarmouth)",
+};
+
 // ---- easy + medium fill ----
 function buildFillScript(values) {
   return `
@@ -64,77 +69,70 @@ function buildFillScript(values) {
   `;
 }
 
-// ---- procedure: ZERO-TAP via the real Angular components. Find the
-// ngx-bootstrap TypeaheadDirective in __ngContext__, type the query, wait for
-// its _matches to populate, then call changeModel(match) — the component's OWN
-// selection path. Belt-and-braces: also call eLogbook's wrapper.onTypeaheadSelect. ----
-function buildProcedureScript(proc) {
-    return `
-    (function() {
-      var proc = ${JSON.stringify(proc)};
-      var searchSel = '#operationsAccordion-Typeahead';
-  
-      function report(ok, detail){
-        window.ReactNativeWebView.postMessage(JSON.stringify({ type:'procedure', path:'ngContext', ok:ok, detail:detail||'' }));
+// ---- shared zero-tap typeahead selector via __ngContext__ ----
+// Works for both procedure and hospital: finds the ngx-bootstrap directive +
+// eLogbook wrapper in the input's Angular context, types the query, waits for
+// _matches, then calls changeModel(match) — the component's real selection.
+function buildTypeaheadScript(opts) {
+  // opts: { searchSel, id, searchText, kind }  (kind = 'procedure' | 'hospital')
+  return `
+  (function() {
+    var o = ${JSON.stringify(opts)};
+
+    function report(ok, detail){
+      window.ReactNativeWebView.postMessage(JSON.stringify({ type:o.kind, ok:ok, detail:detail||'' }));
+    }
+
+    var input = document.querySelector(o.searchSel);
+    if(!input || !input.__ngContext__){ report(false, 'no ngContext on ' + o.kind + ' input'); return; }
+
+    function findInstances(){
+      var ctx = input.__ngContext__, directive = null, wrapper = null, seen = new Set();
+      for(var i=0;i<ctx.length;i++){
+        var v = ctx[i];
+        if(!v || typeof v!=='object' || seen.has(v)) continue;
+        seen.add(v);
+        if(typeof v.changeModel==='function' && '_matches' in v) directive = v;
+        if('selectedNodeId' in v && typeof v.onTypeaheadSelect==='function') wrapper = v;
       }
-  
-      var input = document.querySelector(searchSel);
-      if(!input || !input.__ngContext__){ report(false, 'no ngContext on typeahead input'); return; }
-  
-      // Find the directive (has changeModel + _matches) and eLogbook's wrapper
-      // (has selectedNodeId + onTypeaheadSelect) by fingerprint, not index.
-      function findInstances(){
-        var ctx = input.__ngContext__;
-        var directive = null, wrapper = null, seen = new Set();
-        for(var i=0;i<ctx.length;i++){
-          var v = ctx[i];
-          if(!v || typeof v!=='object' || seen.has(v)) continue;
-          seen.add(v);
-          if(typeof v.changeModel==='function' && '_matches' in v) directive = v;
-          if('selectedNodeId' in v && typeof v.onTypeaheadSelect==='function') wrapper = v;
+      return { directive: directive, wrapper: wrapper };
+    }
+
+    var found = findInstances();
+    if(!found.directive){ report(false, o.kind + ' typeahead directive not found'); return; }
+    var directive = found.directive, wrapper = found.wrapper;
+
+    // Type the query via the native setter so the directive runs its own search.
+    var proto = Object.getPrototypeOf(input);
+    var desc = Object.getOwnPropertyDescriptor(proto, 'value');
+    desc.set.call(input, o.searchText);
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+
+    var tries = 0;
+    function poll(){
+      tries++;
+      var matches = directive._matches || [];
+      var match = matches.find(function(m){ return m && m.item && String(m.item.id) === String(o.id); });
+      if(match){
+        directive.changeModel(match);                                  // real selection
+        if(wrapper && typeof wrapper.onTypeaheadSelect === 'function'){ // belt-and-braces
+          try { wrapper.onTypeaheadSelect(match); } catch(e){}
         }
-        return { directive: directive, wrapper: wrapper };
+        setTimeout(function(){
+          var sel = wrapper ? wrapper.selectedNodeId : '(no wrapper)';
+          report(true, 'selected; wrapper.selectedNodeId=' + sel);
+        }, 300);
+        return;
       }
-  
-      var found = findInstances();
-      if(!found.directive){ report(false, 'typeahead directive not found in context'); return; }
-      var directive = found.directive;
-      var wrapper = found.wrapper;
-  
-      // Set the input value through the native setter and fire input, so the
-      // directive runs its own search and populates _matches.
-      var proto = Object.getPrototypeOf(input);
-      var desc = Object.getOwnPropertyDescriptor(proto, 'value');
-      desc.set.call(input, proc.searchText);
-      input.dispatchEvent(new Event('input', { bubbles: true }));
-  
-      // Wait for _matches to contain our procedure, then select it for real.
-      var tries = 0;
-      function poll(){
-        tries++;
-        var matches = directive._matches || [];
-        // find the match whose item.id equals our node-id (most precise)
-        var match = matches.find(function(m){ return m && m.item && String(m.item.id) === String(proc.nodeId); });
-        if(match){
-          directive.changeModel(match);              // the component's REAL selection
-          if(wrapper && typeof wrapper.onTypeaheadSelect === 'function'){
-            try { wrapper.onTypeaheadSelect(match); } catch(e){}   // belt-and-braces
-          }
-          setTimeout(function(){
-            var sel = wrapper ? wrapper.selectedNodeId : '(no wrapper)';
-            var hidden = document.querySelector('#operationsAccordion-SelectedValue');
-            report(true, 'selected via changeModel; wrapper.selectedNodeId=' + sel + '; hidden="' + (hidden?hidden.value:'') + '"');
-          }, 300);
-          return;
-        }
-        if(tries < 40) return setTimeout(poll, 200); // ~8s
-        report(false, 'matches never populated (count: ' + matches.length + ')');
-      }
-      poll();
-    })();
-    true;
-    `;
-  } 
+      if(tries < 40) return setTimeout(poll, 200); // ~8s
+      report(false, o.kind + ' matches never populated (count: ' + matches.length + ')');
+    }
+    poll();
+  })();
+  true;
+  `;
+}
+
 export default function WebViewTestScreen() {
   const webRef = useRef(null);
   const [report, setReport] = useState("Open the Add Operation form, then use the buttons.");
@@ -149,7 +147,21 @@ export default function WebViewTestScreen() {
   }
   function fillProcedure() {
     setReport("Setting procedure…");
-    webRef.current.injectJavaScript(buildProcedureScript(TEST_PROCEDURE));
+    webRef.current.injectJavaScript(buildTypeaheadScript({
+      kind: "procedure",
+      searchSel: "#operationsAccordion-Typeahead",
+      id: TEST_PROCEDURE.nodeId,
+      searchText: TEST_PROCEDURE.searchText,
+    }));
+  }
+  function fillHospital() {
+    setReport("Setting hospital…");
+    webRef.current.injectJavaScript(buildTypeaheadScript({
+      kind: "hospital",
+      searchSel: "#hospitalsAccordion-Typeahead",
+      id: TEST_HOSPITAL.id,
+      searchText: TEST_HOSPITAL.searchText,
+    }));
   }
 
   function handleMessage(event) {
@@ -159,7 +171,9 @@ export default function WebViewTestScreen() {
         if (data.error) setReport("Fill failed: " + data.error);
         else setReport(data.results.map((r) => (r.ok ? "✓ " : "✗ ") + (r.selector || "(radio)") + (r.ok ? "" : " — " + r.reason)).join("\n"));
       } else if (data.type === "procedure") {
-        setReport((data.ok ? "✓ Procedure set via Option " : "✗ Procedure via Option ") + data.path + "\n" + data.detail);
+        setReport((data.ok ? "✓ Procedure " : "✗ Procedure — ") + data.detail);
+      } else if (data.type === "hospital") {
+        setReport((data.ok ? "✓ Hospital " : "✗ Hospital — ") + data.detail);
       }
     } catch (e) {
       setReport("Raw: " + event.nativeEvent.data);
@@ -175,6 +189,8 @@ export default function WebViewTestScreen() {
         <AppButton onPress={fillForm}>Fill form (test)</AppButton>
         <View style={{ height: 6 }} />
         <AppButton onPress={fillProcedure}>Fill procedure (test)</AppButton>
+        <View style={{ height: 6 }} />
+        <AppButton onPress={fillHospital}>Fill hospital (test)</AppButton>
       </View>
       <View style={styles.reportPanel}>
         <Text style={styles.reportText}>{report}</Text>
