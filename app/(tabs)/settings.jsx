@@ -73,12 +73,7 @@ export default function SettingsScreen() {
         value={(profile && profile.reflectionDetail) || "Low"}
       />
       <SettingsRow label="Notifications" value="On" />
-      <View style={{ marginTop: 24 }}>
-        <AppButton onPress={() => router.push("/record-test")}>🎙 Test recording (dev)</AppButton>
-      </View>
-      <View style={{ marginTop: 12 }}>
-        <AppButton onPress={() => router.push("/webview-test")}>🌐 eLogbook WebView (dev)</AppButton>
-      </View>
+      
       <View style={styles.signOutWrap}>
         <AppButton onPress={signOut}>Sign out</AppButton>
       </View>

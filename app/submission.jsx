@@ -73,15 +73,6 @@ function buildFullInjectionScript(plan) {
           done(true); return;
         }
         if(tries < 40) return setTimeout(poll, 200);
-        window.ReactNativeWebView.postMessage(JSON.stringify({
-          type: 'typeahead_debug',
-          searchSel: searchSel,
-          wantId: id,
-          wantName: matchName || searchText,
-          got: (directive._matches || []).slice(0, 8).map(function(m){
-            return m && m.item ? { id: m.item.id, name: m.item.name } : null;
-          })
-        }));
         done(false);
       })();
     }
@@ -181,10 +172,7 @@ export default function SubmissionScreen() {
         setStatusMsg(`Waiting for form… (fields: ${data.fieldCount}, ${data.url.slice(0, 40)})`);
         return;
       }
-      if (data.type === "typeahead_debug") {
-        console.log("TYPEAHEAD DEBUG:", JSON.stringify(data, null, 2));
-        return;
-      }
+  
       if (data.type === "filled") {
         if (data.error) {
           setStatusMsg("Couldn't fill the form automatically — you can fill it manually below.");
