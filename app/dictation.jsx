@@ -230,7 +230,12 @@ export default function DictationScreen() {
           </View>
 
           {schema.fields
-            .filter((field) => field.id !== "AppPatientAgeDateofBirth_ageyears" && !field.appOnly)
+            .filter(
+              (field) =>
+                field.id !== "AppPatientAgeDateofBirth_ageyears" &&
+                field.id !== "operationspecialty" &&
+                !field.appOnly
+            )
             .map((field) => (
               <FieldRow key={field.id} field={field} />
             ))}

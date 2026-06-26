@@ -154,12 +154,14 @@ export default function SubmissionScreen() {
   const [statusMsg, setStatusMsg] = useState("Opening eLogbook…");
   const [filled, setFilled] = useState(false);
   const [userHospitals, setUserHospitals] = useState(null); // null = still loading
+  const [userSpecialty, setUserSpecialty] = useState("");
 
   useEffect(() => {
     async function load() {
       if (user) {
         const p = await loadProfile(user.uid);
         setUserHospitals((p && p.hospitals) || []);
+        setUserSpecialty((p && p.specialty) || "");
       }
     }
     load();
@@ -168,13 +170,9 @@ export default function SubmissionScreen() {
   const plan =
     userHospitals === null
       ? null
-      : buildInjectionPlan(fieldValues, schema, userHospitals);
+      : buildInjectionPlan(fieldValues, schema, userHospitals, userSpecialty);
 
-  if (plan) {
-    console.log("HOSPITAL DICTATED:", JSON.stringify(fieldValues.hospitalsAccordion));
-    console.log("HOSPITAL STORED:", JSON.stringify(userHospitals));
-    console.log("HOSPITAL PLAN:", JSON.stringify(plan.hospital));
-  }
+  
 
   function handleMessage(event) {
     try {
