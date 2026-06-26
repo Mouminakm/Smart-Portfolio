@@ -17,6 +17,7 @@ import {
 } from "react-native";
 import AppButton from "../components/AppButton";
 import ConsultantListField from "../components/ConsultantListField";
+import HospitalPickerField from "../components/HospitalPickerField";
 import MultiPickerField from "../components/MultiPickerField";
 import PickerField from "../components/PickerField";
 import { useAuth } from "../contexts/AuthContext";
@@ -34,6 +35,7 @@ export default function EditProfileScreen() {
   const [specialty, setSpecialty] = useState("");
   const [portfolios, setPortfolios] = useState([]);
   const [consultants, setConsultants] = useState([]);
+  const [hospitals, setHospitals] = useState([]); // array of { id, name, display }
   const [gmcNumber, setGmcNumber] = useState("");
   const [reflectionDetail, setReflectionDetail] = useState("Low");
 
@@ -51,6 +53,7 @@ export default function EditProfileScreen() {
           setSpecialty(p.specialty || "");
           setPortfolios(p.portfolios || []);
           setConsultants(p.consultants || []);
+          setHospitals(p.hospitals || []);
           setGmcNumber(p.gmcNumber || "");
           setReflectionDetail(p.reflectionDetail || "Low");
         }
@@ -78,7 +81,7 @@ export default function EditProfileScreen() {
     try {
       // merge:true (in saveProfile) leaves other fields — training number,
       // the onboarding flag — untouched.
-      await saveProfile(user.uid, { specialty, portfolios, consultants, gmcNumber, reflectionDetail });
+      await saveProfile(user.uid, { specialty, portfolios, consultants, hospitals, gmcNumber, reflectionDetail });
       router.back(); // return to Settings, which reloads and shows the changes
     } catch (error) {
       setIsSaving(false);
@@ -125,6 +128,14 @@ export default function EditProfileScreen() {
           value={consultants}
           onChange={setConsultants}
         />
+        {/* Primary hospital — picked once, stores eLogbook's exact id. */}
+        <Text style={styles.label}>Your hospital</Text>
+        <Text style={styles.helpText}>
+          Add the hospital(s) where you operate. When you dictate, just say which
+          one — we'll fill the correct hospital automatically. Update these when
+          you rotate.
+        </Text>
+        <HospitalPickerField value={hospitals} onChange={setHospitals} />
 
         <PickerField
           label="Reflection detail"
@@ -159,6 +170,7 @@ const styles = StyleSheet.create({
   loadingWrap: { flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: "#ffffff" },
   container: { flexGrow: 1, padding: 24, paddingTop: 32, backgroundColor: "#ffffff" },
   label: { fontSize: 13, fontWeight: "600", color: "#1a1a1a", marginBottom: 6, marginTop: 4 },
+  helpText: { fontSize: 12, color: "#888888", marginBottom: 8, lineHeight: 17 },
   input: {
     borderWidth: 1,
     borderColor: "#cccccc",

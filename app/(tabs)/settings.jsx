@@ -40,6 +40,14 @@ export default function SettingsScreen() {
         label="Consultants"
         value={show(profile && profile.consultants && profile.consultants.join(", "))}
       />
+      <SettingsRow
+        label="Hospital(s)"
+        value={show(
+          profile &&
+            profile.hospitals &&
+            profile.hospitals.map((h) => h.display || h.short || h.name).join(", ")
+        )}
+      />
 
       <Text style={styles.sectionHeading}>Portfolio</Text>
       <SettingsRow

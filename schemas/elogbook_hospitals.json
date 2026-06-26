@@ -1,0 +1,2424 @@
+{
+"source": "elogbook hospital typeahead (UK & Ireland)",
+"count": 403,
+"hospitals": [
+{
+"id": 24,
+"name": "Aberdeen Royal Infirmary (United Kingdom-Scotland-Aberdeen)",
+"short": "Aberdeen Royal Infirmary",
+"search": "aberdeen royal infirmary"
+},
+{
+"id": 72,
+"name": "Acland Hospital (United Kingdom-South East England-Oxford)",
+"short": "Acland Hospital",
+"search": "acland hospital"
+},
+{
+"id": 1,
+"name": "Addenbrooke's Hospital (United Kingdom-East Of England-Cambridge)",
+"short": "Addenbrooke's Hospital",
+"search": "addenbrooke's hospital"
+},
+{
+"id": 2190,
+"name": "Addenbrooke's Hospital (United Kingdom-East Of England-Cambridge)",
+"short": "Addenbrooke's Hospital",
+"search": "addenbrooke's hospital"
+},
+{
+"id": 2174,
+"name": "Airedale Hospital (United Kingdom-Yorkshire & Humber-Yorkshire)",
+"short": "Airedale Hospital",
+"search": "airedale hospital"
+},
+{
+"id": 73,
+"name": "Albyn Hospital (Bmi) (United Kingdom-Scotland-Aberdeen)",
+"short": "Albyn Hospital",
+"search": "albyn hospital"
+},
+{
+"id": 147,
+"name": "Alexandra Hospital (United Kingdom-North West England-Cheadle)",
+"short": "Alexandra Hospital",
+"search": "alexandra hospital"
+},
+{
+"id": 74,
+"name": "Alexandra Hospital (Bmi) (United Kingdom-North West England-Cheadle)",
+"short": "Alexandra Hospital",
+"search": "alexandra hospital"
+},
+{
+"id": 2287,
+"name": "Altnagelvin Area Hospital (United Kingdom-Northern Ireland-Londonderry)",
+"short": "Altnagelvin Area Hospital",
+"search": "altnagelvin area hospital"
+},
+{
+"id": 2274,
+"name": "Antrim Area Hospital (United Kingdom-Northern Ireland-Antrim)",
+"short": "Antrim Area Hospital",
+"search": "antrim area hospital"
+},
+{
+"id": 2149,
+"name": "Arrowe Park Hospital, (United Kingdom-North West England-Wirral)",
+"short": "Arrowe Park Hospital,",
+"search": "arrowe park hospital,"
+},
+{
+"id": 2247,
+"name": "Ayr Hospital (United Kingdom-Scotland-Ayr)",
+"short": "Ayr Hospital",
+"search": "ayr hospital"
+},
+{
+"id": 2002,
+"name": "Bantry General Hospital (Ireland, Republic Of-Old Codes-Bantry)",
+"short": "Bantry General Hospital",
+"search": "bantry general hospital"
+},
+{
+"id": 2146,
+"name": "Barnet General Hospital (United Kingdom-London - North West And Northern-Barnet)",
+"short": "Barnet General Hospital",
+"search": "barnet general hospital"
+},
+{
+"id": 2151,
+"name": "Barnsley District General Hospital (United Kingdom-Yorkshire & Humber-Barnsley)",
+"short": "Barnsley District General Hospital",
+"search": "barnsley district general hospital"
+},
+{
+"id": 2264,
+"name": "Basildon Hospital (United Kingdom-London - North West And Northern-)",
+"short": "Basildon Hospital",
+"search": "basildon hospital"
+},
+{
+"id": 75,
+"name": "Bath Clinic (Bmi) (United Kingdom-South West England-Bath)",
+"short": "Bath Clinic",
+"search": "bath clinic"
+},
+{
+"id": 2530,
+"name": "Beacon Hospital (Ireland, Republic Of-Dublin-Sandyford)",
+"short": "Beacon Hospital",
+"search": "beacon hospital"
+},
+{
+"id": 76,
+"name": "Beardwood Hospital (Bmi) (United Kingdom-North West England-Blackburn)",
+"short": "Beardwood Hospital",
+"search": "beardwood hospital"
+},
+{
+"id": 2042,
+"name": "Beaumont Hospital (Ireland, Republic Of-Dublin-Beaumont Road)",
+"short": "Beaumont Hospital",
+"search": "beaumont hospital"
+},
+{
+"id": 160,
+"name": "Beaumont Hospital (Ireland, Republic Of-Old Codes-Dublin)(9)",
+"short": "Beaumont Hospital",
+"search": "beaumont hospital"
+},
+{
+"id": 2043,
+"name": "Beaumont Private Hospital (Ireland, Republic Of-Dublin-Beaumont Road)",
+"short": "Beaumont Private Hospital",
+"search": "beaumont private hospital"
+},
+{
+"id": 2330,
+"name": "Bedford Hospital (United Kingdom-East Of England-Bedford)",
+"short": "Bedford Hospital",
+"search": "bedford hospital"
+},
+{
+"id": 2169,
+"name": "Belford Hospital (United Kingdom-Scotland-Fort William)",
+"short": "Belford Hospital",
+"search": "belford hospital"
+},
+{
+"id": 2329,
+"name": "Birmingham Children's Hospital (United Kingdom-West Midlands-Birmingham)",
+"short": "Birmingham Children's Hospital",
+"search": "birmingham children's hospital"
+},
+{
+"id": 2220,
+"name": "Birmingham Heartlands Hospital (United Kingdom-West Midlands-Birmingham)",
+"short": "Birmingham Heartlands Hospital",
+"search": "birmingham heartlands hospital"
+},
+{
+"id": 77,
+"name": "Birmingham Nuffield Hospital (United Kingdom-West Midlands-Birmingham)",
+"short": "Birmingham Nuffield Hospital",
+"search": "birmingham nuffield hospital"
+},
+{
+"id": 2249,
+"name": "Blackpool Victoria Hospital (United Kingdom-North West England-Blackpool)",
+"short": "Blackpool Victoria Hospital",
+"search": "blackpool victoria hospital"
+},
+{
+"id": 2009,
+"name": "Blackrock Clinic (Ireland, Republic Of-Co. Dublin-Blackrock)",
+"short": "Blackrock Clinic",
+"search": "blackrock clinic"
+},
+{
+"id": 2003,
+"name": "Bon Secours Hospital (Cork) (Ireland, Republic Of-Co. Cork-College Road)",
+"short": "Bon Secours Hospital",
+"search": "bon secours hospital"
+},
+{
+"id": 2017,
+"name": "Bon Secours Hospital (Tralee) (Ireland, Republic Of-Co. Kerry-Strand Street)",
+"short": "Bon Secours Hospital",
+"search": "bon secours hospital"
+},
+{
+"id": 2044,
+"name": "Bon Secours Hospital (Glasnevin) (Ireland, Republic Of-Dublin-Glasnevin)",
+"short": "Bon Secours Hospital",
+"search": "bon secours hospital"
+},
+{
+"id": 2013,
+"name": "Bon Secours Hospital (Renmore) (Ireland, Republic Of-Old Codes-Renmore)",
+"short": "Bon Secours Hospital",
+"search": "bon secours hospital"
+},
+{
+"id": 2236,
+"name": "Bradford Royal Infirmary (United Kingdom-Yorkshire & Humber-Bradford)",
+"short": "Bradford Royal Infirmary",
+"search": "bradford royal infirmary"
+},
+{
+"id": 2299,
+"name": "Bridlington And District Hospital (United Kingdom-Yorkshire & Humber-Bridlington)",
+"short": "Bridlington And District Hospital",
+"search": "bridlington and district hospital"
+},
+{
+"id": 2394,
+"name": "Bristol Royal Hospital For Children (Bristol)",
+"short": "Bristol Royal Hospital For Children",
+"search": "bristol royal hospital for children"
+},
+{
+"id": 2406,
+"name": "Bristol Royal Infirmary (United Kingdom-South West England-Bristol)",
+"short": "Bristol Royal Infirmary",
+"search": "bristol royal infirmary"
+},
+{
+"id": 2155,
+"name": "Broomfield Hospital (United Kingdom-East Of England-Chelmsford)",
+"short": "Broomfield Hospital",
+"search": "broomfield hospital"
+},
+{
+"id": 2328,
+"name": "Caithness General Hospital (United Kingdom-Scotland-Wick)",
+"short": "Caithness General Hospital",
+"search": "caithness general hospital"
+},
+{
+"id": 2192,
+"name": "Calderdale Royal Hospital (United Kingdom-Yorkshire & Humber-Halifax)",
+"short": "Calderdale Royal Hospital",
+"search": "calderdale royal hospital"
+},
+{
+"id": 2045,
+"name": "Cappagh National Orthopaedic Hospital (Ireland, Republic Of-Dublin-Cappagh)",
+"short": "Cappagh National Orthopaedic Hospital",
+"search": "cappagh national orthopaedic hospital"
+},
+{
+"id": 98,
+"name": "Castle Hill Hospital (United Kingdom-Yorkshire & Humber-Cottingham)",
+"short": "Castle Hill Hospital",
+"search": "castle hill hospital"
+},
+{
+"id": 2000,
+"name": "Cavan General Hospital (Ireland, Republic Of-Co. Cavan-Lisdarn)",
+"short": "Cavan General Hospital",
+"search": "cavan general hospital"
+},
+{
+"id": 2626,
+"name": "Chapel Allerton Hospital (United Kingdom-Yorkshire & Humber-Leeds)",
+"short": "Chapel Allerton Hospital",
+"search": "chapel allerton hospital"
+},
+{
+"id": 29,
+"name": "Charing Cross Hospital (United Kingdom-London - North West And Northern-London)",
+"short": "Charing Cross Hospital",
+"search": "charing cross hospital"
+},
+{
+"id": 2046,
+"name": "Charlemont Clinic (Ireland, Republic Of-Old Codes-Charlemont Mall)",
+"short": "Charlemont Clinic",
+"search": "charlemont clinic"
+},
+{
+"id": 2277,
+"name": "Chase Farm Hospital (United Kingdom-London - North West And Northern-Enfield)",
+"short": "Chase Farm Hospital",
+"search": "chase farm hospital"
+},
+{
+"id": 2179,
+"name": "Chelsea And Westminster Hospital (United Kingdom-London - North West And Northern-London)",
+"short": "Chelsea And Westminster Hospital",
+"search": "chelsea and westminster hospital"
+},
+{
+"id": 2288,
+"name": "Chesterfield Royal Hospital (United Kingdom-East Midlands-Chesterfield)",
+"short": "Chesterfield Royal Hospital",
+"search": "chesterfield royal hospital"
+},
+{
+"id": 2047,
+"name": "Children's University Hospital (Temple St.) (Ireland, Republic Of-Dublin-Temple Street)",
+"short": "Children's University Hospital",
+"search": "children's university hospital"
+},
+{
+"id": 2652,
+"name": "Chorley And South Ribble Hospital (United Kingdom-North West England-Chorley)",
+"short": "Chorley And South Ribble Hospital",
+"search": "chorley and south ribble hospital"
+},
+{
+"id": 99,
+"name": "Christie Hospital (United Kingdom-North West England-Manchester)",
+"short": "Christie Hospital",
+"search": "christie hospital"
+},
+{
+"id": 2158,
+"name": "City Hospital (United Kingdom-West Midlands-Birmingham)",
+"short": "City Hospital",
+"search": "city hospital"
+},
+{
+"id": 144,
+"name": "Claremont Hospital (United Kingdom-Yorkshire & Humber-Sheffield)",
+"short": "Claremont Hospital",
+"search": "claremont hospital"
+},
+{
+"id": 2681,
+"name": "Cleveland Clinic London Hospital (United Kingdom-London - South West-London)",
+"short": "Cleveland Clinic London Hospital",
+"search": "cleveland clinic london hospital"
+},
+{
+"id": 101,
+"name": "Cleveland Nuffield Hospital (United Kingdom-North East England-Stockton On Tees)",
+"short": "Cleveland Nuffield Hospital",
+"search": "cleveland nuffield hospital"
+},
+{
+"id": 2217,
+"name": "Colchester General Hospital (United Kingdom-East Of England-Colchester)",
+"short": "Colchester General Hospital",
+"search": "colchester general hospital"
+},
+{
+"id": 2048,
+"name": "Connolly Hospital (Ireland, Republic Of-Dublin-Blanchardstown)",
+"short": "Connolly Hospital",
+"search": "connolly hospital"
+},
+{
+"id": 2157,
+"name": "Conquest Hospital (United Kingdom-South East England-East Sussex)",
+"short": "Conquest Hospital",
+"search": "conquest hospital"
+},
+{
+"id": 2004,
+"name": "Cork University College Hospital (Ireland, Republic Of-Co. Cork-Wilton)",
+"short": "Cork University College Hospital",
+"search": "cork university college hospital"
+},
+{
+"id": 27,
+"name": "Cork University Hospital (Ireland, Republic Of-Old Codes-Cork)",
+"short": "Cork University Hospital",
+"search": "cork university hospital"
+},
+{
+"id": 2201,
+"name": "Countess Of Chester Hospital (United Kingdom-North West England-Cheshire)",
+"short": "Countess Of Chester Hospital",
+"search": "countess of chester hospital"
+},
+{
+"id": 2763,
+"name": "County Hospital (United Kingdom-West Midlands-Stafford)",
+"short": "County Hospital",
+"search": "county hospital"
+},
+{
+"id": 102,
+"name": "Cromwell Hospital (United Kingdom-London - North West And Northern-London)",
+"short": "Cromwell Hospital",
+"search": "cromwell hospital"
+},
+{
+"id": 2307,
+"name": "Crosshouse Hospital (United Kingdom-Scotland-Kilmarnock)",
+"short": "Crosshouse Hospital",
+"search": "crosshouse hospital"
+},
+{
+"id": 2091,
+"name": "Cuh / South Infirmary (Emergency Medicine) (Ireland, Republic Of-Co. Cork-)",
+"short": "Cuh / South Infirmary",
+"search": "cuh / south infirmary"
+},
+{
+"id": 2482,
+"name": "Cumberland Infirmary (United Kingdom-North West England-Carlisle)",
+"short": "Cumberland Infirmary",
+"search": "cumberland infirmary"
+},
+{
+"id": 2221,
+"name": "Daisy Hill Hospital (United Kingdom-Northern Ireland-Newry)",
+"short": "Daisy Hill Hospital",
+"search": "daisy hill hospital"
+},
+{
+"id": 2251,
+"name": "Darlington Memorial Hospital (United Kingdom-North East England-County Durham)",
+"short": "Darlington Memorial Hospital",
+"search": "darlington memorial hospital"
+},
+{
+"id": 2525,
+"name": "Department Of Clinical Neurosciences (United Kingdom-Scotland-Edinburgh)",
+"short": "Department Of Clinical Neurosciences",
+"search": "department of clinical neurosciences"
+},
+{
+"id": 2282,
+"name": "Derbyshire Royal Infirmary (United Kingdom-East Midlands-Derby)",
+"short": "Derbyshire Royal Infirmary",
+"search": "derbyshire royal infirmary"
+},
+{
+"id": 9,
+"name": "Derriford Hospital (United Kingdom-South West England-Plymouth)",
+"short": "Derriford Hospital",
+"search": "derriford hospital"
+},
+{
+"id": 2267,
+"name": "Dewsbury District Hospital (United Kingdom-Yorkshire & Humber-Dewsbury)",
+"short": "Dewsbury District Hospital",
+"search": "dewsbury district hospital"
+},
+{
+"id": 2306,
+"name": "Diana Princess Of Wales Hospital (United Kingdom-Yorkshire & Humber-Grimsby)",
+"short": "Diana Princess Of Wales Hospital",
+"search": "diana princess of wales hospital"
+},
+{
+"id": 2280,
+"name": "Doncaster Royal Infirmary (United Kingdom-Yorkshire & Humber-Doncaster)",
+"short": "Doncaster Royal Infirmary",
+"search": "doncaster royal infirmary"
+},
+{
+"id": 2223,
+"name": "Dorset County Hospital (United Kingdom-South East England-Dorchester)",
+"short": "Dorset County Hospital",
+"search": "dorset county hospital"
+},
+{
+"id": 103,
+"name": "Droitwich Spa Hospital (Bmi) (United Kingdom-West Midlands-Droitwich)",
+"short": "Droitwich Spa Hospital",
+"search": "droitwich spa hospital"
+},
+{
+"id": 2058,
+"name": "Dundee Royal Infirmary (United Kingdom-Scotland-Dundee)(Dd1 9Nd)",
+"short": "Dundee Royal Infirmary",
+"search": "dundee royal infirmary"
+},
+{
+"id": 39,
+"name": "Dutchy Hospital (United Kingdom-Yorkshire & Humber-Harrogate)",
+"short": "Dutchy Hospital",
+"search": "dutchy hospital"
+},
+{
+"id": 2344,
+"name": "Ealing Hospital (United Kingdom-London - North West And Northern-Middlesex)",
+"short": "Ealing Hospital",
+"search": "ealing hospital"
+},
+{
+"id": 2257,
+"name": "East Surrey Hospital (United Kingdom-South East England-Redhill)",
+"short": "East Surrey Hospital",
+"search": "east surrey hospital"
+},
+{
+"id": 2200,
+"name": "East Surrey Hospital (United Kingdom-South East England-Surrey)",
+"short": "East Surrey Hospital",
+"search": "east surrey hospital"
+},
+{
+"id": 2255,
+"name": "Eastbourne District General Hospital (United Kingdom-South East England-Eastbourne)",
+"short": "Eastbourne District General Hospital",
+"search": "eastbourne district general hospital"
+},
+{
+"id": 2229,
+"name": "Edith Cavell Hospital (United Kingdom-East Of England-Peterborough)",
+"short": "Edith Cavell Hospital",
+"search": "edith cavell hospital"
+},
+{
+"id": 2001,
+"name": "Ennis General Hospital (Ireland, Republic Of-Old Codes-Ennis)",
+"short": "Ennis General Hospital",
+"search": "ennis general hospital"
+},
+{
+"id": 2168,
+"name": "Epsom General Hospital (United Kingdom-South East England-Epsom)",
+"short": "Epsom General Hospital",
+"search": "epsom general hospital"
+},
+{
+"id": 2342,
+"name": "Erne Hospital (United Kingdom-Northern Ireland-Enniskillen)",
+"short": "Erne Hospital",
+"search": "erne hospital"
+},
+{
+"id": 104,
+"name": "Essex Nuffield Hospital (United Kingdom-London - North West And Northern-Brentwood)",
+"short": "Essex Nuffield Hospital",
+"search": "essex nuffield hospital"
+},
+{
+"id": 2736,
+"name": "Euxton Hall Hospital (United Kingdom-North West England-Euxton)",
+"short": "Euxton Hall Hospital",
+"search": "euxton hall hospital"
+},
+{
+"id": 105,
+"name": "Fenwick Hospital (United Kingdom-South East England-Southampton)",
+"short": "Fenwick Hospital",
+"search": "fenwick hospital"
+},
+{
+"id": 106,
+"name": "Fernbrae Hospital (Bmi) (United Kingdom-Scotland-Dundee)",
+"short": "Fernbrae Hospital",
+"search": "fernbrae hospital"
+},
+{
+"id": 8,
+"name": "Frenchay Hospital (United Kingdom-South West England-Bristol)",
+"short": "Frenchay Hospital",
+"search": "frenchay hospital"
+},
+{
+"id": 2242,
+"name": "Frimley Park Hospital (United Kingdom-South East England-Camberley)",
+"short": "Frimley Park Hospital",
+"search": "frimley park hospital"
+},
+{
+"id": 107,
+"name": "Fulwood Hall Hospital (United Kingdom-North West England-Preston)",
+"short": "Fulwood Hall Hospital",
+"search": "fulwood hall hospital"
+},
+{
+"id": 2198,
+"name": "Furness General Hospital, (United Kingdom-North West England-Barrow-In- Furness)",
+"short": "Furness General Hospital,",
+"search": "furness general hospital,"
+},
+{
+"id": 2057,
+"name": "Galway Clinic (Ireland, Republic Of-Old Codes-Galway Clinic)",
+"short": "Galway Clinic",
+"search": "galway clinic"
+},
+{
+"id": 2265,
+"name": "Gartnavel General Hospital (United Kingdom-Scotland-Glasgow)",
+"short": "Gartnavel General Hospital",
+"search": "gartnavel general hospital"
+},
+{
+"id": 2323,
+"name": "George Eliot Hospital (United Kingdom-West Midlands-Nuneaton)",
+"short": "George Eliot Hospital",
+"search": "george eliot hospital"
+},
+{
+"id": 2254,
+"name": "Glan Clwyd Hospital (United Kingdom-Wales-Rhyl)",
+"short": "Glan Clwyd Hospital",
+"search": "glan clwyd hospital"
+},
+{
+"id": 2298,
+"name": "Glasgow Royal Infirmary (United Kingdom-Scotland-Glasgow)",
+"short": "Glasgow Royal Infirmary",
+"search": "glasgow royal infirmary"
+},
+{
+"id": 2244,
+"name": "Gloucestershire Royal Hospital (United Kingdom-South West England-Gloucester)",
+"short": "Gloucestershire Royal Hospital",
+"search": "gloucestershire royal hospital"
+},
+{
+"id": 2302,
+"name": "Grantham & District Hospital (United Kingdom-East Midlands-Grantham)",
+"short": "Grantham & District Hospital",
+"search": "grantham & district hospital"
+},
+{
+"id": 37,
+"name": "Great Ormond Street Hospital For Children (United Kingdom-London - North West And Northern-London)",
+"short": "Great Ormond Street Hospital For Children",
+"search": "great ormond street hospital for children"
+},
+{
+"id": 108,
+"name": "Grosvenor Nuffield Hospital (United Kingdom-North West England-Chester)",
+"short": "Grosvenor Nuffield Hospital",
+"search": "grosvenor nuffield hospital"
+},
+{
+"id": 2308,
+"name": "Guy's Hospital (United Kingdom-London - South East-London)",
+"short": "Guy's Hospital",
+"search": "guy's hospital"
+},
+{
+"id": 2260,
+"name": "Hammersmith Hospital (United Kingdom-London - North West And Northern-London)",
+"short": "Hammersmith Hospital",
+"search": "hammersmith hospital"
+},
+{
+"id": 2727,
+"name": "Harborne Hospital (United Kingdom-West Midlands-Birmingham)",
+"short": "Harborne Hospital",
+"search": "harborne hospital"
+},
+{
+"id": 2597,
+"name": "Harley Street Clinic (United Kingdom-London - North West And Northern-London)",
+"short": "Harley Street Clinic",
+"search": "harley street clinic"
+},
+{
+"id": 50,
+"name": "Harold Wood Hospital (United Kingdom-London - North West And Northern-Romford)",
+"short": "Harold Wood Hospital",
+"search": "harold wood hospital"
+},
+{
+"id": 2219,
+"name": "Hillingdon Hospital (United Kingdom-London - North West And Northern-Uxbridge)",
+"short": "Hillingdon Hospital",
+"search": "hillingdon hospital"
+},
+{
+"id": 2188,
+"name": "Homerton Hospital (United Kingdom-London - South East-London)",
+"short": "Homerton Hospital",
+"search": "homerton hospital"
+},
+{
+"id": 6,
+"name": "Hope Hospital (United Kingdom-North West England-Manchester)",
+"short": "Hope Hospital",
+"search": "hope hospital"
+},
+{
+"id": 2152,
+"name": "Hospital Of St Cross Rugby (United Kingdom-West Midlands-Warwickshire)",
+"short": "Hospital Of St Cross Rugby",
+"search": "hospital of st cross rugby"
+},
+{
+"id": 109,
+"name": "Huddersfield Nuffield Hospital (United Kingdom-Yorkshire & Humber-Huddersfield)",
+"short": "Huddersfield Nuffield Hospital",
+"search": "huddersfield nuffield hospital"
+},
+{
+"id": 2161,
+"name": "Huddersfield Royal Infirmary (United Kingdom-Yorkshire & Humber-Huddersfield)",
+"short": "Huddersfield Royal Infirmary",
+"search": "huddersfield royal infirmary"
+},
+{
+"id": 110,
+"name": "Hull Nuffield Hospital (United Kingdom-Yorkshire & Humber-Cottingham)",
+"short": "Hull Nuffield Hospital",
+"search": "hull nuffield hospital"
+},
+{
+"id": 17,
+"name": "Hull Royal Infirmary (United Kingdom-Yorkshire & Humber-Hull)",
+"short": "Hull Royal Infirmary",
+"search": "hull royal infirmary"
+},
+{
+"id": 41,
+"name": "James Cook University Hospital (United Kingdom-North East England-Middlesborough)",
+"short": "James Cook University Hospital",
+"search": "james cook university hospital"
+},
+{
+"id": 2278,
+"name": "James Paget University Hospital (United Kingdom-East Of England-Great Yarmouth)",
+"short": "James Paget University Hospital",
+"search": "james paget university hospital"
+},
+{
+"id": 47,
+"name": "John Radcliffe Hospital (United Kingdom-South East England-Oxford)",
+"short": "John Radcliffe Hospital",
+"search": "john radcliffe hospital"
+},
+{
+"id": 2175,
+"name": "Kent And Canterbury Hospital (United Kingdom-South East England-Canterbury)",
+"short": "Kent And Canterbury Hospital",
+"search": "kent and canterbury hospital"
+},
+{
+"id": 2371,
+"name": "Kent And Sussex Hospital (United Kingdom-South East England-Tunbridge Wells)",
+"short": "Kent And Sussex Hospital",
+"search": "kent and sussex hospital"
+},
+{
+"id": 2018,
+"name": "Kerry General Hospital (Ireland, Republic Of-Co. Kerry-Tralee)",
+"short": "Kerry General Hospital",
+"search": "kerry general hospital"
+},
+{
+"id": 2187,
+"name": "Kettering General Hospital (United Kingdom-East Midlands-Kettering)",
+"short": "Kettering General Hospital",
+"search": "kettering general hospital"
+},
+{
+"id": 2020,
+"name": "Kilcreene / Lourdes Orthopaedic Hospital (Ireland, Republic Of-Co. Kilkenny-Kilcreene)",
+"short": "Kilcreene / Lourdes Orthopaedic Hospital",
+"search": "kilcreene / lourdes orthopaedic hospital"
+},
+{
+"id": 152,
+"name": "King Edward Vii Hospital (United Kingdom-London - North West And Northern-London)",
+"short": "King Edward Vii Hospital",
+"search": "king edward vii hospital"
+},
+{
+"id": 2309,
+"name": "King George Hospital (United Kingdom-London - North West And Northern-Ilford)",
+"short": "King George Hospital",
+"search": "king george hospital"
+},
+{
+"id": 33,
+"name": "King'S College Hospital (United Kingdom-London - South East-London)",
+"short": "King'S College Hospital",
+"search": "king's college hospital"
+},
+{
+"id": 2163,
+"name": "Kings College Hospital (United Kingdom-London - South East-London)",
+"short": "Kings College Hospital",
+"search": "kings college hospital"
+},
+{
+"id": 2182,
+"name": "Kings Mill Hospital (United Kingdom-East Midlands-Sutton-In-Ashfield)",
+"short": "Kings Mill Hospital",
+"search": "kings mill hospital"
+},
+{
+"id": 2162,
+"name": "Kingston Hospital (United Kingdom-London - South West-Kingston-Upon-Thames)",
+"short": "Kingston Hospital",
+"search": "kingston hospital"
+},
+{
+"id": 2258,
+"name": "Lagan Valley Hospital (United Kingdom-Northern Ireland-Lisburn)",
+"short": "Lagan Valley Hospital",
+"search": "lagan valley hospital"
+},
+{
+"id": 18,
+"name": "Leeds General Infirmary (United Kingdom-Yorkshire & Humber-Leeds)",
+"short": "Leeds General Infirmary",
+"search": "leeds general infirmary"
+},
+{
+"id": 38,
+"name": "Leeds Nuffield Hospital (United Kingdom-Yorkshire & Humber-Leeds)",
+"short": "Leeds Nuffield Hospital",
+"search": "leeds nuffield hospital"
+},
+{
+"id": 112,
+"name": "Leicester Nuffield Hospital (United Kingdom-East Midlands-Leicester)",
+"short": "Leicester Nuffield Hospital",
+"search": "leicester nuffield hospital"
+},
+{
+"id": 2153,
+"name": "Leicester Royal Infirmary (United Kingdom-East Midlands-Leicester)",
+"short": "Leicester Royal Infirmary",
+"search": "leicester royal infirmary"
+},
+{
+"id": 2191,
+"name": "Leighton Hospital (United Kingdom-North West England-Crewe)",
+"short": "Leighton Hospital",
+"search": "leighton hospital"
+},
+{
+"id": 2008,
+"name": "Letterkenny General Hospital (Ireland, Republic Of-Co. Donegal-Letterkenny)",
+"short": "Letterkenny General Hospital",
+"search": "letterkenny general hospital"
+},
+{
+"id": 140,
+"name": "Lewes Victoria Hospital (United Kingdom-South East England-Lewes)",
+"short": "Lewes Victoria Hospital",
+"search": "lewes victoria hospital"
+},
+{
+"id": 2289,
+"name": "Lincoln County Hospital (United Kingdom-East Midlands-Lincoln)",
+"short": "Lincoln County Hospital",
+"search": "lincoln county hospital"
+},
+{
+"id": 2313,
+"name": "Lister Hospital (United Kingdom-East Of England-Stevenage)",
+"short": "Lister Hospital",
+"search": "lister hospital"
+},
+{
+"id": 2292,
+"name": "Llandough Hospital (United Kingdom-Wales-Cardiff)",
+"short": "Llandough Hospital",
+"search": "llandough hospital"
+},
+{
+"id": 113,
+"name": "London Bridge Hospital (United Kingdom-London - North West And Northern-London)",
+"short": "London Bridge Hospital",
+"search": "london bridge hospital"
+},
+{
+"id": 114,
+"name": "London Clinic (United Kingdom-London - North West And Northern-London)",
+"short": "London Clinic",
+"search": "london clinic"
+},
+{
+"id": 2534,
+"name": "London Dermatology Clinic (United Kingdom-London - North West And Northern-Billingsgate)",
+"short": "London Dermatology Clinic",
+"search": "london dermatology clinic"
+},
+{
+"id": 115,
+"name": "London Independent Hospital (Bmi) (United Kingdom-London - North West And Northern-London)",
+"short": "London Independent Hospital",
+"search": "london independent hospital"
+},
+{
+"id": 2237,
+"name": "Lorn & Islands District General Hospital (United Kingdom-Scotland-Oban)",
+"short": "Lorn & Islands District General Hospital",
+"search": "lorn & islands district general hospital"
+},
+{
+"id": 2026,
+"name": "Louth County Hospital, Dundalk (Ireland, Republic Of-Co. Louth-Dublin Road)",
+"short": "Louth County Hospital, Dundalk",
+"search": "louth county hospital, dundalk"
+},
+{
+"id": 2238,
+"name": "Luton & Dunstable Hospital (United Kingdom-South East England-Luton)",
+"short": "Luton & Dunstable Hospital",
+"search": "luton & dunstable hospital"
+},
+{
+"id": 2286,
+"name": "Maidstone Hospital (United Kingdom-South East England-Maidstone)",
+"short": "Maidstone Hospital",
+"search": "maidstone hospital"
+},
+{
+"id": 2005,
+"name": "Mallow General Hospital (Ireland, Republic Of-Co. Cork-Mallow)",
+"short": "Mallow General Hospital",
+"search": "mallow general hospital"
+},
+{
+"id": 148,
+"name": "Manchester Royal Infirmary (United Kingdom-North West England-Manchester)",
+"short": "Manchester Royal Infirmary",
+"search": "manchester royal infirmary"
+},
+{
+"id": 117,
+"name": "Manor Hospital (Bmi) (United Kingdom-London - North West And Northern-Bedford)",
+"short": "Manor Hospital",
+"search": "manor hospital"
+},
+{
+"id": 2325,
+"name": "Manor Hospital (United Kingdom-West Midlands-Walsall)",
+"short": "Manor Hospital",
+"search": "manor hospital"
+},
+{
+"id": 2343,
+"name": "Manor Nuffield Hospital (United Kingdom-South East England-Oxford)",
+"short": "Manor Nuffield Hospital",
+"search": "manor nuffield hospital"
+},
+{
+"id": 118,
+"name": "Mater Infirmorum Hospital (United Kingdom-Northern Ireland-Belfast)",
+"short": "Mater Infirmorum Hospital",
+"search": "mater infirmorum hospital"
+},
+{
+"id": 2049,
+"name": "Mater Misericordiae Hospital (Ireland, Republic Of-Dublin-Eccles Street)",
+"short": "Mater Misericordiae Hospital",
+"search": "mater misericordiae hospital"
+},
+{
+"id": 2050,
+"name": "Mater Private Hospital (Ireland, Republic Of-Dublin-Eccles Street)",
+"short": "Mater Private Hospital",
+"search": "mater private hospital"
+},
+{
+"id": 28,
+"name": "Mater Private Hospital (Ireland, Republic Of-Old Codes-Dublin)",
+"short": "Mater Private Hospital",
+"search": "mater private hospital"
+},
+{
+"id": 2156,
+"name": "Mayday University Hospital (United Kingdom-London - South West-Croydon)",
+"short": "Mayday University Hospital",
+"search": "mayday university hospital"
+},
+{
+"id": 2028,
+"name": "Mayo General Hospital (Ireland, Republic Of-Co. Mayo-Castlebar)",
+"short": "Mayo General Hospital",
+"search": "mayo general hospital"
+},
+{
+"id": 2241,
+"name": "Medway Maritime Hospital (United Kingdom-South East England-Kent)",
+"short": "Medway Maritime Hospital",
+"search": "medway maritime hospital"
+},
+{
+"id": 2093,
+"name": "Mercy University Hospital (Ireland, Republic Of-Co. Cork-Grenville Place)",
+"short": "Mercy University Hospital",
+"search": "mercy university hospital"
+},
+{
+"id": 2040,
+"name": "Mercy University Hospital (Ireland, Republic Of-Old Codes-Grenville Place)",
+"short": "Mercy University Hospital",
+"search": "mercy university hospital"
+},
+{
+"id": 2014,
+"name": "Merlin Park Regional Hospital (Ireland, Republic Of-Co. Galway-Co. Galway)",
+"short": "Merlin Park Regional Hospital",
+"search": "merlin park regional hospital"
+},
+{
+"id": 2023,
+"name": "Mid-Western Regional Hospital (Ireland, Republic Of-Co. Limerick-Dooradoyle)",
+"short": "Mid-Western Regional Hospital",
+"search": "mid-western regional hospital"
+},
+{
+"id": 4,
+"name": "Middlesbrough General Hospital (United Kingdom-North East England-Middlesbrough)",
+"short": "Middlesbrough General Hospital",
+"search": "middlesbrough general hospital"
+},
+{
+"id": 2038,
+"name": "Midland Hospital At Mullingar (Ireland, Republic Of-Co. Westmeath-Mullingar)",
+"short": "Midland Hospital At Mullingar",
+"search": "midland hospital at mullingar"
+},
+{
+"id": 2022,
+"name": "Midland Hospital At Portlaoise (Ireland, Republic Of-Co. Laois-Dublin Road)",
+"short": "Midland Hospital At Portlaoise",
+"search": "midland hospital at portlaoise"
+},
+{
+"id": 2031,
+"name": "Midland Hospital At Tullamore (Ireland, Republic Of-Co. Offaly-Arden Road)",
+"short": "Midland Hospital At Tullamore",
+"search": "midland hospital at tullamore"
+},
+{
+"id": 151,
+"name": "Milton Keynes General Hospital (United Kingdom-South East England-Milton Keynes)",
+"short": "Milton Keynes General Hospital",
+"search": "milton keynes general hospital"
+},
+{
+"id": 2030,
+"name": "Monaghan General Hospital (Ireland, Republic Of-Co. Monaghan-Hill Street)",
+"short": "Monaghan General Hospital",
+"search": "monaghan general hospital"
+},
+{
+"id": 2272,
+"name": "Monklands Hospital (United Kingdom-Scotland-Airdrie)",
+"short": "Monklands Hospital",
+"search": "monklands hospital"
+},
+{
+"id": 21,
+"name": "Morriston Hospital (United Kingdom-Wales-Swansea)",
+"short": "Morriston Hospital",
+"search": "morriston hospital"
+},
+{
+"id": 2183,
+"name": "Musgrave Park Hospital (United Kingdom-Northern Ireland-Belfast)",
+"short": "Musgrave Park Hospital",
+"search": "musgrave park hospital"
+},
+{
+"id": 2213,
+"name": "Musgrove Park Hospital (United Kingdom-South West England-Taunton)",
+"short": "Musgrove Park Hospital",
+"search": "musgrove park hospital"
+},
+{
+"id": 2019,
+"name": "Naas General Hospital (Ireland, Republic Of-Co. Kildare-Naas)",
+"short": "Naas General Hospital",
+"search": "naas general hospital"
+},
+{
+"id": 2468,
+"name": "National Hospital For Neurology And Neurosurgery (United Kingdom-London - North West And Northern-London)",
+"short": "National Hospital For Neurology And Neurosurgery",
+"search": "national hospital for neurology and neurosurgery"
+},
+{
+"id": 2268,
+"name": "Neath Port Talbot Hospital (United Kingdom-Wales-Port Talbot)",
+"short": "Neath Port Talbot Hospital",
+"search": "neath port talbot hospital"
+},
+{
+"id": 2184,
+"name": "Nelson Hospital (United Kingdom-London - South East-London)",
+"short": "Nelson Hospital",
+"search": "nelson hospital"
+},
+{
+"id": 2034,
+"name": "Nenagh General Hospital (Ireland, Republic Of-Old Codes-Nenagh)",
+"short": "Nenagh General Hospital",
+"search": "nenagh general hospital"
+},
+{
+"id": 2281,
+"name": "Nevill Hall Hospital (United Kingdom-Wales-Abergavenny)",
+"short": "Nevill Hall Hospital",
+"search": "nevill hall hospital"
+},
+{
+"id": 3,
+"name": "Newcastle General Hospital (United Kingdom-North East England-Newcastle)",
+"short": "Newcastle General Hospital",
+"search": "newcastle general hospital"
+},
+{
+"id": 119,
+"name": "Newcastle Nuffield Hospital (United Kingdom-North East England-Newcastle Upon Tyne)",
+"short": "Newcastle Nuffield Hospital",
+"search": "newcastle nuffield hospital"
+},
+{
+"id": 25,
+"name": "Ninewells Hospital (United Kingdom-Scotland-Dundee)",
+"short": "Ninewells Hospital",
+"search": "ninewells hospital"
+},
+{
+"id": 2243,
+"name": "Norfolk & Norwich University Hospital (United Kingdom-East Of England-Norwich)",
+"short": "Norfolk & Norwich University Hospital",
+"search": "norfolk & norwich university hospital"
+},
+{
+"id": 2347,
+"name": "North Devon District Hospital (United Kingdom-South West England-Barnstaple)",
+"short": "North Devon District Hospital",
+"search": "north devon district hospital"
+},
+{
+"id": 14,
+"name": "North Staffordshire Hospital Trust (United Kingdom-West Midlands-Stoke On Trent)",
+"short": "North Staffordshire Hospital Trust",
+"search": "north staffordshire hospital trust"
+},
+{
+"id": 2164,
+"name": "Northampton General Hospital (United Kingdom-East Midlands-Northampton)",
+"short": "Northampton General Hospital",
+"search": "northampton general hospital"
+},
+{
+"id": 2441,
+"name": "Northern General Hospital (United Kingdom-Yorkshire & Humber-Sheffield)",
+"short": "Northern General Hospital",
+"search": "northern general hospital"
+},
+{
+"id": 2239,
+"name": "Northwick Park Hospital (United Kingdom-London - North West And Northern-Harrow)",
+"short": "Northwick Park Hospital",
+"search": "northwick park hospital"
+},
+{
+"id": 2171,
+"name": "Nottingham City Hospital (United Kingdom-East Midlands-Nottingham)",
+"short": "Nottingham City Hospital",
+"search": "nottingham city hospital"
+},
+{
+"id": 121,
+"name": "Nottingham Nuffield Hospital (United Kingdom-East Midlands-Nottingham)",
+"short": "Nottingham Nuffield Hospital",
+"search": "nottingham nuffield hospital"
+},
+{
+"id": 122,
+"name": "Nuffield Hospital Cambridge (United Kingdom-East Of England-Cambridge)",
+"short": "Nuffield Hospital Cambridge",
+"search": "nuffield hospital cambridge"
+},
+{
+"id": 123,
+"name": "Nuffield Hospital Harrogate (United Kingdom-Yorkshire & Humber-Harrogate)",
+"short": "Nuffield Hospital Harrogate",
+"search": "nuffield hospital harrogate"
+},
+{
+"id": 124,
+"name": "Nuffield Hospital Haywards Heath (United Kingdom-South East England-Haywards Heath)",
+"short": "Nuffield Hospital Haywards Heath",
+"search": "nuffield hospital haywards heath"
+},
+{
+"id": 156,
+"name": "Oldchurch Hospital (United Kingdom-London - North West And Northern-Romford)",
+"short": "Oldchurch Hospital",
+"search": "oldchurch hospital"
+},
+{
+"id": 2381,
+"name": "Ormskirk & District General Hospital (United Kingdom-North West England-Ormskirk)",
+"short": "Ormskirk & District General Hospital",
+"search": "ormskirk & district general hospital"
+},
+{
+"id": 53,
+"name": "Other Hospital (Eastern) (United Kingdom-East Of England-)",
+"short": "Other Hospital",
+"search": "other hospital"
+},
+{
+"id": 66,
+"name": "Other Hospital (North London) (United Kingdom-London - North West And Northern-)",
+"short": "Other Hospital",
+"search": "other hospital"
+},
+{
+"id": 67,
+"name": "Other Hospital (South East London) (United Kingdom-London - South East-)",
+"short": "Other Hospital",
+"search": "other hospital"
+},
+{
+"id": 69,
+"name": "Other Hospital (National Hospitals) (United Kingdom-London - South West-)",
+"short": "Other Hospital",
+"search": "other hospital"
+},
+{
+"id": 68,
+"name": "Other Hospital (South West London) (United Kingdom-London - South West-)",
+"short": "Other Hospital",
+"search": "other hospital"
+},
+{
+"id": 55,
+"name": "Other Hospital (Northern) (United Kingdom-North East England-)",
+"short": "Other Hospital",
+"search": "other hospital"
+},
+{
+"id": 54,
+"name": "Other Hospital (Mersey) (United Kingdom-North West England-)",
+"short": "Other Hospital",
+"search": "other hospital"
+},
+{
+"id": 56,
+"name": "Other Hospital (North West) (United Kingdom-North West England-)",
+"short": "Other Hospital",
+"search": "other hospital"
+},
+{
+"id": 62,
+"name": "Other Hospital (Northern Ireland) (United Kingdom-Northern Ireland-)",
+"short": "Other Hospital",
+"search": "other hospital"
+},
+{
+"id": 64,
+"name": "Other Hospital (Scotland) (United Kingdom-Scotland-)",
+"short": "Other Hospital",
+"search": "other hospital"
+},
+{
+"id": 57,
+"name": "Other Hospital (South East) (United Kingdom-South East England-)",
+"short": "Other Hospital",
+"search": "other hospital"
+},
+{
+"id": 58,
+"name": "Other Hospital (South West) (United Kingdom-South West England-)",
+"short": "Other Hospital",
+"search": "other hospital"
+},
+{
+"id": 63,
+"name": "Other Hospital (Wales) (United Kingdom-Wales-)",
+"short": "Other Hospital",
+"search": "other hospital"
+},
+{
+"id": 59,
+"name": "Other Hospital (West Midlands) (United Kingdom-West Midlands-)",
+"short": "Other Hospital",
+"search": "other hospital"
+},
+{
+"id": 61,
+"name": "Other Hospital (Yorkshire) (United Kingdom-Yorkshire & Humber-)",
+"short": "Other Hospital",
+"search": "other hospital"
+},
+{
+"id": 20000468,
+"name": "Other Hospital - Ireland (Ireland, Republic Of-Old Codes-)",
+"short": "Other Hospital - Ireland",
+"search": "other hospital - ireland"
+},
+{
+"id": 40,
+"name": "Other Hospital Not Shown Elsewhere (United Kingdom-Other-)",
+"short": "Other Hospital Not Shown Elsewhere",
+"search": "other hospital not shown elsewhere"
+},
+{
+"id": 2027,
+"name": "Our Lady Of Lourdes Hospital, Drogheda (Ireland, Republic Of-Co. Louth-Drogheda)",
+"short": "Our Lady Of Lourdes Hospital, Drogheda",
+"search": "our lady of lourdes hospital, drogheda"
+},
+{
+"id": 2051,
+"name": "Our Lady's Hospital For Sick Children, Crumlin (Ireland, Republic Of-Dublin-Crumlin)",
+"short": "Our Lady's Hospital For Sick Children, Crumlin",
+"search": "our lady's hospital for sick children, crumlin"
+},
+{
+"id": 2035,
+"name": "Our Lady's Hospital, Cashel (Ireland, Republic Of-Co. Tipperary-Cashel)",
+"short": "Our Lady's Hospital, Cashel",
+"search": "our lady's hospital, cashel"
+},
+{
+"id": 2029,
+"name": "Our Lady's Hospital, Navan (Ireland, Republic Of-Co. Meath-Navan)",
+"short": "Our Lady's Hospital, Navan",
+"search": "our lady's hospital, navan"
+},
+{
+"id": 126,
+"name": "Park Hospital (Bmi) (United Kingdom-East Midlands-Arnold)",
+"short": "Park Hospital",
+"search": "park hospital"
+},
+{
+"id": 145,
+"name": "Parkside Hospital (United Kingdom-London - South West-Wimbledon, London)",
+"short": "Parkside Hospital",
+"search": "parkside hospital"
+},
+{
+"id": 149,
+"name": "Pendlebury Hospital (United Kingdom-North West England-Manchester)",
+"short": "Pendlebury Hospital",
+"search": "pendlebury hospital"
+},
+{
+"id": 2228,
+"name": "Peterborough City Hospital (United Kingdom-East Of England-Peterborough)",
+"short": "Peterborough City Hospital",
+"search": "peterborough city hospital"
+},
+{
+"id": 2312,
+"name": "Pilgrim Hospital (United Kingdom-East Midlands-Boston)",
+"short": "Pilgrim Hospital",
+"search": "pilgrim hospital"
+},
+{
+"id": 2295,
+"name": "Pinderfields General Hospital (United Kingdom-Yorkshire & Humber-Wakefield)",
+"short": "Pinderfields General Hospital",
+"search": "pinderfields general hospital"
+},
+{
+"id": 127,
+"name": "Plymouth Nuffield Hospital (United Kingdom-South West England-Plymouth)",
+"short": "Plymouth Nuffield Hospital",
+"search": "plymouth nuffield hospital"
+},
+{
+"id": 2296,
+"name": "Pontefract General Infirmary (United Kingdom-Yorkshire & Humber-Pontefract)",
+"short": "Pontefract General Infirmary",
+"search": "pontefract general infirmary"
+},
+{
+"id": 2205,
+"name": "Poole General Hospital (United Kingdom-South West England-Poole)",
+"short": "Poole General Hospital",
+"search": "poole general hospital"
+},
+{
+"id": 2015,
+"name": "Portiuncula Hospital (Ireland, Republic Of-Co. Galway-Ballinasloe)",
+"short": "Portiuncula Hospital",
+"search": "portiuncula hospital"
+},
+{
+"id": 128,
+"name": "Portland Hospital (United Kingdom-London - North West And Northern-London)",
+"short": "Portland Hospital",
+"search": "portland hospital"
+},
+{
+"id": 2204,
+"name": "Prince Charles Hospital (United Kingdom-Wales-Merthyr Tydfil)",
+"short": "Prince Charles Hospital",
+"search": "prince charles hospital"
+},
+{
+"id": 2273,
+"name": "Princess Alexandra Hospital (United Kingdom-East Of England-Harlow)",
+"short": "Princess Alexandra Hospital",
+"search": "princess alexandra hospital"
+},
+{
+"id": 129,
+"name": "Princess Grace Hospital (United Kingdom-London - North West And Northern-London)",
+"short": "Princess Grace Hospital",
+"search": "princess grace hospital"
+},
+{
+"id": 2067,
+"name": "Princess Margaret Hospital (United Kingdom-South East England-Windsor)",
+"short": "Princess Margaret Hospital",
+"search": "princess margaret hospital"
+},
+{
+"id": 2269,
+"name": "Princess Of Wales Hospital (United Kingdom-Wales-Bridgend)",
+"short": "Princess Of Wales Hospital",
+"search": "princess of wales hospital"
+},
+{
+"id": 2404,
+"name": "Princess Royal Hospital (United Kingdom-South East England-Haywards Heath)",
+"short": "Princess Royal Hospital",
+"search": "princess royal hospital"
+},
+{
+"id": 2203,
+"name": "Princess Royal Hospital (United Kingdom-West Midlands-Telford)",
+"short": "Princess Royal Hospital",
+"search": "princess royal hospital"
+},
+{
+"id": 130,
+"name": "Priory Hospital (Bmi) (United Kingdom-West Midlands-Birmingham)",
+"short": "Priory Hospital",
+"search": "priory hospital"
+},
+{
+"id": 131,
+"name": "Purey Cust Nuffield Hospital (United Kingdom-Yorkshire & Humber-York)",
+"short": "Purey Cust Nuffield Hospital",
+"search": "purey cust nuffield hospital"
+},
+{
+"id": 2178,
+"name": "Queen Alexandra Hospital (United Kingdom-South East England-Portsmouth)",
+"short": "Queen Alexandra Hospital",
+"search": "queen alexandra hospital"
+},
+{
+"id": 2304,
+"name": "Queen Elizabeth Hospital (United Kingdom-East Of England-Kings Lynn)",
+"short": "Queen Elizabeth Hospital",
+"search": "queen elizabeth hospital"
+},
+{
+"id": 2337,
+"name": "Queen Elizabeth Hospital Birmingham (United Kingdom-West Midlands-Birmingham)",
+"short": "Queen Elizabeth Hospital Birmingham",
+"search": "queen elizabeth hospital birmingham"
+},
+{
+"id": 2207,
+"name": "Queen Elizabeth Ii Hospital (United Kingdom-London - North West And Northern-Welwyn Garden City)",
+"short": "Queen Elizabeth Ii Hospital",
+"search": "queen elizabeth ii hospital"
+},
+{
+"id": 2186,
+"name": "Queen Elizabeth The Queen Mother Hospital (United Kingdom-South East England-Margate)",
+"short": "Queen Elizabeth The Queen Mother Hospital",
+"search": "queen elizabeth the queen mother hospital"
+},
+{
+"id": 2518,
+"name": "Queen Elizabeth University Hospital (United Kingdom-Scotland-Glasgow)",
+"short": "Queen Elizabeth University Hospital",
+"search": "queen elizabeth university hospital"
+},
+{
+"id": 2271,
+"name": "Queen Mary's Hospital (United Kingdom-South East England-Sidcup)",
+"short": "Queen Mary's Hospital",
+"search": "queen mary's hospital"
+},
+{
+"id": 2170,
+"name": "Queen Victoria Hospital (United Kingdom-South East England-East Grinstead)",
+"short": "Queen Victoria Hospital",
+"search": "queen victoria hospital"
+},
+{
+"id": 11,
+"name": "Queen'S Medical Centre (United Kingdom-East Midlands-Nottingham)",
+"short": "Queen'S Medical Centre",
+"search": "queen's medical centre"
+},
+{
+"id": 32,
+"name": "Queens Hospital, Romford (United Kingdom-London - North West And Northern-London)",
+"short": "Queens Hospital, Romford",
+"search": "queens hospital, romford"
+},
+{
+"id": 7,
+"name": "Radcliffe Infirmary (United Kingdom-South East England-Oxford)",
+"short": "Radcliffe Infirmary",
+"search": "radcliffe infirmary"
+},
+{
+"id": 2216,
+"name": "Raigmore Hospital (United Kingdom-Scotland-Inverness)",
+"short": "Raigmore Hospital",
+"search": "raigmore hospital"
+},
+{
+"id": 132,
+"name": "Renacres Hall Hospital (United Kingdom-North West England-Ormskirk)",
+"short": "Renacres Hall Hospital",
+"search": "renacres hall hospital"
+},
+{
+"id": 2032,
+"name": "Roscommon County Hospital (Ireland, Republic Of-Co. Roscommon-Co. Roscommon)",
+"short": "Roscommon County Hospital",
+"search": "roscommon county hospital"
+},
+{
+"id": 153,
+"name": "Ross Hall Hospital (United Kingdom-Scotland-Glasgow)",
+"short": "Ross Hall Hospital",
+"search": "ross hall hospital"
+},
+{
+"id": 2364,
+"name": "Rotherham General Hospital (United Kingdom-Yorkshire & Humber-Rotherham)",
+"short": "Rotherham General Hospital",
+"search": "rotherham general hospital"
+},
+{
+"id": 42,
+"name": "Royal Aberdeen Children's Hospital (United Kingdom-Scotland-Aberdeen)",
+"short": "Royal Aberdeen Children's Hospital",
+"search": "royal aberdeen children's hospital"
+},
+{
+"id": 2248,
+"name": "Royal Alexandra Hospital (United Kingdom-Scotland-Paisley)",
+"short": "Royal Alexandra Hospital",
+"search": "royal alexandra hospital"
+},
+{
+"id": 2209,
+"name": "Royal Belfast Hospital For Sick Children (United Kingdom-Northern Ireland-Belfast)",
+"short": "Royal Belfast Hospital For Sick Children",
+"search": "royal belfast hospital for sick children"
+},
+{
+"id": 2215,
+"name": "Royal Berkshire Hospital (United Kingdom-South East England-Reading)",
+"short": "Royal Berkshire Hospital",
+"search": "royal berkshire hospital"
+},
+{
+"id": 2197,
+"name": "Royal Blackburn Hospital (United Kingdom-North West England-Blackburn)",
+"short": "Royal Blackburn Hospital",
+"search": "royal blackburn hospital"
+},
+{
+"id": 2206,
+"name": "Royal Bournemouth General Hospital (United Kingdom-South West England-Bournemouth)",
+"short": "Royal Bournemouth General Hospital",
+"search": "royal bournemouth general hospital"
+},
+{
+"id": 45,
+"name": "Royal Brompton Hospital (United Kingdom-London - North West And Northern-London)",
+"short": "Royal Brompton Hospital",
+"search": "royal brompton hospital"
+},
+{
+"id": 2167,
+"name": "Royal Cornwall Hospital (United Kingdom-South West England-Truro)",
+"short": "Royal Cornwall Hospital",
+"search": "royal cornwall hospital"
+},
+{
+"id": 2279,
+"name": "Royal Derby Hospital (United Kingdom-East Midlands-Derby)",
+"short": "Royal Derby Hospital",
+"search": "royal derby hospital"
+},
+{
+"id": 30,
+"name": "Royal Free Hospital (United Kingdom-London - North West And Northern-London)",
+"short": "Royal Free Hospital",
+"search": "royal free hospital"
+},
+{
+"id": 2263,
+"name": "Royal Glamorgan Hospital (United Kingdom-Wales-Llantristant)",
+"short": "Royal Glamorgan Hospital",
+"search": "royal glamorgan hospital"
+},
+{
+"id": 2259,
+"name": "Royal Gwent Hospital (United Kingdom-Wales-Newport)",
+"short": "Royal Gwent Hospital",
+"search": "royal gwent hospital"
+},
+{
+"id": 10,
+"name": "Royal Hallamshire Hospital (United Kingdom-Yorkshire & Humber-Sheffield)",
+"short": "Royal Hallamshire Hospital",
+"search": "royal hallamshire hospital"
+},
+{
+"id": 155,
+"name": "Royal Hallamshire Hospital (United Kingdom-Yorkshire & Humber-Sheffield)",
+"short": "Royal Hallamshire Hospital",
+"search": "royal hallamshire hospital"
+},
+{
+"id": 2148,
+"name": "Royal Hampshire County Hospital (United Kingdom-South East England-Winchester)",
+"short": "Royal Hampshire County Hospital",
+"search": "royal hampshire county hospital"
+},
+{
+"id": 2231,
+"name": "Royal Hospital For Sick Children (United Kingdom-Scotland-Glasgow)",
+"short": "Royal Hospital For Sick Children",
+"search": "royal hospital for sick children"
+},
+{
+"id": 43,
+"name": "Royal Hospital For Sick Children (United Kingdom-Scotland-Edinburgh)",
+"short": "Royal Hospital For Sick Children",
+"search": "royal hospital for sick children"
+},
+{
+"id": 49,
+"name": "Royal Hospital For Sick Children (United Kingdom-South West England-Bristol)",
+"short": "Royal Hospital For Sick Children",
+"search": "royal hospital for sick children"
+},
+{
+"id": 44,
+"name": "Royal Infirmary Of Edinburgh (United Kingdom-Scotland-Edinburgh)",
+"short": "Royal Infirmary Of Edinburgh",
+"search": "royal infirmary of edinburgh"
+},
+{
+"id": 2234,
+"name": "Royal Lancaster Infirmary (United Kingdom-North West England-Lancaster)",
+"short": "Royal Lancaster Infirmary",
+"search": "royal lancaster infirmary"
+},
+{
+"id": 2437,
+"name": "Royal Liverpool University Hospital (United Kingdom-North West England-Liverpool)",
+"short": "Royal Liverpool University Hospital",
+"search": "royal liverpool university hospital"
+},
+{
+"id": 31,
+"name": "Royal London Hospital (London)",
+"short": "Royal London Hospital",
+"search": "royal london hospital"
+},
+{
+"id": 146,
+"name": "Royal Manchester Children's Hospital (United Kingdom-North West England-Manchester)",
+"short": "Royal Manchester Children's Hospital",
+"search": "royal manchester children's hospital"
+},
+{
+"id": 133,
+"name": "Royal Marsden Hospital (United Kingdom-London - North West And Northern-London)",
+"short": "Royal Marsden Hospital",
+"search": "royal marsden hospital"
+},
+{
+"id": 134,
+"name": "Royal National Ent Hospital (United Kingdom-London - North West And Northern-London)",
+"short": "Royal National Ent Hospital",
+"search": "royal national ent hospital"
+},
+{
+"id": 135,
+"name": "Royal National Orthopaedic Hospital (United Kingdom-London - North West And Northern-Stanmore)",
+"short": "Royal National Orthopaedic Hospital",
+"search": "royal national orthopaedic hospital"
+},
+{
+"id": 2275,
+"name": "Royal Oldham Hospital (United Kingdom-North West England-Oldham)",
+"short": "Royal Oldham Hospital",
+"search": "royal oldham hospital"
+},
+{
+"id": 5,
+"name": "Royal Preston Hospital (United Kingdom-North West England-Preston)",
+"short": "Royal Preston Hospital",
+"search": "royal preston hospital"
+},
+{
+"id": 2591,
+"name": "Royal Stoke University Hospital (United Kingdom-West Midlands-Stoke On Trent)",
+"short": "Royal Stoke University Hospital",
+"search": "royal stoke university hospital"
+},
+{
+"id": 46,
+"name": "Royal Sussex County Hospital (United Kingdom-South East England-Brighton)",
+"short": "Royal Sussex County Hospital",
+"search": "royal sussex county hospital"
+},
+{
+"id": 2294,
+"name": "Royal United Hospital (United Kingdom-South West England-Bath)",
+"short": "Royal United Hospital",
+"search": "royal united hospital"
+},
+{
+"id": 2052,
+"name": "Royal Victoria Eye & Ear Hospital (Ireland, Republic Of-Dublin-Adelaide Road)",
+"short": "Royal Victoria Eye & Ear Hospital",
+"search": "royal victoria eye & ear hospital"
+},
+{
+"id": 19,
+"name": "Royal Victoria Hospital (United Kingdom-Northern Ireland-Belfast)",
+"short": "Royal Victoria Hospital",
+"search": "royal victoria hospital"
+},
+{
+"id": 2130,
+"name": "Royal Victoria Infirmary (United Kingdom-North East England-Newcastle Upon Tyne)",
+"short": "Royal Victoria Infirmary",
+"search": "royal victoria infirmary"
+},
+{
+"id": 2397,
+"name": "Russells Hall Hospital (United Kingdom-West Midlands-Dudley)",
+"short": "Russells Hall Hospital",
+"search": "russells hall hospital"
+},
+{
+"id": 2189,
+"name": "Salisbury District Hospital (United Kingdom-South West England-Wiltshire)",
+"short": "Salisbury District Hospital",
+"search": "salisbury district hospital"
+},
+{
+"id": 2375,
+"name": "Sandwell General Hospital (United Kingdom-West Midlands-West Bromwich)",
+"short": "Sandwell General Hospital",
+"search": "sandwell general hospital"
+},
+{
+"id": 2165,
+"name": "Scarborough General Hospital (United Kingdom-Yorkshire & Humber-Scarborough)",
+"short": "Scarborough General Hospital",
+"search": "scarborough general hospital"
+},
+{
+"id": 2261,
+"name": "Scunthorpe General Hospital (United Kingdom-Yorkshire & Humber-Scunthorpe)",
+"short": "Scunthorpe General Hospital",
+"search": "scunthorpe general hospital"
+},
+{
+"id": 51,
+"name": "Sheffield Children's Hospital (United Kingdom-Yorkshire & Humber-Sheffield)",
+"short": "Sheffield Children's Hospital",
+"search": "sheffield children's hospital"
+},
+{
+"id": 2033,
+"name": "Sligo General Hospital (Ireland, Republic Of-Co. Sligo-The Mall)",
+"short": "Sligo General Hospital",
+"search": "sligo general hospital"
+},
+{
+"id": 2324,
+"name": "Solihull Hospital (United Kingdom-West Midlands-Solihull)",
+"short": "Solihull Hospital",
+"search": "solihull hospital"
+},
+{
+"id": 2006,
+"name": "South Infirmary - Victoria University Hospital (Ireland, Republic Of-Co. Cork-Old Blackrock Road)",
+"short": "South Infirmary - Victoria University Hospital",
+"search": "south infirmary - victoria university hospital"
+},
+{
+"id": 2036,
+"name": "South Tipperary General Hospital (Ireland, Republic Of-Co. Tipperary-Clonmel)",
+"short": "South Tipperary General Hospital",
+"search": "south tipperary general hospital"
+},
+{
+"id": 2532,
+"name": "South West Acute Hospital (United Kingdom-Northern Ireland-Enniskillen)",
+"short": "South West Acute Hospital",
+"search": "south west acute hospital"
+},
+{
+"id": 2147,
+"name": "Southampton General Hospital (United Kingdom-South East England-Southampton)",
+"short": "Southampton General Hospital",
+"search": "southampton general hospital"
+},
+{
+"id": 2327,
+"name": "Southend Hospital (United Kingdom-East Of England-Westcliff-On-Sea)",
+"short": "Southend Hospital",
+"search": "southend hospital"
+},
+{
+"id": 22,
+"name": "Southern General Hospital (United Kingdom-Scotland-Glasgow)",
+"short": "Southern General Hospital",
+"search": "southern general hospital"
+},
+{
+"id": 136,
+"name": "Southmead Hospital (United Kingdom-South West England-Bristol)",
+"short": "Southmead Hospital",
+"search": "southmead hospital"
+},
+{
+"id": 79,
+"name": "Spire Cambridge Lea Hospital (United Kingdom-East Of England-Impington)",
+"short": "Spire Cambridge Lea Hospital",
+"search": "spire cambridge lea hospital"
+},
+{
+"id": 80,
+"name": "Spire Fylde Coast Hospital (United Kingdom-North West England-Blackpool)",
+"short": "Spire Fylde Coast Hospital",
+"search": "spire fylde coast hospital"
+},
+{
+"id": 81,
+"name": "Spire Gatwick Park Hospital (United Kingdom-South East England-Horley)",
+"short": "Spire Gatwick Park Hospital",
+"search": "spire gatwick park hospital"
+},
+{
+"id": 82,
+"name": "Spire Hartswood Hospital (Ireland, Republic Of-Old Codes-Brentwood)",
+"short": "Spire Hartswood Hospital",
+"search": "spire hartswood hospital"
+},
+{
+"id": 83,
+"name": "Spire Hospital Bristol (United Kingdom-South West England-Bristol)",
+"short": "Spire Hospital Bristol",
+"search": "spire hospital bristol"
+},
+{
+"id": 84,
+"name": "Spire Hospital Bushey (United Kingdom-London - North West And Northern-Watford)",
+"short": "Spire Hospital Bushey",
+"search": "spire hospital bushey"
+},
+{
+"id": 85,
+"name": "Spire Hospital Cardiff (United Kingdom-Wales-Cardiff)",
+"short": "Spire Hospital Cardiff",
+"search": "spire hospital cardiff"
+},
+{
+"id": 86,
+"name": "Spire Hospital Leeds (United Kingdom-Yorkshire & Humber-Leeds)",
+"short": "Spire Hospital Leeds",
+"search": "spire hospital leeds"
+},
+{
+"id": 87,
+"name": "Spire Hospital Leicester (United Kingdom-East Midlands-Leicester)",
+"short": "Spire Hospital Leicester",
+"search": "spire hospital leicester"
+},
+{
+"id": 88,
+"name": "Spire Hospital Little Aston (United Kingdom-West Midlands-Sutton Coldfield)",
+"short": "Spire Hospital Little Aston",
+"search": "spire hospital little aston"
+},
+{
+"id": 89,
+"name": "Spire Hospital Manchester (United Kingdom-North West England-Manchester)",
+"short": "Spire Hospital Manchester",
+"search": "spire hospital manchester"
+},
+{
+"id": 90,
+"name": "Spire Hospital Southampton (United Kingdom-South East England-Southampton)",
+"short": "Spire Hospital Southampton",
+"search": "spire hospital southampton"
+},
+{
+"id": 2075,
+"name": "Spire Hospital Washington (United Kingdom-North East England-Washington Tyne & Wear)",
+"short": "Spire Hospital Washington",
+"search": "spire hospital washington"
+},
+{
+"id": 91,
+"name": "Spire Hospital Washington (United Kingdom-South East England-Washington)",
+"short": "Spire Hospital Washington",
+"search": "spire hospital washington"
+},
+{
+"id": 92,
+"name": "Spire Hull And East Riding Hospital (United Kingdom-Yorkshire & Humber-Hull)",
+"short": "Spire Hull And East Riding Hospital",
+"search": "spire hull and east riding hospital"
+},
+{
+"id": 93,
+"name": "Spire Methley Park Hospital (United Kingdom-Yorkshire & Humber-Leeds)",
+"short": "Spire Methley Park Hospital",
+"search": "spire methley park hospital"
+},
+{
+"id": 94,
+"name": "Spire Murrayfield Hospital Edinburgh (United Kingdom-Scotland-Edinburgh)",
+"short": "Spire Murrayfield Hospital Edinburgh",
+"search": "spire murrayfield hospital edinburgh"
+},
+{
+"id": 95,
+"name": "Spire North Cheshire Hospital (United Kingdom-North West England-Warrington)",
+"short": "Spire North Cheshire Hospital",
+"search": "spire north cheshire hospital"
+},
+{
+"id": 96,
+"name": "Spire Parkway Hospital (United Kingdom-West Midlands-Solihull)",
+"short": "Spire Parkway Hospital",
+"search": "spire parkway hospital"
+},
+{
+"id": 97,
+"name": "Spire Roding Hospital (United Kingdom-London - North West And Northern-Ilford)",
+"short": "Spire Roding Hospital",
+"search": "spire roding hospital"
+},
+{
+"id": 2314,
+"name": "Sports Surgery Clinic (Ireland, Republic Of-Dublin-Dublin)",
+"short": "Sports Surgery Clinic",
+"search": "sports surgery clinic"
+},
+{
+"id": 2627,
+"name": "Springfield Hospital (United Kingdom-East Of England-Chelmsford)",
+"short": "Springfield Hospital",
+"search": "springfield hospital"
+},
+{
+"id": 2211,
+"name": "St Albans City Hospital (United Kingdom-London - North West And Northern-St Albans)",
+"short": "St Albans City Hospital",
+"search": "st albans city hospital"
+},
+{
+"id": 52,
+"name": "St Bartholomew's Hospital (United Kingdom-London - North West And Northern-London)",
+"short": "St Bartholomew's Hospital",
+"search": "st bartholomew's hospital"
+},
+{
+"id": 35,
+"name": "St George's Hospital (United Kingdom-London - South West-London)",
+"short": "St George's Hospital",
+"search": "st george's hospital"
+},
+{
+"id": 2227,
+"name": "St Helier Hospital (United Kingdom-London - South East-Carshalton)",
+"short": "St Helier Hospital",
+"search": "st helier hospital"
+},
+{
+"id": 2245,
+"name": "St James University Hospital (United Kingdom-Yorkshire & Humber-Leeds)",
+"short": "St James University Hospital",
+"search": "st james university hospital"
+},
+{
+"id": 2300,
+"name": "St Johns Hospital At Howden (United Kingdom-Scotland-Livingston)",
+"short": "St Johns Hospital At Howden",
+"search": "st johns hospital at howden"
+},
+{
+"id": 150,
+"name": "St Mary's Hospital (United Kingdom-London - North West And Northern-London)",
+"short": "St Mary's Hospital",
+"search": "st mary's hospital"
+},
+{
+"id": 2193,
+"name": "St Mary's Hospital (United Kingdom-Other-Newport, Isle Of Wight)",
+"short": "St Mary's Hospital",
+"search": "st mary's hospital"
+},
+{
+"id": 2303,
+"name": "St Peters Hospital (United Kingdom-South East England-Chertsey)",
+"short": "St Peters Hospital",
+"search": "st peters hospital"
+},
+{
+"id": 2180,
+"name": "St Richards Hospital (United Kingdom-South East England-Chichester)",
+"short": "St Richards Hospital",
+"search": "st richards hospital"
+},
+{
+"id": 2208,
+"name": "St Thomas' Hospital (United Kingdom-London - South East-London)",
+"short": "St Thomas' Hospital",
+"search": "st thomas' hospital"
+},
+{
+"id": 2010,
+"name": "St. Columcille's Hospital (Ireland, Republic Of-Co. Dublin-Loughlinstown)",
+"short": "St. Columcille's Hospital",
+"search": "st. columcille's hospital"
+},
+{
+"id": 2053,
+"name": "St. James Hospital (Ireland, Republic Of-Dublin-James Street)",
+"short": "St. James Hospital",
+"search": "st. james hospital"
+},
+{
+"id": 2024,
+"name": "St. Johns Hospital (Ireland, Republic Of-Co. Limerick-St. Johns Square)",
+"short": "St. Johns Hospital",
+"search": "st. johns hospital"
+},
+{
+"id": 2054,
+"name": "St. Josephs Hospital (Ireland, Republic Of-Old Codes-Springdale Road)",
+"short": "St. Josephs Hospital",
+"search": "st. josephs hospital"
+},
+{
+"id": 2021,
+"name": "St. Luke's Hospital (Ireland, Republic Of-Co. Kilkenny-Freshford Road)",
+"short": "St. Luke's Hospital",
+"search": "st. luke's hospital"
+},
+{
+"id": 2007,
+"name": "St. Mary's Orthopaedic Hospital (Ireland, Republic Of-Co. Cork-Gurranebraher)",
+"short": "St. Mary's Orthopaedic Hospital",
+"search": "st. mary's orthopaedic hospital"
+},
+{
+"id": 2011,
+"name": "St. Michael's Consultants Private Clinic (Ireland, Republic Of-Old Codes-7 Charlemont Avenue)",
+"short": "St. Michael's Consultants Private Clinic",
+"search": "st. michael's consultants private clinic"
+},
+{
+"id": 2012,
+"name": "St. Michael's Hospital (Ireland, Republic Of-Co. Dublin-Lr. Georges Street)",
+"short": "St. Michael's Hospital",
+"search": "st. michael's hospital"
+},
+{
+"id": 2025,
+"name": "St. Nessan's Regional Orthopaedic Hospital (Ireland, Republic Of-Co. Limerick-Croom)",
+"short": "St. Nessan's Regional Orthopaedic Hospital",
+"search": "st. nessan's regional orthopaedic hospital"
+},
+{
+"id": 2056,
+"name": "St. Vincent's University Hospital (Ireland, Republic Of-Dublin-Elm Park)",
+"short": "St. Vincent's University Hospital",
+"search": "st. vincent's university hospital"
+},
+{
+"id": 2055,
+"name": "St. Vincents Private Hospital (Ireland, Republic Of-Dublin-Herbert Avenue)",
+"short": "St. Vincents Private Hospital",
+"search": "st. vincents private hospital"
+},
+{
+"id": 2331,
+"name": "Stafford Hospital (United Kingdom-West Midlands-Stafford)",
+"short": "Stafford Hospital",
+"search": "stafford hospital"
+},
+{
+"id": 2311,
+"name": "Stepping Hill Hospital (United Kingdom-North West England-Stockport)",
+"short": "Stepping Hill Hospital",
+"search": "stepping hill hospital"
+},
+{
+"id": 2305,
+"name": "Stirling Royal Infirmary (United Kingdom-Scotland-Stirling)",
+"short": "Stirling Royal Infirmary",
+"search": "stirling royal infirmary"
+},
+{
+"id": 2232,
+"name": "Stobhill Hospital (United Kingdom-Scotland-Glasgow)",
+"short": "Stobhill Hospital",
+"search": "stobhill hospital"
+},
+{
+"id": 2159,
+"name": "Stoke Mandeville Hospital (United Kingdom-South East England-Aylesbury)",
+"short": "Stoke Mandeville Hospital",
+"search": "stoke mandeville hospital"
+},
+{
+"id": 2252,
+"name": "Sunderland Royal Infirmary (United Kingdom-North East England-Sunderland)",
+"short": "Sunderland Royal Infirmary",
+"search": "sunderland royal infirmary"
+},
+{
+"id": 137,
+"name": "Sussex Nuffield Hospital (United Kingdom-South East England-Brighton)",
+"short": "Sussex Nuffield Hospital",
+"search": "sussex nuffield hospital"
+},
+{
+"id": 2172,
+"name": "Sutton Hospital (United Kingdom-London - South West-Sutton)",
+"short": "Sutton Hospital",
+"search": "sutton hospital"
+},
+{
+"id": 2202,
+"name": "Tameside General Hospital, Ashton Under Lyne (United Kingdom-North West England-Lancashire)",
+"short": "Tameside General Hospital, Ashton Under Lyne",
+"search": "tameside general hospital, ashton under lyne"
+},
+{
+"id": 2318,
+"name": "The Alexandra Hospital (Bmi) (United Kingdom-West Midlands-Redditch)",
+"short": "The Alexandra Hospital",
+"search": "alexandra hospital"
+},
+{
+"id": 2270,
+"name": "The Ipswich Hospital (United Kingdom-East Of England-Ipswich)",
+"short": "The Ipswich Hospital",
+"search": "ipswich hospital"
+},
+{
+"id": 36,
+"name": "The National Hospital For Neurology & Neurosurgery (United Kingdom-London - North West And Northern-London)",
+"short": "The National Hospital For Neurology & Neurosurgery",
+"search": "national hospital for neurology & neurosurgery"
+},
+{
+"id": 2150,
+"name": "The Royal Devon & Exeter Hospital (United Kingdom-South West England-Devon)",
+"short": "The Royal Devon & Exeter Hospital",
+"search": "royal devon & exeter hospital"
+},
+{
+"id": 154,
+"name": "The Royal Liverpool Children's Hospital (Alder Hey) (United Kingdom-North West England-Liverpool)",
+"short": "The Royal Liverpool Children's Hospital",
+"search": "royal liverpool children's hospital"
+},
+{
+"id": 2571,
+"name": "The Royal Orthopaedic Hospital (United Kingdom-West Midlands-Birmingham)",
+"short": "The Royal Orthopaedic Hospital",
+"search": "royal orthopaedic hospital"
+},
+{
+"id": 2222,
+"name": "The Ulster Hospital (United Kingdom-Northern Ireland-Belfast)",
+"short": "The Ulster Hospital",
+"search": "ulster hospital"
+},
+{
+"id": 138,
+"name": "Thornbury Hospital (Bmi) (United Kingdom-Yorkshire & Humber-Sheffield)",
+"short": "Thornbury Hospital",
+"search": "thornbury hospital"
+},
+{
+"id": 2250,
+"name": "Torbay District General Hospital (United Kingdom-South West England-Torquay)",
+"short": "Torbay District General Hospital",
+"search": "torbay district general hospital"
+},
+{
+"id": 2233,
+"name": "Trafford General Hospital (United Kingdom-North West England-Manchester)",
+"short": "Trafford General Hospital",
+"search": "trafford general hospital"
+},
+{
+"id": 139,
+"name": "Ulster Independent Clinic (United Kingdom-Northern Ireland-Belfast)",
+"short": "Ulster Independent Clinic",
+"search": "ulster independent clinic"
+},
+{
+"id": 2016,
+"name": "University College Hospital Galway (Ireland, Republic Of-Co. Galway-Newcastle Road)",
+"short": "University College Hospital Galway",
+"search": "university college hospital galway"
+},
+{
+"id": 2196,
+"name": "University College London Hospital (United Kingdom-London - North West And Northern-London)",
+"short": "University College London Hospital",
+"search": "university college london hospital"
+},
+{
+"id": 2199,
+"name": "University Hospital Aintree (United Kingdom-North West England-Liverpool)",
+"short": "University Hospital Aintree",
+"search": "university hospital aintree"
+},
+{
+"id": 2154,
+"name": "University Hospital Lewisham (United Kingdom-London - South East-London)",
+"short": "University Hospital Lewisham",
+"search": "university hospital lewisham"
+},
+{
+"id": 2145,
+"name": "University Hospital Of Coventry And Warwickshire (United Kingdom-West Midlands-Coventry)",
+"short": "University Hospital Of Coventry And Warwickshire",
+"search": "university hospital of coventry and warwickshire"
+},
+{
+"id": 2256,
+"name": "University Hospital Of North Staffordshire (United Kingdom-West Midlands-Stoke-On-Trent)",
+"short": "University Hospital Of North Staffordshire",
+"search": "university hospital of north staffordshire"
+},
+{
+"id": 2301,
+"name": "University Hospital Of North Tees (United Kingdom-North East England-Stockton-On-Tees)",
+"short": "University Hospital Of North Tees",
+"search": "university hospital of north tees"
+},
+{
+"id": 20,
+"name": "University Hospital Of Wales (Cardiff)",
+"short": "University Hospital Of Wales",
+"search": "university hospital of wales"
+},
+{
+"id": 2246,
+"name": "Vale Of Leven Hospital (United Kingdom-Scotland-Dunbartonshire)",
+"short": "Vale Of Leven Hospital",
+"search": "vale of leven hospital"
+},
+{
+"id": 15,
+"name": "Walsgrave Hospital (United Kingdom-West Midlands-Coventry)",
+"short": "Walsgrave Hospital",
+"search": "walsgrave hospital"
+},
+{
+"id": 2363,
+"name": "Warrington Hospital (United Kingdom-North West England-Warrington)",
+"short": "Warrington Hospital",
+"search": "warrington hospital"
+},
+{
+"id": 2037,
+"name": "Waterford Regional Hospital (Ireland, Republic Of-Co. Waterford-Dunmore Road)",
+"short": "Waterford Regional Hospital",
+"search": "waterford regional hospital"
+},
+{
+"id": 2210,
+"name": "Watford General Hospital (United Kingdom-London - North West And Northern-Watford)",
+"short": "Watford General Hospital",
+"search": "watford general hospital"
+},
+{
+"id": 141,
+"name": "Wellington Hospital (United Kingdom-London - North West And Northern-London)",
+"short": "Wellington Hospital",
+"search": "wellington hospital"
+},
+{
+"id": 142,
+"name": "Wessex Nuffield Hospital (United Kingdom-South East England-Eastleigh)",
+"short": "Wessex Nuffield Hospital",
+"search": "wessex nuffield hospital"
+},
+{
+"id": 2166,
+"name": "West Cornwall Hospital (United Kingdom-South West England-Penzance)",
+"short": "West Cornwall Hospital",
+"search": "west cornwall hospital"
+},
+{
+"id": 2297,
+"name": "West Cumberland Hospital (United Kingdom-North West England-Whitehaven)",
+"short": "West Cumberland Hospital",
+"search": "west cumberland hospital"
+},
+{
+"id": 2326,
+"name": "West Middlesex University Hospital (United Kingdom-London - South East-Isleworth)",
+"short": "West Middlesex University Hospital",
+"search": "west middlesex university hospital"
+},
+{
+"id": 2455,
+"name": "West Midlands Hospital (United Kingdom-West Midlands-Halesowen)",
+"short": "West Midlands Hospital",
+"search": "west midlands hospital"
+},
+{
+"id": 2291,
+"name": "West Wales General Hospital (United Kingdom-Wales-Glangwili Carmarthen)",
+"short": "West Wales General Hospital",
+"search": "west wales general hospital"
+},
+{
+"id": 23,
+"name": "Western General Hospital (United Kingdom-Scotland-Edinburgh)",
+"short": "Western General Hospital",
+"search": "western general hospital"
+},
+{
+"id": 2290,
+"name": "Weston General Hospital (United Kingdom-South West England-Weston-Super-Mare)",
+"short": "Weston General Hospital",
+"search": "weston general hospital"
+},
+{
+"id": 143,
+"name": "Weston Park Hospital (United Kingdom-Yorkshire & Humber-Sheffield)",
+"short": "Weston Park Hospital",
+"search": "weston park hospital"
+},
+{
+"id": 2039,
+"name": "Wexford General Hospital (Ireland, Republic Of-Co. Wexford-Newtown Road)",
+"short": "Wexford General Hospital",
+"search": "wexford general hospital"
+},
+{
+"id": 2181,
+"name": "Wexham Park Hospital (United Kingdom-South East England-Slough, Berkshire)",
+"short": "Wexham Park Hospital",
+"search": "wexham park hospital"
+},
+{
+"id": 2195,
+"name": "Whipps Cross University Hospital (United Kingdom-London - North West And Northern-London)",
+"short": "Whipps Cross University Hospital",
+"search": "whipps cross university hospital"
+},
+{
+"id": 2176,
+"name": "Whittington Hospital (United Kingdom-London - North West And Northern-London)",
+"short": "Whittington Hospital",
+"search": "whittington hospital"
+},
+{
+"id": 2173,
+"name": "William Harvey Hospital (United Kingdom-South East England-Ashford Kent)",
+"short": "William Harvey Hospital",
+"search": "william harvey hospital"
+},
+{
+"id": 2408,
+"name": "Wishaw General Hospital (United Kingdom-Scotland-Wishaw)",
+"short": "Wishaw General Hospital",
+"search": "wishaw general hospital"
+},
+{
+"id": 2315,
+"name": "Worcestershire Royal Hospital (United Kingdom-West Midlands-Worcester)",
+"short": "Worcestershire Royal Hospital",
+"search": "worcestershire royal hospital"
+},
+{
+"id": 2235,
+"name": "Worthing Hospital (United Kingdom-South East England-Worthing)",
+"short": "Worthing Hospital",
+"search": "worthing hospital"
+},
+{
+"id": 2285,
+"name": "Wycombe General Hospital (United Kingdom-South East England-High Wycombe)",
+"short": "Wycombe General Hospital",
+"search": "wycombe general hospital"
+},
+{
+"id": 2230,
+"name": "Wythenshawe Hospital (United Kingdom-North West England-Wythenshawe)",
+"short": "Wythenshawe Hospital",
+"search": "wythenshawe hospital"
+},
+{
+"id": 2214,
+"name": "Yeovil District Hospital (United Kingdom-South West England-Yeovil)",
+"short": "Yeovil District Hospital",
+"search": "yeovil district hospital"
+},
+{
+"id": 2284,
+"name": "York District Hospital (United Kingdom-Yorkshire & Humber-York)",
+"short": "York District Hospital",
+"search": "york district hospital"
+}
+]
+}

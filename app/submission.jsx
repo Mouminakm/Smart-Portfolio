@@ -4,19 +4,18 @@
 // dictated entry (EntryContext), waits for the Angular form to render, then
 // auto-fills every field. The user reviews and submits on eLogbook itself.
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 import { WebView } from "react-native-webview";
 import AppButton from "../components/AppButton";
+import { useAuth } from "../contexts/AuthContext";
 import { useEntry } from "../contexts/EntryContext";
 import { buildInjectionPlan } from "../lib/buildInjectionPlan";
+import { loadProfile } from "../profile";
 import schema from "../schemas/elogbook_neurosurgery_operation_log.json";
 
 const FORM_URL = "https://client.elogbook.org/eLogbook/Operations/OperationMaintain/Add";
 
-// Builds ONE injected script that fills the whole form from the plan. It waits
-// for the Angular form to exist, then runs each field type, then reports a
-// summary back. (Same proven mechanisms as the test bench, driven by `plan`.)
 function buildFullInjectionScript(plan) {
   return `
   (function() {
@@ -27,7 +26,9 @@ function buildFullInjectionScript(plan) {
     function setRadio(opts,v){ var t=String(v).trim().toLowerCase(); var c=opts.find(function(o){return o.label.trim().toLowerCase()===t;}); if(!c) return false; var el=document.querySelector(c.selector); if(!el) return false; el.checked=true; fireInput(el); return true; }
 
     // Zero-tap typeahead select via the Angular component (procedure + hospital).
-    function selectTypeahead(searchSel, id, searchText, done){
+    // id        -> exact id match (procedure node-id, or hospital eLogbook id).
+    // matchName -> fallback name match (only used when id is null).
+ function selectTypeahead(searchSel, id, searchText, matchName, done){
       var input = document.querySelector(searchSel);
       if(!input || !input.__ngContext__){ done(false); return; }
       var ctx = input.__ngContext__, directive = null, wrapper = null, seen = new Set();
@@ -39,25 +40,51 @@ function buildFullInjectionScript(plan) {
         if('selectedNodeId' in v && typeof v.onTypeaheadSelect==='function') wrapper = v;
       }
       if(!directive){ done(false); return; }
+
       var proto = Object.getPrototypeOf(input);
       var desc = Object.getOwnPropertyDescriptor(proto, 'value');
       desc.set.call(input, searchText);
       input.dispatchEvent(new Event('input', { bubbles: true }));
+
       var tries = 0;
       (function poll(){
         tries++;
         var matches = directive._matches || [];
-        var match = matches.find(function(m){ return m && m.item && String(m.item.id) === String(id); });
+        var match = null;
+        if (id !== null && id !== undefined) {
+          match = matches.find(function(m){ return m && m.item && String(m.item.id) === String(id); });
+        } else {
+          var core = function(s){
+            return String(s).toLowerCase()
+              .replace(/^the\s+/, "")
+              .replace(/\s*\([^)]*\)\s*$/, "")
+              .replace(/\s+/g, " ")
+              .trim();
+          };
+          var want = core(matchName || searchText);
+          match =
+            matches.find(function(m){ return m && m.item && core(m.item.name) === want; }) ||
+            matches.find(function(m){ return m && m.item && core(m.item.name).indexOf(want) === 0; }) ||
+            matches.find(function(m){ return m && m.item && want.indexOf(core(m.item.name)) === 0; });
+        }
         if(match){
           directive.changeModel(match);
           if(wrapper && typeof wrapper.onTypeaheadSelect === 'function'){ try { wrapper.onTypeaheadSelect(match); } catch(e){} }
           done(true); return;
         }
         if(tries < 40) return setTimeout(poll, 200);
+        window.ReactNativeWebView.postMessage(JSON.stringify({
+          type: 'typeahead_debug',
+          searchSel: searchSel,
+          wantId: id,
+          wantName: matchName || searchText,
+          got: (directive._matches || []).slice(0, 8).map(function(m){
+            return m && m.item ? { id: m.item.id, name: m.item.name } : null;
+          })
+        }));
         done(false);
       })();
     }
-
     function selectConsultant(name){
       var sel = document.querySelector('#responsibleconsultant');
       if(!sel) return false;
@@ -69,12 +96,10 @@ function buildFullInjectionScript(plan) {
 
     var plan = ${JSON.stringify(plan)};
 
-    // Wait for the Angular form, then fill everything.
-var tries = 0;
+    var tries = 0;
     function run(){
       tries++;
       if(!document.querySelector('#operationnotes')){
-        // report progress every few tries so we can see what's happening
         if(tries % 4 === 0){
           window.ReactNativeWebView.postMessage(JSON.stringify({
             type:'waiting',
@@ -95,10 +120,11 @@ var tries = 0;
       plan.radios.forEach(function(r){ if(setRadio(r.options, r.value)) filled++; else failed.push('radio'); });
       if(plan.consultant){ if(selectConsultant(plan.consultant)) filled++; else failed.push('consultant'); }
 
-      // Typeaheads are async; run procedure then hospital, then report.
       function afterProcedure(){
         if(plan.hospital){
-          selectTypeahead('#hospitalsAccordion-Typeahead', plan.hospital.id, plan.hospital.searchText, function(ok){
+          // hospital has eLogbook's exact id (from the user's stored list); we
+          // type the clean search name to trigger the typeahead, select by id.
+          selectTypeahead('#hospitalsAccordion-Typeahead', plan.hospital.id, plan.hospital.search, null, function(ok){
             if(ok) filled++; else failed.push('hospital');
             report();
           });
@@ -109,7 +135,7 @@ var tries = 0;
       }
 
       if(plan.procedure){
-        selectTypeahead('#operationsAccordion-Typeahead', plan.procedure.nodeId, plan.procedure.searchText, function(ok){
+        selectTypeahead('#operationsAccordion-Typeahead', plan.procedure.nodeId, plan.procedure.searchText, null, function(ok){
           if(ok) filled++; else failed.push('procedure');
           afterProcedure();
         });
@@ -123,19 +149,31 @@ var tries = 0;
 
 export default function SubmissionScreen() {
   const { fieldValues } = useEntry();
+  const { user } = useAuth();
   const webRef = useRef(null);
   const [statusMsg, setStatusMsg] = useState("Opening eLogbook…");
   const [filled, setFilled] = useState(false);
+  const [userHospitals, setUserHospitals] = useState(null); // null = still loading
 
-  // Build the plan from the dictated entry.
-  const plan = buildInjectionPlan(fieldValues, schema);
+  useEffect(() => {
+    async function load() {
+      if (user) {
+        const p = await loadProfile(user.uid);
+        setUserHospitals((p && p.hospitals) || []);
+      }
+    }
+    load();
+  }, [user]);
 
-  // When the page finishes loading, inject once (the script waits for the form).
-  function handleLoadEnd() {
-    if (hasInjected.current) return;
-    hasInjected.current = true;
-    setStatusMsg("Filling your entry…");
-    webRef.current.injectJavaScript(buildFullInjectionScript(plan));
+  const plan =
+    userHospitals === null
+      ? null
+      : buildInjectionPlan(fieldValues, schema, userHospitals);
+
+  if (plan) {
+    console.log("HOSPITAL DICTATED:", JSON.stringify(fieldValues.hospitalsAccordion));
+    console.log("HOSPITAL STORED:", JSON.stringify(userHospitals));
+    console.log("HOSPITAL PLAN:", JSON.stringify(plan.hospital));
   }
 
   function handleMessage(event) {
@@ -143,6 +181,10 @@ export default function SubmissionScreen() {
       const data = JSON.parse(event.nativeEvent.data);
       if (data.type === "waiting") {
         setStatusMsg(`Waiting for form… (fields: ${data.fieldCount}, ${data.url.slice(0, 40)})`);
+        return;
+      }
+      if (data.type === "typeahead_debug") {
+        console.log("TYPEAHEAD DEBUG:", JSON.stringify(data, null, 2));
         return;
       }
       if (data.type === "filled") {
@@ -165,15 +207,19 @@ export default function SubmissionScreen() {
         <Text style={styles.statusText}>{statusMsg}</Text>
       </View>
 
-      <WebView
-        ref={webRef}
-        source={{ uri: FORM_URL }}
-        style={styles.web}
-        sharedCookiesEnabled
-        thirdPartyCookiesEnabled
-        injectedJavaScript={buildFullInjectionScript(plan)}
-        onMessage={handleMessage}
-      />
+      {plan ? (
+        <WebView
+          ref={webRef}
+          source={{ uri: FORM_URL }}
+          style={styles.web}
+          sharedCookiesEnabled
+          thirdPartyCookiesEnabled
+          injectedJavaScript={buildFullInjectionScript(plan)}
+          onMessage={handleMessage}
+        />
+      ) : (
+        <View style={styles.web} />
+      )}
 
       <View style={styles.footer}>
         <Text style={styles.footerNote}>
