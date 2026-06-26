@@ -14,6 +14,7 @@ import {
 } from "react-native";
 import AppButton from "../components/AppButton";
 import ConsultantListField from "../components/ConsultantListField";
+import HospitalPickerField from "../components/HospitalPickerField";
 import MultiPickerField from "../components/MultiPickerField";
 import PickerField from "../components/PickerField";
 import { useAuth } from "../contexts/AuthContext";
@@ -32,6 +33,7 @@ export default function ProfileSetupScreen() {
   const [isBusy, setIsBusy] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [consultants, setConsultants] = useState([]); // names of consultants the user works with
+  const [hospitals, setHospitals] = useState([]); // hospitals the user operates at
 async function handleContinue() {
     // Required fields must be set before continuing.
     if (!specialty) {
@@ -50,7 +52,7 @@ async function handleContinue() {
     setIsBusy(true);
     try {
       if (user) {
-        await saveProfile(user.uid, { specialty, portfolios, gmcNumber, trainingNumber, consultants });
+        await saveProfile(user.uid, { specialty, portfolios, gmcNumber, trainingNumber, consultants, hospitals });
       }
       router.push("/permissions");
     } catch (error) {
@@ -96,6 +98,14 @@ async function handleContinue() {
           value={consultants}
           onChange={setConsultants}
         />
+        {/* Hospital(s) the user operates at — picked from the eLogbook list so
+            entries auto-fill the correct hospital. */}
+        <Text style={styles.label}>Your hospital(s)</Text>
+        <Text style={styles.helpText}>
+          Add the hospital(s) where you operate. When you dictate, just say which
+          one — entries fill the correct hospital automatically.
+        </Text>
+        <HospitalPickerField value={hospitals} onChange={setHospitals} />
         <Text style={styles.label}>GMC number (optional)</Text>
         <TextInput
           style={styles.input}
@@ -139,6 +149,7 @@ const styles = StyleSheet.create({
     marginBottom: 28,
   },
   label: { fontSize: 13, fontWeight: "600", color: "#1a1a1a", marginBottom: 6, marginTop: 4 },
+  helpText: { fontSize: 12, color: "#888888", marginBottom: 8, lineHeight: 17 },
   input: {
     borderWidth: 1,
     borderColor: "#cccccc",

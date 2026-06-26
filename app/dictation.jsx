@@ -89,29 +89,36 @@ export default function DictationScreen() {
     holdProgress.stopAnimation();
     Animated.timing(holdProgress, { toValue: 0, duration: 150, useNativeDriver: true }).start();
     setIsHolding(false);
-    toggleRecording(); // <-- real start/pause
+    startRecording(); // tap starts recording; hold finishes
   }
 
-  // Start recording, or pause it, depending on current state.
-  async function toggleRecording() {
-    if (status === "recording") {
-      // Pause: expo-audio doesn't pause-resume simply, so we keep it simple and
-      // just stop the mic but stay on screen. (We treat tap as a pause visually;
-      // the held audio continues into the same file on most platforms.)
-      setStatus("paused");
-      return;
+ // Start recording. (No pause in the MVP — the user holds to finish.)
+ async function startRecording() {
+  if (status === "recording") return; // already recording; ignore taps
+  const permission = await AudioModule.requestRecordingPermissionsAsync();
+  if (!permission.granted) {
+    setProcessing("Microphone permission denied. Enable it in your phone settings.");
+    return;
+  }
+  await setAudioModeAsync({ playsInSilentMode: true, allowsRecording: true });
+
+  // Prepare fresh, then record (the documented expo-audio flow). If a prior
+  // session left the recorder running, stop it first so prepare won't throw.
+  try {
+    if (recorderState.isRecording) {
+      await recorder.stop();
     }
-    // Start recording.
-    const permission = await AudioModule.requestRecordingPermissionsAsync();
-    if (!permission.granted) {
-      setProcessing("Microphone permission denied. Enable it in your phone settings.");
-      return;
-    }
-    await setAudioModeAsync({ playsInSilentMode: true, allowsRecording: true });
+  } catch (e) {
+    // not recording — fine
+  }
+  try {
     await recorder.prepareToRecordAsync();
     recorder.record();
     setStatus("recording");
+  } catch (e) {
+    setProcessing("Couldn't start recording. Try again.");
   }
+}
 
   // Finish: stop the mic, then transcribe and parse, then go to Review.
   async function finishRecording() {
@@ -188,7 +195,7 @@ export default function DictationScreen() {
 
   let hint = "Tap to record · hold to finish";
   if (isHolding) hint = "Keep holding to finish…";
-  else if (status === "recording") hint = "Recording — tap to pause · hold to finish";
+  else if (status === "recording") hint = "Recording — hold to finish";
 
   function FieldRow({ field }) {
     const optionsHint =
@@ -270,7 +277,7 @@ export default function DictationScreen() {
                 ]}
               >
                 <Text style={styles.recordButtonText}>
-                  {status === "recording" ? "Pause" : "Record"}
+                  {status === "recording" ? "Recording" : "Record"}
                 </Text>
               </Animated.View>
             </Pressable>
