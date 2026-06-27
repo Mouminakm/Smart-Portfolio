@@ -16,7 +16,9 @@ import { useRouter } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 import { Animated, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import AppButton from "../components/AppButton";
+import { useAuth } from "../contexts/AuthContext";
 import { useEntry } from "../contexts/EntryContext";
+import { loadProfile } from "../profile";
 import schema from "../schemas/elogbook_neurosurgery_operation_log.json";
 import procedureData from "../schemas/elogbook_neurosurgery_procedures.json";
 
@@ -28,7 +30,9 @@ const PARSE_URL = "https://europe-west2-smart-portfolio-d9c94.cloudfunctions.net
 
 export default function DictationScreen() {
   const router = useRouter();
+  const { user } = useAuth();
   const { setTranscript, setFieldValues, setConfirmed, resetEntry } = useEntry();
+  const [consultants, setConsultants] = useState([]); // user's own consultant names
 
   const [status, setStatus] = useState("paused"); // "recording" | "paused" | "finished"
   const [isHolding, setIsHolding] = useState(false);
@@ -43,6 +47,17 @@ export default function DictationScreen() {
   useEffect(() => {
     resetEntry();
   }, []);
+
+  // Load the user's saved consultants so we can let Claude pick from them.
+  useEffect(() => {
+    async function load() {
+      if (user) {
+        const p = await loadProfile(user.uid);
+        setConsultants((p && p.consultants) || []);
+      }
+    }
+    load();
+  }, [user]);
 
   // ---- Recording pulse ----
   const pulse = useRef(new Animated.Value(0)).current;
@@ -164,7 +179,6 @@ export default function DictationScreen() {
       // Send the procedure name list too, so Claude can pick EXACTLY one from
       // it (more robust than string-matching transcription variations).
       const procedureNames = (procedureData.procedures || []).map((p) => p.name);
-      console.log("SENDING procedureNames count:", procedureNames.length);
       const pRes = await fetch(PARSE_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -172,6 +186,7 @@ export default function DictationScreen() {
           transcript: transcriptText,
           fields: fieldsForClaude,
           procedureNames: procedureNames,
+          consultantNames: consultants,
         }),
       });
       const pData = await pRes.json();

@@ -128,7 +128,7 @@ exports.parse = onRequest(
           return;
         }
   
-        const { transcript, fields, procedureNames } = request.body || {};
+        const { transcript, fields, procedureNames, consultantNames } = request.body || {};
         logger.info("parse received procedureNames:", Array.isArray(procedureNames) ? procedureNames.length : "none");
         if (!transcript || !fields) {
           response.status(400).json({ error: "Need a transcript and fields." });
@@ -204,6 +204,21 @@ exports.parse = onRequest(
             text: listText,
             cache_control: { type: "ephemeral" }, // cache this big static block
           });
+        }// The user's own consultants — short, per-user list. Tell Claude to map
+        // the (often mis-transcribed) spoken name to EXACTLY one of these names,
+        // copied verbatim, or "" if none clearly matches. Not cached (per-user,
+        // small). This goes AFTER the cached procedure block so it doesn't break
+        // the cache prefix.
+        if (Array.isArray(consultantNames) && consultantNames.length) {
+          const cText =
+            "For the 'responsibleconsultant' field, the surgeon will name a " +
+            "consultant. Speech-to-text often mis-spells surnames, so map what " +
+            "was said to EXACTLY one name from the list below, copied verbatim " +
+            "(e.g. spoken \"McIntosh\" -> \"McKintosh\" if that is in the list; " +
+            "\"Off\" -> \"Uff\"). If none is a clear match, return \"\". Return " +
+            "the consultant name exactly as written here.\n\n" +
+            "CONSULTANT LIST:\n" + consultantNames.map((n) => "- " + n).join("\n");
+          systemBlocks.push({ type: "text", text: cText });
         }
 
         const aiResponse = await fetch("https://api.anthropic.com/v1/messages", {

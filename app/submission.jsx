@@ -79,9 +79,32 @@ function buildFullInjectionScript(plan) {
     function selectConsultant(name){
       var sel = document.querySelector('#responsibleconsultant');
       if(!sel) return false;
-      var target = String(name).trim().toLowerCase();
-      var m = Array.from(sel.options).filter(function(o){ return o.value !== 'UNKNOWN' && o.text.toLowerCase().indexOf(target) !== -1; });
-      if(m.length === 1){ sel.value = m[0].value; fireInput(sel); return true; }
+
+      // Break the dictated name into significant parts (drop titles and short
+      // bits), so we can match regardless of order or format. e.g. "Michael
+      // Carter" should match an option like "Carter, Michael" or "Mr M Carter".
+      var titles = { 'mr':1,'mrs':1,'ms':1,'miss':1,'dr':1,'prof':1,'professor':1,'mister':1 };
+      // Split on spaces/commas/dots WITHOUT a regex literal (backslash escapes
+      // are fragile inside this stringified injected script). Lowercase, then
+      // break on any run of non-letters by replacing them with a single space.
+      var cleaned = String(name).toLowerCase();
+      var spaced = "";
+      for(var ci=0; ci<cleaned.length; ci++){
+        var ch = cleaned[ci];
+        spaced += (ch >= 'a' && ch <= 'z') ? ch : ' ';
+      }
+      var parts = spaced.split(' ').filter(function(w){ return w.length > 1 && !titles[w]; });
+      if(parts.length === 0) return false;
+
+      // An option matches if it contains EVERY significant name part.
+      var candidates = Array.from(sel.options).filter(function(o){
+        if(o.value === 'UNKNOWN') return false;
+        var t = o.text.toLowerCase();
+        return parts.every(function(p){ return t.indexOf(p) !== -1; });
+      });
+
+      // Only select on a UNIQUE match — never guess between two consultants.
+      if(candidates.length === 1){ sel.value = candidates[0].value; fireInput(sel); return true; }
       return false;
     }
 
@@ -200,6 +223,10 @@ export default function SubmissionScreen() {
       if (data.type === "needs_login") {
         setNeedsLogin(true);
         setStatusMsg("Please log in to eLogbook below, then tap Retry.");
+        return;
+      }
+      if (data.type === "consultant_debug") {
+        console.log("CONSULTANT DEBUG:", JSON.stringify(data, null, 2));
         return;
       }
       if (data.type === "filled") {
