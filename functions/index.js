@@ -66,6 +66,21 @@ const KEYTERMS_BY_SPECIALTY = {
     "ventricular assist device", "atrial septal defect",
     "ventricular septal defect",
   ],
+  "General Surgery": [
+    "laparoscopy", "laparoscopic", "laparotomy", "appendicectomy", "appendectomy",
+    "cholecystectomy", "herniorrhaphy", "hernioplasty", "inguinal", "femoral",
+    "incisional", "umbilical", "hiatus", "fundoplication", "gastrectomy",
+    "oesophagectomy", "colectomy", "hemicolectomy", "sigmoidectomy", "colostomy",
+    "ileostomy", "anastomosis", "haemorrhoidectomy", "fistula", "fissure",
+    "pilonidal", "mastectomy", "lumpectomy", "thyroidectomy", "parathyroidectomy",
+    "splenectomy", "adrenalectomy", "pancreatectomy", "Whipple", "hepatectomy",
+    "cholangiography", "ERCP", "endoscopy", "gastroscopy", "colonoscopy",
+    "sigmoidoscopy", "polypectomy", "varicose", "endarterectomy", "aneurysm",
+    "amputation", "debridement", "laparoscopic cholecystectomy",
+    "inguinal hernia repair", "incisional hernia repair", "right hemicolectomy",
+    "anterior resection", "abdominoperineal resection", "emergency laparotomy",
+    "diagnostic laparoscopy", "examination under anaesthesia",
+  ],
 };
 
 function keytermQS(specialty) {

@@ -1,0 +1,6607 @@
+{
+  "options_source_id": "elogbook_general_surgery_procedures",
+  "platform": "elogbook",
+  "discipline": "surgical",
+  "specialty": "General Surgery",
+  "entryType": "operation_log",
+  "field": "procedure",
+  "harvested_from": "eLogbook 'Add operation' page (Specialty = General Surgery)",
+  "harvested_date": "2026-06-27",
+  "notes": "Each option's 'id' is the eLogbook data-nodeid used to select the procedure in the form (the value for WebView injection). 'name' is the display label / extraction target. A procedure may appear under several categories; the flat 'procedures' list is the authoritative deduplicated picklist, 'tree' preserves the on-site accordion structure for the picker UI and for giving the AI category context.",
+  "unique_procedure_count": 544,
+  "procedures": [
+    {
+      "id": 42,
+      "name": "AAA - aortic endoleak",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 1,
+      "name": "AAA - bifurcated graft - non-ruptured",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 5,
+      "name": "AAA - bifurcated graft - ruptured",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 43,
+      "name": "AAA - endovascular stent graft",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 53,
+      "name": "AAA - supra-renal aortic aneurysm - repair",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 9,
+      "name": "AAA - tube graft - non-ruptured",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 13,
+      "name": "AAA - tube graft - ruptured",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 17,
+      "name": "Abdominal wall - exploration / biopsy",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 19,
+      "name": "Abscess - acute anorectal drainage",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 20,
+      "name": "Abscess - breast - treatment",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 21,
+      "name": "Abscess - drainage (non-breast/anal/abdominal)",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 22,
+      "name": "Access - arterio-venous fistula - basilic vein transposition",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 23,
+      "name": "Access - arterio-venous fistula - brachial",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 24,
+      "name": "Access - arterio-venous fistula - ligation",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 25,
+      "name": "Access - arterio-venous fistula - PTFE loop-graft forearm",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 26,
+      "name": "Access - arterio-venous fistula - PTFE loop-graft groin",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 27,
+      "name": "Access - arterio-venous fistula - PTFE straight-graft arm",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 28,
+      "name": "Access - arterio-venous fistula - wrist",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 693,
+      "name": "Access - arterio-venous fistula basilica vein transposition",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 685,
+      "name": "Access - arterio-venous fistula brachial",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 686,
+      "name": "Access - arterio-venous fistula forearm",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 687,
+      "name": "Access - arterio-venous fistula ligation",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 684,
+      "name": "Access - arterio-venous fistula radial",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 692,
+      "name": "Access - arterio-venous fistula superficialisation",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 691,
+      "name": "Access - arterio-venous interposition-graft arm",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 688,
+      "name": "Access - arterio-venous loop-graft forearm",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 689,
+      "name": "Access - arterio-venous loop-graft groin",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 690,
+      "name": "Access - arterio-venous straight-graft arm",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 694,
+      "name": "Access - line removal",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 695,
+      "name": "Access - secondary - vascular",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 30,
+      "name": "Access - secondary vascular",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 32,
+      "name": "Adrenalectomy",
+      "categories": [
+        "Operations / Endocrine"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 33,
+      "name": "Amputation - AK",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 34,
+      "name": "Amputation - BK",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 35,
+      "name": "Amputation - digit(s)",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 36,
+      "name": "Amputation - hindquarter",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 37,
+      "name": "Amputation - revision",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 38,
+      "name": "Amputation - through knee",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 39,
+      "name": "Amputation - transmetatarsal",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 40,
+      "name": "Amputation - upper limb",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 221,
+      "name": "Anal fissure - Lateral sphincterotomy",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 642,
+      "name": "Anal fissure – EUA +/- injection of Botox/fissurectomy",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 643,
+      "name": "Anal fissure – Mucosal advancement flap",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 644,
+      "name": "Anal – EUA",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 645,
+      "name": "Anal – EUA and dilatation",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 365,
+      "name": "Anal – Skin tags, polyps, warts – excision",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 41,
+      "name": "Anal – Tumour – wide excision",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 54,
+      "name": "Angioplasty / patch",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 55,
+      "name": "Antegrade continence enema (ACE)",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 61,
+      "name": "Anti-reflux surgery",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 62,
+      "name": "Anti-reflux surgery - reoperation",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 63,
+      "name": "Aorto-caval fistula repair",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 64,
+      "name": "Aorto-intestinal fistula repair",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 65,
+      "name": "Appendicectomy",
+      "categories": [
+        "Operations / General",
+        "Operations / Trauma / Trauma"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 505,
+      "name": "Arterial line",
+      "categories": [
+        "Procedures / Standard"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 66,
+      "name": "Arterial trauma",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 67,
+      "name": "Arterio-venous malformation",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 616,
+      "name": "Axilla - Clearance (level 1 & 2)",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 565,
+      "name": "Axilla - clearance (level 1, 2 & 3)",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 566,
+      "name": "Axilla - excision of accessory tissue",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 617,
+      "name": "Axilla - Image guided, targeted dissection",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 567,
+      "name": "Axilla - lymph node biopsy (non-sentinel)",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 615,
+      "name": "Axilla - Lymph node sampling",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 568,
+      "name": "Axilla - salvage/redo surgery/exploration",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 422,
+      "name": "Axilla - sentinel node biopsy (any technique)",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 72,
+      "name": "Biliary - Cholecystectomy",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 73,
+      "name": "Biliary - Cholecystectomy and CBD exploration",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 75,
+      "name": "Biliary - Cholecystectomy and operative cholangiogram",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 627,
+      "name": "Biliary - Completion cholecystectomy",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 79,
+      "name": "Biliary - Double/triple by-pass",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 78,
+      "name": "Biliary - Excision of choledochal cyst and hepatico-jejunostomy",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 696,
+      "name": "Biliary - Exploration of CBD (without cholecystectomy)",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 705,
+      "name": "Biliary - Extrahepatic bile duct resection and hepaticojejunostomy",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 81,
+      "name": "Biliary - Hepaticojejunostomy",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 83,
+      "name": "Biliary - Segment III by-pass",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 84,
+      "name": "Biliary - Transduodenalsphincteroplasty",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 703,
+      "name": "Biliary – Bile Duct injury - Hepaticojejunostomy",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 704,
+      "name": "Biliary – Bile Duct injury – Hepaticojejunostomy and vascular repair",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 702,
+      "name": "Biliary – Bile duct injury – Washout and drainage/T-tube",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 701,
+      "name": "Biliary – Bile leak – Washout and drainage",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 700,
+      "name": "Biliary – Radical cholecystectomy",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 506,
+      "name": "Biopsy - core",
+      "categories": [
+        "Procedures / Standard"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 85,
+      "name": "Biopsy / excision - lipoma",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 86,
+      "name": "Biopsy / excision - lymph node(s)",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 87,
+      "name": "Biopsy / excision - skin - BCC or SCC",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 88,
+      "name": "Biopsy / excision - skin - melanoma",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 89,
+      "name": "Biopsy / excision - skin - simple",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 90,
+      "name": "Biopsy / excision - subcutaneous tumour",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 91,
+      "name": "Branchial cyst - excision",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 570,
+      "name": "Breast - aesthetic - developmental correction surgery",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 571,
+      "name": "Breast - aesthetic - gynaecomastia - mammoplasty excision",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 177,
+      "name": "Breast - aesthetic - gynaecomastia - simple excision",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 69,
+      "name": "Breast - aesthetic - implant augmentation - any technique",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 68,
+      "name": "Breast - aesthetic - implant augmentation - complications/re-operation/salvage",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 573,
+      "name": "Breast - aesthetic - liposuction/fat transfer/lipomodelling (any technique/indication)",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 289,
+      "name": "Breast - aesthetic - mastopexy (any technique)",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 394,
+      "name": "Breast - aesthetic - reduction mammoplasty (any technique)",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 574,
+      "name": "Breast - aesthetic - scar revision (any technique)",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 614,
+      "name": "Breast - Core biopsy",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 596,
+      "name": "Breast - evacuation of haematoma",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 494,
+      "name": "Breast - image guided excision biopsy",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 276,
+      "name": "Breast - Mastectomy - simple",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 585,
+      "name": "Breast - Mastectomy - skin/nipple sparing/skin reducing",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 325,
+      "name": "Breast - Other",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 92,
+      "name": "Breast - removal of lump/tissue",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 408,
+      "name": "Breast - salvage surgery (eg recurrence)",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 698,
+      "name": "Breast - therapeutic mammoplasty",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 536,
+      "name": "Breast - wide local excision (primary)",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 492,
+      "name": "Breast - wide local excision - re-excision to clear margins",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 93,
+      "name": "Burr hole(s) / craniotomy",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 94,
+      "name": "Carotid body tumour excision",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 95,
+      "name": "Carotid endarterectomy",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 99,
+      "name": "Carotid-subclavian PTFE by-pass",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 100,
+      "name": "Carotid-subclavian transposition",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 101,
+      "name": "Carotid-subclavian vein by-pass",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 507,
+      "name": "Central venous catheterisation",
+      "categories": [
+        "Procedures / Standard"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 508,
+      "name": "Chest drain - insertion",
+      "categories": [
+        "Procedures / Standard"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 102,
+      "name": "Circumcision - adult",
+      "categories": [
+        "Operations / Urology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 109,
+      "name": "Colectomy - Right",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 646,
+      "name": "Colectomy – Extended right",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 104,
+      "name": "Colectomy – Left",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 107,
+      "name": "Colectomy – Panproctocolectomy & end ileostomy",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 112,
+      "name": "Colectomy – Sigmoid",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 115,
+      "name": "Colectomy – Subtotal",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 116,
+      "name": "Colectomy – Total & ileorectal anastomosis",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 117,
+      "name": "Colectomy – Total & ileostomy",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 118,
+      "name": "Colectomy – Transverse",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 119,
+      "name": "Colonoscopy - diagnostic",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 639,
+      "name": "Colonoscopy - polypectomy (complex) - inc EMR",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 638,
+      "name": "Colonoscopy - polypectomy (simple)",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 121,
+      "name": "Colonoscopy - stent insertion",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 122,
+      "name": "Colonoscopy - stricture dilatation",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 123,
+      "name": "Colonoscopy - therapeutic (other)",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 124,
+      "name": "Colostomy – Closure of",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 126,
+      "name": "Colostomy – Excision of polyp",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 541,
+      "name": "Colostomy – Formation of (Inc defunctioning)",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 125,
+      "name": "Colostomy – Revision or resiting",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 127,
+      "name": "Combined transplant – heart-lung-liver",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 669,
+      "name": "Combined transplant – Multivisceral implant",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 129,
+      "name": "Cricothyroidotomy",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 564,
+      "name": "Cytoreductive surgery +/- hyperthermic intraperitoneal chemotherapy",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 157,
+      "name": "Debridement - Fournier's gangrene / necrotising fasciitis",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 495,
+      "name": "Debridement - wound, ulcer, pressure sore",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 131,
+      "name": "Diagnostic peritoneal lavage",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 132,
+      "name": "Drainage of intra and extra-peritoneal collections",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 633,
+      "name": "Duodenojejunostomy",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 133,
+      "name": "Duodenum - oversew / bleeding DU",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 134,
+      "name": "Duodenum - perforated DU closure",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 135,
+      "name": "Duodenum pyloroplasty +/- vagotomy",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 137,
+      "name": "ERCP - Biliary manometry",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 138,
+      "name": "ERCP - Biliary stenting",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 139,
+      "name": "ERCP - Diagnostic",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 140,
+      "name": "ERCP - Endoscopic sphincterotomy",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 141,
+      "name": "ERCP - Pancreatic stenting",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 142,
+      "name": "EUA - rectal biopsy",
+      "categories": [
+        "Operations / Paediatrics"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 720,
+      "name": "EUS - Drainage of fluid/collection with Hot AXIOS stent",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 719,
+      "name": "EUS – Aspiration of fluid/collection",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 721,
+      "name": "EUS – Biliary drainage with Hot AXIOS stent",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 718,
+      "name": "EUS – Diagnostic/FNA/biopsy",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 143,
+      "name": "Exomphalos/gastroschisis - reduction",
+      "categories": [
+        "Operations / Paediatrics"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 145,
+      "name": "False aneurysm repair - iv drug abuser - repair/ligation",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 146,
+      "name": "False aneurysm repair - post anastomosis",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 144,
+      "name": "False aneurysm repair - post cath u/s thrombin injection/compress.",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 147,
+      "name": "False aneurysm repair - post catheterisation",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 148,
+      "name": "Fasciotomy",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 149,
+      "name": "Feeding jejunostomy",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 156,
+      "name": "Fistula - tracheo-oesophageal repair",
+      "categories": [
+        "Operations / Paediatrics"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 155,
+      "name": "Fistula – Recto-vaginal",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 152,
+      "name": "Fistula-in-ano - Complex",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 648,
+      "name": "Fistula-in-ano - Video-assisted anal fistulae treatment (VAAFT)",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 647,
+      "name": "Fistula-in-ano – Insertion of seton/change of seton",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 650,
+      "name": "Fistula-in-ano – LASER treatment",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 153,
+      "name": "Fistula-in-ano – Lay open",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 649,
+      "name": "Fistula-in-ano – Ligation of the intersphincteric fistula tract (LIFT)",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 509,
+      "name": "FNA",
+      "categories": [
+        "Procedures / Standard"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 158,
+      "name": "Ganglion - excision",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 159,
+      "name": "Gastrectomy - D2 subtotal",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 160,
+      "name": "Gastrectomy - D2 total",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 161,
+      "name": "Gastrectomy - subtotal",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 162,
+      "name": "Gastrectomy - total",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 163,
+      "name": "Gastrectomy - with partial pancreatectomy",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 164,
+      "name": "Gastric - antrectomy and Roux diversion",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 165,
+      "name": "Gastric - gastrojejunostomy +/- vagotomy",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 166,
+      "name": "Gastric - limited operation / oversew / perforated ulcer",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 167,
+      "name": "Gastric - reoperative surgery",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 168,
+      "name": "Gastric - volvulus reduction / resection",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 169,
+      "name": "Groin - epididymal cyst",
+      "categories": [
+        "Operations / Urology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 170,
+      "name": "Groin - hydrocele repair",
+      "categories": [
+        "Operations / Urology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 171,
+      "name": "Groin - varicocele",
+      "categories": [
+        "Operations / Urology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 172,
+      "name": "Groin - vasectomy",
+      "categories": [
+        "Operations / Urology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 173,
+      "name": "Groin - vasectomy reversal",
+      "categories": [
+        "Operations / Urology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 174,
+      "name": "Gynaecology - Caesarean section",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 175,
+      "name": "Gynaecology - laparotomy",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 176,
+      "name": "Gynaecology - other",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 181,
+      "name": "Haemorrhoids – Conservative treatment/banding",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 517,
+      "name": "Haemorrhoids – Haemorrhoidal artery ligation",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 178,
+      "name": "Haemorrhoids – Haemorrhoidectomy - Closed",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 179,
+      "name": "Haemorrhoids – Haemorrhoidectomy - Open",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 180,
+      "name": "Haemorrhoids – Haemorrhoidectomy – Stapled",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 186,
+      "name": "Hartmann's - Reversal",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 185,
+      "name": "Hartmann’s procedure",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 187,
+      "name": "Harvesting arm veins",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 188,
+      "name": "Harvesting long saphenous vein",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 631,
+      "name": "Hernia - abdominal wall reconstruction - anterior component separation",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 632,
+      "name": "Hernia - abdominal wall reconstruction - other",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 634,
+      "name": "Hernia - abdominal wall reconstruction - posterior component separation",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 628,
+      "name": "Hernia - abdominal wall reconstruction - Rives Stoppa",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 630,
+      "name": "Hernia - abdominal wall reconstruction - transversus abdominis release (TAR) - bilateral",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 629,
+      "name": "Hernia - abdominal wall reconstruction - transversus abdominis release (TAR) - unilateral",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 194,
+      "name": "Hernia - inguinal - herniotomy",
+      "categories": [
+        "Operations / Paediatrics"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 189,
+      "name": "Hernia repair - epigastric",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 190,
+      "name": "Hernia repair - femoral",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 191,
+      "name": "Hernia repair - incisional",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 192,
+      "name": "Hernia repair - incisional - recurrent",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 193,
+      "name": "Hernia repair - inguinal",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 195,
+      "name": "Hernia repair - inguinal - recurrent",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 625,
+      "name": "Hernia repair - internal hernia",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 196,
+      "name": "Hernia repair - laparoscopic - extraperitoneal TEP",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 197,
+      "name": "Hernia repair - laparoscopic - intraperitoneal TAPP",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 198,
+      "name": "Hernia repair - other - recurrent",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 532,
+      "name": "Hernia repair - paraoesophageal",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 200,
+      "name": "Hernia repair - Spigelian",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 202,
+      "name": "Hernia repair - umbilical/paraumbilical",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 203,
+      "name": "Hernia repair - umbilical/paraumbilical - recurrent",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 199,
+      "name": "Hernia – Parastomal – With/without mesh",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 611,
+      "name": "Hiatus hernia repair without fundoplication",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 697,
+      "name": "Hiatus hernia repair without fundoplication - reoperation",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 533,
+      "name": "Hickman line - insertion",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 534,
+      "name": "Hickman line - removal",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 204,
+      "name": "Hidradenitis suppurativa - excision",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 205,
+      "name": "Hydrocele - ligation of PPV",
+      "categories": [
+        "Operations / Paediatrics"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 206,
+      "name": "Hypospadias repair",
+      "categories": [
+        "Operations / Paediatrics"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 210,
+      "name": "Ileo-colic bypass",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 499,
+      "name": "Ileocolic resection",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 651,
+      "name": "Ileocolic resection - Redo",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 652,
+      "name": "Ileorectal anastomosis",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 207,
+      "name": "Ileostomy – Closure of",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 209,
+      "name": "Ileostomy – Defunctioning",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 208,
+      "name": "Ileostomy – Revision or resiting",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 211,
+      "name": "Ingrowing toenail",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 29,
+      "name": "Insertion of peritoneal dialysis catheter",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 212,
+      "name": "Intussusception - reduction",
+      "categories": [
+        "Operations / Paediatrics"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 213,
+      "name": "Intussusception - resection",
+      "categories": [
+        "Operations / Paediatrics"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 549,
+      "name": "Laparoscopy - division of adhesions",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 552,
+      "name": "Laparoscopy - drainage of intrabdominal abscess/sepsis, no resection",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 550,
+      "name": "Laparoscopy - inoperable malignancy +/- by-pass",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 551,
+      "name": "Laparoscopy - post operative complications",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 547,
+      "name": "Laparoscopy - small bowel resection",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 546,
+      "name": "Laparoscopy - staging/diagnostic, no other procedure",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 553,
+      "name": "Laparotomy - division of adhesions",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 556,
+      "name": "Laparotomy - drainage of intrabdominal abscess/sepsis, no resection",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 554,
+      "name": "Laparotomy - inoperable malignancy +/- by-pass",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 557,
+      "name": "Laparotomy - planned relook, no resection",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 555,
+      "name": "Laparotomy - post operative complications",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 548,
+      "name": "Laparotomy - small bowel resection",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 545,
+      "name": "Laparotomy - staging/diagnostic, no other procedure",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 640,
+      "name": "Laparotomy - Trauma (for reason not otherwise listed)",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 709,
+      "name": "Liver - Atypical liver resection (major – 3 or more wedges)",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 708,
+      "name": "Liver - Atypical liver resection (minor – 1 or 2 wedges)",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 224,
+      "name": "Liver - De-roofing of liver cyst",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 225,
+      "name": "Liver - Extended left hepatectomy",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 226,
+      "name": "Liver - Extended right hepatectomy",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 227,
+      "name": "Liver - Hydatid disease - Pericystectomy",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 228,
+      "name": "Liver - Left hepatectomy",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 230,
+      "name": "Liver - Right hepatectomy",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 231,
+      "name": "Liver - Segmental liver resection",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 232,
+      "name": "Liver - Trauma - Debridement/packing",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 676,
+      "name": "Liver transplant - ex situ machine perfusion",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 674,
+      "name": "Liver transplant - graft hepatectomy",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 675,
+      "name": "Liver transplant - implant",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 673,
+      "name": "Liver transplant - live donor hepatectomy",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 237,
+      "name": "Liver transplant - re-do implant",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 236,
+      "name": "Liver transplant - recipient hepatectomy",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 238,
+      "name": "Liver transplant - Roux loop construction",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 239,
+      "name": "Liver transplant - split graft implant",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 240,
+      "name": "Liver transplant - Workbench preparation of donor liver",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 706,
+      "name": "Liver- Extended left hepatectomy and bile duct resection",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 707,
+      "name": "Liver- Extended right hepatectomy and bile duct resection",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 222,
+      "name": "Liver- Intra-operative ablation",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 243,
+      "name": "Lower limb - fem-pop by-pass - AK",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 249,
+      "name": "Lower limb - fem-pop by-pass - BK",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 241,
+      "name": "Lower limb - femoral endarterectomy / patch",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 242,
+      "name": "Lower limb - femoro-femoral cross-over graft",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 256,
+      "name": "Lower limb - ileofemoral (ipsilateral) by-pass",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 257,
+      "name": "Lower limb - ileofemoral cross over by-pass",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 258,
+      "name": "Lower limb - isolated limb perfusion",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 47,
+      "name": "Lower limb - popliteal aneurysm - bypass and exclusion",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 259,
+      "name": "Lower limb fem-tibial",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 266,
+      "name": "Lumbar sympathectomy - chemical",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 267,
+      "name": "Lumbar sympathectomy - open",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 268,
+      "name": "Lymph node - block dissection of neck",
+      "categories": [
+        "Operations / Endocrine"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 269,
+      "name": "Lymph nodes - inguinal block dissection",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 270,
+      "name": "Lymphocele - drainage",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 271,
+      "name": "Lymphoedema surgery",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 298,
+      "name": "Metabolic Bariatric - Apronectomy",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 558,
+      "name": "Metabolic Bariatric - Duodenal Switch",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 699,
+      "name": "Metabolic Bariatric - Gastric plication",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 622,
+      "name": "Metabolic Bariatric - Insertion of Gastric Balloon",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 300,
+      "name": "Metabolic Bariatric - Insertion of Gastric Band",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 609,
+      "name": "Metabolic Bariatric - One Anastomosis Gastric Bypass",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 610,
+      "name": "Metabolic Bariatric - Other",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 623,
+      "name": "Metabolic Bariatric - Removal of Gastric Balloon",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 531,
+      "name": "Metabolic Bariatric - Removal/reposition gastric band",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 624,
+      "name": "Metabolic Bariatric - Repair of internal hernia",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 635,
+      "name": "Metabolic Bariatric - Reversal of gastric bypass procedure",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 299,
+      "name": "Metabolic Bariatric - Roux-en-Y Gastric Bypass",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 637,
+      "name": "Metabolic Bariatric - Single Anastomosis Duodenal-Ileal bypass with Sleeve (SADI-S)",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 636,
+      "name": "Metabolic Bariatric - Single anastomosis sleeve ileal bypass (SASI)",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 530,
+      "name": "Metabolic Bariatric - Sleeve Gastrectomy",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 291,
+      "name": "Motility - Heller's myotomy",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 292,
+      "name": "Motility - Heller's myotomy and antireflux repair",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 293,
+      "name": "Motility - long oesophageal myotomy",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 297,
+      "name": "Nipple - Correction of inverted nipple",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 597,
+      "name": "Nipple - Free nipple graft",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 272,
+      "name": "Nipple - Mammary duct fistula - treatment",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 274,
+      "name": "Nipple - Mammary ducts - total duct excision (Hadfields)",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 273,
+      "name": "Nipple - microdochectomy",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 295,
+      "name": "Nipple reconstruction - any technique",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 598,
+      "name": "Nipple reduction/adjustment",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 599,
+      "name": "Nipple/areolar tattooing",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 302,
+      "name": "Occlusive - aorto iliofemoral endarterectomy",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 303,
+      "name": "Occlusive - aorto-femoral by-pass",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 304,
+      "name": "Occlusive - axillo-axillary by-pass",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 305,
+      "name": "Occlusive - axillo-femoral by-pass",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 306,
+      "name": "Oesophageal - pharyngeal pouch excision",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 307,
+      "name": "Oesophagogastrectomy - 2 phase - Ivor Lewis",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 310,
+      "name": "Oesophagogastrectomy - 3 phase",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 311,
+      "name": "Oesophagogastrectomy - radical 2 field lymphadenectomy",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 559,
+      "name": "Oesophagogastrectomy - thoracoabdominal",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 312,
+      "name": "Oesophagogastrectomy - transhiatal",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 313,
+      "name": "Oesophagoscopy - rigid",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 314,
+      "name": "Oesophagus - rupture repair",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 510,
+      "name": "OGD - Diagnostic",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 717,
+      "name": "OGD - Dilatation - Anastomotic stricture",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 315,
+      "name": "OGD - Dilatation - Balloon for achalasia",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 316,
+      "name": "OGD - Dilatation - Oesophageal",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 317,
+      "name": "OGD - Dilatation - Pyloric",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 318,
+      "name": "OGD - Endoscopic Laser Recanalisation",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 319,
+      "name": "OGD - Endoscopic Mucosal Resection",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 723,
+      "name": "OGD - Exchange of vacuum sponge/therapy",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 320,
+      "name": "OGD - GI bleeding - Endostasis",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 321,
+      "name": "OGD - GI bleeding - Variceal banding/sclerosis",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 626,
+      "name": "OGD - Insertion of NG/J feeding tube",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 322,
+      "name": "OGD - Insertion of stent",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 722,
+      "name": "OGD - Insertion of vacuum sponge/therapy",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 724,
+      "name": "OGD - Removal of vacuum sponge/therapy",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 323,
+      "name": "Orchidopexy",
+      "categories": [
+        "Operations / Paediatrics"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 326,
+      "name": "Other - Coloproctology",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 327,
+      "name": "Other - Endocrine",
+      "categories": [
+        "Operations / Endocrine"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 328,
+      "name": "Other - General",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 329,
+      "name": "Other - Paediatrics",
+      "categories": [
+        "Operations / Paediatrics"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 330,
+      "name": "Other - Transplant",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 561,
+      "name": "Other - Upper GI - HpB",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 560,
+      "name": "Other - Upper GI - OG",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 332,
+      "name": "Other - Vascular",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 333,
+      "name": "Paediatric appendicectomy",
+      "categories": [
+        "Operations / Paediatrics"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 334,
+      "name": "Paediatric circumcision / prepuceplasty",
+      "categories": [
+        "Operations / Paediatrics"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 335,
+      "name": "Paediatric tumours",
+      "categories": [
+        "Operations / Paediatrics"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 710,
+      "name": "Pancreas - Debridement - Endoscopic",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 711,
+      "name": "Pancreas - Debridement - Percutaneous",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 712,
+      "name": "Pancreas - Debridement - VARD",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 337,
+      "name": "Pancreas - Debridement/drainage of pancreatic abscess",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 714,
+      "name": "Pancreas - Left pancreatectomy (distal) – Spleen preserving",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 715,
+      "name": "Pancreas - Left pancreatectomy (distal) – With splenectomy",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 713,
+      "name": "Pancreas - Pancreatico-duodenectomy (Whipple)",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 343,
+      "name": "Pancreas - Pancreatico-jejunostomy (Beger)",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 344,
+      "name": "Pancreas - Pancreatico-jejunostomy (Frey)",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 345,
+      "name": "Pancreas - Pancreatico-jejunostomy (Longitudinal)",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 347,
+      "name": "Pancreas - Total pancreatectomy",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 677,
+      "name": "Pancreas transplant - graft pancreatectomy",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 679,
+      "name": "Pancreas transplant - Kidney implant part of simultaneous pancreas kidney transplant",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 535,
+      "name": "Pancreas transplant - Workbench preparation of donor pancreas",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 678,
+      "name": "Pancreas transplant – pancreas implant",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 716,
+      "name": "Pancreas- Central pancreatectomy",
+      "categories": [
+        "Operations / Upper GI - HPB"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 136,
+      "name": "Pancreatectomy - endocrine tumours",
+      "categories": [
+        "Operations / Endocrine"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 350,
+      "name": "Paraphimosis - reduction",
+      "categories": [
+        "Operations / Paediatrics"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 351,
+      "name": "Parathyroidectomy",
+      "categories": [
+        "Operations / Endocrine"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 352,
+      "name": "Parathyroidectomy - reoperative",
+      "categories": [
+        "Operations / Endocrine"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 353,
+      "name": "Parotidectomy - superficial",
+      "categories": [
+        "Operations / Endocrine"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 354,
+      "name": "Parotidectomy - total",
+      "categories": [
+        "Operations / Endocrine"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 355,
+      "name": "PEG tube - complication",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 356,
+      "name": "PEG tube - insertion",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 653,
+      "name": "Pelvic exenteration – Anterior",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 654,
+      "name": "Pelvic exenteration – Posterior",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 544,
+      "name": "Pelvic exenteration – Total",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 655,
+      "name": "Pelvic exenteration – With sacrectomy/bone resection",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 358,
+      "name": "Pelvic floor – Sphincter repair",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 359,
+      "name": "Pelvic floor – Stimulator/valves (Inc SNS)",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 369,
+      "name": "Per-operative angiography",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 370,
+      "name": "Per-operative angioplasty",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 371,
+      "name": "Per-operative thrombolysis",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 360,
+      "name": "Percutaneous angiography (diagnostic IA DSA)",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 361,
+      "name": "Percutaneous angiography (therapeutic - iliac-PTA)",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 362,
+      "name": "Percutaneous angiography (therapeutic - iliac-stent)",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 363,
+      "name": "Percutaneous angiography (therapeutic - SFA-PTA)",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 364,
+      "name": "Percutaneous angiography (therapeutic - SFA-stent)",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 366,
+      "name": "Pericardiocentesis",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 511,
+      "name": "Peritoneal aspiration",
+      "categories": [
+        "Procedures / Standard"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 504,
+      "name": "Peritoneal dialysis catheter removal",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 656,
+      "name": "Pilonidal sinus – Bascom/Karydakis",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 658,
+      "name": "Pilonidal sinus – Endoscopic Pilonidal Sinus Treatment (EPSiT)",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 542,
+      "name": "Pilonidal sinus – Excision and suture",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 659,
+      "name": "Pilonidal Sinus – LASER treatment",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 543,
+      "name": "Pilonidal sinus – Lay open",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 657,
+      "name": "Pilonidal sinus – Rotational flap",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 373,
+      "name": "Pinnaplasty",
+      "categories": [
+        "Operations / Paediatrics"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 512,
+      "name": "Pleural aspiration",
+      "categories": [
+        "Procedures / Standard"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 540,
+      "name": "Proctectomy & ileoanal pouch",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 103,
+      "name": "Proctocolectomy & ileoanal pouch",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 381,
+      "name": "Pyloromyotomy",
+      "categories": [
+        "Operations / Paediatrics"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 410,
+      "name": "Re-operation - infected extra-anatomic graft",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 411,
+      "name": "Re-operation - infected graft - aorta",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 412,
+      "name": "Re-operation - infected graft - femorodistal graft",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 413,
+      "name": "Re-operation - Inflammatory bowel disease",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 414,
+      "name": "Re-operation - occlusion - aorta",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 415,
+      "name": "Re-operation - occlusion - extra-anatomic graft",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 416,
+      "name": "Re-operation - occlusion - femorodistal graft",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 417,
+      "name": "Re-operation - Pelvic malignancy",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 382,
+      "name": "Reconstruction - arterial - mesenteric",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 383,
+      "name": "Reconstruction - arterial - renal",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 407,
+      "name": "Reconstruction - Flap - complex revisional/salvage surgery",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 603,
+      "name": "Reconstruction - Flap - pedicle - chest wall perforator (any technique)",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 602,
+      "name": "Reconstruction - Flap - pedicle - LD any type",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 601,
+      "name": "Reconstruction - Flap - pedicle - TRAM",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 600,
+      "name": "Reconstruction - Free Flap (any technique)",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 604,
+      "name": "Reconstruction - Implant (fixed volume/tissue expander)",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 605,
+      "name": "Reconstruction - Implant (fixed volume/tissue expander) exchange +/- (capsulotomy/ectomy, etc)",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 620,
+      "name": "Reconstruction - Implant - Complex revision/salvage surgery",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 409,
+      "name": "Reconstruction - Implant - complex revisional/salvage surgery",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 621,
+      "name": "Reconstruction - other capsular surgery",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 608,
+      "name": "Reconstruction - Removal of expander port",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 618,
+      "name": "Reconstruction - Removal of implant and/or capsulectomy",
+      "categories": [
+        "Operations / Breast"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 387,
+      "name": "Reconstruction - venous",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 378,
+      "name": "Rectal prolapse – Abdominal rectopexy",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 660,
+      "name": "Rectal prolapse – Abdominal resection rectopexy",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 380,
+      "name": "Rectal prolapse – Perineal repair (Altemeier)",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 379,
+      "name": "Rectal prolapse – Perineal repair (Delorme)",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 661,
+      "name": "Rectocele – Transanal repair",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 662,
+      "name": "Rectocele – Vaginal repair",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 663,
+      "name": "Rectum - High Anterior Resection",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 390,
+      "name": "Rectum - Proctectomy",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 391,
+      "name": "Rectum - Transanal excision polyp / tumour",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 18,
+      "name": "Rectum – Abdominoperineal excision",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 56,
+      "name": "Rectum – Anterior Resection, coloanal anastomosis +/- pouch",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 388,
+      "name": "Rectum – EUA",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 665,
+      "name": "Rectum – Lateral pelvic side wall clearance and excision",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 664,
+      "name": "Rectum – Low Anterior Resection",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 668,
+      "name": "Rectum – Removal of foreign body/faeces",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 666,
+      "name": "Rectum – Transanal Minimally Invasive Surgery (TAMIS)",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 667,
+      "name": "Rectum – Trauma",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 392,
+      "name": "Rectum- Transanal Endoscopic Microsurgery (TEMS)",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 395,
+      "name": "Renal biopsy",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 398,
+      "name": "Renal transplant - bladder (psoas) hitch",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 399,
+      "name": "Renal transplant - Boari flap",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 683,
+      "name": "Renal transplant - ex situ machine perfusion",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 682,
+      "name": "Renal transplant - graft nephrectomy",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 401,
+      "name": "Renal transplant - ileal/colonic conduits",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 396,
+      "name": "Renal transplant - implant",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 680,
+      "name": "Renal transplant - live donor implant",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 681,
+      "name": "Renal transplant - live donor nephrectomy",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 397,
+      "name": "Renal transplant - native bilateral nephrectomy",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 405,
+      "name": "Renal transplant - native unilateral nephrectomy",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 404,
+      "name": "Renal transplant - nephrectomy - partial",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 464,
+      "name": "Renal transplant - ureteric stent removal",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 466,
+      "name": "Renal transplant - Uretero-neocystostomy",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 468,
+      "name": "Renal transplant - Uretero-ureterostomy",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 465,
+      "name": "Renal transplant - ureterolithotomy",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 467,
+      "name": "Renal transplant - Ureteropyelostomy",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 406,
+      "name": "Renal transplant - Workbench preparation of donor kidney",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 670,
+      "name": "Retrieval - Deceased donor organ retrieval - DBD donor",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 671,
+      "name": "Retrieval - Deceased donor organ retrieval - DCD donor",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 672,
+      "name": "Retrieval - Deceased donor organ retrieval - DCD donor (normothermic regional perfusion)",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 233,
+      "name": "Retrieval - Liver transplant – donor hepatectomy",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 348,
+      "name": "Retrieval - Pancreatic transplant – donor pancreatectomy",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 400,
+      "name": "Retrieval - Renal transplant – donor nephrectomy",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 419,
+      "name": "Retroperitoneal tumour - resection",
+      "categories": [
+        "Operations / Endocrine"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 641,
+      "name": "Robotic simulation exercise",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 420,
+      "name": "Salivary gland - duct operation",
+      "categories": [
+        "Operations / Endocrine"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 421,
+      "name": "Sartorius muscle flap",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 513,
+      "name": "Sigmoidoscopy - Flexible",
+      "categories": [
+        "Procedures / Endoscopy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 514,
+      "name": "Sigmoidoscopy - rigid (incl. Proctoscopy)",
+      "categories": [
+        "Procedures / Standard"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 423,
+      "name": "Skin graft",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 424,
+      "name": "Small bowel transplant",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 425,
+      "name": "Small bowel transplant - live donor",
+      "categories": [
+        "Operations / Transplant"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 426,
+      "name": "Soft tissue tumour - wide excision",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 427,
+      "name": "Spleen - splenectomy - haematological",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 428,
+      "name": "Spleen - splenectomy - trauma",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 429,
+      "name": "Spleen - splenic repair / conservation",
+      "categories": [
+        "Operations / Upper GI - OG"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 130,
+      "name": "Stricturoplasty",
+      "categories": [
+        "Operations / Coloproctology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 430,
+      "name": "Submandibular gland excision",
+      "categories": [
+        "Operations / Endocrine"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 431,
+      "name": "Temporal artery - biopsy",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 433,
+      "name": "Thoracic - lobectomy (lung)",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 434,
+      "name": "Thoracic - mediastinoscopy",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 435,
+      "name": "Thoracic - pleurodesis",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 436,
+      "name": "Thoracic - pneumonectomy",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 437,
+      "name": "Thoracic - thoracoplasty",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 438,
+      "name": "Thoracic outlet syndrome - 1st rib resection - supraclavicular",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 439,
+      "name": "Thoracic outlet syndrome - 1st rib resection - transaxillary",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 440,
+      "name": "Thoracoscopic sympathectomy",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 441,
+      "name": "Thoracoscopy +/- biopsy",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 442,
+      "name": "Thoracotomy - lateral",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 443,
+      "name": "Thoracotomy - trans-sternal",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 444,
+      "name": "Thrombo-embolectomy - arterial - brachial",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 445,
+      "name": "Thrombo-embolectomy - arterial - femoral",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 446,
+      "name": "Thrombo-embolectomy - arterial - popliteal",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 447,
+      "name": "Thrombo-embolectomy - arterial - tibial",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 448,
+      "name": "Thrombo-embolectomy - fistula",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 449,
+      "name": "Thyroglossal cyst / tract (adult)",
+      "categories": [
+        "Operations / Endocrine"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 450,
+      "name": "Thyroglossal cyst / tract (child)",
+      "categories": [
+        "Operations / Paediatrics"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 451,
+      "name": "Thyroid - lobectomy",
+      "categories": [
+        "Operations / Endocrine"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 452,
+      "name": "Thyroid - re-operative",
+      "categories": [
+        "Operations / Endocrine"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 453,
+      "name": "Thyroid - retrosternal goitre - sternal split",
+      "categories": [
+        "Operations / Endocrine"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 454,
+      "name": "Thyroid - subtotal thyroidectomy - toxic goitre",
+      "categories": [
+        "Operations / Endocrine"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 455,
+      "name": "Thyroid - total thyroidectomy",
+      "categories": [
+        "Operations / Endocrine"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 456,
+      "name": "Thyroid - total thyroidectomy + cervical nodes",
+      "categories": [
+        "Operations / Endocrine"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 457,
+      "name": "Tongue-tie release",
+      "categories": [
+        "Operations / Paediatrics"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 458,
+      "name": "Torsion of testis (child) - orchidectomy",
+      "categories": [
+        "Operations / Paediatrics"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 459,
+      "name": "Torsion of testis (child) - orchidopexy",
+      "categories": [
+        "Operations / Paediatrics"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 460,
+      "name": "Tracheostomy",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 469,
+      "name": "Urology - cystoscopy",
+      "categories": [
+        "Operations / Urology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 470,
+      "name": "Urology - laparotomy - bladder",
+      "categories": [
+        "Operations / Urology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 471,
+      "name": "Urology - nephrectomy",
+      "categories": [
+        "Operations / Urology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 472,
+      "name": "Urology - orchidectomy +/- insertion prosthesis",
+      "categories": [
+        "Operations / Urology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 473,
+      "name": "Urology - other",
+      "categories": [
+        "Operations / Urology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 474,
+      "name": "Urology - penile operation",
+      "categories": [
+        "Operations / Urology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 475,
+      "name": "Urology - prostatectomy",
+      "categories": [
+        "Operations / Urology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 476,
+      "name": "Urology - suprapubic cystostomy",
+      "categories": [
+        "Operations / Urology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 477,
+      "name": "Urology - torsion of testis (adult) - orchidectomy",
+      "categories": [
+        "Operations / Urology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 478,
+      "name": "Urology - torsion of testis (adult) - orchidopexy",
+      "categories": [
+        "Operations / Urology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 479,
+      "name": "Urology - urachus",
+      "categories": [
+        "Operations / Urology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 480,
+      "name": "Urology - ureteric re-implant",
+      "categories": [
+        "Operations / Urology"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 481,
+      "name": "Vein cuff / patch",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 482,
+      "name": "Vertebral artery - operation",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 483,
+      "name": "VV's - long saphenous - SFJ ligation + strip +/- avulsions",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 484,
+      "name": "VV's - long saphenous - SFJ ligation +/- avulsions",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 562,
+      "name": "VV's - long saphenous endotherapy (EVLT / VENUS)",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 563,
+      "name": "VV's - long saphenous endotherapy (foam)",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 486,
+      "name": "VV's - recurrent - multiple avulsions",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 487,
+      "name": "VV's - recurrent - re-do saphenopopliteal ligation +/- MSA's",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 488,
+      "name": "VV's - recurrent - re-do SFJ ligation +/- avulsions",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 489,
+      "name": "VV's - saphenopopliteal ligation +/- MSA's",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 490,
+      "name": "VV's - subfacial ligation open / SEPS",
+      "categories": [
+        "Operations / Vascular"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 496,
+      "name": "Wound - dehiscence - resuture",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 497,
+      "name": "Wound - evacuation of haematoma",
+      "categories": [
+        "Operations / General"
+      ],
+      "aliases": []
+    }
+  ],
+  "tree": {
+    "Procedures": {
+      "Endoscopy": {
+        "_procedures": [
+          {
+            "id": 119,
+            "name": "Colonoscopy - diagnostic"
+          },
+          {
+            "id": 638,
+            "name": "Colonoscopy - polypectomy (simple)"
+          },
+          {
+            "id": 639,
+            "name": "Colonoscopy - polypectomy (complex) - inc EMR"
+          },
+          {
+            "id": 121,
+            "name": "Colonoscopy - stent insertion"
+          },
+          {
+            "id": 122,
+            "name": "Colonoscopy - stricture dilatation"
+          },
+          {
+            "id": 123,
+            "name": "Colonoscopy - therapeutic (other)"
+          },
+          {
+            "id": 513,
+            "name": "Sigmoidoscopy - Flexible"
+          },
+          {
+            "id": 510,
+            "name": "OGD - Diagnostic"
+          },
+          {
+            "id": 315,
+            "name": "OGD - Dilatation - Balloon for achalasia"
+          },
+          {
+            "id": 316,
+            "name": "OGD - Dilatation - Oesophageal"
+          },
+          {
+            "id": 717,
+            "name": "OGD - Dilatation - Anastomotic stricture"
+          },
+          {
+            "id": 317,
+            "name": "OGD - Dilatation - Pyloric"
+          },
+          {
+            "id": 722,
+            "name": "OGD - Insertion of vacuum sponge/therapy"
+          },
+          {
+            "id": 723,
+            "name": "OGD - Exchange of vacuum sponge/therapy"
+          },
+          {
+            "id": 724,
+            "name": "OGD - Removal of vacuum sponge/therapy"
+          },
+          {
+            "id": 318,
+            "name": "OGD - Endoscopic Laser Recanalisation"
+          },
+          {
+            "id": 319,
+            "name": "OGD - Endoscopic Mucosal Resection"
+          },
+          {
+            "id": 320,
+            "name": "OGD - GI bleeding - Endostasis"
+          },
+          {
+            "id": 321,
+            "name": "OGD - GI bleeding - Variceal banding/sclerosis"
+          },
+          {
+            "id": 626,
+            "name": "OGD - Insertion of NG/J feeding tube"
+          },
+          {
+            "id": 322,
+            "name": "OGD - Insertion of stent"
+          },
+          {
+            "id": 139,
+            "name": "ERCP - Diagnostic"
+          },
+          {
+            "id": 137,
+            "name": "ERCP - Biliary manometry"
+          },
+          {
+            "id": 140,
+            "name": "ERCP - Endoscopic sphincterotomy"
+          },
+          {
+            "id": 138,
+            "name": "ERCP - Biliary stenting"
+          },
+          {
+            "id": 141,
+            "name": "ERCP - Pancreatic stenting"
+          },
+          {
+            "id": 718,
+            "name": "EUS – Diagnostic/FNA/biopsy"
+          },
+          {
+            "id": 719,
+            "name": "EUS – Aspiration of fluid/collection"
+          },
+          {
+            "id": 720,
+            "name": "EUS - Drainage of fluid/collection with Hot AXIOS stent"
+          },
+          {
+            "id": 721,
+            "name": "EUS – Biliary drainage with Hot AXIOS stent"
+          }
+        ]
+      },
+      "Standard": {
+        "_procedures": [
+          {
+            "id": 505,
+            "name": "Arterial line"
+          },
+          {
+            "id": 506,
+            "name": "Biopsy - core"
+          },
+          {
+            "id": 507,
+            "name": "Central venous catheterisation"
+          },
+          {
+            "id": 508,
+            "name": "Chest drain - insertion"
+          },
+          {
+            "id": 509,
+            "name": "FNA"
+          },
+          {
+            "id": 511,
+            "name": "Peritoneal aspiration"
+          },
+          {
+            "id": 512,
+            "name": "Pleural aspiration"
+          },
+          {
+            "id": 514,
+            "name": "Sigmoidoscopy - rigid (incl. Proctoscopy)"
+          }
+        ]
+      }
+    },
+    "Operations": {
+      "Vascular": {
+        "_procedures": [
+          {
+            "id": 42,
+            "name": "AAA - aortic endoleak"
+          },
+          {
+            "id": 1,
+            "name": "AAA - bifurcated graft - non-ruptured"
+          },
+          {
+            "id": 5,
+            "name": "AAA - bifurcated graft - ruptured"
+          },
+          {
+            "id": 43,
+            "name": "AAA - endovascular stent graft"
+          },
+          {
+            "id": 53,
+            "name": "AAA - supra-renal aortic aneurysm - repair"
+          },
+          {
+            "id": 9,
+            "name": "AAA - tube graft - non-ruptured"
+          },
+          {
+            "id": 13,
+            "name": "AAA - tube graft - ruptured"
+          },
+          {
+            "id": 22,
+            "name": "Access - arterio-venous fistula - basilic vein transposition"
+          },
+          {
+            "id": 23,
+            "name": "Access - arterio-venous fistula - brachial"
+          },
+          {
+            "id": 24,
+            "name": "Access - arterio-venous fistula - ligation"
+          },
+          {
+            "id": 25,
+            "name": "Access - arterio-venous fistula - PTFE loop-graft forearm"
+          },
+          {
+            "id": 26,
+            "name": "Access - arterio-venous fistula - PTFE loop-graft groin"
+          },
+          {
+            "id": 27,
+            "name": "Access - arterio-venous fistula - PTFE straight-graft arm"
+          },
+          {
+            "id": 28,
+            "name": "Access - arterio-venous fistula - wrist"
+          },
+          {
+            "id": 30,
+            "name": "Access - secondary vascular"
+          },
+          {
+            "id": 33,
+            "name": "Amputation - AK"
+          },
+          {
+            "id": 34,
+            "name": "Amputation - BK"
+          },
+          {
+            "id": 35,
+            "name": "Amputation - digit(s)"
+          },
+          {
+            "id": 36,
+            "name": "Amputation - hindquarter"
+          },
+          {
+            "id": 37,
+            "name": "Amputation - revision"
+          },
+          {
+            "id": 38,
+            "name": "Amputation - through knee"
+          },
+          {
+            "id": 39,
+            "name": "Amputation - transmetatarsal"
+          },
+          {
+            "id": 40,
+            "name": "Amputation - upper limb"
+          },
+          {
+            "id": 54,
+            "name": "Angioplasty / patch"
+          },
+          {
+            "id": 63,
+            "name": "Aorto-caval fistula repair"
+          },
+          {
+            "id": 64,
+            "name": "Aorto-intestinal fistula repair"
+          },
+          {
+            "id": 66,
+            "name": "Arterial trauma"
+          },
+          {
+            "id": 67,
+            "name": "Arterio-venous malformation"
+          },
+          {
+            "id": 94,
+            "name": "Carotid body tumour excision"
+          },
+          {
+            "id": 95,
+            "name": "Carotid endarterectomy"
+          },
+          {
+            "id": 99,
+            "name": "Carotid-subclavian PTFE by-pass"
+          },
+          {
+            "id": 100,
+            "name": "Carotid-subclavian transposition"
+          },
+          {
+            "id": 101,
+            "name": "Carotid-subclavian vein by-pass"
+          },
+          {
+            "id": 145,
+            "name": "False aneurysm repair - iv drug abuser - repair/ligation"
+          },
+          {
+            "id": 146,
+            "name": "False aneurysm repair - post anastomosis"
+          },
+          {
+            "id": 144,
+            "name": "False aneurysm repair - post cath u/s thrombin injection/compress."
+          },
+          {
+            "id": 147,
+            "name": "False aneurysm repair - post catheterisation"
+          },
+          {
+            "id": 148,
+            "name": "Fasciotomy"
+          },
+          {
+            "id": 187,
+            "name": "Harvesting arm veins"
+          },
+          {
+            "id": 188,
+            "name": "Harvesting long saphenous vein"
+          },
+          {
+            "id": 533,
+            "name": "Hickman line - insertion"
+          },
+          {
+            "id": 534,
+            "name": "Hickman line - removal"
+          },
+          {
+            "id": 241,
+            "name": "Lower limb - femoral endarterectomy / patch"
+          },
+          {
+            "id": 242,
+            "name": "Lower limb - femoro-femoral cross-over graft"
+          },
+          {
+            "id": 243,
+            "name": "Lower limb - fem-pop by-pass - AK"
+          },
+          {
+            "id": 249,
+            "name": "Lower limb - fem-pop by-pass - BK"
+          },
+          {
+            "id": 256,
+            "name": "Lower limb - ileofemoral (ipsilateral) by-pass"
+          },
+          {
+            "id": 257,
+            "name": "Lower limb - ileofemoral cross over by-pass"
+          },
+          {
+            "id": 258,
+            "name": "Lower limb - isolated limb perfusion"
+          },
+          {
+            "id": 47,
+            "name": "Lower limb - popliteal aneurysm - bypass and exclusion"
+          },
+          {
+            "id": 259,
+            "name": "Lower limb fem-tibial"
+          },
+          {
+            "id": 266,
+            "name": "Lumbar sympathectomy - chemical"
+          },
+          {
+            "id": 267,
+            "name": "Lumbar sympathectomy - open"
+          },
+          {
+            "id": 271,
+            "name": "Lymphoedema surgery"
+          },
+          {
+            "id": 302,
+            "name": "Occlusive - aorto iliofemoral endarterectomy"
+          },
+          {
+            "id": 303,
+            "name": "Occlusive - aorto-femoral by-pass"
+          },
+          {
+            "id": 304,
+            "name": "Occlusive - axillo-axillary by-pass"
+          },
+          {
+            "id": 305,
+            "name": "Occlusive - axillo-femoral by-pass"
+          },
+          {
+            "id": 332,
+            "name": "Other - Vascular"
+          },
+          {
+            "id": 360,
+            "name": "Percutaneous angiography (diagnostic IA DSA)"
+          },
+          {
+            "id": 361,
+            "name": "Percutaneous angiography (therapeutic - iliac-PTA)"
+          },
+          {
+            "id": 362,
+            "name": "Percutaneous angiography (therapeutic - iliac-stent)"
+          },
+          {
+            "id": 363,
+            "name": "Percutaneous angiography (therapeutic - SFA-PTA)"
+          },
+          {
+            "id": 364,
+            "name": "Percutaneous angiography (therapeutic - SFA-stent)"
+          },
+          {
+            "id": 369,
+            "name": "Per-operative angiography"
+          },
+          {
+            "id": 370,
+            "name": "Per-operative angioplasty"
+          },
+          {
+            "id": 371,
+            "name": "Per-operative thrombolysis"
+          },
+          {
+            "id": 382,
+            "name": "Reconstruction - arterial - mesenteric"
+          },
+          {
+            "id": 383,
+            "name": "Reconstruction - arterial - renal"
+          },
+          {
+            "id": 387,
+            "name": "Reconstruction - venous"
+          },
+          {
+            "id": 410,
+            "name": "Re-operation - infected extra-anatomic graft"
+          },
+          {
+            "id": 411,
+            "name": "Re-operation - infected graft - aorta"
+          },
+          {
+            "id": 412,
+            "name": "Re-operation - infected graft - femorodistal graft"
+          },
+          {
+            "id": 414,
+            "name": "Re-operation - occlusion - aorta"
+          },
+          {
+            "id": 415,
+            "name": "Re-operation - occlusion - extra-anatomic graft"
+          },
+          {
+            "id": 416,
+            "name": "Re-operation - occlusion - femorodistal graft"
+          },
+          {
+            "id": 421,
+            "name": "Sartorius muscle flap"
+          },
+          {
+            "id": 431,
+            "name": "Temporal artery - biopsy"
+          },
+          {
+            "id": 438,
+            "name": "Thoracic outlet syndrome - 1st rib resection - supraclavicular"
+          },
+          {
+            "id": 439,
+            "name": "Thoracic outlet syndrome - 1st rib resection - transaxillary"
+          },
+          {
+            "id": 440,
+            "name": "Thoracoscopic sympathectomy"
+          },
+          {
+            "id": 444,
+            "name": "Thrombo-embolectomy - arterial - brachial"
+          },
+          {
+            "id": 445,
+            "name": "Thrombo-embolectomy - arterial - femoral"
+          },
+          {
+            "id": 446,
+            "name": "Thrombo-embolectomy - arterial - popliteal"
+          },
+          {
+            "id": 447,
+            "name": "Thrombo-embolectomy - arterial - tibial"
+          },
+          {
+            "id": 448,
+            "name": "Thrombo-embolectomy - fistula"
+          },
+          {
+            "id": 481,
+            "name": "Vein cuff / patch"
+          },
+          {
+            "id": 482,
+            "name": "Vertebral artery - operation"
+          },
+          {
+            "id": 483,
+            "name": "VV's - long saphenous - SFJ ligation + strip +/- avulsions"
+          },
+          {
+            "id": 484,
+            "name": "VV's - long saphenous - SFJ ligation +/- avulsions"
+          },
+          {
+            "id": 562,
+            "name": "VV's - long saphenous endotherapy (EVLT / VENUS)"
+          },
+          {
+            "id": 563,
+            "name": "VV's - long saphenous endotherapy (foam)"
+          },
+          {
+            "id": 486,
+            "name": "VV's - recurrent - multiple avulsions"
+          },
+          {
+            "id": 487,
+            "name": "VV's - recurrent - re-do saphenopopliteal ligation +/- MSA's"
+          },
+          {
+            "id": 488,
+            "name": "VV's - recurrent - re-do SFJ ligation +/- avulsions"
+          },
+          {
+            "id": 489,
+            "name": "VV's - saphenopopliteal ligation +/- MSA's"
+          },
+          {
+            "id": 490,
+            "name": "VV's - subfacial ligation open / SEPS"
+          }
+        ]
+      },
+      "General": {
+        "_procedures": [
+          {
+            "id": 17,
+            "name": "Abdominal wall - exploration / biopsy"
+          },
+          {
+            "id": 21,
+            "name": "Abscess - drainage (non-breast/anal/abdominal)"
+          },
+          {
+            "id": 65,
+            "name": "Appendicectomy"
+          },
+          {
+            "id": 85,
+            "name": "Biopsy / excision - lipoma"
+          },
+          {
+            "id": 86,
+            "name": "Biopsy / excision - lymph node(s)"
+          },
+          {
+            "id": 87,
+            "name": "Biopsy / excision - skin - BCC or SCC"
+          },
+          {
+            "id": 88,
+            "name": "Biopsy / excision - skin - melanoma"
+          },
+          {
+            "id": 89,
+            "name": "Biopsy / excision - skin - simple"
+          },
+          {
+            "id": 90,
+            "name": "Biopsy / excision - subcutaneous tumour"
+          },
+          {
+            "id": 91,
+            "name": "Branchial cyst - excision"
+          },
+          {
+            "id": 93,
+            "name": "Burr hole(s) / craniotomy"
+          },
+          {
+            "id": 129,
+            "name": "Cricothyroidotomy"
+          },
+          {
+            "id": 157,
+            "name": "Debridement - Fournier's gangrene / necrotising fasciitis"
+          },
+          {
+            "id": 495,
+            "name": "Debridement - wound, ulcer, pressure sore"
+          },
+          {
+            "id": 131,
+            "name": "Diagnostic peritoneal lavage"
+          },
+          {
+            "id": 158,
+            "name": "Ganglion - excision"
+          },
+          {
+            "id": 174,
+            "name": "Gynaecology - Caesarean section"
+          },
+          {
+            "id": 628,
+            "name": "Hernia - abdominal wall reconstruction - Rives Stoppa"
+          },
+          {
+            "id": 175,
+            "name": "Gynaecology - laparotomy"
+          },
+          {
+            "id": 176,
+            "name": "Gynaecology - other"
+          },
+          {
+            "id": 630,
+            "name": "Hernia - abdominal wall reconstruction - transversus abdominis release (TAR) - bilateral"
+          },
+          {
+            "id": 629,
+            "name": "Hernia - abdominal wall reconstruction - transversus abdominis release (TAR) - unilateral"
+          },
+          {
+            "id": 631,
+            "name": "Hernia - abdominal wall reconstruction - anterior component separation"
+          },
+          {
+            "id": 634,
+            "name": "Hernia - abdominal wall reconstruction - posterior component separation"
+          },
+          {
+            "id": 632,
+            "name": "Hernia - abdominal wall reconstruction - other"
+          },
+          {
+            "id": 189,
+            "name": "Hernia repair - epigastric"
+          },
+          {
+            "id": 190,
+            "name": "Hernia repair - femoral"
+          },
+          {
+            "id": 191,
+            "name": "Hernia repair - incisional"
+          },
+          {
+            "id": 192,
+            "name": "Hernia repair - incisional - recurrent"
+          },
+          {
+            "id": 193,
+            "name": "Hernia repair - inguinal"
+          },
+          {
+            "id": 195,
+            "name": "Hernia repair - inguinal - recurrent"
+          },
+          {
+            "id": 625,
+            "name": "Hernia repair - internal hernia"
+          },
+          {
+            "id": 196,
+            "name": "Hernia repair - laparoscopic - extraperitoneal TEP"
+          },
+          {
+            "id": 197,
+            "name": "Hernia repair - laparoscopic - intraperitoneal TAPP"
+          },
+          {
+            "id": 198,
+            "name": "Hernia repair - other - recurrent"
+          },
+          {
+            "id": 200,
+            "name": "Hernia repair - Spigelian"
+          },
+          {
+            "id": 202,
+            "name": "Hernia repair - umbilical/paraumbilical"
+          },
+          {
+            "id": 203,
+            "name": "Hernia repair - umbilical/paraumbilical - recurrent"
+          },
+          {
+            "id": 204,
+            "name": "Hidradenitis suppurativa - excision"
+          },
+          {
+            "id": 211,
+            "name": "Ingrowing toenail"
+          },
+          {
+            "id": 549,
+            "name": "Laparoscopy - division of adhesions"
+          },
+          {
+            "id": 552,
+            "name": "Laparoscopy - drainage of intrabdominal abscess/sepsis, no resection"
+          },
+          {
+            "id": 550,
+            "name": "Laparoscopy - inoperable malignancy +/- by-pass"
+          },
+          {
+            "id": 551,
+            "name": "Laparoscopy - post operative complications"
+          },
+          {
+            "id": 547,
+            "name": "Laparoscopy - small bowel resection"
+          },
+          {
+            "id": 546,
+            "name": "Laparoscopy - staging/diagnostic, no other procedure"
+          },
+          {
+            "id": 553,
+            "name": "Laparotomy - division of adhesions"
+          },
+          {
+            "id": 556,
+            "name": "Laparotomy - drainage of intrabdominal abscess/sepsis, no resection"
+          },
+          {
+            "id": 554,
+            "name": "Laparotomy - inoperable malignancy +/- by-pass"
+          },
+          {
+            "id": 557,
+            "name": "Laparotomy - planned relook, no resection"
+          },
+          {
+            "id": 555,
+            "name": "Laparotomy - post operative complications"
+          },
+          {
+            "id": 548,
+            "name": "Laparotomy - small bowel resection"
+          },
+          {
+            "id": 545,
+            "name": "Laparotomy - staging/diagnostic, no other procedure"
+          },
+          {
+            "id": 640,
+            "name": "Laparotomy - Trauma (for reason not otherwise listed)"
+          },
+          {
+            "id": 269,
+            "name": "Lymph nodes - inguinal block dissection"
+          },
+          {
+            "id": 328,
+            "name": "Other - General"
+          },
+          {
+            "id": 366,
+            "name": "Pericardiocentesis"
+          },
+          {
+            "id": 423,
+            "name": "Skin graft"
+          },
+          {
+            "id": 426,
+            "name": "Soft tissue tumour - wide excision"
+          },
+          {
+            "id": 433,
+            "name": "Thoracic - lobectomy (lung)"
+          },
+          {
+            "id": 434,
+            "name": "Thoracic - mediastinoscopy"
+          },
+          {
+            "id": 435,
+            "name": "Thoracic - pleurodesis"
+          },
+          {
+            "id": 436,
+            "name": "Thoracic - pneumonectomy"
+          },
+          {
+            "id": 437,
+            "name": "Thoracic - thoracoplasty"
+          },
+          {
+            "id": 441,
+            "name": "Thoracoscopy +/- biopsy"
+          },
+          {
+            "id": 442,
+            "name": "Thoracotomy - lateral"
+          },
+          {
+            "id": 443,
+            "name": "Thoracotomy - trans-sternal"
+          },
+          {
+            "id": 460,
+            "name": "Tracheostomy"
+          },
+          {
+            "id": 496,
+            "name": "Wound - dehiscence - resuture"
+          },
+          {
+            "id": 497,
+            "name": "Wound - evacuation of haematoma"
+          },
+          {
+            "id": 641,
+            "name": "Robotic simulation exercise"
+          }
+        ]
+      },
+      "Coloproctology": {
+        "_procedures": [
+          {
+            "id": 19,
+            "name": "Abscess - acute anorectal drainage"
+          },
+          {
+            "id": 644,
+            "name": "Anal – EUA"
+          },
+          {
+            "id": 645,
+            "name": "Anal – EUA and dilatation"
+          },
+          {
+            "id": 365,
+            "name": "Anal – Skin tags, polyps, warts – excision"
+          },
+          {
+            "id": 642,
+            "name": "Anal fissure – EUA +/- injection of Botox/fissurectomy"
+          },
+          {
+            "id": 221,
+            "name": "Anal fissure - Lateral sphincterotomy"
+          },
+          {
+            "id": 643,
+            "name": "Anal fissure – Mucosal advancement flap"
+          },
+          {
+            "id": 41,
+            "name": "Anal – Tumour – wide excision"
+          },
+          {
+            "id": 55,
+            "name": "Antegrade continence enema (ACE)"
+          },
+          {
+            "id": 109,
+            "name": "Colectomy - Right"
+          },
+          {
+            "id": 646,
+            "name": "Colectomy – Extended right"
+          },
+          {
+            "id": 104,
+            "name": "Colectomy – Left"
+          },
+          {
+            "id": 112,
+            "name": "Colectomy – Sigmoid"
+          },
+          {
+            "id": 118,
+            "name": "Colectomy – Transverse"
+          },
+          {
+            "id": 115,
+            "name": "Colectomy – Subtotal"
+          },
+          {
+            "id": 117,
+            "name": "Colectomy – Total & ileostomy"
+          },
+          {
+            "id": 116,
+            "name": "Colectomy – Total & ileorectal anastomosis"
+          },
+          {
+            "id": 107,
+            "name": "Colectomy – Panproctocolectomy & end ileostomy"
+          },
+          {
+            "id": 541,
+            "name": "Colostomy – Formation of (Inc defunctioning)"
+          },
+          {
+            "id": 124,
+            "name": "Colostomy – Closure of"
+          },
+          {
+            "id": 125,
+            "name": "Colostomy – Revision or resiting"
+          },
+          {
+            "id": 126,
+            "name": "Colostomy – Excision of polyp"
+          },
+          {
+            "id": 199,
+            "name": "Hernia – Parastomal – With/without mesh"
+          },
+          {
+            "id": 564,
+            "name": "Cytoreductive surgery +/- hyperthermic intraperitoneal chemotherapy"
+          },
+          {
+            "id": 153,
+            "name": "Fistula-in-ano – Lay open"
+          },
+          {
+            "id": 647,
+            "name": "Fistula-in-ano – Insertion of seton/change of seton"
+          },
+          {
+            "id": 152,
+            "name": "Fistula-in-ano - Complex"
+          },
+          {
+            "id": 648,
+            "name": "Fistula-in-ano - Video-assisted anal fistulae treatment (VAAFT)"
+          },
+          {
+            "id": 649,
+            "name": "Fistula-in-ano – Ligation of the intersphincteric fistula tract (LIFT)"
+          },
+          {
+            "id": 650,
+            "name": "Fistula-in-ano – LASER treatment"
+          },
+          {
+            "id": 155,
+            "name": "Fistula – Recto-vaginal"
+          },
+          {
+            "id": 179,
+            "name": "Haemorrhoids – Haemorrhoidectomy - Open"
+          },
+          {
+            "id": 178,
+            "name": "Haemorrhoids – Haemorrhoidectomy - Closed"
+          },
+          {
+            "id": 180,
+            "name": "Haemorrhoids – Haemorrhoidectomy – Stapled"
+          },
+          {
+            "id": 517,
+            "name": "Haemorrhoids – Haemorrhoidal artery ligation"
+          },
+          {
+            "id": 181,
+            "name": "Haemorrhoids – Conservative treatment/banding"
+          },
+          {
+            "id": 185,
+            "name": "Hartmann’s procedure"
+          },
+          {
+            "id": 186,
+            "name": "Hartmann's - Reversal"
+          },
+          {
+            "id": 499,
+            "name": "Ileocolic resection"
+          },
+          {
+            "id": 210,
+            "name": "Ileo-colic bypass"
+          },
+          {
+            "id": 651,
+            "name": "Ileocolic resection - Redo"
+          },
+          {
+            "id": 207,
+            "name": "Ileostomy – Closure of"
+          },
+          {
+            "id": 540,
+            "name": "Proctectomy & ileoanal pouch"
+          },
+          {
+            "id": 103,
+            "name": "Proctocolectomy & ileoanal pouch"
+          },
+          {
+            "id": 209,
+            "name": "Ileostomy – Defunctioning"
+          },
+          {
+            "id": 208,
+            "name": "Ileostomy – Revision or resiting"
+          },
+          {
+            "id": 652,
+            "name": "Ileorectal anastomosis"
+          },
+          {
+            "id": 544,
+            "name": "Pelvic exenteration – Total"
+          },
+          {
+            "id": 653,
+            "name": "Pelvic exenteration – Anterior"
+          },
+          {
+            "id": 654,
+            "name": "Pelvic exenteration – Posterior"
+          },
+          {
+            "id": 655,
+            "name": "Pelvic exenteration – With sacrectomy/bone resection"
+          },
+          {
+            "id": 358,
+            "name": "Pelvic floor – Sphincter repair"
+          },
+          {
+            "id": 359,
+            "name": "Pelvic floor – Stimulator/valves (Inc SNS)"
+          },
+          {
+            "id": 542,
+            "name": "Pilonidal sinus – Excision and suture"
+          },
+          {
+            "id": 543,
+            "name": "Pilonidal sinus – Lay open"
+          },
+          {
+            "id": 656,
+            "name": "Pilonidal sinus – Bascom/Karydakis"
+          },
+          {
+            "id": 657,
+            "name": "Pilonidal sinus – Rotational flap"
+          },
+          {
+            "id": 658,
+            "name": "Pilonidal sinus – Endoscopic Pilonidal Sinus Treatment (EPSiT)"
+          },
+          {
+            "id": 659,
+            "name": "Pilonidal Sinus – LASER treatment"
+          },
+          {
+            "id": 378,
+            "name": "Rectal prolapse – Abdominal rectopexy"
+          },
+          {
+            "id": 379,
+            "name": "Rectal prolapse – Perineal repair (Delorme)"
+          },
+          {
+            "id": 380,
+            "name": "Rectal prolapse – Perineal repair (Altemeier)"
+          },
+          {
+            "id": 660,
+            "name": "Rectal prolapse – Abdominal resection rectopexy"
+          },
+          {
+            "id": 661,
+            "name": "Rectocele – Transanal repair"
+          },
+          {
+            "id": 662,
+            "name": "Rectocele – Vaginal repair"
+          },
+          {
+            "id": 18,
+            "name": "Rectum – Abdominoperineal excision"
+          },
+          {
+            "id": 663,
+            "name": "Rectum - High Anterior Resection"
+          },
+          {
+            "id": 664,
+            "name": "Rectum – Low Anterior Resection"
+          },
+          {
+            "id": 56,
+            "name": "Rectum – Anterior Resection, coloanal anastomosis +/- pouch"
+          },
+          {
+            "id": 665,
+            "name": "Rectum – Lateral pelvic side wall clearance and excision"
+          },
+          {
+            "id": 388,
+            "name": "Rectum – EUA"
+          },
+          {
+            "id": 390,
+            "name": "Rectum - Proctectomy"
+          },
+          {
+            "id": 391,
+            "name": "Rectum - Transanal excision polyp / tumour"
+          },
+          {
+            "id": 392,
+            "name": "Rectum- Transanal Endoscopic Microsurgery (TEMS)"
+          },
+          {
+            "id": 666,
+            "name": "Rectum – Transanal Minimally Invasive Surgery (TAMIS)"
+          },
+          {
+            "id": 667,
+            "name": "Rectum – Trauma"
+          },
+          {
+            "id": 668,
+            "name": "Rectum – Removal of foreign body/faeces"
+          },
+          {
+            "id": 413,
+            "name": "Re-operation - Inflammatory bowel disease"
+          },
+          {
+            "id": 417,
+            "name": "Re-operation - Pelvic malignancy"
+          },
+          {
+            "id": 130,
+            "name": "Stricturoplasty"
+          },
+          {
+            "id": 326,
+            "name": "Other - Coloproctology"
+          }
+        ]
+      },
+      "Breast": {
+        "_procedures": [
+          {
+            "id": 536,
+            "name": "Breast - wide local excision (primary)"
+          },
+          {
+            "id": 492,
+            "name": "Breast - wide local excision - re-excision to clear margins"
+          },
+          {
+            "id": 494,
+            "name": "Breast - image guided excision biopsy"
+          },
+          {
+            "id": 422,
+            "name": "Axilla - sentinel node biopsy (any technique)"
+          },
+          {
+            "id": 615,
+            "name": "Axilla - Lymph node sampling"
+          },
+          {
+            "id": 616,
+            "name": "Axilla - Clearance (level 1 & 2)"
+          },
+          {
+            "id": 565,
+            "name": "Axilla - clearance (level 1, 2 & 3)"
+          },
+          {
+            "id": 617,
+            "name": "Axilla - Image guided, targeted dissection"
+          },
+          {
+            "id": 567,
+            "name": "Axilla - lymph node biopsy (non-sentinel)"
+          },
+          {
+            "id": 568,
+            "name": "Axilla - salvage/redo surgery/exploration"
+          },
+          {
+            "id": 566,
+            "name": "Axilla - excision of accessory tissue"
+          },
+          {
+            "id": 698,
+            "name": "Breast - therapeutic mammoplasty"
+          },
+          {
+            "id": 289,
+            "name": "Breast - aesthetic - mastopexy (any technique)"
+          },
+          {
+            "id": 394,
+            "name": "Breast - aesthetic - reduction mammoplasty (any technique)"
+          },
+          {
+            "id": 276,
+            "name": "Breast - Mastectomy - simple"
+          },
+          {
+            "id": 585,
+            "name": "Breast - Mastectomy - skin/nipple sparing/skin reducing"
+          },
+          {
+            "id": 604,
+            "name": "Reconstruction - Implant (fixed volume/tissue expander)"
+          },
+          {
+            "id": 605,
+            "name": "Reconstruction - Implant (fixed volume/tissue expander) exchange +/- (capsulotomy/ectomy, etc)"
+          },
+          {
+            "id": 620,
+            "name": "Reconstruction - Implant - Complex revision/salvage surgery"
+          },
+          {
+            "id": 618,
+            "name": "Reconstruction - Removal of implant and/or capsulectomy"
+          },
+          {
+            "id": 621,
+            "name": "Reconstruction - other capsular surgery"
+          },
+          {
+            "id": 603,
+            "name": "Reconstruction - Flap - pedicle - chest wall perforator (any technique)"
+          },
+          {
+            "id": 602,
+            "name": "Reconstruction - Flap - pedicle - LD any type"
+          },
+          {
+            "id": 601,
+            "name": "Reconstruction - Flap - pedicle - TRAM"
+          },
+          {
+            "id": 600,
+            "name": "Reconstruction - Free Flap (any technique)"
+          },
+          {
+            "id": 407,
+            "name": "Reconstruction - Flap - complex revisional/salvage surgery"
+          },
+          {
+            "id": 409,
+            "name": "Reconstruction - Implant - complex revisional/salvage surgery"
+          },
+          {
+            "id": 570,
+            "name": "Breast - aesthetic - developmental correction surgery"
+          },
+          {
+            "id": 571,
+            "name": "Breast - aesthetic - gynaecomastia - mammoplasty excision"
+          },
+          {
+            "id": 177,
+            "name": "Breast - aesthetic - gynaecomastia - simple excision"
+          },
+          {
+            "id": 69,
+            "name": "Breast - aesthetic - implant augmentation - any technique"
+          },
+          {
+            "id": 68,
+            "name": "Breast - aesthetic - implant augmentation - complications/re-operation/salvage"
+          },
+          {
+            "id": 573,
+            "name": "Breast - aesthetic - liposuction/fat transfer/lipomodelling (any technique/indication)"
+          },
+          {
+            "id": 574,
+            "name": "Breast - aesthetic - scar revision (any technique)"
+          },
+          {
+            "id": 408,
+            "name": "Breast - salvage surgery (eg recurrence)"
+          },
+          {
+            "id": 608,
+            "name": "Reconstruction - Removal of expander port"
+          },
+          {
+            "id": 297,
+            "name": "Nipple - Correction of inverted nipple"
+          },
+          {
+            "id": 597,
+            "name": "Nipple - Free nipple graft"
+          },
+          {
+            "id": 272,
+            "name": "Nipple - Mammary duct fistula - treatment"
+          },
+          {
+            "id": 274,
+            "name": "Nipple - Mammary ducts - total duct excision (Hadfields)"
+          },
+          {
+            "id": 273,
+            "name": "Nipple - microdochectomy"
+          },
+          {
+            "id": 295,
+            "name": "Nipple reconstruction - any technique"
+          },
+          {
+            "id": 598,
+            "name": "Nipple reduction/adjustment"
+          },
+          {
+            "id": 599,
+            "name": "Nipple/areolar tattooing"
+          },
+          {
+            "id": 92,
+            "name": "Breast - removal of lump/tissue"
+          },
+          {
+            "id": 614,
+            "name": "Breast - Core biopsy"
+          },
+          {
+            "id": 20,
+            "name": "Abscess - breast - treatment"
+          },
+          {
+            "id": 596,
+            "name": "Breast - evacuation of haematoma"
+          },
+          {
+            "id": 325,
+            "name": "Breast - Other"
+          }
+        ]
+      },
+      "Transplant": {
+        "_procedures": [
+          {
+            "id": 29,
+            "name": "Insertion of peritoneal dialysis catheter"
+          },
+          {
+            "id": 504,
+            "name": "Peritoneal dialysis catheter removal"
+          },
+          {
+            "id": 127,
+            "name": "Combined transplant – heart-lung-liver"
+          },
+          {
+            "id": 669,
+            "name": "Combined transplant – Multivisceral implant"
+          },
+          {
+            "id": 132,
+            "name": "Drainage of intra and extra-peritoneal collections"
+          },
+          {
+            "id": 233,
+            "name": "Retrieval - Liver transplant – donor hepatectomy"
+          },
+          {
+            "id": 348,
+            "name": "Retrieval - Pancreatic transplant – donor pancreatectomy"
+          },
+          {
+            "id": 400,
+            "name": "Retrieval - Renal transplant – donor nephrectomy"
+          },
+          {
+            "id": 670,
+            "name": "Retrieval - Deceased donor organ retrieval - DBD donor"
+          },
+          {
+            "id": 671,
+            "name": "Retrieval - Deceased donor organ retrieval - DCD donor"
+          },
+          {
+            "id": 672,
+            "name": "Retrieval - Deceased donor organ retrieval - DCD donor (normothermic regional perfusion)"
+          },
+          {
+            "id": 673,
+            "name": "Liver transplant - live donor hepatectomy"
+          },
+          {
+            "id": 674,
+            "name": "Liver transplant - graft hepatectomy"
+          },
+          {
+            "id": 675,
+            "name": "Liver transplant - implant"
+          },
+          {
+            "id": 236,
+            "name": "Liver transplant - recipient hepatectomy"
+          },
+          {
+            "id": 237,
+            "name": "Liver transplant - re-do implant"
+          },
+          {
+            "id": 238,
+            "name": "Liver transplant - Roux loop construction"
+          },
+          {
+            "id": 239,
+            "name": "Liver transplant - split graft implant"
+          },
+          {
+            "id": 240,
+            "name": "Liver transplant - Workbench preparation of donor liver"
+          },
+          {
+            "id": 676,
+            "name": "Liver transplant - ex situ machine perfusion"
+          },
+          {
+            "id": 270,
+            "name": "Lymphocele - drainage"
+          },
+          {
+            "id": 677,
+            "name": "Pancreas transplant - graft pancreatectomy"
+          },
+          {
+            "id": 678,
+            "name": "Pancreas transplant – pancreas implant"
+          },
+          {
+            "id": 535,
+            "name": "Pancreas transplant - Workbench preparation of donor pancreas"
+          },
+          {
+            "id": 679,
+            "name": "Pancreas transplant - Kidney implant part of simultaneous pancreas kidney transplant"
+          },
+          {
+            "id": 395,
+            "name": "Renal biopsy"
+          },
+          {
+            "id": 396,
+            "name": "Renal transplant - implant"
+          },
+          {
+            "id": 680,
+            "name": "Renal transplant - live donor implant"
+          },
+          {
+            "id": 397,
+            "name": "Renal transplant - native bilateral nephrectomy"
+          },
+          {
+            "id": 398,
+            "name": "Renal transplant - bladder (psoas) hitch"
+          },
+          {
+            "id": 399,
+            "name": "Renal transplant - Boari flap"
+          },
+          {
+            "id": 401,
+            "name": "Renal transplant - ileal/colonic conduits"
+          },
+          {
+            "id": 681,
+            "name": "Renal transplant - live donor nephrectomy"
+          },
+          {
+            "id": 404,
+            "name": "Renal transplant - nephrectomy - partial"
+          },
+          {
+            "id": 405,
+            "name": "Renal transplant - native unilateral nephrectomy"
+          },
+          {
+            "id": 682,
+            "name": "Renal transplant - graft nephrectomy"
+          },
+          {
+            "id": 406,
+            "name": "Renal transplant - Workbench preparation of donor kidney"
+          },
+          {
+            "id": 683,
+            "name": "Renal transplant - ex situ machine perfusion"
+          },
+          {
+            "id": 464,
+            "name": "Renal transplant - ureteric stent removal"
+          },
+          {
+            "id": 465,
+            "name": "Renal transplant - ureterolithotomy"
+          },
+          {
+            "id": 466,
+            "name": "Renal transplant - Uretero-neocystostomy"
+          },
+          {
+            "id": 467,
+            "name": "Renal transplant - Ureteropyelostomy"
+          },
+          {
+            "id": 468,
+            "name": "Renal transplant - Uretero-ureterostomy"
+          },
+          {
+            "id": 684,
+            "name": "Access - arterio-venous fistula radial"
+          },
+          {
+            "id": 685,
+            "name": "Access - arterio-venous fistula brachial"
+          },
+          {
+            "id": 686,
+            "name": "Access - arterio-venous fistula forearm"
+          },
+          {
+            "id": 687,
+            "name": "Access - arterio-venous fistula ligation"
+          },
+          {
+            "id": 688,
+            "name": "Access - arterio-venous loop-graft forearm"
+          },
+          {
+            "id": 689,
+            "name": "Access - arterio-venous loop-graft groin"
+          },
+          {
+            "id": 690,
+            "name": "Access - arterio-venous straight-graft arm"
+          },
+          {
+            "id": 692,
+            "name": "Access - arterio-venous fistula superficialisation"
+          },
+          {
+            "id": 691,
+            "name": "Access - arterio-venous interposition-graft arm"
+          },
+          {
+            "id": 693,
+            "name": "Access - arterio-venous fistula basilica vein transposition"
+          },
+          {
+            "id": 695,
+            "name": "Access - secondary - vascular"
+          },
+          {
+            "id": 694,
+            "name": "Access - line removal"
+          },
+          {
+            "id": 424,
+            "name": "Small bowel transplant"
+          },
+          {
+            "id": 425,
+            "name": "Small bowel transplant - live donor"
+          },
+          {
+            "id": 330,
+            "name": "Other - Transplant"
+          }
+        ]
+      },
+      "Endocrine": {
+        "_procedures": [
+          {
+            "id": 32,
+            "name": "Adrenalectomy"
+          },
+          {
+            "id": 136,
+            "name": "Pancreatectomy - endocrine tumours"
+          },
+          {
+            "id": 268,
+            "name": "Lymph node - block dissection of neck"
+          },
+          {
+            "id": 327,
+            "name": "Other - Endocrine"
+          },
+          {
+            "id": 351,
+            "name": "Parathyroidectomy"
+          },
+          {
+            "id": 352,
+            "name": "Parathyroidectomy - reoperative"
+          },
+          {
+            "id": 353,
+            "name": "Parotidectomy - superficial"
+          },
+          {
+            "id": 354,
+            "name": "Parotidectomy - total"
+          },
+          {
+            "id": 419,
+            "name": "Retroperitoneal tumour - resection"
+          },
+          {
+            "id": 420,
+            "name": "Salivary gland - duct operation"
+          },
+          {
+            "id": 430,
+            "name": "Submandibular gland excision"
+          },
+          {
+            "id": 449,
+            "name": "Thyroglossal cyst / tract (adult)"
+          },
+          {
+            "id": 451,
+            "name": "Thyroid - lobectomy"
+          },
+          {
+            "id": 452,
+            "name": "Thyroid - re-operative"
+          },
+          {
+            "id": 453,
+            "name": "Thyroid - retrosternal goitre - sternal split"
+          },
+          {
+            "id": 454,
+            "name": "Thyroid - subtotal thyroidectomy - toxic goitre"
+          },
+          {
+            "id": 455,
+            "name": "Thyroid - total thyroidectomy"
+          },
+          {
+            "id": 456,
+            "name": "Thyroid - total thyroidectomy + cervical nodes"
+          }
+        ]
+      },
+      "Upper GI - HPB": {
+        "_procedures": [
+          {
+            "id": 72,
+            "name": "Biliary - Cholecystectomy"
+          },
+          {
+            "id": 75,
+            "name": "Biliary - Cholecystectomy and operative cholangiogram"
+          },
+          {
+            "id": 73,
+            "name": "Biliary - Cholecystectomy and CBD exploration"
+          },
+          {
+            "id": 696,
+            "name": "Biliary - Exploration of CBD (without cholecystectomy)"
+          },
+          {
+            "id": 627,
+            "name": "Biliary - Completion cholecystectomy"
+          },
+          {
+            "id": 700,
+            "name": "Biliary – Radical cholecystectomy"
+          },
+          {
+            "id": 701,
+            "name": "Biliary – Bile leak – Washout and drainage"
+          },
+          {
+            "id": 702,
+            "name": "Biliary – Bile duct injury – Washout and drainage/T-tube"
+          },
+          {
+            "id": 703,
+            "name": "Biliary – Bile Duct injury - Hepaticojejunostomy"
+          },
+          {
+            "id": 704,
+            "name": "Biliary – Bile Duct injury – Hepaticojejunostomy and vascular repair"
+          },
+          {
+            "id": 81,
+            "name": "Biliary - Hepaticojejunostomy"
+          },
+          {
+            "id": 78,
+            "name": "Biliary - Excision of choledochal cyst and hepatico-jejunostomy"
+          },
+          {
+            "id": 79,
+            "name": "Biliary - Double/triple by-pass"
+          },
+          {
+            "id": 83,
+            "name": "Biliary - Segment III by-pass"
+          },
+          {
+            "id": 84,
+            "name": "Biliary - Transduodenalsphincteroplasty"
+          },
+          {
+            "id": 705,
+            "name": "Biliary - Extrahepatic bile duct resection and hepaticojejunostomy"
+          },
+          {
+            "id": 228,
+            "name": "Liver - Left hepatectomy"
+          },
+          {
+            "id": 225,
+            "name": "Liver - Extended left hepatectomy"
+          },
+          {
+            "id": 706,
+            "name": "Liver- Extended left hepatectomy and bile duct resection"
+          },
+          {
+            "id": 230,
+            "name": "Liver - Right hepatectomy"
+          },
+          {
+            "id": 226,
+            "name": "Liver - Extended right hepatectomy"
+          },
+          {
+            "id": 707,
+            "name": "Liver- Extended right hepatectomy and bile duct resection"
+          },
+          {
+            "id": 231,
+            "name": "Liver - Segmental liver resection"
+          },
+          {
+            "id": 708,
+            "name": "Liver - Atypical liver resection (minor – 1 or 2 wedges)"
+          },
+          {
+            "id": 709,
+            "name": "Liver - Atypical liver resection (major – 3 or more wedges)"
+          },
+          {
+            "id": 222,
+            "name": "Liver- Intra-operative ablation"
+          },
+          {
+            "id": 232,
+            "name": "Liver - Trauma - Debridement/packing"
+          },
+          {
+            "id": 224,
+            "name": "Liver - De-roofing of liver cyst"
+          },
+          {
+            "id": 227,
+            "name": "Liver - Hydatid disease - Pericystectomy"
+          },
+          {
+            "id": 710,
+            "name": "Pancreas - Debridement - Endoscopic"
+          },
+          {
+            "id": 711,
+            "name": "Pancreas - Debridement - Percutaneous"
+          },
+          {
+            "id": 712,
+            "name": "Pancreas - Debridement - VARD"
+          },
+          {
+            "id": 337,
+            "name": "Pancreas - Debridement/drainage of pancreatic abscess"
+          },
+          {
+            "id": 713,
+            "name": "Pancreas - Pancreatico-duodenectomy (Whipple)"
+          },
+          {
+            "id": 715,
+            "name": "Pancreas - Left pancreatectomy (distal) – With splenectomy"
+          },
+          {
+            "id": 714,
+            "name": "Pancreas - Left pancreatectomy (distal) – Spleen preserving"
+          },
+          {
+            "id": 343,
+            "name": "Pancreas - Pancreatico-jejunostomy (Beger)"
+          },
+          {
+            "id": 344,
+            "name": "Pancreas - Pancreatico-jejunostomy (Frey)"
+          },
+          {
+            "id": 345,
+            "name": "Pancreas - Pancreatico-jejunostomy (Longitudinal)"
+          },
+          {
+            "id": 347,
+            "name": "Pancreas - Total pancreatectomy"
+          },
+          {
+            "id": 716,
+            "name": "Pancreas- Central pancreatectomy"
+          },
+          {
+            "id": 561,
+            "name": "Other - Upper GI - HpB"
+          }
+        ]
+      },
+      "Upper GI - OG": {
+        "_procedures": [
+          {
+            "id": 61,
+            "name": "Anti-reflux surgery"
+          },
+          {
+            "id": 62,
+            "name": "Anti-reflux surgery - reoperation"
+          },
+          {
+            "id": 611,
+            "name": "Hiatus hernia repair without fundoplication"
+          },
+          {
+            "id": 697,
+            "name": "Hiatus hernia repair without fundoplication - reoperation"
+          },
+          {
+            "id": 532,
+            "name": "Hernia repair - paraoesophageal"
+          },
+          {
+            "id": 133,
+            "name": "Duodenum - oversew / bleeding DU"
+          },
+          {
+            "id": 134,
+            "name": "Duodenum - perforated DU closure"
+          },
+          {
+            "id": 135,
+            "name": "Duodenum pyloroplasty +/- vagotomy"
+          },
+          {
+            "id": 149,
+            "name": "Feeding jejunostomy"
+          },
+          {
+            "id": 159,
+            "name": "Gastrectomy - D2 subtotal"
+          },
+          {
+            "id": 160,
+            "name": "Gastrectomy - D2 total"
+          },
+          {
+            "id": 161,
+            "name": "Gastrectomy - subtotal"
+          },
+          {
+            "id": 162,
+            "name": "Gastrectomy - total"
+          },
+          {
+            "id": 163,
+            "name": "Gastrectomy - with partial pancreatectomy"
+          },
+          {
+            "id": 164,
+            "name": "Gastric - antrectomy and Roux diversion"
+          },
+          {
+            "id": 165,
+            "name": "Gastric - gastrojejunostomy +/- vagotomy"
+          },
+          {
+            "id": 166,
+            "name": "Gastric - limited operation / oversew / perforated ulcer"
+          },
+          {
+            "id": 167,
+            "name": "Gastric - reoperative surgery"
+          },
+          {
+            "id": 168,
+            "name": "Gastric - volvulus reduction / resection"
+          },
+          {
+            "id": 298,
+            "name": "Metabolic Bariatric - Apronectomy"
+          },
+          {
+            "id": 299,
+            "name": "Metabolic Bariatric - Roux-en-Y Gastric Bypass"
+          },
+          {
+            "id": 530,
+            "name": "Metabolic Bariatric - Sleeve Gastrectomy"
+          },
+          {
+            "id": 609,
+            "name": "Metabolic Bariatric - One Anastomosis Gastric Bypass"
+          },
+          {
+            "id": 300,
+            "name": "Metabolic Bariatric - Insertion of Gastric Band"
+          },
+          {
+            "id": 558,
+            "name": "Metabolic Bariatric - Duodenal Switch"
+          },
+          {
+            "id": 637,
+            "name": "Metabolic Bariatric - Single Anastomosis Duodenal-Ileal bypass with Sleeve (SADI-S)"
+          },
+          {
+            "id": 636,
+            "name": "Metabolic Bariatric - Single anastomosis sleeve ileal bypass (SASI)"
+          },
+          {
+            "id": 699,
+            "name": "Metabolic Bariatric - Gastric plication"
+          },
+          {
+            "id": 635,
+            "name": "Metabolic Bariatric - Reversal of gastric bypass procedure"
+          },
+          {
+            "id": 531,
+            "name": "Metabolic Bariatric - Removal/reposition gastric band"
+          },
+          {
+            "id": 622,
+            "name": "Metabolic Bariatric - Insertion of Gastric Balloon"
+          },
+          {
+            "id": 623,
+            "name": "Metabolic Bariatric - Removal of Gastric Balloon"
+          },
+          {
+            "id": 624,
+            "name": "Metabolic Bariatric - Repair of internal hernia"
+          },
+          {
+            "id": 610,
+            "name": "Metabolic Bariatric - Other"
+          },
+          {
+            "id": 291,
+            "name": "Motility - Heller's myotomy"
+          },
+          {
+            "id": 292,
+            "name": "Motility - Heller's myotomy and antireflux repair"
+          },
+          {
+            "id": 293,
+            "name": "Motility - long oesophageal myotomy"
+          },
+          {
+            "id": 306,
+            "name": "Oesophageal - pharyngeal pouch excision"
+          },
+          {
+            "id": 307,
+            "name": "Oesophagogastrectomy - 2 phase - Ivor Lewis"
+          },
+          {
+            "id": 310,
+            "name": "Oesophagogastrectomy - 3 phase"
+          },
+          {
+            "id": 311,
+            "name": "Oesophagogastrectomy - radical 2 field lymphadenectomy"
+          },
+          {
+            "id": 312,
+            "name": "Oesophagogastrectomy - transhiatal"
+          },
+          {
+            "id": 313,
+            "name": "Oesophagoscopy - rigid"
+          },
+          {
+            "id": 314,
+            "name": "Oesophagus - rupture repair"
+          },
+          {
+            "id": 355,
+            "name": "PEG tube - complication"
+          },
+          {
+            "id": 356,
+            "name": "PEG tube - insertion"
+          },
+          {
+            "id": 427,
+            "name": "Spleen - splenectomy - haematological"
+          },
+          {
+            "id": 428,
+            "name": "Spleen - splenectomy - trauma"
+          },
+          {
+            "id": 429,
+            "name": "Spleen - splenic repair / conservation"
+          },
+          {
+            "id": 559,
+            "name": "Oesophagogastrectomy - thoracoabdominal"
+          },
+          {
+            "id": 633,
+            "name": "Duodenojejunostomy"
+          },
+          {
+            "id": 560,
+            "name": "Other - Upper GI - OG"
+          }
+        ]
+      },
+      "Trauma": {
+        "Trauma": {
+          "_procedures": [
+            {
+              "id": 65,
+              "name": "Appendicectomy"
+            }
+          ]
+        }
+      },
+      "Urology": {
+        "_procedures": [
+          {
+            "id": 102,
+            "name": "Circumcision - adult"
+          },
+          {
+            "id": 169,
+            "name": "Groin - epididymal cyst"
+          },
+          {
+            "id": 170,
+            "name": "Groin - hydrocele repair"
+          },
+          {
+            "id": 171,
+            "name": "Groin - varicocele"
+          },
+          {
+            "id": 172,
+            "name": "Groin - vasectomy"
+          },
+          {
+            "id": 173,
+            "name": "Groin - vasectomy reversal"
+          },
+          {
+            "id": 469,
+            "name": "Urology - cystoscopy"
+          },
+          {
+            "id": 470,
+            "name": "Urology - laparotomy - bladder"
+          },
+          {
+            "id": 471,
+            "name": "Urology - nephrectomy"
+          },
+          {
+            "id": 472,
+            "name": "Urology - orchidectomy +/- insertion prosthesis"
+          },
+          {
+            "id": 473,
+            "name": "Urology - other"
+          },
+          {
+            "id": 474,
+            "name": "Urology - penile operation"
+          },
+          {
+            "id": 475,
+            "name": "Urology - prostatectomy"
+          },
+          {
+            "id": 476,
+            "name": "Urology - suprapubic cystostomy"
+          },
+          {
+            "id": 477,
+            "name": "Urology - torsion of testis (adult) - orchidectomy"
+          },
+          {
+            "id": 478,
+            "name": "Urology - torsion of testis (adult) - orchidopexy"
+          },
+          {
+            "id": 479,
+            "name": "Urology - urachus"
+          },
+          {
+            "id": 480,
+            "name": "Urology - ureteric re-implant"
+          }
+        ]
+      },
+      "Paediatrics": {
+        "_procedures": [
+          {
+            "id": 142,
+            "name": "EUA - rectal biopsy"
+          },
+          {
+            "id": 143,
+            "name": "Exomphalos/gastroschisis - reduction"
+          },
+          {
+            "id": 156,
+            "name": "Fistula - tracheo-oesophageal repair"
+          },
+          {
+            "id": 194,
+            "name": "Hernia - inguinal - herniotomy"
+          },
+          {
+            "id": 205,
+            "name": "Hydrocele - ligation of PPV"
+          },
+          {
+            "id": 206,
+            "name": "Hypospadias repair"
+          },
+          {
+            "id": 212,
+            "name": "Intussusception - reduction"
+          },
+          {
+            "id": 213,
+            "name": "Intussusception - resection"
+          },
+          {
+            "id": 323,
+            "name": "Orchidopexy"
+          },
+          {
+            "id": 329,
+            "name": "Other - Paediatrics"
+          },
+          {
+            "id": 333,
+            "name": "Paediatric appendicectomy"
+          },
+          {
+            "id": 334,
+            "name": "Paediatric circumcision / prepuceplasty"
+          },
+          {
+            "id": 335,
+            "name": "Paediatric tumours"
+          },
+          {
+            "id": 350,
+            "name": "Paraphimosis - reduction"
+          },
+          {
+            "id": 373,
+            "name": "Pinnaplasty"
+          },
+          {
+            "id": 381,
+            "name": "Pyloromyotomy"
+          },
+          {
+            "id": 450,
+            "name": "Thyroglossal cyst / tract (child)"
+          },
+          {
+            "id": 457,
+            "name": "Tongue-tie release"
+          },
+          {
+            "id": 458,
+            "name": "Torsion of testis (child) - orchidectomy"
+          },
+          {
+            "id": 459,
+            "name": "Torsion of testis (child) - orchidopexy"
+          }
+        ]
+      }
+    }
+  }
+}

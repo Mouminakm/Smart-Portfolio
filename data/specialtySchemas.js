@@ -3,14 +3,17 @@
 // specialty's eLogbook operation schema + procedure list. To add a specialty:
 // drop its two JSON files in /schemas and add one entry here.
 
-import cardiothoracicProcedures from "../schemas/elogbook_cardiothoracic_procedures.json";
 import cardiothoracicSchema from "../schemas/elogbook_cardiothoracic_operation_log.json";
-import neurosurgeryProcedures from "../schemas/elogbook_neurosurgery_procedures.json";
+import cardiothoracicProcedures from "../schemas/elogbook_cardiothoracic_procedures.json";
+import generalSurgerySchema from "../schemas/elogbook_general_surgery_operation_log.json";
+import generalSurgeryProcedures from "../schemas/elogbook_general_surgery_procedures.json";
 import neurosurgerySchema from "../schemas/elogbook_neurosurgery_operation_log.json";
+import neurosurgeryProcedures from "../schemas/elogbook_neurosurgery_procedures.json";
 
 const BY_SPECIALTY = {
   "Neurosurgery": { schema: neurosurgerySchema, procedures: neurosurgeryProcedures },
   "Cardiothoracic Surgery": { schema: cardiothoracicSchema, procedures: cardiothoracicProcedures },
+  "General Surgery": { schema: generalSurgerySchema, procedures: generalSurgeryProcedures },
 };
 
 // Returns { schema, procedures } for a specialty, or null if not built yet.

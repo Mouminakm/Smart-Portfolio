@@ -190,7 +190,7 @@ function buildFullInjectionScript(plan) {
         fillSimple();
         // Give Angular a moment, then check if it stuck; retry if not.
         setTimeout(function(){
-          if(fillHeld() || fillTries >= 6){
+          if(fillHeld() || fillTries >= 15){
             doTypeaheads();
           } else {
             fillWithRetry(); // form wiped it — try again

@@ -176,7 +176,7 @@ export default function DictationScreen() {
       // Send the FULL field definitions (including options + inputType) so the
       // parse function can tell Claude the exact allowed values per field.
       // Skip app-only fields (not real platform fields) to keep the prompt tight.
-      const PATIENT_FIELDS = ["patientid", "AppPatientAgeDateofBirth_ageyears", "AppPatientAgeDateofBirth_agemonths"];
+      const PATIENT_FIELDS = ["patientid", "AppPatientAgeDateofBirth_ageyears", "AppPatientAgeDateofBirth_agemonths", "AppPatientAgeDateofBirth_dateofbirth"];
       const fieldsForClaude = schema.fields
         .filter((f) => !f.appOnly && f.submitsToPlatform !== false && !PATIENT_FIELDS.includes(f.id))
         .map((f) => ({
@@ -231,9 +231,13 @@ export default function DictationScreen() {
   else if (status === "recording") hint = "Recording — hold to finish";
 
   function FieldRow({ field }) {
+    // Show the available options under any field that has them, so the user
+    // knows what to say. Take the short part before any ":" to keep it compact.
+    // Exclude responsibleconsultant — its "options" are the full eLogbook
+    // consultant dropdown (hundreds of names), not a useful hint.
     const optionsHint =
-      field.showOptions && field.options
-        ? field.options.map((o) => o.label.split(":")[0].trim()).join(" / ")
+      field.options && field.options.length && field.id !== "responsibleconsultant"
+        ? field.options.map((o) => o.label.split(":")[0].trim()).join(" · ")
         : null;
 
     return (
@@ -283,6 +287,7 @@ export default function DictationScreen() {
                 field.id !== "patientid" &&
                 field.id !== "AppPatientAgeDateofBirth_ageyears" &&
                 field.id !== "AppPatientAgeDateofBirth_agemonths" &&
+                field.id !== "AppPatientAgeDateofBirth_dateofbirth" &&
                 field.id !== "operationspecialty" &&
                 !field.appOnly
             )
@@ -343,7 +348,7 @@ const styles = StyleSheet.create({
   pendingCircle: { width: 20, height: 20, borderRadius: 10, borderWidth: 2, borderColor: "#cccccc", marginRight: 14, marginTop: 1 },
   fieldTextWrap: { flex: 1 },
   fieldText: { fontSize: 15, color: "#1a1a1a" },
-  optionsHint: { fontSize: 12, color: "#999999", marginTop: 2 },
+  optionsHint: { fontSize: 11, color: "#aaaaaa", marginTop: 3, lineHeight: 15 },
   controlArea: { flex: 1, alignItems: "center", justifyContent: "center", borderTopWidth: 1, borderTopColor: "#f0f0f0", paddingHorizontal: 24 },
   pulseRing: { position: "absolute", width: 88, height: 88, borderRadius: 44, backgroundColor: "#2563eb" },
   chargeRing: { position: "absolute", width: 88, height: 88, borderRadius: 44, borderWidth: 4, borderColor: "#2563eb", backgroundColor: "transparent" },
