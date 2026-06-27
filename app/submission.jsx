@@ -10,9 +10,9 @@ import { WebView } from "react-native-webview";
 import AppButton from "../components/AppButton";
 import { useAuth } from "../contexts/AuthContext";
 import { useEntry } from "../contexts/EntryContext";
+import { getSpecialtyData } from "../data/specialtySchemas";
 import { buildInjectionPlan } from "../lib/buildInjectionPlan";
 import { loadProfile } from "../profile";
-import schema from "../schemas/elogbook_neurosurgery_operation_log.json";
 
 const FORM_URL = "https://client.elogbook.org/eLogbook/Operations/OperationMaintain/Add";
 
@@ -192,8 +192,11 @@ export default function SubmissionScreen() {
     load();
   }, [user]);
 
+  const specialtyData = getSpecialtyData(userSpecialty);
+  const schema = specialtyData ? specialtyData.schema : null;
+
   const plan =
-    userHospitals === null
+    userHospitals === null || !schema
       ? null
       : buildInjectionPlan(fieldValues, schema, userHospitals, userSpecialty);
 
@@ -207,7 +210,7 @@ export default function SubmissionScreen() {
       if (f === "consultant") return "Responsible consultant";
       if (f === "radio") return "A yes/no field";
       // selector like "#cepod" -> find the schema field by selector
-      const field = schema.fields.find((x) => x.selector === f);
+      const field = schema ? schema.fields.find((x) => x.selector === f) : null;
       return field ? field.label : f;
     });
   }
@@ -225,10 +228,7 @@ export default function SubmissionScreen() {
         setStatusMsg("Please log in to eLogbook below, then tap Retry.");
         return;
       }
-      if (data.type === "consultant_debug") {
-        console.log("CONSULTANT DEBUG:", JSON.stringify(data, null, 2));
-        return;
-      }
+      
       if (data.type === "filled") {
         if (data.error) {
           setStatusMsg("Couldn't fill the form automatically — you can fill it manually below.");

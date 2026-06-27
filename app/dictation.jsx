@@ -18,9 +18,8 @@ import { Animated, Pressable, ScrollView, StyleSheet, Text, View } from "react-n
 import AppButton from "../components/AppButton";
 import { useAuth } from "../contexts/AuthContext";
 import { useEntry } from "../contexts/EntryContext";
+import { getSpecialtyData } from "../data/specialtySchemas";
 import { loadProfile } from "../profile";
-import schema from "../schemas/elogbook_neurosurgery_operation_log.json";
-import procedureData from "../schemas/elogbook_neurosurgery_procedures.json";
 
 const HOLD_DURATION = 1000; // milliseconds you must hold to finish
 
@@ -48,16 +47,25 @@ export default function DictationScreen() {
     resetEntry();
   }, []);
 
-  // Load the user's saved consultants so we can let Claude pick from them.
+  const [userSpecialty, setUserSpecialty] = useState("");
+
+  // Load profile: consultants (for Claude matching) and specialty (selects the
+  // right eLogbook schema + procedure list).
   useEffect(() => {
     async function load() {
       if (user) {
         const p = await loadProfile(user.uid);
         setConsultants((p && p.consultants) || []);
+        setUserSpecialty((p && p.specialty) || "");
       }
     }
     load();
   }, [user]);
+
+  // Schema + procedures for this user's specialty (null if not built yet).
+  const specialtyData = getSpecialtyData(userSpecialty);
+  const schema = specialtyData ? specialtyData.schema : null;
+  const procedureData = specialtyData ? specialtyData.procedures : null;
 
   // ---- Recording pulse ----
   const pulse = useRef(new Animated.Value(0)).current;
@@ -153,7 +161,7 @@ export default function DictationScreen() {
       const tRes = await fetch(TRANSCRIBE_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ audioBase64: base64Audio, mimeType: "audio/m4a" }),
+        body: JSON.stringify({ audioBase64: base64Audio, mimeType: "audio/m4a", specialty: userSpecialty }),
       });
       const tData = await tRes.json();
       if (tData.transcript === undefined) {
@@ -168,8 +176,9 @@ export default function DictationScreen() {
       // Send the FULL field definitions (including options + inputType) so the
       // parse function can tell Claude the exact allowed values per field.
       // Skip app-only fields (not real platform fields) to keep the prompt tight.
+      const PATIENT_FIELDS = ["patientid", "AppPatientAgeDateofBirth_ageyears", "AppPatientAgeDateofBirth_agemonths"];
       const fieldsForClaude = schema.fields
-        .filter((f) => !f.appOnly && f.submitsToPlatform !== false)
+        .filter((f) => !f.appOnly && f.submitsToPlatform !== false && !PATIENT_FIELDS.includes(f.id))
         .map((f) => ({
           id: f.id,
           label: f.label,
@@ -240,6 +249,15 @@ export default function DictationScreen() {
       </View>
     );
   }
+  if (!schema) {
+    return (
+      <View style={[styles.container, { alignItems: "center", justifyContent: "center", padding: 24 }]}>
+        <Text style={{ fontSize: 16, color: "#888", textAlign: "center" }}>
+          Dictation for your specialty isn't available yet. It's coming soon.
+        </Text>
+      </View>
+    );
+  }
 
   return (
     <View style={styles.container}>
@@ -259,11 +277,12 @@ export default function DictationScreen() {
               at the submission step.
             </Text>
           </View>
-
           {schema.fields
             .filter(
               (field) =>
+                field.id !== "patientid" &&
                 field.id !== "AppPatientAgeDateofBirth_ageyears" &&
+                field.id !== "AppPatientAgeDateofBirth_agemonths" &&
                 field.id !== "operationspecialty" &&
                 !field.appOnly
             )

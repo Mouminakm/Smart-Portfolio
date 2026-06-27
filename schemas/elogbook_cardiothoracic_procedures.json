@@ -1,0 +1,2063 @@
+{
+  "options_source_id": "elogbook_cardiothoracic_surgery_procedures",
+  "platform": "elogbook",
+  "discipline": "surgical",
+  "specialty": "Cardiothoracic Surgery",
+  "entryType": "operation_log",
+  "field": "procedure",
+  "harvested_from": "eLogbook 'Add operation' page (Specialty = Cardiothoracic Surgery)",
+  "harvested_date": "2026-06-27",
+  "notes": "Each option's 'id' is the eLogbook data-nodeid used to select the procedure in the form (the value for WebView injection). 'name' is the display label / extraction target. A procedure may appear under several categories; the flat 'procedures' list is the authoritative deduplicated picklist, 'tree' preserves the on-site accordion structure for the picker UI and for giving the AI category context.",
+  "unique_procedure_count": 161,
+  "procedures": [
+    {
+      "id": 572,
+      "name": "ALCAPA (anomalous left coronary artery from pulmonary artery)",
+      "categories": [
+        "Congenital Cardiac Surgery / Other Congenital Procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 417,
+      "name": "Aortic arch surgery",
+      "categories": [
+        "Cardiac Surgery / Major Aortic"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 574,
+      "name": "Aortic root - Ross procedure",
+      "categories": [
+        "Congenital Cardiac Surgery / Valvular surgery / Aortic valve surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 543,
+      "name": "Aortic root surgery",
+      "categories": [
+        "Congenital Cardiac Surgery / Valvular surgery / Aortic valve surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 416,
+      "name": "Aortic valve repair",
+      "categories": [
+        "Cardiac Surgery / Aortic valve"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 541,
+      "name": "Aortic valve repair (Congenital)",
+      "categories": [
+        "Congenital Cardiac Surgery / Valvular surgery / Aortic valve surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 415,
+      "name": "Aortic valve replacement",
+      "categories": [
+        "Cardiac Surgery / Aortic valve"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 542,
+      "name": "Aortic valve replacement (Congenital - Exc. Ross)",
+      "categories": [
+        "Congenital Cardiac Surgery / Valvular surgery / Aortic valve surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 327,
+      "name": "Aortopulmonary and venous shunts",
+      "categories": [
+        "Congenital Cardiac Surgery / Other Congenital Procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 329,
+      "name": "Aortopulmonary window",
+      "categories": [
+        "Congenital Cardiac Surgery / Other Congenital Procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 573,
+      "name": "ARCAPA (anomalous right coronary artery from pulmonary artery)",
+      "categories": [
+        "Congenital Cardiac Surgery / Other Congenital Procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 439,
+      "name": "Arterial line insertion",
+      "categories": [
+        "Generic Procedures / Line insertion"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 418,
+      "name": "Ascending aorta replacement",
+      "categories": [
+        "Cardiac Surgery / Major Aortic"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 433,
+      "name": "ASD closure",
+      "categories": [
+        "Cardiac Surgery / Other adult cardiac"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 483,
+      "name": "BiLobectomy",
+      "categories": [
+        "Thoracic Surgery / Lung resections"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 486,
+      "name": "Biopsy of mediastinal mass",
+      "categories": [
+        "Thoracic Surgery / Mediastinal procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 575,
+      "name": "BT-Shunt",
+      "categories": [
+        "Congenital Cardiac Surgery / Hypoplastic heart"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 414,
+      "name": "CABG",
+      "categories": [
+        "Cardiac Surgery / Coronary revascularisation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 518,
+      "name": "Carinal resection",
+      "categories": [
+        "Thoracic Surgery / Tracheal surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 576,
+      "name": "Cavo-pulmonary shunt",
+      "categories": [
+        "Congenital Cardiac Surgery / Hypoplastic heart"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 440,
+      "name": "Central line insertion",
+      "categories": [
+        "Generic Procedures / Line insertion"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 485,
+      "name": "Cervical mediastinoscopy",
+      "categories": [
+        "Thoracic Surgery / Mediastinal procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 560,
+      "name": "Change of pacemaker generator box",
+      "categories": [
+        "Cardiac Surgery / Other adult cardiac"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 491,
+      "name": "Chest wall resection",
+      "categories": [
+        "Thoracic Surgery / Chest wall surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 509,
+      "name": "Closure of thoracic duct",
+      "categories": [
+        "Thoracic Surgery / Management of thoracic complications"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 566,
+      "name": "Closure PFO (ASD)",
+      "categories": [
+        "Congenital Cardiac Surgery / Septal defects (isolated)"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 326,
+      "name": "Coarctation",
+      "categories": [
+        "Congenital Cardiac Surgery / Other Congenital Procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 339,
+      "name": "Complete atrioventricular septal defect",
+      "categories": [
+        "Congenital Cardiac Surgery / AVSD"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 511,
+      "name": "Creation of chest wall fenestration",
+      "categories": [
+        "Thoracic Surgery / Empyema surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 514,
+      "name": "Debridement of sternal dehiscence",
+      "categories": [
+        "Cardiac Surgery / Management of cardiac complications"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 540,
+      "name": "Decannulation from ECMO",
+      "categories": [
+        "Congenital Cardiac Surgery / ECMO"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 460,
+      "name": "Decortication",
+      "categories": [
+        "Thoracic Surgery / Empyema surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 537,
+      "name": "Descending aorta surgery",
+      "categories": [
+        "Cardiac Surgery / Major Aortic"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 461,
+      "name": "Diaphragmatic plication",
+      "categories": [
+        "Thoracic Surgery / Other general thoracic"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 536,
+      "name": "Dilatation of chest wall fenestration",
+      "categories": [
+        "Thoracic Surgery / Empyema surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 504,
+      "name": "Dilatation of stricture",
+      "categories": [
+        "Thoracic Surgery / Endobronchial procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 519,
+      "name": "Donor organ retrieval",
+      "categories": [
+        "Transplantation & Mechanical Support / Transplantation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 346,
+      "name": "Double outlet right ventricle",
+      "categories": [
+        "Congenital Cardiac Surgery / Other Congenital Procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 556,
+      "name": "Drainage of pericardial effusion",
+      "categories": [
+        "Cardiac Surgery / Management of cardiac complications"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 438,
+      "name": "Emergency re-operation for valvular dysfunction",
+      "categories": [
+        "Cardiac Surgery / Management of cardiac complications"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 513,
+      "name": "Endobronchial assessment/ washout",
+      "categories": [
+        "Thoracic Surgery / Endobronchial procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 412,
+      "name": "Endobronchial biopsy",
+      "categories": [
+        "Thoracic Surgery / Endobronchial procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 448,
+      "name": "Endobronchial debulking/ resection",
+      "categories": [
+        "Thoracic Surgery / Endobronchial procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 500,
+      "name": "Endobronchial valve insertion",
+      "categories": [
+        "Thoracic Surgery / Emphysema surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 449,
+      "name": "Endobronchial valves",
+      "categories": [
+        "Thoracic Surgery / Endobronchial procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 502,
+      "name": "Excision of intra-cardiac mass",
+      "categories": [
+        "Cardiac Surgery / Other adult cardiac"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 531,
+      "name": "Exploratory surgery (No resection)",
+      "categories": [
+        "Thoracic Surgery / Lung resections"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 494,
+      "name": "Extended pleurectomy/ decortication",
+      "categories": [
+        "Thoracic Surgery / Pleural surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 338,
+      "name": "Extra cardiac conduits and their replacement",
+      "categories": [
+        "Congenital Cardiac Surgery / Other Congenital Procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 495,
+      "name": "Extra-pleural pneumonectomy",
+      "categories": [
+        "Thoracic Surgery / Pleural surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 337,
+      "name": "Fontan procedures",
+      "categories": [
+        "Congenital Cardiac Surgery / Hypoplastic heart"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 522,
+      "name": "Heart lung block transplantation",
+      "categories": [
+        "Transplantation & Mechanical Support / Transplantation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 520,
+      "name": "Heart transplantation",
+      "categories": [
+        "Transplantation & Mechanical Support / Transplantation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 462,
+      "name": "Incisions and access",
+      "categories": [
+        "Thoracic Surgery / Relevant to all general thoracic"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 444,
+      "name": "Indwelling pleural catheter insertion (not part of other procedure)",
+      "categories": [
+        "Generic Procedures / Chest drains"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 539,
+      "name": "Initiation of ECMO (Congenital)",
+      "categories": [
+        "Congenital Cardiac Surgery / ECMO"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 340,
+      "name": "Interrupted aortic arch",
+      "categories": [
+        "Congenital Cardiac Surgery / Other Congenital Procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 454,
+      "name": "Intra-aortic balloon pump (IABP) insertion",
+      "categories": [
+        "Generic Procedures / Line insertion"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 557,
+      "name": "Left heart catheterisation",
+      "categories": [
+        "Cardiac Surgery / Catheter based procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 525,
+      "name": "Left ventricular assist device",
+      "categories": [
+        "Transplantation & Mechanical Support / Mechanical circulatory support / Implantable devices"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 479,
+      "name": "Lobectomy",
+      "categories": [
+        "Thoracic Surgery / Lung resections"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 521,
+      "name": "Lung transplantation",
+      "categories": [
+        "Transplantation & Mechanical Support / Transplantation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 499,
+      "name": "Lung volume reduction surgery",
+      "categories": [
+        "Thoracic Surgery / Emphysema surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 428,
+      "name": "LV aneurysmectomy/ reduction/ reconstruction",
+      "categories": [
+        "Cardiac Surgery / Other adult cardiac"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 436,
+      "name": "Management of atrio-ventricular dissociation",
+      "categories": [
+        "Cardiac Surgery / Management of cardiac complications"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 487,
+      "name": "Mediastinal debridement",
+      "categories": [
+        "Thoracic Surgery / Mediastinal procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 445,
+      "name": "Mini-tracheostomy",
+      "categories": [
+        "Generic Procedures / Tracheostomy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 421,
+      "name": "Mitral valve repair",
+      "categories": [
+        "Cardiac Surgery / Mitral valve"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 550,
+      "name": "Mitral valve repair (Congenital)",
+      "categories": [
+        "Congenital Cardiac Surgery / Valvular surgery / Mitral valve surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 422,
+      "name": "Mitral valve replacement",
+      "categories": [
+        "Cardiac Surgery / Mitral valve"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 551,
+      "name": "Mitral valve replacement (Congenital)",
+      "categories": [
+        "Congenital Cardiac Surgery / Valvular surgery / Mitral valve surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 506,
+      "name": "Modified Ravitch procedure",
+      "categories": [
+        "Thoracic Surgery / Chest wall surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 450,
+      "name": "Navigational bronchoscopy",
+      "categories": [
+        "Thoracic Surgery / Endobronchial procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 569,
+      "name": "Nikaidoh procedure",
+      "categories": [
+        "Congenital Cardiac Surgery / Cono-Truncal abnormalities"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 344,
+      "name": "Norwood procedure",
+      "categories": [
+        "Congenital Cardiac Surgery / Hypoplastic heart"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 505,
+      "name": "Nuss procedure",
+      "categories": [
+        "Thoracic Surgery / Chest wall surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 333,
+      "name": "Open aortic valvotomy",
+      "categories": [
+        "Congenital Cardiac Surgery / Valvular surgery / Aortic valve surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 334,
+      "name": "Open pulmonary valvotomy",
+      "categories": [
+        "Congenital Cardiac Surgery / Valvular surgery / Pulmonary valve surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 328,
+      "name": "PA banding",
+      "categories": [
+        "Congenital Cardiac Surgery / Other Congenital Procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 331,
+      "name": "Partial atrioventricular septal defect",
+      "categories": [
+        "Congenital Cardiac Surgery / AVSD"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 323,
+      "name": "Patent ductus arteriosus",
+      "categories": [
+        "Congenital Cardiac Surgery / Other Congenital Procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 446,
+      "name": "Percutaneous tracheostomy insertion",
+      "categories": [
+        "Generic Procedures / Tracheostomy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 501,
+      "name": "Pericardial fenestration",
+      "categories": [
+        "Thoracic Surgery / Other general thoracic"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 434,
+      "name": "Pericardiectomy",
+      "categories": [
+        "Cardiac Surgery / Other adult cardiac"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 559,
+      "name": "Permanent epicardial pacing wire placement",
+      "categories": [
+        "Cardiac Surgery / Other adult cardiac"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 453,
+      "name": "Pleural aspiration",
+      "categories": [
+        "Generic Procedures / Chest drains"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 482,
+      "name": "Pneumonectomy",
+      "categories": [
+        "Thoracic Surgery / Lung resections"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 498,
+      "name": "Pneumothorax procedure",
+      "categories": [
+        "Thoracic Surgery / Pneumothorax surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 516,
+      "name": "Posterior splinting tracheoplasty",
+      "categories": [
+        "Thoracic Surgery / Tracheal surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 347,
+      "name": "Pulmonary atresia plus VSD and MAPCAs",
+      "categories": [
+        "Congenital Cardiac Surgery / Other Congenital Procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 532,
+      "name": "Pulmonary thromboendarterectomy",
+      "categories": [
+        "Thoracic Surgery / Other general thoracic"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 545,
+      "name": "Pulmonary valve replacement",
+      "categories": [
+        "Congenital Cardiac Surgery / Valvular surgery / Pulmonary valve surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 343,
+      "name": "Rastelli procedure",
+      "categories": [
+        "Congenital Cardiac Surgery / Cono-Truncal abnormalities"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 437,
+      "name": "Re-exploration",
+      "categories": [
+        "Cardiac Surgery / Management of cardiac complications"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 571,
+      "name": "Relief of sub-pulmonary stenosis",
+      "categories": [
+        "Congenital Cardiac Surgery / Valvular surgery / Pulmonary valve surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 552,
+      "name": "Relief of supra-annular membrane (mitral)",
+      "categories": [
+        "Congenital Cardiac Surgery / Valvular surgery / Mitral valve surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 451,
+      "name": "Removal of foreign body",
+      "categories": [
+        "Thoracic Surgery / Endobronchial procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 507,
+      "name": "Removal of sternal bar",
+      "categories": [
+        "Thoracic Surgery / Chest wall surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 527,
+      "name": "Removal of sternal wires",
+      "categories": [
+        "Cardiac Surgery / Management of cardiac complications"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 510,
+      "name": "Repair of bronchopleural fistula",
+      "categories": [
+        "Thoracic Surgery / Management of thoracic complications"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 528,
+      "name": "Repair of cardiac trauma",
+      "categories": [
+        "Cardiac Surgery / Management of cardiac complications"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 533,
+      "name": "Repair of chest wall hernia",
+      "categories": [
+        "Thoracic Surgery / Chest wall surgery",
+        "Thoracic Surgery / Management of thoracic complications"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 568,
+      "name": "Repair of cor triatriatum",
+      "categories": [
+        "Congenital Cardiac Surgery / Other Congenital Procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 508,
+      "name": "Repair of diaphragmatic hernia",
+      "categories": [
+        "Thoracic Surgery / Other general thoracic"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 564,
+      "name": "Repair of inferior sinus venosus ASD",
+      "categories": [
+        "Congenital Cardiac Surgery / Septal defects (isolated)"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 567,
+      "name": "Repair of partial-anomalous venous drainage",
+      "categories": [
+        "Congenital Cardiac Surgery / Other Congenital Procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 563,
+      "name": "Repair of superior sinus venosus ASD",
+      "categories": [
+        "Congenital Cardiac Surgery / Septal defects (isolated)"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 565,
+      "name": "Repair of unroofed coronary sinus (ASD)",
+      "categories": [
+        "Congenital Cardiac Surgery / Septal defects (isolated)"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 488,
+      "name": "Resection of anterior mediastinal mass",
+      "categories": [
+        "Thoracic Surgery / Mediastinal procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 529,
+      "name": "Resection of cervical/1st rib",
+      "categories": [
+        "Thoracic Surgery / Chest wall surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 578,
+      "name": "Resection of IVC tumour thrombus",
+      "categories": [
+        "Cardiac Surgery / Other adult cardiac"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 496,
+      "name": "Resection of pleural mass",
+      "categories": [
+        "Thoracic Surgery / Pleural surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 489,
+      "name": "Resection of posterior mediastinal mass",
+      "categories": [
+        "Thoracic Surgery / Mediastinal procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 562,
+      "name": "Resection of sub-aortic membrane",
+      "categories": [
+        "Congenital Cardiac Surgery / Valvular surgery / Aortic valve surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 490,
+      "name": "Resection/ deroofing of mediastinal cyst",
+      "categories": [
+        "Thoracic Surgery / Mediastinal procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 570,
+      "name": "REV procedure",
+      "categories": [
+        "Congenital Cardiac Surgery / Cono-Truncal abnormalities"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 492,
+      "name": "Rib fixation",
+      "categories": [
+        "Thoracic Surgery / Chest wall surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 526,
+      "name": "Right ventricular assist device",
+      "categories": [
+        "Transplantation & Mechanical Support / Mechanical circulatory support / Implantable devices"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 419,
+      "name": "Root (with valve) replacement (Modified Bentall)",
+      "categories": [
+        "Cardiac Surgery / Major Aortic"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 546,
+      "name": "RV-PA conduit",
+      "categories": [
+        "Congenital Cardiac Surgery / Hypoplastic heart",
+        "Congenital Cardiac Surgery / Valvular surgery / Pulmonary valve surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 324,
+      "name": "Secundum ASD repair",
+      "categories": [
+        "Congenital Cardiac Surgery / Septal defects (isolated)"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 481,
+      "name": "Segmentectomy",
+      "categories": [
+        "Thoracic Surgery / Lung resections"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 443,
+      "name": "Seldinger chest drain insertion",
+      "categories": [
+        "Generic Procedures / Chest drains"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 561,
+      "name": "Septal myomectomy",
+      "categories": [
+        "Congenital Cardiac Surgery / Valvular surgery / Aortic valve surgery",
+        "Congenital Cardiac Surgery / Valvular surgery / Mitral valve surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 538,
+      "name": "Setup & Closure (Congenital)",
+      "categories": [
+        "Congenital Cardiac Surgery / Relevant to all paediatric cardiac procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 413,
+      "name": "Setup and closure (Cardiac)",
+      "categories": [
+        "Cardiac Surgery / Relevant to all cardiac procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 517,
+      "name": "Sliding tracheoplasty",
+      "categories": [
+        "Thoracic Surgery / Tracheal surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 547,
+      "name": "Starnes procedure",
+      "categories": [
+        "Congenital Cardiac Surgery / Valvular surgery / Tricuspid valve surgery (inc. Ebstein)"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 452,
+      "name": "Stent insertion",
+      "categories": [
+        "Thoracic Surgery / Endobronchial procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 493,
+      "name": "Sternal fixation",
+      "categories": [
+        "Thoracic Surgery / Chest wall surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 544,
+      "name": "Supra-aortic stenosis repair",
+      "categories": [
+        "Congenital Cardiac Surgery / Valvular surgery / Aortic valve surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 497,
+      "name": "Surgery for pleural effusions",
+      "categories": [
+        "Thoracic Surgery / Pleural surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 442,
+      "name": "Surgical chest drain insertion",
+      "categories": [
+        "Generic Procedures / Chest drains"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 432,
+      "name": "Surgical management for arrhythmias",
+      "categories": [
+        "Cardiac Surgery / Other adult cardiac"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 447,
+      "name": "Surgical tracheostomy insertion",
+      "categories": [
+        "Generic Procedures / Tracheostomy"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 441,
+      "name": "Swan-Ganz catheter insertion",
+      "categories": [
+        "Generic Procedures / Line insertion"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 530,
+      "name": "Sympathectomy",
+      "categories": [
+        "Thoracic Surgery / Other general thoracic"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 555,
+      "name": "Tetralogy of Fallot",
+      "categories": [
+        "Congenital Cardiac Surgery / Cono-Truncal abnormalities"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 336,
+      "name": "Tetralogy of Fallot/Pulmonary atresia plus VSD",
+      "categories": [
+        "Congenital Cardiac Surgery / Cono-Truncal abnormalities"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 580,
+      "name": "Thoracic endometriosis procedure",
+      "categories": [
+        "Thoracic Surgery / Pleural surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 579,
+      "name": "Thoracotomy for Trauma",
+      "categories": [
+        "Thoracic Surgery / Other general thoracic"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 341,
+      "name": "Total anomalous pulmonary venous drainage",
+      "categories": [
+        "Congenital Cardiac Surgery / Other Congenital Procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 484,
+      "name": "Tracheal resection",
+      "categories": [
+        "Thoracic Surgery / Tracheal surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 558,
+      "name": "Transcatheter aortic valve implantation (TAVI)",
+      "categories": [
+        "Cardiac Surgery / Catheter based procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 342,
+      "name": "Transposition of the great arteries (switch procedure)",
+      "categories": [
+        "Congenital Cardiac Surgery / Cono-Truncal abnormalities"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 423,
+      "name": "Tricuspid valve repair",
+      "categories": [
+        "Cardiac Surgery / Tricuspid valve"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 548,
+      "name": "Tricuspid valve repair (Congenital)",
+      "categories": [
+        "Congenital Cardiac Surgery / Valvular surgery / Tricuspid valve surgery (inc. Ebstein)"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 424,
+      "name": "Tricuspid valve replacement",
+      "categories": [
+        "Cardiac Surgery / Tricuspid valve"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 549,
+      "name": "Tricuspid valve replacement (Congenital)",
+      "categories": [
+        "Congenital Cardiac Surgery / Valvular surgery / Tricuspid valve surgery (inc. Ebstein)"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 345,
+      "name": "Truncus arteriosus repair",
+      "categories": [
+        "Congenital Cardiac Surgery / Cono-Truncal abnormalities"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 512,
+      "name": "Vac pack insertion/ change",
+      "categories": [
+        "Cardiac Surgery / Management of cardiac complications",
+        "Thoracic Surgery / Empyema surgery",
+        "Thoracic Surgery / Other general thoracic"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 420,
+      "name": "Valve sparing root replacement",
+      "categories": [
+        "Cardiac Surgery / Major Aortic"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 330,
+      "name": "Vascular ring",
+      "categories": [
+        "Congenital Cardiac Surgery / Other Congenital Procedures"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 524,
+      "name": "Veno-arterial ECMO",
+      "categories": [
+        "Transplantation & Mechanical Support / Mechanical circulatory support / Extra-corporeal circulation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 577,
+      "name": "Veno-arterial-veno ECMO",
+      "categories": [
+        "Transplantation & Mechanical Support / Mechanical circulatory support / Extra-corporeal circulation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 523,
+      "name": "Veno-venous ECMO",
+      "categories": [
+        "Transplantation & Mechanical Support / Mechanical circulatory support / Extra-corporeal circulation"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 435,
+      "name": "VSD closure",
+      "categories": [
+        "Cardiac Surgery / Other adult cardiac"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 325,
+      "name": "VSD closure (Congenital)",
+      "categories": [
+        "Congenital Cardiac Surgery / Septal defects (isolated)"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 503,
+      "name": "Washout of haemothorax",
+      "categories": [
+        "Thoracic Surgery / Other general thoracic"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 459,
+      "name": "Washout/ debridement",
+      "categories": [
+        "Thoracic Surgery / Empyema surgery"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 480,
+      "name": "Wedge resection/ Non-anatomical segmentectomy",
+      "categories": [
+        "Thoracic Surgery / Lung resections"
+      ],
+      "aliases": []
+    }
+  ],
+  "tree": {
+    "Cardiac Surgery": {
+      "Relevant to all cardiac procedures": [
+        {
+          "id": 413,
+          "name": "Setup and closure (Cardiac)"
+        }
+      ],
+      "Coronary revascularisation": [
+        {
+          "id": 414,
+          "name": "CABG"
+        }
+      ],
+      "Aortic valve": [
+        {
+          "id": 415,
+          "name": "Aortic valve replacement"
+        },
+        {
+          "id": 416,
+          "name": "Aortic valve repair"
+        }
+      ],
+      "Major Aortic": [
+        {
+          "id": 419,
+          "name": "Root (with valve) replacement (Modified Bentall)"
+        },
+        {
+          "id": 420,
+          "name": "Valve sparing root replacement"
+        },
+        {
+          "id": 418,
+          "name": "Ascending aorta replacement"
+        },
+        {
+          "id": 417,
+          "name": "Aortic arch surgery"
+        },
+        {
+          "id": 537,
+          "name": "Descending aorta surgery"
+        }
+      ],
+      "Mitral valve": [
+        {
+          "id": 422,
+          "name": "Mitral valve replacement"
+        },
+        {
+          "id": 421,
+          "name": "Mitral valve repair"
+        }
+      ],
+      "Tricuspid valve": [
+        {
+          "id": 423,
+          "name": "Tricuspid valve repair"
+        },
+        {
+          "id": 424,
+          "name": "Tricuspid valve replacement"
+        }
+      ],
+      "Other adult cardiac": [
+        {
+          "id": 432,
+          "name": "Surgical management for arrhythmias"
+        },
+        {
+          "id": 434,
+          "name": "Pericardiectomy"
+        },
+        {
+          "id": 502,
+          "name": "Excision of intra-cardiac mass"
+        },
+        {
+          "id": 428,
+          "name": "LV aneurysmectomy/ reduction/ reconstruction"
+        },
+        {
+          "id": 433,
+          "name": "ASD closure"
+        },
+        {
+          "id": 435,
+          "name": "VSD closure"
+        },
+        {
+          "id": 559,
+          "name": "Permanent epicardial pacing wire placement"
+        },
+        {
+          "id": 560,
+          "name": "Change of pacemaker generator box"
+        },
+        {
+          "id": 578,
+          "name": "Resection of IVC tumour thrombus"
+        }
+      ],
+      "Management of cardiac complications": [
+        {
+          "id": 437,
+          "name": "Re-exploration"
+        },
+        {
+          "id": 556,
+          "name": "Drainage of pericardial effusion"
+        },
+        {
+          "id": 527,
+          "name": "Removal of sternal wires"
+        },
+        {
+          "id": 514,
+          "name": "Debridement of sternal dehiscence"
+        },
+        {
+          "id": 512,
+          "name": "Vac pack insertion/ change"
+        },
+        {
+          "id": 436,
+          "name": "Management of atrio-ventricular dissociation"
+        },
+        {
+          "id": 438,
+          "name": "Emergency re-operation for valvular dysfunction"
+        },
+        {
+          "id": 528,
+          "name": "Repair of cardiac trauma"
+        }
+      ],
+      "Catheter based procedures": [
+        {
+          "id": 557,
+          "name": "Left heart catheterisation"
+        },
+        {
+          "id": 558,
+          "name": "Transcatheter aortic valve implantation (TAVI)"
+        }
+      ]
+    },
+    "Thoracic Surgery": {
+      "Endobronchial procedures": [
+        {
+          "id": 513,
+          "name": "Endobronchial assessment/ washout"
+        },
+        {
+          "id": 412,
+          "name": "Endobronchial biopsy"
+        },
+        {
+          "id": 448,
+          "name": "Endobronchial debulking/ resection"
+        },
+        {
+          "id": 449,
+          "name": "Endobronchial valves"
+        },
+        {
+          "id": 450,
+          "name": "Navigational bronchoscopy"
+        },
+        {
+          "id": 451,
+          "name": "Removal of foreign body"
+        },
+        {
+          "id": 452,
+          "name": "Stent insertion"
+        },
+        {
+          "id": 504,
+          "name": "Dilatation of stricture"
+        }
+      ],
+      "Lung resections": [
+        {
+          "id": 479,
+          "name": "Lobectomy"
+        },
+        {
+          "id": 481,
+          "name": "Segmentectomy"
+        },
+        {
+          "id": 480,
+          "name": "Wedge resection/ Non-anatomical segmentectomy"
+        },
+        {
+          "id": 483,
+          "name": "BiLobectomy"
+        },
+        {
+          "id": 482,
+          "name": "Pneumonectomy"
+        },
+        {
+          "id": 531,
+          "name": "Exploratory surgery (No resection)"
+        }
+      ],
+      "Tracheal surgery": [
+        {
+          "id": 484,
+          "name": "Tracheal resection"
+        },
+        {
+          "id": 518,
+          "name": "Carinal resection"
+        },
+        {
+          "id": 516,
+          "name": "Posterior splinting tracheoplasty"
+        },
+        {
+          "id": 517,
+          "name": "Sliding tracheoplasty"
+        }
+      ],
+      "Empyema surgery": [
+        {
+          "id": 459,
+          "name": "Washout/ debridement"
+        },
+        {
+          "id": 460,
+          "name": "Decortication"
+        },
+        {
+          "id": 511,
+          "name": "Creation of chest wall fenestration"
+        },
+        {
+          "id": 512,
+          "name": "Vac pack insertion/ change"
+        },
+        {
+          "id": 536,
+          "name": "Dilatation of chest wall fenestration"
+        }
+      ],
+      "Emphysema surgery": [
+        {
+          "id": 499,
+          "name": "Lung volume reduction surgery"
+        },
+        {
+          "id": 500,
+          "name": "Endobronchial valve insertion"
+        }
+      ],
+      "Mediastinal procedures": [
+        {
+          "id": 488,
+          "name": "Resection of anterior mediastinal mass"
+        },
+        {
+          "id": 489,
+          "name": "Resection of posterior mediastinal mass"
+        },
+        {
+          "id": 485,
+          "name": "Cervical mediastinoscopy"
+        },
+        {
+          "id": 486,
+          "name": "Biopsy of mediastinal mass"
+        },
+        {
+          "id": 490,
+          "name": "Resection/ deroofing of mediastinal cyst"
+        },
+        {
+          "id": 487,
+          "name": "Mediastinal debridement"
+        }
+      ],
+      "Chest wall surgery": [
+        {
+          "id": 506,
+          "name": "Modified Ravitch procedure"
+        },
+        {
+          "id": 505,
+          "name": "Nuss procedure"
+        },
+        {
+          "id": 507,
+          "name": "Removal of sternal bar"
+        },
+        {
+          "id": 491,
+          "name": "Chest wall resection"
+        },
+        {
+          "id": 492,
+          "name": "Rib fixation"
+        },
+        {
+          "id": 493,
+          "name": "Sternal fixation"
+        },
+        {
+          "id": 533,
+          "name": "Repair of chest wall hernia"
+        },
+        {
+          "id": 529,
+          "name": "Resection of cervical/1st rib"
+        }
+      ],
+      "Pleural surgery": [
+        {
+          "id": 497,
+          "name": "Surgery for pleural effusions"
+        },
+        {
+          "id": 496,
+          "name": "Resection of pleural mass"
+        },
+        {
+          "id": 494,
+          "name": "Extended pleurectomy/ decortication"
+        },
+        {
+          "id": 495,
+          "name": "Extra-pleural pneumonectomy"
+        },
+        {
+          "id": 580,
+          "name": "Thoracic endometriosis procedure"
+        }
+      ],
+      "Pneumothorax surgery": [
+        {
+          "id": 498,
+          "name": "Pneumothorax procedure"
+        }
+      ],
+      "Other general thoracic": [
+        {
+          "id": 579,
+          "name": "Thoracotomy for Trauma"
+        },
+        {
+          "id": 512,
+          "name": "Vac pack insertion/ change"
+        },
+        {
+          "id": 501,
+          "name": "Pericardial fenestration"
+        },
+        {
+          "id": 503,
+          "name": "Washout of haemothorax"
+        },
+        {
+          "id": 508,
+          "name": "Repair of diaphragmatic hernia"
+        },
+        {
+          "id": 461,
+          "name": "Diaphragmatic plication"
+        },
+        {
+          "id": 530,
+          "name": "Sympathectomy"
+        },
+        {
+          "id": 532,
+          "name": "Pulmonary thromboendarterectomy"
+        }
+      ],
+      "Management of thoracic complications": [
+        {
+          "id": 509,
+          "name": "Closure of thoracic duct"
+        },
+        {
+          "id": 510,
+          "name": "Repair of bronchopleural fistula"
+        },
+        {
+          "id": 533,
+          "name": "Repair of chest wall hernia"
+        }
+      ],
+      "Relevant to all general thoracic": [
+        {
+          "id": 462,
+          "name": "Incisions and access"
+        }
+      ]
+    },
+    "Congenital Cardiac Surgery": {
+      "Relevant to all paediatric cardiac procedures": [
+        {
+          "id": 538,
+          "name": "Setup & Closure (Congenital)"
+        }
+      ],
+      "ECMO": [
+        {
+          "id": 539,
+          "name": "Initiation of ECMO (Congenital)"
+        },
+        {
+          "id": 540,
+          "name": "Decannulation from ECMO"
+        }
+      ],
+      "Valvular surgery": {
+        "Aortic valve surgery": [
+          {
+            "id": 541,
+            "name": "Aortic valve repair (Congenital)"
+          },
+          {
+            "id": 542,
+            "name": "Aortic valve replacement (Congenital - Exc. Ross)"
+          },
+          {
+            "id": 543,
+            "name": "Aortic root surgery"
+          },
+          {
+            "id": 574,
+            "name": "Aortic root - Ross procedure"
+          },
+          {
+            "id": 544,
+            "name": "Supra-aortic stenosis repair"
+          },
+          {
+            "id": 333,
+            "name": "Open aortic valvotomy"
+          },
+          {
+            "id": 562,
+            "name": "Resection of sub-aortic membrane"
+          },
+          {
+            "id": 561,
+            "name": "Septal myomectomy"
+          }
+        ],
+        "Pulmonary valve surgery": [
+          {
+            "id": 545,
+            "name": "Pulmonary valve replacement"
+          },
+          {
+            "id": 546,
+            "name": "RV-PA conduit"
+          },
+          {
+            "id": 334,
+            "name": "Open pulmonary valvotomy"
+          },
+          {
+            "id": 571,
+            "name": "Relief of sub-pulmonary stenosis"
+          }
+        ],
+        "Tricuspid valve surgery (inc. Ebstein)": [
+          {
+            "id": 548,
+            "name": "Tricuspid valve repair (Congenital)"
+          },
+          {
+            "id": 549,
+            "name": "Tricuspid valve replacement (Congenital)"
+          },
+          {
+            "id": 547,
+            "name": "Starnes procedure"
+          }
+        ],
+        "Mitral valve surgery": [
+          {
+            "id": 550,
+            "name": "Mitral valve repair (Congenital)"
+          },
+          {
+            "id": 551,
+            "name": "Mitral valve replacement (Congenital)"
+          },
+          {
+            "id": 552,
+            "name": "Relief of supra-annular membrane (mitral)"
+          },
+          {
+            "id": 561,
+            "name": "Septal myomectomy"
+          }
+        ]
+      },
+      "AVSD": [
+        {
+          "id": 331,
+          "name": "Partial atrioventricular septal defect"
+        },
+        {
+          "id": 339,
+          "name": "Complete atrioventricular septal defect"
+        }
+      ],
+      "Septal defects (isolated)": [
+        {
+          "id": 566,
+          "name": "Closure PFO (ASD)"
+        },
+        {
+          "id": 565,
+          "name": "Repair of unroofed coronary sinus (ASD)"
+        },
+        {
+          "id": 564,
+          "name": "Repair of inferior sinus venosus ASD"
+        },
+        {
+          "id": 324,
+          "name": "Secundum ASD repair"
+        },
+        {
+          "id": 563,
+          "name": "Repair of superior sinus venosus ASD"
+        },
+        {
+          "id": 325,
+          "name": "VSD closure (Congenital)"
+        }
+      ],
+      "Cono-Truncal abnormalities": [
+        {
+          "id": 555,
+          "name": "Tetralogy of Fallot"
+        },
+        {
+          "id": 336,
+          "name": "Tetralogy of Fallot/Pulmonary atresia plus VSD"
+        },
+        {
+          "id": 345,
+          "name": "Truncus arteriosus repair"
+        },
+        {
+          "id": 342,
+          "name": "Transposition of the great arteries (switch procedure)"
+        },
+        {
+          "id": 343,
+          "name": "Rastelli procedure"
+        },
+        {
+          "id": 569,
+          "name": "Nikaidoh procedure"
+        },
+        {
+          "id": 570,
+          "name": "REV procedure"
+        }
+      ],
+      "Hypoplastic heart": [
+        {
+          "id": 575,
+          "name": "BT-Shunt"
+        },
+        {
+          "id": 546,
+          "name": "RV-PA conduit"
+        },
+        {
+          "id": 576,
+          "name": "Cavo-pulmonary shunt"
+        },
+        {
+          "id": 344,
+          "name": "Norwood procedure"
+        },
+        {
+          "id": 337,
+          "name": "Fontan procedures"
+        }
+      ],
+      "Other Congenital Procedures": [
+        {
+          "id": 323,
+          "name": "Patent ductus arteriosus"
+        },
+        {
+          "id": 326,
+          "name": "Coarctation"
+        },
+        {
+          "id": 327,
+          "name": "Aortopulmonary and venous shunts"
+        },
+        {
+          "id": 328,
+          "name": "PA banding"
+        },
+        {
+          "id": 329,
+          "name": "Aortopulmonary window"
+        },
+        {
+          "id": 330,
+          "name": "Vascular ring"
+        },
+        {
+          "id": 338,
+          "name": "Extra cardiac conduits and their replacement"
+        },
+        {
+          "id": 340,
+          "name": "Interrupted aortic arch"
+        },
+        {
+          "id": 341,
+          "name": "Total anomalous pulmonary venous drainage"
+        },
+        {
+          "id": 567,
+          "name": "Repair of partial-anomalous venous drainage"
+        },
+        {
+          "id": 572,
+          "name": "ALCAPA (anomalous left coronary artery from pulmonary artery)"
+        },
+        {
+          "id": 573,
+          "name": "ARCAPA (anomalous right coronary artery from pulmonary artery)"
+        },
+        {
+          "id": 346,
+          "name": "Double outlet right ventricle"
+        },
+        {
+          "id": 347,
+          "name": "Pulmonary atresia plus VSD and MAPCAs"
+        },
+        {
+          "id": 568,
+          "name": "Repair of cor triatriatum"
+        }
+      ]
+    },
+    "Transplantation & Mechanical Support": {
+      "Mechanical circulatory support": {
+        "Extra-corporeal circulation": [
+          {
+            "id": 524,
+            "name": "Veno-arterial ECMO"
+          },
+          {
+            "id": 523,
+            "name": "Veno-venous ECMO"
+          },
+          {
+            "id": 577,
+            "name": "Veno-arterial-veno ECMO"
+          }
+        ],
+        "Implantable devices": [
+          {
+            "id": 525,
+            "name": "Left ventricular assist device"
+          },
+          {
+            "id": 526,
+            "name": "Right ventricular assist device"
+          }
+        ]
+      },
+      "Transplantation": [
+        {
+          "id": 519,
+          "name": "Donor organ retrieval"
+        },
+        {
+          "id": 520,
+          "name": "Heart transplantation"
+        },
+        {
+          "id": 521,
+          "name": "Lung transplantation"
+        },
+        {
+          "id": 522,
+          "name": "Heart lung block transplantation"
+        }
+      ]
+    },
+    "Generic Procedures": {
+      "Line insertion": [
+        {
+          "id": 439,
+          "name": "Arterial line insertion"
+        },
+        {
+          "id": 440,
+          "name": "Central line insertion"
+        },
+        {
+          "id": 454,
+          "name": "Intra-aortic balloon pump (IABP) insertion"
+        },
+        {
+          "id": 441,
+          "name": "Swan-Ganz catheter insertion"
+        }
+      ],
+      "Chest drains": [
+        {
+          "id": 442,
+          "name": "Surgical chest drain insertion"
+        },
+        {
+          "id": 443,
+          "name": "Seldinger chest drain insertion"
+        },
+        {
+          "id": 444,
+          "name": "Indwelling pleural catheter insertion (not part of other procedure)"
+        },
+        {
+          "id": 453,
+          "name": "Pleural aspiration"
+        }
+      ],
+      "Tracheostomy": [
+        {
+          "id": 445,
+          "name": "Mini-tracheostomy"
+        },
+        {
+          "id": 446,
+          "name": "Percutaneous tracheostomy insertion"
+        },
+        {
+          "id": 447,
+          "name": "Surgical tracheostomy insertion"
+        }
+      ]
+    }
+  }
+}

@@ -18,38 +18,63 @@ setGlobalOptions({ region: "europe-west2", maxInstances: 5 });
 const deepgramApiKey = defineSecret("DEEPGRAM_API_KEY");
 const anthropicApiKey = defineSecret("ANTHROPIC_API_KEY");
 
-// Neurosurgical keyterms passed to Deepgram Nova-3 to lift recognition of
-// procedure vocabulary that otherwise mishears (e.g. "extradural" -> "fragile").
-// Kept focused (~60) — Deepgram warns that too many keyterms cause overfitting.
-// Each is added to the request as a repeated keyterm= query parameter.
-const NEURO_KEYTERMS = [
-  "extradural", "subdural", "epidural", "intradural",
-  "haematoma", "haematomas", "haemorrhage",
-  "craniotomy", "craniectomy", "cranioplasty",
-  "ventriculostomy", "ventriculoperitoneal", "ventricular",
-  "laminectomy", "laminoplasty", "discectomy",
-  "meningioma", "schwannoma", "cavernoma", "glioma", "adenoma",
-  "supratentorial", "infratentorial", "retrosigmoid",
-  "trans-sphenoidal", "transsphenoidal",
-  "decompression", "decompressive",
-  "evacuation", "excision", "biopsy", "drainage",
-  "aneurysm", "embolisation", "endovascular", "thrombectomy",
-  "endarterectomy", "synostosis",
-  "myelomeningocoele", "encephalocoele", "syringomyelia",
-  "rhizotomy", "cordotomy", "thalamotomy", "pallidotomy",
-  "lumboperitoneal", "syringoperitoneal",
-  "odontoid", "foraminotomy", "vertebroplasty",
-  "extradural haematoma", "subdural haematoma", "intracerebral haematoma",
-  "endoscopic third ventriculostomy", "ventriculoperitoneal shunt",
-  "external ventricular drain", "anterior cervical discectomy",
-  "carpal tunnel decompression", "microvascular decompression",
-  "foramen magnum decompression",
-];
+// Specialty-specific keyterms passed to Deepgram Nova-3 to lift recognition of
+// procedure vocabulary. Each list is kept focused (~60) — too many keyterms
+// cause overfitting. Keyed by the exact profile specialty label.
+const KEYTERMS_BY_SPECIALTY = {
+  "Neurosurgery": [
+    "extradural", "subdural", "epidural", "intradural",
+    "haematoma", "haematomas", "haemorrhage",
+    "craniotomy", "craniectomy", "cranioplasty",
+    "ventriculostomy", "ventriculoperitoneal", "ventricular",
+    "laminectomy", "laminoplasty", "discectomy",
+    "meningioma", "schwannoma", "cavernoma", "glioma", "adenoma",
+    "supratentorial", "infratentorial", "retrosigmoid",
+    "trans-sphenoidal", "transsphenoidal",
+    "decompression", "decompressive",
+    "evacuation", "excision", "biopsy", "drainage",
+    "aneurysm", "embolisation", "endovascular", "thrombectomy",
+    "endarterectomy", "synostosis",
+    "myelomeningocoele", "encephalocoele", "syringomyelia",
+    "rhizotomy", "cordotomy", "thalamotomy", "pallidotomy",
+    "lumboperitoneal", "syringoperitoneal",
+    "odontoid", "foraminotomy", "vertebroplasty",
+    "extradural haematoma", "subdural haematoma", "intracerebral haematoma",
+    "endoscopic third ventriculostomy", "ventriculoperitoneal shunt",
+    "external ventricular drain", "anterior cervical discectomy",
+    "carpal tunnel decompression", "microvascular decompression",
+    "foramen magnum decompression",
+  ],
+  "Cardiothoracic Surgery": [
+    "sternotomy", "thoracotomy", "thoracoscopy", "VATS", "mediastinotomy",
+    "pericardiotomy", "pericardiectomy", "pericardiocentesis",
+    "aortic", "mitral", "tricuspid", "pulmonary", "valve",
+    "annuloplasty", "valvuloplasty", "valvotomy", "commissurotomy",
+    "coronary", "bypass", "graft", "anastomosis",
+    "sternal", "mediastinal", "mediastinum", "pleural", "pleurectomy",
+    "decortication", "pleurodesis", "pneumonectomy", "lobectomy",
+    "segmentectomy", "wedge resection", "bronchoscopy", "endobronchial",
+    "thymectomy", "oesophagectomy", "oesophagogastrectomy",
+    "aneurysm", "dissection", "endarterectomy", "cannulation",
+    "septal", "atrial", "ventricular", "atrioventricular",
+    "transplantation", "fenestration", "debridement", "decompression",
+    "CABG", "ECMO", "TAVI", "TAVR", "VAD", "LVAD", "IABP", "ASD", "VSD",
+    "coronary artery bypass graft", "aortic valve replacement",
+    "mitral valve repair", "aortic root replacement",
+    "lung resection", "chest drain insertion",
+    "extracorporeal membrane oxygenation",
+    "ventricular assist device", "atrial septal defect",
+    "ventricular septal defect",
+  ],
+};
 
-// Build the repeated &keyterm=... query fragment, URL-encoding each term.
-const KEYTERM_QS = NEURO_KEYTERMS
-  .map((t) => "keyterm=" + encodeURIComponent(t))
-  .join("&");
+function keytermQS(specialty) {
+  const terms = KEYTERMS_BY_SPECIALTY[specialty] || [];
+  return terms.map((t) => "keyterm=" + encodeURIComponent(t)).join("&");
+}
+
+
+
 
 // --- Health check ----------------------------------------------------------
 exports.ping = onRequest((request, response) => {
@@ -72,7 +97,7 @@ exports.transcribe = onRequest(
         return;
       }
 
-      const { audioBase64, mimeType } = request.body || {};
+      const { audioBase64, mimeType, specialty } = request.body || {};
       if (!audioBase64) {
         response.status(400).json({ error: "No audio provided." });
         return;
@@ -84,7 +109,7 @@ exports.transcribe = onRequest(
 
       // Call Deepgram's pre-recorded endpoint. (Node 24 has fetch built in.)
       const dgResponse = await fetch(
-        "https://api.deepgram.com/v1/listen?model=nova-3-medical&smart_format=true&" + KEYTERM_QS,
+        "https://api.deepgram.com/v1/listen?model=nova-3-medical&smart_format=true&" + keytermQS(specialty),
         {
           method: "POST",
           headers: {
