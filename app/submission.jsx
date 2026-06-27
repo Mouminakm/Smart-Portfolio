@@ -20,7 +20,7 @@ function buildFullInjectionScript(plan) {
   return `
   (function() {
     function fireInput(el){ el.dispatchEvent(new Event('input',{bubbles:true})); el.dispatchEvent(new Event('change',{bubbles:true})); }
-    function fillText(s,v){ var el=document.querySelector(s); if(!el) return false; el.value=v; fireInput(el); return true; }
+   function fillText(s,v){ var el=document.querySelector(s); if(!el) return false; el.value=v; fireInput(el); return true; }
     function selectByLabel(s,l){ var sel=document.querySelector(s); if(!sel) return false; var t=String(l).trim().toLowerCase(); var m=Array.from(sel.options).find(function(o){return o.text.trim().toLowerCase()===t;}); if(!m) return false; sel.value=m.value; fireInput(sel); return true; }
     function setCheckbox(s,v){ var el=document.querySelector(s); if(!el) return false; el.checked=!!v; fireInput(el); return true; }
     function setRadio(opts,v){ var t=String(v).trim().toLowerCase(); var c=opts.find(function(o){return o.label.trim().toLowerCase()===t;}); if(!c) return false; var el=document.querySelector(c.selector); if(!el) return false; el.checked=true; fireInput(el); return true; }
@@ -28,9 +28,20 @@ function buildFullInjectionScript(plan) {
     // Zero-tap typeahead select via the Angular component (procedure + hospital).
     // id        -> exact id match (procedure node-id, or hospital eLogbook id).
     // matchName -> fallback name match (only used when id is null).
- function selectTypeahead(searchSel, id, searchText, matchName, done){
+ function selectTypeahead(searchSel, id, searchText, matchName, done, readyTries){
       var input = document.querySelector(searchSel);
-      if(!input || !input.__ngContext__){ done(false); return; }
+      // On the slower-loading forms the typeahead's Angular context may not be
+      // attached yet. Wait and retry a few times before giving up, rather than
+      // bailing instantly (which left the hospital unfilled on cardiothoracic).
+      if(!input || !input.__ngContext__){
+        readyTries = (readyTries || 0) + 1;
+        if(readyTries <= 25){
+          return setTimeout(function(){
+            selectTypeahead(searchSel, id, searchText, matchName, done, readyTries);
+          }, 200);
+        }
+        done(false); return;
+      }
       var ctx = input.__ngContext__, directive = null, wrapper = null, seen = new Set();
       for(var i=0;i<ctx.length;i++){
         var v = ctx[i];
@@ -61,9 +72,14 @@ function buildFullInjectionScript(plan) {
               .replace(/\s+/g, " ")
               .trim();
           };
+          var full = String(matchName || searchText).toLowerCase().replace(/\s+/g, " ").trim();
           var want = core(matchName || searchText);
           match =
+            // 1. exact full-name match (incl. suffix like "(London)") — most precise
+            matches.find(function(m){ return m && m.item && String(m.item.name).toLowerCase().replace(/\s+/g," ").trim() === full; }) ||
+            // 2. exact core-name match (suffix stripped)
             matches.find(function(m){ return m && m.item && core(m.item.name) === want; }) ||
+            // 3. starts-with, either direction
             matches.find(function(m){ return m && m.item && core(m.item.name).indexOf(want) === 0; }) ||
             matches.find(function(m){ return m && m.item && want.indexOf(core(m.item.name)) === 0; });
         }
@@ -113,7 +129,17 @@ function buildFullInjectionScript(plan) {
     var tries = 0;
     function run(){
       tries++;
-      if(!document.querySelector('#operationnotes')){
+      // Wait until the form is genuinely ready: operation notes AND the
+      // procedure typeahead AND the specialty select with options present.
+      // (The cardiothoracic form loads more slowly; filling too early lets
+      // Angular re-render and wipe the values.)
+      var formReady =
+        document.querySelector('#operationnotes') &&
+        document.querySelector('#operationsAccordion-Typeahead') &&
+        document.querySelector('#operationspecialty') &&
+        document.querySelector('#operationspecialty').options &&
+        document.querySelector('#operationspecialty').options.length > 1;
+      if(!formReady){
         // Detect a login page: eLogbook's login has a password field and no
         // operation form. If we see that, tell the app it's a login situation.
         var looksLikeLogin =
@@ -137,32 +163,67 @@ function buildFullInjectionScript(plan) {
       }
 
       var filled = 0, failed = [];
-      Object.keys(plan.text).forEach(function(s){ if(fillText(s, plan.text[s])) filled++; else failed.push(s); });
-      Object.keys(plan.selects).forEach(function(s){ if(selectByLabel(s, plan.selects[s])) filled++; else failed.push(s); });
-      Object.keys(plan.checkboxes).forEach(function(s){ if(setCheckbox(s, plan.checkboxes[s])) filled++; else failed.push(s); });
-      plan.radios.forEach(function(r){ if(setRadio(r.options, r.value)) filled++; else failed.push('radio'); });
-      if(plan.consultant){ if(selectConsultant(plan.consultant)) filled++; else failed.push('consultant'); }
 
-      function afterProcedure(){
-        if(plan.hospital){
-          // hospital has eLogbook's exact id (from the user's stored list); we
-          // type the clean search name to trigger the typeahead, select by id.
-          selectTypeahead('#hospitalsAccordion-Typeahead', plan.hospital.id, plan.hospital.search, null, function(ok){
-            if(ok) filled++; else failed.push('hospital');
-            report();
-          });
-        } else { report(); }
+      // Fill all the simple (non-typeahead) fields once.
+      function fillSimple(){
+        filled = 0; failed = [];
+        Object.keys(plan.text).forEach(function(s){ if(fillText(s, plan.text[s])) filled++; else failed.push(s); });
+        Object.keys(plan.selects).forEach(function(s){ if(selectByLabel(s, plan.selects[s])) filled++; else failed.push(s); });
+        Object.keys(plan.checkboxes).forEach(function(s){ if(setCheckbox(s, plan.checkboxes[s])) filled++; else failed.push(s); });
+        plan.radios.forEach(function(r){ if(setRadio(r.options, r.value)) filled++; else failed.push('radio'); });
+        if(plan.consultant){ if(selectConsultant(plan.consultant)) filled++; else failed.push('consultant'); }
       }
+
+      // Did the fill actually hold? Check a known select still has our value.
+      // (The slow cardiothoracic form re-renders and wipes early fills; if so,
+      // we wait and try again — auto-replicating a manual "Refill" tap.)
+      function fillHeld(){
+        var checkSel = Object.keys(plan.selects)[0];
+        if(!checkSel) return true; // nothing to verify against
+        var el = document.querySelector(checkSel);
+        return el && el.value && el.value !== '' && el.selectedIndex > 0;
+      }
+
+      var fillTries = 0;
+      function fillWithRetry(){
+        fillTries++;
+        fillSimple();
+        // Give Angular a moment, then check if it stuck; retry if not.
+        setTimeout(function(){
+          if(fillHeld() || fillTries >= 6){
+            doTypeaheads();
+          } else {
+            fillWithRetry(); // form wiped it — try again
+          }
+        }, 600);
+      }
+
+      function doTypeaheads(){
+        function afterProcedure(){
+          if(plan.hospital){
+            // eLogbook gives the SAME hospital different ids per specialty, so
+            // matching by stored id can't work across specialties. The NAME is
+            // stable, so match by name: pass id=null (uses the name path) and
+            // give the full stored name as the match target.
+            selectTypeahead('#hospitalsAccordion-Typeahead', null, plan.hospital.search, (plan.hospital.name || plan.hospital.search), function(ok){
+              if(ok) filled++; else failed.push('hospital');
+              report();
+            });
+          } else { report(); }
+        }
+        if(plan.procedure){
+          selectTypeahead('#operationsAccordion-Typeahead', plan.procedure.nodeId, plan.procedure.searchText, null, function(ok){
+            if(ok) filled++; else failed.push('procedure');
+            afterProcedure();
+          });
+        } else { afterProcedure(); }
+      }
+
       function report(){
         window.ReactNativeWebView.postMessage(JSON.stringify({ type:'filled', filled: filled, failed: failed }));
       }
 
-      if(plan.procedure){
-        selectTypeahead('#operationsAccordion-Typeahead', plan.procedure.nodeId, plan.procedure.searchText, null, function(ok){
-          if(ok) filled++; else failed.push('procedure');
-          afterProcedure();
-        });
-      } else { afterProcedure(); }
+      fillWithRetry();
     }
     run();
   })();
@@ -200,6 +261,8 @@ export default function SubmissionScreen() {
       ? null
       : buildInjectionPlan(fieldValues, schema, userHospitals, userSpecialty);
 
+
+
   // Turn the script's failed-field identifiers (selectors or names) into
   // friendly labels using the schema, for the "couldn't fill" summary.
   function friendlyFailed(failed) {
@@ -222,7 +285,7 @@ export default function SubmissionScreen() {
         setStatusMsg(`Waiting for form… (fields: ${data.fieldCount}, ${data.url.slice(0, 40)})`);
         return;
       }
-  
+
       if (data.type === "needs_login") {
         setNeedsLogin(true);
         setStatusMsg("Please log in to eLogbook below, then tap Retry.");
@@ -262,9 +325,7 @@ export default function SubmissionScreen() {
           <ActivityIndicator size="small" color="#2563eb" style={{ marginRight: 8 }} />
         ) : null}
         <Text style={styles.statusText}>{statusMsg}</Text>
-        {needsLogin ? (
-          <Text style={styles.retryBtn} onPress={handleRetry}>Retry</Text>
-        ) : null}
+        <Text style={styles.retryBtn} onPress={handleRetry}>Refill</Text>
       </View>
 
       {plan ? (
