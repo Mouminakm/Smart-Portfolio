@@ -91,6 +91,15 @@ function buildFullInjectionScript(plan) {
     function run(){
       tries++;
       if(!document.querySelector('#operationnotes')){
+        // Detect a login page: eLogbook's login has a password field and no
+        // operation form. If we see that, tell the app it's a login situation.
+        var looksLikeLogin =
+          document.querySelector('input[type="password"]') ||
+          /login|signin|account\\/login/i.test(window.location.href);
+        if(looksLikeLogin){
+          window.ReactNativeWebView.postMessage(JSON.stringify({ type:'needs_login' }));
+          return;
+        }
         if(tries % 4 === 0){
           window.ReactNativeWebView.postMessage(JSON.stringify({
             type:'waiting',
@@ -144,6 +153,8 @@ export default function SubmissionScreen() {
   const webRef = useRef(null);
   const [statusMsg, setStatusMsg] = useState("Opening eLogbook…");
   const [filled, setFilled] = useState(false);
+  const [needsLogin, setNeedsLogin] = useState(false);
+  const [failedFields, setFailedFields] = useState([]);
   const [userHospitals, setUserHospitals] = useState(null); // null = still loading
   const [userSpecialty, setUserSpecialty] = useState("");
 
@@ -163,7 +174,20 @@ export default function SubmissionScreen() {
       ? null
       : buildInjectionPlan(fieldValues, schema, userHospitals, userSpecialty);
 
-  
+  // Turn the script's failed-field identifiers (selectors or names) into
+  // friendly labels using the schema, for the "couldn't fill" summary.
+  function friendlyFailed(failed) {
+    if (!failed || !failed.length) return [];
+    return failed.map((f) => {
+      if (f === "procedure") return "Procedure";
+      if (f === "hospital") return "Hospital";
+      if (f === "consultant") return "Responsible consultant";
+      if (f === "radio") return "A yes/no field";
+      // selector like "#cepod" -> find the schema field by selector
+      const field = schema.fields.find((x) => x.selector === f);
+      return field ? field.label : f;
+    });
+  }
 
   function handleMessage(event) {
     try {
@@ -173,11 +197,22 @@ export default function SubmissionScreen() {
         return;
       }
   
+      if (data.type === "needs_login") {
+        setNeedsLogin(true);
+        setStatusMsg("Please log in to eLogbook below, then tap Retry.");
+        return;
+      }
       if (data.type === "filled") {
         if (data.error) {
           setStatusMsg("Couldn't fill the form automatically — you can fill it manually below.");
         } else {
-          setStatusMsg(`Filled ${data.filled} field(s). Review everything, then Save on eLogbook.`);
+          const labels = friendlyFailed(data.failed);
+          setFailedFields(labels);
+          if (labels.length) {
+            setStatusMsg(`Filled ${data.filled} field(s). Couldn't fill: ${labels.join(", ")} — add these on eLogbook. Then review and Save.`);
+          } else {
+            setStatusMsg(`Filled ${data.filled} field(s). Review everything, then Save on eLogbook.`);
+          }
           setFilled(true);
         }
       }
@@ -185,12 +220,24 @@ export default function SubmissionScreen() {
       // ignore non-JSON messages
     }
   }
+  function handleRetry() {
+    setNeedsLogin(false);
+    setStatusMsg("Filling your entry…");
+    if (webRef.current) {
+      webRef.current.injectJavaScript(buildFullInjectionScript(plan));
+    }
+  }
 
   return (
     <View style={styles.container}>
       <View style={styles.statusBar}>
-        {!filled ? <ActivityIndicator size="small" color="#2563eb" style={{ marginRight: 8 }} /> : null}
+        {!filled && !needsLogin ? (
+          <ActivityIndicator size="small" color="#2563eb" style={{ marginRight: 8 }} />
+        ) : null}
         <Text style={styles.statusText}>{statusMsg}</Text>
+        {needsLogin ? (
+          <Text style={styles.retryBtn} onPress={handleRetry}>Retry</Text>
+        ) : null}
       </View>
 
       {plan ? (
@@ -230,6 +277,7 @@ const styles = StyleSheet.create({
     borderBottomColor: "#bfdbfe",
   },
   statusText: { fontSize: 13, color: "#1e40af", flex: 1 },
+  retryBtn: { fontSize: 13, color: "#2563eb", fontWeight: "700", paddingHorizontal: 8 },
   web: { flex: 1 },
   footer: { padding: 12, borderTopWidth: 1, borderTopColor: "#f0f0f0" },
   footerNote: { fontSize: 11, color: "#888888", lineHeight: 16, marginBottom: 10 },

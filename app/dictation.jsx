@@ -18,6 +18,7 @@ import { Animated, Pressable, ScrollView, StyleSheet, Text, View } from "react-n
 import AppButton from "../components/AppButton";
 import { useEntry } from "../contexts/EntryContext";
 import schema from "../schemas/elogbook_neurosurgery_operation_log.json";
+import procedureData from "../schemas/elogbook_neurosurgery_procedures.json";
 
 const HOLD_DURATION = 1000; // milliseconds you must hold to finish
 
@@ -160,10 +161,18 @@ export default function DictationScreen() {
           inputType: f.inputType,
           options: f.options || undefined,
         }));
+      // Send the procedure name list too, so Claude can pick EXACTLY one from
+      // it (more robust than string-matching transcription variations).
+      const procedureNames = (procedureData.procedures || []).map((p) => p.name);
+      console.log("SENDING procedureNames count:", procedureNames.length);
       const pRes = await fetch(PARSE_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ transcript: transcriptText, fields: fieldsForClaude }),
+        body: JSON.stringify({
+          transcript: transcriptText,
+          fields: fieldsForClaude,
+          procedureNames: procedureNames,
+        }),
       });
       const pData = await pRes.json();
       if (!pData.fields) {

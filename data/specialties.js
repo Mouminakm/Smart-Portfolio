@@ -47,8 +47,9 @@ export const UK_SPECIALTIES = [
     "Occupational Medicine",
     "Old Age Psychiatry",
     "Ophthalmology",
-    "Oral and Maxillofacial Surgery",
-    "Otolaryngology (ENT)",
+    "Oral and Maxillofacial surgery",
+    "Oral Surgery",
+    "Otolaryngology",
     "Paediatric Surgery",
     "Paediatrics",
     "Palliative Medicine",
@@ -64,5 +65,5 @@ export const UK_SPECIALTIES = [
     "Trauma and Orthopaedic Surgery",
     "Tropical Medicine",
     "Urology",
-    "Vascular Surgery",
+    "Vascular",
   ];

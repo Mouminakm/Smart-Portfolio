@@ -7,7 +7,7 @@
   "field": "procedure",
   "harvested_from": "eLogbook 'Add operation' page (Specialty = Neurosurgery)",
   "harvested_date": "2026-06-20",
-  "notes": "Each option's 'id' is the eLogbook data-nodeid used to select the procedure in the form (the value for WebView injection). 'name' is the display label / extraction target. A procedure may appear under several categories; the flat 'procedures' list is the authoritative deduplicated picklist, 'tree' preserves the on-site accordion structure for the picker UI and for giving the AI category context.",
+  "notes": "Each option's 'id' is the eLogbook data-nodeid used to select the procedure in the form (the value for WebView injection). 'name' is the display label / extraction target. A procedure may appear under several categories; the flat 'procedures' list is the authoritative deduplicated picklist, 'tree' preserves the on-site accordion structure for the picker UI and for giving the AI category context. | v0.4: added curated, collision-checked aliases/abbreviations for matching.",
   "unique_procedure_count": 206,
   "procedures": [
     {
@@ -15,6 +15,11 @@
       "name": "Craniotomy for extradural haematoma",
       "categories": [
         "Cranial / Trauma"
+      ],
+      "aliases": [
+        "EDH evacuation",
+        "extradural haematoma evacuation",
+        "crani for EDH"
       ]
     },
     {
@@ -22,6 +27,11 @@
       "name": "Craniotomy for subdural haematoma",
       "categories": [
         "Cranial / Trauma"
+      ],
+      "aliases": [
+        "SDH evacuation",
+        "acute subdural evacuation",
+        "crani for SDH"
       ]
     },
     {
@@ -29,6 +39,12 @@
       "name": "Burr hole/craniectomy for subdural collection (incl CSDH)",
       "categories": [
         "Cranial / Trauma"
+      ],
+      "aliases": [
+        "chronic subdural",
+        "CSDH",
+        "burr hole evacuation",
+        "burr holes for subdural"
       ]
     },
     {
@@ -36,13 +52,18 @@
       "name": "Craniotomy for removal of foreign body/penetrating injury",
       "categories": [
         "Cranial / Trauma"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 5,
       "name": "Evacuation of traumatic intracerebral haematoma/contusion",
       "categories": [
         "Cranial / Trauma"
+      ],
+      "aliases": [
+        "evacuation of intracerebral haematoma",
+        "ICH evacuation traumatic"
       ]
     },
     {
@@ -50,6 +71,9 @@
       "name": "Elevation of depressed skull fracture",
       "categories": [
         "Cranial / Trauma"
+      ],
+      "aliases": [
+        "depressed skull fracture elevation"
       ]
     },
     {
@@ -57,14 +81,16 @@
       "name": "Fixation of facial fractures",
       "categories": [
         "Cranial / Trauma"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 8,
       "name": "Fixation of mandibular fracture",
       "categories": [
         "Cranial / Trauma"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 9,
@@ -72,6 +98,11 @@
       "categories": [
         "Cranial / Trauma",
         "Cranial / Cerebrovascular"
+      ],
+      "aliases": [
+        "decompressive craniectomy",
+        "decompressive crani",
+        "supratentorial decompression"
       ]
     },
     {
@@ -81,6 +112,11 @@
         "Cranial / Trauma",
         "Cranial / Csf Circulation",
         "Cranial / Craniofacial"
+      ],
+      "aliases": [
+        "ICP bolt",
+        "ICP monitor insertion",
+        "bolt insertion"
       ]
     },
     {
@@ -88,6 +124,10 @@
       "name": "Dural repair for CSF fistula",
       "categories": [
         "Cranial / Trauma"
+      ],
+      "aliases": [
+        "CSF leak repair",
+        "dural repair"
       ]
     },
     {
@@ -95,6 +135,10 @@
       "name": "Clipping of anterior circulation aneurysm",
       "categories": [
         "Cranial / Cerebrovascular"
+      ],
+      "aliases": [
+        "anterior circulation aneurysm clipping",
+        "aneurysm clipping anterior"
       ]
     },
     {
@@ -102,6 +146,10 @@
       "name": "Clipping of posterior circulation aneurysm",
       "categories": [
         "Cranial / Cerebrovascular"
+      ],
+      "aliases": [
+        "posterior circulation aneurysm clipping",
+        "aneurysm clipping posterior"
       ]
     },
     {
@@ -109,6 +157,11 @@
       "name": "Endovascular embolisation of intracranial aneurysm",
       "categories": [
         "Cranial / Cerebrovascular"
+      ],
+      "aliases": [
+        "aneurysm coiling",
+        "endovascular coiling",
+        "coiling of aneurysm"
       ]
     },
     {
@@ -116,6 +169,9 @@
       "name": "Embolisation of AVM",
       "categories": [
         "Cranial / Cerebrovascular"
+      ],
+      "aliases": [
+        "AVM embolisation"
       ]
     },
     {
@@ -123,20 +179,27 @@
       "name": "Endovascular occlusion of artery",
       "categories": [
         "Cranial / Cerebrovascular"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 17,
       "name": "Other interventional radiological procedure",
       "categories": [
         "Cranial / Cerebrovascular"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 18,
       "name": "Cerebral angiogram",
       "categories": [
         "Cranial / Cerebrovascular"
+      ],
+      "aliases": [
+        "angiogram",
+        "DSA",
+        "cerebral angiography"
       ]
     },
     {
@@ -144,6 +207,11 @@
       "name": "Craniotomy and excision of AVM",
       "categories": [
         "Cranial / Cerebrovascular"
+      ],
+      "aliases": [
+        "AVM excision",
+        "excision of AVM",
+        "crani for AVM"
       ]
     },
     {
@@ -151,6 +219,10 @@
       "name": "Craniotomy and excision of Cavernoma",
       "categories": [
         "Cranial / Cerebrovascular"
+      ],
+      "aliases": [
+        "cavernoma excision",
+        "excision of cavernoma"
       ]
     },
     {
@@ -158,20 +230,26 @@
       "name": "Craniotomy for dural AVM",
       "categories": [
         "Cranial / Cerebrovascular"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 22,
       "name": "Anastomosis of cerebral artery",
       "categories": [
         "Cranial / Cerebrovascular"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 23,
       "name": "Craniotomy for spontaneous ICH (supratentorial)",
       "categories": [
         "Cranial / Cerebrovascular"
+      ],
+      "aliases": [
+        "spontaneous ICH supratentorial",
+        "crani for ICH"
       ]
     },
     {
@@ -179,13 +257,18 @@
       "name": "Craniotomy for spontaneous ICH (infratentorial)",
       "categories": [
         "Cranial / Cerebrovascular"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 25,
       "name": "Carotid endarterectomy",
       "categories": [
         "Cranial / Cerebrovascular"
+      ],
+      "aliases": [
+        "CEA",
+        "carotid endarterectomy"
       ]
     },
     {
@@ -193,76 +276,90 @@
       "name": "Posterior fossa craniectomy (for stroke)",
       "categories": [
         "Cranial / Cerebrovascular"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 27,
       "name": "Craniotomy for frontal intrinsic cerebral tumour",
       "categories": [
         "Cranial / Intrinsic Tumours"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 28,
       "name": "Craniotomy for temporal intrinsic cerebral tumour",
       "categories": [
         "Cranial / Intrinsic Tumours"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 29,
       "name": "Craniotomy for parietal intrinsic cerebral tumour",
       "categories": [
         "Cranial / Intrinsic Tumours"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 30,
       "name": "Craniotomy for occipital intrinsic cerebral tumour",
       "categories": [
         "Cranial / Intrinsic Tumours"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 31,
       "name": "Midline approach to intrinsic cerebellar tumour",
       "categories": [
         "Cranial / Intrinsic Tumours"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 32,
       "name": "Midline approach to intrinsic brain stem or fourth ventricle tumour",
       "categories": [
         "Cranial / Intrinsic Tumours"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 33,
       "name": "Retrosigmoid approach to intrinsic cerebellar tumour",
       "categories": [
         "Cranial / Intrinsic Tumours"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 34,
       "name": "Retrosigmoid approach to intrinsic brain stem tumour",
       "categories": [
         "Cranial / Intrinsic Tumours"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 35,
       "name": "Craniotomy for other intrinsic cerebral tumour",
       "categories": [
         "Cranial / Intrinsic Tumours"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 36,
       "name": "Stereotactic biopsy of intrinsic cerebral tumour",
       "categories": [
         "Cranial / Intrinsic Tumours"
+      ],
+      "aliases": [
+        "stereotactic biopsy",
+        "stereo biopsy"
       ]
     },
     {
@@ -270,6 +367,9 @@
       "name": "Burr hole biopsy of intrinsic cerebral tumour (+/- image guidance)",
       "categories": [
         "Cranial / Intrinsic Tumours"
+      ],
+      "aliases": [
+        "burr hole biopsy"
       ]
     },
     {
@@ -278,6 +378,9 @@
       "categories": [
         "Cranial / Intrinsic Tumours",
         "Cranial / Pineal"
+      ],
+      "aliases": [
+        "endoscopic biopsy"
       ]
     },
     {
@@ -285,6 +388,10 @@
       "name": "Craniotomy for midline ventricular lesion (eg colloid cyst)",
       "categories": [
         "Cranial / Extrinsic Tumours"
+      ],
+      "aliases": [
+        "colloid cyst crani",
+        "craniotomy for colloid cyst"
       ]
     },
     {
@@ -292,6 +399,10 @@
       "name": "Endoscopic excision / drainage of ventricular lesion (eg colloid cyst)",
       "categories": [
         "Cranial / Extrinsic Tumours"
+      ],
+      "aliases": [
+        "endoscopic colloid cyst",
+        "endoscopic excision colloid cyst"
       ]
     },
     {
@@ -299,48 +410,58 @@
       "name": "Supratentorial craniotomy for benign lesions (excl. meningioma)",
       "categories": [
         "Cranial / Extrinsic Tumours"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 42,
       "name": "Retrosigmoid craniotomy for benign lesions (excl. schwanoma and meningioma)",
       "categories": [
         "Cranial / Extrinsic Tumours"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 43,
       "name": "Midline posterior fossa craniotomy for benign lesions (excl. meningioma)",
       "categories": [
         "Cranial / Extrinsic Tumours"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 44,
       "name": "Transoral / transfacial approach to skull base tumour",
       "categories": [
         "Cranial / Extrinsic Tumours"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 45,
       "name": "Supratentorial skull base approach to skull base tumour",
       "categories": [
         "Cranial / Extrinsic Tumours"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 46,
       "name": "Infratentorial skull base approach to skull base tumour",
       "categories": [
         "Cranial / Extrinsic Tumours"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 47,
       "name": "Excision of meningioma - convexity",
       "categories": [
         "Cranial / Meninges"
+      ],
+      "aliases": [
+        "convexity meningioma",
+        "meningioma convexity"
       ]
     },
     {
@@ -348,6 +469,10 @@
       "name": "Excision of meningioma - sphenoid ridge",
       "categories": [
         "Cranial / Meninges"
+      ],
+      "aliases": [
+        "sphenoid wing meningioma",
+        "sphenoid ridge meningioma"
       ]
     },
     {
@@ -355,6 +480,9 @@
       "name": "Excision of meningioma - subfrontal",
       "categories": [
         "Cranial / Meninges"
+      ],
+      "aliases": [
+        "subfrontal meningioma"
       ]
     },
     {
@@ -362,6 +490,9 @@
       "name": "Excision of meningioma - parasagital",
       "categories": [
         "Cranial / Meninges"
+      ],
+      "aliases": [
+        "parasagittal meningioma"
       ]
     },
     {
@@ -369,6 +500,10 @@
       "name": "Excision of meningioma - falx",
       "categories": [
         "Cranial / Meninges"
+      ],
+      "aliases": [
+        "falcine meningioma",
+        "falx meningioma"
       ]
     },
     {
@@ -376,27 +511,37 @@
       "name": "Retrosigmoid craniotomy and excision of meningioma",
       "categories": [
         "Cranial / Meninges"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 53,
       "name": "Midline posterior fossa craniotomy and excision of meningioma",
       "categories": [
         "Cranial / Meninges"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 54,
       "name": "Excision of meningioma - Other",
       "categories": [
         "Cranial / Meninges"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 55,
       "name": "Trans-sphenoidal excision of pituitary adenoma",
       "categories": [
         "Cranial / Pituitary"
+      ],
+      "aliases": [
+        "trans-sphenoidal",
+        "transsphenoidal",
+        "TSS",
+        "pituitary adenoma excision",
+        "trans-sphenoidal pituitary"
       ]
     },
     {
@@ -404,41 +549,49 @@
       "name": "Transcranial approach to sellar or suprasellar lesion",
       "categories": [
         "Cranial / Pituitary"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 57,
       "name": "Trans-sphenoidal biopsy of sellar lesion (not adenoma)",
       "categories": [
         "Cranial / Pituitary"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 58,
       "name": "Infratentorial, supracerebellar approach to pineal region tumour",
       "categories": [
         "Cranial / Pineal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 59,
       "name": "Supratentorial, suboccipital approach to pineal region tumour",
       "categories": [
         "Cranial / Pineal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 60,
       "name": "Interhemispheric approach to pineal region tumour",
       "categories": [
         "Cranial / Pineal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 61,
       "name": "Hemispherectomy (functional or anatomic) for epilepsy",
       "categories": [
         "Cranial / Epilepsy"
+      ],
+      "aliases": [
+        "hemispherectomy"
       ]
     },
     {
@@ -446,6 +599,9 @@
       "name": "Temporal lobectomy for epilepsy",
       "categories": [
         "Cranial / Epilepsy"
+      ],
+      "aliases": [
+        "temporal lobectomy"
       ]
     },
     {
@@ -453,6 +609,9 @@
       "name": "Lesionectomy for epilepsy",
       "categories": [
         "Cranial / Epilepsy"
+      ],
+      "aliases": [
+        "lesionectomy"
       ]
     },
     {
@@ -460,6 +619,10 @@
       "name": "Vagal nerve stimulator for epilepsy",
       "categories": [
         "Cranial / Epilepsy"
+      ],
+      "aliases": [
+        "VNS",
+        "vagal nerve stimulator"
       ]
     },
     {
@@ -467,6 +630,9 @@
       "name": "Implantation of depth electrodes",
       "categories": [
         "Cranial / Epilepsy"
+      ],
+      "aliases": [
+        "depth electrodes"
       ]
     },
     {
@@ -474,41 +640,49 @@
       "name": "Thalamotomy for movement disorder",
       "categories": [
         "Cranial / Functional / Pain"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 67,
       "name": "Pallidotomy for movement disorder",
       "categories": [
         "Cranial / Functional / Pain"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 68,
       "name": "Brain stimulation for movement disorder / pain",
       "categories": [
         "Cranial / Functional / Pain"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 69,
       "name": "Revision / removal of brain stimulator or other cortical device",
       "categories": [
         "Cranial / Functional / Pain"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 70,
       "name": "Psychosurgery",
       "categories": [
         "Cranial / Functional / Pain"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 71,
       "name": "Middle fossa approach to vestibular schwannoma",
       "categories": [
         "Cranial / Cranial Nerves"
+      ],
+      "aliases": [
+        "middle fossa vestibular schwannoma"
       ]
     },
     {
@@ -516,6 +690,10 @@
       "name": "Retrosigmoid approach to vestibular schwannoma",
       "categories": [
         "Cranial / Cranial Nerves"
+      ],
+      "aliases": [
+        "retrosigmoid vestibular schwannoma",
+        "retrosigmoid acoustic"
       ]
     },
     {
@@ -523,6 +701,10 @@
       "name": "Translabrynthine approach to vestibular schwannoma",
       "categories": [
         "Cranial / Cranial Nerves"
+      ],
+      "aliases": [
+        "translabyrinthine vestibular schwannoma",
+        "translab"
       ]
     },
     {
@@ -530,13 +712,18 @@
       "name": "Excision of lesion of other cranial nerve",
       "categories": [
         "Cranial / Cranial Nerves"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 75,
       "name": "Microvascular decompression of trigeminal nerve",
       "categories": [
         "Cranial / Cranial Nerves"
+      ],
+      "aliases": [
+        "MVD trigeminal",
+        "trigeminal MVD"
       ]
     },
     {
@@ -544,6 +731,11 @@
       "name": "Microvascular decompression of facial nerve",
       "categories": [
         "Cranial / Cranial Nerves"
+      ],
+      "aliases": [
+        "MVD facial",
+        "facial MVD",
+        "microvascular decompression facial"
       ]
     },
     {
@@ -551,41 +743,51 @@
       "name": "Percutaneous approach to trigeminal nerve for trigeminal neuralgia",
       "categories": [
         "Cranial / Cranial Nerves"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 78,
       "name": "Decompression of other cranial nerve",
       "categories": [
         "Cranial / Cranial Nerves"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 79,
       "name": "Intracranial section of cranial nerve",
       "categories": [
         "Cranial / Cranial Nerves"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 80,
       "name": "Graft to facial (or other) nerve",
       "categories": [
         "Cranial / Cranial Nerves"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 81,
       "name": "Hypoglossal facial anastomosis",
       "categories": [
         "Cranial / Cranial Nerves"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 82,
       "name": "Drainage of intracerebral abscess",
       "categories": [
         "Cranial / Infection"
+      ],
+      "aliases": [
+        "abscess drainage",
+        "drainage of cerebral abscess",
+        "drainage of brain abscess"
       ]
     },
     {
@@ -593,6 +795,9 @@
       "name": "Excision of intracerebral abscess",
       "categories": [
         "Cranial / Infection"
+      ],
+      "aliases": [
+        "excision of brain abscess"
       ]
     },
     {
@@ -600,6 +805,9 @@
       "name": "Drainage of subdural empyema",
       "categories": [
         "Cranial / Infection"
+      ],
+      "aliases": [
+        "subdural empyema drainage"
       ]
     },
     {
@@ -607,20 +815,28 @@
       "name": "Drainage of extradural empyema",
       "categories": [
         "Cranial / Infection"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 86,
       "name": "Removal of infected bone flap / cranioplasty",
       "categories": [
         "Cranial / Infection"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 87,
       "name": "Insertion of ventriculoperitoneal shunt",
       "categories": [
         "Cranial / Csf Circulation"
+      ],
+      "aliases": [
+        "VP shunt",
+        "VPS",
+        "ventriculoperitoneal shunt",
+        "shunt insertion"
       ]
     },
     {
@@ -628,6 +844,10 @@
       "name": "Revison/maintenance of cranial CSF drainage device",
       "categories": [
         "Cranial / Csf Circulation"
+      ],
+      "aliases": [
+        "shunt revision",
+        "revision of shunt"
       ]
     },
     {
@@ -635,6 +855,10 @@
       "name": "Removal of cranial CSF drainage device",
       "categories": [
         "Cranial / Csf Circulation"
+      ],
+      "aliases": [
+        "shunt removal",
+        "removal of shunt"
       ]
     },
     {
@@ -642,20 +866,27 @@
       "name": "Insertion of access device",
       "categories": [
         "Cranial / Csf Circulation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 91,
       "name": "Other CSF drainage/shunt procedure",
       "categories": [
         "Cranial / Csf Circulation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 92,
       "name": "Insertion of external ventricular drain",
       "categories": [
         "Cranial / Csf Circulation"
+      ],
+      "aliases": [
+        "EVD",
+        "external ventricular drain",
+        "EVD insertion"
       ]
     },
     {
@@ -663,6 +894,11 @@
       "name": "Endoscopic third ventriculostomy",
       "categories": [
         "Cranial / Csf Circulation"
+      ],
+      "aliases": [
+        "ETV",
+        "endoscopic third ventriculostomy",
+        "third ventriculostomy"
       ]
     },
     {
@@ -670,7 +906,8 @@
       "name": "Other Endoscopic Procedure (except biopsy)",
       "categories": [
         "Cranial / Csf Circulation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 95,
@@ -679,6 +916,11 @@
         "Cranial / Csf Circulation",
         "Spinal / Csf Circulation",
         "Spinal / Spinal Dysraphism"
+      ],
+      "aliases": [
+        "foramen magnum decompression with durotomy",
+        "FMD with durotomy",
+        "chiari decompression with durotomy"
       ]
     },
     {
@@ -686,20 +928,25 @@
       "name": "Correction of synostosis- vault only",
       "categories": [
         "Cranial / Craniofacial"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 97,
       "name": "Correction of synostosis- combined craniofacial procedure",
       "categories": [
         "Cranial / Craniofacial"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 98,
       "name": "Cranioplasty",
       "categories": [
         "Cranial / Other Cranial Procedure"
+      ],
+      "aliases": [
+        "cranioplasty"
       ]
     },
     {
@@ -707,6 +954,9 @@
       "name": "Excision of scalp lesion",
       "categories": [
         "Cranial / Other Cranial Procedure"
+      ],
+      "aliases": [
+        "scalp lesion excision"
       ]
     },
     {
@@ -714,13 +964,18 @@
       "name": "Excision of skull lesion",
       "categories": [
         "Cranial / Other Cranial Procedure"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 101,
       "name": "Re-opening for post-operative cranial haematoma",
       "categories": [
         "Cranial / Other Cranial Procedure"
+      ],
+      "aliases": [
+        "re-opening for haematoma",
+        "evacuation of post-op haematoma"
       ]
     },
     {
@@ -728,20 +983,26 @@
       "name": "Cranial procedure not elsewhere coded (cranial contents)",
       "categories": [
         "Cranial / Other Cranial Procedure"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 103,
       "name": "Cranial procedure not elsewhere coded (skull)",
       "categories": [
         "Cranial / Other Cranial Procedure"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 104,
       "name": "Anterior PEG spinal fixation",
       "categories": [
         "Spinal / Trauma"
+      ],
+      "aliases": [
+        "anterior PEG fixation",
+        "PEG fixation"
       ]
     },
     {
@@ -749,6 +1010,11 @@
       "name": "Posterior C1/2 spinal fixation",
       "categories": [
         "Spinal / Trauma"
+      ],
+      "aliases": [
+        "C1/2 fixation",
+        "posterior C1 C2 fixation",
+        "atlantoaxial fixation"
       ]
     },
     {
@@ -756,6 +1022,10 @@
       "name": "Occipito-Cervical fusion (with instrumentation)",
       "categories": [
         "Spinal / Trauma"
+      ],
+      "aliases": [
+        "occipitocervical fusion",
+        "occipito-cervical fusion"
       ]
     },
     {
@@ -763,6 +1033,11 @@
       "name": "Anterior cervical fusion",
       "categories": [
         "Spinal / Trauma"
+      ],
+      "aliases": [
+        "ACDF",
+        "anterior cervical discectomy and fusion",
+        "anterior cervical fusion"
       ]
     },
     {
@@ -770,6 +1045,9 @@
       "name": "Posterior cervical fusion",
       "categories": [
         "Spinal / Trauma"
+      ],
+      "aliases": [
+        "posterior cervical fusion"
       ]
     },
     {
@@ -777,48 +1055,57 @@
       "name": "Surgery for spinal AVM",
       "categories": [
         "Spinal / Vascular"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 112,
       "name": "Surgery for spinal cavernoma",
       "categories": [
         "Spinal / Vascular"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 113,
       "name": "Evacuation of primary spinal extradural haematoma",
       "categories": [
         "Spinal / Vascular"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 114,
       "name": "Evacuation of primary spinal subdural haematoma",
       "categories": [
         "Spinal / Vascular"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 115,
       "name": "Biopsy of intramedullary spinal cord lesion",
       "categories": [
         "Spinal / Tumour"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 116,
       "name": "Excision / debulking of intramedullary spinal cord lesion",
       "categories": [
         "Spinal / Tumour"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 117,
       "name": "Excision of spinal meningioma",
       "categories": [
         "Spinal / Tumour"
+      ],
+      "aliases": [
+        "spinal meningioma excision"
       ]
     },
     {
@@ -826,6 +1113,9 @@
       "name": "Excision of spinal neurofibroma",
       "categories": [
         "Spinal / Tumour"
+      ],
+      "aliases": [
+        "spinal neurofibroma excision"
       ]
     },
     {
@@ -834,7 +1124,8 @@
       "categories": [
         "Spinal / Infection",
         "Spinal / Tumour"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 120,
@@ -842,13 +1133,18 @@
       "categories": [
         "Spinal / Infection",
         "Spinal / Tumour"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 121,
       "name": "Insertion of spinal cord stimulator",
       "categories": [
         "Spinal / Functional / Pain"
+      ],
+      "aliases": [
+        "spinal cord stimulator",
+        "SCS insertion"
       ]
     },
     {
@@ -856,48 +1152,58 @@
       "name": "Revision / removal of spinal cord device",
       "categories": [
         "Spinal / Functional / Pain"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 123,
       "name": "Insertion of spinal drug delivery device",
       "categories": [
         "Spinal / Functional / Pain"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 124,
       "name": "Spinal root rhizotomy",
       "categories": [
         "Spinal / Functional / Pain"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 125,
       "name": "Open spinal cordotomy",
       "categories": [
         "Spinal / Functional / Pain"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 126,
       "name": "Percutaneous cordotomy",
       "categories": [
         "Spinal / Functional / Pain"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 127,
       "name": "DREZ lesion",
       "categories": [
         "Spinal / Functional / Pain"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 128,
       "name": "Drainage of spinal epidural abscess",
       "categories": [
         "Spinal / Infection"
+      ],
+      "aliases": [
+        "spinal epidural abscess drainage",
+        "epidural abscess drainage"
       ]
     },
     {
@@ -905,20 +1211,26 @@
       "name": "Drainage of spinal subdural abscess",
       "categories": [
         "Spinal / Infection"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 130,
       "name": "Insertion of syringoperitoneal or syringopleural shunt",
       "categories": [
         "Spinal / Csf Circulation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 131,
       "name": "Insertion of lumboperitoneal or lumbopleural shunt",
       "categories": [
         "Spinal / Csf Circulation"
+      ],
+      "aliases": [
+        "LP shunt",
+        "lumboperitoneal shunt"
       ]
     },
     {
@@ -926,6 +1238,10 @@
       "name": "Insertion of lumbar drain",
       "categories": [
         "Spinal / Csf Circulation"
+      ],
+      "aliases": [
+        "lumbar drain insertion",
+        "lumbar drain"
       ]
     },
     {
@@ -933,20 +1249,27 @@
       "name": "Revison/maintenance of spinal CSF drainage device",
       "categories": [
         "Spinal / Csf Circulation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 134,
       "name": "Removal of spinal shunt device",
       "categories": [
         "Spinal / Csf Circulation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 135,
       "name": "Untethering of spinal cord",
       "categories": [
         "Spinal / Spinal Dysraphism"
+      ],
+      "aliases": [
+        "untethering of cord",
+        "cord untethering",
+        "spinal cord untethering"
       ]
     },
     {
@@ -954,6 +1277,10 @@
       "name": "Closure of myelomeningocoele",
       "categories": [
         "Spinal / Spinal Dysraphism"
+      ],
+      "aliases": [
+        "myelomeningocoele closure",
+        "MMC closure"
       ]
     },
     {
@@ -961,13 +1288,19 @@
       "name": "Other surgery for spinal dysraphism",
       "categories": [
         "Spinal / Spinal Dysraphism"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 138,
       "name": "Primary Posterior Cervical Laminectomy or laminoplasty",
       "categories": [
         "Spinal / Degenerative C-Spine"
+      ],
+      "aliases": [
+        "cervical laminectomy",
+        "posterior cervical laminectomy",
+        "laminoplasty"
       ]
     },
     {
@@ -977,13 +1310,18 @@
         "Spinal / Degenerative C-Spine",
         "Spinal / Trauma",
         "Spinal / Tumour"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 140,
       "name": "Primary anterior cervical discectomy +/- graft",
       "categories": [
         "Spinal / Degenerative C-Spine"
+      ],
+      "aliases": [
+        "ACD",
+        "anterior cervical discectomy"
       ]
     },
     {
@@ -993,27 +1331,34 @@
         "Spinal / Degenerative C-Spine",
         "Spinal / Trauma",
         "Spinal / Tumour"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 142,
       "name": "Revision anterior cervical decompression",
       "categories": [
         "Spinal / Degenerative C-Spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 143,
       "name": "Revision posterior cervical decompression",
       "categories": [
         "Spinal / Degenerative C-Spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 144,
       "name": "Transoral excision of odontoid",
       "categories": [
         "Spinal / Degenerative C-Spine"
+      ],
+      "aliases": [
+        "transoral odontoidectomy",
+        "odontoid excision"
       ]
     },
     {
@@ -1021,14 +1366,16 @@
       "name": "Transthoracic excision of thoracic disc",
       "categories": [
         "Spinal / Degenerative T-Spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 146,
       "name": "Posterior / lateral excision of thoracic disc",
       "categories": [
         "Spinal / Degenerative T-Spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 147,
@@ -1037,7 +1384,8 @@
         "Spinal / Degenerative T-Spine",
         "Spinal / Trauma",
         "Spinal / Tumour"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 148,
@@ -1046,13 +1394,19 @@
         "Spinal / Degenerative T-Spine",
         "Spinal / Trauma",
         "Spinal / Tumour"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 149,
       "name": "Primary posterior lumbar discectomy",
       "categories": [
         "Spinal / Degenerative L-Spine"
+      ],
+      "aliases": [
+        "lumbar discectomy",
+        "primary lumbar discectomy",
+        "microdiscectomy"
       ]
     },
     {
@@ -1060,6 +1414,10 @@
       "name": "Primary lumbar laminectomy for disc/degen disease",
       "categories": [
         "Spinal / Degenerative L-Spine"
+      ],
+      "aliases": [
+        "lumbar laminectomy",
+        "primary lumbar laminectomy"
       ]
     },
     {
@@ -1068,55 +1426,68 @@
       "categories": [
         "Spinal / Trauma",
         "Spinal / Tumour"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 152,
       "name": "Primary anterior lumbar surgery for disc/degen disease",
       "categories": [
         "Spinal / Degenerative L-Spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 153,
       "name": "Revision posterior lumbar surgery for disc/degen disease",
       "categories": [
         "Spinal / Degenerative L-Spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 154,
       "name": "Revision anterior lumbar surgery for disc/degen disease",
       "categories": [
         "Spinal / Degenerative L-Spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 155,
       "name": "Post-operative re-exploration of spine",
       "categories": [
         "Spinal / Other Spinal Procedure"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 156,
       "name": "Spinal cord procedure- not elsewhere coded",
       "categories": [
         "Spinal / Other Spinal Procedure"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 157,
       "name": "Spinal (bony) procedure- not elsewhere coded",
       "categories": [
         "Spinal / Other Spinal Procedure"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 158,
       "name": "Carpal tunnel decompression",
       "categories": [
         "Peripheral Nerve / Decompression"
+      ],
+      "aliases": [
+        "carpal tunnel decompression",
+        "carpal tunnel release",
+        "CTD",
+        "CTR"
       ]
     },
     {
@@ -1124,6 +1495,9 @@
       "name": "Other peripheral nerve decompression",
       "categories": [
         "Peripheral Nerve / Decompression"
+      ],
+      "aliases": [
+        "peripheral nerve decompression"
       ]
     },
     {
@@ -1132,6 +1506,10 @@
       "categories": [
         "Peripheral Nerve / Other Peripheral Nerve Procedure",
         "Other / Diagnostic Biopsy Procedures"
+      ],
+      "aliases": [
+        "nerve biopsy",
+        "peripheral nerve biopsy"
       ]
     },
     {
@@ -1141,7 +1519,8 @@
         "Cranial / Trauma",
         "Cranial / Other Cranial Procedure",
         "Other / Suture Of Wounds"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 162,
@@ -1150,13 +1529,18 @@
         "Spinal / Trauma",
         "Spinal / Other Spinal Procedure",
         "Other / Suture Of Wounds"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 163,
       "name": "Temporal artery biopsy",
       "categories": [
         "Other / Diagnostic Biopsy Procedures"
+      ],
+      "aliases": [
+        "temporal artery biopsy",
+        "TAB"
       ]
     },
     {
@@ -1165,6 +1549,9 @@
       "categories": [
         "Peripheral Nerve / Other Peripheral Nerve Procedure",
         "Other / Diagnostic Biopsy Procedures"
+      ],
+      "aliases": [
+        "muscle biopsy"
       ]
     },
     {
@@ -1172,20 +1559,26 @@
       "name": "Non neurosurgical procedure",
       "categories": [
         "Other / Others"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 166,
       "name": "Anaesthetic- No operation",
       "categories": [
         "Other / Others"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 167,
       "name": "Tracheostomy",
       "categories": [
         "Other / Others"
+      ],
+      "aliases": [
+        "tracheostomy",
+        "trachy"
       ]
     },
     {
@@ -1193,7 +1586,8 @@
       "name": "Organ donation",
       "categories": [
         "Other / Others"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 169,
@@ -1202,7 +1596,8 @@
         "Cranial / Cranial Nerves",
         "Cranial / Other Cranial Procedure",
         "Peripheral Nerve / Other Peripheral Nerve Procedure"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 170,
@@ -1212,7 +1607,8 @@
         "Spinal / Infection",
         "Other / Suture Of Wounds",
         "Other / Others"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 171,
@@ -1221,21 +1617,24 @@
         "Cranial / Functional / Pain",
         "Spinal / Functional / Pain",
         "Peripheral Nerve / Other Peripheral Nerve Procedure"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 172,
       "name": "Brachial plexus decompression / cervical rib procedure",
       "categories": [
         "Peripheral Nerve / Decompression"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 173,
       "name": "Excision of other intradural, extramedullary lesion",
       "categories": [
         "Spinal / Tumour"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 174,
@@ -1243,7 +1642,8 @@
       "categories": [
         "Spinal / Csf Circulation",
         "Spinal / Tumour"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 175,
@@ -1251,6 +1651,10 @@
       "categories": [
         "Spinal / Csf Circulation",
         "Other / Others"
+      ],
+      "aliases": [
+        "LP",
+        "lumbar puncture"
       ]
     },
     {
@@ -1258,13 +1662,17 @@
       "name": "Biopsy or excision of extradural spinal tumour",
       "categories": [
         "Spinal / Tumour"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 177,
       "name": "Brain biopsy",
       "categories": [
         "Cranial / Other Cranial Procedure"
+      ],
+      "aliases": [
+        "brain biopsy"
       ]
     },
     {
@@ -1272,7 +1680,8 @@
       "name": "Insertion or revision of lumbar interspinous distractor eg X-stop",
       "categories": [
         "Spinal / Degenerative L-Spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 179,
@@ -1284,6 +1693,11 @@
         "Cranial / Cranial Nerves",
         "Cranial / Functional / Pain",
         "Cranial / Other Cranial Procedure"
+      ],
+      "aliases": [
+        "SRS",
+        "stereotactic radiosurgery",
+        "gamma knife"
       ]
     },
     {
@@ -1292,28 +1706,32 @@
       "categories": [
         "Spinal / Trauma",
         "Spinal / Other Spinal Procedure"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 181,
       "name": "Percutaneous tap of CSF reservoir",
       "categories": [
         "Cranial / Csf Circulation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 182,
       "name": "Insertion of central line",
       "categories": [
         "Other / Others"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 183,
       "name": "Resection of peripheral nerve lesion",
       "categories": [
         "Peripheral Nerve / Other Peripheral Nerve Procedure"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 184,
@@ -1321,6 +1739,10 @@
       "categories": [
         "Spinal / Trauma",
         "Spinal / Other Spinal Procedure"
+      ],
+      "aliases": [
+        "halo",
+        "halo jacket"
       ]
     },
     {
@@ -1328,20 +1750,25 @@
       "name": "Placement of subdural electric grid",
       "categories": [
         "Cranial / Epilepsy"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 186,
       "name": "Insertion of arterial line",
       "categories": [
         "Other / Others"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 187,
       "name": "Insertion of chest drain",
       "categories": [
         "Other / Others"
+      ],
+      "aliases": [
+        "chest drain"
       ]
     },
     {
@@ -1349,6 +1776,11 @@
       "name": "Endotracheal intubation",
       "categories": [
         "Other / Others"
+      ],
+      "aliases": [
+        "intubation",
+        "ETT",
+        "endotracheal intubation"
       ]
     },
     {
@@ -1357,6 +1789,10 @@
       "categories": [
         "Spinal / Degenerative L-Spine",
         "Spinal / Trauma"
+      ],
+      "aliases": [
+        "PLIF",
+        "posterior lumbar interbody fusion"
       ]
     },
     {
@@ -1365,6 +1801,10 @@
       "categories": [
         "Spinal / Degenerative L-Spine",
         "Spinal / Trauma"
+      ],
+      "aliases": [
+        "ALIF",
+        "anterior lumbar interbody fusion"
       ]
     },
     {
@@ -1372,6 +1812,10 @@
       "name": "Percutaneous vertebroplasty",
       "categories": [
         "Spinal / Other Spinal Procedure"
+      ],
+      "aliases": [
+        "vertebroplasty",
+        "percutaneous vertebroplasty"
       ]
     },
     {
@@ -1380,13 +1824,18 @@
       "categories": [
         "Cranial / Csf Circulation",
         "Spinal / Csf Circulation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 193,
       "name": "Insertion of VA shunt",
       "categories": [
         "Cranial / Csf Circulation"
+      ],
+      "aliases": [
+        "VA shunt",
+        "ventriculoatrial shunt"
       ]
     },
     {
@@ -1395,7 +1844,8 @@
       "categories": [
         "Cranial / Functional / Pain",
         "Peripheral Nerve / Other Peripheral Nerve Procedure"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 195,
@@ -1403,7 +1853,8 @@
       "categories": [
         "Cranial / Csf Circulation",
         "Cranial / Other Cranial Procedure"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 196,
@@ -1411,7 +1862,8 @@
       "categories": [
         "Spinal / Degenerative T-Spine",
         "Spinal / Trauma"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 197,
@@ -1419,13 +1871,18 @@
       "categories": [
         "Spinal / Degenerative T-Spine",
         "Spinal / Trauma"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 198,
       "name": "Posterior Lumbar Fusion",
       "categories": [
         "Spinal / Trauma"
+      ],
+      "aliases": [
+        "posterior lumbar fusion",
+        "PLF"
       ]
     },
     {
@@ -1433,6 +1890,9 @@
       "name": "Posterior cervical foraminotomy",
       "categories": [
         "Spinal / Degenerative C-Spine"
+      ],
+      "aliases": [
+        "posterior cervical foraminotomy"
       ]
     },
     {
@@ -1441,13 +1901,17 @@
       "categories": [
         "Spinal / Degenerative L-Spine",
         "Spinal / Functional / Pain"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 201,
       "name": "Scoliosis surgery",
       "categories": [
         "Spinal / Other Spinal Procedure"
+      ],
+      "aliases": [
+        "scoliosis surgery"
       ]
     },
     {
@@ -1455,6 +1919,11 @@
       "name": "Anterior cervical disc replacement",
       "categories": [
         "Spinal / Degenerative C-Spine"
+      ],
+      "aliases": [
+        "cervical disc replacement",
+        "anterior cervical disc replacement",
+        "ACDR"
       ]
     },
     {
@@ -1467,7 +1936,8 @@
         "Spinal / Functional / Pain",
         "Peripheral Nerve / Other Peripheral Nerve Procedure",
         "Other / Others"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 205,
@@ -1475,6 +1945,9 @@
       "categories": [
         "Cranial / Csf Circulation",
         "Spinal / Spinal Dysraphism"
+      ],
+      "aliases": [
+        "encephalocoele closure"
       ]
     },
     {
@@ -1482,6 +1955,10 @@
       "name": "Access EVD or Lumbar Drain",
       "categories": [
         "Cranial / Csf Circulation"
+      ],
+      "aliases": [
+        "access EVD",
+        "access lumbar drain"
       ]
     },
     {
@@ -1489,13 +1966,19 @@
       "name": "Cerebral synangiosis",
       "categories": [
         "Cranial / Cerebrovascular"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 208,
       "name": "Endovascular thrombectomy",
       "categories": [
         "Cranial / Cerebrovascular"
+      ],
+      "aliases": [
+        "thrombectomy",
+        "endovascular thrombectomy",
+        "mechanical thrombectomy"
       ]
     },
     {
@@ -1505,6 +1988,11 @@
         "Cranial / Csf Circulation",
         "Spinal / Csf Circulation",
         "Spinal / Spinal Dysraphism"
+      ],
+      "aliases": [
+        "foramen magnum decompression without durotomy",
+        "FMD without durotomy",
+        "chiari decompression without durotomy"
       ]
     }
   ],
@@ -2621,5 +3109,6 @@
         }
       ]
     }
-  }
+  },
+  "aliases_added_date": "2026-06-26"
 }

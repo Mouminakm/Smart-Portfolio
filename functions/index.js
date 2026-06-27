@@ -18,6 +18,39 @@ setGlobalOptions({ region: "europe-west2", maxInstances: 5 });
 const deepgramApiKey = defineSecret("DEEPGRAM_API_KEY");
 const anthropicApiKey = defineSecret("ANTHROPIC_API_KEY");
 
+// Neurosurgical keyterms passed to Deepgram Nova-3 to lift recognition of
+// procedure vocabulary that otherwise mishears (e.g. "extradural" -> "fragile").
+// Kept focused (~60) — Deepgram warns that too many keyterms cause overfitting.
+// Each is added to the request as a repeated keyterm= query parameter.
+const NEURO_KEYTERMS = [
+  "extradural", "subdural", "epidural", "intradural",
+  "haematoma", "haematomas", "haemorrhage",
+  "craniotomy", "craniectomy", "cranioplasty",
+  "ventriculostomy", "ventriculoperitoneal", "ventricular",
+  "laminectomy", "laminoplasty", "discectomy",
+  "meningioma", "schwannoma", "cavernoma", "glioma", "adenoma",
+  "supratentorial", "infratentorial", "retrosigmoid",
+  "trans-sphenoidal", "transsphenoidal",
+  "decompression", "decompressive",
+  "evacuation", "excision", "biopsy", "drainage",
+  "aneurysm", "embolisation", "endovascular", "thrombectomy",
+  "endarterectomy", "synostosis",
+  "myelomeningocoele", "encephalocoele", "syringomyelia",
+  "rhizotomy", "cordotomy", "thalamotomy", "pallidotomy",
+  "lumboperitoneal", "syringoperitoneal",
+  "odontoid", "foraminotomy", "vertebroplasty",
+  "extradural haematoma", "subdural haematoma", "intracerebral haematoma",
+  "endoscopic third ventriculostomy", "ventriculoperitoneal shunt",
+  "external ventricular drain", "anterior cervical discectomy",
+  "carpal tunnel decompression", "microvascular decompression",
+  "foramen magnum decompression",
+];
+
+// Build the repeated &keyterm=... query fragment, URL-encoding each term.
+const KEYTERM_QS = NEURO_KEYTERMS
+  .map((t) => "keyterm=" + encodeURIComponent(t))
+  .join("&");
+
 // --- Health check ----------------------------------------------------------
 exports.ping = onRequest((request, response) => {
   logger.info("Ping received");
@@ -51,7 +84,7 @@ exports.transcribe = onRequest(
 
       // Call Deepgram's pre-recorded endpoint. (Node 24 has fetch built in.)
       const dgResponse = await fetch(
-        "https://api.deepgram.com/v1/listen?model=nova-3-medical&smart_format=true",
+        "https://api.deepgram.com/v1/listen?model=nova-3-medical&smart_format=true&" + KEYTERM_QS,
         {
           method: "POST",
           headers: {
@@ -95,7 +128,8 @@ exports.parse = onRequest(
           return;
         }
   
-        const { transcript, fields } = request.body || {};
+        const { transcript, fields, procedureNames } = request.body || {};
+        logger.info("parse received procedureNames:", Array.isArray(procedureNames) ? procedureNames.length : "none");
         if (!transcript || !fields) {
           response.status(400).json({ error: "Need a transcript and fields." });
           return;
@@ -152,7 +186,26 @@ exports.parse = onRequest(
         const userPrompt =
           `Transcript:\n${transcript}\n\nFields to extract:\n${fieldList}`;
   
-        // Call Claude's Messages API. Haiku: fast and cheap, ideal for extraction.
+        // Build the system as an array of blocks. The big, unchanging procedure
+        // list goes in its own block marked for caching (cache_control), so we
+        // only pay full price for it on the first call in each ~5-min window.
+        const systemBlocks = [{ type: "text", text: systemPrompt }];
+        if (Array.isArray(procedureNames) && procedureNames.length) {
+          const listText =
+            "When extracting the 'procedure' field, you MUST return EXACTLY one " +
+            "name from the following list, copied verbatim (character for " +
+            "character), choosing the one that best matches what the surgeon " +
+            "described — allowing for spelling, word order, abbreviations and " +
+            "filler words. If none clearly matches, return \"\" for procedure. " +
+            "Do not return any procedure name that is not in this list.\n\n" +
+            "PROCEDURE LIST:\n" + procedureNames.map((n) => "- " + n).join("\n");
+          systemBlocks.push({
+            type: "text",
+            text: listText,
+            cache_control: { type: "ephemeral" }, // cache this big static block
+          });
+        }
+
         const aiResponse = await fetch("https://api.anthropic.com/v1/messages", {
           method: "POST",
           headers: {
@@ -163,7 +216,7 @@ exports.parse = onRequest(
           body: JSON.stringify({
             model: "claude-haiku-4-5-20251001",
             max_tokens: 1024,
-            system: systemPrompt,
+            system: systemBlocks,
             messages: [
                 { role: "user", content: userPrompt },
                 { role: "assistant", content: "{" }, // forces the reply to start as JSON
