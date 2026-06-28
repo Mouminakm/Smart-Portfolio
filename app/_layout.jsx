@@ -13,39 +13,37 @@ function RootNavigator() {
   return (
     <Stack
       screenOptions={{
-        headerStyle: { backgroundColor: "#ffffff" },
-        headerShadowVisible: false,
-        headerTintColor: "#1a1a1a",
+        headerShown: false, // every screen uses its own NavyHeader / hero
       }}
     >
       {/* Checking auth/profile — show only the spinner. */}
       <Stack.Protected guard={isLoading}>
-        <Stack.Screen name="loading" options={{ headerShown: false }} />
+        <Stack.Screen name="loading" />
       </Stack.Protected>
 
       {/* Signed in AND setup done -> the main app. */}
       <Stack.Protected guard={!isLoading && isSignedIn && hasCompletedOnboarding}>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="edit-profile" options={{ title: "Edit profile" }} />
-        <Stack.Screen name="record-test" options={{ title: "Recording test" }} />
-        <Stack.Screen name="webview-test" options={{ title: "eLogbook test" }} />
-        <Stack.Screen name="dictation" options={{ title: "Dictation" }} />
-        <Stack.Screen name="review" options={{ title: "Review & edit" }} />
-        <Stack.Screen name="submission" options={{ title: "Submit" }} />
+        <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="edit-profile" />
+        <Stack.Screen name="record-test" />
+        <Stack.Screen name="webview-test" />
+        <Stack.Screen name="dictation" />
+        <Stack.Screen name="review" />
+        <Stack.Screen name="submission" />
       </Stack.Protected>
 
       {/* Signed in but setup NOT done -> the setup flow. */}
       <Stack.Protected guard={!isLoading && isSignedIn && !hasCompletedOnboarding}>
-        <Stack.Screen name="profile-setup" options={{ title: "Profile setup" }} />
-        <Stack.Screen name="permissions" options={{ title: "Before you start" }} />
+        <Stack.Screen name="profile-setup" />
+        <Stack.Screen name="permissions" />
       </Stack.Protected>
 
       {/* Signed out -> onboarding / auth. */}
       <Stack.Protected guard={!isLoading && !isSignedIn}>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="sign-in" options={{ title: "Create account" }} />
-        <Stack.Screen name="email-sign-in" options={{ title: "Sign in" }} />
-        <Stack.Screen name="email-sign-up" options={{ title: "Sign up" }} />
+        <Stack.Screen name="index" />
+        <Stack.Screen name="sign-in" />
+        <Stack.Screen name="email-sign-in" />
+        <Stack.Screen name="email-sign-up" />
       </Stack.Protected>
     </Stack>
   );

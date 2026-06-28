@@ -1,0 +1,810 @@
+{
+  "options_source_id": "elogbook_ophthalmology_procedures",
+  "platform": "elogbook",
+  "discipline": "surgical",
+  "specialty": "Ophthalmology",
+  "entryType": "operation_log",
+  "field": "procedure",
+  "harvested_from": "eLogbook 'Add operation' page (Specialty = Ophthalmology)",
+  "harvested_date": "2026-06-27",
+  "notes": "Each option's 'id' is the eLogbook data-nodeid used to select the procedure in the form (the value for WebView injection). 'name' is the display label / extraction target. A procedure may appear under several categories; the flat 'procedures' list is the authoritative deduplicated picklist, 'tree' preserves the on-site accordion structure for the picker UI and for giving the AI category context.",
+  "unique_procedure_count": 62,
+  "procedures": [
+    {
+      "id": 1,
+      "name": "Pan retinal photocoagulation (conventional)",
+      "categories": [
+        "Laser Procedures / Posterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 2,
+      "name": "Pan retinal photocoagulation (indirect)",
+      "categories": [
+        "Laser Procedures / Posterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 3,
+      "name": "Macular focal and macular grid",
+      "categories": [
+        "Laser Procedures / Posterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 4,
+      "name": "YAG capsulotomy",
+      "categories": [
+        "Laser Procedures / Posterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 5,
+      "name": "Peripheral iridotomy",
+      "categories": [
+        "Laser Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 6,
+      "name": "Cyclodide",
+      "categories": [
+        "Laser Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 7,
+      "name": "Selective laser trabeculoplasty (SLT)",
+      "categories": [
+        "Laser Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 8,
+      "name": "Ectropion repair (wedge excision or KZ)",
+      "categories": [
+        "Minor Surgical Procedures / Eyelid"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 9,
+      "name": "Ectropion Repair (Lateral tarsal strip)",
+      "categories": [
+        "Minor Surgical Procedures / Eyelid"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 10,
+      "name": "Entropion repair",
+      "categories": [
+        "Minor Surgical Procedures / Eyelid"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 11,
+      "name": "Incision and curettage of meibomian cysts",
+      "categories": [
+        "Minor Surgical Procedures / Eyelid"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 12,
+      "name": "Excision of lid lesions without reconstruction",
+      "categories": [
+        "Minor Surgical Procedures / Eyelid"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 13,
+      "name": "Electrolysis (trichiasis)",
+      "categories": [
+        "Minor Surgical Procedures / Eyelid"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 14,
+      "name": "Cryotherapy (trichiasis)",
+      "categories": [
+        "Minor Surgical Procedures / Eyelid"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 15,
+      "name": "Syringe and probing of lacrimal system",
+      "categories": [
+        "Minor Surgical Procedures / Eyelid"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 16,
+      "name": "Lid suturing (primary intention & traumatic)",
+      "categories": [
+        "Minor Surgical Procedures / Eyelid"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 18,
+      "name": "Botulinum toxin for bleparoplasty",
+      "categories": [
+        "Minor Surgical Procedures / Eyelid"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 17,
+      "name": "Intra vitreal avastin injections",
+      "categories": [
+        "Minor Surgical Procedures / Posterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 19,
+      "name": "Routine phacoemulsification with lens implantation",
+      "categories": [
+        "Lens/Cataract Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 20,
+      "name": "Partial phacoemulsification Incision",
+      "categories": [
+        "Lens/Cataract Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 21,
+      "name": "Partial phacoemulsification Capsulorhexis",
+      "categories": [
+        "Lens/Cataract Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 22,
+      "name": "Partial phacoemulsification hydrodissection",
+      "categories": [
+        "Lens/Cataract Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 23,
+      "name": "Partial phacoemulsification phacoemulsification",
+      "categories": [
+        "Lens/Cataract Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 24,
+      "name": "Partial phacoemulsification SLM aspiration",
+      "categories": [
+        "Lens/Cataract Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 25,
+      "name": "Partial phacoemulsification lens implantation",
+      "categories": [
+        "Lens/Cataract Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 26,
+      "name": "Partial phacoemulsification wound suture",
+      "categories": [
+        "Lens/Cataract Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 27,
+      "name": "Complex phacoemulsification",
+      "categories": [
+        "Lens/Cataract Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 28,
+      "name": "Paediatric cataract extraction (lens aspiration)",
+      "categories": [
+        "Complex lens/Ant Segment Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 29,
+      "name": "Paediatric cataract extraction (lens aspiration + IOL)",
+      "categories": [
+        "Complex lens/Ant Segment Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 30,
+      "name": "Anterior Segment reconstruction (iris suturing, Iris prosthesis)",
+      "categories": [
+        "Complex lens/Ant Segment Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 31,
+      "name": "Secondary IOL (specify AC, sulcus or post sutured)",
+      "categories": [
+        "Complex lens/Ant Segment Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 32,
+      "name": "Ptosis repair (Levator resection)",
+      "categories": [
+        "Ptosis and Related Procedures / eyelid"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 33,
+      "name": "Ptosis repair (brow suspension)",
+      "categories": [
+        "Ptosis and Related Procedures / eyelid"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 34,
+      "name": "Mullerectomy for lid retraction",
+      "categories": [
+        "Ptosis and Related Procedures / eyelid"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 35,
+      "name": "Upper lid reconstruction with buccal mucosa graft",
+      "categories": [
+        "Ptosis and Related Procedures / eyelid"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 36,
+      "name": "Gold weight insertion correction of lid lagophthalmos",
+      "categories": [
+        "Ptosis and Related Procedures / eyelid"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 37,
+      "name": "Non adjustable horizontal squint surgery",
+      "categories": [
+        "Strabismus / Eye Muscles"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 38,
+      "name": "Adjustable squint operation",
+      "categories": [
+        "Strabismus / Eye Muscles"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 39,
+      "name": "Complex oblique muscle surgery",
+      "categories": [
+        "Strabismus / Eye Muscles"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 40,
+      "name": "Intramuscular Botulinum toxin under EMG guidance",
+      "categories": [
+        "Strabismus / Eye Muscles"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 41,
+      "name": "Trabeculectomy",
+      "categories": [
+        "Glaucoma Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 42,
+      "name": "Advanced glaucoma surgery (Deep sclerectomy or Valve etc)",
+      "categories": [
+        "Glaucoma Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 43,
+      "name": "Bleb revision or manipulation",
+      "categories": [
+        "Glaucoma Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 44,
+      "name": "Enucleation",
+      "categories": [
+        "Lacrimal and Orbital Procedures / Removal"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 45,
+      "name": "Evisceration",
+      "categories": [
+        "Lacrimal and Orbital Procedures / Removal"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 46,
+      "name": "Excision of lid lesion requiring recontruction or skin graft",
+      "categories": [
+        "Lacrimal and Orbital Procedures / Eyelid"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 47,
+      "name": "Orbital floor fracture repair",
+      "categories": [
+        "Lacrimal and Orbital Procedures / Orbit"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 48,
+      "name": "Orbital decompression",
+      "categories": [
+        "Lacrimal and Orbital Procedures / Orbit"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 49,
+      "name": "Orbitotomy (eg biopsy or excision of orbital lesion)",
+      "categories": [
+        "Lacrimal and Orbital Procedures / Orbit"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 50,
+      "name": "Lacrimal intubation",
+      "categories": [
+        "Lacrimal and Orbital Procedures / Lacrimal"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 51,
+      "name": "DCR",
+      "categories": [
+        "Lacrimal and Orbital Procedures / Lacrimal"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 52,
+      "name": "Pterygium excision without conjunctival graft",
+      "categories": [
+        "Corneal Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 54,
+      "name": "Descemets Stripping Endothelial Keratoplasty (DSEK)",
+      "categories": [
+        "Corneal Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 55,
+      "name": "Pterygium excision with conjunctival graft",
+      "categories": [
+        "Corneal Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 56,
+      "name": "Corneal Graft (penetrating keratoplasty)",
+      "categories": [
+        "Corneal Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 57,
+      "name": "Corneal Graft (lamellar graft )",
+      "categories": [
+        "Corneal Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 58,
+      "name": "Amniotic membrane graft",
+      "categories": [
+        "Corneal Procedures / Anterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 59,
+      "name": "Retinal detachment repair (external)",
+      "categories": [
+        "Vireo-Retinal Procedures / Posterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 60,
+      "name": "Retinal detachment repair (with vitrectomy)",
+      "categories": [
+        "Vireo-Retinal Procedures / Posterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 61,
+      "name": "Complex vitrectomy (diabetic, PVR, macula hole etc)",
+      "categories": [
+        "Vireo-Retinal Procedures / Posterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 62,
+      "name": "Primary repair of perforating eye trauma",
+      "categories": [
+        "Vireo-Retinal Procedures / Posterior Chamber"
+      ],
+      "aliases": []
+    },
+    {
+      "id": 63,
+      "name": "Intra ocular foreign body removal",
+      "categories": [
+        "Vireo-Retinal Procedures / Posterior Chamber"
+      ],
+      "aliases": []
+    }
+  ],
+  "tree": {
+    "Laser Procedures": {
+      "Posterior Chamber": [
+        {
+          "id": 1,
+          "name": "Pan retinal photocoagulation (conventional)"
+        },
+        {
+          "id": 2,
+          "name": "Pan retinal photocoagulation (indirect)"
+        },
+        {
+          "id": 3,
+          "name": "Macular focal and macular grid"
+        },
+        {
+          "id": 4,
+          "name": "YAG capsulotomy"
+        }
+      ],
+      "Anterior Chamber": [
+        {
+          "id": 5,
+          "name": "Peripheral iridotomy"
+        },
+        {
+          "id": 6,
+          "name": "Cyclodide"
+        },
+        {
+          "id": 7,
+          "name": "Selective laser trabeculoplasty (SLT)"
+        }
+      ]
+    },
+    "Minor Surgical Procedures": {
+      "Eyelid": [
+        {
+          "id": 8,
+          "name": "Ectropion repair (wedge excision or KZ)"
+        },
+        {
+          "id": 9,
+          "name": "Ectropion Repair (Lateral tarsal strip)"
+        },
+        {
+          "id": 10,
+          "name": "Entropion repair"
+        },
+        {
+          "id": 11,
+          "name": "Incision and curettage of meibomian cysts"
+        },
+        {
+          "id": 12,
+          "name": "Excision of lid lesions without reconstruction"
+        },
+        {
+          "id": 13,
+          "name": "Electrolysis (trichiasis)"
+        },
+        {
+          "id": 14,
+          "name": "Cryotherapy (trichiasis)"
+        },
+        {
+          "id": 15,
+          "name": "Syringe and probing of lacrimal system"
+        },
+        {
+          "id": 16,
+          "name": "Lid suturing (primary intention & traumatic)"
+        },
+        {
+          "id": 18,
+          "name": "Botulinum toxin for bleparoplasty"
+        }
+      ],
+      "Posterior Chamber": [
+        {
+          "id": 17,
+          "name": "Intra vitreal avastin injections"
+        }
+      ]
+    },
+    "Lens/Cataract Procedures": {
+      "Anterior Chamber": [
+        {
+          "id": 19,
+          "name": "Routine phacoemulsification with lens implantation"
+        },
+        {
+          "id": 20,
+          "name": "Partial phacoemulsification Incision"
+        },
+        {
+          "id": 21,
+          "name": "Partial phacoemulsification Capsulorhexis"
+        },
+        {
+          "id": 22,
+          "name": "Partial phacoemulsification hydrodissection"
+        },
+        {
+          "id": 23,
+          "name": "Partial phacoemulsification phacoemulsification"
+        },
+        {
+          "id": 24,
+          "name": "Partial phacoemulsification SLM aspiration"
+        },
+        {
+          "id": 25,
+          "name": "Partial phacoemulsification lens implantation"
+        },
+        {
+          "id": 26,
+          "name": "Partial phacoemulsification wound suture"
+        },
+        {
+          "id": 27,
+          "name": "Complex phacoemulsification"
+        }
+      ]
+    },
+    "Complex lens/Ant Segment Procedures": {
+      "Anterior Chamber": [
+        {
+          "id": 28,
+          "name": "Paediatric cataract extraction (lens aspiration)"
+        },
+        {
+          "id": 29,
+          "name": "Paediatric cataract extraction (lens aspiration + IOL)"
+        },
+        {
+          "id": 30,
+          "name": "Anterior Segment reconstruction (iris suturing, Iris prosthesis)"
+        },
+        {
+          "id": 31,
+          "name": "Secondary IOL (specify AC, sulcus or post sutured)"
+        }
+      ]
+    },
+    "Ptosis and Related Procedures": {
+      "eyelid": [
+        {
+          "id": 32,
+          "name": "Ptosis repair (Levator resection)"
+        },
+        {
+          "id": 33,
+          "name": "Ptosis repair (brow suspension)"
+        },
+        {
+          "id": 34,
+          "name": "Mullerectomy for lid retraction"
+        },
+        {
+          "id": 35,
+          "name": "Upper lid reconstruction with buccal mucosa graft"
+        },
+        {
+          "id": 36,
+          "name": "Gold weight insertion correction of lid lagophthalmos"
+        }
+      ]
+    },
+    "Strabismus": {
+      "Eye Muscles": [
+        {
+          "id": 37,
+          "name": "Non adjustable horizontal squint surgery"
+        },
+        {
+          "id": 38,
+          "name": "Adjustable squint operation"
+        },
+        {
+          "id": 39,
+          "name": "Complex oblique muscle surgery"
+        },
+        {
+          "id": 40,
+          "name": "Intramuscular Botulinum toxin under EMG guidance"
+        }
+      ]
+    },
+    "Glaucoma Procedures": {
+      "Anterior Chamber": [
+        {
+          "id": 41,
+          "name": "Trabeculectomy"
+        },
+        {
+          "id": 42,
+          "name": "Advanced glaucoma surgery (Deep sclerectomy or Valve etc)"
+        },
+        {
+          "id": 43,
+          "name": "Bleb revision or manipulation"
+        }
+      ]
+    },
+    "Lacrimal and Orbital Procedures": {
+      "Removal": [
+        {
+          "id": 44,
+          "name": "Enucleation"
+        },
+        {
+          "id": 45,
+          "name": "Evisceration"
+        }
+      ],
+      "Eyelid": [
+        {
+          "id": 46,
+          "name": "Excision of lid lesion requiring recontruction or skin graft"
+        }
+      ],
+      "Orbit": [
+        {
+          "id": 47,
+          "name": "Orbital floor fracture repair"
+        },
+        {
+          "id": 48,
+          "name": "Orbital decompression"
+        },
+        {
+          "id": 49,
+          "name": "Orbitotomy (eg biopsy or excision of orbital lesion)"
+        }
+      ],
+      "Lacrimal": [
+        {
+          "id": 50,
+          "name": "Lacrimal intubation"
+        },
+        {
+          "id": 51,
+          "name": "DCR"
+        }
+      ]
+    },
+    "Corneal Procedures": {
+      "Anterior Chamber": [
+        {
+          "id": 52,
+          "name": "Pterygium excision without conjunctival graft"
+        },
+        {
+          "id": 54,
+          "name": "Descemets Stripping Endothelial Keratoplasty (DSEK)"
+        },
+        {
+          "id": 55,
+          "name": "Pterygium excision with conjunctival graft"
+        },
+        {
+          "id": 56,
+          "name": "Corneal Graft (penetrating keratoplasty)"
+        },
+        {
+          "id": 57,
+          "name": "Corneal Graft (lamellar graft )"
+        },
+        {
+          "id": 58,
+          "name": "Amniotic membrane graft"
+        }
+      ]
+    },
+    "Vireo-Retinal Procedures": {
+      "Posterior Chamber": [
+        {
+          "id": 59,
+          "name": "Retinal detachment repair (external)"
+        },
+        {
+          "id": 60,
+          "name": "Retinal detachment repair (with vitrectomy)"
+        },
+        {
+          "id": 61,
+          "name": "Complex vitrectomy (diabetic, PVR, macula hole etc)"
+        },
+        {
+          "id": 62,
+          "name": "Primary repair of perforating eye trauma"
+        },
+        {
+          "id": 63,
+          "name": "Intra ocular foreign body removal"
+        }
+      ]
+    }
+  }
+}

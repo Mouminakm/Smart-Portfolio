@@ -81,6 +81,19 @@ const KEYTERMS_BY_SPECIALTY = {
     "anterior resection", "abdominoperineal resection", "emergency laparotomy",
     "diagnostic laparoscopy", "examination under anaesthesia",
   ],
+  "Ophthalmology": [
+    "phacoemulsification", "phaco", "cataract", "intraocular", "lens", "IOL",
+    "capsulotomy", "capsulorhexis", "vitrectomy", "trabeculectomy", "iridotomy",
+    "iridectomy", "keratoplasty", "keratectomy", "photocoagulation", "laser",
+    "panretinal", "retinal", "detachment", "cryotherapy", "strabismus",
+    "squint", "ptosis", "blepharoplasty", "entropion", "ectropion",
+    "dacryocystorhinostomy", "DCR", "enucleation", "evisceration", "pterygium",
+    "cornea", "corneal", "conjunctiva", "scleral", "glaucoma", "macular",
+    "vitreoretinal", "YAG", "selective laser trabeculoplasty", "SLT",
+    "intravitreal", "injection", "cross-linking",
+    "phacoemulsification and IOL", "pan retinal photocoagulation",
+    "trabeculectomy", "vitrectomy", "cataract extraction",
+  ],
 };
 
 function keytermQS(specialty) {

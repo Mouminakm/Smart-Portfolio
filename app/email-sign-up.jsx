@@ -1,19 +1,20 @@
 // app/email-sign-up.jsx
-// Onboarding — Create an account with email & password (spec S1).
-// Uses useAuth().signUp (Firebase createUserWithEmailAndPassword).
-// On success the auth gate redirects into the app automatically.
+// Onboarding — Create an account with email & password (spec S1). Restyled to
+// the navy/teal identity. Auth logic, validation, and error mapping unchanged.
 
 import { useState } from "react";
 import {
-    KeyboardAvoidingView,
-    Platform,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TextInput
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
 } from "react-native";
-import AppButton from "../components/AppButton";
+import { PrimaryButton } from "../components/Buttons";
 import { useAuth } from "../contexts/AuthContext";
+import { colors, radius, spacing } from "../theme/theme";
 
 export default function EmailSignUpScreen() {
   const { signUp } = useAuth();
@@ -26,9 +27,6 @@ export default function EmailSignUpScreen() {
 
   async function handleSignUp() {
     setErrorMessage("");
-
-    // Checks we can do ourselves, before calling Firebase — faster feedback
-    // and fewer pointless network calls.
     if (!email || !password) {
       setErrorMessage("Please enter an email and password.");
       return;
@@ -41,11 +39,8 @@ export default function EmailSignUpScreen() {
       setErrorMessage("The two passwords don't match.");
       return;
     }
-
     setIsBusy(true);
     try {
-      // Creates the account AND signs the new user in. The gate then
-      // redirects them into the app — no manual navigation needed.
       await signUp(email, password);
     } catch (error) {
       setErrorMessage(friendlyError(error.code));
@@ -54,70 +49,60 @@ export default function EmailSignUpScreen() {
   }
 
   return (
-    // KeyboardAvoidingView lifts content above the keyboard. On iOS we use
-    // "padding"; Android handles most of this itself, so we pass undefined.
     <KeyboardAvoidingView
       style={styles.flex}
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       keyboardVerticalOffset={Platform.OS === "ios" ? 90 : 0}
     >
-      {/* ScrollView lets you scroll to any field the keyboard would cover.
-          keyboardShouldPersistTaps lets a tap reach a button while the
-          keyboard is open, instead of just dismissing the keyboard. */}
-      <ScrollView
-        contentContainerStyle={styles.container}
-        keyboardShouldPersistTaps="handled"
-      >
+      <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
         <Text style={styles.title}>Create your account</Text>
+        <Text style={styles.subtitle}>Use any email and a password of at least 6 characters.</Text>
 
-      <Text style={styles.subtitle}>
-        Use any email and a password of at least 6 characters.
-      </Text>
+        <View style={styles.form}>
+          <Text style={styles.label}>Email</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="you@example.com"
+            placeholderTextColor={colors.textMuted}
+            keyboardType="email-address"
+            autoCapitalize="none"
+            value={email}
+            onChangeText={setEmail}
+          />
 
-      <Text style={styles.label}>Email</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="you@example.com"
-        placeholderTextColor="#aaaaaa"
-        keyboardType="email-address"
-        autoCapitalize="none"
-        value={email}
-        onChangeText={setEmail}
-      />
+          <Text style={styles.label}>Password</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="At least 6 characters"
+            placeholderTextColor={colors.textMuted}
+            secureTextEntry
+            autoCapitalize="none"
+            value={password}
+            onChangeText={setPassword}
+          />
 
-      <Text style={styles.label}>Password</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="At least 6 characters"
-        placeholderTextColor="#aaaaaa"
-        secureTextEntry={true}
-        autoCapitalize="none"
-        value={password}
-        onChangeText={setPassword}
-      />
+          <Text style={styles.label}>Confirm password</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Re-enter your password"
+            placeholderTextColor={colors.textMuted}
+            secureTextEntry
+            autoCapitalize="none"
+            value={confirm}
+            onChangeText={setConfirm}
+          />
 
-      <Text style={styles.label}>Confirm password</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Re-enter your password"
-        placeholderTextColor="#aaaaaa"
-        secureTextEntry={true}
-        autoCapitalize="none"
-        value={confirm}
-        onChangeText={setConfirm}
-      />
+          {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
 
-      {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
- 
-      <AppButton onPress={handleSignUp}>
-        {isBusy ? "Creating account…" : "Create account"}
-      </AppButton>
+          <PrimaryButton onPress={handleSignUp} style={{ marginTop: spacing.sm }}>
+            {isBusy ? "Creating account…" : "Create account"}
+          </PrimaryButton>
+        </View>
       </ScrollView>
     </KeyboardAvoidingView>
   );
 }
 
-// Firebase sign-up error codes → plain English.
 function friendlyError(code) {
   switch (code) {
     case "auth/email-already-in-use":
@@ -134,30 +119,25 @@ function friendlyError(code) {
 }
 
 const styles = StyleSheet.create({
-    flex: { flex: 1, backgroundColor: "#ffffff" },
-    // flexGrow lets the content fill the screen and still centre when short,
-    // but grow and scroll when the keyboard makes space tight.
-    container: { flexGrow: 1, justifyContent: "center", padding: 24, backgroundColor: "#ffffff" },
-    
-    title: { fontSize: 28, fontWeight: "bold", color: "#1a1a1a", textAlign: "center" },
+  flex: { flex: 1, backgroundColor: colors.bg },
+  container: { flexGrow: 1, justifyContent: "center", padding: spacing.xxl },
+  title: { fontSize: 28, fontWeight: "700", color: colors.text, textAlign: "center" },
   subtitle: {
-    fontSize: 16,
-    color: "#555555",
-    textAlign: "center",
-    lineHeight: 24,
-    marginTop: 12,
-    marginBottom: 32,
+    fontSize: 15, color: colors.textSecondary, textAlign: "center",
+    lineHeight: 22, marginTop: spacing.md, marginBottom: spacing.xxl,
   },
-  label: { fontSize: 13, fontWeight: "600", color: "#1a1a1a", marginBottom: 6 },
+  form: {},
+  label: { fontSize: 13, fontWeight: "600", color: colors.text, marginBottom: 6 },
   input: {
     borderWidth: 1,
-    borderColor: "#cccccc",
-    borderRadius: 10,
-    paddingVertical: 12,
-    paddingHorizontal: 14,
+    borderColor: colors.border,
+    borderRadius: radius.md,
+    paddingVertical: spacing.md,
+    paddingHorizontal: spacing.lg,
     fontSize: 16,
-    color: "#1a1a1a",
-    marginBottom: 18,
+    color: colors.text,
+    marginBottom: spacing.lg,
+    backgroundColor: colors.card,
   },
-  error: { color: "#dc2626", fontSize: 14, marginBottom: 16, textAlign: "center" },
+  error: { color: colors.error, fontSize: 14, marginBottom: spacing.lg, textAlign: "center" },
 });

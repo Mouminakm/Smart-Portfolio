@@ -1,6 +1,7 @@
 // app/profile-setup.jsx
-// Onboarding screen 3 — Profile setup (spec S1).
-// Specialty (single picker) + portfolios (multi-select, up to two) + GMC/training.
+// Onboarding screen 3 — Profile setup (spec S1). Restyled to the navy/teal
+// identity (grouped SmartCards). Logic, fields, validation and navigation
+// unchanged.
 
 import { useRouter } from "expo-router";
 import { useState } from "react";
@@ -12,30 +13,32 @@ import {
   Text,
   TextInput,
 } from "react-native";
-import AppButton from "../components/AppButton";
+import { PrimaryButton } from "../components/Buttons";
 import ConsultantListField from "../components/ConsultantListField";
 import HospitalPickerField from "../components/HospitalPickerField";
 import MultiPickerField from "../components/MultiPickerField";
 import PickerField from "../components/PickerField";
+import SmartCard from "../components/SmartCard";
 import { useAuth } from "../contexts/AuthContext";
 import { UK_PORTFOLIOS } from "../data/portfolios";
 import { UK_SPECIALTIES } from "../data/specialties";
 import { saveProfile } from "../profile";
+import { colors, radius, spacing } from "../theme/theme";
 
 export default function ProfileSetupScreen() {
   const { user } = useAuth();
   const router = useRouter();
 
   const [specialty, setSpecialty] = useState("");
-  const [portfolios, setPortfolios] = useState([]); // an array — up to two platforms
+  const [portfolios, setPortfolios] = useState([]);
   const [gmcNumber, setGmcNumber] = useState("");
   const [trainingNumber, setTrainingNumber] = useState("");
   const [isBusy, setIsBusy] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [consultants, setConsultants] = useState([]); // names of consultants the user works with
-  const [hospitals, setHospitals] = useState([]); // hospitals the user operates at
-async function handleContinue() {
-    // Required fields must be set before continuing.
+  const [consultants, setConsultants] = useState([]);
+  const [hospitals, setHospitals] = useState([]);
+
+  async function handleContinue() {
     if (!specialty) {
       setErrorMessage("Please choose your specialty.");
       return;
@@ -56,7 +59,7 @@ async function handleContinue() {
       }
       router.push("/permissions");
     } catch (error) {
-      router.push("/permissions"); // don't trap them if the save fails
+      router.push("/permissions");
     } finally {
       setIsBusy(false);
     }
@@ -74,91 +77,98 @@ async function handleContinue() {
           This tells the app which entry types and fields apply to you.
         </Text>
 
-        {/* Specialty — single-choice picker from the UK list. */}
-        <PickerField
-          label="Specialty / training programme"
-          placeholder="Select your specialty"
-          options={UK_SPECIALTIES}
-          value={specialty}
-          onSelect={setSpecialty}
-        />
+        <Text style={styles.sectionHeading}>Specialty & training</Text>
+        <SmartCard style={styles.sectionCard}>
+          <PickerField
+            label="Specialty / training programme"
+            placeholder="Select your specialty"
+            options={UK_SPECIALTIES}
+            value={specialty}
+            onSelect={setSpecialty}
+          />
+          <ConsultantListField
+            label="Consultants you work with"
+            value={consultants}
+            onChange={setConsultants}
+          />
+        </SmartCard>
 
-        {/* Portfolio — multi-select, up to two platforms. */}
-        <MultiPickerField
-          label="Portfolio platform(s)"
-          placeholder="Select up to two"
-          options={UK_PORTFOLIOS}
-          selected={portfolios}
-          onChange={setPortfolios}
-          maxSelect={2}
-        />
-        {/* Consultants the user works with — at least one required. */}
-        <ConsultantListField
-          label="Consultants you work with"
-          value={consultants}
-          onChange={setConsultants}
-        />
-        {/* Hospital(s) the user operates at — picked from the eLogbook list so
-            entries auto-fill the correct hospital. */}
-        <Text style={styles.label}>Your hospital(s)</Text>
-        <Text style={styles.helpText}>
-          Add the hospital(s) where you operate. When you dictate, just say which
-          one — entries fill the correct hospital automatically.
-        </Text>
-        <HospitalPickerField value={hospitals} onChange={setHospitals} />
-        <Text style={styles.label}>GMC number (optional)</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="7-digit number"
-          placeholderTextColor="#aaaaaa"
-          keyboardType="number-pad"
-          value={gmcNumber}
-          onChangeText={setGmcNumber}
-        />
+        <Text style={styles.sectionHeading}>Hospitals</Text>
+        <SmartCard style={styles.sectionCard}>
+          <Text style={styles.label}>Your hospital(s)</Text>
+          <Text style={styles.helpText}>
+            Add the hospital(s) where you operate. When you dictate, just say which
+            one — entries fill the correct hospital automatically.
+          </Text>
+          <HospitalPickerField value={hospitals} onChange={setHospitals} />
+        </SmartCard>
 
-        <Text style={styles.label}>Training number / NTN (optional)</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Your national training number"
-          placeholderTextColor="#aaaaaa"
-          autoCapitalize="characters"
-          value={trainingNumber}
-          onChangeText={setTrainingNumber}
-        />
+        <Text style={styles.sectionHeading}>Portfolio</Text>
+        <SmartCard style={styles.sectionCard}>
+          <MultiPickerField
+            label="Portfolio platform(s)"
+            placeholder="Select up to two"
+            options={UK_PORTFOLIOS}
+            selected={portfolios}
+            onChange={setPortfolios}
+            maxSelect={2}
+          />
+        </SmartCard>
+
+        <Text style={styles.sectionHeading}>Account (optional)</Text>
+        <SmartCard style={styles.sectionCard}>
+          <Text style={styles.label}>GMC number</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="7-digit number"
+            placeholderTextColor={colors.textMuted}
+            keyboardType="number-pad"
+            value={gmcNumber}
+            onChangeText={setGmcNumber}
+          />
+          <Text style={styles.label}>Training number / NTN</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Your national training number"
+            placeholderTextColor={colors.textMuted}
+            autoCapitalize="characters"
+            value={trainingNumber}
+            onChangeText={setTrainingNumber}
+          />
+        </SmartCard>
 
         {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
 
-        <AppButton onPress={handleContinue}>
+        <PrimaryButton onPress={handleContinue} style={styles.continueBtn}>
           {isBusy ? "Saving…" : "Continue"}
-        </AppButton>
+        </PrimaryButton>
       </ScrollView>
     </KeyboardAvoidingView>
   );
 }
 
 const styles = StyleSheet.create({
-  flex: { flex: 1, backgroundColor: "#ffffff" },
-  container: { flexGrow: 1, padding: 24, paddingTop: 60, backgroundColor: "#ffffff" },
-  title: { fontSize: 28, fontWeight: "bold", color: "#1a1a1a", textAlign: "center" },
+  flex: { flex: 1, backgroundColor: colors.bg },
+  container: { flexGrow: 1, padding: spacing.xxl, paddingTop: spacing.xxxl + spacing.xl },
+  title: { fontSize: 28, fontWeight: "700", color: colors.text, textAlign: "center" },
   subtitle: {
-    fontSize: 16,
-    color: "#555555",
-    textAlign: "center",
-    lineHeight: 24,
-    marginTop: 12,
-    marginBottom: 28,
+    fontSize: 15, color: colors.textSecondary, textAlign: "center",
+    lineHeight: 22, marginTop: spacing.md, marginBottom: spacing.xl,
   },
-  label: { fontSize: 13, fontWeight: "600", color: "#1a1a1a", marginBottom: 6, marginTop: 4 },
-  helpText: { fontSize: 12, color: "#888888", marginBottom: 8, lineHeight: 17 },
+  sectionHeading: {
+    fontSize: 12, fontWeight: "700", color: colors.textSecondary,
+    textTransform: "uppercase", letterSpacing: 1,
+    marginTop: spacing.lg, marginBottom: spacing.sm,
+  },
+  sectionCard: { padding: spacing.lg, marginBottom: spacing.xs },
+  label: { fontSize: 13, fontWeight: "600", color: colors.text, marginBottom: 6, marginTop: 4 },
+  helpText: { fontSize: 12, color: colors.textSecondary, marginBottom: spacing.sm, lineHeight: 17 },
   input: {
-    borderWidth: 1,
-    borderColor: "#cccccc",
-    borderRadius: 10,
-    paddingVertical: 12,
-    paddingHorizontal: 14,
-    fontSize: 16,
-    color: "#1a1a1a",
-    marginBottom: 18,
+    borderWidth: 1, borderColor: colors.border, borderRadius: radius.md,
+    paddingVertical: spacing.md, paddingHorizontal: spacing.lg,
+    fontSize: 16, color: colors.text, marginBottom: spacing.md,
+    backgroundColor: colors.card,
   },
-  error: { color: "#dc2626", fontSize: 14, marginBottom: 14, textAlign: "center" },
+  error: { color: colors.error, fontSize: 14, marginVertical: spacing.md, textAlign: "center" },
+  continueBtn: { marginTop: spacing.lg },
 });

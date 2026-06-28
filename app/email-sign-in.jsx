@@ -1,7 +1,6 @@
 // app/email-sign-in.jsx
-// Onboarding screen 2b — Sign in with email & password (spec S1).
-// Now REAL: captures email/password, calls Firebase via useAuth().signIn,
-// and shows friendly errors. On success, the auth gate redirects automatically.
+// Onboarding — Sign in with email & password (spec S1). Restyled to the
+// navy/teal identity. Auth logic, checkbox state, and error mapping unchanged.
 
 import { useState } from "react";
 import {
@@ -14,41 +13,31 @@ import {
   TextInput,
   View,
 } from "react-native";
-import AppButton from "../components/AppButton";
+import { PrimaryButton } from "../components/Buttons";
 import { useAuth } from "../contexts/AuthContext";
+import { colors, radius, spacing } from "../theme/theme";
 
 export default function EmailSignInScreen() {
   const { signIn } = useAuth();
 
-  // One piece of state per input. These now hold exactly what the user types.
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [keepSignedIn, setKeepSignedIn] = useState(false);
-
-  // For showing a problem and disabling the button while we wait on Firebase.
   const [errorMessage, setErrorMessage] = useState("");
   const [isBusy, setIsBusy] = useState(false);
 
-  // Runs when the Sign in button is tapped.
   async function handleSignIn() {
-    setErrorMessage(""); // clear any previous error
-
-    // Basic check before we even call Firebase.
+    setErrorMessage("");
     if (!email || !password) {
       setErrorMessage("Please enter your email and password.");
       return;
     }
-
-    setIsBusy(true); // show "Signing in…" and block double-taps
+    setIsBusy(true);
     try {
-      // Wait for Firebase. If the details are right, this succeeds and the
-      // auth gate notices and redirects us into the app automatically.
       await signIn(email, password);
-      // No navigation needed here — the gate handles it.
     } catch (error) {
-      // Turn Firebase's error code into something a human understands.
       setErrorMessage(friendlyError(error.code));
-      setIsBusy(false); // let them try again
+      setIsBusy(false);
     }
   }
 
@@ -58,55 +47,49 @@ export default function EmailSignInScreen() {
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       keyboardVerticalOffset={Platform.OS === "ios" ? 90 : 0}
     >
-      <ScrollView
-        contentContainerStyle={styles.container}
-        keyboardShouldPersistTaps="handled"
-      >
+      <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
         <Text style={styles.title}>Sign in</Text>
-      <Text style={styles.subtitle}>Welcome back. Enter your details to continue.</Text>
+        <Text style={styles.subtitle}>Welcome back. Enter your details to continue.</Text>
 
-      <Text style={styles.label}>Email</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="you@example.com"
-        placeholderTextColor="#aaaaaa"
-        keyboardType="email-address"
-        autoCapitalize="none"
-        value={email}                    // show the current state...
-        onChangeText={setEmail}          // ...and update it on every keystroke
-      />
+        <Text style={styles.label}>Email</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="you@example.com"
+          placeholderTextColor={colors.textMuted}
+          keyboardType="email-address"
+          autoCapitalize="none"
+          value={email}
+          onChangeText={setEmail}
+        />
 
-      <Text style={styles.label}>Password</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Your password"
-        placeholderTextColor="#aaaaaa"
-        secureTextEntry={true}
-        autoCapitalize="none"
-        value={password}
-        onChangeText={setPassword}
-      />
+        <Text style={styles.label}>Password</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Your password"
+          placeholderTextColor={colors.textMuted}
+          secureTextEntry
+          autoCapitalize="none"
+          value={password}
+          onChangeText={setPassword}
+        />
 
-      <Pressable style={styles.rememberRow} onPress={() => setKeepSignedIn((v) => !v)}>
-        <View style={[styles.checkbox, keepSignedIn && styles.checkboxChecked]}>
-          {keepSignedIn && <Text style={styles.checkmark}>✓</Text>}
-        </View>
-        <Text style={styles.rememberText}>Keep me signed in</Text>
-      </Pressable>
+        <Pressable style={styles.rememberRow} onPress={() => setKeepSignedIn((v) => !v)}>
+          <View style={[styles.checkbox, keepSignedIn && styles.checkboxChecked]}>
+            {keepSignedIn && <Text style={styles.checkmark}>✓</Text>}
+          </View>
+          <Text style={styles.rememberText}>Keep me signed in</Text>
+        </Pressable>
 
-      {/* Only shows when there's an error to report. */}
-      {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
+        {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
 
-      {/* onPress runs our real handler. Label changes while it's working. */}
-      <AppButton onPress={handleSignIn}>
-        {isBusy ? "Signing in…" : "Sign in"}
-      </AppButton>
+        <PrimaryButton onPress={handleSignIn}>
+          {isBusy ? "Signing in…" : "Sign in"}
+        </PrimaryButton>
       </ScrollView>
     </KeyboardAvoidingView>
   );
 }
 
-// Maps Firebase error codes to plain-English messages.
 function friendlyError(code) {
   switch (code) {
     case "auth/invalid-email":
@@ -125,39 +108,34 @@ function friendlyError(code) {
 }
 
 const styles = StyleSheet.create({
-  flex: { flex: 1, backgroundColor: "#ffffff" },
-  container: { flexGrow: 1, justifyContent: "center", padding: 24, backgroundColor: "#ffffff" },
-    title: { fontSize: 28, fontWeight: "bold", color: "#1a1a1a", textAlign: "center" },
+  flex: { flex: 1, backgroundColor: colors.bg },
+  container: { flexGrow: 1, justifyContent: "center", padding: spacing.xxl },
+  title: { fontSize: 28, fontWeight: "700", color: colors.text, textAlign: "center" },
   subtitle: {
-    fontSize: 16,
-    color: "#555555",
-    textAlign: "center",
-    lineHeight: 24,
-    marginTop: 12,
-    marginBottom: 32,
+    fontSize: 15, color: colors.textSecondary, textAlign: "center",
+    lineHeight: 22, marginTop: spacing.md, marginBottom: spacing.xxl,
   },
-  label: { fontSize: 13, fontWeight: "600", color: "#1a1a1a", marginBottom: 6 },
+  label: { fontSize: 13, fontWeight: "600", color: colors.text, marginBottom: 6 },
   input: {
     borderWidth: 1,
-    borderColor: "#cccccc",
-    borderRadius: 10,
-    paddingVertical: 12,
-    paddingHorizontal: 14,
+    borderColor: colors.border,
+    borderRadius: radius.md,
+    paddingVertical: spacing.md,
+    paddingHorizontal: spacing.lg,
     fontSize: 16,
-    color: "#1a1a1a",
-    marginBottom: 18,
+    color: colors.text,
+    marginBottom: spacing.lg,
+    backgroundColor: colors.card,
   },
-  rememberRow: { flexDirection: "row", alignItems: "center", marginBottom: 20 },
+  rememberRow: { flexDirection: "row", alignItems: "center", marginBottom: spacing.xl },
   checkbox: {
-    width: 22,
-    height: 22,
-    borderRadius: 5,
-    borderWidth: 1,
-    borderColor: "#cccccc",
-    marginRight: 10,
+    width: 22, height: 22, borderRadius: 5,
+    borderWidth: 1, borderColor: colors.border,
+    marginRight: spacing.sm,
+    alignItems: "center", justifyContent: "center",
   },
-  checkboxChecked: { backgroundColor: "#2563eb", borderColor: "#2563eb" },
-  checkmark: { color: "#ffffff", fontSize: 14, fontWeight: "700", textAlign: "center", lineHeight: 20 },
-  rememberText: { fontSize: 15, color: "#1a1a1a" },
-  error: { color: "#dc2626", fontSize: 14, marginBottom: 16, textAlign: "center" },
+  checkboxChecked: { backgroundColor: colors.teal, borderColor: colors.teal },
+  checkmark: { color: colors.onNavy, fontSize: 14, fontWeight: "700" },
+  rememberText: { fontSize: 15, color: colors.text },
+  error: { color: colors.error, fontSize: 14, marginBottom: spacing.lg, textAlign: "center" },
 });

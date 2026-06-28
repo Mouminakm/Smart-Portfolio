@@ -1,7 +1,7 @@
 // app/edit-profile.jsx
-// Edit the signed-in user's saved profile: specialty, platforms, consultants,
-// GMC number, reflection detail. Pre-fills from Firestore, saves back, returns
-// to Settings.
+// Edit the signed-in user's saved profile. Restyled to the navy/teal design
+// system (grouped SmartCards under a NavyHeader). Logic, fields, load/save and
+// validation are unchanged.
 
 import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
@@ -15,15 +15,18 @@ import {
   TextInput,
   View,
 } from "react-native";
-import AppButton from "../components/AppButton";
+import { PrimaryButton } from "../components/Buttons";
 import ConsultantListField from "../components/ConsultantListField";
 import HospitalPickerField from "../components/HospitalPickerField";
 import MultiPickerField from "../components/MultiPickerField";
+import NavyHeader from "../components/NavyHeader";
 import PickerField from "../components/PickerField";
+import SmartCard from "../components/SmartCard";
 import { useAuth } from "../contexts/AuthContext";
 import { UK_PORTFOLIOS } from "../data/portfolios";
 import { UK_SPECIALTIES } from "../data/specialties";
 import { loadProfile, saveProfile } from "../profile";
+import { colors, radius, spacing } from "../theme/theme";
 
 const REFLECTION_LEVELS = ["Low", "Medium"];
 
@@ -31,11 +34,10 @@ export default function EditProfileScreen() {
   const { user } = useAuth();
   const router = useRouter();
 
-  // Editable copies of the saved values, seeded from Firestore below.
   const [specialty, setSpecialty] = useState("");
   const [portfolios, setPortfolios] = useState([]);
   const [consultants, setConsultants] = useState([]);
-  const [hospitals, setHospitals] = useState([]); // array of { id, name, display }
+  const [hospitals, setHospitals] = useState([]);
   const [gmcNumber, setGmcNumber] = useState("");
   const [reflectionDetail, setReflectionDetail] = useState("Low");
 
@@ -43,8 +45,6 @@ export default function EditProfileScreen() {
   const [isSaving, setIsSaving] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  // Load the saved profile once, then copy its values into the editors so they
-  // start on what's stored, not blank. (|| fallbacks handle missing fields.)
   useEffect(() => {
     async function load() {
       if (user) {
@@ -79,107 +79,127 @@ export default function EditProfileScreen() {
     setErrorMessage("");
     setIsSaving(true);
     try {
-      // merge:true (in saveProfile) leaves other fields — training number,
-      // the onboarding flag — untouched.
       await saveProfile(user.uid, { specialty, portfolios, consultants, hospitals, gmcNumber, reflectionDetail });
-      router.back(); // return to Settings, which reloads and shows the changes
+      router.back();
     } catch (error) {
       setIsSaving(false);
       setErrorMessage("Couldn't save. Check your connection and try again.");
     }
   }
 
-  // Spinner while fetching, so the editors don't flash empty values first.
   if (isLoading) {
     return (
       <View style={styles.loadingWrap}>
-        <ActivityIndicator size="large" color="#2563eb" />
+        <ActivityIndicator size="large" color={colors.teal} />
       </View>
     );
   }
 
   return (
-    <KeyboardAvoidingView
-      style={styles.flex}
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
-      keyboardVerticalOffset={Platform.OS === "ios" ? 90 : 0}
-    >
-      <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
-        <PickerField
-          label="Specialty / training programme"
-          placeholder="Select your specialty"
-          options={UK_SPECIALTIES}
-          value={specialty}
-          onSelect={setSpecialty}
-        />
+    <View style={styles.flex}>
+      <NavyHeader title="Edit profile" />
+      <KeyboardAvoidingView
+        style={styles.flex}
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        keyboardVerticalOffset={Platform.OS === "ios" ? 90 : 0}
+      >
+        <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
+          <Text style={styles.sectionHeading}>Specialty & training</Text>
+          <SmartCard style={styles.sectionCard}>
+            <PickerField
+              label="Specialty / training programme"
+              placeholder="Select your specialty"
+              options={UK_SPECIALTIES}
+              value={specialty}
+              onSelect={setSpecialty}
+            />
+            <ConsultantListField
+              label="Consultants you work with"
+              value={consultants}
+              onChange={setConsultants}
+            />
+          </SmartCard>
 
-        <MultiPickerField
-          label="Portfolio platform(s)"
-          placeholder="Select up to two"
-          options={UK_PORTFOLIOS}
-          selected={portfolios}
-          onChange={setPortfolios}
-          maxSelect={2}
-        />
+          <Text style={styles.sectionHeading}>Hospitals</Text>
+          <SmartCard style={styles.sectionCard}>
+            <Text style={styles.label}>Your hospital(s)</Text>
+            <Text style={styles.helpText}>
+              Add the hospital(s) where you operate. When you dictate, just say which
+              one — we'll fill the correct hospital automatically. Update these when you rotate.
+            </Text>
+            <HospitalPickerField value={hospitals} onChange={setHospitals} />
+          </SmartCard>
 
-        {/* Consultants the user works with — at least one required. */}
-        <ConsultantListField
-          label="Consultants you work with"
-          value={consultants}
-          onChange={setConsultants}
-        />
-        {/* Primary hospital — picked once, stores eLogbook's exact id. */}
-        <Text style={styles.label}>Your hospital</Text>
-        <Text style={styles.helpText}>
-          Add the hospital(s) where you operate. When you dictate, just say which
-          one — we'll fill the correct hospital automatically. Update these when
-          you rotate.
-        </Text>
-        <HospitalPickerField value={hospitals} onChange={setHospitals} />
+          <Text style={styles.sectionHeading}>Portfolio</Text>
+          <SmartCard style={styles.sectionCard}>
+            <MultiPickerField
+              label="Portfolio platform(s)"
+              placeholder="Select up to two"
+              options={UK_PORTFOLIOS}
+              selected={portfolios}
+              onChange={setPortfolios}
+              maxSelect={2}
+            />
+          </SmartCard>
 
-        <PickerField
-          label="Reflection detail"
-          placeholder="Select a level"
-          options={REFLECTION_LEVELS}
-          value={reflectionDetail}
-          onSelect={setReflectionDetail}
-        />
+          <Text style={styles.sectionHeading}>Preferences & account</Text>
+          <SmartCard style={styles.sectionCard}>
+            <PickerField
+              label="Reflection detail"
+              placeholder="Select a level"
+              options={REFLECTION_LEVELS}
+              value={reflectionDetail}
+              onSelect={setReflectionDetail}
+            />
+            <Text style={styles.label}>GMC number (optional)</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="7-digit number"
+              placeholderTextColor={colors.textMuted}
+              keyboardType="number-pad"
+              value={gmcNumber}
+              onChangeText={setGmcNumber}
+            />
+          </SmartCard>
 
-        <Text style={styles.label}>GMC number (optional)</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="7-digit number"
-          placeholderTextColor="#aaaaaa"
-          keyboardType="number-pad"
-          value={gmcNumber}
-          onChangeText={setGmcNumber}
-        />
+          {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
 
-        {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
-
-        <AppButton onPress={handleSave}>
-          {isSaving ? "Saving…" : "Save changes"}
-        </AppButton>
-      </ScrollView>
-    </KeyboardAvoidingView>
+          <PrimaryButton onPress={handleSave} style={styles.saveBtn}>
+            {isSaving ? "Saving…" : "Save changes"}
+          </PrimaryButton>
+        </ScrollView>
+      </KeyboardAvoidingView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  flex: { flex: 1, backgroundColor: "#ffffff" },
-  loadingWrap: { flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: "#ffffff" },
-  container: { flexGrow: 1, padding: 24, paddingTop: 32, backgroundColor: "#ffffff" },
-  label: { fontSize: 13, fontWeight: "600", color: "#1a1a1a", marginBottom: 6, marginTop: 4 },
-  helpText: { fontSize: 12, color: "#888888", marginBottom: 8, lineHeight: 17 },
+  flex: { flex: 1, backgroundColor: colors.bg },
+  loadingWrap: { flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: colors.bg },
+  container: { flexGrow: 1, padding: spacing.xxl, paddingTop: spacing.xl, paddingBottom: spacing.xxxl },
+  sectionHeading: {
+    fontSize: 12,
+    fontWeight: "700",
+    color: colors.textSecondary,
+    textTransform: "uppercase",
+    letterSpacing: 1,
+    marginTop: spacing.lg,
+    marginBottom: spacing.sm,
+  },
+  sectionCard: { padding: spacing.lg, marginBottom: spacing.xs },
+  label: { fontSize: 13, fontWeight: "600", color: colors.text, marginBottom: 6, marginTop: 4 },
+  helpText: { fontSize: 12, color: colors.textSecondary, marginBottom: spacing.sm, lineHeight: 17 },
   input: {
     borderWidth: 1,
-    borderColor: "#cccccc",
-    borderRadius: 10,
-    paddingVertical: 12,
-    paddingHorizontal: 14,
+    borderColor: colors.border,
+    borderRadius: radius.md,
+    paddingVertical: spacing.md,
+    paddingHorizontal: spacing.lg,
     fontSize: 16,
-    color: "#1a1a1a",
-    marginBottom: 18,
+    color: colors.text,
+    marginBottom: spacing.md,
+    backgroundColor: colors.card,
   },
-  error: { color: "#dc2626", fontSize: 14, marginBottom: 14, textAlign: "center" },
+  error: { color: colors.error, fontSize: 14, marginVertical: spacing.md, textAlign: "center" },
+  saveBtn: { marginTop: spacing.lg },
 });

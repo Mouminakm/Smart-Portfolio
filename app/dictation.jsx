@@ -1,9 +1,10 @@
 // app/dictation.jsx
-// Core loop screen — Dictation (spec S3).
-// Checklist rendered from the schema (visual). The record button now really
-// records; finishing runs transcribe -> parse, saves into the shared entry
-// context, and routes to Review. Tap = record/pause; hold 1s = finish.
+// Core loop screen — Dictation (spec S3). Restyled to the navy/teal clinical
+// design system. ALL logic unchanged: recording, hold-to-finish, transcribe ->
+// parse, patient-field exclusions, options hint, consultant exception.
+// Tap = record; hold 1s = finish.
 
+import { Ionicons } from "@expo/vector-icons";
 import {
   AudioModule,
   RecordingPresets,
@@ -15,15 +16,17 @@ import { File } from "expo-file-system";
 import { useRouter } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 import { Animated, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
-import AppButton from "../components/AppButton";
+import { PrimaryButton } from "../components/Buttons";
+import NavyHeader from "../components/NavyHeader";
+import SmartCard from "../components/SmartCard";
 import { useAuth } from "../contexts/AuthContext";
 import { useEntry } from "../contexts/EntryContext";
 import { getSpecialtyData } from "../data/specialtySchemas";
 import { loadProfile } from "../profile";
+import { colors, radius, spacing, type } from "../theme/theme";
 
 const HOLD_DURATION = 1000; // milliseconds you must hold to finish
 
-// Backend URLs (same ones the test screen uses).
 const TRANSCRIBE_URL = "https://europe-west2-smart-portfolio-d9c94.cloudfunctions.net/transcribe";
 const PARSE_URL = "https://europe-west2-smart-portfolio-d9c94.cloudfunctions.net/parse";
 
@@ -31,26 +34,22 @@ export default function DictationScreen() {
   const router = useRouter();
   const { user } = useAuth();
   const { setTranscript, setFieldValues, setConfirmed, resetEntry } = useEntry();
-  const [consultants, setConsultants] = useState([]); // user's own consultant names
+  const [consultants, setConsultants] = useState([]);
 
   const [status, setStatus] = useState("paused"); // "recording" | "paused" | "finished"
   const [isHolding, setIsHolding] = useState(false);
-  const [processing, setProcessing] = useState(""); // "" | a progress message
-  const [ready, setReady] = useState(false);        // true once fields are parsed
+  const [processing, setProcessing] = useState("");
+  const [ready, setReady] = useState(false);
 
-  // ---- Real audio recorder ----
   const recorder = useAudioRecorder(RecordingPresets.HIGH_QUALITY);
   const recorderState = useAudioRecorderState(recorder);
 
-  // Start a fresh entry whenever this screen first opens.
   useEffect(() => {
     resetEntry();
   }, []);
 
   const [userSpecialty, setUserSpecialty] = useState("");
 
-  // Load profile: consultants (for Claude matching) and specialty (selects the
-  // right eLogbook schema + procedure list).
   useEffect(() => {
     async function load() {
       if (user) {
@@ -62,7 +61,6 @@ export default function DictationScreen() {
     load();
   }, [user]);
 
-  // Schema + procedures for this user's specialty (null if not built yet).
   const specialtyData = getSpecialtyData(userSpecialty);
   const schema = specialtyData ? specialtyData.schema : null;
   const procedureData = specialtyData ? specialtyData.procedures : null;
@@ -94,15 +92,11 @@ export default function DictationScreen() {
     holdCompleted.current = false;
     setIsHolding(true);
     holdProgress.setValue(0);
-    Animated.timing(holdProgress, {
-      toValue: 1,
-      duration: HOLD_DURATION,
-      useNativeDriver: true,
-    }).start(({ finished }) => {
+    Animated.timing(holdProgress, { toValue: 1, duration: HOLD_DURATION, useNativeDriver: true }).start(({ finished }) => {
       if (finished) {
         holdCompleted.current = true;
         setIsHolding(false);
-        finishRecording(); // <-- real finish: stop, transcribe, parse
+        finishRecording();
       }
     });
   }
@@ -113,38 +107,29 @@ export default function DictationScreen() {
     holdProgress.stopAnimation();
     Animated.timing(holdProgress, { toValue: 0, duration: 150, useNativeDriver: true }).start();
     setIsHolding(false);
-    startRecording(); // tap starts recording; hold finishes
+    startRecording();
   }
 
- // Start recording. (No pause in the MVP — the user holds to finish.)
- async function startRecording() {
-  if (status === "recording") return; // already recording; ignore taps
-  const permission = await AudioModule.requestRecordingPermissionsAsync();
-  if (!permission.granted) {
-    setProcessing("Microphone permission denied. Enable it in your phone settings.");
-    return;
-  }
-  await setAudioModeAsync({ playsInSilentMode: true, allowsRecording: true });
-
-  // Prepare fresh, then record (the documented expo-audio flow). If a prior
-  // session left the recorder running, stop it first so prepare won't throw.
-  try {
-    if (recorderState.isRecording) {
-      await recorder.stop();
+  async function startRecording() {
+    if (status === "recording") return;
+    const permission = await AudioModule.requestRecordingPermissionsAsync();
+    if (!permission.granted) {
+      setProcessing("Microphone permission denied. Enable it in your phone settings.");
+      return;
     }
-  } catch (e) {
-    // not recording — fine
+    await setAudioModeAsync({ playsInSilentMode: true, allowsRecording: true });
+    try {
+      if (recorderState.isRecording) await recorder.stop();
+    } catch (e) {}
+    try {
+      await recorder.prepareToRecordAsync();
+      recorder.record();
+      setStatus("recording");
+    } catch (e) {
+      setProcessing("Couldn't start recording. Try again.");
+    }
   }
-  try {
-    await recorder.prepareToRecordAsync();
-    recorder.record();
-    setStatus("recording");
-  } catch (e) {
-    setProcessing("Couldn't start recording. Try again.");
-  }
-}
 
-  // Finish: stop the mic, then transcribe and parse, then go to Review.
   async function finishRecording() {
     setStatus("finished");
     try {
@@ -154,8 +139,6 @@ export default function DictationScreen() {
         setProcessing("No audio was captured. Go back and try again.");
         return;
       }
-
-      // 1) Transcribe
       setProcessing("Transcribing your dictation…");
       const base64Audio = await new File(uri).base64();
       const tRes = await fetch(TRANSCRIBE_URL, {
@@ -171,40 +154,22 @@ export default function DictationScreen() {
       const transcriptText = tData.transcript || "";
       setTranscript(transcriptText);
 
-      // 2) Parse into fields
       setProcessing("Extracting fields…");
-      // Send the FULL field definitions (including options + inputType) so the
-      // parse function can tell Claude the exact allowed values per field.
-      // Skip app-only fields (not real platform fields) to keep the prompt tight.
       const PATIENT_FIELDS = ["patientid", "AppPatientAgeDateofBirth_ageyears", "AppPatientAgeDateofBirth_agemonths", "AppPatientAgeDateofBirth_dateofbirth"];
       const fieldsForClaude = schema.fields
         .filter((f) => !f.appOnly && f.submitsToPlatform !== false && !PATIENT_FIELDS.includes(f.id))
-        .map((f) => ({
-          id: f.id,
-          label: f.label,
-          inputType: f.inputType,
-          options: f.options || undefined,
-        }));
-      // Send the procedure name list too, so Claude can pick EXACTLY one from
-      // it (more robust than string-matching transcription variations).
+        .map((f) => ({ id: f.id, label: f.label, inputType: f.inputType, options: f.options || undefined }));
       const procedureNames = (procedureData.procedures || []).map((p) => p.name);
       const pRes = await fetch(PARSE_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          transcript: transcriptText,
-          fields: fieldsForClaude,
-          procedureNames: procedureNames,
-          consultantNames: consultants,
-        }),
+        body: JSON.stringify({ transcript: transcriptText, fields: fieldsForClaude, procedureNames, consultantNames: consultants }),
       });
       const pData = await pRes.json();
       if (!pData.fields) {
         setProcessing("Field extraction failed: " + (pData.error || "unknown"));
         return;
       }
-
-      // 3) Seed the shared entry: values + tick anything that came back filled.
       const seeded = {};
       const seededTicks = {};
       schema.fields.forEach((f) => {
@@ -214,7 +179,6 @@ export default function DictationScreen() {
       });
       setFieldValues(seeded);
       setConfirmed(seededTicks);
-
       setProcessing("");
       setReady(true);
     } catch (e) {
@@ -222,8 +186,8 @@ export default function DictationScreen() {
     }
   }
 
-  const buttonScale = holdProgress.interpolate({ inputRange: [0, 1], outputRange: [1, 1.5] });
-  const chargeScale = holdProgress.interpolate({ inputRange: [0, 1], outputRange: [1.15, 1.75] });
+  const buttonScale = holdProgress.interpolate({ inputRange: [0, 1], outputRange: [1, 1.3] });
+  const chargeScale = holdProgress.interpolate({ inputRange: [0, 1], outputRange: [1.15, 1.6] });
   const chargeOpacity = holdProgress.interpolate({ inputRange: [0, 1], outputRange: [0, 1] });
 
   let hint = "Tap to record · hold to finish";
@@ -231,15 +195,10 @@ export default function DictationScreen() {
   else if (status === "recording") hint = "Recording — hold to finish";
 
   function FieldRow({ field }) {
-    // Show the available options under any field that has them, so the user
-    // knows what to say. Take the short part before any ":" to keep it compact.
-    // Exclude responsibleconsultant — its "options" are the full eLogbook
-    // consultant dropdown (hundreds of names), not a useful hint.
     const optionsHint =
       field.options && field.options.length && field.id !== "responsibleconsultant"
         ? field.options.map((o) => o.label.split(":")[0].trim()).join(" · ")
         : null;
-
     return (
       <View style={styles.fieldRow}>
         <View style={styles.pendingCircle} />
@@ -248,52 +207,57 @@ export default function DictationScreen() {
             {field.label}
             {field.required ? <Text style={styles.required}> *</Text> : null}
           </Text>
-          {optionsHint && <Text style={styles.optionsHint}>({optionsHint})</Text>}
+          {optionsHint && <Text style={styles.optionsHint}>{optionsHint}</Text>}
         </View>
       </View>
     );
   }
+
   if (!schema) {
     return (
-      <View style={[styles.container, { alignItems: "center", justifyContent: "center", padding: 24 }]}>
-        <Text style={{ fontSize: 16, color: "#888", textAlign: "center" }}>
-          Dictation for your specialty isn't available yet. It's coming soon.
-        </Text>
+      <View style={styles.container}>
+        <NavyHeader title="Dictation" />
+        <View style={styles.notReadyWrap}>
+          <Text style={styles.notReadyText}>
+            Dictation for your specialty isn't available yet. It's coming soon.
+          </Text>
+        </View>
       </View>
     );
   }
 
   return (
     <View style={styles.container}>
+      <NavyHeader title="Dictation" pill="Operation log" />
+
       {/* ===== TOP: checklist ===== */}
       <View style={styles.checklistArea}>
-        <ScrollView contentContainerStyle={styles.checklistContent}>
-        <Text style={styles.explainer}>
-            Speak naturally to fill these fields. Items marked
-            <Text style={styles.required}> *</Text> are required by eLogbook.
-            You can review and edit everything on the eLogbook form before saving.
-          </Text>
-
-          <View style={styles.noticeBanner}>
-            <Text style={styles.noticeText}>
-              Patient ID should not be recorded to keep the app free of patient-identifiable
-              details. If your portfolio requires one, you'll enter it manually on the website
-              at the submission step.
+      <ScrollView contentContainerStyle={styles.checklistContent}>
+      {/* Patient-data notice (InfoBanner style) */}
+          <View style={styles.infoBanner}>
+            <Ionicons name="information-circle" size={18} color={colors.navy} style={{ marginRight: spacing.sm, marginTop: 1 }} />
+            <Text style={styles.infoText}>
+              Patient identifiers are never recorded. If your portfolio needs them, enter them
+              directly on eLogbook at the submission step.
             </Text>
           </View>
-          {schema.fields
-            .filter(
-              (field) =>
-                field.id !== "patientid" &&
-                field.id !== "AppPatientAgeDateofBirth_ageyears" &&
-                field.id !== "AppPatientAgeDateofBirth_agemonths" &&
-                field.id !== "AppPatientAgeDateofBirth_dateofbirth" &&
-                field.id !== "operationspecialty" &&
-                !field.appOnly
-            )
-            .map((field) => (
-              <FieldRow key={field.id} field={field} />
-            ))}
+
+          <Text style={styles.checklistTitle}>Checklist</Text>
+          <SmartCard style={styles.checklistCard}>
+            {schema.fields
+              .filter(
+                (field) =>
+                  field.id !== "patientid" &&
+                  field.id !== "AppPatientAgeDateofBirth_ageyears" &&
+                  field.id !== "AppPatientAgeDateofBirth_agemonths" &&
+                  field.id !== "AppPatientAgeDateofBirth_dateofbirth" &&
+                  field.id !== "operationspecialty" &&
+                  !field.appOnly
+              )
+              .map((field) => (
+                <FieldRow key={field.id} field={field} />
+              ))}
+          </SmartCard>
         </ScrollView>
       </View>
 
@@ -303,33 +267,43 @@ export default function DictationScreen() {
           <Text style={styles.doneText}>{processing}</Text>
         ) : ready ? (
           <>
-            <Text style={styles.doneText}>Ready to fill eLogbook</Text>
-            <AppButton href="/submission" style={{ paddingHorizontal: 40 }}>
+            <View style={styles.readyRow}>
+              <Ionicons name="checkmark-circle" size={20} color={colors.success} />
+              <Text style={styles.readyText}>Ready to fill eLogbook</Text>
+            </View>
+            <PrimaryButton href="/submission" style={{ paddingHorizontal: 40 }}>
               Open in eLogbook
-            </AppButton>
+            </PrimaryButton>
           </>
         ) : (
           <>
-            <Animated.View
-              style={[styles.pulseRing, { transform: [{ scale: pulseScale }], opacity: pulseOpacity }]}
-            />
-            <Animated.View
-              style={[styles.chargeRing, { transform: [{ scale: chargeScale }], opacity: chargeOpacity }]}
-            />
-            <Pressable onPressIn={startHold} onPressOut={endHold}>
-              <Animated.View
-                style={[
-                  styles.recordButton,
-                  status === "recording" && styles.recordButtonActive,
-                  { transform: [{ scale: buttonScale }] },
-                ]}
-              >
-                <Text style={styles.recordButtonText}>
-                  {status === "recording" ? "Recording" : "Record"}
-                </Text>
-              </Animated.View>
-            </Pressable>
+            <View style={styles.recordWrap}>
+              <Animated.View style={[styles.pulseRing, { transform: [{ scale: pulseScale }], opacity: pulseOpacity }]} />
+              <Animated.View style={[styles.chargeRing, { transform: [{ scale: chargeScale }], opacity: chargeOpacity }]} />
+              <Pressable onPressIn={startHold} onPressOut={endHold}>
+                <Animated.View
+                  style={[
+                    styles.recordButton,
+                    status === "recording" && styles.recordButtonActive,
+                    { transform: [{ scale: buttonScale }] },
+                  ]}
+                >
+                  <Ionicons
+                    name={status === "recording" ? "stop" : "mic"}
+                    size={36}
+                    color={colors.onNavy}
+                  />
+                </Animated.View>
+              </Pressable>
+            </View>
             <Text style={styles.controlHint}>{hint}</Text>
+            {status !== "recording" && !isHolding ? (
+              <Text style={styles.controlCaption}>
+                Speak naturally to fill the fields above. Items marked
+                <Text style={styles.required}> *</Text> are required. You'll review
+                and submit everything on eLogbook.
+              </Text>
+            ) : null}
           </>
         )}
       </View>
@@ -338,23 +312,61 @@ export default function DictationScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#ffffff" },
+  container: { flex: 1, backgroundColor: colors.bg },
+  notReadyWrap: { flex: 1, alignItems: "center", justifyContent: "center", padding: spacing.xxl },
+  notReadyText: { ...type.body, color: colors.textSecondary, textAlign: "center" },
+
   checklistArea: { flex: 2 },
-  checklistContent: { padding: 24, paddingTop: 28, paddingBottom: 16 },
-  schemaContext: { fontSize: 12, fontWeight: "600", color: "#2563eb", textTransform: "capitalize", marginBottom: 16 },
-  noticeBanner: { backgroundColor: "#eff6ff", borderWidth: 1, borderColor: "#bfdbfe", borderRadius: 10, padding: 12, marginBottom: 20 },
-  noticeText: { fontSize: 13, color: "#1e40af", lineHeight: 19 },
-  fieldRow: { flexDirection: "row", alignItems: "flex-start", marginBottom: 16 },
-  pendingCircle: { width: 20, height: 20, borderRadius: 10, borderWidth: 2, borderColor: "#cccccc", marginRight: 14, marginTop: 1 },
+  checklistContent: { padding: spacing.xxl, paddingTop: spacing.xl, paddingBottom: spacing.lg },
+
+  explainer: { ...type.helper, lineHeight: 19, marginBottom: spacing.lg },
+  required: { color: colors.error, fontWeight: "700" },
+
+  infoBanner: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    backgroundColor: colors.muted,
+    borderRadius: radius.md,
+    padding: spacing.md,
+    marginBottom: spacing.xl,
+  },
+  infoText: { flex: 1, fontSize: 13, color: colors.navy, lineHeight: 18 },
+
+  checklistTitle: { ...type.cardTitle, marginBottom: spacing.md },
+  checklistCard: { padding: spacing.lg },
+
+  fieldRow: { flexDirection: "row", alignItems: "flex-start", marginBottom: spacing.lg },
+  pendingCircle: {
+    width: 18, height: 18, borderRadius: 9,
+    borderWidth: 2, borderColor: colors.border,
+    marginRight: spacing.md, marginTop: 2,
+  },
   fieldTextWrap: { flex: 1 },
-  fieldText: { fontSize: 15, color: "#1a1a1a" },
-  optionsHint: { fontSize: 11, color: "#aaaaaa", marginTop: 3, lineHeight: 15 },
-  controlArea: { flex: 1, alignItems: "center", justifyContent: "center", borderTopWidth: 1, borderTopColor: "#f0f0f0", paddingHorizontal: 24 },
-  pulseRing: { position: "absolute", width: 88, height: 88, borderRadius: 44, backgroundColor: "#2563eb" },
-  chargeRing: { position: "absolute", width: 88, height: 88, borderRadius: 44, borderWidth: 4, borderColor: "#2563eb", backgroundColor: "transparent" },
-  recordButton: { width: 88, height: 88, borderRadius: 44, backgroundColor: "#2563eb", alignItems: "center", justifyContent: "center" },
-  recordButtonActive: { backgroundColor: "#dc2626" },
-  recordButtonText: { color: "#ffffff", fontSize: 16, fontWeight: "700" },
-  controlHint: { fontSize: 13, color: "#888888", marginTop: 16, textAlign: "center" },
-  doneText: { fontSize: 16, fontWeight: "600", color: "#1a1a1a", marginBottom: 16, textAlign: "center" },
+  fieldText: { ...type.body },
+  optionsHint: { fontSize: 11, color: colors.textMuted, marginTop: 3, lineHeight: 15 },
+
+  controlArea: {
+    flex: 1, alignItems: "center", justifyContent: "center",
+    borderTopWidth: 1, borderTopColor: colors.border,
+    paddingHorizontal: spacing.xxl,
+    backgroundColor: colors.card,
+  },
+  recordWrap: { width: 88, height: 88, alignItems: "center", justifyContent: "center" },
+  pulseRing: { position: "absolute", width: 88, height: 88, borderRadius: 44, backgroundColor: colors.teal },
+  chargeRing: { position: "absolute", width: 88, height: 88, borderRadius: 44, borderWidth: 4, borderColor: colors.teal, backgroundColor: "transparent" },
+  recordButton: { width: 88, height: 88, borderRadius: 44, backgroundColor: colors.teal, alignItems: "center", justifyContent: "center" },
+  recordButtonActive: { backgroundColor: colors.recording },
+  controlHint: { ...type.helper, marginTop: spacing.lg, textAlign: "center" },
+  controlCaption: {
+    fontSize: 12,
+    color: colors.textMuted,
+    textAlign: "center",
+    lineHeight: 17,
+    marginTop: spacing.sm,
+    paddingHorizontal: spacing.md,
+  },
+
+  doneText: { ...type.cardTitle, marginBottom: spacing.lg, textAlign: "center" },
+  readyRow: { flexDirection: "row", alignItems: "center", marginBottom: spacing.lg },
+  readyText: { ...type.cardTitle, color: colors.success, marginLeft: spacing.sm },
 });

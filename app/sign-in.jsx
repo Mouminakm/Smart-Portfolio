@@ -1,103 +1,106 @@
 // app/sign-in.jsx
-// Onboarding — Create your account (spec S1).
-// Email sign-up is the working path. Google/Apple remain placeholders until
-// the development-build phase. "Sign in" leads existing users to email sign-in.
+// Onboarding — Create your account (spec S1). Restyled to the navy/teal
+// identity. All navigation destinations unchanged.
 
+import { Ionicons } from "@expo/vector-icons";
 import { Link } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
+import { colors, radius, spacing } from "../theme/theme";
 
 export default function SignInScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Create your account</Text>
-      <Text style={styles.subtitle}>
-        Sign up to save your profile and entries securely. We'll never post
-        anything on your behalf.
-      </Text>
+      {/* Navy hero, consistent with the welcome screen */}
+      <View style={styles.hero}>
+        <View style={styles.logoBadge}>
+          <Ionicons name="mic" size={28} color={colors.onNavy} />
+        </View>
+        <Text style={styles.title}>Create your account</Text>
+        <Text style={styles.subtitle}>
+          Sign up to save your profile and entries securely. We'll never post
+          anything on your behalf.
+        </Text>
+      </View>
 
-      {/* The working path: create an account with email. */}
-      <Link href="/email-sign-up" style={styles.emailButton}>
-        Sign up with email
-      </Link>
+      <View style={styles.content}>
+        {/* Working path: email sign-up (primary) */}
+        <Link href="/email-sign-up" style={styles.emailButton}>
+          Sign up with email
+        </Link>
 
-      {/* Placeholders for now — wired up in the development-build phase. */}
-      <Link href="/profile-setup" style={styles.googleButton}>
-        Sign up with Google
-      </Link>
-      <Link href="/profile-setup" style={styles.appleButton}>
-        Sign up with Apple
-      </Link>
+        {/* Placeholders — wired up in the development-build phase */}
+        <Link href="/profile-setup" style={styles.googleButton}>
+          Sign up with Google
+        </Link>
+        <Link href="/profile-setup" style={styles.appleButton}>
+          Sign up with Apple
+        </Link>
 
-      <Text style={styles.existingText}>Already have an account?</Text>
-      <Link href="/email-sign-in" style={styles.signInButton}>
-        Sign in
-      </Link>
+        <Text style={styles.existingText}>Already have an account?</Text>
+        <Link href="/email-sign-in" style={styles.signInButton}>
+          Sign in
+        </Link>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    padding: 24,
-    backgroundColor: "#ffffff",
+  container: { flex: 1, backgroundColor: colors.bg },
+
+  hero: {
+    backgroundColor: colors.navy,
+    paddingTop: spacing.xxxl + spacing.xxl,
+    paddingBottom: spacing.xxxl,
+    paddingHorizontal: spacing.xxl,
+    alignItems: "center",
+    borderBottomLeftRadius: radius.xl,
+    borderBottomRightRadius: radius.xl,
   },
-  title: { fontSize: 28, fontWeight: "bold", color: "#1a1a1a", textAlign: "center" },
+  logoBadge: {
+    width: 56, height: 56, borderRadius: radius.md,
+    backgroundColor: colors.tealDeep,
+    alignItems: "center", justifyContent: "center",
+    marginBottom: spacing.md,
+  },
+  title: { fontSize: 26, fontWeight: "700", color: colors.onNavy, textAlign: "center" },
   subtitle: {
-    fontSize: 16,
-    color: "#555555",
-    textAlign: "center",
-    lineHeight: 24,
-    marginTop: 12,
-    marginBottom: 40,
+    fontSize: 14, color: "#CBD5E1", textAlign: "center",
+    lineHeight: 21, marginTop: spacing.sm,
   },
-  // The primary (blue) button — email sign-up.
+
+  content: { flex: 1, padding: spacing.xxl, justifyContent: "center" },
+
   emailButton: {
-    backgroundColor: "#2563eb",
-    borderRadius: 10,
-    paddingVertical: 14,
-    marginBottom: 14,
-    fontSize: 16,
-    fontWeight: "600",
-    color: "#ffffff",
-    textAlign: "center",
-    overflow: "hidden",
+    backgroundColor: colors.navy,
+    borderRadius: radius.md,
+    paddingVertical: spacing.lg,
+    marginBottom: spacing.md,
+    fontSize: 16, fontWeight: "600", color: colors.onNavy,
+    textAlign: "center", overflow: "hidden",
   },
   googleButton: {
-    borderWidth: 1,
-    borderColor: "#cccccc",
-    borderRadius: 10,
-    paddingVertical: 14,
-    marginBottom: 14,
-    fontSize: 16,
-    fontWeight: "600",
-    color: "#1a1a1a",
-    textAlign: "center",
-    overflow: "hidden",
+    borderWidth: 1.5, borderColor: colors.border,
+    borderRadius: radius.md,
+    paddingVertical: spacing.lg,
+    marginBottom: spacing.md,
+    fontSize: 16, fontWeight: "600", color: colors.text,
+    textAlign: "center", overflow: "hidden",
+    backgroundColor: colors.card,
   },
   appleButton: {
     backgroundColor: "#000000",
-    borderRadius: 10,
-    paddingVertical: 14,
-    fontSize: 16,
-    fontWeight: "600",
-    color: "#ffffff",
-    textAlign: "center",
-    overflow: "hidden",
+    borderRadius: radius.md,
+    paddingVertical: spacing.lg,
+    fontSize: 16, fontWeight: "600", color: "#ffffff",
+    textAlign: "center", overflow: "hidden",
   },
   existingText: {
-    textAlign: "center",
-    color: "#888888",
-    fontSize: 14,
-    marginTop: 32,
-    marginBottom: 8,
+    textAlign: "center", color: colors.textSecondary,
+    fontSize: 14, marginTop: spacing.xxl, marginBottom: spacing.sm,
   },
   signInButton: {
-    fontSize: 16,
-    fontWeight: "600",
-    color: "#2563eb",
-    textAlign: "center",
-    paddingVertical: 8,
+    fontSize: 16, fontWeight: "600", color: colors.teal,
+    textAlign: "center", paddingVertical: spacing.sm,
   },
 });

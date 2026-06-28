@@ -1,11 +1,17 @@
 // app/(tabs)/settings.jsx
+// Settings — restyled to the navy/teal design system. Grouped into SmartCard
+// sections under a NavyHeader. Logic, data, and actions unchanged.
+
 import { useFocusEffect, useRouter } from "expo-router";
 import { useCallback, useState } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import AppButton from "../../components/AppButton";
+import { PrimaryButton, SecondaryButton } from "../../components/Buttons";
+import NavyHeader from "../../components/NavyHeader";
 import SettingsRow from "../../components/SettingsRow";
+import SmartCard from "../../components/SmartCard";
 import { useAuth } from "../../contexts/AuthContext";
 import { loadProfile } from "../../profile";
+import { colors, spacing } from "../../theme/theme";
 
 export default function SettingsScreen() {
   const { user, signOut } = useAuth();
@@ -29,70 +35,84 @@ export default function SettingsScreen() {
   }
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      <View style={styles.editWrap}>
-        <AppButton onPress={() => router.push("/edit-profile")}>Edit profile</AppButton>
-      </View>
+    <View style={styles.container}>
+      <NavyHeader title="Settings" />
 
-      <Text style={styles.sectionHeading}>Specialty & training</Text>
-      <SettingsRow label="Specialty" value={show(profile && profile.specialty)} />
-      <SettingsRow
-        label="Consultants"
-        value={show(profile && profile.consultants && profile.consultants.join(", "))}
-      />
-      <SettingsRow
-        label="Hospital(s)"
-        value={show(
-          profile &&
-            profile.hospitals &&
-            profile.hospitals.map((h) => h.display || h.short || h.name).join(", ")
-        )}
-      />
+      <ScrollView contentContainerStyle={styles.content}>
+        <View style={styles.editWrap}>
+          <PrimaryButton onPress={() => router.push("/edit-profile")}>Edit profile</PrimaryButton>
+        </View>
 
-      <Text style={styles.sectionHeading}>Portfolio</Text>
-      <SettingsRow
-        label="Platform(s)"
-        value={show(profile && profile.portfolios && profile.portfolios.join(", "))}
-      />
+        <Text style={styles.sectionHeading}>Specialty & training</Text>
+        <SmartCard style={styles.sectionCard}>
+          <SettingsRow label="Specialty" value={show(profile && profile.specialty)} />
+          <SettingsRow
+            label="Consultants"
+            value={show(profile && profile.consultants && profile.consultants.join(", "))}
+          />
+          <SettingsRow
+            label="Hospital(s)"
+            value={show(
+              profile &&
+                profile.hospitals &&
+                profile.hospitals.map((h) => h.display || h.short || h.name).join(", ")
+            )}
+          />
+        </SmartCard>
 
-      <Text style={styles.sectionHeading}>Subscription</Text>
-      <SettingsRow label="Plan" value="Free trial" />
+        <Text style={styles.sectionHeading}>Portfolio</Text>
+        <SmartCard style={styles.sectionCard}>
+          <SettingsRow
+            label="Platform(s)"
+            value={show(profile && profile.portfolios && profile.portfolios.join(", "))}
+          />
+        </SmartCard>
 
-      <Text style={styles.sectionHeading}>Account</Text>
-      <SettingsRow label="Email" value={show(user && user.email)} />
-      <SettingsRow label="GMC number" value={show(profile && profile.gmcNumber)} />
-      <SettingsRow label="Training number (NTN)" value={show(profile && profile.trainingNumber)} />
+        <Text style={styles.sectionHeading}>Subscription</Text>
+        <SmartCard style={styles.sectionCard}>
+          <SettingsRow label="Plan" value="Free trial" />
+        </SmartCard>
 
-      <Text style={styles.sectionHeading}>Privacy & data</Text>
-      <SettingsRow label="Data consent" value="Granted" />
-      <SettingsRow label="Delete my data" value="" />
+        <Text style={styles.sectionHeading}>Account</Text>
+        <SmartCard style={styles.sectionCard}>
+          <SettingsRow label="Email" value={show(user && user.email)} />
+          <SettingsRow label="GMC number" value={show(profile && profile.gmcNumber)} />
+          <SettingsRow label="Training number (NTN)" value={show(profile && profile.trainingNumber)} />
+        </SmartCard>
 
-      <Text style={styles.sectionHeading}>Preferences</Text>
-      <SettingsRow
-        label="Reflection detail"
-        value={(profile && profile.reflectionDetail) || "Low"}
-      />
-      <SettingsRow label="Notifications" value="On" />
-      
-      <View style={styles.signOutWrap}>
-        <AppButton onPress={signOut}>Sign out</AppButton>
-      </View>
-    </ScrollView>
+        <Text style={styles.sectionHeading}>Privacy & data</Text>
+        <SmartCard style={styles.sectionCard}>
+          <SettingsRow label="Data consent" value="Granted" />
+          <SettingsRow label="Delete my data" value="" />
+        </SmartCard>
+
+        <Text style={styles.sectionHeading}>Preferences</Text>
+        <SmartCard style={styles.sectionCard}>
+          <SettingsRow label="Reflection detail" value={(profile && profile.reflectionDetail) || "Low"} />
+          <SettingsRow label="Notifications" value="On" />
+        </SmartCard>
+
+        <View style={styles.signOutWrap}>
+          <SecondaryButton onPress={signOut}>Sign out</SecondaryButton>
+        </View>
+      </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#ffffff" },
-  content: { padding: 24, paddingBottom: 40 },
-  editWrap: { marginBottom: 8 },
+  container: { flex: 1, backgroundColor: colors.bg },
+  content: { padding: spacing.xxl, paddingBottom: spacing.xxxl },
+  editWrap: { marginBottom: spacing.sm, marginTop: spacing.xs },
   sectionHeading: {
-    fontSize: 13,
+    fontSize: 12,
     fontWeight: "700",
-    color: "#888888",
+    color: colors.textSecondary,
     textTransform: "uppercase",
     letterSpacing: 1,
-    marginTop: 24,
-    marginBottom: 4,
+    marginTop: spacing.xxl,
+    marginBottom: spacing.sm,
   },
-  signOutWrap: { marginTop: 28 },
+  sectionCard: { padding: spacing.sm },
+  signOutWrap: { marginTop: spacing.xxl },
 });
