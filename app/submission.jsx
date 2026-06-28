@@ -42,7 +42,6 @@ function buildFullInjectionScript(plan) {
             selectTypeahead(searchSel, id, searchText, matchName, done, readyTries);
           }, 200);
         }
-        window.ReactNativeWebView.postMessage(JSON.stringify({ type:'ta_poll', sel: searchSel + ' NOT_READY', tries: readyTries, want:'', matchCount:-2, sampleMatches:[] }));
         done(false); return;
       }
       var ctx = input.__ngContext__, directive = null, wrapper = null, seen = new Set();
@@ -55,15 +54,9 @@ function buildFullInjectionScript(plan) {
       }
       if(!directive){ done(false); return; }
 
-      // Some procedure names contain parentheses/commas that break eLogbook's
-      // search (returns no matches). Type a simplified string — text before the
-      // first "(" or "," — to trigger results; we still match the exact item by
-      // id/name among them.
-      var typeText = String(searchText).split('(')[0].split(',')[0].trim();
-      if(!typeText) typeText = searchText;
       var proto = Object.getPrototypeOf(input);
       var desc = Object.getOwnPropertyDescriptor(proto, 'value');
-      desc.set.call(input, typeText);
+      desc.set.call(input, searchText);
       input.dispatchEvent(new Event('input', { bubbles: true }));
 
       var tries = 0;
@@ -74,36 +67,21 @@ function buildFullInjectionScript(plan) {
         if (id !== null && id !== undefined) {
           match = matches.find(function(m){ return m && m.item && String(m.item.id) === String(id); });
         } else {
-          // Normalise a hospital name WITHOUT regex (regex literals get mangled
-          // inside this stringified injection script — that silently broke the
-          // match). Lowercase, drop a leading "the ", remove anything from the
-          // first "(" onward, and collapse whitespace.
           var core = function(s){
-            var t = String(s).toLowerCase().trim();
-            if (t.indexOf("the ") === 0) t = t.slice(4);
-            var paren = t.indexOf("(");
-            if (paren !== -1) t = t.slice(0, paren);
-            // collapse runs of whitespace to single spaces, char by char
-            var out = "", prevSpace = false;
-            for (var i = 0; i < t.length; i++) {
-              var ch = t[i];
-              var isSpace = (ch <= " "); // space/tab/newline all sort <= space; no \t \n escapes (they break inside this template literal)
-              if (isSpace) {
-                if (!prevSpace) out += " ";
-                prevSpace = true;
-              } else {
-                out += ch;
-                prevSpace = false;
-              }
-            }
-            return out.trim();
+            return String(s).toLowerCase()
+              .replace(/^the\s+/, "")
+              .replace(/\s*\([^)]*\)\s*$/, "")
+              .replace(/\s+/g, " ")
+              .trim();
           };
+          var full = String(matchName || searchText).toLowerCase().replace(/\s+/g, " ").trim();
           var want = core(matchName || searchText);
           match =
-            // core match both sides (strips leading "the" + trailing parens),
-            // so "The Royal London Hospital (London)" matches stored "Royal
-            // London Hospital (London)".
+            // 1. exact full-name match (incl. suffix like "(London)") — most precise
+            matches.find(function(m){ return m && m.item && String(m.item.name).toLowerCase().replace(/\s+/g," ").trim() === full; }) ||
+            // 2. exact core-name match (suffix stripped)
             matches.find(function(m){ return m && m.item && core(m.item.name) === want; }) ||
+            // 3. starts-with, either direction
             matches.find(function(m){ return m && m.item && core(m.item.name).indexOf(want) === 0; }) ||
             matches.find(function(m){ return m && m.item && want.indexOf(core(m.item.name)) === 0; });
         }
@@ -111,13 +89,6 @@ function buildFullInjectionScript(plan) {
           directive.changeModel(match);
           if(wrapper && typeof wrapper.onTypeaheadSelect === 'function'){ try { wrapper.onTypeaheadSelect(match); } catch(e){} }
           done(true); return;
-        }
-        if(tries >= 8 && tries % 8 === 0){
-          window.ReactNativeWebView.postMessage(JSON.stringify({
-            type:'ta_poll', sel: searchSel, tries: tries, want: (matchName||searchText),
-            matchCount: (directive._matches||[]).length,
-            sampleMatches: (directive._matches||[]).slice(0,6).map(function(m){ return m&&m.item?{id:m.item.id,name:m.item.name}:null; })
-          }));
         }
         if(tries < 40) return setTimeout(poll, 200);
         done(false);
@@ -173,11 +144,9 @@ function buildFullInjectionScript(plan) {
       if(!formReady){
         // Detect a login page: eLogbook's login has a password field and no
         // operation form. If we see that, tell the app it's a login situation.
-        var lh = String(window.location.href).toLowerCase();
         var looksLikeLogin =
           document.querySelector('input[type="password"]') ||
-          lh.indexOf('login') !== -1 ||
-          lh.indexOf('signin') !== -1;
+          /login|signin|account\\/login/i.test(window.location.href);
         if(looksLikeLogin){
           window.ReactNativeWebView.postMessage(JSON.stringify({ type:'needs_login' }));
           return;
@@ -223,7 +192,7 @@ function buildFullInjectionScript(plan) {
         fillSimple();
         // Give Angular a moment, then check if it stuck; retry if not.
         setTimeout(function(){
-          if(fillHeld() || fillTries >= 25){
+          if(fillHeld() || fillTries >= 15){
             doTypeaheads();
           } else {
             fillWithRetry(); // form wiped it — try again
@@ -233,10 +202,12 @@ function buildFullInjectionScript(plan) {
 
       function doTypeaheads(){
         function afterProcedure(){
-          window.ReactNativeWebView.postMessage(JSON.stringify({ type:'ta_poll', sel:'HOSP_BRANCH', tries:0, want: plan.hospital ? (plan.hospital.name + ' | search=' + plan.hospital.search) : 'NO_HOSPITAL_IN_PLAN', matchCount:-1, sampleMatches:[] }));
           if(plan.hospital){
+            // eLogbook gives the SAME hospital different ids per specialty, so
+            // matching by stored id can't work across specialties. The NAME is
+            // stable, so match by name: pass id=null (uses the name path) and
+            // give the full stored name as the match target.
             selectTypeahead('#hospitalsAccordion-Typeahead', null, plan.hospital.search, (plan.hospital.name || plan.hospital.search), function(ok){
-              window.ReactNativeWebView.postMessage(JSON.stringify({ type:'ta_poll', sel:'HOSP_RESULT', tries:0, want: 'ok=' + ok, matchCount:-1, sampleMatches:[] }));
               if(ok) filled++; else failed.push('hospital');
               report();
             });
@@ -320,11 +291,6 @@ export default function SubmissionScreen() {
       if (data.type === "needs_login") {
         setNeedsLogin(true);
         setStatusMsg("Please log in to eLogbook below, then tap Retry.");
-        return;
-      }
-      
-      if (data.type === "ta_poll") {
-        console.log("TA:", JSON.stringify(data, null, 2));
         return;
       }
       
