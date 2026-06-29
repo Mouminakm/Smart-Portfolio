@@ -11,12 +11,18 @@ import neurosurgerySchema from "../schemas/elogbook_neurosurgery_operation_log.j
 import neurosurgeryProcedures from "../schemas/elogbook_neurosurgery_procedures.json";
 import ophthalmologySchema from "../schemas/elogbook_ophthalmology_operation_log.json";
 import ophthalmologyProcedures from "../schemas/elogbook_ophthalmology_procedures.json";
+import otolaryngologySchema from "../schemas/elogbook_otolaryngology_operation_log.json";
+import otolaryngologyProcedures from "../schemas/elogbook_otolaryngology_procedures.json";
+import traumaOrthoSchema from "../schemas/elogbook_trauma_and_orthopaedic_surgery_operation_log.json";
+import traumaOrthoProcedures from "../schemas/elogbook_trauma_and_orthopaedic_surgery_procedures.json";
 
 const BY_SPECIALTY = {
   "Neurosurgery": { schema: neurosurgerySchema, procedures: neurosurgeryProcedures },
   "Cardiothoracic Surgery": { schema: cardiothoracicSchema, procedures: cardiothoracicProcedures },
   "General Surgery": { schema: generalSurgerySchema, procedures: generalSurgeryProcedures },
   "Ophthalmology": { schema: ophthalmologySchema, procedures: ophthalmologyProcedures },
+  "Otolaryngology": { schema: otolaryngologySchema, procedures: otolaryngologyProcedures },
+  "Trauma and Orthopaedic Surgery": { schema: traumaOrthoSchema, procedures: traumaOrthoProcedures },
 };
 
 // Returns { schema, procedures } for a specialty, or null if not built yet.

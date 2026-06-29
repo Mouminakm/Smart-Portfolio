@@ -80,7 +80,13 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "perianal abscess",
+        "drainage of perianal abscess",
+        "incision and drainage of perianal abscess",
+        "perianal abscess drainage",
+        "anorectal abscess drainage"
+      ]
     },
     {
       "id": 20,
@@ -88,7 +94,11 @@
       "categories": [
         "Operations / Breast"
       ],
-      "aliases": []
+      "aliases": [
+        "breast abscess",
+        "drainage of breast abscess",
+        "breast abscess drainage"
+      ]
     },
     {
       "id": 21,
@@ -96,7 +106,11 @@
       "categories": [
         "Operations / General"
       ],
-      "aliases": []
+      "aliases": [
+        "incision and drainage of abscess",
+        "drainage of abscess",
+        "abscess drainage"
+      ]
     },
     {
       "id": 22,
@@ -336,7 +350,11 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "lateral sphincterotomy",
+        "lateral internal sphincterotomy",
+        "lis"
+      ]
     },
     {
       "id": 642,
@@ -344,7 +362,11 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "botox for anal fissure",
+        "fissurectomy",
+        "botox injection anal fissure"
+      ]
     },
     {
       "id": 643,
@@ -360,7 +382,11 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "eua anus",
+        "anal eua",
+        "eua of anus"
+      ]
     },
     {
       "id": 645,
@@ -441,7 +467,14 @@
         "Operations / General",
         "Operations / Trauma / Trauma"
       ],
-      "aliases": []
+      "aliases": [
+        "appendix",
+        "appendectomy",
+        "lap appendix",
+        "laparoscopic appendicectomy",
+        "open appendicectomy",
+        "removal of appendix"
+      ]
     },
     {
       "id": 505,
@@ -473,7 +506,12 @@
       "categories": [
         "Operations / Breast"
       ],
-      "aliases": []
+      "aliases": [
+        "axillary clearance",
+        "axillary node clearance",
+        "axillary dissection",
+        "axillary clearance level 2"
+      ]
     },
     {
       "id": 565,
@@ -481,7 +519,9 @@
       "categories": [
         "Operations / Breast"
       ],
-      "aliases": []
+      "aliases": [
+        "axillary clearance level 3"
+      ]
     },
     {
       "id": 566,
@@ -529,7 +569,12 @@
       "categories": [
         "Operations / Breast"
       ],
-      "aliases": []
+      "aliases": [
+        "sentinel node biopsy",
+        "sentinel lymph node biopsy",
+        "slnb",
+        "sentinel node"
+      ]
     },
     {
       "id": 72,
@@ -537,7 +582,15 @@
       "categories": [
         "Operations / Upper GI - HPB"
       ],
-      "aliases": []
+      "aliases": [
+        "cholecystectomy",
+        "lap chole",
+        "laparoscopic cholecystectomy",
+        "open cholecystectomy",
+        "chole",
+        "gallbladder removal",
+        "removal of gallbladder"
+      ]
     },
     {
       "id": 73,
@@ -673,7 +726,12 @@
       "categories": [
         "Operations / General"
       ],
-      "aliases": []
+      "aliases": [
+        "lipoma",
+        "lipoma excision",
+        "excision of lipoma",
+        "removal of lipoma"
+      ]
     },
     {
       "id": 86,
@@ -681,7 +739,11 @@
       "categories": [
         "Operations / General"
       ],
-      "aliases": []
+      "aliases": [
+        "lymph node biopsy",
+        "excision of lymph node",
+        "lymph node excision"
+      ]
     },
     {
       "id": 87,
@@ -689,7 +751,14 @@
       "categories": [
         "Operations / General"
       ],
-      "aliases": []
+      "aliases": [
+        "bcc excision",
+        "scc excision",
+        "excision of bcc",
+        "excision of scc",
+        "basal cell carcinoma excision",
+        "squamous cell carcinoma excision"
+      ]
     },
     {
       "id": 88,
@@ -697,7 +766,11 @@
       "categories": [
         "Operations / General"
       ],
-      "aliases": []
+      "aliases": [
+        "melanoma excision",
+        "wide excision of melanoma",
+        "excision of melanoma"
+      ]
     },
     {
       "id": 89,
@@ -705,7 +778,14 @@
       "categories": [
         "Operations / General"
       ],
-      "aliases": []
+      "aliases": [
+        "skin lesion excision",
+        "excision of skin lesion",
+        "skin lesion",
+        "sebaceous cyst",
+        "excision of sebaceous cyst",
+        "epidermoid cyst excision"
+      ]
     },
     {
       "id": 90,
@@ -825,7 +905,10 @@
       "categories": [
         "Operations / Breast"
       ],
-      "aliases": []
+      "aliases": [
+        "mastectomy",
+        "simple mastectomy"
+      ]
     },
     {
       "id": 585,
@@ -873,7 +956,11 @@
       "categories": [
         "Operations / Breast"
       ],
-      "aliases": []
+      "aliases": [
+        "wide local excision",
+        "wle",
+        "lumpectomy"
+      ]
     },
     {
       "id": 492,
@@ -937,7 +1024,12 @@
       "categories": [
         "Procedures / Standard"
       ],
-      "aliases": []
+      "aliases": [
+        "central line",
+        "central venous catheter",
+        "central line insertion",
+        "central venous line"
+      ]
     },
     {
       "id": 508,
@@ -961,7 +1053,12 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "right hemicolectomy",
+        "right hemi",
+        "right colectomy",
+        "laparoscopic right hemicolectomy"
+      ]
     },
     {
       "id": 646,
@@ -969,7 +1066,10 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "extended right hemicolectomy",
+        "extended right hemi"
+      ]
     },
     {
       "id": 104,
@@ -977,7 +1077,11 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "left hemicolectomy",
+        "left hemi",
+        "left colectomy"
+      ]
     },
     {
       "id": 107,
@@ -985,7 +1089,10 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "panproctocolectomy",
+        "panproctocolectomy and end ileostomy"
+      ]
     },
     {
       "id": 112,
@@ -993,7 +1100,10 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "sigmoid colectomy",
+        "sigmoidectomy"
+      ]
     },
     {
       "id": 115,
@@ -1001,7 +1111,9 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "subtotal colectomy"
+      ]
     },
     {
       "id": 116,
@@ -1009,7 +1121,10 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "total colectomy and ileorectal anastomosis",
+        "total colectomy with ira"
+      ]
     },
     {
       "id": 117,
@@ -1017,7 +1132,10 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "total colectomy and ileostomy",
+        "total colectomy and end ileostomy"
+      ]
     },
     {
       "id": 118,
@@ -1025,7 +1143,9 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "transverse colectomy"
+      ]
     },
     {
       "id": 119,
@@ -1033,7 +1153,10 @@
       "categories": [
         "Procedures / Endoscopy"
       ],
-      "aliases": []
+      "aliases": [
+        "colonoscopy",
+        "diagnostic colonoscopy"
+      ]
     },
     {
       "id": 639,
@@ -1225,7 +1348,10 @@
       "categories": [
         "Procedures / Endoscopy"
       ],
-      "aliases": []
+      "aliases": [
+        "ercp",
+        "diagnostic ercp"
+      ]
     },
     {
       "id": 140,
@@ -1377,7 +1503,12 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "seton insertion",
+        "insertion of seton",
+        "change of seton",
+        "fistula seton"
+      ]
     },
     {
       "id": 650,
@@ -1393,7 +1524,12 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "fistulotomy",
+        "lay open of fistula",
+        "laying open of fistula",
+        "fistula in ano lay open"
+      ]
     },
     {
       "id": 649,
@@ -1441,7 +1577,10 @@
       "categories": [
         "Operations / Upper GI - OG"
       ],
-      "aliases": []
+      "aliases": [
+        "subtotal gastrectomy",
+        "partial gastrectomy"
+      ]
     },
     {
       "id": 162,
@@ -1449,7 +1588,9 @@
       "categories": [
         "Operations / Upper GI - OG"
       ],
-      "aliases": []
+      "aliases": [
+        "total gastrectomy"
+      ]
     },
     {
       "id": 163,
@@ -1569,7 +1710,11 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "banding of haemorrhoids",
+        "haemorrhoid banding",
+        "rubber band ligation of haemorrhoids"
+      ]
     },
     {
       "id": 517,
@@ -1577,7 +1722,11 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "haemorrhoidal artery ligation",
+        "hal procedure",
+        "halo procedure"
+      ]
     },
     {
       "id": 178,
@@ -1593,7 +1742,10 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "haemorrhoidectomy",
+        "open haemorrhoidectomy"
+      ]
     },
     {
       "id": 180,
@@ -1601,7 +1753,10 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "stapled haemorrhoidectomy",
+        "stapled haemorrhoidopexy"
+      ]
     },
     {
       "id": 186,
@@ -1609,7 +1764,12 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "reversal of hartmanns",
+        "hartmanns reversal",
+        "reversal of hartmann",
+        "hartmann reversal"
+      ]
     },
     {
       "id": 185,
@@ -1617,7 +1777,12 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "hartmanns procedure",
+        "hartmann procedure",
+        "hartmanns",
+        "hartmann"
+      ]
     },
     {
       "id": 187,
@@ -1697,7 +1862,10 @@
       "categories": [
         "Operations / General"
       ],
-      "aliases": []
+      "aliases": [
+        "epigastric hernia",
+        "epigastric hernia repair"
+      ]
     },
     {
       "id": 190,
@@ -1705,7 +1873,10 @@
       "categories": [
         "Operations / General"
       ],
-      "aliases": []
+      "aliases": [
+        "femoral hernia",
+        "femoral hernia repair"
+      ]
     },
     {
       "id": 191,
@@ -1713,7 +1884,10 @@
       "categories": [
         "Operations / General"
       ],
-      "aliases": []
+      "aliases": [
+        "incisional hernia",
+        "incisional hernia repair"
+      ]
     },
     {
       "id": 192,
@@ -1729,7 +1903,16 @@
       "categories": [
         "Operations / General"
       ],
-      "aliases": []
+      "aliases": [
+        "inguinal hernia",
+        "inguinal hernia repair",
+        "groin hernia",
+        "groin hernia repair",
+        "laparoscopic inguinal hernia repair",
+        "open inguinal hernia repair",
+        "tep repair",
+        "tapp repair"
+      ]
     },
     {
       "id": 195,
@@ -1793,7 +1976,12 @@
       "categories": [
         "Operations / General"
       ],
-      "aliases": []
+      "aliases": [
+        "umbilical hernia",
+        "umbilical hernia repair",
+        "paraumbilical hernia",
+        "para-umbilical hernia"
+      ]
     },
     {
       "id": 203,
@@ -1833,7 +2021,12 @@
       "categories": [
         "Operations / Vascular"
       ],
-      "aliases": []
+      "aliases": [
+        "hickman line",
+        "hickman",
+        "hickman line insertion",
+        "tunnelled central line"
+      ]
     },
     {
       "id": 534,
@@ -1961,7 +2154,11 @@
       "categories": [
         "Operations / General"
       ],
-      "aliases": []
+      "aliases": [
+        "laparoscopic adhesiolysis",
+        "laparoscopic division of adhesions",
+        "lap adhesiolysis"
+      ]
     },
     {
       "id": 552,
@@ -2009,7 +2206,10 @@
       "categories": [
         "Operations / General"
       ],
-      "aliases": []
+      "aliases": [
+        "open adhesiolysis",
+        "laparotomy and division of adhesions"
+      ]
     },
     {
       "id": 556,
@@ -2673,7 +2873,13 @@
       "categories": [
         "Procedures / Endoscopy"
       ],
-      "aliases": []
+      "aliases": [
+        "ogd",
+        "gastroscopy",
+        "oesophagogastroduodenoscopy",
+        "upper gi endoscopy",
+        "diagnostic ogd"
+      ]
     },
     {
       "id": 717,
@@ -2929,7 +3135,12 @@
       "categories": [
         "Operations / Upper GI - HPB"
       ],
-      "aliases": []
+      "aliases": [
+        "whipple",
+        "whipples",
+        "whipples procedure",
+        "pancreaticoduodenectomy"
+      ]
     },
     {
       "id": 343,
@@ -3025,7 +3236,9 @@
       "categories": [
         "Operations / Endocrine"
       ],
-      "aliases": []
+      "aliases": [
+        "parathyroid"
+      ]
     },
     {
       "id": 352,
@@ -3281,7 +3494,11 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "restorative proctocolectomy",
+        "ileoanal pouch",
+        "proctocolectomy and ileoanal pouch"
+      ]
     },
     {
       "id": 381,
@@ -3529,7 +3746,10 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "high anterior resection",
+        "high ar"
+      ]
     },
     {
       "id": 390,
@@ -3537,7 +3757,9 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "proctectomy"
+      ]
     },
     {
       "id": 391,
@@ -3553,7 +3775,12 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "abdominoperineal excision",
+        "abdominoperineal resection",
+        "apr",
+        "abdomino-perineal resection"
+      ]
     },
     {
       "id": 56,
@@ -3569,7 +3796,12 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "eua rectum",
+        "eua of rectum",
+        "rectal eua",
+        "examination under anaesthesia rectum"
+      ]
     },
     {
       "id": 665,
@@ -3585,7 +3817,10 @@
       "categories": [
         "Operations / Coloproctology"
       ],
-      "aliases": []
+      "aliases": [
+        "low anterior resection",
+        "low ar"
+      ]
     },
     {
       "id": 668,
@@ -3849,7 +4084,11 @@
       "categories": [
         "Procedures / Endoscopy"
       ],
-      "aliases": []
+      "aliases": [
+        "flexible sigmoidoscopy",
+        "flexi sig",
+        "sigmoidoscopy"
+      ]
     },
     {
       "id": 514,
@@ -3897,7 +4136,11 @@
       "categories": [
         "Operations / Upper GI - OG"
       ],
-      "aliases": []
+      "aliases": [
+        "splenectomy",
+        "elective splenectomy",
+        "laparoscopic splenectomy"
+      ]
     },
     {
       "id": 428,
@@ -3905,7 +4148,10 @@
       "categories": [
         "Operations / Upper GI - OG"
       ],
-      "aliases": []
+      "aliases": [
+        "splenectomy for trauma",
+        "trauma splenectomy"
+      ]
     },
     {
       "id": 429,
@@ -4089,7 +4335,12 @@
       "categories": [
         "Operations / Endocrine"
       ],
-      "aliases": []
+      "aliases": [
+        "thyroid lobectomy",
+        "hemithyroidectomy",
+        "thyroid lobe",
+        "hemi thyroidectomy"
+      ]
     },
     {
       "id": 452,
@@ -4121,7 +4372,10 @@
       "categories": [
         "Operations / Endocrine"
       ],
-      "aliases": []
+      "aliases": [
+        "total thyroidectomy",
+        "thyroidectomy"
+      ]
     },
     {
       "id": 456,
