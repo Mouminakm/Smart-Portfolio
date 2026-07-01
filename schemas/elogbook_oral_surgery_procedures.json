@@ -1,0 +1,1717 @@
+{
+  "options_source_id": "elogbook_oral_surgery_procedures",
+  "platform": "elogbook",
+  "discipline": "surgical",
+  "specialty": "Oral Surgery",
+  "entryType": "operation_log",
+  "field": "procedure",
+  "harvested_from": "eLogbook 'Add operation' page (Specialty = Oral Surgery)",
+  "harvested_date": "2026-06-27",
+  "notes": "Each option's 'id' is the eLogbook data-nodeid used to select the procedure in the form (the value for WebView injection). 'name' is the display label / extraction target. A procedure may appear under several categories; the flat 'procedures' list is the authoritative deduplicated picklist, 'tree' preserves the on-site accordion structure for the picker UI and for giving the AI category context. | Spoken-form aliases added 2026-06-30, resolver-validated.",
+  "unique_procedure_count": 123,
+  "procedures": [
+    {
+      "id": 14834,
+      "name": "Upper Dental Clearance",
+      "categories": [
+        "Extraction / Clearance / Multiple Teeth"
+      ],
+      "aliases": [
+        "upper clearance"
+      ]
+    },
+    {
+      "id": 14837,
+      "name": "Lower Dental Clearance",
+      "categories": [
+        "Extraction / Clearance / Multiple Teeth"
+      ],
+      "aliases": [
+        "lower clearance"
+      ]
+    },
+    {
+      "id": 14838,
+      "name": "Full Dental Clearance",
+      "categories": [
+        "Extraction / Clearance / Multiple Teeth"
+      ],
+      "aliases": [
+        "full clearance",
+        "full mouth clearance",
+        "dental clearance"
+      ]
+    },
+    {
+      "id": 14839,
+      "name": "Removal of Multiple Teeth / Roots",
+      "categories": [
+        "Extraction / Clearance / Multiple Teeth"
+      ]
+    },
+    {
+      "id": 14847,
+      "name": "Non-surgical Extraction Permanent Tooth / Root",
+      "categories": [
+        "Extraction / Permanent Tooth / Root (except third molar)"
+      ],
+      "aliases": [
+        "simple extraction",
+        "non surgical extraction",
+        "tooth extraction",
+        "dental extraction",
+        "extraction of tooth"
+      ]
+    },
+    {
+      "id": 14848,
+      "name": "Non-surgical Extraction Supernumerary Tooth",
+      "categories": [
+        "Extraction / Permanent Tooth / Root (except third molar)"
+      ]
+    },
+    {
+      "id": 14849,
+      "name": "Surgical Extraction Non-impacted permanent tooth",
+      "categories": [
+        "Extraction / Permanent Tooth / Root (except third molar)"
+      ],
+      "aliases": [
+        "surgical extraction of tooth",
+        "surgical extraction",
+        "surgical removal of tooth"
+      ]
+    },
+    {
+      "id": 14850,
+      "name": "Surgical removal of impacted permanent tooth (e.g. canines / premolars etc.)",
+      "categories": [
+        "Extraction / Permanent Tooth / Root (except third molar)"
+      ],
+      "aliases": [
+        "surgical removal of impacted tooth",
+        "surgical removal of impacted canine",
+        "impacted tooth removal"
+      ]
+    },
+    {
+      "id": 14851,
+      "name": "Surgical removal of non-impacted supernumerary tooth",
+      "categories": [
+        "Extraction / Permanent Tooth / Root (except third molar)"
+      ]
+    },
+    {
+      "id": 14852,
+      "name": "Surgical removal of impacted supernumerary tooth",
+      "categories": [
+        "Extraction / Permanent Tooth / Root (except third molar)"
+      ]
+    },
+    {
+      "id": 14840,
+      "name": "Non-Surgical Extraction / Elevation of Third Molar",
+      "categories": [
+        "Extraction / Third Molar"
+      ],
+      "aliases": [
+        "wisdom tooth extraction",
+        "third molar extraction",
+        "simple wisdom tooth extraction",
+        "elevation of third molar"
+      ]
+    },
+    {
+      "id": 14841,
+      "name": "Surgical Extraction Mesioangular Mandibular Third Molar",
+      "categories": [
+        "Extraction / Third Molar"
+      ],
+      "aliases": [
+        "mesioangular wisdom tooth",
+        "mesioangular third molar",
+        "surgical removal mesioangular third molar"
+      ]
+    },
+    {
+      "id": 14842,
+      "name": "Surgical Extraction Distoangular Mandibular Third Molar",
+      "categories": [
+        "Extraction / Third Molar"
+      ],
+      "aliases": [
+        "distoangular wisdom tooth",
+        "distoangular third molar"
+      ]
+    },
+    {
+      "id": 14843,
+      "name": "Surgical Extraction Vertical Mandibular Third Molar",
+      "categories": [
+        "Extraction / Third Molar"
+      ],
+      "aliases": [
+        "vertical wisdom tooth",
+        "vertical third molar"
+      ]
+    },
+    {
+      "id": 14844,
+      "name": "Surgical Extraction Horizontal Mandibular Third Molar",
+      "categories": [
+        "Extraction / Third Molar"
+      ],
+      "aliases": [
+        "horizontal wisdom tooth",
+        "horizontal third molar"
+      ]
+    },
+    {
+      "id": 14845,
+      "name": "Surgical Extraction Oblique / Atypical Mandibular Third Molar",
+      "categories": [
+        "Extraction / Third Molar"
+      ]
+    },
+    {
+      "id": 14846,
+      "name": "Surgical Extraction Maxillary Third Molar",
+      "categories": [
+        "Extraction / Third Molar"
+      ],
+      "aliases": [
+        "upper wisdom tooth removal",
+        "maxillary third molar",
+        "upper third molar surgical"
+      ]
+    },
+    {
+      "id": 14853,
+      "name": "Non-surgical Extraction Primary Tooth or Root",
+      "categories": [
+        "Extraction / Primary Tooth / Root"
+      ]
+    },
+    {
+      "id": 14854,
+      "name": "Surgical Extraction Primary Tooth / Root",
+      "categories": [
+        "Extraction / Primary Tooth / Root"
+      ]
+    },
+    {
+      "id": 14855,
+      "name": "Coronectomy of Tooth",
+      "categories": [
+        "Coronectomy / Coronectomy"
+      ],
+      "aliases": [
+        "coronectomy"
+      ]
+    },
+    {
+      "id": 14856,
+      "name": "Open exposure of tooth",
+      "categories": [
+        "Exposure / Open Exposure"
+      ],
+      "aliases": [
+        "surgical exposure of canine",
+        "open exposure of canine",
+        "exposure of tooth"
+      ]
+    },
+    {
+      "id": 14857,
+      "name": "Closed exposure of tooth",
+      "categories": [
+        "Exposure / Closed Exposure"
+      ],
+      "aliases": [
+        "closed exposure of canine"
+      ]
+    },
+    {
+      "id": 14858,
+      "name": "OAC / F closure with Buccal advancement flap",
+      "categories": [
+        "Maxillary Sinus / OAC / OAF"
+      ],
+      "aliases": [
+        "oac closure",
+        "oaf closure",
+        "oroantral communication closure",
+        "buccal advancement flap",
+        "oroantral fistula closure"
+      ]
+    },
+    {
+      "id": 14859,
+      "name": "OAC / F closure with Palatal flap",
+      "categories": [
+        "Maxillary Sinus / OAC / OAF"
+      ]
+    },
+    {
+      "id": 14860,
+      "name": "OAC / F closure with Fat Pad",
+      "categories": [
+        "Maxillary Sinus / OAC / OAF"
+      ]
+    },
+    {
+      "id": 14861,
+      "name": "OAC / F closure with Tissue Graft",
+      "categories": [
+        "Maxillary Sinus / OAC / OAF"
+      ]
+    },
+    {
+      "id": 14862,
+      "name": "Removal of tooth from sinus via antrostomy (Caldwell Luc approach)",
+      "categories": [
+        "Maxillary Sinus / Removal of tooth from sinus"
+      ],
+      "aliases": [
+        "caldwell luc",
+        "removal of tooth from sinus",
+        "tooth in antrum caldwell luc"
+      ]
+    },
+    {
+      "id": 14863,
+      "name": "Removal of tooth from sinus via socket",
+      "categories": [
+        "Maxillary Sinus / Removal of tooth from sinus"
+      ]
+    },
+    {
+      "id": 14864,
+      "name": "Biopsy cystic/soft tissue lesion of jaw bone",
+      "categories": [
+        "Jaw Disease / Biopsy"
+      ],
+      "aliases": [
+        "biopsy of jaw cyst",
+        "biopsy cystic lesion"
+      ]
+    },
+    {
+      "id": 14865,
+      "name": "Biopsy of Bone/hard tissue lesion of jaw bone",
+      "categories": [
+        "Jaw Disease / Biopsy"
+      ]
+    },
+    {
+      "id": 14866,
+      "name": "Marsupialisation / Decompression of cystic lesion",
+      "categories": [
+        "Jaw Disease / Cyst"
+      ],
+      "aliases": [
+        "marsupialisation of cyst",
+        "decompression of cyst",
+        "cyst marsupialisation"
+      ]
+    },
+    {
+      "id": 14867,
+      "name": "Enucleation of cystic lesion",
+      "categories": [
+        "Jaw Disease / Cyst"
+      ],
+      "aliases": [
+        "enucleation of cyst",
+        "cyst enucleation",
+        "enucleation of jaw cyst"
+      ]
+    },
+    {
+      "id": 14868,
+      "name": "Enucleation of cystic lesion + adjunctive treatment (e.g. carnoys)",
+      "categories": [
+        "Jaw Disease / Cyst"
+      ]
+    },
+    {
+      "id": 14954,
+      "name": "Fibro-osseous lesion excision",
+      "categories": [
+        "Jaw Disease / Fibro-osseus / Giant Cell Lesions"
+      ]
+    },
+    {
+      "id": 14955,
+      "name": "Giant Cell lesion excision",
+      "categories": [
+        "Jaw Disease / Fibro-osseus / Giant Cell Lesions"
+      ]
+    },
+    {
+      "id": 14869,
+      "name": "Giant Cell Lesion excision + adjunctive treatment (e.g. injection of steroid)",
+      "categories": [
+        "Jaw Disease / Fibro-osseus / Giant Cell Lesions"
+      ]
+    },
+    {
+      "id": 14870,
+      "name": "Sequestrectomy",
+      "categories": [
+        "Jaw Disease / Necrosis"
+      ]
+    },
+    {
+      "id": 14871,
+      "name": "Debridement ORN / MRONJ",
+      "categories": [
+        "Jaw Disease / Necrosis"
+      ],
+      "aliases": [
+        "debridement of orn",
+        "debridement of mronj",
+        "orn debridement",
+        "mronj debridement"
+      ]
+    },
+    {
+      "id": 14872,
+      "name": "Bloc Resection ORN / MRONJ",
+      "categories": [
+        "Jaw Disease / Necrosis"
+      ],
+      "aliases": [
+        "block resection orn",
+        "bloc resection mronj"
+      ]
+    },
+    {
+      "id": 14873,
+      "name": "Incision and drainage of abscess - intraoral",
+      "categories": [
+        "Jaw Disease / Infection"
+      ],
+      "aliases": [
+        "incision and drainage of abscess",
+        "drainage of dental abscess",
+        "intraoral abscess drainage"
+      ]
+    },
+    {
+      "id": 14874,
+      "name": "Debridement Osteomyelitis",
+      "categories": [
+        "Jaw Disease / Infection"
+      ]
+    },
+    {
+      "id": 14877,
+      "name": "Removal of Odontome",
+      "categories": [
+        "Jaw Disease / Neoplasia"
+      ],
+      "aliases": [
+        "odontome removal"
+      ]
+    },
+    {
+      "id": 14878,
+      "name": "Enucleation of Jaw Bone Tumour",
+      "categories": [
+        "Jaw Disease / Neoplasia"
+      ]
+    },
+    {
+      "id": 14886,
+      "name": "Incisional Biopsy",
+      "categories": [
+        "Oral Mucosa (excludes mucoceles and gingivae) / Oral Mucosa"
+      ]
+    },
+    {
+      "id": 14879,
+      "name": "Excision of oral mucosal lesion/tissue (excision biopsy)",
+      "categories": [
+        "Oral Mucosa (excludes mucoceles and gingivae) / Oral Mucosa"
+      ],
+      "aliases": [
+        "excision of oral mucosal lesion",
+        "excision biopsy oral",
+        "excision of oral lesion"
+      ]
+    },
+    {
+      "id": 14880,
+      "name": "Cryotherapy of oral lesion",
+      "categories": [
+        "Oral Mucosa (excludes mucoceles and gingivae) / Oral Mucosa"
+      ]
+    },
+    {
+      "id": 14881,
+      "name": "Intralesional Injection(s)",
+      "categories": [
+        "Oral Mucosa (excludes mucoceles and gingivae) / Oral Mucosa"
+      ]
+    },
+    {
+      "id": 14882,
+      "name": "Fraenum Release / Fraenectomy",
+      "categories": [
+        "Oral Mucosa (excludes mucoceles and gingivae) / Oral Mucosa"
+      ],
+      "aliases": [
+        "frenectomy",
+        "frenum release",
+        "tongue tie release"
+      ]
+    },
+    {
+      "id": 14883,
+      "name": "Removal of intra-oral piercings",
+      "categories": [
+        "Oral Mucosa (excludes mucoceles and gingivae) / Oral Mucosa"
+      ]
+    },
+    {
+      "id": 14885,
+      "name": "Removal of foreign body from lip/oral mucosa",
+      "categories": [
+        "Oral Mucosa (excludes mucoceles and gingivae) / Oral Mucosa"
+      ]
+    },
+    {
+      "id": 14887,
+      "name": "Lingual Nerve Repair",
+      "categories": [
+        "Nerve / Nerve Repair"
+      ]
+    },
+    {
+      "id": 14888,
+      "name": "Inferior Alveolar Nerve Repair",
+      "categories": [
+        "Nerve / Nerve Repair"
+      ],
+      "aliases": [
+        "ian repair"
+      ]
+    },
+    {
+      "id": 14889,
+      "name": "Cryosurgery – peripheral nerve for TN",
+      "categories": [
+        "Nerve / Trigeminal Neuralgia Surgical Management"
+      ]
+    },
+    {
+      "id": 14890,
+      "name": "Nerve Section - peripheral nerve for TN",
+      "categories": [
+        "Nerve / Trigeminal Neuralgia Surgical Management"
+      ]
+    },
+    {
+      "id": 14891,
+      "name": "Chemical Neurolysis – peripheral nerve for TN",
+      "categories": [
+        "Nerve / Trigeminal Neuralgia Surgical Management"
+      ]
+    },
+    {
+      "id": 14900,
+      "name": "Nerve Surgery NOS",
+      "categories": [
+        "Nerve / Nerve Surgery NOS"
+      ]
+    },
+    {
+      "id": 14892,
+      "name": "Excision of Tori / Exostosis",
+      "categories": [
+        "Pre-prosthetic Surgery / Pre-prosthetic Surgery"
+      ],
+      "aliases": [
+        "excision of tori",
+        "removal of tori",
+        "torus removal",
+        "exostosis excision"
+      ]
+    },
+    {
+      "id": 14893,
+      "name": "Reduction of Tuberosity",
+      "categories": [
+        "Pre-prosthetic Surgery / Pre-prosthetic Surgery"
+      ]
+    },
+    {
+      "id": 14894,
+      "name": "Ridge Reduction",
+      "categories": [
+        "Pre-prosthetic Surgery / Pre-prosthetic Surgery"
+      ]
+    },
+    {
+      "id": 14896,
+      "name": "Alveoplasty",
+      "categories": [
+        "Pre-prosthetic Surgery / Pre-prosthetic Surgery"
+      ],
+      "aliases": [
+        "alveoloplasty"
+      ]
+    },
+    {
+      "id": 14895,
+      "name": "Vestibuloplasty",
+      "categories": [
+        "Pre-prosthetic Surgery / Pre-prosthetic Surgery"
+      ]
+    },
+    {
+      "id": 14897,
+      "name": "Dental Implant Placement - Type 1 (immediate)",
+      "categories": [
+        "Dental Implantology and Grafting / Dental Implant Placement"
+      ],
+      "aliases": [
+        "immediate dental implant",
+        "dental implant placement immediate",
+        "type 1 implant"
+      ]
+    },
+    {
+      "id": 14898,
+      "name": "Dental Implant Placement – Type 2 / 3 (delayed)",
+      "categories": [
+        "Dental Implantology and Grafting / Dental Implant Placement"
+      ],
+      "aliases": [
+        "delayed dental implant",
+        "dental implant placement",
+        "dental implant",
+        "type 2 implant",
+        "type 3 implant"
+      ]
+    },
+    {
+      "id": 14899,
+      "name": "Dental Implant Placement - Type 4 (late / healed or augmented ridge)",
+      "categories": [
+        "Dental Implantology and Grafting / Dental Implant Placement"
+      ]
+    },
+    {
+      "id": 14901,
+      "name": "Zygomatic Implant Placement",
+      "categories": [
+        "Dental Implantology and Grafting / Other Implants"
+      ],
+      "aliases": [
+        "zygomatic implant"
+      ]
+    },
+    {
+      "id": 14902,
+      "name": "Pterygoid Implant Placement",
+      "categories": [
+        "Dental Implantology and Grafting / Other Implants"
+      ]
+    },
+    {
+      "id": 14903,
+      "name": "Trans-sinus Implant Placement",
+      "categories": [
+        "Dental Implantology and Grafting / Other Implants"
+      ]
+    },
+    {
+      "id": 14904,
+      "name": "Explant/removal of Dental Implant",
+      "categories": [
+        "Dental Implantology and Grafting / Other Implants"
+      ],
+      "aliases": [
+        "removal of dental implant",
+        "explant dental implant",
+        "implant removal"
+      ]
+    },
+    {
+      "id": 14905,
+      "name": "Ridge Augmentation with Block – Ramus",
+      "categories": [
+        "Dental Implantology and Grafting / Alveolar Ridge Augmentation: horizontal / vertical"
+      ]
+    },
+    {
+      "id": 14906,
+      "name": "Ridge Augmentation with Block – Symphysis",
+      "categories": [
+        "Dental Implantology and Grafting / Alveolar Ridge Augmentation: horizontal / vertical"
+      ]
+    },
+    {
+      "id": 14907,
+      "name": "Ridge Augmentation with Block – NOS (e.g. other auto, allo, xeno, allop)",
+      "categories": [
+        "Dental Implantology and Grafting / Alveolar Ridge Augmentation: horizontal / vertical"
+      ]
+    },
+    {
+      "id": 14908,
+      "name": "Ridge Augmentation with GBR – resorbable membrane",
+      "categories": [
+        "Dental Implantology and Grafting / Alveolar Ridge Augmentation: horizontal / vertical"
+      ]
+    },
+    {
+      "id": 14909,
+      "name": "Ridge Augmentation with GBR – non-resorbable membrane",
+      "categories": [
+        "Dental Implantology and Grafting / Alveolar Ridge Augmentation: horizontal / vertical"
+      ]
+    },
+    {
+      "id": 14910,
+      "name": "Ridge Augmentation with GBR – 3D printed mesh",
+      "categories": [
+        "Dental Implantology and Grafting / Alveolar Ridge Augmentation: horizontal / vertical"
+      ]
+    },
+    {
+      "id": 14911,
+      "name": "Ridge Augmentation NOS",
+      "categories": [
+        "Dental Implantology and Grafting / Alveolar Ridge Augmentation: horizontal / vertical"
+      ]
+    },
+    {
+      "id": 14912,
+      "name": "Sinus Augmentation - Lateral Window",
+      "categories": [
+        "Dental Implantology and Grafting / Sinus Augmentation"
+      ],
+      "aliases": [
+        "sinus lift",
+        "lateral window sinus augmentation",
+        "sinus augmentation lateral window",
+        "open sinus lift"
+      ]
+    },
+    {
+      "id": 14913,
+      "name": "Sinus Augmentation - Transcrestal",
+      "categories": [
+        "Dental Implantology and Grafting / Sinus Augmentation"
+      ],
+      "aliases": [
+        "transcrestal sinus lift",
+        "transcrestal sinus augmentation",
+        "closed sinus lift"
+      ]
+    },
+    {
+      "id": 14914,
+      "name": "Soft Tissue Augmentation with autograft (e.g. free gingival graft / connective tissue graft / strip graft)",
+      "categories": [
+        "Dental Implantology and Grafting / Soft Tissue Augmentation (dental implant related)"
+      ]
+    },
+    {
+      "id": 14915,
+      "name": "Soft Tissue Augmentation with allograft/xenograft/alloplast",
+      "categories": [
+        "Dental Implantology and Grafting / Soft Tissue Augmentation (dental implant related)"
+      ]
+    },
+    {
+      "id": 14916,
+      "name": "Alveolar Ridge Preservation/Socket Grafting",
+      "categories": [
+        "Dental Implantology and Grafting / Other Alveolar Ridge"
+      ],
+      "aliases": [
+        "socket graft",
+        "socket preservation",
+        "ridge preservation",
+        "alveolar ridge preservation"
+      ]
+    },
+    {
+      "id": 14917,
+      "name": "Alveolar Ridge Splitting",
+      "categories": [
+        "Dental Implantology and Grafting / Other Alveolar Ridge"
+      ]
+    },
+    {
+      "id": 14918,
+      "name": "Periradicular Surgery",
+      "categories": [
+        "Endodontic Surgery / Periradicular"
+      ],
+      "aliases": [
+        "apicectomy",
+        "apical surgery",
+        "root end surgery"
+      ]
+    },
+    {
+      "id": 14919,
+      "name": "Hemi-section of tooth",
+      "categories": [
+        "Periodontal Surgery / Periodontal"
+      ]
+    },
+    {
+      "id": 14920,
+      "name": "Open Flap Debridement",
+      "categories": [
+        "Periodontal Surgery / Periodontal"
+      ]
+    },
+    {
+      "id": 14926,
+      "name": "Gingivectomy.",
+      "categories": [
+        "Periodontal Surgery / Periodontal"
+      ],
+      "aliases": [
+        "gingivectomy"
+      ]
+    },
+    {
+      "id": 14921,
+      "name": "Excision of epulis",
+      "categories": [
+        "Periodontal Surgery / Periodontal"
+      ],
+      "aliases": [
+        "epulis excision"
+      ]
+    },
+    {
+      "id": 14922,
+      "name": "Surgical Crown Lengthening",
+      "categories": [
+        "Periodontal Surgery / Periodontal"
+      ],
+      "aliases": [
+        "crown lengthening"
+      ]
+    },
+    {
+      "id": 14923,
+      "name": "Coronally repositioned flap (recession coverage)",
+      "categories": [
+        "Periodontal Surgery / Periodontal"
+      ]
+    },
+    {
+      "id": 14924,
+      "name": "Soft Tissue augmentation with autograft",
+      "categories": [
+        "Periodontal Surgery / Periodontal"
+      ]
+    },
+    {
+      "id": 14925,
+      "name": "Soft tissue augmentation with allo / xeno / allo",
+      "categories": [
+        "Periodontal Surgery / Periodontal"
+      ]
+    },
+    {
+      "id": 14927,
+      "name": "Open Flap Debridement for periimplantitis",
+      "categories": [
+        "Periodontal Surgery / Peri-implantitis Surgery"
+      ]
+    },
+    {
+      "id": 14928,
+      "name": "Reconstructive Surgery for periimplantitis",
+      "categories": [
+        "Periodontal Surgery / Peri-implantitis Surgery"
+      ]
+    },
+    {
+      "id": 14929,
+      "name": "Resective surgery for periimplantitis (includes implantoplasty)",
+      "categories": [
+        "Periodontal Surgery / Peri-implantitis Surgery"
+      ]
+    },
+    {
+      "id": 14930,
+      "name": "Acupuncture",
+      "categories": [
+        "Temporomandibular Joint / Temporomandibular Joint"
+      ]
+    },
+    {
+      "id": 14931,
+      "name": "Intramuscular Botox",
+      "categories": [
+        "Temporomandibular Joint / Temporomandibular Joint"
+      ],
+      "aliases": [
+        "botox",
+        "masseter botox"
+      ]
+    },
+    {
+      "id": 14933,
+      "name": "Arthrocentesis",
+      "categories": [
+        "Temporomandibular Joint / Temporomandibular Joint"
+      ],
+      "aliases": [
+        "tmj arthrocentesis"
+      ]
+    },
+    {
+      "id": 14932,
+      "name": "Reduction of TMJ Dislocation",
+      "categories": [
+        "Temporomandibular Joint / Temporomandibular Joint"
+      ],
+      "aliases": [
+        "tmj dislocation reduction",
+        "reduction of dislocated jaw"
+      ]
+    },
+    {
+      "id": 14934,
+      "name": "Labial Gland Biopsy",
+      "categories": [
+        "Salivary Gland / Salivary Gland"
+      ],
+      "aliases": [
+        "lip biopsy"
+      ]
+    },
+    {
+      "id": 14935,
+      "name": "Excision Mucocele",
+      "categories": [
+        "Salivary Gland / Salivary Gland"
+      ],
+      "aliases": [
+        "excision of mucocele",
+        "mucocele excision",
+        "removal of mucocele"
+      ]
+    },
+    {
+      "id": 14936,
+      "name": "Excision minor salivary gland tumour",
+      "categories": [
+        "Salivary Gland / Salivary Gland"
+      ]
+    },
+    {
+      "id": 14953,
+      "name": "Salivary duct dilatation",
+      "categories": [
+        "Salivary Gland / Salivary Gland"
+      ]
+    },
+    {
+      "id": 14937,
+      "name": "Salivary duct washout",
+      "categories": [
+        "Salivary Gland / Salivary Gland"
+      ]
+    },
+    {
+      "id": 14938,
+      "name": "Open Extraction Sialolith",
+      "categories": [
+        "Salivary Gland / Salivary Gland"
+      ],
+      "aliases": [
+        "removal of salivary stone",
+        "open removal of sialolith",
+        "sialolith removal",
+        "salivary stone removal"
+      ]
+    },
+    {
+      "id": 14939,
+      "name": "Sialoendoscopy",
+      "categories": [
+        "Salivary Gland / Salivary Gland"
+      ],
+      "aliases": [
+        "salivary endoscopy"
+      ]
+    },
+    {
+      "id": 14940,
+      "name": "Basket Retrieval of Sialolith",
+      "categories": [
+        "Salivary Gland / Salivary Gland"
+      ]
+    },
+    {
+      "id": 14941,
+      "name": "Lithotripsy",
+      "categories": [
+        "Salivary Gland / Salivary Gland"
+      ]
+    },
+    {
+      "id": 14952,
+      "name": "Tooth Autotransplantation",
+      "categories": [
+        "Tooth Transplantation / Transplant"
+      ],
+      "aliases": [
+        "dental autotransplantation",
+        "tooth transplant"
+      ]
+    },
+    {
+      "id": 14942,
+      "name": "Repositioning stabilisation dentoalveolar fracture",
+      "categories": [
+        "Dental Trauma / Dental Trauma"
+      ],
+      "aliases": [
+        "dentoalveolar fracture fixation",
+        "repositioning dentoalveolar fracture",
+        "splinting dentoalveolar fracture"
+      ]
+    },
+    {
+      "id": 14943,
+      "name": "Re-implantation and stabilisation of avulsed tooth",
+      "categories": [
+        "Dental Trauma / Dental Trauma"
+      ],
+      "aliases": [
+        "reimplantation of avulsed tooth",
+        "re-implant avulsed tooth",
+        "splinting avulsed tooth"
+      ]
+    },
+    {
+      "id": 14944,
+      "name": "Repositioning and stabilisation of displaced tooth",
+      "categories": [
+        "Dental Trauma / Dental Trauma"
+      ]
+    },
+    {
+      "id": 14949,
+      "name": "Closure Lip Laceration",
+      "categories": [
+        "Dental Trauma / Dental Trauma"
+      ]
+    },
+    {
+      "id": 14962,
+      "name": "Surgical exploration NOS",
+      "categories": [
+        "Other / Miscellaneous"
+      ]
+    },
+    {
+      "id": 14964,
+      "name": "Minor post-operative procedure",
+      "categories": [
+        "Other / Miscellaneous"
+      ]
+    },
+    {
+      "id": 14945,
+      "name": "Removal of infected fixation plate",
+      "categories": [
+        "Other / Miscellaneous"
+      ]
+    },
+    {
+      "id": 14946,
+      "name": "Control of haemorrhage",
+      "categories": [
+        "Other / Miscellaneous"
+      ],
+      "aliases": [
+        "arrest of bleeding",
+        "control of bleeding",
+        "post extraction bleeding"
+      ]
+    },
+    {
+      "id": 14947,
+      "name": "Retrieval of displaced root (excluding maxillary sinus)",
+      "categories": [
+        "Other / Miscellaneous"
+      ],
+      "aliases": [
+        "retrieval of displaced root",
+        "removal of displaced root",
+        "root retrieval"
+      ]
+    },
+    {
+      "id": 14963,
+      "name": "Laser ablation of oromucosal or lip lesion",
+      "categories": [
+        "Other / Miscellaneous"
+      ]
+    },
+    {
+      "id": 14948,
+      "name": "Use of PRF / PRP or similar",
+      "categories": [
+        "Other / Miscellaneous"
+      ]
+    },
+    {
+      "id": 14956,
+      "name": "Orofacial Pain Non-Surgical Management",
+      "categories": [
+        "Non-Surgical Activity / Orofacial Pain"
+      ]
+    },
+    {
+      "id": 14957,
+      "name": "Oral Mucosal Disease Non-surgical Management",
+      "categories": [
+        "Non-Surgical Activity / Oral Mucosal Disease"
+      ]
+    },
+    {
+      "id": 14958,
+      "name": "Salivary Gland Disease Non-surgical Management",
+      "categories": [
+        "Non-Surgical Activity / Salivary Gland Disease"
+      ]
+    },
+    {
+      "id": 14959,
+      "name": "Jaw Bone Disease Non-Surgical Management",
+      "categories": [
+        "Non-Surgical Activity / Jaw Bone Disease"
+      ]
+    },
+    {
+      "id": 14960,
+      "name": "Other Non-surgical Activity NOS",
+      "categories": [
+        "Non-Surgical Activity / Other Non-surgical Activity"
+      ]
+    }
+  ],
+  "tree": {
+    "Extraction": {
+      "Clearance / Multiple Teeth": [
+        {
+          "id": 14834,
+          "name": "Upper Dental Clearance"
+        },
+        {
+          "id": 14837,
+          "name": "Lower Dental Clearance"
+        },
+        {
+          "id": 14838,
+          "name": "Full Dental Clearance"
+        },
+        {
+          "id": 14839,
+          "name": "Removal of Multiple Teeth / Roots"
+        }
+      ],
+      "Permanent Tooth / Root (except third molar)": [
+        {
+          "id": 14847,
+          "name": "Non-surgical Extraction Permanent Tooth / Root"
+        },
+        {
+          "id": 14848,
+          "name": "Non-surgical Extraction Supernumerary Tooth"
+        },
+        {
+          "id": 14849,
+          "name": "Surgical Extraction Non-impacted permanent tooth"
+        },
+        {
+          "id": 14850,
+          "name": "Surgical removal of impacted permanent tooth (e.g. canines / premolars etc.)"
+        },
+        {
+          "id": 14851,
+          "name": "Surgical removal of non-impacted supernumerary tooth"
+        },
+        {
+          "id": 14852,
+          "name": "Surgical removal of impacted supernumerary tooth"
+        }
+      ],
+      "Third Molar": [
+        {
+          "id": 14840,
+          "name": "Non-Surgical Extraction / Elevation of Third Molar"
+        },
+        {
+          "id": 14841,
+          "name": "Surgical Extraction Mesioangular Mandibular Third Molar"
+        },
+        {
+          "id": 14842,
+          "name": "Surgical Extraction Distoangular Mandibular Third Molar"
+        },
+        {
+          "id": 14843,
+          "name": "Surgical Extraction Vertical Mandibular Third Molar"
+        },
+        {
+          "id": 14844,
+          "name": "Surgical Extraction Horizontal Mandibular Third Molar"
+        },
+        {
+          "id": 14845,
+          "name": "Surgical Extraction Oblique / Atypical Mandibular Third Molar"
+        },
+        {
+          "id": 14846,
+          "name": "Surgical Extraction Maxillary Third Molar"
+        }
+      ],
+      "Primary Tooth / Root": [
+        {
+          "id": 14853,
+          "name": "Non-surgical Extraction Primary Tooth or Root"
+        },
+        {
+          "id": 14854,
+          "name": "Surgical Extraction Primary Tooth / Root"
+        }
+      ]
+    },
+    "Coronectomy": {
+      "Coronectomy": [
+        {
+          "id": 14855,
+          "name": "Coronectomy of Tooth"
+        }
+      ]
+    },
+    "Exposure": {
+      "Open Exposure": [
+        {
+          "id": 14856,
+          "name": "Open exposure of tooth"
+        }
+      ],
+      "Closed Exposure": [
+        {
+          "id": 14857,
+          "name": "Closed exposure of tooth"
+        }
+      ]
+    },
+    "Maxillary Sinus": {
+      "OAC / OAF": [
+        {
+          "id": 14858,
+          "name": "OAC / F closure with Buccal advancement flap"
+        },
+        {
+          "id": 14859,
+          "name": "OAC / F closure with Palatal flap"
+        },
+        {
+          "id": 14860,
+          "name": "OAC / F closure with Fat Pad"
+        },
+        {
+          "id": 14861,
+          "name": "OAC / F closure with Tissue Graft"
+        }
+      ],
+      "Removal of tooth from sinus": [
+        {
+          "id": 14862,
+          "name": "Removal of tooth from sinus via antrostomy (Caldwell Luc approach)"
+        },
+        {
+          "id": 14863,
+          "name": "Removal of tooth from sinus via socket"
+        }
+      ]
+    },
+    "Jaw Disease": {
+      "Biopsy": [
+        {
+          "id": 14864,
+          "name": "Biopsy cystic/soft tissue lesion of jaw bone"
+        },
+        {
+          "id": 14865,
+          "name": "Biopsy of Bone/hard tissue lesion of jaw bone"
+        }
+      ],
+      "Cyst": [
+        {
+          "id": 14866,
+          "name": "Marsupialisation / Decompression of cystic lesion"
+        },
+        {
+          "id": 14867,
+          "name": "Enucleation of cystic lesion"
+        },
+        {
+          "id": 14868,
+          "name": "Enucleation of cystic lesion + adjunctive treatment (e.g. carnoys)"
+        }
+      ],
+      "Fibro-osseus / Giant Cell Lesions": [
+        {
+          "id": 14954,
+          "name": "Fibro-osseous lesion excision"
+        },
+        {
+          "id": 14955,
+          "name": "Giant Cell lesion excision"
+        },
+        {
+          "id": 14869,
+          "name": "Giant Cell Lesion excision + adjunctive treatment (e.g. injection of steroid)"
+        }
+      ],
+      "Necrosis": [
+        {
+          "id": 14870,
+          "name": "Sequestrectomy"
+        },
+        {
+          "id": 14871,
+          "name": "Debridement ORN / MRONJ"
+        },
+        {
+          "id": 14872,
+          "name": "Bloc Resection ORN / MRONJ"
+        }
+      ],
+      "Infection": [
+        {
+          "id": 14873,
+          "name": "Incision and drainage of abscess - intraoral"
+        },
+        {
+          "id": 14874,
+          "name": "Debridement Osteomyelitis"
+        }
+      ],
+      "Neoplasia": [
+        {
+          "id": 14877,
+          "name": "Removal of Odontome"
+        },
+        {
+          "id": 14878,
+          "name": "Enucleation of Jaw Bone Tumour"
+        }
+      ]
+    },
+    "Oral Mucosa (excludes mucoceles and gingivae)": {
+      "Oral Mucosa": [
+        {
+          "id": 14886,
+          "name": "Incisional Biopsy"
+        },
+        {
+          "id": 14879,
+          "name": "Excision of oral mucosal lesion/tissue (excision biopsy)"
+        },
+        {
+          "id": 14880,
+          "name": "Cryotherapy of oral lesion"
+        },
+        {
+          "id": 14881,
+          "name": "Intralesional Injection(s)"
+        },
+        {
+          "id": 14882,
+          "name": "Fraenum Release / Fraenectomy"
+        },
+        {
+          "id": 14883,
+          "name": "Removal of intra-oral piercings"
+        },
+        {
+          "id": 14885,
+          "name": "Removal of foreign body from lip/oral mucosa"
+        }
+      ]
+    },
+    "Nerve": {
+      "Nerve Repair": [
+        {
+          "id": 14887,
+          "name": "Lingual Nerve Repair"
+        },
+        {
+          "id": 14888,
+          "name": "Inferior Alveolar Nerve Repair"
+        }
+      ],
+      "Trigeminal Neuralgia Surgical Management": [
+        {
+          "id": 14889,
+          "name": "Cryosurgery – peripheral nerve for TN"
+        },
+        {
+          "id": 14890,
+          "name": "Nerve Section - peripheral nerve for TN"
+        },
+        {
+          "id": 14891,
+          "name": "Chemical Neurolysis – peripheral nerve for TN"
+        }
+      ],
+      "Nerve Surgery NOS": [
+        {
+          "id": 14900,
+          "name": "Nerve Surgery NOS"
+        }
+      ]
+    },
+    "Pre-prosthetic Surgery": {
+      "Pre-prosthetic Surgery": [
+        {
+          "id": 14892,
+          "name": "Excision of Tori / Exostosis"
+        },
+        {
+          "id": 14893,
+          "name": "Reduction of Tuberosity"
+        },
+        {
+          "id": 14894,
+          "name": "Ridge Reduction"
+        },
+        {
+          "id": 14896,
+          "name": "Alveoplasty"
+        },
+        {
+          "id": 14895,
+          "name": "Vestibuloplasty"
+        }
+      ]
+    },
+    "Dental Implantology and Grafting": {
+      "Dental Implant Placement": [
+        {
+          "id": 14897,
+          "name": "Dental Implant Placement - Type 1 (immediate)"
+        },
+        {
+          "id": 14898,
+          "name": "Dental Implant Placement – Type 2 / 3 (delayed)"
+        },
+        {
+          "id": 14899,
+          "name": "Dental Implant Placement - Type 4 (late / healed or augmented ridge)"
+        }
+      ],
+      "Other Implants": [
+        {
+          "id": 14901,
+          "name": "Zygomatic Implant Placement"
+        },
+        {
+          "id": 14902,
+          "name": "Pterygoid Implant Placement"
+        },
+        {
+          "id": 14903,
+          "name": "Trans-sinus Implant Placement"
+        },
+        {
+          "id": 14904,
+          "name": "Explant/removal of Dental Implant"
+        }
+      ],
+      "Alveolar Ridge Augmentation: horizontal / vertical": [
+        {
+          "id": 14905,
+          "name": "Ridge Augmentation with Block – Ramus"
+        },
+        {
+          "id": 14906,
+          "name": "Ridge Augmentation with Block – Symphysis"
+        },
+        {
+          "id": 14907,
+          "name": "Ridge Augmentation with Block – NOS (e.g. other auto, allo, xeno, allop)"
+        },
+        {
+          "id": 14908,
+          "name": "Ridge Augmentation with GBR – resorbable membrane"
+        },
+        {
+          "id": 14909,
+          "name": "Ridge Augmentation with GBR – non-resorbable membrane"
+        },
+        {
+          "id": 14910,
+          "name": "Ridge Augmentation with GBR – 3D printed mesh"
+        },
+        {
+          "id": 14911,
+          "name": "Ridge Augmentation NOS"
+        }
+      ],
+      "Sinus Augmentation": [
+        {
+          "id": 14912,
+          "name": "Sinus Augmentation - Lateral Window"
+        },
+        {
+          "id": 14913,
+          "name": "Sinus Augmentation - Transcrestal"
+        }
+      ],
+      "Soft Tissue Augmentation (dental implant related)": [
+        {
+          "id": 14914,
+          "name": "Soft Tissue Augmentation with autograft (e.g. free gingival graft / connective tissue graft / strip graft)"
+        },
+        {
+          "id": 14915,
+          "name": "Soft Tissue Augmentation with allograft/xenograft/alloplast"
+        }
+      ],
+      "Other Alveolar Ridge": [
+        {
+          "id": 14916,
+          "name": "Alveolar Ridge Preservation/Socket Grafting"
+        },
+        {
+          "id": 14917,
+          "name": "Alveolar Ridge Splitting"
+        }
+      ]
+    },
+    "Endodontic Surgery": {
+      "Periradicular": [
+        {
+          "id": 14918,
+          "name": "Periradicular Surgery"
+        }
+      ]
+    },
+    "Periodontal Surgery": {
+      "Periodontal": [
+        {
+          "id": 14919,
+          "name": "Hemi-section of tooth"
+        },
+        {
+          "id": 14920,
+          "name": "Open Flap Debridement"
+        },
+        {
+          "id": 14926,
+          "name": "Gingivectomy."
+        },
+        {
+          "id": 14921,
+          "name": "Excision of epulis"
+        },
+        {
+          "id": 14922,
+          "name": "Surgical Crown Lengthening"
+        },
+        {
+          "id": 14923,
+          "name": "Coronally repositioned flap (recession coverage)"
+        },
+        {
+          "id": 14924,
+          "name": "Soft Tissue augmentation with autograft"
+        },
+        {
+          "id": 14925,
+          "name": "Soft tissue augmentation with allo / xeno / allo"
+        }
+      ],
+      "Peri-implantitis Surgery": [
+        {
+          "id": 14927,
+          "name": "Open Flap Debridement for periimplantitis"
+        },
+        {
+          "id": 14928,
+          "name": "Reconstructive Surgery for periimplantitis"
+        },
+        {
+          "id": 14929,
+          "name": "Resective surgery for periimplantitis (includes implantoplasty)"
+        }
+      ]
+    },
+    "Temporomandibular Joint": {
+      "Temporomandibular Joint": [
+        {
+          "id": 14930,
+          "name": "Acupuncture"
+        },
+        {
+          "id": 14931,
+          "name": "Intramuscular Botox"
+        },
+        {
+          "id": 14933,
+          "name": "Arthrocentesis"
+        },
+        {
+          "id": 14932,
+          "name": "Reduction of TMJ Dislocation"
+        }
+      ]
+    },
+    "Salivary Gland": {
+      "Salivary Gland": [
+        {
+          "id": 14934,
+          "name": "Labial Gland Biopsy"
+        },
+        {
+          "id": 14935,
+          "name": "Excision Mucocele"
+        },
+        {
+          "id": 14936,
+          "name": "Excision minor salivary gland tumour"
+        },
+        {
+          "id": 14953,
+          "name": "Salivary duct dilatation"
+        },
+        {
+          "id": 14937,
+          "name": "Salivary duct washout"
+        },
+        {
+          "id": 14938,
+          "name": "Open Extraction Sialolith"
+        },
+        {
+          "id": 14939,
+          "name": "Sialoendoscopy"
+        },
+        {
+          "id": 14940,
+          "name": "Basket Retrieval of Sialolith"
+        },
+        {
+          "id": 14941,
+          "name": "Lithotripsy"
+        }
+      ]
+    },
+    "Tooth Transplantation": {
+      "Transplant": [
+        {
+          "id": 14952,
+          "name": "Tooth Autotransplantation"
+        }
+      ]
+    },
+    "Dental Trauma": {
+      "Dental Trauma": [
+        {
+          "id": 14942,
+          "name": "Repositioning stabilisation dentoalveolar fracture"
+        },
+        {
+          "id": 14943,
+          "name": "Re-implantation and stabilisation of avulsed tooth"
+        },
+        {
+          "id": 14944,
+          "name": "Repositioning and stabilisation of displaced tooth"
+        },
+        {
+          "id": 14949,
+          "name": "Closure Lip Laceration"
+        }
+      ]
+    },
+    "Other": {
+      "Miscellaneous": [
+        {
+          "id": 14962,
+          "name": "Surgical exploration NOS"
+        },
+        {
+          "id": 14964,
+          "name": "Minor post-operative procedure"
+        },
+        {
+          "id": 14945,
+          "name": "Removal of infected fixation plate"
+        },
+        {
+          "id": 14946,
+          "name": "Control of haemorrhage"
+        },
+        {
+          "id": 14947,
+          "name": "Retrieval of displaced root (excluding maxillary sinus)"
+        },
+        {
+          "id": 14963,
+          "name": "Laser ablation of oromucosal or lip lesion"
+        },
+        {
+          "id": 14948,
+          "name": "Use of PRF / PRP or similar"
+        }
+      ]
+    },
+    "Non-Surgical Activity": {
+      "Orofacial Pain": [
+        {
+          "id": 14956,
+          "name": "Orofacial Pain Non-Surgical Management"
+        }
+      ],
+      "Oral Mucosal Disease": [
+        {
+          "id": 14957,
+          "name": "Oral Mucosal Disease Non-surgical Management"
+        }
+      ],
+      "Salivary Gland Disease": [
+        {
+          "id": 14958,
+          "name": "Salivary Gland Disease Non-surgical Management"
+        }
+      ],
+      "Jaw Bone Disease": [
+        {
+          "id": 14959,
+          "name": "Jaw Bone Disease Non-Surgical Management"
+        }
+      ],
+      "Other Non-surgical Activity": [
+        {
+          "id": 14960,
+          "name": "Other Non-surgical Activity NOS"
+        }
+      ]
+    }
+  }
+}

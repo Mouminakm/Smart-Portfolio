@@ -1,0 +1,353 @@
+{
+  "schemaId": "elogbook_vascular_operation_log",
+  "platform": "elogbook",
+  "discipline": "surgical",
+  "specialty": "vascular",
+  "entryType": "operation_log",
+  "harvested_from": "eLogbook 'Add operation' page (Specialty = Vascular)",
+  "harvested_date": "2026-06-30",
+  "requiredFlagsAreInferred": true,
+  "notes": "Built from the live Vascular 'Add operation' form. Common core only; no specialty-specific fields. Patient block uses age (years/months), excluded from fill.",
+  "fieldCount": 17,
+  "fields": [
+    {
+      "id": "operationspecialty",
+      "label": "Specialty",
+      "inputType": "select",
+      "selector": "#operationspecialty",
+      "required": true,
+      "options": [
+        {
+          "value": "CardiacSur",
+          "label": "Cardiothoracic Surgery"
+        },
+        {
+          "value": "GeneralSur",
+          "label": "General Surgery"
+        },
+        {
+          "value": "NeuroSurg",
+          "label": "Neurosurgery"
+        },
+        {
+          "value": "Ophth",
+          "label": "Ophthalmology"
+        },
+        {
+          "value": "OralandMax",
+          "label": "Oral and Maxillofacial surgery"
+        },
+        {
+          "value": "OralSurg",
+          "label": "Oral Surgery"
+        },
+        {
+          "value": "Otolaryngo",
+          "label": "Otolaryngology"
+        },
+        {
+          "value": "Paediatric",
+          "label": "Paediatric Surgery"
+        },
+        {
+          "value": "PlasticSur",
+          "label": "Plastic Surgery"
+        },
+        {
+          "value": "Ortho",
+          "label": "Trauma and Orthopaedic Surgery"
+        },
+        {
+          "value": "Urology",
+          "label": "Urology"
+        },
+        {
+          "value": "Vascular",
+          "label": "Vascular"
+        }
+      ]
+    },
+    {
+      "id": "patientid",
+      "label": "Patient ID",
+      "inputType": "text",
+      "selector": "#patientid",
+      "required": false
+    },
+    {
+      "id": "AppPatientAgeDateofBirth_ageyears",
+      "label": "Patient age (years)",
+      "inputType": "number",
+      "selector": "#AppPatientAgeDateofBirth_ageyears",
+      "required": true
+    },
+    {
+      "id": "AppPatientAgeDateofBirth_agemonths",
+      "label": "Patient age (months)",
+      "inputType": "number",
+      "selector": "#AppPatientAgeDateofBirth_agemonths",
+      "required": false
+    },
+    {
+      "id": "dateofoperation",
+      "label": "Date of Operation",
+      "inputType": "date",
+      "selector": "#dateofoperation",
+      "required": true
+    },
+    {
+      "id": "private",
+      "label": "Private",
+      "inputType": "checkbox",
+      "selector": "#private",
+      "required": false
+    },
+    {
+      "id": "cepod",
+      "label": "CEPOD",
+      "inputType": "select",
+      "selector": "#cepod",
+      "required": true,
+      "options": [
+        {
+          "value": "4",
+          "label": "Elective: Surgery at convenient time"
+        },
+        {
+          "value": "1",
+          "label": "Scheduled: Early surgery e.g. malignancy (<3 wks)"
+        },
+        {
+          "value": "2",
+          "label": "Urgent: Surgery ASAP after resus (<24 hr)"
+        },
+        {
+          "value": "3",
+          "label": "Emergency: Immediate surgery within 1hr"
+        }
+      ]
+    },
+    {
+      "id": "asagrade",
+      "label": "ASA Grade",
+      "inputType": "select",
+      "selector": "#asagrade",
+      "required": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "Fit and Well"
+        },
+        {
+          "value": "2",
+          "label": "Mild Systemic Disease"
+        },
+        {
+          "value": "3",
+          "label": "Significant Systemic Disease"
+        },
+        {
+          "value": "4",
+          "label": "Life Threatening Disease"
+        },
+        {
+          "value": "5",
+          "label": "Not Expected to Survive 24hrs"
+        }
+      ]
+    },
+    {
+      "id": "procedure",
+      "label": "Procedure",
+      "inputType": "autocomplete",
+      "selector": "#operationsAccordion-Typeahead",
+      "required": true
+    },
+    {
+      "id": "hospitalsAccordion",
+      "label": "Hospital",
+      "inputType": "autocomplete",
+      "selector": "#hospitalsAccordion-Typeahead",
+      "required": true
+    },
+    {
+      "id": "responsibleconsultant",
+      "label": "Responsible Consultant",
+      "inputType": "select",
+      "selector": "#responsibleconsultant",
+      "required": true,
+      "options": [
+        {
+          "value": "UNKNOWN",
+          "label": "- - (-) (UNKNOWN)"
+        },
+        {
+          "value": "6153226",
+          "label": "6153226 Lang (JL) (6153226)"
+        },
+        {
+          "value": "6130103",
+          "label": "Anthony JESURASA (AJ) (6130103)"
+        },
+        {
+          "value": "6164083",
+          "label": "Bhaskar Thakur (BT) (6164083)"
+        },
+        {
+          "value": "5199357",
+          "label": "Chirag Patel (CP) (5199357)"
+        },
+        {
+          "value": "4695550",
+          "label": "Christopher Uff (CU) (4695550)"
+        },
+        {
+          "value": "6085152",
+          "label": "Dimitrios Paraskevopoulos (DP) (6085152)"
+        },
+        {
+          "value": "4198895",
+          "label": "Edward McKintosh (EM) (4198895)"
+        },
+        {
+          "value": "7168029",
+          "label": "Elias Dumour (ED) (7168029)"
+        },
+        {
+          "value": "4299071",
+          "label": "Ganesalingam Narenthiran (GN) (4299071)"
+        },
+        {
+          "value": "5208251",
+          "label": "George Eralil (Mr) (5208251)"
+        },
+        {
+          "value": "6154909",
+          "label": "Gráinne McKenna (GM) (6154909)"
+        },
+        {
+          "value": "4608529",
+          "label": "Greg Fellows (GF) (4608529)"
+        },
+        {
+          "value": "4634870",
+          "label": "James Barber (JB) (4634870)"
+        },
+        {
+          "value": "5205107",
+          "label": "James Galea (JG) (5205107)"
+        },
+        {
+          "value": "3311646",
+          "label": "John Wadley (JW) (3311646)"
+        },
+        {
+          "value": "4767846",
+          "label": "Jonathan Bull (JB) (4767846)"
+        },
+        {
+          "value": "3279870",
+          "label": "Michael Rust Carter (MC) (3279870)"
+        },
+        {
+          "value": "4779261",
+          "label": "Ravindra nannapaneni (RN) (4779261)"
+        },
+        {
+          "value": "4102353",
+          "label": "Richard Edwards (RE) (4102353)"
+        },
+        {
+          "value": "6025198",
+          "label": "Suresh Pushpananthan (SP) (6025198)"
+        },
+        {
+          "value": "6160349",
+          "label": "William Singleton (WS) (6160349)"
+        }
+      ]
+    },
+    {
+      "id": "supervision",
+      "label": "Level of Supervision",
+      "inputType": "select",
+      "selector": "#supervision",
+      "required": true,
+      "options": [
+        {
+          "value": "1",
+          "label": "Assisting"
+        },
+        {
+          "value": "2",
+          "label": "Supervised-trainer scrubbed"
+        },
+        {
+          "value": "3",
+          "label": "Supervised-trainer unscrubbed but in theatre"
+        },
+        {
+          "value": "4",
+          "label": "Performed"
+        },
+        {
+          "value": "5",
+          "label": "Training a trainee"
+        },
+        {
+          "value": "10",
+          "label": "Observed"
+        }
+      ]
+    },
+    {
+      "id": "roboticsurgery",
+      "label": "Robotic Surgery",
+      "inputType": "checkbox",
+      "selector": "#roboticsurgery",
+      "required": false
+    },
+    {
+      "id": "ishubcase",
+      "label": "Hub Case",
+      "inputType": "radio",
+      "selector": "#ishubcase",
+      "required": false,
+      "options": [
+        {
+          "label": "Unknown",
+          "selector": "#ishubcase0"
+        },
+        {
+          "label": "No",
+          "selector": "#ishubcase1"
+        },
+        {
+          "label": "Yes",
+          "selector": "#ishubcase2"
+        }
+      ]
+    },
+    {
+      "id": "complicationscheck",
+      "label": "Complications",
+      "inputType": "checkbox",
+      "selector": "#complicationscheck",
+      "required": false
+    },
+    {
+      "id": "complicationnotes",
+      "label": "Complication Notes",
+      "inputType": "textarea",
+      "selector": "#complicationnotes",
+      "required": false
+    },
+    {
+      "id": "operationnotes",
+      "label": "Operation Notes",
+      "inputType": "textarea",
+      "selector": "#operationnotes",
+      "required": false
+    }
+  ]
+}

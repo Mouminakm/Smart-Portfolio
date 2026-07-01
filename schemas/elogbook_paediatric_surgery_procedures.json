@@ -1,0 +1,7225 @@
+{
+  "options_source_id": "elogbook_paediatric_surgery_procedures",
+  "platform": "elogbook",
+  "discipline": "surgical",
+  "specialty": "Paediatric Surgery",
+  "entryType": "operation_log",
+  "field": "procedure",
+  "harvested_from": "eLogbook 'Add operation' page (Specialty = Paediatric Surgery)",
+  "harvested_date": "2026-06-27",
+  "notes": "Each option's 'id' is the eLogbook data-nodeid used to select the procedure in the form (the value for WebView injection). 'name' is the display label / extraction target. A procedure may appear under several categories; the flat 'procedures' list is the authoritative deduplicated picklist, 'tree' preserves the on-site accordion structure for the picker UI and for giving the AI category context. | Spoken-form aliases added 2026-06-30, resolver-validated.",
+  "unique_procedure_count": 546,
+  "procedures": [
+    {
+      "id": 452,
+      "name": "1st stage orchidopexy",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ],
+      "aliases": [
+        "first stage orchidopexy"
+      ]
+    },
+    {
+      "id": 453,
+      "name": "2nd stage orchidopexy",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ],
+      "aliases": [
+        "second stage orchidopexy"
+      ]
+    },
+    {
+      "id": 643,
+      "name": "Abdominal approach for anorectal/cloacal malformation",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 697,
+      "name": "Abdominal wall repair NOS",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 390,
+      "name": "Adrenalectomy",
+      "categories": [
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 698,
+      "name": "Anal dilatation/calibration",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 374,
+      "name": "Anoplasty",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 361,
+      "name": "Anorectal stimulation",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 375,
+      "name": "Anorectal stretch",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 372,
+      "name": "Anterior repair of anal sphincter",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 302,
+      "name": "Antireflux fundoplication (open abdo approach)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 636,
+      "name": "Aortopexy",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Thoracic",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 266,
+      "name": "Appendicectomy (Laparoscopic)",
+      "categories": [
+        "Operation Groups / Laparoscopic Procedures"
+      ],
+      "aliases": [
+        "appendicectomy",
+        "appendectomy",
+        "laparoscopic appendicectomy",
+        "lap appendicectomy"
+      ]
+    },
+    {
+      "id": 330,
+      "name": "Appendicostomy (ACE)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 552,
+      "name": "Application of preformed silo to gastroschisis",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal abdominal wall incl hernias"
+      ]
+    },
+    {
+      "id": 554,
+      "name": "Application of silo to exomphalos (operative)",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal abdominal wall incl hernias"
+      ]
+    },
+    {
+      "id": 556,
+      "name": "Application of silo to gastroschisis (operative)",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal abdominal wall incl hernias"
+      ]
+    },
+    {
+      "id": 464,
+      "name": "Artificial errection",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 286,
+      "name": "Aspiration of pleural cavity",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Thoracic",
+        "Operation Groups / Oncology",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 692,
+      "name": "Attention to ACE",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 794,
+      "name": "Attention to burn",
+      "categories": [
+        "Operation Groups / General",
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 522,
+      "name": "Attention to central line",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal",
+        "Operation Groups / Neonatal / Neonatal Miscellaneous",
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 306,
+      "name": "Attention to gastrostomy tube (incl change)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 743,
+      "name": "Attention to ileostomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 768,
+      "name": "Attention to jejunostomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 774,
+      "name": "Attention to silo",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal abdominal wall incl hernias"
+      ]
+    },
+    {
+      "id": 748,
+      "name": "Attention to VUJ/ureteric orifice",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 662,
+      "name": "Attention to wound/dressing",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 772,
+      "name": "Attention to/through oesophageal stent",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus"
+      ]
+    },
+    {
+      "id": 505,
+      "name": "Avulsion of nail",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 392,
+      "name": "Bilateral inguinal herniotomy",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)",
+        "Operation Groups / Neonatal / Neonatal abdominal wall incl hernias"
+      ],
+      "aliases": [
+        "bilateral herniotomy"
+      ]
+    },
+    {
+      "id": 451,
+      "name": "Bilateral orchidopexy",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 415,
+      "name": "Bilateral ureteric reimplantation",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 804,
+      "name": "Bilateral ureteric reimplantation (Robotic)",
+      "categories": [
+        "Operation Groups / Robotic Surgery",
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 689,
+      "name": "Biopsy of intra-abdominal tumour NEC",
+      "categories": [
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 494,
+      "name": "Biopsy of lesion of head or neck",
+      "categories": [
+        "Operation Groups / General / Head and Neck",
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes",
+        "Operation Groups / Neonatal / Neonatal Miscellaneous",
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 654,
+      "name": "Biopsy of lipoblastomatosis",
+      "categories": [
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 750,
+      "name": "Biopsy of soft tissue tumour NOS",
+      "categories": [
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 461,
+      "name": "Biopsy of testis",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 792,
+      "name": "Biopsy/excision of breast lump",
+      "categories": [
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 293,
+      "name": "Biopsy/excision of lesion of mouth NEC",
+      "categories": [
+        "Operation Groups / General / Head and Neck"
+      ]
+    },
+    {
+      "id": 725,
+      "name": "Biopsy/excision of thoracic tumour",
+      "categories": [
+        "Operation Groups / Oncology",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 422,
+      "name": "Bladder augmentation",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 751,
+      "name": "Bladder neck reconstruction",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 423,
+      "name": "Bladder operation NEC",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 719,
+      "name": "Botox injection into anal sphincter",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 695,
+      "name": "Bowel lengthening procedure",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 341,
+      "name": "Caecostomy (tube/button)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 630,
+      "name": "Cannulation for ECMO",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal"
+      ]
+    },
+    {
+      "id": 301,
+      "name": "Cardiomyotomy (Heller op for achalasia)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus"
+      ]
+    },
+    {
+      "id": 370,
+      "name": "Cautery of perianal warts",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 645,
+      "name": "Cervical Sympathectomy",
+      "categories": [
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Change of PEG tube to gastrostomy button",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 434,
+      "name": "Change of suprapubic catheter",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Urology",
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 503,
+      "name": "Chemical destruction of nail bed",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Cholecystectomy (laparoscopic)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Biliary",
+        "Operation Groups / Laparoscopic Procedures"
+      ]
+    },
+    {
+      "id": 529,
+      "name": "Cholecystectomy (open)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Biliary"
+      ]
+    },
+    {
+      "id": 798,
+      "name": "Cholecystectomy (Robotic)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Biliary",
+        "Operation Groups / Robotic Surgery"
+      ]
+    },
+    {
+      "id": 799,
+      "name": "Choledocal cystectomy (Robotic)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Biliary",
+        "Operation Groups / Robotic Surgery"
+      ]
+    },
+    {
+      "id": 466,
+      "name": "Circumcision - ritual",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ],
+      "aliases": [
+        "ritual circumcision"
+      ]
+    },
+    {
+      "id": 465,
+      "name": "Circumcision - standard",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ],
+      "aliases": [
+        "circumcision",
+        "standard circumcision"
+      ]
+    },
+    {
+      "id": 703,
+      "name": "Cloacal Reconstruction",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal",
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 642,
+      "name": "Closure of abdomen",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 608,
+      "name": "Closure of bladder exstrophy",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Closure of bladder neck (trans-vesical)",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 342,
+      "name": "Closure of caecostomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 345,
+      "name": "Closure of colostomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 509,
+      "name": "Closure of Exomphalos",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal abdominal wall incl hernias"
+      ]
+    },
+    {
+      "id": 609,
+      "name": "Closure of gastric perforation",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 709,
+      "name": "Closure of gastrocolic fistula",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 780,
+      "name": "Closure of gastrocutaneous fistula",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 508,
+      "name": "Closure of Gastroschisis",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal abdominal wall incl hernias"
+      ]
+    },
+    {
+      "id": 305,
+      "name": "Closure of gastrostomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 610,
+      "name": "Closure of H Tracheo-oesophageal fistula",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus"
+      ]
+    },
+    {
+      "id": 324,
+      "name": "Closure of ileostomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 317,
+      "name": "Closure of jejunostomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 585,
+      "name": "Closure of myelomeningocoele",
+      "categories": [
+        "Operation Groups / General / Neuromuscular",
+        "Operation Groups / Neonatal"
+      ]
+    },
+    {
+      "id": 412,
+      "name": "Closure of nephrostomy",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 294,
+      "name": "Closure of tracheo-oesophageal fistula",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal",
+        "Operation Groups / Neonatal / Neonatal Thoracic"
+      ]
+    },
+    {
+      "id": 276,
+      "name": "Closure of tracheostomy",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Thoracic",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 577,
+      "name": "Closure of upper pouch TOF (cervical incision)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal",
+        "Operation Groups / Neonatal / Neonatal Thoracic"
+      ]
+    },
+    {
+      "id": 578,
+      "name": "Closure of upper pouch TOF (cervical incision)",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 716,
+      "name": "Closure of ureterostomy",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 443,
+      "name": "Closure of urethral fistula",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 429,
+      "name": "Closure of vesicostomy/cystostomy",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 527,
+      "name": "Closure of wound dehiscence",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 425,
+      "name": "Colonic bladder augmentation",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Colonoscopy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 351,
+      "name": "Colonoscopy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Colonoscopy & biopsy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Colonoscopy & polypectomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 350,
+      "name": "Colonoscopy and biopsy of colon",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 437,
+      "name": "Colposuspension of bladder neck",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 426,
+      "name": "Continent bladder reconstruction (Mitrofanoff)",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 699,
+      "name": "Correction of buried penis",
+      "categories": [
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 295,
+      "name": "Correction of congenital atresia of oesophagus",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal",
+        "Operation Groups / Neonatal / Neonatal Thoracic"
+      ]
+    },
+    {
+      "id": 312,
+      "name": "Correction of malrotation",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 463,
+      "name": "Correction of penile chordee",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 669,
+      "name": "Correction of peno-scrotal transposition",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 670,
+      "name": "Correction of peno-scrotal web",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 322,
+      "name": "Creation of defunctioning ileostomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 687,
+      "name": "Creation of feeding gastrostomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ],
+      "aliases": [
+        "feeding gastrostomy"
+      ]
+    },
+    {
+      "id": 315,
+      "name": "Creation of jejunostomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 303,
+      "name": "Creation of open gastrostomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ],
+      "aliases": [
+        "open gastrostomy"
+      ]
+    },
+    {
+      "id": 432,
+      "name": "Cystourethroscopy",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Urology",
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 793,
+      "name": "Debridement of burn",
+      "categories": [
+        "Operation Groups / General",
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 631,
+      "name": "Decannulation following ECMO",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal"
+      ]
+    },
+    {
+      "id": 613,
+      "name": "Deroofing/excision splenic cyst",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Solid Organ"
+      ]
+    },
+    {
+      "id": 447,
+      "name": "Descrotalisation of penis",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 433,
+      "name": "Destruction of PUV",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Urology",
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 582,
+      "name": "Diagnostic biopsy of unspecified organ",
+      "categories": [
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 472,
+      "name": "Diagnostic laparoscopy",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 713,
+      "name": "Diagnostic peritoneal lavage",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 57,
+      "name": "Diathermy of warts",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 446,
+      "name": "Dilatation of urethral meatus",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 515,
+      "name": "Division of intra abdo adhesions",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)",
+        "Operation Groups / Neonatal / Neonatal Miscellaneous"
+      ]
+    },
+    {
+      "id": 475,
+      "name": "Division of labial adhesions",
+      "categories": [
+        "Operation Groups / General / Female genital tract",
+        "Operation Groups / Urology / Female Genitalia"
+      ]
+    },
+    {
+      "id": 467,
+      "name": "Division of preputial adhesions",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 708,
+      "name": "Donor Nephrectomy",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 469,
+      "name": "Dorsal slit",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 457,
+      "name": "Drainage of hydrocoele",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ],
+      "aliases": [
+        "hydrocele"
+      ]
+    },
+    {
+      "id": 480,
+      "name": "Drainage of ovarian cyst",
+      "categories": [
+        "Operation Groups / General / Female genital tract",
+        "Operation Groups / Urology / Female Genitalia"
+      ]
+    },
+    {
+      "id": 285,
+      "name": "Drainage of pleural cavity",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Thoracic",
+        "Operation Groups / Oncology",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 691,
+      "name": "Drainage of tubo-ovarian abscess",
+      "categories": [
+        "Operation Groups / General / Female genital tract"
+      ]
+    },
+    {
+      "id": 354,
+      "name": "Duhamel procedure",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 313,
+      "name": "Duodenoduodenostomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 584,
+      "name": "Duodenojejunostomy",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 327,
+      "name": "Emergency excision of abnormal appendix",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 328,
+      "name": "Emergency excision of normal appendix",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 666,
+      "name": "Endocinch",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 418,
+      "name": "Endoscopic catheterisation of ureter",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 430,
+      "name": "Endoscopic cauterisation of lesion of bladder",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 419,
+      "name": "Endoscopic incision of ureterocoele",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Urology",
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 63,
+      "name": "Endoscopic insertion of gastro-jejunal tube",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine",
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 810,
+      "name": "Endoscopic Pilonidal Sinus Treatment (EPSiT)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 431,
+      "name": "Endoscopic removal of clot from bladder",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 760,
+      "name": "Enterotomy (small intestine/colon)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine",
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 442,
+      "name": "Epispadias repair",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 67,
+      "name": "EUA & incision & drainage of abscess",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 68,
+      "name": "EUA & proctoscopy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 71,
+      "name": "EUA & trans-anal Trucut biopsies of pelvic mass",
+      "categories": [
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 72,
+      "name": "EUA & urethral catheterisation",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 711,
+      "name": "EUA appendix mass",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 627,
+      "name": "EUA Hypospadias",
+      "categories": [
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 677,
+      "name": "EUA of ileo-anal pouch",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal",
+        "Operation Groups / Gastrointestinal / Large Intestine",
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 362,
+      "name": "EUA rectum +/- Bx",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 471,
+      "name": "EUA testis",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 481,
+      "name": "EUA vagina",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Female Genitalia"
+      ]
+    },
+    {
+      "id": 73,
+      "name": "EUA, cystoscopy & vaginogram",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 493,
+      "name": "Excision /biopsy of skin/soft tissue lesion NEC",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes",
+        "Operation Groups / Neonatal / Neonatal Miscellaneous",
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 583,
+      "name": "Excision duodenal web",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 589,
+      "name": "Excision extralobar sequestration",
+      "categories": [
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 738,
+      "name": "Excision megarectum and colorectal anastomosis",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 86,
+      "name": "Excision of abdominal neuroblastoma",
+      "categories": [
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 454,
+      "name": "Excision of aberrant testis",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 656,
+      "name": "Excision of accessory digit(s)",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 603,
+      "name": "Excision of adrenal endocrine tunour",
+      "categories": [
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 367,
+      "name": "Excision of anal polyp",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 368,
+      "name": "Excision of anal skin tag",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 782,
+      "name": "Excision of bladder diverticulum",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 270,
+      "name": "Excision of branchial cyst",
+      "categories": [
+        "Operation Groups / General / Head and Neck"
+      ],
+      "aliases": [
+        "branchial cyst excision"
+      ]
+    },
+    {
+      "id": 271,
+      "name": "Excision of branchial fistula",
+      "categories": [
+        "Operation Groups / General / Head and Neck"
+      ]
+    },
+    {
+      "id": 696,
+      "name": "Excision of branchial remnant",
+      "categories": [
+        "Operation Groups / General / Head and Neck"
+      ]
+    },
+    {
+      "id": 620,
+      "name": "Excision of cervical neuroblastoma",
+      "categories": [
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 737,
+      "name": "Excision of cervical rib",
+      "categories": [
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 77,
+      "name": "Excision of choledochal cyst & hepatico-enterostomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Biliary"
+      ]
+    },
+    {
+      "id": 785,
+      "name": "Excision of colonic stricture",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 79,
+      "name": "Excision of cystic hygroma",
+      "categories": [
+        "Operation Groups / General / Head and Neck",
+        "Operation Groups / Neonatal / Neonatal Miscellaneous"
+      ]
+    },
+    {
+      "id": 710,
+      "name": "Excision of duplication cyst",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 747,
+      "name": "Excision of epididymal cyst",
+      "categories": [
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 474,
+      "name": "Excision of excess labial tissue",
+      "categories": [
+        "Operation Groups / General / Female genital tract",
+        "Operation Groups / Urology / Female Genitalia"
+      ]
+    },
+    {
+      "id": 690,
+      "name": "Excision of fallopian tube cyst",
+      "categories": [
+        "Operation Groups / General / Female genital tract"
+      ]
+    },
+    {
+      "id": 81,
+      "name": "Excision of haemangioma",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 462,
+      "name": "Excision of hydatid of Morgagni",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 318,
+      "name": "Excision of ileum & anastomosis (ileum/ileum)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 517,
+      "name": "Excision of lesion chest wall",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes",
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 655,
+      "name": "Excision of lipoblastomatosis",
+      "categories": [
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 83,
+      "name": "Excision of lipoma",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 320,
+      "name": "Excision of Meckel diverticulum",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 761,
+      "name": "Excision of mediastinal tumour",
+      "categories": [
+        "Operation Groups / Oncology",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 633,
+      "name": "Excision of mesenteric cyst",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 85,
+      "name": "Excision of mole",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 502,
+      "name": "Excision of nail bed",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 644,
+      "name": "Excision of ovarian cyst NOS",
+      "categories": [
+        "Operation Groups / General / Female genital tract"
+      ]
+    },
+    {
+      "id": 369,
+      "name": "Excision of perianal warts",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 269,
+      "name": "Excision of preauricular abnormality",
+      "categories": [
+        "Operation Groups / General / Head and Neck",
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 767,
+      "name": "Excision of rib(s) NOS",
+      "categories": [
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 483,
+      "name": "Excision of sacrococcygeal teratoma",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes",
+        "Operation Groups / Neonatal / Neonatal abdominal wall incl hernias"
+      ]
+    },
+    {
+      "id": 506,
+      "name": "Excision of scar tissue",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 491,
+      "name": "Excision of skin lesion of head or neck",
+      "categories": [
+        "Operation Groups / General / Head and Neck",
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 651,
+      "name": "Excision of teratoma NOS",
+      "categories": [
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 602,
+      "name": "Excision of thoracic neuroblastoma",
+      "categories": [
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 268,
+      "name": "Excision of throglossal tract",
+      "categories": [
+        "Operation Groups / General / Head and Neck"
+      ]
+    },
+    {
+      "id": 267,
+      "name": "Excision of thyroglossal cyst",
+      "categories": [
+        "Operation Groups / General / Head and Neck"
+      ],
+      "aliases": [
+        "thyroglossal cyst excision",
+        "sistrunk"
+      ]
+    },
+    {
+      "id": 637,
+      "name": "Excision of ureteric lesion",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 417,
+      "name": "Excision of ureterocoele (open)",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 683,
+      "name": "Excision of vitelline duct remnant",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 568,
+      "name": "Excision or biopsy of axillary lymph node",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes",
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 567,
+      "name": "Excision or biopsy of cervical lymph node",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes",
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 572,
+      "name": "Excision or biopsy of inguinal lymph node",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes",
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 484,
+      "name": "Excision or biopsy of lymphnodes NEC",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes",
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 569,
+      "name": "Excision or biopsy of mediastinal lymph node",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes",
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 570,
+      "name": "Excision or biopsy of para-aortic lymph node",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes",
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 571,
+      "name": "Excision or biopsy of portahepatis lymph node",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes",
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 492,
+      "name": "Excision preauricular skin tag",
+      "categories": [
+        "Operation Groups / General / Head and Neck",
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 652,
+      "name": "Excision umbilical granuloma",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 714,
+      "name": "Excision/biopsy of soft tissue tumour",
+      "categories": [
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 510,
+      "name": "Excision/closure of urachus/excision of urachal cyst",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Urology",
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 769,
+      "name": "Excision/deroofing of renal cyst",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 729,
+      "name": "Excision/drainage/injection of hydatid cyst",
+      "categories": [
+        "Operation Groups / Gastrointestinal",
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 358,
+      "name": "Excision/injection of rectal mucosa",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 715,
+      "name": "Excision/open biopsy liver tumour",
+      "categories": [
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 366,
+      "name": "Excison of haemorrhoids",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 91,
+      "name": "Exploration & biopsy of inguinal gonad (L)",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 777,
+      "name": "Exploration of abdominal stab wound",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 449,
+      "name": "Exploration of groin",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 459,
+      "name": "Exploration of scrotum",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Miscellaneous",
+        "Operation Groups / Neonatal / Neonatal Urology",
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 778,
+      "name": "Exploration of stab wound soft tissue",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 96,
+      "name": "Exploration of upper end of shunt",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal"
+      ]
+    },
+    {
+      "id": 684,
+      "name": "Exploratory laparotomy",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 281,
+      "name": "Exploratory thoracotomy",
+      "categories": [
+        "Operation Groups / Oncology",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 97,
+      "name": "External ventricular drainage",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal"
+      ]
+    },
+    {
+      "id": 700,
+      "name": "Extracorporeal shockwave lithotripsy",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 764,
+      "name": "Feeding jejunostomy insertion",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 482,
+      "name": "Feminising genitoplasty/TUM",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Female Genitalia"
+      ]
+    },
+    {
+      "id": 277,
+      "name": "Fibreoptic bronchoscopy",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Thoracic",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 693,
+      "name": "Fixation of Caecum NOS",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 755,
+      "name": "Fixation of spleen",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Solid Organ"
+      ]
+    },
+    {
+      "id": 458,
+      "name": "Fixation of testis",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Miscellaneous",
+        "Operation Groups / Neonatal / Neonatal Urology",
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 565,
+      "name": "Flexible sigmoidoscopy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 668,
+      "name": "Foreskin reconstruction",
+      "categories": [
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 347,
+      "name": "Formation of end colostomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 671,
+      "name": "Formation of Intussusception Valve",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 346,
+      "name": "Formation of loop colostomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 273,
+      "name": "Formation of tracheostomy",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Thoracic",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 99,
+      "name": "Fundoplication",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ],
+      "aliases": [
+        "nissen fundoplication",
+        "nissen"
+      ]
+    },
+    {
+      "id": 101,
+      "name": "Fundoplication (laparoscopic)",
+      "categories": [
+        "Operation Groups / Laparoscopic Procedures"
+      ],
+      "aliases": [
+        "laparoscopic fundoplication",
+        "laparoscopic nissen"
+      ]
+    },
+    {
+      "id": 102,
+      "name": "Fundoplication (re-do)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ],
+      "aliases": [
+        "redo fundoplication"
+      ]
+    },
+    {
+      "id": 754,
+      "name": "Gastropexy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 103,
+      "name": "Gastrostomy button insertion",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ],
+      "aliases": [
+        "gastrostomy button",
+        "button gastrostomy"
+      ]
+    },
+    {
+      "id": 405,
+      "name": "Heminephrectomy (duplex kidney)",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 406,
+      "name": "Heminephrectomy (horseshoe kidney)",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 733,
+      "name": "Heminephrectomy (laparoscopic)",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 802,
+      "name": "Heminephrectomy (Robotic)",
+      "categories": [
+        "Operation Groups / Robotic Surgery",
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 724,
+      "name": "Hepaticoenterostomy (not choledochal cyst excision)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Biliary"
+      ]
+    },
+    {
+      "id": 448,
+      "name": "High ligation of testicular vessels",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 326,
+      "name": "Hydrostatic reduction of intussusception = air enema",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ],
+      "aliases": [
+        "air enema",
+        "hydrostatic reduction of intussusception"
+      ]
+    },
+    {
+      "id": 439,
+      "name": "Hypospadias repair",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ],
+      "aliases": [
+        "hypospadias"
+      ]
+    },
+    {
+      "id": 639,
+      "name": "Hysterectomy",
+      "categories": [
+        "Operation Groups / General / Female genital tract"
+      ]
+    },
+    {
+      "id": 424,
+      "name": "Ileal bladder augmentation",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 739,
+      "name": "Ileoanal pouch formation",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal",
+        "Operation Groups / Gastrointestinal / Large Intestine",
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 679,
+      "name": "Ileocolic anastomosis",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 532,
+      "name": "Ileostomy closure",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 117,
+      "name": "Ileostomy formation",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 329,
+      "name": "Incidental appendicectomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 377,
+      "name": "Incision & drainage of ischiorectal abscess",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 378,
+      "name": "Incision & drainage of perianal abscess",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 516,
+      "name": "Incision and drainage of abscess NEC",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes",
+        "Operation Groups / Neonatal / Neonatal Miscellaneous"
+      ]
+    },
+    {
+      "id": 473,
+      "name": "Incision of hymen",
+      "categories": [
+        "Operation Groups / General / Female genital tract",
+        "Operation Groups / Urology / Female Genitalia"
+      ]
+    },
+    {
+      "id": 735,
+      "name": "Injection of Botox into bladder",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 784,
+      "name": "Injection of rectal prolapse",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 624,
+      "name": "Insertion of abdominal drain",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 421,
+      "name": "Insertion of bladder lines",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 287,
+      "name": "Insertion of chest drain",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Thoracic",
+        "Operation Groups / Oncology",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 520,
+      "name": "Insertion of cuffed central line (open)",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal",
+        "Operation Groups / Neonatal / Neonatal Miscellaneous",
+        "Operation Groups / Oncology"
+      ],
+      "aliases": [
+        "central line insertion",
+        "insertion of central line",
+        "hickman line",
+        "hickman",
+        "cuffed central line"
+      ]
+    },
+    {
+      "id": 550,
+      "name": "Insertion of cuffed central line (percutaneous)",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal",
+        "Operation Groups / Neonatal / Neonatal Miscellaneous"
+      ],
+      "aliases": [
+        "percutaneous central line"
+      ]
+    },
+    {
+      "id": 561,
+      "name": "Insertion of cuffed haemodialysis catheter",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal"
+      ]
+    },
+    {
+      "id": 411,
+      "name": "Insertion of nephrostomy tube",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Urology",
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 770,
+      "name": "Insertion of oesophageal stent",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus"
+      ]
+    },
+    {
+      "id": 304,
+      "name": "Insertion of PEG",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 524,
+      "name": "Insertion of peritoneal dialysis catheter",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal",
+        "Operation Groups / Neonatal / Neonatal Miscellaneous"
+      ]
+    },
+    {
+      "id": 757,
+      "name": "Insertion of Peritoneovenous shunt (Denver shunt)",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal"
+      ]
+    },
+    {
+      "id": 545,
+      "name": "Insertion of PIC line",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal",
+        "Operation Groups / Neonatal / Neonatal Miscellaneous"
+      ]
+    },
+    {
+      "id": 521,
+      "name": "Insertion of Portacath",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal",
+        "Operation Groups / Neonatal / Neonatal Miscellaneous",
+        "Operation Groups / Oncology"
+      ],
+      "aliases": [
+        "portacath",
+        "portacath insertion",
+        "port insertion"
+      ]
+    },
+    {
+      "id": 427,
+      "name": "Insertion of suprapubic catheter",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Urology",
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 456,
+      "name": "Insertion of testicular implant",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 562,
+      "name": "Insertion of uncuffed haemodialysis catheter",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal"
+      ]
+    },
+    {
+      "id": 660,
+      "name": "Insertion of ureteric stent",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 541,
+      "name": "Insertion of VA shunt",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal"
+      ]
+    },
+    {
+      "id": 540,
+      "name": "Insertion of Ventricular Access Device (VAD)",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal",
+        "Operation Groups / Neonatal / Neonatal Miscellaneous"
+      ]
+    },
+    {
+      "id": 539,
+      "name": "Insertion of VP shunt",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal",
+        "Operation Groups / Neonatal / Neonatal Miscellaneous"
+      ]
+    },
+    {
+      "id": 742,
+      "name": "Interval appendicectomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 436,
+      "name": "Introduction of therapeutic substance into bladder",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 558,
+      "name": "Jaboulay Procedure",
+      "categories": [
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 705,
+      "name": "Jejunojejunostomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 617,
+      "name": "Kasai Procedure (Hepatoportoenterostomy)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Biliary"
+      ]
+    },
+    {
+      "id": 127,
+      "name": "Labial adhesion division",
+      "categories": [
+        "Operation Groups / General / Female genital tract"
+      ]
+    },
+    {
+      "id": 542,
+      "name": "Laparoscopic appendicectomy (perforated)",
+      "categories": [
+        "Operation Groups / Laparoscopic Procedures"
+      ],
+      "aliases": [
+        "perforated appendicectomy",
+        "laparoscopic appendicectomy perforated"
+      ]
+    },
+    {
+      "id": 600,
+      "name": "Laparoscopic assisted pull through (Hirschsprung)",
+      "categories": [
+        "Operation Groups / Gastrointestinal",
+        "Operation Groups / Laparoscopic Procedures"
+      ]
+    },
+    {
+      "id": 288,
+      "name": "Laparoscopy",
+      "categories": [
+        "Operation Groups / Laparoscopic Procedures"
+      ]
+    },
+    {
+      "id": 128,
+      "name": "Laparoscopy (diagnostic, abd pathology)",
+      "categories": [
+        "Operation Groups / Laparoscopic Procedures"
+      ]
+    },
+    {
+      "id": 129,
+      "name": "Laparoscopy (diagnostic, UDT)",
+      "categories": [
+        "Operation Groups / Laparoscopic Procedures"
+      ]
+    },
+    {
+      "id": 599,
+      "name": "Laparoscopy (therapeutic, undescended testis)",
+      "categories": [
+        "Operation Groups / Laparoscopic Procedures"
+      ]
+    },
+    {
+      "id": 661,
+      "name": "Laparostomy",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 130,
+      "name": "Laparotomy & appendicectomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 132,
+      "name": "Laparotomy & closure of gastric perforation",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 134,
+      "name": "Laparotomy & drainage of abscess",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 136,
+      "name": "Laparotomy & ileo-ileal anastomosis (intussusception)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 141,
+      "name": "Laparotomy & Ladd's procedure (infant)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 144,
+      "name": "Laparotomy & repair of leaking bladder",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 712,
+      "name": "Laparotomy for meconium ileus",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 753,
+      "name": "Laparotomy for meconium pseudocyst",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 149,
+      "name": "Laparotomy, frozen-sections, ileostomy closure, Duhamel pull-through",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 376,
+      "name": "Laying open of anal fistula",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 379,
+      "name": "Laying open of pilonidal sinus",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal",
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 336,
+      "name": "Left hemicolectomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 337,
+      "name": "Left hemicolectomy + anast colon/rectum",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 152,
+      "name": "Lengthening of peritoneal catheter of ventriculo-peritoneal shunt",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal"
+      ]
+    },
+    {
+      "id": 395,
+      "name": "Ligation of PPV",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)",
+        "Operation Groups / Neonatal / Neonatal abdominal wall incl hernias"
+      ]
+    },
+    {
+      "id": 158,
+      "name": "Lithotripsy (endoscopic)",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 385,
+      "name": "Liver transplant",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Solid Organ"
+      ]
+    },
+    {
+      "id": 559,
+      "name": "Lords Procedure",
+      "categories": [
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 440,
+      "name": "Magpi",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 360,
+      "name": "Manual evacuation",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 786,
+      "name": "Microlaryngoscopy and Bronchoscopy (MLB)",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Thoracic",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 787,
+      "name": "Mitrofanoff Procedure",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 726,
+      "name": "Multivisceral transplant",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Solid Organ"
+      ]
+    },
+    {
+      "id": 518,
+      "name": "Muscle biopsy",
+      "categories": [
+        "Operation Groups / General / Neuromuscular"
+      ]
+    },
+    {
+      "id": 744,
+      "name": "Muscle flap to necrotic lung",
+      "categories": [
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 543,
+      "name": "Nephrectomy (laparoscopic)",
+      "categories": [
+        "Operation Groups / Laparoscopic Procedures"
+      ]
+    },
+    {
+      "id": 407,
+      "name": "Nephrectomy (not Wilms etc)",
+      "categories": [
+        "Operation Groups / Oncology",
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 801,
+      "name": "Nephrectomy (Robotic)",
+      "categories": [
+        "Operation Groups / Robotic Surgery",
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 409,
+      "name": "Nephrolithotomy",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 404,
+      "name": "Nephroureterectomy (not Wilms etc)",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 172,
+      "name": "Oesophageal dilatation",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus"
+      ]
+    },
+    {
+      "id": 311,
+      "name": "Oesophageal motility studies",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus",
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 618,
+      "name": "Oesophageal replacement",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus"
+      ]
+    },
+    {
+      "id": 766,
+      "name": "Oesophagectomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus"
+      ]
+    },
+    {
+      "id": 614,
+      "name": "Oesophagogastric disconnection",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 173,
+      "name": "Oesophagoscopy (rigid)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus"
+      ]
+    },
+    {
+      "id": 576,
+      "name": "Oesophagostomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus",
+        "Operation Groups / Neonatal / Neonatal Thoracic"
+      ]
+    },
+    {
+      "id": 174,
+      "name": "OGD",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus",
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 175,
+      "name": "OGD & Clo-test",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus",
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 176,
+      "name": "OGD & dilatation",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus"
+      ]
+    },
+    {
+      "id": 177,
+      "name": "OGD & FB removal",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus"
+      ]
+    },
+    {
+      "id": 180,
+      "name": "OGD & pH study",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus"
+      ]
+    },
+    {
+      "id": 723,
+      "name": "OGD + banding of oesophageal varices",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus"
+      ]
+    },
+    {
+      "id": 296,
+      "name": "OGD + sclerotherapy of varices",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus"
+      ]
+    },
+    {
+      "id": 534,
+      "name": "OGD and biopsy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus",
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 796,
+      "name": "OGD for Battery Ingestion",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus"
+      ]
+    },
+    {
+      "id": 797,
+      "name": "OGD for Magnet Ingestion",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus"
+      ]
+    },
+    {
+      "id": 479,
+      "name": "Oophorectomy",
+      "categories": [
+        "Operation Groups / General / Female genital tract",
+        "Operation Groups / Oncology",
+        "Operation Groups / Urology / Female Genitalia"
+      ]
+    },
+    {
+      "id": 629,
+      "name": "Oophoropexy",
+      "categories": [
+        "Operation Groups / General / Female genital tract"
+      ]
+    },
+    {
+      "id": 616,
+      "name": "Open and close laparotomy",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 413,
+      "name": "Open biopsy of lesion of kidney",
+      "categories": [
+        "Operation Groups / Oncology",
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 284,
+      "name": "Open biopsy of lung",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Thoracic",
+        "Operation Groups / Oncology",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 514,
+      "name": "Open drainage abdominal absecess NEC",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 513,
+      "name": "Open drainage pelvic abscess",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 512,
+      "name": "Open drainage sub-phrenic abscess",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 184,
+      "name": "Open gastrotomy & removal of foreign body",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 590,
+      "name": "Open nephrostomy",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 349,
+      "name": "Open reduction of sigmoid volvulus",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 383,
+      "name": "Open wedge biopsy of liver",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Biliary",
+        "Operation Groups / Gastrointestinal / Solid Organ"
+      ]
+    },
+    {
+      "id": 731,
+      "name": "Operative cholangiogram",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Biliary"
+      ]
+    },
+    {
+      "id": 325,
+      "name": "Operative reduction of intussusception",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ],
+      "aliases": [
+        "open reduction of intussusception"
+      ]
+    },
+    {
+      "id": 455,
+      "name": "Orchidectomy",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ],
+      "aliases": [
+        "orchiectomy"
+      ]
+    },
+    {
+      "id": 762,
+      "name": "Ovarian cystectomy (preserving ovary)",
+      "categories": [
+        "Operation Groups / Oncology",
+        "Operation Groups / Urology / Female Genitalia"
+      ]
+    },
+    {
+      "id": 672,
+      "name": "Pancreatic cyst gastrostomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Pancreatic"
+      ]
+    },
+    {
+      "id": 673,
+      "name": "Pancreatic cyst jejunostomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Pancreatic"
+      ]
+    },
+    {
+      "id": 795,
+      "name": "Pancreatic Drainage Procedure",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Pancreatic"
+      ]
+    },
+    {
+      "id": 194,
+      "name": "Paraphimosis reduction",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 649,
+      "name": "Parathyroidectomy",
+      "categories": [
+        "Operation Groups / General / Head and Neck",
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 391,
+      "name": "Partial adrenalectomy",
+      "categories": [
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 388,
+      "name": "Partial pancreatectomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Solid Organ"
+      ]
+    },
+    {
+      "id": 387,
+      "name": "Partial splenectomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Solid Organ"
+      ]
+    },
+    {
+      "id": 604,
+      "name": "Partial tumour nephrectomy (Wilms/other)",
+      "categories": [
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 470,
+      "name": "Penile frenuloplasty",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 749,
+      "name": "Percutaneous drainage of abscess",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 196,
+      "name": "Percutaneous Endoscopic Gastrostomy insertion",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ],
+      "aliases": [
+        "peg insertion",
+        "percutaneous endoscopic gastrostomy",
+        "peg"
+      ]
+    },
+    {
+      "id": 414,
+      "name": "Percutaneous kidney biopsy",
+      "categories": [
+        "Operation Groups / Oncology",
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 384,
+      "name": "Percutaneous liver biopsy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Solid Organ",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 701,
+      "name": "Percutaneous nephrolithotomy",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 591,
+      "name": "Percutaneous nephrostomy",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 359,
+      "name": "Perianal repair of rectal prolapse (Delorme)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 519,
+      "name": "Peripheral nerve biopsy",
+      "categories": [
+        "Operation Groups / General / Neuromuscular"
+      ]
+    },
+    {
+      "id": 310,
+      "name": "pH studies",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus",
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 586,
+      "name": "Pleural debridement (empyema)",
+      "categories": [
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 657,
+      "name": "Pleurodesis",
+      "categories": [
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 682,
+      "name": "Plication of diaphragm (eventration) trans thoracic",
+      "categories": [
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 676,
+      "name": "Plication of diaphragm (transabdominal)",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 730,
+      "name": "Portal venous shunt",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Biliary"
+      ]
+    },
+    {
+      "id": 371,
+      "name": "Posterior repair of anal sphincter",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 468,
+      "name": "Prepuceplasty",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 396,
+      "name": "Primary inginal hernia repair - suture",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 496,
+      "name": "Primary suture of head/neck",
+      "categories": [
+        "Operation Groups / General / Head and Neck",
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 497,
+      "name": "Primary suture of skin NEC",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 740,
+      "name": "Proctocolectomy + ileo-anal anastomosis HEC",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 364,
+      "name": "Proctoscopy +/- rectal biopsy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 373,
+      "name": "PSARP (posterior sagittal anorectoplasty)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 686,
+      "name": "Pull through for anorectal anomaly NEC",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 282,
+      "name": "Pulmonary lobectomy",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Thoracic",
+        "Operation Groups / Oncology",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 410,
+      "name": "Pyelolithotomy",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 408,
+      "name": "Pyeloplasty",
+      "categories": [
+        "Operation Groups / Urology"
+      ],
+      "aliases": [
+        "open pyeloplasty"
+      ]
+    },
+    {
+      "id": 544,
+      "name": "Pyeloplasty (laparoscopic)",
+      "categories": [
+        "Operation Groups / Laparoscopic Procedures",
+        "Operation Groups / Urology"
+      ],
+      "aliases": [
+        "laparoscopic pyeloplasty"
+      ]
+    },
+    {
+      "id": 800,
+      "name": "Pyeloplasty (Robotic)",
+      "categories": [
+        "Operation Groups / Robotic Surgery",
+        "Operation Groups / Urology"
+      ],
+      "aliases": [
+        "robotic pyeloplasty"
+      ]
+    },
+    {
+      "id": 307,
+      "name": "Pyloromyotomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ],
+      "aliases": [
+        "ramstedt",
+        "ramstedts pyloromyotomy",
+        "open pyloromyotomy"
+      ]
+    },
+    {
+      "id": 206,
+      "name": "Pyloromyotomy (laparoscopic)",
+      "categories": [
+        "Operation Groups / Laparoscopic Procedures"
+      ],
+      "aliases": [
+        "laparoscopic pyloromyotomy"
+      ]
+    },
+    {
+      "id": 207,
+      "name": "Pyloromyotomy (RUQ approach)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 208,
+      "name": "Pyloromyotomy (supra-umbilical approach)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 638,
+      "name": "Pyloroplasty",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 663,
+      "name": "Re-exploration of abdominal cavity",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 688,
+      "name": "Reconstruction for megaprepuce",
+      "categories": [
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 363,
+      "name": "Rectal biopsy (suction)",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 357,
+      "name": "Rectal polypectomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 214,
+      "name": "Rectal strip biopsy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 380,
+      "name": "Rectal washout",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 606,
+      "name": "Rectopexy - trans abdominal approach",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 355,
+      "name": "Rectosigmoidectomy HEC",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 806,
+      "name": "Redo Orchidopexy Bilateral",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 805,
+      "name": "Redo Orchidopexy Unilateral",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 717,
+      "name": "Reduction cliteroplasty",
+      "categories": [
+        "Operation Groups / General / Female genital tract",
+        "Operation Groups / Urology / Female Genitalia"
+      ]
+    },
+    {
+      "id": 756,
+      "name": "Reduction of paraphimosis",
+      "categories": [
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 343,
+      "name": "Reduction of prolasped colostomy/ileostomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal",
+        "Operation Groups / Gastrointestinal / Large Intestine",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 460,
+      "name": "Reduction of testicular torsion",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 316,
+      "name": "Refashioning of stoma",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine",
+        "Operation Groups / Gastrointestinal / Small intestine",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 665,
+      "name": "Release of Peno-scrotal webbing",
+      "categories": [
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 291,
+      "name": "Release of tongue tie",
+      "categories": [
+        "Operation Groups / General / Head and Neck"
+      ],
+      "aliases": [
+        "tongue tie release",
+        "division of tongue tie",
+        "frenotomy"
+      ]
+    },
+    {
+      "id": 779,
+      "name": "Removal of Bezoar",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 625,
+      "name": "Removal of bladder calculus (open)",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 523,
+      "name": "Removal of central line",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal",
+        "Operation Groups / Neonatal / Neonatal Miscellaneous",
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 279,
+      "name": "Removal of FB from bronchus",
+      "categories": [
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 574,
+      "name": "Removal of foreign body (glass) from skin",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 575,
+      "name": "Removal of foreign body (metal) from skin",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 763,
+      "name": "Removal of foreign body from rectum",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 499,
+      "name": "Removal of foreign body from skin",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 781,
+      "name": "Removal of foreign body from vagina",
+      "categories": [
+        "Operation Groups / Urology / Female Genitalia"
+      ]
+    },
+    {
+      "id": 771,
+      "name": "Removal of oesophageal stent",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus"
+      ]
+    },
+    {
+      "id": 615,
+      "name": "Removal of Pectus bar",
+      "categories": [
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 563,
+      "name": "Removal of PEG",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Stomach"
+      ]
+    },
+    {
+      "id": 525,
+      "name": "Removal of peritoneal dialysis catheter",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal",
+        "Operation Groups / Neonatal / Neonatal Miscellaneous"
+      ]
+    },
+    {
+      "id": 560,
+      "name": "Removal of portacath",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal"
+      ]
+    },
+    {
+      "id": 553,
+      "name": "Removal of preformed silo from gastroschisis",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal abdominal wall incl hernias"
+      ]
+    },
+    {
+      "id": 555,
+      "name": "Removal of silo from exomphalos (operative)",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal abdominal wall incl hernias"
+      ]
+    },
+    {
+      "id": 557,
+      "name": "Removal of silo from gastroschisis (operative)",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal abdominal wall incl hernias"
+      ]
+    },
+    {
+      "id": 435,
+      "name": "Removal of suprapubic catheter",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Urology",
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 706,
+      "name": "Removal of sutures/clips",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 783,
+      "name": "Removal of Thiersch suture",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 612,
+      "name": "Removal of ureteric stent",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 222,
+      "name": "Renal auto-transplant",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 596,
+      "name": "Renal transplant (cadaveric)",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 597,
+      "name": "Renal transplant (live donor)",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 752,
+      "name": "Repair of abdominoscrotal hydrocoele",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 526,
+      "name": "Repair of acquired diaphragmatic hernia",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 776,
+      "name": "Repair of central tendon defect (diaphragm)",
+      "categories": [
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 745,
+      "name": "Repair of cleft lip",
+      "categories": [
+        "Operation Groups / General / Head and Neck"
+      ]
+    },
+    {
+      "id": 746,
+      "name": "Repair of cleft palate",
+      "categories": [
+        "Operation Groups / General / Head and Neck"
+      ]
+    },
+    {
+      "id": 680,
+      "name": "Repair of colonic perforation",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 580,
+      "name": "Repair of congenital diaphragmatic hernia",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)",
+        "Operation Groups / Neonatal / Neonatal Thoracic",
+        "Operation Groups / Neonatal / Neonatal abdominal wall incl hernias"
+      ]
+    },
+    {
+      "id": 581,
+      "name": "Repair of congenital diaphragmatic hernia with sac",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Thoracic",
+        "Operation Groups / Neonatal / Neonatal abdominal wall incl hernias"
+      ]
+    },
+    {
+      "id": 400,
+      "name": "Repair of epigastric hernia",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 402,
+      "name": "Repair of femoral hernia",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 658,
+      "name": "Repair of hypospadias (1st stage)",
+      "categories": [
+        "Operation Groups / Urology / Male Genitalia"
+      ],
+      "aliases": [
+        "first stage hypospadias repair"
+      ]
+    },
+    {
+      "id": 659,
+      "name": "Repair of hypospadias (2nd stage)",
+      "categories": [
+        "Operation Groups / Urology / Male Genitalia"
+      ],
+      "aliases": [
+        "second stage hypospadias repair"
+      ]
+    },
+    {
+      "id": 398,
+      "name": "Repair of incisional hernia",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 775,
+      "name": "Repair of Morgagni Hernia",
+      "categories": [
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 635,
+      "name": "Repair of pectus excavatum",
+      "categories": [
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 681,
+      "name": "Repair of small bowel perforation",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 678,
+      "name": "Repair of spigelian hernia",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 401,
+      "name": "Repair of supraumbilical hernia",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ],
+      "aliases": [
+        "supraumbilical hernia repair"
+      ]
+    },
+    {
+      "id": 397,
+      "name": "Repair of umbilical hernia",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ],
+      "aliases": [
+        "umbilical hernia repair"
+      ]
+    },
+    {
+      "id": 621,
+      "name": "Repair of urethral fistula",
+      "categories": [
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 634,
+      "name": "Repair pectus carinatum",
+      "categories": [
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 394,
+      "name": "Repair recurrent inguinal hernia",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ],
+      "aliases": [
+        "recurrent inguinal hernia repair"
+      ]
+    },
+    {
+      "id": 702,
+      "name": "Retrograde pyelogram",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 628,
+      "name": "Revision of Peritoneal Dialysis Catheter",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal"
+      ]
+    },
+    {
+      "id": 275,
+      "name": "Revision of trachesotomy",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Thoracic",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 229,
+      "name": "Revision of urinary stoma",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 538,
+      "name": "Revision of VP shunt (peritoneal)",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal"
+      ]
+    },
+    {
+      "id": 537,
+      "name": "Revision of VP shunt (ventricular)",
+      "categories": [
+        "Operation Groups / General / Access incl vascular, ventricular and peritoneal"
+      ]
+    },
+    {
+      "id": 694,
+      "name": "Rib fixation",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 333,
+      "name": "Right hemicolectomy + ileocolic anastomosis",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 278,
+      "name": "Rigid bronchoscopy",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Thoracic",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 300,
+      "name": "Rigid endoscopic removal of FB",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus"
+      ]
+    },
+    {
+      "id": 765,
+      "name": "Roux-en-y jejunostomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 477,
+      "name": "Salpingo-oophorectomy",
+      "categories": [
+        "Operation Groups / General / Female genital tract",
+        "Operation Groups / Oncology",
+        "Operation Groups / Urology / Female Genitalia"
+      ]
+    },
+    {
+      "id": 736,
+      "name": "Sclerotherapy of lymphangioma/haemangioma",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes",
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 623,
+      "name": "Sclerotherapy of varicocoele",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 498,
+      "name": "Secondary skin suture",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 283,
+      "name": "Segmental/wedge resection/ partial lobectomy of lung",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Thoracic",
+        "Operation Groups / Oncology",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 339,
+      "name": "Sigmoid colectomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 340,
+      "name": "Sigmoid colectomy + anast colon/rectum",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 352,
+      "name": "Sigmoidoscopy +/- biopsy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 495,
+      "name": "Skin biopsy NEC",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes",
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 650,
+      "name": "Skin graft",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 564,
+      "name": "Small bowel resection and primary anastomosis",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 727,
+      "name": "Small bowel transplant",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 356,
+      "name": "Soave procedure",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 548,
+      "name": "Splenectomy (laparoscopic)",
+      "categories": [
+        "Operation Groups / Laparoscopic Procedures"
+      ]
+    },
+    {
+      "id": 235,
+      "name": "Sternomastoid tenotomy",
+      "categories": [
+        "Operation Groups / General / Neuromuscular"
+      ]
+    },
+    {
+      "id": 420,
+      "name": "STING",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 536,
+      "name": "Sub-cutaneous mastectomy",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 647,
+      "name": "Sub-total Thyroidectomy",
+      "categories": [
+        "Operation Groups / General / Head and Neck"
+      ]
+    },
+    {
+      "id": 241,
+      "name": "Suturing of laceration",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 722,
+      "name": "Swenson Pull-through",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 653,
+      "name": "Thiersch Suture",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal"
+      ]
+    },
+    {
+      "id": 807,
+      "name": "Thoracoscopic Biopsy of Lung",
+      "categories": [
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 244,
+      "name": "Thoracoscopy & drainage of empyema",
+      "categories": [
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 808,
+      "name": "Thoracoscopy (Diagnostic)",
+      "categories": [
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 809,
+      "name": "Thoracoscopy (Therapeutic)",
+      "categories": [
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 280,
+      "name": "Thoracotomy",
+      "categories": [
+        "Operation Groups / Neonatal / Neonatal Thoracic",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 674,
+      "name": "Thymectomy",
+      "categories": [
+        "Operation Groups / Oncology",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 648,
+      "name": "Thyroid lobectomy",
+      "categories": [
+        "Operation Groups / General / Head and Neck"
+      ]
+    },
+    {
+      "id": 331,
+      "name": "Total colectomy and ileorectal anastomosis",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 332,
+      "name": "Total colectomy and ileostomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 389,
+      "name": "Total pancreatectomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Solid Organ"
+      ]
+    },
+    {
+      "id": 386,
+      "name": "Total splenectomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Solid Organ"
+      ]
+    },
+    {
+      "id": 646,
+      "name": "Total Thyroidectomy",
+      "categories": [
+        "Operation Groups / General / Head and Neck"
+      ]
+    },
+    {
+      "id": 607,
+      "name": "Total urogenital mobilisation (TUM)",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 773,
+      "name": "Trans rectal drainage of pelvic abscess",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)"
+      ]
+    },
+    {
+      "id": 626,
+      "name": "Trans uretero-ureterostomy (TUU)",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 547,
+      "name": "Trans-anal pull-through",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Ano-rectal",
+        "Operation Groups / Neonatal / Neonatal Gastrointestinal"
+      ]
+    },
+    {
+      "id": 598,
+      "name": "Transplant nephrectomy",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 335,
+      "name": "Transverse colectomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 334,
+      "name": "Transverse colectomy + end/end anastomosis",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Large Intestine"
+      ]
+    },
+    {
+      "id": 789,
+      "name": "Trauma abdominal packing simulated",
+      "categories": [
+        "Operation Groups / General"
+      ]
+    },
+    {
+      "id": 791,
+      "name": "Trauma clam shell simulated",
+      "categories": [
+        "Operation Groups / General",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 788,
+      "name": "Trauma Laparotomy",
+      "categories": [
+        "Operation Groups / General"
+      ]
+    },
+    {
+      "id": 790,
+      "name": "Trauma Thoracotomy",
+      "categories": [
+        "Operation Groups / General",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 601,
+      "name": "Tumour nephrectomy (Wilms/other)",
+      "categories": [
+        "Operation Groups / Oncology"
+      ]
+    },
+    {
+      "id": 399,
+      "name": "Umbilicoplasty",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)",
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 718,
+      "name": "Under-running of bleeding DU",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Small intestine"
+      ]
+    },
+    {
+      "id": 393,
+      "name": "Unilateral inguinal herniotomy",
+      "categories": [
+        "Operation Groups / General / Abdominal cavity + wall (incl hernias)",
+        "Operation Groups / Neonatal / Neonatal abdominal wall incl hernias"
+      ],
+      "aliases": [
+        "inguinal herniotomy",
+        "herniotomy",
+        "inguinal hernia repair"
+      ]
+    },
+    {
+      "id": 450,
+      "name": "Unilateral orchidopexy",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ],
+      "aliases": [
+        "orchidopexy"
+      ]
+    },
+    {
+      "id": 416,
+      "name": "Unilateral ureteric reimplantation",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 803,
+      "name": "Unilateral ureteric reimplantation (Robotic)",
+      "categories": [
+        "Operation Groups / Robotic Surgery",
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 594,
+      "name": "Ureteric diversion",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 675,
+      "name": "Ureteric injection of deflux",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 595,
+      "name": "ureteric undiversion",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 632,
+      "name": "Uretero-renoscopy",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 593,
+      "name": "ureterolithotomy",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 592,
+      "name": "Ureterostomy",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 611,
+      "name": "Urethral Catheterisation",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 257,
+      "name": "Urethral injection (Deflux)",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 445,
+      "name": "Urethral meatoplasty",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 667,
+      "name": "Urethral meatotomy",
+      "categories": [
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 444,
+      "name": "Urethral reconstruction NEC",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 622,
+      "name": "urethrostomy",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 438,
+      "name": "Urethrotomy (bladder neck sphincterectomy)",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Male Genitalia"
+      ]
+    },
+    {
+      "id": 476,
+      "name": "Vaginal dilatation",
+      "categories": [
+        "Operation Groups / Urology",
+        "Operation Groups / Urology / Female Genitalia"
+      ]
+    },
+    {
+      "id": 641,
+      "name": "Vaginal reconstruction",
+      "categories": [
+        "Operation Groups / General / Female genital tract",
+        "Operation Groups / Urology / Female Genitalia"
+      ]
+    },
+    {
+      "id": 707,
+      "name": "Vaginostomy",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 640,
+      "name": "Vagotomy",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Oesophagus"
+      ]
+    },
+    {
+      "id": 732,
+      "name": "VATS not otherwise specified",
+      "categories": [
+        "Operation Groups / Laparoscopic Procedures",
+        "Operation Groups / Thoracic"
+      ]
+    },
+    {
+      "id": 428,
+      "name": "Vesicostomy",
+      "categories": [
+        "Operation Groups / Urology"
+      ]
+    },
+    {
+      "id": 504,
+      "name": "Wedge excision of nail",
+      "categories": [
+        "Operation Groups / General / Skin/soft tissue incl lymphnodes"
+      ]
+    },
+    {
+      "id": 381,
+      "name": "Wedge/Segmental liver resection",
+      "categories": [
+        "Operation Groups / Gastrointestinal / Solid Organ",
+        "Operation Groups / Oncology"
+      ]
+    }
+  ],
+  "tree": {
+    "Operation Groups": {
+      "Neonatal": {
+        "_procedures": [
+          {
+            "id": 585,
+            "name": "Closure of myelomeningocoele"
+          }
+        ],
+        "Neonatal Miscellaneous": [
+          {
+            "id": 79,
+            "name": "Excision of cystic hygroma"
+          },
+          {
+            "id": 458,
+            "name": "Fixation of testis"
+          },
+          {
+            "id": 459,
+            "name": "Exploration of scrotum"
+          },
+          {
+            "id": 493,
+            "name": "Excision /biopsy of skin/soft tissue lesion NEC"
+          },
+          {
+            "id": 494,
+            "name": "Biopsy of lesion of head or neck"
+          },
+          {
+            "id": 515,
+            "name": "Division of intra abdo adhesions"
+          },
+          {
+            "id": 516,
+            "name": "Incision and drainage of abscess NEC"
+          },
+          {
+            "id": 520,
+            "name": "Insertion of cuffed central line (open)"
+          },
+          {
+            "id": 521,
+            "name": "Insertion of Portacath"
+          },
+          {
+            "id": 522,
+            "name": "Attention to central line"
+          },
+          {
+            "id": 523,
+            "name": "Removal of central line"
+          },
+          {
+            "id": 524,
+            "name": "Insertion of peritoneal dialysis catheter"
+          },
+          {
+            "id": 525,
+            "name": "Removal of peritoneal dialysis catheter"
+          },
+          {
+            "id": 539,
+            "name": "Insertion of VP shunt"
+          },
+          {
+            "id": 540,
+            "name": "Insertion of Ventricular Access Device (VAD)"
+          },
+          {
+            "id": 545,
+            "name": "Insertion of PIC line"
+          },
+          {
+            "id": 550,
+            "name": "Insertion of cuffed central line (percutaneous)"
+          }
+        ],
+        "Neonatal Gastrointestinal": [
+          {
+            "id": 214,
+            "name": "Rectal strip biopsy"
+          },
+          {
+            "id": 294,
+            "name": "Closure of tracheo-oesophageal fistula"
+          },
+          {
+            "id": 295,
+            "name": "Correction of congenital atresia of oesophagus"
+          },
+          {
+            "id": 312,
+            "name": "Correction of malrotation"
+          },
+          {
+            "id": 313,
+            "name": "Duodenoduodenostomy"
+          },
+          {
+            "id": 316,
+            "name": "Refashioning of stoma"
+          },
+          {
+            "id": 317,
+            "name": "Closure of jejunostomy"
+          },
+          {
+            "id": 318,
+            "name": "Excision of ileum & anastomosis (ileum/ileum)"
+          },
+          {
+            "id": 322,
+            "name": "Creation of defunctioning ileostomy"
+          },
+          {
+            "id": 324,
+            "name": "Closure of ileostomy"
+          },
+          {
+            "id": 333,
+            "name": "Right hemicolectomy + ileocolic anastomosis"
+          },
+          {
+            "id": 337,
+            "name": "Left hemicolectomy + anast colon/rectum"
+          },
+          {
+            "id": 340,
+            "name": "Sigmoid colectomy + anast colon/rectum"
+          },
+          {
+            "id": 343,
+            "name": "Reduction of prolasped colostomy/ileostomy"
+          },
+          {
+            "id": 345,
+            "name": "Closure of colostomy"
+          },
+          {
+            "id": 346,
+            "name": "Formation of loop colostomy"
+          },
+          {
+            "id": 347,
+            "name": "Formation of end colostomy"
+          },
+          {
+            "id": 354,
+            "name": "Duhamel procedure"
+          },
+          {
+            "id": 355,
+            "name": "Rectosigmoidectomy HEC"
+          },
+          {
+            "id": 356,
+            "name": "Soave procedure"
+          },
+          {
+            "id": 357,
+            "name": "Rectal polypectomy"
+          },
+          {
+            "id": 363,
+            "name": "Rectal biopsy (suction)"
+          },
+          {
+            "id": 373,
+            "name": "PSARP (posterior sagittal anorectoplasty)"
+          },
+          {
+            "id": 374,
+            "name": "Anoplasty"
+          },
+          {
+            "id": 384,
+            "name": "Percutaneous liver biopsy"
+          },
+          {
+            "id": 547,
+            "name": "Trans-anal pull-through"
+          },
+          {
+            "id": 577,
+            "name": "Closure of upper pouch TOF (cervical incision)"
+          },
+          {
+            "id": 578,
+            "name": "Closure of upper pouch TOF (cervical incision)"
+          },
+          {
+            "id": 583,
+            "name": "Excision duodenal web"
+          },
+          {
+            "id": 584,
+            "name": "Duodenojejunostomy"
+          },
+          {
+            "id": 624,
+            "name": "Insertion of abdominal drain"
+          },
+          {
+            "id": 684,
+            "name": "Exploratory laparotomy"
+          },
+          {
+            "id": 686,
+            "name": "Pull through for anorectal anomaly NEC"
+          },
+          {
+            "id": 712,
+            "name": "Laparotomy for meconium ileus"
+          },
+          {
+            "id": 753,
+            "name": "Laparotomy for meconium pseudocyst"
+          }
+        ],
+        "Neonatal Thoracic": [
+          {
+            "id": 273,
+            "name": "Formation of tracheostomy"
+          },
+          {
+            "id": 275,
+            "name": "Revision of trachesotomy"
+          },
+          {
+            "id": 276,
+            "name": "Closure of tracheostomy"
+          },
+          {
+            "id": 277,
+            "name": "Fibreoptic bronchoscopy"
+          },
+          {
+            "id": 278,
+            "name": "Rigid bronchoscopy"
+          },
+          {
+            "id": 280,
+            "name": "Thoracotomy"
+          },
+          {
+            "id": 282,
+            "name": "Pulmonary lobectomy"
+          },
+          {
+            "id": 283,
+            "name": "Segmental/wedge resection/ partial lobectomy of lung"
+          },
+          {
+            "id": 284,
+            "name": "Open biopsy of lung"
+          },
+          {
+            "id": 285,
+            "name": "Drainage of pleural cavity"
+          },
+          {
+            "id": 286,
+            "name": "Aspiration of pleural cavity"
+          },
+          {
+            "id": 287,
+            "name": "Insertion of chest drain"
+          },
+          {
+            "id": 294,
+            "name": "Closure of tracheo-oesophageal fistula"
+          },
+          {
+            "id": 295,
+            "name": "Correction of congenital atresia of oesophagus"
+          },
+          {
+            "id": 576,
+            "name": "Oesophagostomy"
+          },
+          {
+            "id": 577,
+            "name": "Closure of upper pouch TOF (cervical incision)"
+          },
+          {
+            "id": 580,
+            "name": "Repair of congenital diaphragmatic hernia"
+          },
+          {
+            "id": 581,
+            "name": "Repair of congenital diaphragmatic hernia with sac"
+          },
+          {
+            "id": 636,
+            "name": "Aortopexy"
+          },
+          {
+            "id": 786,
+            "name": "Microlaryngoscopy and Bronchoscopy (MLB)"
+          }
+        ],
+        "Neonatal abdominal wall incl hernias": [
+          {
+            "id": 392,
+            "name": "Bilateral inguinal herniotomy"
+          },
+          {
+            "id": 393,
+            "name": "Unilateral inguinal herniotomy"
+          },
+          {
+            "id": 395,
+            "name": "Ligation of PPV"
+          },
+          {
+            "id": 483,
+            "name": "Excision of sacrococcygeal teratoma"
+          },
+          {
+            "id": 508,
+            "name": "Closure of Gastroschisis"
+          },
+          {
+            "id": 509,
+            "name": "Closure of Exomphalos"
+          },
+          {
+            "id": 552,
+            "name": "Application of preformed silo to gastroschisis"
+          },
+          {
+            "id": 553,
+            "name": "Removal of preformed silo from gastroschisis"
+          },
+          {
+            "id": 554,
+            "name": "Application of silo to exomphalos (operative)"
+          },
+          {
+            "id": 555,
+            "name": "Removal of silo from exomphalos (operative)"
+          },
+          {
+            "id": 556,
+            "name": "Application of silo to gastroschisis (operative)"
+          },
+          {
+            "id": 557,
+            "name": "Removal of silo from gastroschisis (operative)"
+          },
+          {
+            "id": 580,
+            "name": "Repair of congenital diaphragmatic hernia"
+          },
+          {
+            "id": 581,
+            "name": "Repair of congenital diaphragmatic hernia with sac"
+          },
+          {
+            "id": 774,
+            "name": "Attention to silo"
+          }
+        ],
+        "Neonatal Urology": [
+          {
+            "id": 411,
+            "name": "Insertion of nephrostomy tube"
+          },
+          {
+            "id": 419,
+            "name": "Endoscopic incision of ureterocoele"
+          },
+          {
+            "id": 427,
+            "name": "Insertion of suprapubic catheter"
+          },
+          {
+            "id": 432,
+            "name": "Cystourethroscopy"
+          },
+          {
+            "id": 433,
+            "name": "Destruction of PUV"
+          },
+          {
+            "id": 434,
+            "name": "Change of suprapubic catheter"
+          },
+          {
+            "id": 435,
+            "name": "Removal of suprapubic catheter"
+          },
+          {
+            "id": 458,
+            "name": "Fixation of testis"
+          },
+          {
+            "id": 459,
+            "name": "Exploration of scrotum"
+          },
+          {
+            "id": 510,
+            "name": "Excision/closure of urachus/excision of urachal cyst"
+          }
+        ]
+      },
+      "General": {
+        "_procedures": [
+          {
+            "id": 788,
+            "name": "Trauma Laparotomy"
+          },
+          {
+            "id": 789,
+            "name": "Trauma abdominal packing simulated"
+          },
+          {
+            "id": 790,
+            "name": "Trauma Thoracotomy"
+          },
+          {
+            "id": 791,
+            "name": "Trauma clam shell simulated"
+          },
+          {
+            "id": 793,
+            "name": "Debridement of burn"
+          },
+          {
+            "id": 794,
+            "name": "Attention to burn"
+          }
+        ],
+        "Abdominal cavity + wall (incl hernias)": [
+          {
+            "id": 134,
+            "name": "Laparotomy & drainage of abscess"
+          },
+          {
+            "id": 392,
+            "name": "Bilateral inguinal herniotomy"
+          },
+          {
+            "id": 393,
+            "name": "Unilateral inguinal herniotomy"
+          },
+          {
+            "id": 394,
+            "name": "Repair recurrent inguinal hernia"
+          },
+          {
+            "id": 395,
+            "name": "Ligation of PPV"
+          },
+          {
+            "id": 396,
+            "name": "Primary inginal hernia repair - suture"
+          },
+          {
+            "id": 397,
+            "name": "Repair of umbilical hernia"
+          },
+          {
+            "id": 398,
+            "name": "Repair of incisional hernia"
+          },
+          {
+            "id": 399,
+            "name": "Umbilicoplasty"
+          },
+          {
+            "id": 400,
+            "name": "Repair of epigastric hernia"
+          },
+          {
+            "id": 401,
+            "name": "Repair of supraumbilical hernia"
+          },
+          {
+            "id": 402,
+            "name": "Repair of femoral hernia"
+          },
+          {
+            "id": 512,
+            "name": "Open drainage sub-phrenic abscess"
+          },
+          {
+            "id": 513,
+            "name": "Open drainage pelvic abscess"
+          },
+          {
+            "id": 514,
+            "name": "Open drainage abdominal absecess NEC"
+          },
+          {
+            "id": 515,
+            "name": "Division of intra abdo adhesions"
+          },
+          {
+            "id": 526,
+            "name": "Repair of acquired diaphragmatic hernia"
+          },
+          {
+            "id": 527,
+            "name": "Closure of wound dehiscence"
+          },
+          {
+            "id": 580,
+            "name": "Repair of congenital diaphragmatic hernia"
+          },
+          {
+            "id": 616,
+            "name": "Open and close laparotomy"
+          },
+          {
+            "id": 642,
+            "name": "Closure of abdomen"
+          },
+          {
+            "id": 652,
+            "name": "Excision umbilical granuloma"
+          },
+          {
+            "id": 661,
+            "name": "Laparostomy"
+          },
+          {
+            "id": 662,
+            "name": "Attention to wound/dressing"
+          },
+          {
+            "id": 663,
+            "name": "Re-exploration of abdominal cavity"
+          },
+          {
+            "id": 676,
+            "name": "Plication of diaphragm (transabdominal)"
+          },
+          {
+            "id": 678,
+            "name": "Repair of spigelian hernia"
+          },
+          {
+            "id": 684,
+            "name": "Exploratory laparotomy"
+          },
+          {
+            "id": 697,
+            "name": "Abdominal wall repair NOS"
+          },
+          {
+            "id": 713,
+            "name": "Diagnostic peritoneal lavage"
+          },
+          {
+            "id": 729,
+            "name": "Excision/drainage/injection of hydatid cyst"
+          },
+          {
+            "id": 749,
+            "name": "Percutaneous drainage of abscess"
+          },
+          {
+            "id": 752,
+            "name": "Repair of abdominoscrotal hydrocoele"
+          },
+          {
+            "id": 773,
+            "name": "Trans rectal drainage of pelvic abscess"
+          },
+          {
+            "id": 777,
+            "name": "Exploration of abdominal stab wound"
+          }
+        ],
+        "Access incl vascular, ventricular and peritoneal": [
+          {
+            "id": 96,
+            "name": "Exploration of upper end of shunt"
+          },
+          {
+            "id": 97,
+            "name": "External ventricular drainage"
+          },
+          {
+            "id": 152,
+            "name": "Lengthening of peritoneal catheter of ventriculo-peritoneal shunt"
+          },
+          {
+            "id": 520,
+            "name": "Insertion of cuffed central line (open)"
+          },
+          {
+            "id": 521,
+            "name": "Insertion of Portacath"
+          },
+          {
+            "id": 522,
+            "name": "Attention to central line"
+          },
+          {
+            "id": 523,
+            "name": "Removal of central line"
+          },
+          {
+            "id": 524,
+            "name": "Insertion of peritoneal dialysis catheter"
+          },
+          {
+            "id": 525,
+            "name": "Removal of peritoneal dialysis catheter"
+          },
+          {
+            "id": 537,
+            "name": "Revision of VP shunt (ventricular)"
+          },
+          {
+            "id": 538,
+            "name": "Revision of VP shunt (peritoneal)"
+          },
+          {
+            "id": 539,
+            "name": "Insertion of VP shunt"
+          },
+          {
+            "id": 540,
+            "name": "Insertion of Ventricular Access Device (VAD)"
+          },
+          {
+            "id": 541,
+            "name": "Insertion of VA shunt"
+          },
+          {
+            "id": 545,
+            "name": "Insertion of PIC line"
+          },
+          {
+            "id": 550,
+            "name": "Insertion of cuffed central line (percutaneous)"
+          },
+          {
+            "id": 560,
+            "name": "Removal of portacath"
+          },
+          {
+            "id": 561,
+            "name": "Insertion of cuffed haemodialysis catheter"
+          },
+          {
+            "id": 562,
+            "name": "Insertion of uncuffed haemodialysis catheter"
+          },
+          {
+            "id": 628,
+            "name": "Revision of Peritoneal Dialysis Catheter"
+          },
+          {
+            "id": 630,
+            "name": "Cannulation for ECMO"
+          },
+          {
+            "id": 631,
+            "name": "Decannulation following ECMO"
+          },
+          {
+            "id": 757,
+            "name": "Insertion of Peritoneovenous shunt (Denver shunt)"
+          }
+        ],
+        "Female genital tract": [
+          {
+            "id": 127,
+            "name": "Labial adhesion division"
+          },
+          {
+            "id": 473,
+            "name": "Incision of hymen"
+          },
+          {
+            "id": 474,
+            "name": "Excision of excess labial tissue"
+          },
+          {
+            "id": 475,
+            "name": "Division of labial adhesions"
+          },
+          {
+            "id": 477,
+            "name": "Salpingo-oophorectomy"
+          },
+          {
+            "id": 479,
+            "name": "Oophorectomy"
+          },
+          {
+            "id": 480,
+            "name": "Drainage of ovarian cyst"
+          },
+          {
+            "id": 629,
+            "name": "Oophoropexy"
+          },
+          {
+            "id": 639,
+            "name": "Hysterectomy"
+          },
+          {
+            "id": 641,
+            "name": "Vaginal reconstruction"
+          },
+          {
+            "id": 644,
+            "name": "Excision of ovarian cyst NOS"
+          },
+          {
+            "id": 690,
+            "name": "Excision of fallopian tube cyst"
+          },
+          {
+            "id": 691,
+            "name": "Drainage of tubo-ovarian abscess"
+          },
+          {
+            "id": 717,
+            "name": "Reduction cliteroplasty"
+          }
+        ],
+        "Head and Neck": [
+          {
+            "id": 79,
+            "name": "Excision of cystic hygroma"
+          },
+          {
+            "id": 267,
+            "name": "Excision of thyroglossal cyst"
+          },
+          {
+            "id": 268,
+            "name": "Excision of throglossal tract"
+          },
+          {
+            "id": 269,
+            "name": "Excision of preauricular abnormality"
+          },
+          {
+            "id": 270,
+            "name": "Excision of branchial cyst"
+          },
+          {
+            "id": 271,
+            "name": "Excision of branchial fistula"
+          },
+          {
+            "id": 291,
+            "name": "Release of tongue tie"
+          },
+          {
+            "id": 293,
+            "name": "Biopsy/excision of lesion of mouth NEC"
+          },
+          {
+            "id": 491,
+            "name": "Excision of skin lesion of head or neck"
+          },
+          {
+            "id": 492,
+            "name": "Excision preauricular skin tag"
+          },
+          {
+            "id": 494,
+            "name": "Biopsy of lesion of head or neck"
+          },
+          {
+            "id": 496,
+            "name": "Primary suture of head/neck"
+          },
+          {
+            "id": 646,
+            "name": "Total Thyroidectomy"
+          },
+          {
+            "id": 647,
+            "name": "Sub-total Thyroidectomy"
+          },
+          {
+            "id": 648,
+            "name": "Thyroid lobectomy"
+          },
+          {
+            "id": 649,
+            "name": "Parathyroidectomy"
+          },
+          {
+            "id": 696,
+            "name": "Excision of branchial remnant"
+          },
+          {
+            "id": 745,
+            "name": "Repair of cleft lip"
+          },
+          {
+            "id": 746,
+            "name": "Repair of cleft palate"
+          }
+        ],
+        "Neuromuscular": [
+          {
+            "id": 235,
+            "name": "Sternomastoid tenotomy"
+          },
+          {
+            "id": 518,
+            "name": "Muscle biopsy"
+          },
+          {
+            "id": 519,
+            "name": "Peripheral nerve biopsy"
+          },
+          {
+            "id": 585,
+            "name": "Closure of myelomeningocoele"
+          }
+        ],
+        "Skin/soft tissue incl lymphnodes": [
+          {
+            "id": 57,
+            "name": "Diathermy of warts"
+          },
+          {
+            "id": 67,
+            "name": "EUA & incision & drainage of abscess"
+          },
+          {
+            "id": 81,
+            "name": "Excision of haemangioma"
+          },
+          {
+            "id": 83,
+            "name": "Excision of lipoma"
+          },
+          {
+            "id": 85,
+            "name": "Excision of mole"
+          },
+          {
+            "id": 241,
+            "name": "Suturing of laceration"
+          },
+          {
+            "id": 269,
+            "name": "Excision of preauricular abnormality"
+          },
+          {
+            "id": 379,
+            "name": "Laying open of pilonidal sinus"
+          },
+          {
+            "id": 399,
+            "name": "Umbilicoplasty"
+          },
+          {
+            "id": 483,
+            "name": "Excision of sacrococcygeal teratoma"
+          },
+          {
+            "id": 484,
+            "name": "Excision or biopsy of lymphnodes NEC"
+          },
+          {
+            "id": 491,
+            "name": "Excision of skin lesion of head or neck"
+          },
+          {
+            "id": 492,
+            "name": "Excision preauricular skin tag"
+          },
+          {
+            "id": 493,
+            "name": "Excision /biopsy of skin/soft tissue lesion NEC"
+          },
+          {
+            "id": 494,
+            "name": "Biopsy of lesion of head or neck"
+          },
+          {
+            "id": 495,
+            "name": "Skin biopsy NEC"
+          },
+          {
+            "id": 496,
+            "name": "Primary suture of head/neck"
+          },
+          {
+            "id": 497,
+            "name": "Primary suture of skin NEC"
+          },
+          {
+            "id": 498,
+            "name": "Secondary skin suture"
+          },
+          {
+            "id": 499,
+            "name": "Removal of foreign body from skin"
+          },
+          {
+            "id": 502,
+            "name": "Excision of nail bed"
+          },
+          {
+            "id": 503,
+            "name": "Chemical destruction of nail bed"
+          },
+          {
+            "id": 504,
+            "name": "Wedge excision of nail"
+          },
+          {
+            "id": 505,
+            "name": "Avulsion of nail"
+          },
+          {
+            "id": 506,
+            "name": "Excision of scar tissue"
+          },
+          {
+            "id": 516,
+            "name": "Incision and drainage of abscess NEC"
+          },
+          {
+            "id": 517,
+            "name": "Excision of lesion chest wall"
+          },
+          {
+            "id": 536,
+            "name": "Sub-cutaneous mastectomy"
+          },
+          {
+            "id": 567,
+            "name": "Excision or biopsy of cervical lymph node"
+          },
+          {
+            "id": 568,
+            "name": "Excision or biopsy of axillary lymph node"
+          },
+          {
+            "id": 569,
+            "name": "Excision or biopsy of mediastinal lymph node"
+          },
+          {
+            "id": 570,
+            "name": "Excision or biopsy of para-aortic lymph node"
+          },
+          {
+            "id": 571,
+            "name": "Excision or biopsy of portahepatis lymph node"
+          },
+          {
+            "id": 572,
+            "name": "Excision or biopsy of inguinal lymph node"
+          },
+          {
+            "id": 574,
+            "name": "Removal of foreign body (glass) from skin"
+          },
+          {
+            "id": 575,
+            "name": "Removal of foreign body (metal) from skin"
+          },
+          {
+            "id": 650,
+            "name": "Skin graft"
+          },
+          {
+            "id": 656,
+            "name": "Excision of accessory digit(s)"
+          },
+          {
+            "id": 694,
+            "name": "Rib fixation"
+          },
+          {
+            "id": 706,
+            "name": "Removal of sutures/clips"
+          },
+          {
+            "id": 736,
+            "name": "Sclerotherapy of lymphangioma/haemangioma"
+          },
+          {
+            "id": 778,
+            "name": "Exploration of stab wound soft tissue"
+          },
+          {
+            "id": 793,
+            "name": "Debridement of burn"
+          },
+          {
+            "id": 794,
+            "name": "Attention to burn"
+          }
+        ]
+      },
+      "Urology": {
+        "_procedures": [
+          {
+            "id": 37,
+            "name": "Closure of bladder neck (trans-vesical)"
+          },
+          {
+            "id": 72,
+            "name": "EUA & urethral catheterisation"
+          },
+          {
+            "id": 73,
+            "name": "EUA, cystoscopy & vaginogram"
+          },
+          {
+            "id": 91,
+            "name": "Exploration & biopsy of inguinal gonad (L)"
+          },
+          {
+            "id": 144,
+            "name": "Laparotomy & repair of leaking bladder"
+          },
+          {
+            "id": 158,
+            "name": "Lithotripsy (endoscopic)"
+          },
+          {
+            "id": 194,
+            "name": "Paraphimosis reduction"
+          },
+          {
+            "id": 222,
+            "name": "Renal auto-transplant"
+          },
+          {
+            "id": 229,
+            "name": "Revision of urinary stoma"
+          },
+          {
+            "id": 257,
+            "name": "Urethral injection (Deflux)"
+          },
+          {
+            "id": 404,
+            "name": "Nephroureterectomy (not Wilms etc)"
+          },
+          {
+            "id": 405,
+            "name": "Heminephrectomy (duplex kidney)"
+          },
+          {
+            "id": 406,
+            "name": "Heminephrectomy (horseshoe kidney)"
+          },
+          {
+            "id": 407,
+            "name": "Nephrectomy (not Wilms etc)"
+          },
+          {
+            "id": 408,
+            "name": "Pyeloplasty"
+          },
+          {
+            "id": 409,
+            "name": "Nephrolithotomy"
+          },
+          {
+            "id": 410,
+            "name": "Pyelolithotomy"
+          },
+          {
+            "id": 411,
+            "name": "Insertion of nephrostomy tube"
+          },
+          {
+            "id": 412,
+            "name": "Closure of nephrostomy"
+          },
+          {
+            "id": 413,
+            "name": "Open biopsy of lesion of kidney"
+          },
+          {
+            "id": 414,
+            "name": "Percutaneous kidney biopsy"
+          },
+          {
+            "id": 415,
+            "name": "Bilateral ureteric reimplantation"
+          },
+          {
+            "id": 416,
+            "name": "Unilateral ureteric reimplantation"
+          },
+          {
+            "id": 417,
+            "name": "Excision of ureterocoele (open)"
+          },
+          {
+            "id": 418,
+            "name": "Endoscopic catheterisation of ureter"
+          },
+          {
+            "id": 419,
+            "name": "Endoscopic incision of ureterocoele"
+          },
+          {
+            "id": 420,
+            "name": "STING"
+          },
+          {
+            "id": 421,
+            "name": "Insertion of bladder lines"
+          },
+          {
+            "id": 422,
+            "name": "Bladder augmentation"
+          },
+          {
+            "id": 423,
+            "name": "Bladder operation NEC"
+          },
+          {
+            "id": 424,
+            "name": "Ileal bladder augmentation"
+          },
+          {
+            "id": 425,
+            "name": "Colonic bladder augmentation"
+          },
+          {
+            "id": 426,
+            "name": "Continent bladder reconstruction (Mitrofanoff)"
+          },
+          {
+            "id": 427,
+            "name": "Insertion of suprapubic catheter"
+          },
+          {
+            "id": 428,
+            "name": "Vesicostomy"
+          },
+          {
+            "id": 429,
+            "name": "Closure of vesicostomy/cystostomy"
+          },
+          {
+            "id": 430,
+            "name": "Endoscopic cauterisation of lesion of bladder"
+          },
+          {
+            "id": 431,
+            "name": "Endoscopic removal of clot from bladder"
+          },
+          {
+            "id": 432,
+            "name": "Cystourethroscopy"
+          },
+          {
+            "id": 433,
+            "name": "Destruction of PUV"
+          },
+          {
+            "id": 434,
+            "name": "Change of suprapubic catheter"
+          },
+          {
+            "id": 435,
+            "name": "Removal of suprapubic catheter"
+          },
+          {
+            "id": 436,
+            "name": "Introduction of therapeutic substance into bladder"
+          },
+          {
+            "id": 437,
+            "name": "Colposuspension of bladder neck"
+          },
+          {
+            "id": 438,
+            "name": "Urethrotomy (bladder neck sphincterectomy)"
+          },
+          {
+            "id": 439,
+            "name": "Hypospadias repair"
+          },
+          {
+            "id": 440,
+            "name": "Magpi"
+          },
+          {
+            "id": 442,
+            "name": "Epispadias repair"
+          },
+          {
+            "id": 443,
+            "name": "Closure of urethral fistula"
+          },
+          {
+            "id": 444,
+            "name": "Urethral reconstruction NEC"
+          },
+          {
+            "id": 445,
+            "name": "Urethral meatoplasty"
+          },
+          {
+            "id": 446,
+            "name": "Dilatation of urethral meatus"
+          },
+          {
+            "id": 447,
+            "name": "Descrotalisation of penis"
+          },
+          {
+            "id": 448,
+            "name": "High ligation of testicular vessels"
+          },
+          {
+            "id": 449,
+            "name": "Exploration of groin"
+          },
+          {
+            "id": 450,
+            "name": "Unilateral orchidopexy"
+          },
+          {
+            "id": 451,
+            "name": "Bilateral orchidopexy"
+          },
+          {
+            "id": 452,
+            "name": "1st stage orchidopexy"
+          },
+          {
+            "id": 453,
+            "name": "2nd stage orchidopexy"
+          },
+          {
+            "id": 454,
+            "name": "Excision of aberrant testis"
+          },
+          {
+            "id": 455,
+            "name": "Orchidectomy"
+          },
+          {
+            "id": 456,
+            "name": "Insertion of testicular implant"
+          },
+          {
+            "id": 457,
+            "name": "Drainage of hydrocoele"
+          },
+          {
+            "id": 458,
+            "name": "Fixation of testis"
+          },
+          {
+            "id": 459,
+            "name": "Exploration of scrotum"
+          },
+          {
+            "id": 460,
+            "name": "Reduction of testicular torsion"
+          },
+          {
+            "id": 461,
+            "name": "Biopsy of testis"
+          },
+          {
+            "id": 462,
+            "name": "Excision of hydatid of Morgagni"
+          },
+          {
+            "id": 463,
+            "name": "Correction of penile chordee"
+          },
+          {
+            "id": 464,
+            "name": "Artificial errection"
+          },
+          {
+            "id": 465,
+            "name": "Circumcision - standard"
+          },
+          {
+            "id": 466,
+            "name": "Circumcision - ritual"
+          },
+          {
+            "id": 467,
+            "name": "Division of preputial adhesions"
+          },
+          {
+            "id": 468,
+            "name": "Prepuceplasty"
+          },
+          {
+            "id": 469,
+            "name": "Dorsal slit"
+          },
+          {
+            "id": 470,
+            "name": "Penile frenuloplasty"
+          },
+          {
+            "id": 471,
+            "name": "EUA testis"
+          },
+          {
+            "id": 472,
+            "name": "Diagnostic laparoscopy"
+          },
+          {
+            "id": 476,
+            "name": "Vaginal dilatation"
+          },
+          {
+            "id": 481,
+            "name": "EUA vagina"
+          },
+          {
+            "id": 482,
+            "name": "Feminising genitoplasty/TUM"
+          },
+          {
+            "id": 510,
+            "name": "Excision/closure of urachus/excision of urachal cyst"
+          },
+          {
+            "id": 544,
+            "name": "Pyeloplasty (laparoscopic)"
+          },
+          {
+            "id": 590,
+            "name": "Open nephrostomy"
+          },
+          {
+            "id": 591,
+            "name": "Percutaneous nephrostomy"
+          },
+          {
+            "id": 592,
+            "name": "Ureterostomy"
+          },
+          {
+            "id": 593,
+            "name": "ureterolithotomy"
+          },
+          {
+            "id": 594,
+            "name": "Ureteric diversion"
+          },
+          {
+            "id": 595,
+            "name": "ureteric undiversion"
+          },
+          {
+            "id": 596,
+            "name": "Renal transplant (cadaveric)"
+          },
+          {
+            "id": 597,
+            "name": "Renal transplant (live donor)"
+          },
+          {
+            "id": 598,
+            "name": "Transplant nephrectomy"
+          },
+          {
+            "id": 607,
+            "name": "Total urogenital mobilisation (TUM)"
+          },
+          {
+            "id": 608,
+            "name": "Closure of bladder exstrophy"
+          },
+          {
+            "id": 611,
+            "name": "Urethral Catheterisation"
+          },
+          {
+            "id": 612,
+            "name": "Removal of ureteric stent"
+          },
+          {
+            "id": 622,
+            "name": "urethrostomy"
+          },
+          {
+            "id": 623,
+            "name": "Sclerotherapy of varicocoele"
+          },
+          {
+            "id": 625,
+            "name": "Removal of bladder calculus (open)"
+          },
+          {
+            "id": 626,
+            "name": "Trans uretero-ureterostomy (TUU)"
+          },
+          {
+            "id": 632,
+            "name": "Uretero-renoscopy"
+          },
+          {
+            "id": 637,
+            "name": "Excision of ureteric lesion"
+          },
+          {
+            "id": 660,
+            "name": "Insertion of ureteric stent"
+          },
+          {
+            "id": 669,
+            "name": "Correction of peno-scrotal transposition"
+          },
+          {
+            "id": 670,
+            "name": "Correction of peno-scrotal web"
+          },
+          {
+            "id": 675,
+            "name": "Ureteric injection of deflux"
+          },
+          {
+            "id": 700,
+            "name": "Extracorporeal shockwave lithotripsy"
+          },
+          {
+            "id": 701,
+            "name": "Percutaneous nephrolithotomy"
+          },
+          {
+            "id": 702,
+            "name": "Retrograde pyelogram"
+          },
+          {
+            "id": 703,
+            "name": "Cloacal Reconstruction"
+          },
+          {
+            "id": 707,
+            "name": "Vaginostomy"
+          },
+          {
+            "id": 708,
+            "name": "Donor Nephrectomy"
+          },
+          {
+            "id": 716,
+            "name": "Closure of ureterostomy"
+          },
+          {
+            "id": 733,
+            "name": "Heminephrectomy (laparoscopic)"
+          },
+          {
+            "id": 735,
+            "name": "Injection of Botox into bladder"
+          },
+          {
+            "id": 748,
+            "name": "Attention to VUJ/ureteric orifice"
+          },
+          {
+            "id": 751,
+            "name": "Bladder neck reconstruction"
+          },
+          {
+            "id": 769,
+            "name": "Excision/deroofing of renal cyst"
+          },
+          {
+            "id": 782,
+            "name": "Excision of bladder diverticulum"
+          },
+          {
+            "id": 787,
+            "name": "Mitrofanoff Procedure"
+          },
+          {
+            "id": 800,
+            "name": "Pyeloplasty (Robotic)"
+          },
+          {
+            "id": 801,
+            "name": "Nephrectomy (Robotic)"
+          },
+          {
+            "id": 802,
+            "name": "Heminephrectomy (Robotic)"
+          },
+          {
+            "id": 803,
+            "name": "Unilateral ureteric reimplantation (Robotic)"
+          },
+          {
+            "id": 804,
+            "name": "Bilateral ureteric reimplantation (Robotic)"
+          },
+          {
+            "id": 805,
+            "name": "Redo Orchidopexy Unilateral"
+          },
+          {
+            "id": 806,
+            "name": "Redo Orchidopexy Bilateral"
+          }
+        ],
+        "Male Genitalia": [
+          {
+            "id": 438,
+            "name": "Urethrotomy (bladder neck sphincterectomy)"
+          },
+          {
+            "id": 439,
+            "name": "Hypospadias repair"
+          },
+          {
+            "id": 440,
+            "name": "Magpi"
+          },
+          {
+            "id": 442,
+            "name": "Epispadias repair"
+          },
+          {
+            "id": 443,
+            "name": "Closure of urethral fistula"
+          },
+          {
+            "id": 444,
+            "name": "Urethral reconstruction NEC"
+          },
+          {
+            "id": 445,
+            "name": "Urethral meatoplasty"
+          },
+          {
+            "id": 446,
+            "name": "Dilatation of urethral meatus"
+          },
+          {
+            "id": 447,
+            "name": "Descrotalisation of penis"
+          },
+          {
+            "id": 448,
+            "name": "High ligation of testicular vessels"
+          },
+          {
+            "id": 449,
+            "name": "Exploration of groin"
+          },
+          {
+            "id": 450,
+            "name": "Unilateral orchidopexy"
+          },
+          {
+            "id": 451,
+            "name": "Bilateral orchidopexy"
+          },
+          {
+            "id": 452,
+            "name": "1st stage orchidopexy"
+          },
+          {
+            "id": 453,
+            "name": "2nd stage orchidopexy"
+          },
+          {
+            "id": 454,
+            "name": "Excision of aberrant testis"
+          },
+          {
+            "id": 455,
+            "name": "Orchidectomy"
+          },
+          {
+            "id": 456,
+            "name": "Insertion of testicular implant"
+          },
+          {
+            "id": 457,
+            "name": "Drainage of hydrocoele"
+          },
+          {
+            "id": 458,
+            "name": "Fixation of testis"
+          },
+          {
+            "id": 459,
+            "name": "Exploration of scrotum"
+          },
+          {
+            "id": 460,
+            "name": "Reduction of testicular torsion"
+          },
+          {
+            "id": 461,
+            "name": "Biopsy of testis"
+          },
+          {
+            "id": 462,
+            "name": "Excision of hydatid of Morgagni"
+          },
+          {
+            "id": 463,
+            "name": "Correction of penile chordee"
+          },
+          {
+            "id": 464,
+            "name": "Artificial errection"
+          },
+          {
+            "id": 465,
+            "name": "Circumcision - standard"
+          },
+          {
+            "id": 466,
+            "name": "Circumcision - ritual"
+          },
+          {
+            "id": 467,
+            "name": "Division of preputial adhesions"
+          },
+          {
+            "id": 468,
+            "name": "Prepuceplasty"
+          },
+          {
+            "id": 469,
+            "name": "Dorsal slit"
+          },
+          {
+            "id": 470,
+            "name": "Penile frenuloplasty"
+          },
+          {
+            "id": 471,
+            "name": "EUA testis"
+          },
+          {
+            "id": 472,
+            "name": "Diagnostic laparoscopy"
+          },
+          {
+            "id": 558,
+            "name": "Jaboulay Procedure"
+          },
+          {
+            "id": 559,
+            "name": "Lords Procedure"
+          },
+          {
+            "id": 621,
+            "name": "Repair of urethral fistula"
+          },
+          {
+            "id": 627,
+            "name": "EUA Hypospadias"
+          },
+          {
+            "id": 658,
+            "name": "Repair of hypospadias (1st stage)"
+          },
+          {
+            "id": 659,
+            "name": "Repair of hypospadias (2nd stage)"
+          },
+          {
+            "id": 665,
+            "name": "Release of Peno-scrotal webbing"
+          },
+          {
+            "id": 667,
+            "name": "Urethral meatotomy"
+          },
+          {
+            "id": 668,
+            "name": "Foreskin reconstruction"
+          },
+          {
+            "id": 688,
+            "name": "Reconstruction for megaprepuce"
+          },
+          {
+            "id": 699,
+            "name": "Correction of buried penis"
+          },
+          {
+            "id": 747,
+            "name": "Excision of epididymal cyst"
+          },
+          {
+            "id": 756,
+            "name": "Reduction of paraphimosis"
+          }
+        ],
+        "Female Genitalia": [
+          {
+            "id": 473,
+            "name": "Incision of hymen"
+          },
+          {
+            "id": 474,
+            "name": "Excision of excess labial tissue"
+          },
+          {
+            "id": 475,
+            "name": "Division of labial adhesions"
+          },
+          {
+            "id": 476,
+            "name": "Vaginal dilatation"
+          },
+          {
+            "id": 477,
+            "name": "Salpingo-oophorectomy"
+          },
+          {
+            "id": 479,
+            "name": "Oophorectomy"
+          },
+          {
+            "id": 480,
+            "name": "Drainage of ovarian cyst"
+          },
+          {
+            "id": 481,
+            "name": "EUA vagina"
+          },
+          {
+            "id": 482,
+            "name": "Feminising genitoplasty/TUM"
+          },
+          {
+            "id": 641,
+            "name": "Vaginal reconstruction"
+          },
+          {
+            "id": 717,
+            "name": "Reduction cliteroplasty"
+          },
+          {
+            "id": 762,
+            "name": "Ovarian cystectomy (preserving ovary)"
+          },
+          {
+            "id": 781,
+            "name": "Removal of foreign body from vagina"
+          }
+        ]
+      },
+      "Gastrointestinal": {
+        "_procedures": [
+          {
+            "id": 343,
+            "name": "Reduction of prolasped colostomy/ileostomy"
+          },
+          {
+            "id": 600,
+            "name": "Laparoscopic assisted pull through (Hirschsprung)"
+          },
+          {
+            "id": 729,
+            "name": "Excision/drainage/injection of hydatid cyst"
+          }
+        ],
+        "Stomach": [
+          {
+            "id": 25,
+            "name": "Change of PEG tube to gastrostomy button"
+          },
+          {
+            "id": 63,
+            "name": "Endoscopic insertion of gastro-jejunal tube"
+          },
+          {
+            "id": 99,
+            "name": "Fundoplication"
+          },
+          {
+            "id": 102,
+            "name": "Fundoplication (re-do)"
+          },
+          {
+            "id": 103,
+            "name": "Gastrostomy button insertion"
+          },
+          {
+            "id": 132,
+            "name": "Laparotomy & closure of gastric perforation"
+          },
+          {
+            "id": 174,
+            "name": "OGD"
+          },
+          {
+            "id": 175,
+            "name": "OGD & Clo-test"
+          },
+          {
+            "id": 184,
+            "name": "Open gastrotomy & removal of foreign body"
+          },
+          {
+            "id": 196,
+            "name": "Percutaneous Endoscopic Gastrostomy insertion"
+          },
+          {
+            "id": 207,
+            "name": "Pyloromyotomy (RUQ approach)"
+          },
+          {
+            "id": 208,
+            "name": "Pyloromyotomy (supra-umbilical approach)"
+          },
+          {
+            "id": 302,
+            "name": "Antireflux fundoplication (open abdo approach)"
+          },
+          {
+            "id": 303,
+            "name": "Creation of open gastrostomy"
+          },
+          {
+            "id": 304,
+            "name": "Insertion of PEG"
+          },
+          {
+            "id": 305,
+            "name": "Closure of gastrostomy"
+          },
+          {
+            "id": 306,
+            "name": "Attention to gastrostomy tube (incl change)"
+          },
+          {
+            "id": 307,
+            "name": "Pyloromyotomy"
+          },
+          {
+            "id": 310,
+            "name": "pH studies"
+          },
+          {
+            "id": 311,
+            "name": "Oesophageal motility studies"
+          },
+          {
+            "id": 534,
+            "name": "OGD and biopsy"
+          },
+          {
+            "id": 563,
+            "name": "Removal of PEG"
+          },
+          {
+            "id": 609,
+            "name": "Closure of gastric perforation"
+          },
+          {
+            "id": 614,
+            "name": "Oesophagogastric disconnection"
+          },
+          {
+            "id": 638,
+            "name": "Pyloroplasty"
+          },
+          {
+            "id": 666,
+            "name": "Endocinch"
+          },
+          {
+            "id": 709,
+            "name": "Closure of gastrocolic fistula"
+          },
+          {
+            "id": 754,
+            "name": "Gastropexy"
+          },
+          {
+            "id": 779,
+            "name": "Removal of Bezoar"
+          },
+          {
+            "id": 780,
+            "name": "Closure of gastrocutaneous fistula"
+          }
+        ],
+        "Biliary": [
+          {
+            "id": 28,
+            "name": "Cholecystectomy (laparoscopic)"
+          },
+          {
+            "id": 77,
+            "name": "Excision of choledochal cyst & hepatico-enterostomy"
+          },
+          {
+            "id": 383,
+            "name": "Open wedge biopsy of liver"
+          },
+          {
+            "id": 529,
+            "name": "Cholecystectomy (open)"
+          },
+          {
+            "id": 617,
+            "name": "Kasai Procedure (Hepatoportoenterostomy)"
+          },
+          {
+            "id": 724,
+            "name": "Hepaticoenterostomy (not choledochal cyst excision)"
+          },
+          {
+            "id": 730,
+            "name": "Portal venous shunt"
+          },
+          {
+            "id": 731,
+            "name": "Operative cholangiogram"
+          },
+          {
+            "id": 798,
+            "name": "Cholecystectomy (Robotic)"
+          },
+          {
+            "id": 799,
+            "name": "Choledocal cystectomy (Robotic)"
+          }
+        ],
+        "Large Intestine": [
+          {
+            "id": 39,
+            "name": "Colonoscopy"
+          },
+          {
+            "id": 40,
+            "name": "Colonoscopy & biopsy"
+          },
+          {
+            "id": 43,
+            "name": "Colonoscopy & polypectomy"
+          },
+          {
+            "id": 130,
+            "name": "Laparotomy & appendicectomy"
+          },
+          {
+            "id": 316,
+            "name": "Refashioning of stoma"
+          },
+          {
+            "id": 327,
+            "name": "Emergency excision of abnormal appendix"
+          },
+          {
+            "id": 328,
+            "name": "Emergency excision of normal appendix"
+          },
+          {
+            "id": 329,
+            "name": "Incidental appendicectomy"
+          },
+          {
+            "id": 330,
+            "name": "Appendicostomy (ACE)"
+          },
+          {
+            "id": 331,
+            "name": "Total colectomy and ileorectal anastomosis"
+          },
+          {
+            "id": 332,
+            "name": "Total colectomy and ileostomy"
+          },
+          {
+            "id": 333,
+            "name": "Right hemicolectomy + ileocolic anastomosis"
+          },
+          {
+            "id": 334,
+            "name": "Transverse colectomy + end/end anastomosis"
+          },
+          {
+            "id": 335,
+            "name": "Transverse colectomy"
+          },
+          {
+            "id": 336,
+            "name": "Left hemicolectomy"
+          },
+          {
+            "id": 337,
+            "name": "Left hemicolectomy + anast colon/rectum"
+          },
+          {
+            "id": 339,
+            "name": "Sigmoid colectomy"
+          },
+          {
+            "id": 340,
+            "name": "Sigmoid colectomy + anast colon/rectum"
+          },
+          {
+            "id": 341,
+            "name": "Caecostomy (tube/button)"
+          },
+          {
+            "id": 342,
+            "name": "Closure of caecostomy"
+          },
+          {
+            "id": 343,
+            "name": "Reduction of prolasped colostomy/ileostomy"
+          },
+          {
+            "id": 345,
+            "name": "Closure of colostomy"
+          },
+          {
+            "id": 346,
+            "name": "Formation of loop colostomy"
+          },
+          {
+            "id": 347,
+            "name": "Formation of end colostomy"
+          },
+          {
+            "id": 349,
+            "name": "Open reduction of sigmoid volvulus"
+          },
+          {
+            "id": 350,
+            "name": "Colonoscopy and biopsy of colon"
+          },
+          {
+            "id": 351,
+            "name": "Colonoscopy"
+          },
+          {
+            "id": 565,
+            "name": "Flexible sigmoidoscopy"
+          },
+          {
+            "id": 677,
+            "name": "EUA of ileo-anal pouch"
+          },
+          {
+            "id": 680,
+            "name": "Repair of colonic perforation"
+          },
+          {
+            "id": 692,
+            "name": "Attention to ACE"
+          },
+          {
+            "id": 693,
+            "name": "Fixation of Caecum NOS"
+          },
+          {
+            "id": 711,
+            "name": "EUA appendix mass"
+          },
+          {
+            "id": 738,
+            "name": "Excision megarectum and colorectal anastomosis"
+          },
+          {
+            "id": 739,
+            "name": "Ileoanal pouch formation"
+          },
+          {
+            "id": 740,
+            "name": "Proctocolectomy + ileo-anal anastomosis HEC"
+          },
+          {
+            "id": 742,
+            "name": "Interval appendicectomy"
+          },
+          {
+            "id": 760,
+            "name": "Enterotomy (small intestine/colon)"
+          },
+          {
+            "id": 785,
+            "name": "Excision of colonic stricture"
+          }
+        ],
+        "Small intestine": [
+          {
+            "id": 63,
+            "name": "Endoscopic insertion of gastro-jejunal tube"
+          },
+          {
+            "id": 117,
+            "name": "Ileostomy formation"
+          },
+          {
+            "id": 136,
+            "name": "Laparotomy & ileo-ileal anastomosis (intussusception)"
+          },
+          {
+            "id": 141,
+            "name": "Laparotomy & Ladd's procedure (infant)"
+          },
+          {
+            "id": 312,
+            "name": "Correction of malrotation"
+          },
+          {
+            "id": 313,
+            "name": "Duodenoduodenostomy"
+          },
+          {
+            "id": 315,
+            "name": "Creation of jejunostomy"
+          },
+          {
+            "id": 316,
+            "name": "Refashioning of stoma"
+          },
+          {
+            "id": 317,
+            "name": "Closure of jejunostomy"
+          },
+          {
+            "id": 318,
+            "name": "Excision of ileum & anastomosis (ileum/ileum)"
+          },
+          {
+            "id": 320,
+            "name": "Excision of Meckel diverticulum"
+          },
+          {
+            "id": 322,
+            "name": "Creation of defunctioning ileostomy"
+          },
+          {
+            "id": 324,
+            "name": "Closure of ileostomy"
+          },
+          {
+            "id": 325,
+            "name": "Operative reduction of intussusception"
+          },
+          {
+            "id": 326,
+            "name": "Hydrostatic reduction of intussusception = air enema"
+          },
+          {
+            "id": 532,
+            "name": "Ileostomy closure"
+          },
+          {
+            "id": 564,
+            "name": "Small bowel resection and primary anastomosis"
+          },
+          {
+            "id": 633,
+            "name": "Excision of mesenteric cyst"
+          },
+          {
+            "id": 671,
+            "name": "Formation of Intussusception Valve"
+          },
+          {
+            "id": 677,
+            "name": "EUA of ileo-anal pouch"
+          },
+          {
+            "id": 679,
+            "name": "Ileocolic anastomosis"
+          },
+          {
+            "id": 681,
+            "name": "Repair of small bowel perforation"
+          },
+          {
+            "id": 683,
+            "name": "Excision of vitelline duct remnant"
+          },
+          {
+            "id": 687,
+            "name": "Creation of feeding gastrostomy"
+          },
+          {
+            "id": 695,
+            "name": "Bowel lengthening procedure"
+          },
+          {
+            "id": 705,
+            "name": "Jejunojejunostomy"
+          },
+          {
+            "id": 710,
+            "name": "Excision of duplication cyst"
+          },
+          {
+            "id": 718,
+            "name": "Under-running of bleeding DU"
+          },
+          {
+            "id": 727,
+            "name": "Small bowel transplant"
+          },
+          {
+            "id": 739,
+            "name": "Ileoanal pouch formation"
+          },
+          {
+            "id": 743,
+            "name": "Attention to ileostomy"
+          },
+          {
+            "id": 760,
+            "name": "Enterotomy (small intestine/colon)"
+          },
+          {
+            "id": 764,
+            "name": "Feeding jejunostomy insertion"
+          },
+          {
+            "id": 765,
+            "name": "Roux-en-y jejunostomy"
+          },
+          {
+            "id": 768,
+            "name": "Attention to jejunostomy"
+          }
+        ],
+        "Ano-rectal": [
+          {
+            "id": 68,
+            "name": "EUA & proctoscopy"
+          },
+          {
+            "id": 149,
+            "name": "Laparotomy, frozen-sections, ileostomy closure, Duhamel pull-through"
+          },
+          {
+            "id": 214,
+            "name": "Rectal strip biopsy"
+          },
+          {
+            "id": 352,
+            "name": "Sigmoidoscopy +/- biopsy"
+          },
+          {
+            "id": 354,
+            "name": "Duhamel procedure"
+          },
+          {
+            "id": 355,
+            "name": "Rectosigmoidectomy HEC"
+          },
+          {
+            "id": 356,
+            "name": "Soave procedure"
+          },
+          {
+            "id": 357,
+            "name": "Rectal polypectomy"
+          },
+          {
+            "id": 358,
+            "name": "Excision/injection of rectal mucosa"
+          },
+          {
+            "id": 359,
+            "name": "Perianal repair of rectal prolapse (Delorme)"
+          },
+          {
+            "id": 360,
+            "name": "Manual evacuation"
+          },
+          {
+            "id": 361,
+            "name": "Anorectal stimulation"
+          },
+          {
+            "id": 362,
+            "name": "EUA rectum +/- Bx"
+          },
+          {
+            "id": 363,
+            "name": "Rectal biopsy (suction)"
+          },
+          {
+            "id": 364,
+            "name": "Proctoscopy +/- rectal biopsy"
+          },
+          {
+            "id": 366,
+            "name": "Excison of haemorrhoids"
+          },
+          {
+            "id": 367,
+            "name": "Excision of anal polyp"
+          },
+          {
+            "id": 368,
+            "name": "Excision of anal skin tag"
+          },
+          {
+            "id": 369,
+            "name": "Excision of perianal warts"
+          },
+          {
+            "id": 370,
+            "name": "Cautery of perianal warts"
+          },
+          {
+            "id": 371,
+            "name": "Posterior repair of anal sphincter"
+          },
+          {
+            "id": 372,
+            "name": "Anterior repair of anal sphincter"
+          },
+          {
+            "id": 373,
+            "name": "PSARP (posterior sagittal anorectoplasty)"
+          },
+          {
+            "id": 374,
+            "name": "Anoplasty"
+          },
+          {
+            "id": 375,
+            "name": "Anorectal stretch"
+          },
+          {
+            "id": 376,
+            "name": "Laying open of anal fistula"
+          },
+          {
+            "id": 377,
+            "name": "Incision & drainage of ischiorectal abscess"
+          },
+          {
+            "id": 378,
+            "name": "Incision & drainage of perianal abscess"
+          },
+          {
+            "id": 379,
+            "name": "Laying open of pilonidal sinus"
+          },
+          {
+            "id": 380,
+            "name": "Rectal washout"
+          },
+          {
+            "id": 547,
+            "name": "Trans-anal pull-through"
+          },
+          {
+            "id": 606,
+            "name": "Rectopexy - trans abdominal approach"
+          },
+          {
+            "id": 643,
+            "name": "Abdominal approach for anorectal/cloacal malformation"
+          },
+          {
+            "id": 653,
+            "name": "Thiersch Suture"
+          },
+          {
+            "id": 677,
+            "name": "EUA of ileo-anal pouch"
+          },
+          {
+            "id": 698,
+            "name": "Anal dilatation/calibration"
+          },
+          {
+            "id": 703,
+            "name": "Cloacal Reconstruction"
+          },
+          {
+            "id": 719,
+            "name": "Botox injection into anal sphincter"
+          },
+          {
+            "id": 722,
+            "name": "Swenson Pull-through"
+          },
+          {
+            "id": 739,
+            "name": "Ileoanal pouch formation"
+          },
+          {
+            "id": 763,
+            "name": "Removal of foreign body from rectum"
+          },
+          {
+            "id": 783,
+            "name": "Removal of Thiersch suture"
+          },
+          {
+            "id": 784,
+            "name": "Injection of rectal prolapse"
+          },
+          {
+            "id": 810,
+            "name": "Endoscopic Pilonidal Sinus Treatment (EPSiT)"
+          }
+        ],
+        "Oesophagus": [
+          {
+            "id": 172,
+            "name": "Oesophageal dilatation"
+          },
+          {
+            "id": 173,
+            "name": "Oesophagoscopy (rigid)"
+          },
+          {
+            "id": 174,
+            "name": "OGD"
+          },
+          {
+            "id": 175,
+            "name": "OGD & Clo-test"
+          },
+          {
+            "id": 176,
+            "name": "OGD & dilatation"
+          },
+          {
+            "id": 177,
+            "name": "OGD & FB removal"
+          },
+          {
+            "id": 180,
+            "name": "OGD & pH study"
+          },
+          {
+            "id": 294,
+            "name": "Closure of tracheo-oesophageal fistula"
+          },
+          {
+            "id": 295,
+            "name": "Correction of congenital atresia of oesophagus"
+          },
+          {
+            "id": 296,
+            "name": "OGD + sclerotherapy of varices"
+          },
+          {
+            "id": 300,
+            "name": "Rigid endoscopic removal of FB"
+          },
+          {
+            "id": 301,
+            "name": "Cardiomyotomy (Heller op for achalasia)"
+          },
+          {
+            "id": 310,
+            "name": "pH studies"
+          },
+          {
+            "id": 311,
+            "name": "Oesophageal motility studies"
+          },
+          {
+            "id": 534,
+            "name": "OGD and biopsy"
+          },
+          {
+            "id": 576,
+            "name": "Oesophagostomy"
+          },
+          {
+            "id": 577,
+            "name": "Closure of upper pouch TOF (cervical incision)"
+          },
+          {
+            "id": 610,
+            "name": "Closure of H Tracheo-oesophageal fistula"
+          },
+          {
+            "id": 618,
+            "name": "Oesophageal replacement"
+          },
+          {
+            "id": 640,
+            "name": "Vagotomy"
+          },
+          {
+            "id": 723,
+            "name": "OGD + banding of oesophageal varices"
+          },
+          {
+            "id": 766,
+            "name": "Oesophagectomy"
+          },
+          {
+            "id": 770,
+            "name": "Insertion of oesophageal stent"
+          },
+          {
+            "id": 771,
+            "name": "Removal of oesophageal stent"
+          },
+          {
+            "id": 772,
+            "name": "Attention to/through oesophageal stent"
+          },
+          {
+            "id": 796,
+            "name": "OGD for Battery Ingestion"
+          },
+          {
+            "id": 797,
+            "name": "OGD for Magnet Ingestion"
+          }
+        ],
+        "Solid Organ": [
+          {
+            "id": 381,
+            "name": "Wedge/Segmental liver resection"
+          },
+          {
+            "id": 383,
+            "name": "Open wedge biopsy of liver"
+          },
+          {
+            "id": 384,
+            "name": "Percutaneous liver biopsy"
+          },
+          {
+            "id": 385,
+            "name": "Liver transplant"
+          },
+          {
+            "id": 386,
+            "name": "Total splenectomy"
+          },
+          {
+            "id": 387,
+            "name": "Partial splenectomy"
+          },
+          {
+            "id": 388,
+            "name": "Partial pancreatectomy"
+          },
+          {
+            "id": 389,
+            "name": "Total pancreatectomy"
+          },
+          {
+            "id": 613,
+            "name": "Deroofing/excision splenic cyst"
+          },
+          {
+            "id": 726,
+            "name": "Multivisceral transplant"
+          },
+          {
+            "id": 755,
+            "name": "Fixation of spleen"
+          }
+        ],
+        "Pancreatic": [
+          {
+            "id": 672,
+            "name": "Pancreatic cyst gastrostomy"
+          },
+          {
+            "id": 673,
+            "name": "Pancreatic cyst jejunostomy"
+          },
+          {
+            "id": 795,
+            "name": "Pancreatic Drainage Procedure"
+          }
+        ]
+      },
+      "Thoracic": [
+        {
+          "id": 244,
+          "name": "Thoracoscopy & drainage of empyema"
+        },
+        {
+          "id": 273,
+          "name": "Formation of tracheostomy"
+        },
+        {
+          "id": 275,
+          "name": "Revision of trachesotomy"
+        },
+        {
+          "id": 276,
+          "name": "Closure of tracheostomy"
+        },
+        {
+          "id": 277,
+          "name": "Fibreoptic bronchoscopy"
+        },
+        {
+          "id": 278,
+          "name": "Rigid bronchoscopy"
+        },
+        {
+          "id": 279,
+          "name": "Removal of FB from bronchus"
+        },
+        {
+          "id": 280,
+          "name": "Thoracotomy"
+        },
+        {
+          "id": 281,
+          "name": "Exploratory thoracotomy"
+        },
+        {
+          "id": 282,
+          "name": "Pulmonary lobectomy"
+        },
+        {
+          "id": 283,
+          "name": "Segmental/wedge resection/ partial lobectomy of lung"
+        },
+        {
+          "id": 284,
+          "name": "Open biopsy of lung"
+        },
+        {
+          "id": 285,
+          "name": "Drainage of pleural cavity"
+        },
+        {
+          "id": 286,
+          "name": "Aspiration of pleural cavity"
+        },
+        {
+          "id": 287,
+          "name": "Insertion of chest drain"
+        },
+        {
+          "id": 526,
+          "name": "Repair of acquired diaphragmatic hernia"
+        },
+        {
+          "id": 586,
+          "name": "Pleural debridement (empyema)"
+        },
+        {
+          "id": 589,
+          "name": "Excision extralobar sequestration"
+        },
+        {
+          "id": 615,
+          "name": "Removal of Pectus bar"
+        },
+        {
+          "id": 634,
+          "name": "Repair pectus carinatum"
+        },
+        {
+          "id": 635,
+          "name": "Repair of pectus excavatum"
+        },
+        {
+          "id": 636,
+          "name": "Aortopexy"
+        },
+        {
+          "id": 645,
+          "name": "Cervical Sympathectomy"
+        },
+        {
+          "id": 657,
+          "name": "Pleurodesis"
+        },
+        {
+          "id": 674,
+          "name": "Thymectomy"
+        },
+        {
+          "id": 682,
+          "name": "Plication of diaphragm (eventration) trans thoracic"
+        },
+        {
+          "id": 725,
+          "name": "Biopsy/excision of thoracic tumour"
+        },
+        {
+          "id": 729,
+          "name": "Excision/drainage/injection of hydatid cyst"
+        },
+        {
+          "id": 732,
+          "name": "VATS not otherwise specified"
+        },
+        {
+          "id": 737,
+          "name": "Excision of cervical rib"
+        },
+        {
+          "id": 744,
+          "name": "Muscle flap to necrotic lung"
+        },
+        {
+          "id": 761,
+          "name": "Excision of mediastinal tumour"
+        },
+        {
+          "id": 767,
+          "name": "Excision of rib(s) NOS"
+        },
+        {
+          "id": 775,
+          "name": "Repair of Morgagni Hernia"
+        },
+        {
+          "id": 776,
+          "name": "Repair of central tendon defect (diaphragm)"
+        },
+        {
+          "id": 786,
+          "name": "Microlaryngoscopy and Bronchoscopy (MLB)"
+        },
+        {
+          "id": 790,
+          "name": "Trauma Thoracotomy"
+        },
+        {
+          "id": 791,
+          "name": "Trauma clam shell simulated"
+        },
+        {
+          "id": 807,
+          "name": "Thoracoscopic Biopsy of Lung"
+        },
+        {
+          "id": 808,
+          "name": "Thoracoscopy (Diagnostic)"
+        },
+        {
+          "id": 809,
+          "name": "Thoracoscopy (Therapeutic)"
+        }
+      ],
+      "Oncology": [
+        {
+          "id": 71,
+          "name": "EUA & trans-anal Trucut biopsies of pelvic mass"
+        },
+        {
+          "id": 86,
+          "name": "Excision of abdominal neuroblastoma"
+        },
+        {
+          "id": 281,
+          "name": "Exploratory thoracotomy"
+        },
+        {
+          "id": 282,
+          "name": "Pulmonary lobectomy"
+        },
+        {
+          "id": 283,
+          "name": "Segmental/wedge resection/ partial lobectomy of lung"
+        },
+        {
+          "id": 284,
+          "name": "Open biopsy of lung"
+        },
+        {
+          "id": 285,
+          "name": "Drainage of pleural cavity"
+        },
+        {
+          "id": 286,
+          "name": "Aspiration of pleural cavity"
+        },
+        {
+          "id": 287,
+          "name": "Insertion of chest drain"
+        },
+        {
+          "id": 381,
+          "name": "Wedge/Segmental liver resection"
+        },
+        {
+          "id": 390,
+          "name": "Adrenalectomy"
+        },
+        {
+          "id": 391,
+          "name": "Partial adrenalectomy"
+        },
+        {
+          "id": 407,
+          "name": "Nephrectomy (not Wilms etc)"
+        },
+        {
+          "id": 413,
+          "name": "Open biopsy of lesion of kidney"
+        },
+        {
+          "id": 414,
+          "name": "Percutaneous kidney biopsy"
+        },
+        {
+          "id": 477,
+          "name": "Salpingo-oophorectomy"
+        },
+        {
+          "id": 479,
+          "name": "Oophorectomy"
+        },
+        {
+          "id": 484,
+          "name": "Excision or biopsy of lymphnodes NEC"
+        },
+        {
+          "id": 493,
+          "name": "Excision /biopsy of skin/soft tissue lesion NEC"
+        },
+        {
+          "id": 494,
+          "name": "Biopsy of lesion of head or neck"
+        },
+        {
+          "id": 495,
+          "name": "Skin biopsy NEC"
+        },
+        {
+          "id": 517,
+          "name": "Excision of lesion chest wall"
+        },
+        {
+          "id": 520,
+          "name": "Insertion of cuffed central line (open)"
+        },
+        {
+          "id": 521,
+          "name": "Insertion of Portacath"
+        },
+        {
+          "id": 522,
+          "name": "Attention to central line"
+        },
+        {
+          "id": 523,
+          "name": "Removal of central line"
+        },
+        {
+          "id": 567,
+          "name": "Excision or biopsy of cervical lymph node"
+        },
+        {
+          "id": 568,
+          "name": "Excision or biopsy of axillary lymph node"
+        },
+        {
+          "id": 569,
+          "name": "Excision or biopsy of mediastinal lymph node"
+        },
+        {
+          "id": 570,
+          "name": "Excision or biopsy of para-aortic lymph node"
+        },
+        {
+          "id": 571,
+          "name": "Excision or biopsy of portahepatis lymph node"
+        },
+        {
+          "id": 572,
+          "name": "Excision or biopsy of inguinal lymph node"
+        },
+        {
+          "id": 582,
+          "name": "Diagnostic biopsy of unspecified organ"
+        },
+        {
+          "id": 601,
+          "name": "Tumour nephrectomy (Wilms/other)"
+        },
+        {
+          "id": 602,
+          "name": "Excision of thoracic neuroblastoma"
+        },
+        {
+          "id": 603,
+          "name": "Excision of adrenal endocrine tunour"
+        },
+        {
+          "id": 604,
+          "name": "Partial tumour nephrectomy (Wilms/other)"
+        },
+        {
+          "id": 620,
+          "name": "Excision of cervical neuroblastoma"
+        },
+        {
+          "id": 649,
+          "name": "Parathyroidectomy"
+        },
+        {
+          "id": 651,
+          "name": "Excision of teratoma NOS"
+        },
+        {
+          "id": 654,
+          "name": "Biopsy of lipoblastomatosis"
+        },
+        {
+          "id": 655,
+          "name": "Excision of lipoblastomatosis"
+        },
+        {
+          "id": 674,
+          "name": "Thymectomy"
+        },
+        {
+          "id": 689,
+          "name": "Biopsy of intra-abdominal tumour NEC"
+        },
+        {
+          "id": 714,
+          "name": "Excision/biopsy of soft tissue tumour"
+        },
+        {
+          "id": 715,
+          "name": "Excision/open biopsy liver tumour"
+        },
+        {
+          "id": 725,
+          "name": "Biopsy/excision of thoracic tumour"
+        },
+        {
+          "id": 736,
+          "name": "Sclerotherapy of lymphangioma/haemangioma"
+        },
+        {
+          "id": 750,
+          "name": "Biopsy of soft tissue tumour NOS"
+        },
+        {
+          "id": 761,
+          "name": "Excision of mediastinal tumour"
+        },
+        {
+          "id": 762,
+          "name": "Ovarian cystectomy (preserving ovary)"
+        },
+        {
+          "id": 792,
+          "name": "Biopsy/excision of breast lump"
+        }
+      ],
+      "Laparoscopic Procedures": [
+        {
+          "id": 28,
+          "name": "Cholecystectomy (laparoscopic)"
+        },
+        {
+          "id": 101,
+          "name": "Fundoplication (laparoscopic)"
+        },
+        {
+          "id": 128,
+          "name": "Laparoscopy (diagnostic, abd pathology)"
+        },
+        {
+          "id": 129,
+          "name": "Laparoscopy (diagnostic, UDT)"
+        },
+        {
+          "id": 206,
+          "name": "Pyloromyotomy (laparoscopic)"
+        },
+        {
+          "id": 266,
+          "name": "Appendicectomy (Laparoscopic)"
+        },
+        {
+          "id": 288,
+          "name": "Laparoscopy"
+        },
+        {
+          "id": 542,
+          "name": "Laparoscopic appendicectomy (perforated)"
+        },
+        {
+          "id": 543,
+          "name": "Nephrectomy (laparoscopic)"
+        },
+        {
+          "id": 544,
+          "name": "Pyeloplasty (laparoscopic)"
+        },
+        {
+          "id": 548,
+          "name": "Splenectomy (laparoscopic)"
+        },
+        {
+          "id": 599,
+          "name": "Laparoscopy (therapeutic, undescended testis)"
+        },
+        {
+          "id": 600,
+          "name": "Laparoscopic assisted pull through (Hirschsprung)"
+        },
+        {
+          "id": 732,
+          "name": "VATS not otherwise specified"
+        }
+      ],
+      "Robotic Surgery": [
+        {
+          "id": 798,
+          "name": "Cholecystectomy (Robotic)"
+        },
+        {
+          "id": 799,
+          "name": "Choledocal cystectomy (Robotic)"
+        },
+        {
+          "id": 800,
+          "name": "Pyeloplasty (Robotic)"
+        },
+        {
+          "id": 801,
+          "name": "Nephrectomy (Robotic)"
+        },
+        {
+          "id": 802,
+          "name": "Heminephrectomy (Robotic)"
+        },
+        {
+          "id": 803,
+          "name": "Unilateral ureteric reimplantation (Robotic)"
+        },
+        {
+          "id": 804,
+          "name": "Bilateral ureteric reimplantation (Robotic)"
+        }
+      ]
+    }
+  }
+}

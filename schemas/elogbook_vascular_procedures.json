@@ -1,0 +1,4627 @@
+{
+  "options_source_id": "elogbook_vascular_procedures",
+  "platform": "elogbook",
+  "discipline": "surgical",
+  "specialty": "Vascular",
+  "entryType": "operation_log",
+  "field": "procedure",
+  "harvested_from": "eLogbook 'Add operation' page (Specialty = Vascular)",
+  "harvested_date": "2026-06-27",
+  "notes": "Each option's 'id' is the eLogbook data-nodeid used to select the procedure in the form (the value for WebView injection). 'name' is the display label / extraction target. A procedure may appear under several categories; the flat 'procedures' list is the authoritative deduplicated picklist, 'tree' preserves the on-site accordion structure for the picker UI and for giving the AI category context. | Spoken-form aliases added 2026-06-30, resolver-validated.",
+  "unique_procedure_count": 362,
+  "procedures": [
+    {
+      "id": 194,
+      "name": "Above elbow",
+      "categories": [
+        "Amputation / Upper limb"
+      ]
+    },
+    {
+      "id": 184,
+      "name": "Above knee",
+      "categories": [
+        "Amputation / Lower limb"
+      ],
+      "aliases": [
+        "above knee amputation",
+        "aka amputation"
+      ]
+    },
+    {
+      "id": 234,
+      "name": "amputation of phalynx/ partial toe",
+      "categories": [
+        "Amputation / Lower limb"
+      ]
+    },
+    {
+      "id": 327,
+      "name": "Anterior resection (Lap or Open)",
+      "categories": [
+        "General Surgery / Abdominal Surgery / Colonic resection"
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Aortic angioplasty",
+      "categories": [
+        "Aortoiliac / Occlusive Disease - Elective / Endovascular",
+        "Aortoiliac / Occlusive Disease -Emergency / Endovascular"
+      ]
+    },
+    {
+      "id": 299,
+      "name": "Aortic arch branched device",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm - emergency / Endovascular",
+        "Aortoiliac / Aortic Aneurysm- elective / Endovascular"
+      ]
+    },
+    {
+      "id": 350,
+      "name": "Aortic endarterectomy",
+      "categories": [
+        "Aortoiliac / Occlusive Disease - Elective / Open",
+        "Miscellanious / Adjunct to main procedure"
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Aortic Stent",
+      "categories": [
+        "Aortoiliac / Occlusive Disease - Elective / Endovascular",
+        "Aortoiliac / Occlusive Disease -Emergency / Endovascular"
+      ]
+    },
+    {
+      "id": 38,
+      "name": "Aorto-mesenteric bypass",
+      "categories": [
+        "Visceral / Occlusive / Open"
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Aorto-renal bypass",
+      "categories": [
+        "Visceral / Occlusive / Open"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Aortobi-iliac bypass",
+      "categories": [
+        "Aortoiliac / Occlusive Disease - Elective / Open",
+        "Aortoiliac / Occlusive Disease -Emergency / Open"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Aortobifemoral Bypass",
+      "categories": [
+        "Aortoiliac / Occlusive Disease -Emergency / Open"
+      ],
+      "aliases": [
+        "aorto-bifemoral bypass",
+        "aortobifem bypass"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Aortobifemoral graft",
+      "categories": [
+        "Aortoiliac / Occlusive Disease - Elective / Open"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Aortoiliac aneurysm +/- int iliac embolisation",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm- elective / Endovascular"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Aortoiliac aneurysm +/- int iliac embolisation",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm - emergency / Endovascular"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Aortouni-iliac +/- fem-fem crossover",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm- elective / Endovascular"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Aortouni-iliac +/- fem-fem crossover",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm - emergency / Endovascular"
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Aortounifemoral bypass",
+      "categories": [
+        "Aortoiliac / Iliac Aneurysm - Elective / Open",
+        "Aortoiliac / Iliac Artery Aneurysm - Emergency / Open",
+        "Aortoiliac / Occlusive Disease - Elective / Open",
+        "Aortoiliac / Occlusive Disease -Emergency / Open"
+      ]
+    },
+    {
+      "id": 240,
+      "name": "Application of negative pressure dressing",
+      "categories": [
+        "Miscellanious / Wound management / Dressings"
+      ]
+    },
+    {
+      "id": 66,
+      "name": "Arch Angiogram",
+      "categories": [
+        "Extracranial & upper limb / Carotid / Endovascular"
+      ]
+    },
+    {
+      "id": 237,
+      "name": "Arm fasciotomies",
+      "categories": [
+        "Miscellanious / Fasciotomies",
+        "Trauma / Arm / Open"
+      ]
+    },
+    {
+      "id": 86,
+      "name": "Arterial embolistaion",
+      "categories": [
+        "Extracranial & upper limb / Upper Limb - Arterial / Endovascular",
+        "Trauma / Arm / Endovascular"
+      ]
+    },
+    {
+      "id": 361,
+      "name": "Arterial line insertion",
+      "categories": [
+        "Miscellanious / Line insertion"
+      ]
+    },
+    {
+      "id": 85,
+      "name": "Arterial thrombolysis",
+      "categories": [
+        "Extracranial & upper limb / Upper Limb - Arterial / Endovascular"
+      ]
+    },
+    {
+      "id": 125,
+      "name": "Arterial thrombolysis",
+      "categories": [
+        "Lower limb / Occlusive Disease - Elective / Endovascular"
+      ]
+    },
+    {
+      "id": 144,
+      "name": "Arterial thrombolysis",
+      "categories": [
+        "Lower limb / Occlusive Disease - Emergency / Endovascular"
+      ]
+    },
+    {
+      "id": 126,
+      "name": "Arterial thrombolysis and angioplasty / stent",
+      "categories": [
+        "Lower limb / Occlusive Disease - Elective / Endovascular"
+      ]
+    },
+    {
+      "id": 145,
+      "name": "Arterial thrombolysis and angioplasty / stent",
+      "categories": [
+        "Lower limb / Occlusive Disease - Emergency / Endovascular"
+      ]
+    },
+    {
+      "id": 179,
+      "name": "Aspiration thrombectomy of fistula",
+      "categories": [
+        "Vascular access / Secondary / Endovascular"
+      ]
+    },
+    {
+      "id": 163,
+      "name": "AV fistula, basilic vein transposition",
+      "categories": [
+        "Vascular access / Primary / Open"
+      ]
+    },
+    {
+      "id": 162,
+      "name": "AV fistula, brachiocephalic",
+      "categories": [
+        "Vascular access / Primary / Open"
+      ],
+      "aliases": [
+        "brachiocephalic fistula",
+        "brachiocephalic av fistula"
+      ]
+    },
+    {
+      "id": 164,
+      "name": "AV fistula, PTFE loop graft forearm",
+      "categories": [
+        "Vascular access / Primary / Open"
+      ]
+    },
+    {
+      "id": 166,
+      "name": "AV fistula, PTFE loop graft groin",
+      "categories": [
+        "Vascular access / Primary / Open"
+      ]
+    },
+    {
+      "id": 167,
+      "name": "AV fistula, PTFE other",
+      "categories": [
+        "Vascular access / Primary / Open"
+      ]
+    },
+    {
+      "id": 165,
+      "name": "AV fistula, PTFE straight graft arm",
+      "categories": [
+        "Vascular access / Primary / Open"
+      ]
+    },
+    {
+      "id": 161,
+      "name": "AV fistula, radiocephalic",
+      "categories": [
+        "Vascular access / Primary / Open"
+      ],
+      "aliases": [
+        "radiocephalic fistula",
+        "radiocephalic av fistula",
+        "av fistula formation",
+        "arteriovenous fistula"
+      ]
+    },
+    {
+      "id": 160,
+      "name": "AV fistula, snuffbox",
+      "categories": [
+        "Vascular access / Primary / Open"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Axillofem/bifemoral bypass",
+      "categories": [
+        "Aortoiliac / Occlusive Disease - Elective / Open"
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Axillofemoral / Bifemoral bypass",
+      "categories": [
+        "Aortoiliac / Occlusive Disease -Emergency / Open"
+      ]
+    },
+    {
+      "id": 173,
+      "name": "Banding of AV fistula",
+      "categories": [
+        "Vascular access / Secondary / Open"
+      ]
+    },
+    {
+      "id": 232,
+      "name": "Below knee - Burgess flap",
+      "categories": [
+        "Amputation / Lower limb"
+      ],
+      "aliases": [
+        "below knee amputation",
+        "bka amputation"
+      ]
+    },
+    {
+      "id": 233,
+      "name": "Below knee - skew flap",
+      "categories": [
+        "Amputation / Lower limb"
+      ]
+    },
+    {
+      "id": 239,
+      "name": "Biopsy of leg ulcer",
+      "categories": [
+        "Miscellanious / Biopsy"
+      ]
+    },
+    {
+      "id": 339,
+      "name": "Block dissection Lymph nodes - axilla",
+      "categories": [
+        "General Surgery / Reticulo-endothelial system"
+      ]
+    },
+    {
+      "id": 348,
+      "name": "Block dissection Lymph nodes - Iliac",
+      "categories": [
+        "General Surgery / Reticulo-endothelial system"
+      ]
+    },
+    {
+      "id": 340,
+      "name": "Block dissection Lymph nodes - inguinal",
+      "categories": [
+        "General Surgery / Reticulo-endothelial system"
+      ]
+    },
+    {
+      "id": 78,
+      "name": "Brachial embolectomy",
+      "categories": [
+        "Extracranial & upper limb / Upper Limb - Arterial / Open Emergency"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Branched stent graft",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm - emergency / Endovascular",
+        "Aortoiliac / Aortic Aneurysm- elective / Endovascular"
+      ]
+    },
+    {
+      "id": 298,
+      "name": "Branched thoracic stent graft",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm - emergency / Endovascular",
+        "Aortoiliac / Aortic Aneurysm- elective / Endovascular"
+      ]
+    },
+    {
+      "id": 62,
+      "name": "Carotid - Carotid bypass",
+      "categories": [
+        "Extracranial & upper limb / Carotid / Open"
+      ]
+    },
+    {
+      "id": 63,
+      "name": "Carotid - subclavian bypass",
+      "categories": [
+        "Extracranial & upper limb / Carotid / Open"
+      ]
+    },
+    {
+      "id": 65,
+      "name": "Carotid artery stent",
+      "categories": [
+        "Extracranial & upper limb / Carotid / Endovascular"
+      ]
+    },
+    {
+      "id": 58,
+      "name": "Carotid endartarectomy - no patch",
+      "categories": [
+        "Extracranial & upper limb / Carotid / Open"
+      ],
+      "aliases": [
+        "carotid endarterectomy no patch"
+      ]
+    },
+    {
+      "id": 57,
+      "name": "Carotid endartarectomy and Patch",
+      "categories": [
+        "Extracranial & upper limb / Carotid / Open"
+      ],
+      "aliases": [
+        "carotid endarterectomy",
+        "cea",
+        "carotid endarterectomy with patch",
+        "carotid endarterectomy and patch"
+      ]
+    },
+    {
+      "id": 59,
+      "name": "Carotid interposition graft",
+      "categories": [
+        "Extracranial & upper limb / Carotid / Open"
+      ]
+    },
+    {
+      "id": 183,
+      "name": "Central vein stenting",
+      "categories": [
+        "Vascular access / Secondary / Endovascular"
+      ]
+    },
+    {
+      "id": 182,
+      "name": "Central venoplasty",
+      "categories": [
+        "Vascular access / Secondary / Endovascular"
+      ]
+    },
+    {
+      "id": 363,
+      "name": "CERAB",
+      "categories": [
+        "Aortoiliac / Occlusive Disease - Elective / Endovascular",
+        "Aortoiliac / Occlusive Disease -Emergency / Endovascular"
+      ]
+    },
+    {
+      "id": 75,
+      "name": "Cervical rib excision",
+      "categories": [
+        "Extracranial & upper limb / Thoracic Outlet Decompression"
+      ]
+    },
+    {
+      "id": 241,
+      "name": "Change of negative pressure dressing",
+      "categories": [
+        "Miscellanious / Wound management / Dressings"
+      ]
+    },
+    {
+      "id": 249,
+      "name": "Conduit for endovascular access",
+      "categories": [
+        "Miscellanious / Adjunct to main procedure"
+      ]
+    },
+    {
+      "id": 123,
+      "name": "Crural artery angioplasty",
+      "categories": [
+        "Lower limb / Occlusive Disease - Elective / Endovascular"
+      ],
+      "aliases": [
+        "crural angioplasty"
+      ]
+    },
+    {
+      "id": 142,
+      "name": "Crural artery angioplasty",
+      "categories": [
+        "Lower limb / Occlusive Disease - Emergency / Endovascular"
+      ]
+    },
+    {
+      "id": 124,
+      "name": "Crural artery stent",
+      "categories": [
+        "Lower limb / Occlusive Disease - Elective / Endovascular"
+      ]
+    },
+    {
+      "id": 143,
+      "name": "Crural artery stent",
+      "categories": [
+        "Lower limb / Occlusive Disease - Emergency / Endovascular"
+      ]
+    },
+    {
+      "id": 242,
+      "name": "Debridement/ drainage of diabetic foot sepsis (no amputation)",
+      "categories": [
+        "Miscellanious / Wound management / Debridement"
+      ]
+    },
+    {
+      "id": 271,
+      "name": "Deep venous reconstruction - iliac",
+      "categories": [
+        "Venous / Other / Open"
+      ]
+    },
+    {
+      "id": 270,
+      "name": "Deep venous reconstruction - IVC",
+      "categories": [
+        "Venous / Other / Open"
+      ]
+    },
+    {
+      "id": 272,
+      "name": "Deep venous reconstruction- other",
+      "categories": [
+        "Venous / Other / Open"
+      ]
+    },
+    {
+      "id": 268,
+      "name": "Deep venous stenting - iliac",
+      "categories": [
+        "Venous / Other / Endovascular"
+      ]
+    },
+    {
+      "id": 269,
+      "name": "Deep venous stenting - other (not iliac)",
+      "categories": [
+        "Venous / Other / Endovascular"
+      ]
+    },
+    {
+      "id": 118,
+      "name": "Diagnostic Femoral angiogram",
+      "categories": [
+        "Lower limb / Occlusive Disease - Elective / Endovascular"
+      ],
+      "aliases": [
+        "femoral angiogram",
+        "lower limb angiogram"
+      ]
+    },
+    {
+      "id": 137,
+      "name": "Diagnostic femoral angiogram",
+      "categories": [
+        "Lower limb / Occlusive Disease - Emergency / Endovascular"
+      ]
+    },
+    {
+      "id": 318,
+      "name": "Diagnostic Laparoscopy",
+      "categories": [
+        "General Surgery / Laparoscopic Surgery"
+      ]
+    },
+    {
+      "id": 321,
+      "name": "Diagnostic Laparotomy",
+      "categories": [
+        "General Surgery / Abdominal Surgery / Laparotomy"
+      ]
+    },
+    {
+      "id": 52,
+      "name": "Diagnostic mesenteric angiogram",
+      "categories": [
+        "Visceral / Bleeding / Endovascular"
+      ]
+    },
+    {
+      "id": 193,
+      "name": "Disarticulation of hip",
+      "categories": [
+        "Amputation / Lower limb"
+      ]
+    },
+    {
+      "id": 304,
+      "name": "Distal Pancreatectomy",
+      "categories": [
+        "Trauma / Abdomen",
+        "Visceral / Bleeding / Open"
+      ]
+    },
+    {
+      "id": 294,
+      "name": "DRIL Procedure",
+      "categories": [
+        "Vascular access / Secondary / Open"
+      ]
+    },
+    {
+      "id": 158,
+      "name": "Duplex compression of pseudoaneurysm",
+      "categories": [
+        "Lower limb / Trauma / Endovascular"
+      ]
+    },
+    {
+      "id": 305,
+      "name": "Embolisation of other visceral artery",
+      "categories": [
+        "Trauma / Abdomen / Endovascular",
+        "Visceral / Aneurysm / Endovascular",
+        "Visceral / Bleeding / Endovascular"
+      ]
+    },
+    {
+      "id": 284,
+      "name": "Emergency arterial reconstruction",
+      "categories": [
+        "Trauma / Leg",
+        "Trauma / Neck",
+        "Trauma / Thorax"
+      ]
+    },
+    {
+      "id": 276,
+      "name": "Emergency thoracotomy",
+      "categories": [
+        "Trauma / Thorax"
+      ]
+    },
+    {
+      "id": 285,
+      "name": "Emergency venous reconstruction",
+      "categories": [
+        "Trauma / Arm / Open",
+        "Trauma / Leg",
+        "Trauma / Neck",
+        "Trauma / Thorax"
+      ]
+    },
+    {
+      "id": 109,
+      "name": "Endartarectomy and Patch (not femoral)",
+      "categories": [
+        "Lower limb / Occlusive Disease - Elective / Open"
+      ]
+    },
+    {
+      "id": 77,
+      "name": "Endartarectomy and patch (not subclavian)",
+      "categories": [
+        "Extracranial & upper limb / Upper Limb - Arterial / Open Elective"
+      ]
+    },
+    {
+      "id": 300,
+      "name": "Endovascular repair of aortic aneurysm -Chimney Technique (ChEVAR)",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm- elective / Endovascular"
+      ],
+      "aliases": [
+        "chevar",
+        "chimney evar"
+      ]
+    },
+    {
+      "id": 253,
+      "name": "ENT",
+      "categories": [
+        "Supporting other specialities / Elective"
+      ]
+    },
+    {
+      "id": 259,
+      "name": "ENT",
+      "categories": [
+        "Supporting other specialities / Emergency"
+      ]
+    },
+    {
+      "id": 265,
+      "name": "evacuation of haematoma",
+      "categories": [
+        "Miscellanious / Post operative complications"
+      ]
+    },
+    {
+      "id": 344,
+      "name": "EVAR planning",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm - emergency / Endovascular",
+        "Aortoiliac / Aortic Aneurysm- elective / Endovascular"
+      ]
+    },
+    {
+      "id": 307,
+      "name": "Eversion carotid endarterectomy",
+      "categories": [
+        "Extracranial & upper limb / Carotid / Open"
+      ]
+    },
+    {
+      "id": 279,
+      "name": "Exploration of arm wound +/- vessels",
+      "categories": [
+        "Trauma / Arm / Open"
+      ]
+    },
+    {
+      "id": 281,
+      "name": "Exploration of lower leg wound +/- vessels",
+      "categories": [
+        "Trauma / Leg"
+      ]
+    },
+    {
+      "id": 273,
+      "name": "Exploration of neck wound +/- vessels",
+      "categories": [
+        "Trauma / Neck"
+      ]
+    },
+    {
+      "id": 274,
+      "name": "Exploration of neck wound +/- vessels",
+      "categories": [
+        "Trauma / Thorax"
+      ]
+    },
+    {
+      "id": 280,
+      "name": "Exploration of thigh wound +/- vessels",
+      "categories": [
+        "Trauma / Leg"
+      ]
+    },
+    {
+      "id": 110,
+      "name": "Fem-Fem bypass (ipsilateral and crossover)",
+      "categories": [
+        "Lower limb / Occlusive Disease - Elective / Open"
+      ]
+    },
+    {
+      "id": 129,
+      "name": "Fem-Fem bypass (ipsilateral and crossover)",
+      "categories": [
+        "Lower limb / Occlusive Disease - Emergency / Open"
+      ]
+    },
+    {
+      "id": 87,
+      "name": "Fem-Fem bypass / interposition graft / Repair",
+      "categories": [
+        "Lower limb / Aneurysm - Elective / Open"
+      ]
+    },
+    {
+      "id": 97,
+      "name": "Fem-Fem bypass / interposition graft / Repair",
+      "categories": [
+        "Lower limb / Aneurysm - Emergency / Open"
+      ]
+    },
+    {
+      "id": 148,
+      "name": "Fem-Fem Crossover",
+      "categories": [
+        "Lower limb / Trauma / Open"
+      ]
+    },
+    {
+      "id": 119,
+      "name": "Femoral artery angioplasty",
+      "categories": [
+        "Lower limb / Occlusive Disease - Elective / Endovascular"
+      ],
+      "aliases": [
+        "femoral angioplasty"
+      ]
+    },
+    {
+      "id": 138,
+      "name": "Femoral artery angioplasty",
+      "categories": [
+        "Lower limb / Occlusive Disease - Emergency / Endovascular"
+      ]
+    },
+    {
+      "id": 156,
+      "name": "Femoral artery embolisation",
+      "categories": [
+        "Lower limb / Trauma / Endovascular"
+      ]
+    },
+    {
+      "id": 107,
+      "name": "Femoral artery endartarectomy +/- Patch",
+      "categories": [
+        "Lower limb / Occlusive Disease - Elective / Open",
+        "Lower limb / Occlusive Disease - Emergency / Open"
+      ]
+    },
+    {
+      "id": 351,
+      "name": "Femoral Artery infected pseudoaneurysm - artery ligation",
+      "categories": [
+        "Lower limb / Aneurysm - Emergency / Open"
+      ]
+    },
+    {
+      "id": 95,
+      "name": "Femoral artery pseudoaneurysm repair",
+      "categories": [
+        "Lower limb / Aneurysm - Elective / Open"
+      ]
+    },
+    {
+      "id": 104,
+      "name": "Femoral artery pseudoaneurysm repair",
+      "categories": [
+        "Lower limb / Aneurysm - Emergency / Open",
+        "Trauma / Leg"
+      ]
+    },
+    {
+      "id": 120,
+      "name": "Femoral artery stent",
+      "categories": [
+        "Lower limb / Occlusive Disease - Elective / Endovascular"
+      ]
+    },
+    {
+      "id": 139,
+      "name": "Femoral artery stent",
+      "categories": [
+        "Lower limb / Occlusive Disease - Emergency / Endovascular"
+      ]
+    },
+    {
+      "id": 127,
+      "name": "Femoral embolectomy",
+      "categories": [
+        "Lower limb / Occlusive Disease - Emergency / Open"
+      ]
+    },
+    {
+      "id": 315,
+      "name": "Femoral hernia repair",
+      "categories": [
+        "General Surgery / Hernia repair"
+      ]
+    },
+    {
+      "id": 89,
+      "name": "Femoro - Above knee popliteal - Prosthetic",
+      "categories": [
+        "Lower limb / Aneurysm - Elective / Open"
+      ]
+    },
+    {
+      "id": 99,
+      "name": "Femoro - Above knee popliteal - Prosthetic",
+      "categories": [
+        "Lower limb / Aneurysm - Emergency / Open"
+      ]
+    },
+    {
+      "id": 112,
+      "name": "Femoro - Above knee popliteal - Prosthetic",
+      "categories": [
+        "Lower limb / Occlusive Disease - Elective / Open"
+      ]
+    },
+    {
+      "id": 131,
+      "name": "Femoro - Above knee popliteal - Prosthetic",
+      "categories": [
+        "Lower limb / Occlusive Disease - Emergency / Open"
+      ]
+    },
+    {
+      "id": 150,
+      "name": "Femoro - Above knee popliteal - Prosthetic",
+      "categories": [
+        "Lower limb / Trauma / Open"
+      ]
+    },
+    {
+      "id": 88,
+      "name": "Femoro - Above knee popliteal - Vein",
+      "categories": [
+        "Lower limb / Aneurysm - Elective / Open"
+      ],
+      "aliases": [
+        "fem pop bypass",
+        "femoropopliteal bypass",
+        "fem-pop bypass",
+        "above knee fem pop bypass"
+      ]
+    },
+    {
+      "id": 98,
+      "name": "Femoro - Above knee popliteal - Vein",
+      "categories": [
+        "Lower limb / Aneurysm - Emergency / Open"
+      ]
+    },
+    {
+      "id": 111,
+      "name": "Femoro - Above knee popliteal - Vein",
+      "categories": [
+        "Lower limb / Occlusive Disease - Elective / Open"
+      ]
+    },
+    {
+      "id": 130,
+      "name": "Femoro - Above knee popliteal - Vein",
+      "categories": [
+        "Lower limb / Occlusive Disease - Emergency / Open"
+      ]
+    },
+    {
+      "id": 149,
+      "name": "Femoro - Above knee popliteal - Vein",
+      "categories": [
+        "Lower limb / Trauma / Open"
+      ]
+    },
+    {
+      "id": 91,
+      "name": "Femoro - Below knee popliteal - Prosthetic",
+      "categories": [
+        "Lower limb / Aneurysm - Elective / Open"
+      ]
+    },
+    {
+      "id": 100,
+      "name": "Femoro - Below knee popliteal - Prosthetic",
+      "categories": [
+        "Lower limb / Aneurysm - Emergency / Open"
+      ]
+    },
+    {
+      "id": 114,
+      "name": "Femoro - Below knee popliteal - Prosthetic",
+      "categories": [
+        "Lower limb / Occlusive Disease - Elective / Open"
+      ]
+    },
+    {
+      "id": 133,
+      "name": "Femoro - Below knee popliteal - Prosthetic",
+      "categories": [
+        "Lower limb / Occlusive Disease - Emergency / Open"
+      ]
+    },
+    {
+      "id": 152,
+      "name": "Femoro - Below knee popliteal - Prosthetic",
+      "categories": [
+        "Lower limb / Trauma / Open"
+      ]
+    },
+    {
+      "id": 90,
+      "name": "Femoro - Below knee popliteal - Vein",
+      "categories": [
+        "Lower limb / Aneurysm - Elective / Open"
+      ]
+    },
+    {
+      "id": 101,
+      "name": "Femoro - Below knee popliteal - Vein",
+      "categories": [
+        "Lower limb / Aneurysm - Emergency / Open"
+      ]
+    },
+    {
+      "id": 113,
+      "name": "Femoro - Below knee popliteal - Vein",
+      "categories": [
+        "Lower limb / Occlusive Disease - Elective / Open"
+      ]
+    },
+    {
+      "id": 132,
+      "name": "Femoro - Below knee popliteal - Vein",
+      "categories": [
+        "Lower limb / Occlusive Disease - Emergency / Open"
+      ]
+    },
+    {
+      "id": 151,
+      "name": "Femoro - Below knee popliteal - Vein",
+      "categories": [
+        "Lower limb / Trauma / Open"
+      ]
+    },
+    {
+      "id": 93,
+      "name": "Femoro - Crural - Prosthetic",
+      "categories": [
+        "Lower limb / Aneurysm - Elective / Open"
+      ]
+    },
+    {
+      "id": 103,
+      "name": "Femoro - Crural - Prosthetic",
+      "categories": [
+        "Lower limb / Aneurysm - Emergency / Open"
+      ]
+    },
+    {
+      "id": 116,
+      "name": "Femoro - Crural - Prosthetic",
+      "categories": [
+        "Lower limb / Occlusive Disease - Elective / Open"
+      ]
+    },
+    {
+      "id": 135,
+      "name": "Femoro - Crural - Prosthetic",
+      "categories": [
+        "Lower limb / Occlusive Disease - Emergency / Open"
+      ]
+    },
+    {
+      "id": 154,
+      "name": "Femoro - Crural - Prosthetic",
+      "categories": [
+        "Lower limb / Trauma / Open"
+      ]
+    },
+    {
+      "id": 92,
+      "name": "Femoro - Crural - Vein",
+      "categories": [
+        "Lower limb / Aneurysm - Elective / Open"
+      ]
+    },
+    {
+      "id": 102,
+      "name": "Femoro - Crural - Vein",
+      "categories": [
+        "Lower limb / Aneurysm - Emergency / Open"
+      ]
+    },
+    {
+      "id": 115,
+      "name": "Femoro - Crural - Vein",
+      "categories": [
+        "Lower limb / Occlusive Disease - Elective / Open"
+      ]
+    },
+    {
+      "id": 134,
+      "name": "Femoro - Crural - Vein",
+      "categories": [
+        "Lower limb / Occlusive Disease - Emergency / Open"
+      ]
+    },
+    {
+      "id": 153,
+      "name": "Femoro - Crural - Vein",
+      "categories": [
+        "Lower limb / Trauma / Open"
+      ]
+    },
+    {
+      "id": 94,
+      "name": "Femoro/Popliteal - Pedal",
+      "categories": [
+        "Lower limb / Aneurysm - Elective / Open"
+      ]
+    },
+    {
+      "id": 117,
+      "name": "Femoro/Popliteal - Pedal",
+      "categories": [
+        "Lower limb / Occlusive Disease - Elective / Open"
+      ]
+    },
+    {
+      "id": 136,
+      "name": "Femoro/Popliteal - Pedal",
+      "categories": [
+        "Lower limb / Occlusive Disease - Emergency / Open"
+      ]
+    },
+    {
+      "id": 155,
+      "name": "Femoro/Popliteal - Pedal",
+      "categories": [
+        "Lower limb / Trauma / Open"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Fenestrated stent graft",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm - emergency / Endovascular",
+        "Aortoiliac / Aortic Aneurysm- elective / Endovascular"
+      ]
+    },
+    {
+      "id": 195,
+      "name": "Finger(s)",
+      "categories": [
+        "Amputation / Upper limb"
+      ]
+    },
+    {
+      "id": 74,
+      "name": "First rib excision - Supraclavicular",
+      "categories": [
+        "Extracranial & upper limb / Thoracic Outlet Decompression"
+      ]
+    },
+    {
+      "id": 73,
+      "name": "First rib excision - Transaxillary",
+      "categories": [
+        "Extracranial & upper limb / Thoracic Outlet Decompression"
+      ]
+    },
+    {
+      "id": 172,
+      "name": "Fistula/graft thrombectomy",
+      "categories": [
+        "Vascular access / Secondary / Open"
+      ],
+      "aliases": [
+        "fistula thrombectomy",
+        "graft thrombectomy"
+      ]
+    },
+    {
+      "id": 175,
+      "name": "Fistulogram",
+      "categories": [
+        "Vascular access / Secondary / Endovascular"
+      ]
+    },
+    {
+      "id": 176,
+      "name": "Fistuloplasty",
+      "categories": [
+        "Vascular access / Secondary / Endovascular"
+      ]
+    },
+    {
+      "id": 204,
+      "name": "Foam sclerotherapy, GSV truncal",
+      "categories": [
+        "Venous / Varicose veins - Primary / Endovenous"
+      ],
+      "aliases": [
+        "foam sclerotherapy"
+      ]
+    },
+    {
+      "id": 213,
+      "name": "Foam sclerotherapy, GSV truncal",
+      "categories": [
+        "Venous / Varicose Veins - recurrent / Endovascular"
+      ]
+    },
+    {
+      "id": 205,
+      "name": "Foam sclerotherapy, SSV truncal",
+      "categories": [
+        "Venous / Varicose veins - Primary / Endovenous"
+      ]
+    },
+    {
+      "id": 214,
+      "name": "Foam sclerotherapy, SSV truncal",
+      "categories": [
+        "Venous / Varicose Veins - recurrent / Endovascular"
+      ]
+    },
+    {
+      "id": 206,
+      "name": "Foam sclerotherapy, varicosities",
+      "categories": [
+        "Venous / Varicose veins - Primary / Endovenous"
+      ]
+    },
+    {
+      "id": 215,
+      "name": "Foam sclerotherapy, varicosities",
+      "categories": [
+        "Venous / Varicose Veins - recurrent / Endovascular"
+      ]
+    },
+    {
+      "id": 336,
+      "name": "Formation of defunctioning colostomy",
+      "categories": [
+        "General Surgery / Abdominal Surgery / Colonic resection"
+      ]
+    },
+    {
+      "id": 332,
+      "name": "Formation of end colostomy",
+      "categories": [
+        "General Surgery / Abdominal Surgery / Stoma Formation"
+      ]
+    },
+    {
+      "id": 333,
+      "name": "Formation of end ileostomy",
+      "categories": [
+        "General Surgery / Abdominal Surgery / Stoma Formation"
+      ]
+    },
+    {
+      "id": 334,
+      "name": "Formation of loop ileostomy",
+      "categories": [
+        "General Surgery / Abdominal Surgery / Stoma Formation"
+      ]
+    },
+    {
+      "id": 342,
+      "name": "Full thickness skin graft",
+      "categories": [
+        "Miscellanious / Wound management / Plastic surgery procedures"
+      ]
+    },
+    {
+      "id": 254,
+      "name": "General Surgery",
+      "categories": [
+        "Supporting other specialities / Elective"
+      ]
+    },
+    {
+      "id": 260,
+      "name": "General Surgery",
+      "categories": [
+        "Supporting other specialities / Emergency"
+      ]
+    },
+    {
+      "id": 216,
+      "name": "Gonadal vein embolisation",
+      "categories": [
+        "Venous / Other / Endovascular"
+      ]
+    },
+    {
+      "id": 358,
+      "name": "Gritti-stokes",
+      "categories": [
+        "Amputation / Lower limb"
+      ]
+    },
+    {
+      "id": 198,
+      "name": "GSV truncal ablation",
+      "categories": [
+        "Venous / Varicose veins - Primary / Endovenous"
+      ]
+    },
+    {
+      "id": 208,
+      "name": "GSV truncal ablation",
+      "categories": [
+        "Venous / Varicose Veins - recurrent / Endovascular"
+      ]
+    },
+    {
+      "id": 199,
+      "name": "GSV truncal ablation + foam sclerotherapy",
+      "categories": [
+        "Venous / Varicose veins - Primary / Endovenous"
+      ],
+      "aliases": [
+        "varicose veins",
+        "varicose vein surgery",
+        "evla",
+        "endovenous laser ablation",
+        "gsv ablation"
+      ]
+    },
+    {
+      "id": 207,
+      "name": "GSV truncal ablation + foam sclerotherapy",
+      "categories": [
+        "Venous / Varicose Veins - recurrent / Endovascular"
+      ]
+    },
+    {
+      "id": 200,
+      "name": "GSV truncal ablation + phlebectomies",
+      "categories": [
+        "Venous / Varicose veins - Primary / Endovenous"
+      ]
+    },
+    {
+      "id": 209,
+      "name": "GSV truncal ablation + phlebectomies",
+      "categories": [
+        "Venous / Varicose Veins - recurrent / Endovascular"
+      ]
+    },
+    {
+      "id": 251,
+      "name": "Gynae",
+      "categories": [
+        "Supporting other specialities / Elective"
+      ]
+    },
+    {
+      "id": 257,
+      "name": "Gynae",
+      "categories": [
+        "Supporting other specialities / Emergency"
+      ]
+    },
+    {
+      "id": 328,
+      "name": "Hartmann's procedure (Lap or Open)",
+      "categories": [
+        "General Surgery / Abdominal Surgery / Colonic resection"
+      ]
+    },
+    {
+      "id": 192,
+      "name": "Hindquarter",
+      "categories": [
+        "Amputation / Lower limb"
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Iliac Angioplasty",
+      "categories": [
+        "Aortoiliac / Occlusive Disease - Elective / Endovascular",
+        "Aortoiliac / Occlusive Disease -Emergency / Endovascular"
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Iliac Artery Stent",
+      "categories": [
+        "Aortoiliac / Iliac Aneurysm - Elective / Endovascular",
+        "Aortoiliac / Iliac Artery Aneurysm - Emergency / Endovascular",
+        "Aortoiliac / Occlusive Disease - Elective / Endovascular",
+        "Aortoiliac / Occlusive Disease -Emergency / Endovascular"
+      ]
+    },
+    {
+      "id": 359,
+      "name": "Iliac Endarterectomy +/- patch closure",
+      "categories": [
+        "Aortoiliac / Occlusive Disease - Elective / Open",
+        "Aortoiliac / Occlusive Disease -Emergency / Open"
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Iliofemoral bypass",
+      "categories": [
+        "Aortoiliac / Occlusive Disease - Elective / Open"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Iliofemoral bypass",
+      "categories": [
+        "Aortoiliac / Occlusive Disease -Emergency / Open"
+      ]
+    },
+    {
+      "id": 245,
+      "name": "Incision and drainage of abscess (not groin)",
+      "categories": [
+        "General Surgery / Superficial sepsis",
+        "Miscellanious / Wound management / Abscess"
+      ]
+    },
+    {
+      "id": 246,
+      "name": "Incision and drainage of groin abscess",
+      "categories": [
+        "Miscellanious / Wound management / Debridement"
+      ]
+    },
+    {
+      "id": 317,
+      "name": "Incisional hernia repair",
+      "categories": [
+        "General Surgery / Hernia repair"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Infrarenal bifurcated - femoral",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm - emergency / Open"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Infrarenal bifurcated - femoral",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm- elective / Open"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Infrarenal bifurcated - iliac",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm - emergency / Open"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Infrarenal bifurcated - iliac",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm- elective / Open"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Infrarenal tube graft",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm - emergency / Open"
+      ],
+      "aliases": [
+        "open aaa repair",
+        "open abdominal aortic aneurysm repair",
+        "open aortic aneurysm repair"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Infrarenal tube graft",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm- elective / Open"
+      ]
+    },
+    {
+      "id": 316,
+      "name": "Inguinal hernia repair",
+      "categories": [
+        "General Surgery / Hernia repair"
+      ]
+    },
+    {
+      "id": 228,
+      "name": "Insertion of ambulatory peritoneal dialysis catheter",
+      "categories": [
+        "Transplant / Peritoneal Dialysis",
+        "Vascular access / Peritoneal Dialysis"
+      ]
+    },
+    {
+      "id": 275,
+      "name": "Insertion of chest drain",
+      "categories": [
+        "Trauma / Thorax"
+      ]
+    },
+    {
+      "id": 296,
+      "name": "Insertion of non tunnelled central venous catheter",
+      "categories": [
+        "Miscellanious / Line insertion",
+        "Vascular access / Primary / Endovascular"
+      ]
+    },
+    {
+      "id": 277,
+      "name": "Insertion of temporary vascular shunt",
+      "categories": [
+        "Trauma / Neck"
+      ]
+    },
+    {
+      "id": 278,
+      "name": "Insertion of temporary vascular shunt (not carotid)",
+      "categories": [
+        "Trauma / Arm / Open",
+        "Trauma / Leg",
+        "Trauma / Thorax"
+      ]
+    },
+    {
+      "id": 181,
+      "name": "Insertion of tunnelled line",
+      "categories": [
+        "Vascular access / Primary / Endovascular"
+      ]
+    },
+    {
+      "id": 360,
+      "name": "Internal iliac embolisation",
+      "categories": [
+        "Miscellanious / Adjunct to main procedure"
+      ]
+    },
+    {
+      "id": 217,
+      "name": "IVC filter - insertion",
+      "categories": [
+        "Venous / Other / Endovascular"
+      ]
+    },
+    {
+      "id": 218,
+      "name": "IVC filter - removal",
+      "categories": [
+        "Venous / Other / Endovascular"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Juxta/pararenal, inter or suprarenal clamp",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm - emergency / Open"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Juxta/pararenal, inter or suprarenal clamp",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm- elective / Open"
+      ]
+    },
+    {
+      "id": 301,
+      "name": "Kissing Iliac Artery stents",
+      "categories": [
+        "Aortoiliac / Occlusive Disease - Elective / Endovascular",
+        "Aortoiliac / Occlusive Disease -Emergency / Endovascular"
+      ]
+    },
+    {
+      "id": 319,
+      "name": "Laparoscopic Appendicectomy",
+      "categories": [
+        "General Surgery / Laparoscopic Surgery"
+      ]
+    },
+    {
+      "id": 320,
+      "name": "Laparoscopic cholecystectomy",
+      "categories": [
+        "General Surgery / Laparoscopic Surgery"
+      ]
+    },
+    {
+      "id": 311,
+      "name": "Laparoscopic Live donor nephrectomy",
+      "categories": [
+        "Transplant / Renal"
+      ]
+    },
+    {
+      "id": 357,
+      "name": "Laparostomy",
+      "categories": [
+        "Miscellanious / Wound management"
+      ]
+    },
+    {
+      "id": 322,
+      "name": "Laparotomy and adhesiolysis/ Division of band adhesion",
+      "categories": [
+        "General Surgery / Abdominal Surgery / Laparotomy"
+      ]
+    },
+    {
+      "id": 324,
+      "name": "Laparotomy and small bowel resection",
+      "categories": [
+        "General Surgery / Abdominal Surgery / Laparotomy"
+      ]
+    },
+    {
+      "id": 335,
+      "name": "Laparotomy for bleeding (non trauma)",
+      "categories": [
+        "General Surgery / Abdominal Surgery / Laparotomy"
+      ]
+    },
+    {
+      "id": 325,
+      "name": "Left hemicolectomy (Lap or Open)",
+      "categories": [
+        "General Surgery / Abdominal Surgery / Colonic resection"
+      ]
+    },
+    {
+      "id": 266,
+      "name": "ligation bleeding vessel",
+      "categories": [
+        "Miscellanious / Post operative complications"
+      ]
+    },
+    {
+      "id": 81,
+      "name": "Ligation of artery",
+      "categories": [
+        "Extracranial & upper limb / Upper Limb - Arterial / Open Emergency"
+      ]
+    },
+    {
+      "id": 147,
+      "name": "Ligation of artery",
+      "categories": [
+        "Lower limb / Trauma / Open",
+        "Trauma / Arm / Open",
+        "Trauma / Leg",
+        "Trauma / Neck",
+        "Trauma / Thorax"
+      ]
+    },
+    {
+      "id": 174,
+      "name": "Ligation of fistula",
+      "categories": [
+        "Vascular access / Secondary / Open"
+      ]
+    },
+    {
+      "id": 283,
+      "name": "Ligation of vein",
+      "categories": [
+        "Trauma / Arm / Open",
+        "Trauma / Neck",
+        "Trauma / Thorax"
+      ]
+    },
+    {
+      "id": 47,
+      "name": "Ligation of visceral artery",
+      "categories": [
+        "Visceral / Aneurysm / Open"
+      ]
+    },
+    {
+      "id": 235,
+      "name": "Lower limb - 4 compartment fasciotomies",
+      "categories": [
+        "Miscellanious / Fasciotomies",
+        "Trauma / Leg"
+      ]
+    },
+    {
+      "id": 157,
+      "name": "Lower limb arterial embolisation (not femoral)",
+      "categories": [
+        "Lower limb / Trauma / Endovascular"
+      ]
+    },
+    {
+      "id": 338,
+      "name": "Lymph node biopsy (axilla/ groin)",
+      "categories": [
+        "General Surgery / Reticulo-endothelial system"
+      ]
+    },
+    {
+      "id": 337,
+      "name": "Lymph node FNA",
+      "categories": [
+        "General Surgery / Reticulo-endothelial system"
+      ]
+    },
+    {
+      "id": 244,
+      "name": "Major debridement eg nec fasc/ gangrene",
+      "categories": [
+        "General Surgery / Superficial sepsis",
+        "Miscellanious / Wound management / Debridement"
+      ]
+    },
+    {
+      "id": 178,
+      "name": "Mechanical thrombectomy of fistula",
+      "categories": [
+        "Vascular access / Secondary / Endovascular"
+      ]
+    },
+    {
+      "id": 44,
+      "name": "Mesenteric artery angioplasty",
+      "categories": [
+        "Visceral / Occlusive / Endovascular"
+      ]
+    },
+    {
+      "id": 50,
+      "name": "Mesenteric artery embolisation",
+      "categories": [
+        "Visceral / Aneurysm / Endovascular"
+      ]
+    },
+    {
+      "id": 53,
+      "name": "Mesenteric artery embolisation",
+      "categories": [
+        "Visceral / Bleeding / Endovascular"
+      ]
+    },
+    {
+      "id": 45,
+      "name": "Mesenteric artery stent",
+      "categories": [
+        "Visceral / Occlusive / Endovascular"
+      ]
+    },
+    {
+      "id": 49,
+      "name": "Mesenteric artery stent",
+      "categories": [
+        "Visceral / Aneurysm / Endovascular"
+      ]
+    },
+    {
+      "id": 56,
+      "name": "Mesenteric artery stent",
+      "categories": [
+        "Visceral / Bleeding / Endovascular"
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Mesenteric bypass not from aorta",
+      "categories": [
+        "Visceral / Occlusive / Open"
+      ]
+    },
+    {
+      "id": 362,
+      "name": "Microtibial emboloectomies",
+      "categories": [
+        "Lower limb / Occlusive Disease - Emergency / Open"
+      ]
+    },
+    {
+      "id": 247,
+      "name": "Millar cuff",
+      "categories": [
+        "Miscellanious / Adjunct to main procedure"
+      ]
+    },
+    {
+      "id": 243,
+      "name": "Minor debridement (non diabetic foot) eg wound edges",
+      "categories": [
+        "General Surgery / Superficial sepsis",
+        "Miscellanious / Wound management / Debridement"
+      ]
+    },
+    {
+      "id": 222,
+      "name": "Multiple phlebectomies",
+      "categories": [
+        "Venous / Varicose veins - Primary / Open"
+      ]
+    },
+    {
+      "id": 227,
+      "name": "Multiple phlebectomies",
+      "categories": [
+        "Venous / Varicose Veins - recurrent / Open"
+      ]
+    },
+    {
+      "id": 290,
+      "name": "Open Donor nephrectomy",
+      "categories": [
+        "Transplant / Renal"
+      ]
+    },
+    {
+      "id": 291,
+      "name": "Open Live donor nephrectomy",
+      "categories": [
+        "Transplant / Renal"
+      ]
+    },
+    {
+      "id": 303,
+      "name": "Open Surgical Nephrectomy",
+      "categories": [
+        "Transplant / Renal",
+        "Trauma / Abdomen",
+        "Visceral / Bleeding / Open"
+      ]
+    },
+    {
+      "id": 352,
+      "name": "Open Thoracic aneurysm repair",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm- elective / Open"
+      ]
+    },
+    {
+      "id": 256,
+      "name": "Other",
+      "categories": [
+        "Supporting other specialities / Elective"
+      ]
+    },
+    {
+      "id": 262,
+      "name": "Other",
+      "categories": [
+        "Supporting other specialities / Emergency"
+      ]
+    },
+    {
+      "id": 331,
+      "name": "Other colonic resection",
+      "categories": [
+        "General Surgery / Abdominal Surgery / Colonic resection"
+      ]
+    },
+    {
+      "id": 186,
+      "name": "Other eg guillotine",
+      "categories": [
+        "Amputation / Lower limb"
+      ]
+    },
+    {
+      "id": 238,
+      "name": "Other fasciotomies",
+      "categories": [
+        "Miscellanious / Fasciotomies"
+      ]
+    },
+    {
+      "id": 267,
+      "name": "Other venous embolisation",
+      "categories": [
+        "Venous / Other / Endovascular"
+      ]
+    },
+    {
+      "id": 354,
+      "name": "Paraumbilical/ Umbilical hernia repair",
+      "categories": [
+        "General Surgery / Hernia repair"
+      ]
+    },
+    {
+      "id": 310,
+      "name": "Percutaneous clot aspiration",
+      "categories": [
+        "Lower limb / Occlusive Disease - Elective / Endovascular",
+        "Lower limb / Occlusive Disease - Emergency / Endovascular"
+      ]
+    },
+    {
+      "id": 345,
+      "name": "Pharmaco-mechanical venous thrombolysis",
+      "categories": [
+        "Venous / Other / Endovascular"
+      ]
+    },
+    {
+      "id": 346,
+      "name": "Popliteal aneurysm repair- posterior approach/ interposition graft",
+      "categories": [
+        "Lower limb / Aneurysm - Elective / Open",
+        "Lower limb / Aneurysm - Emergency / Open"
+      ]
+    },
+    {
+      "id": 96,
+      "name": "Popliteal aneurysm Stent-graft",
+      "categories": [
+        "Lower limb / Aneurysm - Elective / Endovascular"
+      ]
+    },
+    {
+      "id": 105,
+      "name": "Popliteal aneurysm Stent-graft",
+      "categories": [
+        "Lower limb / Aneurysm - Emergency / Endovascular"
+      ]
+    },
+    {
+      "id": 121,
+      "name": "Popliteal artery angioplasty",
+      "categories": [
+        "Lower limb / Occlusive Disease - Elective / Endovascular"
+      ]
+    },
+    {
+      "id": 140,
+      "name": "Popliteal artery angioplasty",
+      "categories": [
+        "Lower limb / Occlusive Disease - Emergency / Endovascular"
+      ]
+    },
+    {
+      "id": 122,
+      "name": "Popliteal artery stent",
+      "categories": [
+        "Lower limb / Occlusive Disease - Elective / Endovascular"
+      ]
+    },
+    {
+      "id": 141,
+      "name": "Popliteal artery stent",
+      "categories": [
+        "Lower limb / Occlusive Disease - Emergency / Endovascular"
+      ]
+    },
+    {
+      "id": 128,
+      "name": "Popliteal embolectomy",
+      "categories": [
+        "Lower limb / Occlusive Disease - Emergency / Open"
+      ]
+    },
+    {
+      "id": 353,
+      "name": "Popliteal entrapment release - posterior approach",
+      "categories": [
+        "Lower limb / Popliteal Entrapment"
+      ]
+    },
+    {
+      "id": 168,
+      "name": "Portacath insertion",
+      "categories": [
+        "Vascular access / Primary / Endovascular"
+      ]
+    },
+    {
+      "id": 169,
+      "name": "Portacath revision",
+      "categories": [
+        "Vascular access / Secondary / Open"
+      ]
+    },
+    {
+      "id": 108,
+      "name": "Profundaplasty",
+      "categories": [
+        "Lower limb / Occlusive Disease - Elective / Open"
+      ]
+    },
+    {
+      "id": 364,
+      "name": "Proximalisation of Arterial Inflow",
+      "categories": [
+        "Vascular access / Secondary / Open"
+      ]
+    },
+    {
+      "id": 343,
+      "name": "Punch graft",
+      "categories": [
+        "Miscellanious / Wound management / Plastic surgery procedures"
+      ]
+    },
+    {
+      "id": 225,
+      "name": "Redo SFJ ligation +/- strip +/- phlebectomies",
+      "categories": [
+        "Venous / Varicose Veins - recurrent / Open"
+      ]
+    },
+    {
+      "id": 226,
+      "name": "Redo SPJ ligation +/- strip +/- phlebectomies",
+      "categories": [
+        "Venous / Varicose Veins - recurrent / Open"
+      ]
+    },
+    {
+      "id": 288,
+      "name": "Removal of ambulatory peritoneal dialysis catheter",
+      "categories": [
+        "Transplant / Peritoneal Dialysis",
+        "Vascular access / Peritoneal Dialysis"
+      ]
+    },
+    {
+      "id": 61,
+      "name": "Removal of carotid body tumour",
+      "categories": [
+        "Extracranial & upper limb / Carotid / Open"
+      ]
+    },
+    {
+      "id": 170,
+      "name": "Removal of central vein catheter",
+      "categories": [
+        "Vascular access / Line removal"
+      ]
+    },
+    {
+      "id": 297,
+      "name": "Removal of Hickman line/ tunneled central venous catheter",
+      "categories": [
+        "Vascular access / Line removal"
+      ]
+    },
+    {
+      "id": 230,
+      "name": "Removal of infected interposition graft",
+      "categories": [
+        "Aortoiliac / Revision surgery / Open"
+      ]
+    },
+    {
+      "id": 229,
+      "name": "Removal of Infected stent graft",
+      "categories": [
+        "Aortoiliac / Revision surgery / Open"
+      ]
+    },
+    {
+      "id": 293,
+      "name": "Removal of portacath",
+      "categories": [
+        "Vascular access / Line removal"
+      ]
+    },
+    {
+      "id": 292,
+      "name": "Renal allotransplant",
+      "categories": [
+        "Transplant / Renal"
+      ]
+    },
+    {
+      "id": 42,
+      "name": "Renal artery angioplasty",
+      "categories": [
+        "Visceral / Occlusive / Endovascular"
+      ]
+    },
+    {
+      "id": 51,
+      "name": "Renal artery embolisation",
+      "categories": [
+        "Visceral / Aneurysm / Endovascular"
+      ]
+    },
+    {
+      "id": 54,
+      "name": "Renal artery embolisation",
+      "categories": [
+        "Visceral / Bleeding / Endovascular"
+      ]
+    },
+    {
+      "id": 314,
+      "name": "Renal artery endarterectomy",
+      "categories": [
+        "Visceral / Occlusive / Open"
+      ]
+    },
+    {
+      "id": 41,
+      "name": "Renal artery reimplantation",
+      "categories": [
+        "Visceral / Occlusive / Open"
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Renal artery stent",
+      "categories": [
+        "Visceral / Occlusive / Endovascular"
+      ]
+    },
+    {
+      "id": 48,
+      "name": "Renal artery stent",
+      "categories": [
+        "Visceral / Aneurysm / Endovascular"
+      ]
+    },
+    {
+      "id": 55,
+      "name": "Renal artery stent",
+      "categories": [
+        "Visceral / Bleeding / Endovascular"
+      ]
+    },
+    {
+      "id": 312,
+      "name": "Renal autotransplant",
+      "categories": [
+        "Transplant / Renal"
+      ]
+    },
+    {
+      "id": 80,
+      "name": "Repair of artery - Trauma, not subclavian",
+      "categories": [
+        "Extracranial & upper limb / Upper Limb - Arterial / Open Emergency",
+        "Trauma / Arm / Open"
+      ]
+    },
+    {
+      "id": 286,
+      "name": "Repair of artery post percutaneous intervention (not pseudoaneurysm repair)",
+      "categories": [
+        "Trauma / Leg"
+      ]
+    },
+    {
+      "id": 70,
+      "name": "Repair of brachial artery aneurysm",
+      "categories": [
+        "Extracranial & upper limb / Upper Limb - Arterial / Open Elective"
+      ]
+    },
+    {
+      "id": 60,
+      "name": "Repair of carotid aneurysm",
+      "categories": [
+        "Extracranial & upper limb / Carotid / Open"
+      ]
+    },
+    {
+      "id": 231,
+      "name": "Repair of Endoleak",
+      "categories": [
+        "Aortoiliac / Revision surgery / Endovascular"
+      ]
+    },
+    {
+      "id": 287,
+      "name": "Repair of pseudoaneurysm (not femoral)",
+      "categories": [
+        "Trauma / Arm / Open"
+      ]
+    },
+    {
+      "id": 67,
+      "name": "Repair of subclavian aneurysm",
+      "categories": [
+        "Extracranial & upper limb / Upper Limb - Arterial / Open Elective"
+      ]
+    },
+    {
+      "id": 79,
+      "name": "Repair of subclavian artery - Trauma",
+      "categories": [
+        "Extracranial & upper limb / Upper Limb - Arterial / Open Emergency",
+        "Trauma / Arm / Open"
+      ]
+    },
+    {
+      "id": 46,
+      "name": "Repair of visceral artery aneurysm",
+      "categories": [
+        "Visceral / Aneurysm / Open"
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Revision iliac surgery",
+      "categories": [
+        "Aortoiliac / Revision surgery / Open"
+      ]
+    },
+    {
+      "id": 264,
+      "name": "revision of anastamosis",
+      "categories": [
+        "Miscellanious / Post operative complications"
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Revision of aortic bifurcated graft",
+      "categories": [
+        "Aortoiliac / Revision surgery / Open"
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Revision of aortic tube graft",
+      "categories": [
+        "Aortoiliac / Revision surgery / Open"
+      ]
+    },
+    {
+      "id": 171,
+      "name": "Revision of fistula (incl bleeding, aneurysm, occlusive disease)",
+      "categories": [
+        "Vascular access / Secondary / Open"
+      ]
+    },
+    {
+      "id": 187,
+      "name": "Revision of previous amputation",
+      "categories": [
+        "Amputation / Lower limb"
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Revision of Thoracic Graft",
+      "categories": [
+        "Aortoiliac / Revision surgery / Open"
+      ]
+    },
+    {
+      "id": 323,
+      "name": "Right hemi colectomy (Lap or Open)",
+      "categories": [
+        "General Surgery / Abdominal Surgery / Colonic resection"
+      ]
+    },
+    {
+      "id": 295,
+      "name": "RUDI Procedure",
+      "categories": [
+        "Vascular access / Secondary / Open"
+      ]
+    },
+    {
+      "id": 255,
+      "name": "Sarcoma",
+      "categories": [
+        "Supporting other specialities / Elective"
+      ]
+    },
+    {
+      "id": 261,
+      "name": "Sarcoma",
+      "categories": [
+        "Supporting other specialities / Emergency"
+      ]
+    },
+    {
+      "id": 146,
+      "name": "Sartorius muscle flap",
+      "categories": [
+        "Lower limb / Trauma / Open",
+        "Miscellanious / Wound management / Plastic surgery procedures"
+      ]
+    },
+    {
+      "id": 224,
+      "name": "SEPS",
+      "categories": [
+        "Venous / Varicose veins - Primary / Open"
+      ]
+    },
+    {
+      "id": 220,
+      "name": "SFJ ligation +/- phlebectomies",
+      "categories": [
+        "Venous / Varicose veins - Primary / Open"
+      ]
+    },
+    {
+      "id": 219,
+      "name": "SFJ ligation, GSV strip +/- phlebectomies",
+      "categories": [
+        "Venous / Varicose veins - Primary / Open"
+      ]
+    },
+    {
+      "id": 326,
+      "name": "Sigmoid colectomy (Lap or Open)",
+      "categories": [
+        "General Surgery / Abdominal Surgery / Colonic resection"
+      ]
+    },
+    {
+      "id": 221,
+      "name": "SPJ ligation +/- SSV strip +/- phlebectomies",
+      "categories": [
+        "Venous / Varicose veins - Primary / Open"
+      ]
+    },
+    {
+      "id": 302,
+      "name": "Splenectomy",
+      "categories": [
+        "Trauma / Abdomen",
+        "Visceral / Bleeding / Open"
+      ]
+    },
+    {
+      "id": 347,
+      "name": "Splicing of vein",
+      "categories": [
+        "Miscellanious / Adjunct to main procedure"
+      ]
+    },
+    {
+      "id": 341,
+      "name": "Split Skin Graft",
+      "categories": [
+        "Miscellanious / Wound management / Plastic surgery procedures"
+      ]
+    },
+    {
+      "id": 201,
+      "name": "SSV truncal ablation",
+      "categories": [
+        "Venous / Varicose veins - Primary / Endovenous"
+      ]
+    },
+    {
+      "id": 210,
+      "name": "SSV truncal ablation",
+      "categories": [
+        "Venous / Varicose Veins - recurrent / Endovascular"
+      ]
+    },
+    {
+      "id": 202,
+      "name": "SSV truncal ablation + foam sclerotherapy",
+      "categories": [
+        "Venous / Varicose veins - Primary / Endovenous"
+      ]
+    },
+    {
+      "id": 211,
+      "name": "SSV truncal ablation + foam sclerotherapy",
+      "categories": [
+        "Venous / Varicose Veins - recurrent / Endovascular"
+      ]
+    },
+    {
+      "id": 203,
+      "name": "SSV truncal ablation + phlebectomies",
+      "categories": [
+        "Venous / Varicose veins - Primary / Endovenous"
+      ]
+    },
+    {
+      "id": 212,
+      "name": "SSV truncal ablation + phlebectomies",
+      "categories": [
+        "Venous / Varicose Veins - recurrent / Endovascular"
+      ]
+    },
+    {
+      "id": 248,
+      "name": "St Mary's boot",
+      "categories": [
+        "Miscellanious / Adjunct to main procedure"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Standard infrarenal EVAR",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm- elective / Endovascular"
+      ],
+      "aliases": [
+        "evar",
+        "endovascular aneurysm repair",
+        "infrarenal evar",
+        "standard evar"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Standard infrarenal EVAR",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm - emergency / Endovascular"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Stent graft for dissection",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm - emergency / Endovascular"
+      ]
+    },
+    {
+      "id": 306,
+      "name": "Stent of other visceral artery",
+      "categories": [
+        "Visceral / Aneurysm / Endovascular",
+        "Visceral / Bleeding / Endovascular"
+      ]
+    },
+    {
+      "id": 330,
+      "name": "Sub total/ completion colectomy (Lap/open)",
+      "categories": [
+        "General Surgery / Abdominal Surgery / Colonic resection"
+      ]
+    },
+    {
+      "id": 83,
+      "name": "Subclavian artery angioplasty",
+      "categories": [
+        "Extracranial & upper limb / Upper Limb - Arterial / Endovascular"
+      ]
+    },
+    {
+      "id": 68,
+      "name": "Subclavian artery bypass",
+      "categories": [
+        "Extracranial & upper limb / Upper Limb - Arterial / Open Elective"
+      ]
+    },
+    {
+      "id": 69,
+      "name": "Subclavian artery endartarectomy",
+      "categories": [
+        "Extracranial & upper limb / Upper Limb - Arterial / Open Elective"
+      ]
+    },
+    {
+      "id": 84,
+      "name": "Subclavian artery stent",
+      "categories": [
+        "Extracranial & upper limb / Upper Limb - Arterial / Endovascular",
+        "Trauma / Arm / Endovascular"
+      ]
+    },
+    {
+      "id": 223,
+      "name": "Subfascial ligation, open",
+      "categories": [
+        "Venous / Varicose veins - Primary / Open"
+      ]
+    },
+    {
+      "id": 263,
+      "name": "suture repair of bleeding anastamosis +/- evacuation of haematoma",
+      "categories": [
+        "Miscellanious / Post operative complications"
+      ]
+    },
+    {
+      "id": 64,
+      "name": "Temporal artery biopsy",
+      "categories": [
+        "Miscellanious / Biopsy"
+      ]
+    },
+    {
+      "id": 236,
+      "name": "Thigh fasciotomies",
+      "categories": [
+        "Miscellanious / Fasciotomies",
+        "Trauma / Leg"
+      ]
+    },
+    {
+      "id": 349,
+      "name": "Thoracic outlet decompression - no rib resection/ soft tissue only",
+      "categories": [
+        "Extracranial & upper limb / Thoracic Outlet Decompression"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Thoracic stent graft",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm- elective / Endovascular"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Thoracic stent graft",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm - emergency / Endovascular",
+        "Trauma / Thorax"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Thoracoabdominal, supracoeliac clamp",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm - emergency / Open"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Thoracoabdominal, supracoeliac clamp",
+      "categories": [
+        "Aortoiliac / Aortic Aneurysm- elective / Open"
+      ]
+    },
+    {
+      "id": 76,
+      "name": "Thorascopic sympathectomy",
+      "categories": [
+        "Extracranial & upper limb / Upper Limb - Arterial / Open Elective",
+        "Miscellanious / Sympathectomy"
+      ]
+    },
+    {
+      "id": 106,
+      "name": "Thrombin injection of pseudoaneurysm",
+      "categories": [
+        "Lower limb / Aneurysm - Emergency / Endovascular"
+      ]
+    },
+    {
+      "id": 159,
+      "name": "Thrombin injection of pseudoaneurysm",
+      "categories": [
+        "Lower limb / Trauma / Endovascular"
+      ]
+    },
+    {
+      "id": 180,
+      "name": "Thrombolysis of access catheter",
+      "categories": [
+        "Vascular access / Secondary / Endovascular"
+      ]
+    },
+    {
+      "id": 177,
+      "name": "Thrombolysis of fistula",
+      "categories": [
+        "Vascular access / Secondary / Endovascular"
+      ]
+    },
+    {
+      "id": 196,
+      "name": "Through elbow",
+      "categories": [
+        "Amputation / Upper limb"
+      ]
+    },
+    {
+      "id": 197,
+      "name": "Through forearm",
+      "categories": [
+        "Amputation / Upper limb"
+      ]
+    },
+    {
+      "id": 188,
+      "name": "Through knee",
+      "categories": [
+        "Amputation / Lower limb"
+      ]
+    },
+    {
+      "id": 189,
+      "name": "Toe - great",
+      "categories": [
+        "Amputation / Lower limb"
+      ]
+    },
+    {
+      "id": 190,
+      "name": "Toe(s), other",
+      "categories": [
+        "Amputation / Lower limb"
+      ]
+    },
+    {
+      "id": 191,
+      "name": "Transmetatarsal",
+      "categories": [
+        "Amputation / Lower limb"
+      ]
+    },
+    {
+      "id": 313,
+      "name": "Transplant Nephrectomy",
+      "categories": [
+        "Transplant / Renal"
+      ]
+    },
+    {
+      "id": 252,
+      "name": "Trauma and Orthopaedics",
+      "categories": [
+        "Supporting other specialities / Elective"
+      ]
+    },
+    {
+      "id": 258,
+      "name": "Trauma and Orthopaedics",
+      "categories": [
+        "Supporting other specialities / Emergency"
+      ]
+    },
+    {
+      "id": 329,
+      "name": "Trauma Laparotomy + Damage Control",
+      "categories": [
+        "General Surgery / Abdominal Surgery / Laparotomy",
+        "Trauma / Abdomen"
+      ]
+    },
+    {
+      "id": 82,
+      "name": "Upper limb angiography",
+      "categories": [
+        "Extracranial & upper limb / Upper Limb - Arterial / Endovascular"
+      ]
+    },
+    {
+      "id": 72,
+      "name": "Upper limb bypass - Prosthetic",
+      "categories": [
+        "Extracranial & upper limb / Upper Limb - Arterial / Open Elective",
+        "Extracranial & upper limb / Upper Limb - Arterial / Open Emergency"
+      ]
+    },
+    {
+      "id": 71,
+      "name": "Upper limb bypass - Vein",
+      "categories": [
+        "Extracranial & upper limb / Upper Limb - Arterial / Open Elective",
+        "Extracranial & upper limb / Upper Limb - Arterial / Open Emergency"
+      ]
+    },
+    {
+      "id": 365,
+      "name": "Venogram",
+      "categories": [
+        "Venous / Other / Endovascular"
+      ]
+    },
+    {
+      "id": 308,
+      "name": "Venography",
+      "categories": [
+        "Extracranial & upper limb / Upper Limb - Venous (not access)"
+      ]
+    },
+    {
+      "id": 309,
+      "name": "Venous thrombolysis",
+      "categories": [
+        "Extracranial & upper limb / Upper Limb - Venous (not access)",
+        "Venous / Other / Endovascular"
+      ]
+    },
+    {
+      "id": 355,
+      "name": "Visceral aspiration/mechanical thrombo-embolectomy",
+      "categories": [
+        "Visceral / Occlusive / Endovascular"
+      ]
+    },
+    {
+      "id": 356,
+      "name": "Visceral thromboembolectomy",
+      "categories": [
+        "Visceral / Occlusive / Open"
+      ]
+    },
+    {
+      "id": 289,
+      "name": "Work bench preparation of kidney",
+      "categories": [
+        "Transplant / Renal"
+      ]
+    }
+  ],
+  "tree": {
+    "Aortoiliac": {
+      "Aortic Aneurysm - emergency": {
+        "Open": [
+          {
+            "id": 1,
+            "name": "Infrarenal bifurcated - femoral"
+          },
+          {
+            "id": 2,
+            "name": "Infrarenal bifurcated - iliac"
+          },
+          {
+            "id": 3,
+            "name": "Infrarenal tube graft"
+          },
+          {
+            "id": 4,
+            "name": "Juxta/pararenal, inter or suprarenal clamp"
+          },
+          {
+            "id": 5,
+            "name": "Thoracoabdominal, supracoeliac clamp"
+          }
+        ],
+        "Endovascular": [
+          {
+            "id": 14,
+            "name": "Branched stent graft"
+          },
+          {
+            "id": 15,
+            "name": "Fenestrated stent graft"
+          },
+          {
+            "id": 17,
+            "name": "Aortoiliac aneurysm +/- int iliac embolisation"
+          },
+          {
+            "id": 18,
+            "name": "Aortouni-iliac +/- fem-fem crossover"
+          },
+          {
+            "id": 19,
+            "name": "Standard infrarenal EVAR"
+          },
+          {
+            "id": 20,
+            "name": "Thoracic stent graft"
+          },
+          {
+            "id": 21,
+            "name": "Stent graft for dissection"
+          },
+          {
+            "id": 298,
+            "name": "Branched thoracic stent graft"
+          },
+          {
+            "id": 299,
+            "name": "Aortic arch branched device"
+          },
+          {
+            "id": 344,
+            "name": "EVAR planning"
+          }
+        ]
+      },
+      "Aortic Aneurysm- elective": {
+        "Open": [
+          {
+            "id": 6,
+            "name": "Infrarenal bifurcated - femoral"
+          },
+          {
+            "id": 7,
+            "name": "Infrarenal bifurcated - iliac"
+          },
+          {
+            "id": 8,
+            "name": "Infrarenal tube graft"
+          },
+          {
+            "id": 9,
+            "name": "Juxta/pararenal, inter or suprarenal clamp"
+          },
+          {
+            "id": 10,
+            "name": "Thoracoabdominal, supracoeliac clamp"
+          },
+          {
+            "id": 352,
+            "name": "Open Thoracic aneurysm repair"
+          }
+        ],
+        "Endovascular": [
+          {
+            "id": 11,
+            "name": "Standard infrarenal EVAR"
+          },
+          {
+            "id": 12,
+            "name": "Aortoiliac aneurysm +/- int iliac embolisation"
+          },
+          {
+            "id": 13,
+            "name": "Aortouni-iliac +/- fem-fem crossover"
+          },
+          {
+            "id": 14,
+            "name": "Branched stent graft"
+          },
+          {
+            "id": 15,
+            "name": "Fenestrated stent graft"
+          },
+          {
+            "id": 16,
+            "name": "Thoracic stent graft"
+          },
+          {
+            "id": 298,
+            "name": "Branched thoracic stent graft"
+          },
+          {
+            "id": 299,
+            "name": "Aortic arch branched device"
+          },
+          {
+            "id": 300,
+            "name": "Endovascular repair of aortic aneurysm -Chimney Technique (ChEVAR)"
+          },
+          {
+            "id": 344,
+            "name": "EVAR planning"
+          }
+        ]
+      },
+      "Occlusive Disease - Elective": {
+        "Open": [
+          {
+            "id": 22,
+            "name": "Aortobifemoral graft"
+          },
+          {
+            "id": 23,
+            "name": "Aortobi-iliac bypass"
+          },
+          {
+            "id": 24,
+            "name": "Aortounifemoral bypass"
+          },
+          {
+            "id": 25,
+            "name": "Axillofem/bifemoral bypass"
+          },
+          {
+            "id": 26,
+            "name": "Iliofemoral bypass"
+          },
+          {
+            "id": 350,
+            "name": "Aortic endarterectomy"
+          },
+          {
+            "id": 359,
+            "name": "Iliac Endarterectomy +/- patch closure"
+          }
+        ],
+        "Endovascular": [
+          {
+            "id": 27,
+            "name": "Aortic angioplasty"
+          },
+          {
+            "id": 28,
+            "name": "Aortic Stent"
+          },
+          {
+            "id": 29,
+            "name": "Iliac Angioplasty"
+          },
+          {
+            "id": 30,
+            "name": "Iliac Artery Stent"
+          },
+          {
+            "id": 301,
+            "name": "Kissing Iliac Artery stents"
+          },
+          {
+            "id": 363,
+            "name": "CERAB"
+          }
+        ]
+      },
+      "Occlusive Disease -Emergency": {
+        "Open": [
+          {
+            "id": 23,
+            "name": "Aortobi-iliac bypass"
+          },
+          {
+            "id": 24,
+            "name": "Aortounifemoral bypass"
+          },
+          {
+            "id": 31,
+            "name": "Aortobifemoral Bypass"
+          },
+          {
+            "id": 32,
+            "name": "Axillofemoral / Bifemoral bypass"
+          },
+          {
+            "id": 33,
+            "name": "Iliofemoral bypass"
+          },
+          {
+            "id": 359,
+            "name": "Iliac Endarterectomy +/- patch closure"
+          }
+        ],
+        "Endovascular": [
+          {
+            "id": 27,
+            "name": "Aortic angioplasty"
+          },
+          {
+            "id": 28,
+            "name": "Aortic Stent"
+          },
+          {
+            "id": 29,
+            "name": "Iliac Angioplasty"
+          },
+          {
+            "id": 30,
+            "name": "Iliac Artery Stent"
+          },
+          {
+            "id": 301,
+            "name": "Kissing Iliac Artery stents"
+          },
+          {
+            "id": 363,
+            "name": "CERAB"
+          }
+        ]
+      },
+      "Iliac Artery Aneurysm - Emergency": {
+        "Open": [
+          {
+            "id": 24,
+            "name": "Aortounifemoral bypass"
+          }
+        ],
+        "Endovascular": [
+          {
+            "id": 30,
+            "name": "Iliac Artery Stent"
+          }
+        ]
+      },
+      "Iliac Aneurysm - Elective": {
+        "Open": [
+          {
+            "id": 24,
+            "name": "Aortounifemoral bypass"
+          }
+        ],
+        "Endovascular": [
+          {
+            "id": 30,
+            "name": "Iliac Artery Stent"
+          }
+        ]
+      },
+      "Revision surgery": {
+        "Open": [
+          {
+            "id": 34,
+            "name": "Revision of Thoracic Graft"
+          },
+          {
+            "id": 35,
+            "name": "Revision of aortic tube graft"
+          },
+          {
+            "id": 36,
+            "name": "Revision of aortic bifurcated graft"
+          },
+          {
+            "id": 37,
+            "name": "Revision iliac surgery"
+          },
+          {
+            "id": 229,
+            "name": "Removal of Infected stent graft"
+          },
+          {
+            "id": 230,
+            "name": "Removal of infected interposition graft"
+          }
+        ],
+        "Endovascular": [
+          {
+            "id": 231,
+            "name": "Repair of Endoleak"
+          }
+        ]
+      }
+    },
+    "Trauma": {
+      "Thorax": [
+        {
+          "id": 20,
+          "name": "Thoracic stent graft"
+        },
+        {
+          "id": 147,
+          "name": "Ligation of artery"
+        },
+        {
+          "id": 274,
+          "name": "Exploration of neck wound +/- vessels"
+        },
+        {
+          "id": 275,
+          "name": "Insertion of chest drain"
+        },
+        {
+          "id": 276,
+          "name": "Emergency thoracotomy"
+        },
+        {
+          "id": 278,
+          "name": "Insertion of temporary vascular shunt (not carotid)"
+        },
+        {
+          "id": 283,
+          "name": "Ligation of vein"
+        },
+        {
+          "id": 284,
+          "name": "Emergency arterial reconstruction"
+        },
+        {
+          "id": 285,
+          "name": "Emergency venous reconstruction"
+        }
+      ],
+      "Arm": {
+        "Open": [
+          {
+            "id": 79,
+            "name": "Repair of subclavian artery - Trauma"
+          },
+          {
+            "id": 80,
+            "name": "Repair of artery - Trauma, not subclavian"
+          },
+          {
+            "id": 147,
+            "name": "Ligation of artery"
+          },
+          {
+            "id": 237,
+            "name": "Arm fasciotomies"
+          },
+          {
+            "id": 278,
+            "name": "Insertion of temporary vascular shunt (not carotid)"
+          },
+          {
+            "id": 279,
+            "name": "Exploration of arm wound +/- vessels"
+          },
+          {
+            "id": 283,
+            "name": "Ligation of vein"
+          },
+          {
+            "id": 285,
+            "name": "Emergency venous reconstruction"
+          },
+          {
+            "id": 287,
+            "name": "Repair of pseudoaneurysm (not femoral)"
+          }
+        ],
+        "Endovascular": [
+          {
+            "id": 84,
+            "name": "Subclavian artery stent"
+          },
+          {
+            "id": 86,
+            "name": "Arterial embolistaion"
+          }
+        ]
+      },
+      "Leg": [
+        {
+          "id": 104,
+          "name": "Femoral artery pseudoaneurysm repair"
+        },
+        {
+          "id": 147,
+          "name": "Ligation of artery"
+        },
+        {
+          "id": 235,
+          "name": "Lower limb - 4 compartment fasciotomies"
+        },
+        {
+          "id": 236,
+          "name": "Thigh fasciotomies"
+        },
+        {
+          "id": 278,
+          "name": "Insertion of temporary vascular shunt (not carotid)"
+        },
+        {
+          "id": 280,
+          "name": "Exploration of thigh wound +/- vessels"
+        },
+        {
+          "id": 281,
+          "name": "Exploration of lower leg wound +/- vessels"
+        },
+        {
+          "id": 284,
+          "name": "Emergency arterial reconstruction"
+        },
+        {
+          "id": 285,
+          "name": "Emergency venous reconstruction"
+        },
+        {
+          "id": 286,
+          "name": "Repair of artery post percutaneous intervention (not pseudoaneurysm repair)"
+        }
+      ],
+      "Neck": [
+        {
+          "id": 147,
+          "name": "Ligation of artery"
+        },
+        {
+          "id": 273,
+          "name": "Exploration of neck wound +/- vessels"
+        },
+        {
+          "id": 277,
+          "name": "Insertion of temporary vascular shunt"
+        },
+        {
+          "id": 283,
+          "name": "Ligation of vein"
+        },
+        {
+          "id": 284,
+          "name": "Emergency arterial reconstruction"
+        },
+        {
+          "id": 285,
+          "name": "Emergency venous reconstruction"
+        }
+      ],
+      "Abdomen": {
+        "_procedures": [
+          {
+            "id": 302,
+            "name": "Splenectomy"
+          },
+          {
+            "id": 303,
+            "name": "Open Surgical Nephrectomy"
+          },
+          {
+            "id": 304,
+            "name": "Distal Pancreatectomy"
+          },
+          {
+            "id": 329,
+            "name": "Trauma Laparotomy + Damage Control"
+          }
+        ],
+        "Endovascular": [
+          {
+            "id": 305,
+            "name": "Embolisation of other visceral artery"
+          }
+        ]
+      }
+    },
+    "Visceral": {
+      "Occlusive": {
+        "Open": [
+          {
+            "id": 38,
+            "name": "Aorto-mesenteric bypass"
+          },
+          {
+            "id": 39,
+            "name": "Mesenteric bypass not from aorta"
+          },
+          {
+            "id": 40,
+            "name": "Aorto-renal bypass"
+          },
+          {
+            "id": 41,
+            "name": "Renal artery reimplantation"
+          },
+          {
+            "id": 314,
+            "name": "Renal artery endarterectomy"
+          },
+          {
+            "id": 356,
+            "name": "Visceral thromboembolectomy"
+          }
+        ],
+        "Endovascular": [
+          {
+            "id": 42,
+            "name": "Renal artery angioplasty"
+          },
+          {
+            "id": 43,
+            "name": "Renal artery stent"
+          },
+          {
+            "id": 44,
+            "name": "Mesenteric artery angioplasty"
+          },
+          {
+            "id": 45,
+            "name": "Mesenteric artery stent"
+          },
+          {
+            "id": 355,
+            "name": "Visceral aspiration/mechanical thrombo-embolectomy"
+          }
+        ]
+      },
+      "Aneurysm": {
+        "Open": [
+          {
+            "id": 46,
+            "name": "Repair of visceral artery aneurysm"
+          },
+          {
+            "id": 47,
+            "name": "Ligation of visceral artery"
+          }
+        ],
+        "Endovascular": [
+          {
+            "id": 48,
+            "name": "Renal artery stent"
+          },
+          {
+            "id": 49,
+            "name": "Mesenteric artery stent"
+          },
+          {
+            "id": 50,
+            "name": "Mesenteric artery embolisation"
+          },
+          {
+            "id": 51,
+            "name": "Renal artery embolisation"
+          },
+          {
+            "id": 305,
+            "name": "Embolisation of other visceral artery"
+          },
+          {
+            "id": 306,
+            "name": "Stent of other visceral artery"
+          }
+        ]
+      },
+      "Bleeding": {
+        "Endovascular": [
+          {
+            "id": 52,
+            "name": "Diagnostic mesenteric angiogram"
+          },
+          {
+            "id": 53,
+            "name": "Mesenteric artery embolisation"
+          },
+          {
+            "id": 54,
+            "name": "Renal artery embolisation"
+          },
+          {
+            "id": 55,
+            "name": "Renal artery stent"
+          },
+          {
+            "id": 56,
+            "name": "Mesenteric artery stent"
+          },
+          {
+            "id": 305,
+            "name": "Embolisation of other visceral artery"
+          },
+          {
+            "id": 306,
+            "name": "Stent of other visceral artery"
+          }
+        ],
+        "Open": [
+          {
+            "id": 302,
+            "name": "Splenectomy"
+          },
+          {
+            "id": 303,
+            "name": "Open Surgical Nephrectomy"
+          },
+          {
+            "id": 304,
+            "name": "Distal Pancreatectomy"
+          }
+        ]
+      }
+    },
+    "Extracranial & upper limb": {
+      "Carotid": {
+        "Open": [
+          {
+            "id": 57,
+            "name": "Carotid endartarectomy and Patch"
+          },
+          {
+            "id": 58,
+            "name": "Carotid endartarectomy - no patch"
+          },
+          {
+            "id": 59,
+            "name": "Carotid interposition graft"
+          },
+          {
+            "id": 60,
+            "name": "Repair of carotid aneurysm"
+          },
+          {
+            "id": 61,
+            "name": "Removal of carotid body tumour"
+          },
+          {
+            "id": 62,
+            "name": "Carotid - Carotid bypass"
+          },
+          {
+            "id": 63,
+            "name": "Carotid - subclavian bypass"
+          },
+          {
+            "id": 307,
+            "name": "Eversion carotid endarterectomy"
+          }
+        ],
+        "Endovascular": [
+          {
+            "id": 65,
+            "name": "Carotid artery stent"
+          },
+          {
+            "id": 66,
+            "name": "Arch Angiogram"
+          }
+        ]
+      },
+      "Upper Limb - Arterial": {
+        "Open Elective": [
+          {
+            "id": 67,
+            "name": "Repair of subclavian aneurysm"
+          },
+          {
+            "id": 68,
+            "name": "Subclavian artery bypass"
+          },
+          {
+            "id": 69,
+            "name": "Subclavian artery endartarectomy"
+          },
+          {
+            "id": 70,
+            "name": "Repair of brachial artery aneurysm"
+          },
+          {
+            "id": 71,
+            "name": "Upper limb bypass - Vein"
+          },
+          {
+            "id": 72,
+            "name": "Upper limb bypass - Prosthetic"
+          },
+          {
+            "id": 76,
+            "name": "Thorascopic sympathectomy"
+          },
+          {
+            "id": 77,
+            "name": "Endartarectomy and patch (not subclavian)"
+          }
+        ],
+        "Open Emergency": [
+          {
+            "id": 71,
+            "name": "Upper limb bypass - Vein"
+          },
+          {
+            "id": 72,
+            "name": "Upper limb bypass - Prosthetic"
+          },
+          {
+            "id": 78,
+            "name": "Brachial embolectomy"
+          },
+          {
+            "id": 79,
+            "name": "Repair of subclavian artery - Trauma"
+          },
+          {
+            "id": 80,
+            "name": "Repair of artery - Trauma, not subclavian"
+          },
+          {
+            "id": 81,
+            "name": "Ligation of artery"
+          }
+        ],
+        "Endovascular": [
+          {
+            "id": 82,
+            "name": "Upper limb angiography"
+          },
+          {
+            "id": 83,
+            "name": "Subclavian artery angioplasty"
+          },
+          {
+            "id": 84,
+            "name": "Subclavian artery stent"
+          },
+          {
+            "id": 85,
+            "name": "Arterial thrombolysis"
+          },
+          {
+            "id": 86,
+            "name": "Arterial embolistaion"
+          }
+        ]
+      },
+      "Thoracic Outlet Decompression": [
+        {
+          "id": 73,
+          "name": "First rib excision - Transaxillary"
+        },
+        {
+          "id": 74,
+          "name": "First rib excision - Supraclavicular"
+        },
+        {
+          "id": 75,
+          "name": "Cervical rib excision"
+        },
+        {
+          "id": 349,
+          "name": "Thoracic outlet decompression - no rib resection/ soft tissue only"
+        }
+      ],
+      "Upper Limb - Venous (not access)": [
+        {
+          "id": 308,
+          "name": "Venography"
+        },
+        {
+          "id": 309,
+          "name": "Venous thrombolysis"
+        }
+      ]
+    },
+    "Miscellanious": {
+      "Biopsy": [
+        {
+          "id": 64,
+          "name": "Temporal artery biopsy"
+        },
+        {
+          "id": 239,
+          "name": "Biopsy of leg ulcer"
+        }
+      ],
+      "Sympathectomy": [
+        {
+          "id": 76,
+          "name": "Thorascopic sympathectomy"
+        }
+      ],
+      "Wound management": {
+        "_procedures": [
+          {
+            "id": 357,
+            "name": "Laparostomy"
+          }
+        ],
+        "Plastic surgery procedures": [
+          {
+            "id": 146,
+            "name": "Sartorius muscle flap"
+          },
+          {
+            "id": 341,
+            "name": "Split Skin Graft"
+          },
+          {
+            "id": 342,
+            "name": "Full thickness skin graft"
+          },
+          {
+            "id": 343,
+            "name": "Punch graft"
+          }
+        ],
+        "Dressings": [
+          {
+            "id": 240,
+            "name": "Application of negative pressure dressing"
+          },
+          {
+            "id": 241,
+            "name": "Change of negative pressure dressing"
+          }
+        ],
+        "Debridement": [
+          {
+            "id": 242,
+            "name": "Debridement/ drainage of diabetic foot sepsis (no amputation)"
+          },
+          {
+            "id": 243,
+            "name": "Minor debridement (non diabetic foot) eg wound edges"
+          },
+          {
+            "id": 244,
+            "name": "Major debridement eg nec fasc/ gangrene"
+          },
+          {
+            "id": 246,
+            "name": "Incision and drainage of groin abscess"
+          }
+        ],
+        "Abscess": [
+          {
+            "id": 245,
+            "name": "Incision and drainage of abscess (not groin)"
+          }
+        ]
+      },
+      "Fasciotomies": [
+        {
+          "id": 235,
+          "name": "Lower limb - 4 compartment fasciotomies"
+        },
+        {
+          "id": 236,
+          "name": "Thigh fasciotomies"
+        },
+        {
+          "id": 237,
+          "name": "Arm fasciotomies"
+        },
+        {
+          "id": 238,
+          "name": "Other fasciotomies"
+        }
+      ],
+      "Adjunct to main procedure": [
+        {
+          "id": 247,
+          "name": "Millar cuff"
+        },
+        {
+          "id": 248,
+          "name": "St Mary's boot"
+        },
+        {
+          "id": 249,
+          "name": "Conduit for endovascular access"
+        },
+        {
+          "id": 347,
+          "name": "Splicing of vein"
+        },
+        {
+          "id": 350,
+          "name": "Aortic endarterectomy"
+        },
+        {
+          "id": 360,
+          "name": "Internal iliac embolisation"
+        }
+      ],
+      "Post operative complications": [
+        {
+          "id": 263,
+          "name": "suture repair of bleeding anastamosis +/- evacuation of haematoma"
+        },
+        {
+          "id": 264,
+          "name": "revision of anastamosis"
+        },
+        {
+          "id": 265,
+          "name": "evacuation of haematoma"
+        },
+        {
+          "id": 266,
+          "name": "ligation bleeding vessel"
+        }
+      ],
+      "Line insertion": [
+        {
+          "id": 296,
+          "name": "Insertion of non tunnelled central venous catheter"
+        },
+        {
+          "id": 361,
+          "name": "Arterial line insertion"
+        }
+      ]
+    },
+    "Lower limb": {
+      "Aneurysm - Elective": {
+        "Open": [
+          {
+            "id": 87,
+            "name": "Fem-Fem bypass / interposition graft / Repair"
+          },
+          {
+            "id": 88,
+            "name": "Femoro - Above knee popliteal - Vein"
+          },
+          {
+            "id": 89,
+            "name": "Femoro - Above knee popliteal - Prosthetic"
+          },
+          {
+            "id": 90,
+            "name": "Femoro - Below knee popliteal - Vein"
+          },
+          {
+            "id": 91,
+            "name": "Femoro - Below knee popliteal - Prosthetic"
+          },
+          {
+            "id": 92,
+            "name": "Femoro - Crural - Vein"
+          },
+          {
+            "id": 93,
+            "name": "Femoro - Crural - Prosthetic"
+          },
+          {
+            "id": 94,
+            "name": "Femoro/Popliteal - Pedal"
+          },
+          {
+            "id": 95,
+            "name": "Femoral artery pseudoaneurysm repair"
+          },
+          {
+            "id": 346,
+            "name": "Popliteal aneurysm repair- posterior approach/ interposition graft"
+          }
+        ],
+        "Endovascular": [
+          {
+            "id": 96,
+            "name": "Popliteal aneurysm Stent-graft"
+          }
+        ]
+      },
+      "Aneurysm - Emergency": {
+        "Open": [
+          {
+            "id": 97,
+            "name": "Fem-Fem bypass / interposition graft / Repair"
+          },
+          {
+            "id": 98,
+            "name": "Femoro - Above knee popliteal - Vein"
+          },
+          {
+            "id": 99,
+            "name": "Femoro - Above knee popliteal - Prosthetic"
+          },
+          {
+            "id": 100,
+            "name": "Femoro - Below knee popliteal - Prosthetic"
+          },
+          {
+            "id": 101,
+            "name": "Femoro - Below knee popliteal - Vein"
+          },
+          {
+            "id": 102,
+            "name": "Femoro - Crural - Vein"
+          },
+          {
+            "id": 103,
+            "name": "Femoro - Crural - Prosthetic"
+          },
+          {
+            "id": 104,
+            "name": "Femoral artery pseudoaneurysm repair"
+          },
+          {
+            "id": 346,
+            "name": "Popliteal aneurysm repair- posterior approach/ interposition graft"
+          },
+          {
+            "id": 351,
+            "name": "Femoral Artery infected pseudoaneurysm - artery ligation"
+          }
+        ],
+        "Endovascular": [
+          {
+            "id": 105,
+            "name": "Popliteal aneurysm Stent-graft"
+          },
+          {
+            "id": 106,
+            "name": "Thrombin injection of pseudoaneurysm"
+          }
+        ]
+      },
+      "Occlusive Disease - Elective": {
+        "Open": [
+          {
+            "id": 107,
+            "name": "Femoral artery endartarectomy +/- Patch"
+          },
+          {
+            "id": 108,
+            "name": "Profundaplasty"
+          },
+          {
+            "id": 109,
+            "name": "Endartarectomy and Patch (not femoral)"
+          },
+          {
+            "id": 110,
+            "name": "Fem-Fem bypass (ipsilateral and crossover)"
+          },
+          {
+            "id": 111,
+            "name": "Femoro - Above knee popliteal - Vein"
+          },
+          {
+            "id": 112,
+            "name": "Femoro - Above knee popliteal - Prosthetic"
+          },
+          {
+            "id": 113,
+            "name": "Femoro - Below knee popliteal - Vein"
+          },
+          {
+            "id": 114,
+            "name": "Femoro - Below knee popliteal - Prosthetic"
+          },
+          {
+            "id": 115,
+            "name": "Femoro - Crural - Vein"
+          },
+          {
+            "id": 116,
+            "name": "Femoro - Crural - Prosthetic"
+          },
+          {
+            "id": 117,
+            "name": "Femoro/Popliteal - Pedal"
+          }
+        ],
+        "Endovascular": [
+          {
+            "id": 118,
+            "name": "Diagnostic Femoral angiogram"
+          },
+          {
+            "id": 119,
+            "name": "Femoral artery angioplasty"
+          },
+          {
+            "id": 120,
+            "name": "Femoral artery stent"
+          },
+          {
+            "id": 121,
+            "name": "Popliteal artery angioplasty"
+          },
+          {
+            "id": 122,
+            "name": "Popliteal artery stent"
+          },
+          {
+            "id": 123,
+            "name": "Crural artery angioplasty"
+          },
+          {
+            "id": 124,
+            "name": "Crural artery stent"
+          },
+          {
+            "id": 125,
+            "name": "Arterial thrombolysis"
+          },
+          {
+            "id": 126,
+            "name": "Arterial thrombolysis and angioplasty / stent"
+          },
+          {
+            "id": 310,
+            "name": "Percutaneous clot aspiration"
+          }
+        ]
+      },
+      "Occlusive Disease - Emergency": {
+        "Open": [
+          {
+            "id": 107,
+            "name": "Femoral artery endartarectomy +/- Patch"
+          },
+          {
+            "id": 127,
+            "name": "Femoral embolectomy"
+          },
+          {
+            "id": 128,
+            "name": "Popliteal embolectomy"
+          },
+          {
+            "id": 129,
+            "name": "Fem-Fem bypass (ipsilateral and crossover)"
+          },
+          {
+            "id": 130,
+            "name": "Femoro - Above knee popliteal - Vein"
+          },
+          {
+            "id": 131,
+            "name": "Femoro - Above knee popliteal - Prosthetic"
+          },
+          {
+            "id": 132,
+            "name": "Femoro - Below knee popliteal - Vein"
+          },
+          {
+            "id": 133,
+            "name": "Femoro - Below knee popliteal - Prosthetic"
+          },
+          {
+            "id": 134,
+            "name": "Femoro - Crural - Vein"
+          },
+          {
+            "id": 135,
+            "name": "Femoro - Crural - Prosthetic"
+          },
+          {
+            "id": 136,
+            "name": "Femoro/Popliteal - Pedal"
+          },
+          {
+            "id": 362,
+            "name": "Microtibial emboloectomies"
+          }
+        ],
+        "Endovascular": [
+          {
+            "id": 137,
+            "name": "Diagnostic femoral angiogram"
+          },
+          {
+            "id": 138,
+            "name": "Femoral artery angioplasty"
+          },
+          {
+            "id": 139,
+            "name": "Femoral artery stent"
+          },
+          {
+            "id": 140,
+            "name": "Popliteal artery angioplasty"
+          },
+          {
+            "id": 141,
+            "name": "Popliteal artery stent"
+          },
+          {
+            "id": 142,
+            "name": "Crural artery angioplasty"
+          },
+          {
+            "id": 143,
+            "name": "Crural artery stent"
+          },
+          {
+            "id": 144,
+            "name": "Arterial thrombolysis"
+          },
+          {
+            "id": 145,
+            "name": "Arterial thrombolysis and angioplasty / stent"
+          },
+          {
+            "id": 310,
+            "name": "Percutaneous clot aspiration"
+          }
+        ]
+      },
+      "Trauma": {
+        "Open": [
+          {
+            "id": 146,
+            "name": "Sartorius muscle flap"
+          },
+          {
+            "id": 147,
+            "name": "Ligation of artery"
+          },
+          {
+            "id": 148,
+            "name": "Fem-Fem Crossover"
+          },
+          {
+            "id": 149,
+            "name": "Femoro - Above knee popliteal - Vein"
+          },
+          {
+            "id": 150,
+            "name": "Femoro - Above knee popliteal - Prosthetic"
+          },
+          {
+            "id": 151,
+            "name": "Femoro - Below knee popliteal - Vein"
+          },
+          {
+            "id": 152,
+            "name": "Femoro - Below knee popliteal - Prosthetic"
+          },
+          {
+            "id": 153,
+            "name": "Femoro - Crural - Vein"
+          },
+          {
+            "id": 154,
+            "name": "Femoro - Crural - Prosthetic"
+          },
+          {
+            "id": 155,
+            "name": "Femoro/Popliteal - Pedal"
+          }
+        ],
+        "Endovascular": [
+          {
+            "id": 156,
+            "name": "Femoral artery embolisation"
+          },
+          {
+            "id": 157,
+            "name": "Lower limb arterial embolisation (not femoral)"
+          },
+          {
+            "id": 158,
+            "name": "Duplex compression of pseudoaneurysm"
+          },
+          {
+            "id": 159,
+            "name": "Thrombin injection of pseudoaneurysm"
+          }
+        ]
+      },
+      "Popliteal Entrapment": [
+        {
+          "id": 353,
+          "name": "Popliteal entrapment release - posterior approach"
+        }
+      ]
+    },
+    "Vascular access": {
+      "Primary": {
+        "Open": [
+          {
+            "id": 160,
+            "name": "AV fistula, snuffbox"
+          },
+          {
+            "id": 161,
+            "name": "AV fistula, radiocephalic"
+          },
+          {
+            "id": 162,
+            "name": "AV fistula, brachiocephalic"
+          },
+          {
+            "id": 163,
+            "name": "AV fistula, basilic vein transposition"
+          },
+          {
+            "id": 164,
+            "name": "AV fistula, PTFE loop graft forearm"
+          },
+          {
+            "id": 165,
+            "name": "AV fistula, PTFE straight graft arm"
+          },
+          {
+            "id": 166,
+            "name": "AV fistula, PTFE loop graft groin"
+          },
+          {
+            "id": 167,
+            "name": "AV fistula, PTFE other"
+          }
+        ],
+        "Endovascular": [
+          {
+            "id": 168,
+            "name": "Portacath insertion"
+          },
+          {
+            "id": 181,
+            "name": "Insertion of tunnelled line"
+          },
+          {
+            "id": 296,
+            "name": "Insertion of non tunnelled central venous catheter"
+          }
+        ]
+      },
+      "Secondary": {
+        "Open": [
+          {
+            "id": 169,
+            "name": "Portacath revision"
+          },
+          {
+            "id": 171,
+            "name": "Revision of fistula (incl bleeding, aneurysm, occlusive disease)"
+          },
+          {
+            "id": 172,
+            "name": "Fistula/graft thrombectomy"
+          },
+          {
+            "id": 173,
+            "name": "Banding of AV fistula"
+          },
+          {
+            "id": 174,
+            "name": "Ligation of fistula"
+          },
+          {
+            "id": 294,
+            "name": "DRIL Procedure"
+          },
+          {
+            "id": 295,
+            "name": "RUDI Procedure"
+          },
+          {
+            "id": 364,
+            "name": "Proximalisation of Arterial Inflow"
+          }
+        ],
+        "Endovascular": [
+          {
+            "id": 175,
+            "name": "Fistulogram"
+          },
+          {
+            "id": 176,
+            "name": "Fistuloplasty"
+          },
+          {
+            "id": 177,
+            "name": "Thrombolysis of fistula"
+          },
+          {
+            "id": 178,
+            "name": "Mechanical thrombectomy of fistula"
+          },
+          {
+            "id": 179,
+            "name": "Aspiration thrombectomy of fistula"
+          },
+          {
+            "id": 180,
+            "name": "Thrombolysis of access catheter"
+          },
+          {
+            "id": 182,
+            "name": "Central venoplasty"
+          },
+          {
+            "id": 183,
+            "name": "Central vein stenting"
+          }
+        ]
+      },
+      "Line removal": [
+        {
+          "id": 170,
+          "name": "Removal of central vein catheter"
+        },
+        {
+          "id": 293,
+          "name": "Removal of portacath"
+        },
+        {
+          "id": 297,
+          "name": "Removal of Hickman line/ tunneled central venous catheter"
+        }
+      ],
+      "Peritoneal Dialysis": [
+        {
+          "id": 228,
+          "name": "Insertion of ambulatory peritoneal dialysis catheter"
+        },
+        {
+          "id": 288,
+          "name": "Removal of ambulatory peritoneal dialysis catheter"
+        }
+      ]
+    },
+    "Amputation": {
+      "Lower limb": [
+        {
+          "id": 184,
+          "name": "Above knee"
+        },
+        {
+          "id": 186,
+          "name": "Other eg guillotine"
+        },
+        {
+          "id": 187,
+          "name": "Revision of previous amputation"
+        },
+        {
+          "id": 188,
+          "name": "Through knee"
+        },
+        {
+          "id": 189,
+          "name": "Toe - great"
+        },
+        {
+          "id": 190,
+          "name": "Toe(s), other"
+        },
+        {
+          "id": 191,
+          "name": "Transmetatarsal"
+        },
+        {
+          "id": 192,
+          "name": "Hindquarter"
+        },
+        {
+          "id": 193,
+          "name": "Disarticulation of hip"
+        },
+        {
+          "id": 232,
+          "name": "Below knee - Burgess flap"
+        },
+        {
+          "id": 233,
+          "name": "Below knee - skew flap"
+        },
+        {
+          "id": 234,
+          "name": "amputation of phalynx/ partial toe"
+        },
+        {
+          "id": 358,
+          "name": "Gritti-stokes"
+        }
+      ],
+      "Upper limb": [
+        {
+          "id": 194,
+          "name": "Above elbow"
+        },
+        {
+          "id": 195,
+          "name": "Finger(s)"
+        },
+        {
+          "id": 196,
+          "name": "Through elbow"
+        },
+        {
+          "id": 197,
+          "name": "Through forearm"
+        }
+      ]
+    },
+    "Venous": {
+      "Varicose veins - Primary": {
+        "Endovenous": [
+          {
+            "id": 198,
+            "name": "GSV truncal ablation"
+          },
+          {
+            "id": 199,
+            "name": "GSV truncal ablation + foam sclerotherapy"
+          },
+          {
+            "id": 200,
+            "name": "GSV truncal ablation + phlebectomies"
+          },
+          {
+            "id": 201,
+            "name": "SSV truncal ablation"
+          },
+          {
+            "id": 202,
+            "name": "SSV truncal ablation + foam sclerotherapy"
+          },
+          {
+            "id": 203,
+            "name": "SSV truncal ablation + phlebectomies"
+          },
+          {
+            "id": 204,
+            "name": "Foam sclerotherapy, GSV truncal"
+          },
+          {
+            "id": 205,
+            "name": "Foam sclerotherapy, SSV truncal"
+          },
+          {
+            "id": 206,
+            "name": "Foam sclerotherapy, varicosities"
+          }
+        ],
+        "Open": [
+          {
+            "id": 219,
+            "name": "SFJ ligation, GSV strip +/- phlebectomies"
+          },
+          {
+            "id": 220,
+            "name": "SFJ ligation +/- phlebectomies"
+          },
+          {
+            "id": 221,
+            "name": "SPJ ligation +/- SSV strip +/- phlebectomies"
+          },
+          {
+            "id": 222,
+            "name": "Multiple phlebectomies"
+          },
+          {
+            "id": 223,
+            "name": "Subfascial ligation, open"
+          },
+          {
+            "id": 224,
+            "name": "SEPS"
+          }
+        ]
+      },
+      "Varicose Veins - recurrent": {
+        "Endovascular": [
+          {
+            "id": 207,
+            "name": "GSV truncal ablation + foam sclerotherapy"
+          },
+          {
+            "id": 208,
+            "name": "GSV truncal ablation"
+          },
+          {
+            "id": 209,
+            "name": "GSV truncal ablation + phlebectomies"
+          },
+          {
+            "id": 210,
+            "name": "SSV truncal ablation"
+          },
+          {
+            "id": 211,
+            "name": "SSV truncal ablation + foam sclerotherapy"
+          },
+          {
+            "id": 212,
+            "name": "SSV truncal ablation + phlebectomies"
+          },
+          {
+            "id": 213,
+            "name": "Foam sclerotherapy, GSV truncal"
+          },
+          {
+            "id": 214,
+            "name": "Foam sclerotherapy, SSV truncal"
+          },
+          {
+            "id": 215,
+            "name": "Foam sclerotherapy, varicosities"
+          }
+        ],
+        "Open": [
+          {
+            "id": 225,
+            "name": "Redo SFJ ligation +/- strip +/- phlebectomies"
+          },
+          {
+            "id": 226,
+            "name": "Redo SPJ ligation +/- strip +/- phlebectomies"
+          },
+          {
+            "id": 227,
+            "name": "Multiple phlebectomies"
+          }
+        ]
+      },
+      "Other": {
+        "Endovascular": [
+          {
+            "id": 216,
+            "name": "Gonadal vein embolisation"
+          },
+          {
+            "id": 217,
+            "name": "IVC filter - insertion"
+          },
+          {
+            "id": 218,
+            "name": "IVC filter - removal"
+          },
+          {
+            "id": 267,
+            "name": "Other venous embolisation"
+          },
+          {
+            "id": 268,
+            "name": "Deep venous stenting - iliac"
+          },
+          {
+            "id": 269,
+            "name": "Deep venous stenting - other (not iliac)"
+          },
+          {
+            "id": 309,
+            "name": "Venous thrombolysis"
+          },
+          {
+            "id": 345,
+            "name": "Pharmaco-mechanical venous thrombolysis"
+          },
+          {
+            "id": 365,
+            "name": "Venogram"
+          }
+        ],
+        "Open": [
+          {
+            "id": 270,
+            "name": "Deep venous reconstruction - IVC"
+          },
+          {
+            "id": 271,
+            "name": "Deep venous reconstruction - iliac"
+          },
+          {
+            "id": 272,
+            "name": "Deep venous reconstruction- other"
+          }
+        ]
+      }
+    },
+    "Transplant": {
+      "Peritoneal Dialysis": [
+        {
+          "id": 228,
+          "name": "Insertion of ambulatory peritoneal dialysis catheter"
+        },
+        {
+          "id": 288,
+          "name": "Removal of ambulatory peritoneal dialysis catheter"
+        }
+      ],
+      "Renal": [
+        {
+          "id": 289,
+          "name": "Work bench preparation of kidney"
+        },
+        {
+          "id": 290,
+          "name": "Open Donor nephrectomy"
+        },
+        {
+          "id": 291,
+          "name": "Open Live donor nephrectomy"
+        },
+        {
+          "id": 292,
+          "name": "Renal allotransplant"
+        },
+        {
+          "id": 303,
+          "name": "Open Surgical Nephrectomy"
+        },
+        {
+          "id": 311,
+          "name": "Laparoscopic Live donor nephrectomy"
+        },
+        {
+          "id": 312,
+          "name": "Renal autotransplant"
+        },
+        {
+          "id": 313,
+          "name": "Transplant Nephrectomy"
+        }
+      ]
+    },
+    "General Surgery": {
+      "Superficial sepsis": [
+        {
+          "id": 243,
+          "name": "Minor debridement (non diabetic foot) eg wound edges"
+        },
+        {
+          "id": 244,
+          "name": "Major debridement eg nec fasc/ gangrene"
+        },
+        {
+          "id": 245,
+          "name": "Incision and drainage of abscess (not groin)"
+        }
+      ],
+      "Hernia repair": [
+        {
+          "id": 315,
+          "name": "Femoral hernia repair"
+        },
+        {
+          "id": 316,
+          "name": "Inguinal hernia repair"
+        },
+        {
+          "id": 317,
+          "name": "Incisional hernia repair"
+        },
+        {
+          "id": 354,
+          "name": "Paraumbilical/ Umbilical hernia repair"
+        }
+      ],
+      "Laparoscopic Surgery": [
+        {
+          "id": 318,
+          "name": "Diagnostic Laparoscopy"
+        },
+        {
+          "id": 319,
+          "name": "Laparoscopic Appendicectomy"
+        },
+        {
+          "id": 320,
+          "name": "Laparoscopic cholecystectomy"
+        }
+      ],
+      "Abdominal Surgery": {
+        "Laparotomy": [
+          {
+            "id": 321,
+            "name": "Diagnostic Laparotomy"
+          },
+          {
+            "id": 322,
+            "name": "Laparotomy and adhesiolysis/ Division of band adhesion"
+          },
+          {
+            "id": 324,
+            "name": "Laparotomy and small bowel resection"
+          },
+          {
+            "id": 329,
+            "name": "Trauma Laparotomy + Damage Control"
+          },
+          {
+            "id": 335,
+            "name": "Laparotomy for bleeding (non trauma)"
+          }
+        ],
+        "Colonic resection": [
+          {
+            "id": 323,
+            "name": "Right hemi colectomy (Lap or Open)"
+          },
+          {
+            "id": 325,
+            "name": "Left hemicolectomy (Lap or Open)"
+          },
+          {
+            "id": 326,
+            "name": "Sigmoid colectomy (Lap or Open)"
+          },
+          {
+            "id": 327,
+            "name": "Anterior resection (Lap or Open)"
+          },
+          {
+            "id": 328,
+            "name": "Hartmann's procedure (Lap or Open)"
+          },
+          {
+            "id": 330,
+            "name": "Sub total/ completion colectomy (Lap/open)"
+          },
+          {
+            "id": 331,
+            "name": "Other colonic resection"
+          },
+          {
+            "id": 336,
+            "name": "Formation of defunctioning colostomy"
+          }
+        ],
+        "Stoma Formation": [
+          {
+            "id": 332,
+            "name": "Formation of end colostomy"
+          },
+          {
+            "id": 333,
+            "name": "Formation of end ileostomy"
+          },
+          {
+            "id": 334,
+            "name": "Formation of loop ileostomy"
+          }
+        ]
+      },
+      "Reticulo-endothelial system": [
+        {
+          "id": 337,
+          "name": "Lymph node FNA"
+        },
+        {
+          "id": 338,
+          "name": "Lymph node biopsy (axilla/ groin)"
+        },
+        {
+          "id": 339,
+          "name": "Block dissection Lymph nodes - axilla"
+        },
+        {
+          "id": 340,
+          "name": "Block dissection Lymph nodes - inguinal"
+        },
+        {
+          "id": 348,
+          "name": "Block dissection Lymph nodes - Iliac"
+        }
+      ]
+    },
+    "Supporting other specialities": {
+      "Elective": [
+        {
+          "id": 251,
+          "name": "Gynae"
+        },
+        {
+          "id": 252,
+          "name": "Trauma and Orthopaedics"
+        },
+        {
+          "id": 253,
+          "name": "ENT"
+        },
+        {
+          "id": 254,
+          "name": "General Surgery"
+        },
+        {
+          "id": 255,
+          "name": "Sarcoma"
+        },
+        {
+          "id": 256,
+          "name": "Other"
+        }
+      ],
+      "Emergency": [
+        {
+          "id": 257,
+          "name": "Gynae"
+        },
+        {
+          "id": 258,
+          "name": "Trauma and Orthopaedics"
+        },
+        {
+          "id": 259,
+          "name": "ENT"
+        },
+        {
+          "id": 260,
+          "name": "General Surgery"
+        },
+        {
+          "id": 261,
+          "name": "Sarcoma"
+        },
+        {
+          "id": 262,
+          "name": "Other"
+        }
+      ]
+    }
+  }
+}
