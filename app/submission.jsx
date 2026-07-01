@@ -94,10 +94,10 @@ function buildFullInjectionScript(plan) {
         if(!directive){ done(false, { ready:true, reason:'no Angular directive found', selector:searchSel }); return; }
 
         // Trim the search at the first punctuation that breaks eLogbook's server
-        // search: "(", ",", and apostrophe (e.g. "Children's"). We still match the
+        // search: "(", ",", apostrophe (e.g. "Children's"), and "+". We still match the
         // FULL name among whatever results return, so trimming the typed query
         // only widens the result set — it never loosens the match.
-        var typeText = String(searchText).split('(')[0].split(',')[0].split("'")[0].trim();
+        var typeText = String(searchText).split('(')[0].split(',')[0].split("'")[0].split('+')[0].trim();
         if(!typeText) typeText = String(searchText).split('(')[0].trim();
         if(!typeText) typeText = searchText;
         var proto = Object.getPrototypeOf(input);

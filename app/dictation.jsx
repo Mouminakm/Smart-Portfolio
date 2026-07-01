@@ -22,6 +22,7 @@ import SmartCard from "../components/SmartCard";
 import { useAuth } from "../contexts/AuthContext";
 import { useEntry } from "../contexts/EntryContext";
 import { getSpecialtyData } from "../data/specialtySchemas";
+import { PATIENT_IDENTIFIER_FIELDS } from "../lib/patientFields";
 import { loadProfile } from "../profile";
 import { colors, radius, spacing, type } from "../theme/theme";
 
@@ -155,9 +156,8 @@ export default function DictationScreen() {
       setTranscript(transcriptText);
 
       setProcessing("Extracting fields…");
-      const PATIENT_FIELDS = ["patientid", "AppPatientAgeDateofBirth_ageyears", "AppPatientAgeDateofBirth_agemonths", "AppPatientAgeDateofBirth_dateofbirth"];
       const fieldsForClaude = schema.fields
-        .filter((f) => !f.appOnly && f.submitsToPlatform !== false && !PATIENT_FIELDS.includes(f.id))
+        .filter((f) => !f.appOnly && f.submitsToPlatform !== false && !PATIENT_IDENTIFIER_FIELDS.includes(f.id))
         .map((f) => ({ id: f.id, label: f.label, inputType: f.inputType, options: f.options || undefined }));
       const procedureNames = (procedureData.procedures || []).map((p) => p.name);
       const pRes = await fetch(PARSE_URL, {
@@ -213,7 +213,7 @@ export default function DictationScreen() {
     );
   }
 
-  if (!schema) {
+  if (!schema || !Array.isArray(schema.fields)) {
     return (
       <View style={styles.container}>
         <NavyHeader title="Dictation" />
@@ -247,10 +247,7 @@ export default function DictationScreen() {
             {schema.fields
               .filter(
                 (field) =>
-                  field.id !== "patientid" &&
-                  field.id !== "AppPatientAgeDateofBirth_ageyears" &&
-                  field.id !== "AppPatientAgeDateofBirth_agemonths" &&
-                  field.id !== "AppPatientAgeDateofBirth_dateofbirth" &&
+                  !PATIENT_IDENTIFIER_FIELDS.includes(field.id) &&
                   field.id !== "operationspecialty" &&
                   !field.appOnly
               )

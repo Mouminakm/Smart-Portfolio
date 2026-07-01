@@ -7,7 +7,7 @@
   "field": "procedure",
   "harvested_from": "eLogbook 'Add operation' page (Specialty = Cardiothoracic Surgery)",
   "harvested_date": "2026-06-27",
-  "notes": "Each option's 'id' is the eLogbook data-nodeid used to select the procedure in the form (the value for WebView injection). 'name' is the display label / extraction target. A procedure may appear under several categories; the flat 'procedures' list is the authoritative deduplicated picklist, 'tree' preserves the on-site accordion structure for the picker UI and for giving the AI category context.",
+  "notes": "Each option's 'id' is the eLogbook data-nodeid used to select the procedure in the form (the value for WebView injection). 'name' is the display label / extraction target. A procedure may appear under several categories; the flat 'procedures' list is the authoritative deduplicated picklist, 'tree' preserves the on-site accordion structure for the picker UI and for giving the AI category context. | Curated spoken-form aliases added 2026-07-01 for 93 common operations (223 aliases), each validated against the live norm()/resolveProcedure() logic so it resolves to its intended catalogue entry; zero collisions. Long-tail procedures remain alias-free and match on exact/substring. Ambiguous bare terms default to the commonest variant (e.g. AVR/MVR/TVR -> adult non-congenital; 'aortic root replacement' -> Aortic root surgery).",
   "unique_procedure_count": 161,
   "procedures": [
     {
@@ -24,7 +24,11 @@
       "categories": [
         "Cardiac Surgery / Major Aortic"
       ],
-      "aliases": []
+      "aliases": [
+        "aortic arch repair",
+        "arch surgery",
+        "aortic arch replacement"
+      ]
     },
     {
       "id": 574,
@@ -32,7 +36,10 @@
       "categories": [
         "Congenital Cardiac Surgery / Valvular surgery / Aortic valve surgery"
       ],
-      "aliases": []
+      "aliases": [
+        "Ross",
+        "Ross procedure"
+      ]
     },
     {
       "id": 543,
@@ -40,7 +47,9 @@
       "categories": [
         "Congenital Cardiac Surgery / Valvular surgery / Aortic valve surgery"
       ],
-      "aliases": []
+      "aliases": [
+        "aortic root replacement"
+      ]
     },
     {
       "id": 416,
@@ -48,7 +57,10 @@
       "categories": [
         "Cardiac Surgery / Aortic valve"
       ],
-      "aliases": []
+      "aliases": [
+        "AV repair",
+        "aortic valve repair"
+      ]
     },
     {
       "id": 541,
@@ -64,7 +76,9 @@
       "categories": [
         "Cardiac Surgery / Aortic valve"
       ],
-      "aliases": []
+      "aliases": [
+        "AVR"
+      ]
     },
     {
       "id": 542,
@@ -104,7 +118,10 @@
       "categories": [
         "Generic Procedures / Line insertion"
       ],
-      "aliases": []
+      "aliases": [
+        "arterial line",
+        "art line"
+      ]
     },
     {
       "id": 418,
@@ -112,7 +129,11 @@
       "categories": [
         "Cardiac Surgery / Major Aortic"
       ],
-      "aliases": []
+      "aliases": [
+        "ascending aortic replacement",
+        "ascending aorta graft",
+        "replacement of ascending aorta"
+      ]
     },
     {
       "id": 433,
@@ -120,7 +141,11 @@
       "categories": [
         "Cardiac Surgery / Other adult cardiac"
       ],
-      "aliases": []
+      "aliases": [
+        "ASD closure",
+        "atrial septal defect closure",
+        "closure of atrial septal defect"
+      ]
     },
     {
       "id": 483,
@@ -136,7 +161,9 @@
       "categories": [
         "Thoracic Surgery / Mediastinal procedures"
       ],
-      "aliases": []
+      "aliases": [
+        "mediastinal mass biopsy"
+      ]
     },
     {
       "id": 575,
@@ -144,7 +171,12 @@
       "categories": [
         "Congenital Cardiac Surgery / Hypoplastic heart"
       ],
-      "aliases": []
+      "aliases": [
+        "BT shunt",
+        "Blalock-Taussig shunt",
+        "Blalock Taussig",
+        "modified BT shunt"
+      ]
     },
     {
       "id": 414,
@@ -152,7 +184,14 @@
       "categories": [
         "Cardiac Surgery / Coronary revascularisation"
       ],
-      "aliases": []
+      "aliases": [
+        "CABG",
+        "coronary artery bypass graft",
+        "coronary artery bypass grafting",
+        "coronary artery bypass",
+        "cabbage",
+        "coronary bypass"
+      ]
     },
     {
       "id": 518,
@@ -160,7 +199,9 @@
       "categories": [
         "Thoracic Surgery / Tracheal surgery"
       ],
-      "aliases": []
+      "aliases": [
+        "carinal resection"
+      ]
     },
     {
       "id": 576,
@@ -168,7 +209,12 @@
       "categories": [
         "Congenital Cardiac Surgery / Hypoplastic heart"
       ],
-      "aliases": []
+      "aliases": [
+        "cavopulmonary shunt",
+        "Glenn shunt",
+        "bidirectional Glenn",
+        "Glenn"
+      ]
     },
     {
       "id": 440,
@@ -176,7 +222,10 @@
       "categories": [
         "Generic Procedures / Line insertion"
       ],
-      "aliases": []
+      "aliases": [
+        "central line",
+        "central venous catheter"
+      ]
     },
     {
       "id": 485,
@@ -184,7 +233,10 @@
       "categories": [
         "Thoracic Surgery / Mediastinal procedures"
       ],
-      "aliases": []
+      "aliases": [
+        "mediastinoscopy",
+        "cervical mediastinoscopy"
+      ]
     },
     {
       "id": 560,
@@ -208,7 +260,10 @@
       "categories": [
         "Thoracic Surgery / Management of thoracic complications"
       ],
-      "aliases": []
+      "aliases": [
+        "thoracic duct ligation",
+        "closure of thoracic duct"
+      ]
     },
     {
       "id": 566,
@@ -216,7 +271,12 @@
       "categories": [
         "Congenital Cardiac Surgery / Septal defects (isolated)"
       ],
-      "aliases": []
+      "aliases": [
+        "PFO closure",
+        "closure of PFO",
+        "patent foramen ovale closure",
+        "PFO"
+      ]
     },
     {
       "id": 326,
@@ -224,7 +284,11 @@
       "categories": [
         "Congenital Cardiac Surgery / Other Congenital Procedures"
       ],
-      "aliases": []
+      "aliases": [
+        "coarctation repair",
+        "repair of coarctation",
+        "coarctation of the aorta"
+      ]
     },
     {
       "id": 339,
@@ -232,7 +296,12 @@
       "categories": [
         "Congenital Cardiac Surgery / AVSD"
       ],
-      "aliases": []
+      "aliases": [
+        "complete AVSD",
+        "complete atrioventricular septal defect",
+        "complete AV canal",
+        "CAVSD"
+      ]
     },
     {
       "id": 511,
@@ -280,7 +349,10 @@
       "categories": [
         "Thoracic Surgery / Other general thoracic"
       ],
-      "aliases": []
+      "aliases": [
+        "diaphragmatic plication",
+        "plication of diaphragm"
+      ]
     },
     {
       "id": 536,
@@ -312,7 +384,10 @@
       "categories": [
         "Congenital Cardiac Surgery / Other Congenital Procedures"
       ],
-      "aliases": []
+      "aliases": [
+        "DORV",
+        "double outlet right ventricle"
+      ]
     },
     {
       "id": 556,
@@ -320,7 +395,11 @@
       "categories": [
         "Cardiac Surgery / Management of cardiac complications"
       ],
-      "aliases": []
+      "aliases": [
+        "pericardial drain",
+        "drainage of pericardial effusion",
+        "pericardiocentesis"
+      ]
     },
     {
       "id": 438,
@@ -376,7 +455,10 @@
       "categories": [
         "Cardiac Surgery / Other adult cardiac"
       ],
-      "aliases": []
+      "aliases": [
+        "excision of intracardiac mass",
+        "cardiac mass excision"
+      ]
     },
     {
       "id": 531,
@@ -392,7 +474,11 @@
       "categories": [
         "Thoracic Surgery / Pleural surgery"
       ],
-      "aliases": []
+      "aliases": [
+        "pleurectomy decortication",
+        "extended pleurectomy",
+        "radical pleurectomy"
+      ]
     },
     {
       "id": 338,
@@ -408,7 +494,11 @@
       "categories": [
         "Thoracic Surgery / Pleural surgery"
       ],
-      "aliases": []
+      "aliases": [
+        "EPP",
+        "extrapleural pneumonectomy",
+        "extra pleural pneumonectomy"
+      ]
     },
     {
       "id": 337,
@@ -416,7 +506,11 @@
       "categories": [
         "Congenital Cardiac Surgery / Hypoplastic heart"
       ],
-      "aliases": []
+      "aliases": [
+        "Fontan",
+        "Fontan completion",
+        "total cavopulmonary connection"
+      ]
     },
     {
       "id": 522,
@@ -424,7 +518,11 @@
       "categories": [
         "Transplantation & Mechanical Support / Transplantation"
       ],
-      "aliases": []
+      "aliases": [
+        "heart lung transplant",
+        "heart-lung transplant",
+        "combined heart and lung transplant"
+      ]
     },
     {
       "id": 520,
@@ -432,7 +530,11 @@
       "categories": [
         "Transplantation & Mechanical Support / Transplantation"
       ],
-      "aliases": []
+      "aliases": [
+        "heart transplant",
+        "cardiac transplant",
+        "orthotopic heart transplant"
+      ]
     },
     {
       "id": 462,
@@ -448,7 +550,10 @@
       "categories": [
         "Generic Procedures / Chest drains"
       ],
-      "aliases": []
+      "aliases": [
+        "indwelling pleural catheter",
+        "IPC insertion"
+      ]
     },
     {
       "id": 539,
@@ -464,7 +569,9 @@
       "categories": [
         "Congenital Cardiac Surgery / Other Congenital Procedures"
       ],
-      "aliases": []
+      "aliases": [
+        "interrupted aortic arch"
+      ]
     },
     {
       "id": 454,
@@ -472,7 +579,12 @@
       "categories": [
         "Generic Procedures / Line insertion"
       ],
-      "aliases": []
+      "aliases": [
+        "IABP",
+        "intra-aortic balloon pump",
+        "balloon pump",
+        "aortic balloon pump"
+      ]
     },
     {
       "id": 557,
@@ -488,7 +600,10 @@
       "categories": [
         "Transplantation & Mechanical Support / Mechanical circulatory support / Implantable devices"
       ],
-      "aliases": []
+      "aliases": [
+        "LVAD",
+        "left VAD"
+      ]
     },
     {
       "id": 479,
@@ -496,7 +611,9 @@
       "categories": [
         "Thoracic Surgery / Lung resections"
       ],
-      "aliases": []
+      "aliases": [
+        "pulmonary lobectomy"
+      ]
     },
     {
       "id": 521,
@@ -504,7 +621,11 @@
       "categories": [
         "Transplantation & Mechanical Support / Transplantation"
       ],
-      "aliases": []
+      "aliases": [
+        "lung transplant",
+        "single lung transplant",
+        "double lung transplant"
+      ]
     },
     {
       "id": 499,
@@ -512,7 +633,10 @@
       "categories": [
         "Thoracic Surgery / Emphysema surgery"
       ],
-      "aliases": []
+      "aliases": [
+        "lung volume reduction",
+        "LVRS"
+      ]
     },
     {
       "id": 428,
@@ -520,7 +644,11 @@
       "categories": [
         "Cardiac Surgery / Other adult cardiac"
       ],
-      "aliases": []
+      "aliases": [
+        "LV aneurysmectomy",
+        "left ventricular aneurysm repair",
+        "LV aneurysm repair"
+      ]
     },
     {
       "id": 436,
@@ -544,7 +672,9 @@
       "categories": [
         "Generic Procedures / Tracheostomy"
       ],
-      "aliases": []
+      "aliases": [
+        "mini tracheostomy"
+      ]
     },
     {
       "id": 421,
@@ -552,7 +682,11 @@
       "categories": [
         "Cardiac Surgery / Mitral valve"
       ],
-      "aliases": []
+      "aliases": [
+        "MV repair",
+        "mitral repair",
+        "mitral valve repair"
+      ]
     },
     {
       "id": 550,
@@ -568,7 +702,9 @@
       "categories": [
         "Cardiac Surgery / Mitral valve"
       ],
-      "aliases": []
+      "aliases": [
+        "MVR"
+      ]
     },
     {
       "id": 551,
@@ -584,7 +720,10 @@
       "categories": [
         "Thoracic Surgery / Chest wall surgery"
       ],
-      "aliases": []
+      "aliases": [
+        "Ravitch",
+        "Ravitch procedure"
+      ]
     },
     {
       "id": 450,
@@ -600,7 +739,9 @@
       "categories": [
         "Congenital Cardiac Surgery / Cono-Truncal abnormalities"
       ],
-      "aliases": []
+      "aliases": [
+        "Nikaidoh"
+      ]
     },
     {
       "id": 344,
@@ -608,7 +749,9 @@
       "categories": [
         "Congenital Cardiac Surgery / Hypoplastic heart"
       ],
-      "aliases": []
+      "aliases": [
+        "Norwood"
+      ]
     },
     {
       "id": 505,
@@ -616,7 +759,10 @@
       "categories": [
         "Thoracic Surgery / Chest wall surgery"
       ],
-      "aliases": []
+      "aliases": [
+        "Nuss",
+        "Nuss procedure"
+      ]
     },
     {
       "id": 333,
@@ -640,7 +786,11 @@
       "categories": [
         "Congenital Cardiac Surgery / Other Congenital Procedures"
       ],
-      "aliases": []
+      "aliases": [
+        "PA banding",
+        "pulmonary artery banding",
+        "PA band"
+      ]
     },
     {
       "id": 331,
@@ -648,7 +798,12 @@
       "categories": [
         "Congenital Cardiac Surgery / AVSD"
       ],
-      "aliases": []
+      "aliases": [
+        "partial AVSD",
+        "partial atrioventricular septal defect",
+        "partial AV canal",
+        "primum ASD"
+      ]
     },
     {
       "id": 323,
@@ -656,7 +811,13 @@
       "categories": [
         "Congenital Cardiac Surgery / Other Congenital Procedures"
       ],
-      "aliases": []
+      "aliases": [
+        "PDA",
+        "patent ductus",
+        "PDA ligation",
+        "ligation of PDA",
+        "patent ductus arteriosus ligation"
+      ]
     },
     {
       "id": 446,
@@ -664,7 +825,9 @@
       "categories": [
         "Generic Procedures / Tracheostomy"
       ],
-      "aliases": []
+      "aliases": [
+        "percutaneous tracheostomy"
+      ]
     },
     {
       "id": 501,
@@ -672,7 +835,10 @@
       "categories": [
         "Thoracic Surgery / Other general thoracic"
       ],
-      "aliases": []
+      "aliases": [
+        "pericardial window",
+        "pericardial fenestration"
+      ]
     },
     {
       "id": 434,
@@ -680,7 +846,10 @@
       "categories": [
         "Cardiac Surgery / Other adult cardiac"
       ],
-      "aliases": []
+      "aliases": [
+        "pericardiectomy",
+        "pericardectomy"
+      ]
     },
     {
       "id": 559,
@@ -696,7 +865,10 @@
       "categories": [
         "Generic Procedures / Chest drains"
       ],
-      "aliases": []
+      "aliases": [
+        "pleural aspiration",
+        "pleural tap"
+      ]
     },
     {
       "id": 482,
@@ -736,7 +908,11 @@
       "categories": [
         "Thoracic Surgery / Other general thoracic"
       ],
-      "aliases": []
+      "aliases": [
+        "PTE",
+        "pulmonary endarterectomy",
+        "pulmonary thromboendarterectomy"
+      ]
     },
     {
       "id": 545,
@@ -744,7 +920,10 @@
       "categories": [
         "Congenital Cardiac Surgery / Valvular surgery / Pulmonary valve surgery"
       ],
-      "aliases": []
+      "aliases": [
+        "PVR",
+        "pulmonary valve replacement"
+      ]
     },
     {
       "id": 343,
@@ -752,7 +931,9 @@
       "categories": [
         "Congenital Cardiac Surgery / Cono-Truncal abnormalities"
       ],
-      "aliases": []
+      "aliases": [
+        "Rastelli"
+      ]
     },
     {
       "id": 437,
@@ -808,7 +989,10 @@
       "categories": [
         "Thoracic Surgery / Management of thoracic complications"
       ],
-      "aliases": []
+      "aliases": [
+        "bronchopleural fistula repair",
+        "repair of bronchopleural fistula"
+      ]
     },
     {
       "id": 528,
@@ -816,7 +1000,10 @@
       "categories": [
         "Cardiac Surgery / Management of cardiac complications"
       ],
-      "aliases": []
+      "aliases": [
+        "repair of cardiac trauma",
+        "cardiac trauma repair"
+      ]
     },
     {
       "id": 533,
@@ -833,7 +1020,9 @@
       "categories": [
         "Congenital Cardiac Surgery / Other Congenital Procedures"
       ],
-      "aliases": []
+      "aliases": [
+        "cor triatriatum repair"
+      ]
     },
     {
       "id": 508,
@@ -841,7 +1030,10 @@
       "categories": [
         "Thoracic Surgery / Other general thoracic"
       ],
-      "aliases": []
+      "aliases": [
+        "diaphragmatic hernia repair",
+        "repair of diaphragmatic hernia"
+      ]
     },
     {
       "id": 564,
@@ -881,7 +1073,9 @@
       "categories": [
         "Thoracic Surgery / Mediastinal procedures"
       ],
-      "aliases": []
+      "aliases": [
+        "anterior mediastinal mass resection"
+      ]
     },
     {
       "id": 529,
@@ -889,7 +1083,10 @@
       "categories": [
         "Thoracic Surgery / Chest wall surgery"
       ],
-      "aliases": []
+      "aliases": [
+        "first rib resection",
+        "cervical rib resection"
+      ]
     },
     {
       "id": 578,
@@ -913,7 +1110,9 @@
       "categories": [
         "Thoracic Surgery / Mediastinal procedures"
       ],
-      "aliases": []
+      "aliases": [
+        "posterior mediastinal mass resection"
+      ]
     },
     {
       "id": 562,
@@ -921,7 +1120,10 @@
       "categories": [
         "Congenital Cardiac Surgery / Valvular surgery / Aortic valve surgery"
       ],
-      "aliases": []
+      "aliases": [
+        "subaortic membrane resection",
+        "resection of subaortic membrane"
+      ]
     },
     {
       "id": 490,
@@ -937,7 +1139,9 @@
       "categories": [
         "Congenital Cardiac Surgery / Cono-Truncal abnormalities"
       ],
-      "aliases": []
+      "aliases": [
+        "REV procedure"
+      ]
     },
     {
       "id": 492,
@@ -945,7 +1149,10 @@
       "categories": [
         "Thoracic Surgery / Chest wall surgery"
       ],
-      "aliases": []
+      "aliases": [
+        "rib fixation",
+        "rib plating"
+      ]
     },
     {
       "id": 526,
@@ -953,7 +1160,10 @@
       "categories": [
         "Transplantation & Mechanical Support / Mechanical circulatory support / Implantable devices"
       ],
-      "aliases": []
+      "aliases": [
+        "RVAD",
+        "right VAD"
+      ]
     },
     {
       "id": 419,
@@ -961,7 +1171,11 @@
       "categories": [
         "Cardiac Surgery / Major Aortic"
       ],
-      "aliases": []
+      "aliases": [
+        "Bentall",
+        "modified Bentall",
+        "bentall procedure"
+      ]
     },
     {
       "id": 546,
@@ -970,7 +1184,11 @@
         "Congenital Cardiac Surgery / Hypoplastic heart",
         "Congenital Cardiac Surgery / Valvular surgery / Pulmonary valve surgery"
       ],
-      "aliases": []
+      "aliases": [
+        "RV-PA conduit",
+        "RV to PA conduit",
+        "RVPA conduit"
+      ]
     },
     {
       "id": 324,
@@ -978,7 +1196,10 @@
       "categories": [
         "Congenital Cardiac Surgery / Septal defects (isolated)"
       ],
-      "aliases": []
+      "aliases": [
+        "secundum ASD",
+        "secundum atrial septal defect"
+      ]
     },
     {
       "id": 481,
@@ -994,7 +1215,10 @@
       "categories": [
         "Generic Procedures / Chest drains"
       ],
-      "aliases": []
+      "aliases": [
+        "seldinger chest drain",
+        "seldinger drain"
+      ]
     },
     {
       "id": 561,
@@ -1003,7 +1227,11 @@
         "Congenital Cardiac Surgery / Valvular surgery / Aortic valve surgery",
         "Congenital Cardiac Surgery / Valvular surgery / Mitral valve surgery"
       ],
-      "aliases": []
+      "aliases": [
+        "septal myectomy",
+        "myectomy",
+        "septal myomectomy"
+      ]
     },
     {
       "id": 538,
@@ -1027,7 +1255,9 @@
       "categories": [
         "Thoracic Surgery / Tracheal surgery"
       ],
-      "aliases": []
+      "aliases": [
+        "sliding tracheoplasty"
+      ]
     },
     {
       "id": 547,
@@ -1035,7 +1265,10 @@
       "categories": [
         "Congenital Cardiac Surgery / Valvular surgery / Tricuspid valve surgery (inc. Ebstein)"
       ],
-      "aliases": []
+      "aliases": [
+        "Starnes",
+        "Starnes procedure"
+      ]
     },
     {
       "id": 452,
@@ -1051,7 +1284,10 @@
       "categories": [
         "Thoracic Surgery / Chest wall surgery"
       ],
-      "aliases": []
+      "aliases": [
+        "sternal fixation",
+        "sternal plating"
+      ]
     },
     {
       "id": 544,
@@ -1075,7 +1311,9 @@
       "categories": [
         "Generic Procedures / Chest drains"
       ],
-      "aliases": []
+      "aliases": [
+        "surgical chest drain"
+      ]
     },
     {
       "id": 432,
@@ -1083,7 +1321,11 @@
       "categories": [
         "Cardiac Surgery / Other adult cardiac"
       ],
-      "aliases": []
+      "aliases": [
+        "Maze procedure",
+        "Maze",
+        "arrhythmia surgery"
+      ]
     },
     {
       "id": 447,
@@ -1091,7 +1333,9 @@
       "categories": [
         "Generic Procedures / Tracheostomy"
       ],
-      "aliases": []
+      "aliases": [
+        "surgical tracheostomy"
+      ]
     },
     {
       "id": 441,
@@ -1099,7 +1343,11 @@
       "categories": [
         "Generic Procedures / Line insertion"
       ],
-      "aliases": []
+      "aliases": [
+        "Swan-Ganz",
+        "Swan Ganz",
+        "pulmonary artery catheter"
+      ]
     },
     {
       "id": 530,
@@ -1107,7 +1355,10 @@
       "categories": [
         "Thoracic Surgery / Other general thoracic"
       ],
-      "aliases": []
+      "aliases": [
+        "sympathectomy",
+        "thoracic sympathectomy"
+      ]
     },
     {
       "id": 555,
@@ -1115,7 +1366,12 @@
       "categories": [
         "Congenital Cardiac Surgery / Cono-Truncal abnormalities"
       ],
-      "aliases": []
+      "aliases": [
+        "TOF",
+        "tetralogy",
+        "tetralogy of fallot repair",
+        "repair of tetralogy of fallot"
+      ]
     },
     {
       "id": 336,
@@ -1139,7 +1395,11 @@
       "categories": [
         "Thoracic Surgery / Other general thoracic"
       ],
-      "aliases": []
+      "aliases": [
+        "thoracotomy for trauma",
+        "trauma thoracotomy",
+        "emergency thoracotomy"
+      ]
     },
     {
       "id": 341,
@@ -1147,7 +1407,12 @@
       "categories": [
         "Congenital Cardiac Surgery / Other Congenital Procedures"
       ],
-      "aliases": []
+      "aliases": [
+        "TAPVD",
+        "TAPVC",
+        "total anomalous pulmonary venous drainage",
+        "total anomalous pulmonary venous connection"
+      ]
     },
     {
       "id": 484,
@@ -1155,7 +1420,9 @@
       "categories": [
         "Thoracic Surgery / Tracheal surgery"
       ],
-      "aliases": []
+      "aliases": [
+        "tracheal resection"
+      ]
     },
     {
       "id": 558,
@@ -1163,7 +1430,13 @@
       "categories": [
         "Cardiac Surgery / Catheter based procedures"
       ],
-      "aliases": []
+      "aliases": [
+        "TAVI",
+        "TAVR",
+        "transcatheter aortic valve implantation",
+        "transcatheter aortic valve",
+        "percutaneous aortic valve"
+      ]
     },
     {
       "id": 342,
@@ -1171,7 +1444,13 @@
       "categories": [
         "Congenital Cardiac Surgery / Cono-Truncal abnormalities"
       ],
-      "aliases": []
+      "aliases": [
+        "TGA",
+        "transposition of the great arteries",
+        "arterial switch",
+        "switch procedure",
+        "Jatene"
+      ]
     },
     {
       "id": 423,
@@ -1179,7 +1458,11 @@
       "categories": [
         "Cardiac Surgery / Tricuspid valve"
       ],
-      "aliases": []
+      "aliases": [
+        "TV repair",
+        "tricuspid repair",
+        "tricuspid valve repair"
+      ]
     },
     {
       "id": 548,
@@ -1195,7 +1478,9 @@
       "categories": [
         "Cardiac Surgery / Tricuspid valve"
       ],
-      "aliases": []
+      "aliases": [
+        "TVR"
+      ]
     },
     {
       "id": 549,
@@ -1211,7 +1496,11 @@
       "categories": [
         "Congenital Cardiac Surgery / Cono-Truncal abnormalities"
       ],
-      "aliases": []
+      "aliases": [
+        "truncus arteriosus",
+        "truncus repair",
+        "common arterial trunk"
+      ]
     },
     {
       "id": 512,
@@ -1229,7 +1518,12 @@
       "categories": [
         "Cardiac Surgery / Major Aortic"
       ],
-      "aliases": []
+      "aliases": [
+        "valve sparing root replacement",
+        "valve-sparing root replacement",
+        "VSRR",
+        "David procedure"
+      ]
     },
     {
       "id": 330,
@@ -1237,7 +1531,10 @@
       "categories": [
         "Congenital Cardiac Surgery / Other Congenital Procedures"
       ],
-      "aliases": []
+      "aliases": [
+        "vascular ring",
+        "vascular ring division"
+      ]
     },
     {
       "id": 524,
@@ -1245,7 +1542,11 @@
       "categories": [
         "Transplantation & Mechanical Support / Mechanical circulatory support / Extra-corporeal circulation"
       ],
-      "aliases": []
+      "aliases": [
+        "VA ECMO",
+        "venoarterial ECMO",
+        "VA-ECMO"
+      ]
     },
     {
       "id": 577,
@@ -1253,7 +1554,10 @@
       "categories": [
         "Transplantation & Mechanical Support / Mechanical circulatory support / Extra-corporeal circulation"
       ],
-      "aliases": []
+      "aliases": [
+        "VAV ECMO",
+        "veno-arterial-venous ECMO"
+      ]
     },
     {
       "id": 523,
@@ -1261,7 +1565,11 @@
       "categories": [
         "Transplantation & Mechanical Support / Mechanical circulatory support / Extra-corporeal circulation"
       ],
-      "aliases": []
+      "aliases": [
+        "VV ECMO",
+        "venovenous ECMO",
+        "VV-ECMO"
+      ]
     },
     {
       "id": 435,
@@ -1269,7 +1577,11 @@
       "categories": [
         "Cardiac Surgery / Other adult cardiac"
       ],
-      "aliases": []
+      "aliases": [
+        "VSD closure",
+        "ventricular septal defect closure",
+        "closure of ventricular septal defect"
+      ]
     },
     {
       "id": 325,
@@ -1301,7 +1613,11 @@
       "categories": [
         "Thoracic Surgery / Lung resections"
       ],
-      "aliases": []
+      "aliases": [
+        "wedge resection",
+        "lung wedge resection",
+        "non-anatomical segmentectomy"
+      ]
     }
   ],
   "tree": {
