@@ -13,6 +13,8 @@ import NavyHeader from "../../components/NavyHeader";
 import SmartCard from "../../components/SmartCard";
 import { useAuth } from "../../contexts/AuthContext";
 import { ENTRY_TYPES_BY_PORTFOLIO } from "../../data/entryTypes";
+import { UK_PORTFOLIOS } from "../../data/portfolios";
+
 import { loadProfile } from "../../profile";
 import { colors, radius, spacing, type } from "../../theme/theme";
 
@@ -68,7 +70,9 @@ export default function HomeScreen() {
             const entryTypes = ENTRY_TYPES_BY_PORTFOLIO[portfolio] || [];
             return (
               <View key={portfolio} style={styles.group}>
-                <Text style={styles.groupHeading}>{portfolio}</Text>
+                <Text style={styles.groupHeading}>
+                  {(UK_PORTFOLIOS.find((p) => p.id === portfolio) || {}).name || portfolio}
+                </Text>
 
                 {entryTypes.length === 0 ? (
                   <Text style={styles.comingSoonNote}>Entry types coming soon</Text>
