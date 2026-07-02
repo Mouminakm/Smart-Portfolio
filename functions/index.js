@@ -706,7 +706,7 @@ exports.transcribe = onRequest(
 
       // Call Deepgram's pre-recorded endpoint. (Node 24 has fetch built in.)
       const dgResponse = await fetch(
-        "https://api.deepgram.com/v1/listen?model=nova-3-medical&smart_format=true&mip_opt_out=true&" + keytermQS(specialty),
+        "https://api.deepgram.com/v1/listen?model=nova-3-medical&smart_format=false&mip_opt_out=true&" + keytermQS(specialty),
         {
           method: "POST",
           headers: {
@@ -730,6 +730,13 @@ exports.transcribe = onRequest(
       // level is missing; ?? ("nullish coalescing") falls back to "" if so.
       const transcript =
         data?.results?.channels?.[0]?.alternatives?.[0]?.transcript ?? "";
+
+      // TEMP DEBUG (remove later): log ONLY digits/date words from the transcript
+      // so we can see how Deepgram rendered the spoken date. No clinical text.
+      try {
+        const dateBits = (transcript.match(/[0-9]|january|february|march|april|may|june|july|august|september|october|november|december|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|[0-9]{1,4}(st|nd|rd|th)?/gi) || []).join(" ");
+        logger.info("DATE WORDS:", dateBits);
+      } catch (e) {}
 
       response.json({ transcript });
     } catch (error) {
@@ -785,9 +792,13 @@ exports.parse = onRequest(
             if (f.inputType === "checkbox") {
               return `- ${f.id} (${f.label}): "Yes" or "No" or "".`;
             }
-            // dates: ask for UK numeric format explicitly
+            // dates: ask for ISO yyyy-mm-dd — year-first is unambiguous about
+            // day vs month, so the model can't mirror spoken order and silently
+            // swap them. The app's normaliseDate() converts this to eLogbook's
+            // dd-mm-yyyy. (Asking for dd-mm-yyyy let "January the 7th" come back
+            // as 01-07 = mm-dd, which looked valid but was wrong.)
             if (f.inputType === "date") {
-              return `- ${f.id} (${f.label}): a date in dd-mm-yyyy format (e.g. "25-06-2026"), or "" if not mentioned. Convert spoken dates like "the 25th of June 2026" to this format.`;
+              return `- ${f.id} (${f.label}): a date in ISO format yyyy-mm-dd (e.g. "2025-01-07" for the 7th of January 2025), or "" if not mentioned. Always use this exact order — 4-digit year, then 2-digit month, then 2-digit day — regardless of how the date was spoken.`;
             }
             // free text / number / autocomplete
             return `- ${f.id} (${f.label}): free text, or "" if not mentioned.`;
