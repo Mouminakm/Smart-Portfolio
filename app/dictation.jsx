@@ -13,7 +13,7 @@ import {
   useAudioRecorderState,
 } from "expo-audio";
 import { File } from "expo-file-system";
-import { useRouter } from "expo-router";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 import { Animated, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { PrimaryButton } from "../components/Buttons";
@@ -22,6 +22,7 @@ import SmartCard from "../components/SmartCard";
 import { useAuth } from "../contexts/AuthContext";
 import { useEntry } from "../contexts/EntryContext";
 import { getSpecialtyData } from "../data/specialtySchemas";
+import { getTurasSchema } from "../data/turasSchemas";
 import { PATIENT_IDENTIFIER_FIELDS } from "../lib/patientFields";
 import { loadProfile } from "../profile";
 import { colors, radius, spacing, type } from "../theme/theme";
@@ -33,6 +34,9 @@ const PARSE_URL = "https://europe-west2-smart-portfolio-d9c94.cloudfunctions.net
 
 export default function DictationScreen() {
   const router = useRouter();
+  // Read which platform/entry type was tapped on Home. For eLogbook's Operation
+  // log these are undefined, so everything below falls back to the old behaviour.
+  const { platform, entryType } = useLocalSearchParams();
   const { user } = useAuth();
   const { setTranscript, setFieldValues, setConfirmed, resetEntry } = useEntry();
   const [consultants, setConsultants] = useState([]);
@@ -62,8 +66,13 @@ export default function DictationScreen() {
     load();
   }, [user]);
 
+  // If the URL asked for a Turas entry, load that schema. Otherwise fall back to
+  // the eLogbook specialty schema exactly as before — eLogbook is untouched.
+  const isTuras = platform === "turas";
+  const turasSchema = isTuras ? getTurasSchema(entryType) : null;
+
   const specialtyData = getSpecialtyData(userSpecialty);
-  const schema = specialtyData ? specialtyData.schema : null;
+  const schema = isTuras ? turasSchema : specialtyData ? specialtyData.schema : null;
   const procedureData = specialtyData ? specialtyData.procedures : null;
 
   // ---- Recording pulse ----
