@@ -143,6 +143,10 @@ export default function DictationScreen() {
   async function finishRecording() {
     setStatus("finished");
     try {
+      // Get the signed-in user's Firebase ID token — the short-lived "pass"
+      // that proves this is a real signed-in user. We send it with each backend
+      // call so the Cloud Functions can verify who's calling.
+      const token = user ? await user.getIdToken() : null;
       await recorder.stop();
       const uri = recorder.uri;
       if (!uri) {
@@ -153,7 +157,7 @@ export default function DictationScreen() {
       const base64Audio = await new File(uri).base64();
       const tRes = await fetch(TRANSCRIBE_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Authorization: "Bearer " + token },
         body: JSON.stringify({ audioBase64: base64Audio, mimeType: "audio/m4a", specialty: userSpecialty }),
       });
       const tData = await tRes.json();
@@ -171,7 +175,7 @@ export default function DictationScreen() {
       const procedureNames = (procedureData.procedures || []).map((p) => p.name);
       const pRes = await fetch(PARSE_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Authorization: "Bearer " + token },
         body: JSON.stringify({ transcript: transcriptText, fields: fieldsForClaude, procedureNames, consultantNames: consultants }),
       });
       const pData = await pRes.json();

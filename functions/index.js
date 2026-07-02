@@ -9,6 +9,8 @@ const { onRequest } = require("firebase-functions/v2/https");
 const { setGlobalOptions } = require("firebase-functions/v2");
 const { defineSecret } = require("firebase-functions/params");
 const logger = require("firebase-functions/logger");
+const admin = require("firebase-admin");
+admin.initializeApp();
 
 // Run in London; cap server copies as a simple cost guard.
 setGlobalOptions({ region: "europe-west2", maxInstances: 5 });
@@ -638,9 +640,30 @@ const KEYTERMS_BY_SPECIALTY = {
   ],
 };
 
+// Turn a specialty's keyterm list into URL query params for Deepgram.
 function keytermQS(specialty) {
   const terms = KEYTERMS_BY_SPECIALTY[specialty] || [];
   return terms.map((t) => "keyterm=" + encodeURIComponent(t)).join("&");
+}
+
+// Verify the caller is a signed-in user of our app before doing any work.
+// Reads the "Authorization: Bearer <token>" header, checks the token with
+// firebase-admin, and returns the decoded user if valid. If anything is missing
+// or invalid, it sends a 401 response and returns null — the caller then stops.
+async function requireSignedIn(request, response) {
+  const header = request.get("Authorization") || "";
+  const token = header.startsWith("Bearer ") ? header.slice(7) : null;
+  if (!token) {
+    response.status(401).json({ error: "Sign-in required." });
+    return null;
+  }
+  try {
+    return await admin.auth().verifyIdToken(token);
+  } catch (e) {
+    logger.warn("Rejected an invalid token");
+    response.status(401).json({ error: "Sign-in required." });
+    return null;
+  }
 }
 
 
@@ -666,6 +689,10 @@ exports.transcribe = onRequest(
         response.status(405).json({ error: "Use POST." });
         return;
       }
+
+      // Reject anyone who isn't a signed-in user before doing any work.
+      const authUser = await requireSignedIn(request, response);
+      if (!authUser) return;
 
       const { audioBase64, mimeType, specialty } = request.body || {};
       if (!audioBase64) {
@@ -722,7 +749,11 @@ exports.parse = onRequest(
           response.status(405).json({ error: "Use POST." });
           return;
         }
-  
+
+        // Reject anyone who isn't a signed-in user before doing any work.
+        const authUser = await requireSignedIn(request, response);
+        if (!authUser) return;
+
         const { transcript, fields, procedureNames, consultantNames } = request.body || {};
         logger.info("parse received procedureNames:", Array.isArray(procedureNames) ? procedureNames.length : "none");
         if (!transcript || !fields) {

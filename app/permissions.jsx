@@ -4,8 +4,9 @@
 // they can finish setup. completeOnboarding() logic unchanged.
 
 import { Ionicons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 import { useState } from "react";
-import { Alert, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { PrimaryButton } from "../components/Buttons";
 import SmartCard from "../components/SmartCard";
 import { useAuth } from "../contexts/AuthContext";
@@ -13,6 +14,7 @@ import { colors, spacing } from "../theme/theme";
 
 export default function PermissionsScreen() {
   const { completeOnboarding } = useAuth();
+  const router = useRouter();
   const [isBusy, setIsBusy] = useState(false);
   const [agreed, setAgreed] = useState(false); // real consent state
 
@@ -26,13 +28,7 @@ export default function PermissionsScreen() {
     }
   }
 
-  // Placeholder until a hosted terms page exists — see note to revisit.
-  function showTerms() {
-    Alert.alert(
-      "Terms & Privacy",
-      "Smart Portfolio assists you in recording logbook entries by voice. You remain responsible for reviewing and submitting all entries. Dictation must never include patient-identifiable information. Audio is processed by Deepgram and text by Anthropic to structure your entry. Full terms will be provided before launch."
-    );
-  }
+  
 
   return (
     <View style={styles.flex}>
@@ -84,7 +80,7 @@ export default function PermissionsScreen() {
           </View>
           <Text style={styles.consentText}>
             I understand and agree to how my data is handled, and I accept the{" "}
-            <Text style={styles.link} onPress={showTerms}>terms & privacy notice</Text>.
+            <Text style={styles.link} onPress={() => router.push("/privacy")}>terms & privacy notice</Text>.
           </Text>
         </Pressable>
 
