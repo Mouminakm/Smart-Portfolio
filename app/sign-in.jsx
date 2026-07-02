@@ -28,13 +28,18 @@ export default function SignInScreen() {
           Sign up with email
         </Link>
 
-        {/* Placeholders — wired up in the development-build phase */}
+        {/* Google/Apple sign-up hidden until they're properly wired up in the
+            EAS development-build phase — they only work in a real build, not in
+            Expo Go, so showing them now would mislead testers into thinking
+            they'd signed up when nothing was created. Un-comment to restore. */}
+        {/*
         <Link href="/profile-setup" style={styles.googleButton}>
           Sign up with Google
         </Link>
         <Link href="/profile-setup" style={styles.appleButton}>
           Sign up with Apple
         </Link>
+        */}
 
         <Text style={styles.existingText}>Already have an account?</Text>
         <Link href="/email-sign-in" style={styles.signInButton}>
