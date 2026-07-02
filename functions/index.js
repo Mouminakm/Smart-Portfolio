@@ -679,7 +679,7 @@ exports.transcribe = onRequest(
 
       // Call Deepgram's pre-recorded endpoint. (Node 24 has fetch built in.)
       const dgResponse = await fetch(
-        "https://api.deepgram.com/v1/listen?model=nova-3-medical&smart_format=true&" + keytermQS(specialty),
+        "https://api.deepgram.com/v1/listen?model=nova-3-medical&smart_format=true&mip_opt_out=true&" + keytermQS(specialty),
         {
           method: "POST",
           headers: {
