@@ -22,7 +22,13 @@ export async function loadProfile(uid) {
   const ref = doc(db, "profiles", uid);
   const snapshot = await getDoc(ref); // read the document
   if (snapshot.exists()) {
-    return snapshot.data(); // the saved fields, as a plain object
+    const data = snapshot.data(); // the saved fields, as a plain object
+    // Default the platform for older profiles that predate the platform picker.
+    // We fix it HERE (on read) rather than editing every stored document, so all
+    // existing users are treated as eLogbook users without touching Firestore.
+    // The ?? operator means "use the left side, unless it's null/undefined,
+    // in which case use the right side" — so an already-set platform is kept.
+    return { ...data, platform: data.platform ?? "elogbook" };
   }
   return null; // no profile saved yet (e.g. a brand-new account)
 }
