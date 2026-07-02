@@ -237,7 +237,7 @@ export default function DictationScreen() {
 
   return (
     <View style={styles.container}>
-      <NavyHeader title="Dictation" pill="Operation log" />
+      <NavyHeader title="Dictation" pill={isTuras ? schema.label : "Operation log"} />
 
       {/* ===== TOP: checklist ===== */}
       <View style={styles.checklistArea}>
@@ -247,7 +247,7 @@ export default function DictationScreen() {
             <Ionicons name="information-circle" size={18} color={colors.navy} style={{ marginRight: spacing.sm, marginTop: 1 }} />
             <Text style={styles.infoText}>
               Patient identifiers are never recorded. If your portfolio needs them, enter them
-              directly on eLogbook at the submission step.
+              directly on {isTuras ? "Turas" : "eLogbook"} at the submission step.
             </Text>
           </View>
 
@@ -275,10 +275,10 @@ export default function DictationScreen() {
           <>
             <View style={styles.readyRow}>
               <Ionicons name="checkmark-circle" size={20} color={colors.success} />
-              <Text style={styles.readyText}>Ready to fill eLogbook</Text>
+              <Text style={styles.readyText}>Ready to fill {isTuras ? "Turas" : "eLogbook"}</Text>
             </View>
             <PrimaryButton href="/submission" style={{ paddingHorizontal: 40 }}>
-              Open in eLogbook
+              Open in {isTuras ? "Turas" : "eLogbook"}
             </PrimaryButton>
           </>
         ) : (
@@ -307,7 +307,7 @@ export default function DictationScreen() {
               <Text style={styles.controlCaption}>
                 Speak naturally to fill the fields above. Items marked
                 <Text style={styles.required}> *</Text> are required. You'll review
-                and submit everything on eLogbook.
+                and submit everything on {isTuras ? "Turas" : "eLogbook"}.
               </Text>
             ) : null}
           </>
