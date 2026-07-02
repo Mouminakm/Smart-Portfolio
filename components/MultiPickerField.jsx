@@ -11,14 +11,22 @@ export default function MultiPickerField({
   label,
   placeholder,
   options,
-  selected,        // array of currently chosen strings
-  onChange,        // called with the NEW array
+  selected,        // array of currently chosen platform IDS
+  onChange,        // called with the NEW array of ids
   maxSelect = 2,   // how many may be chosen at once
 }) {
   const [open, setOpen] = useState(false);
 
-  // Tick or untick one option, respecting the cap.
+  // Translate a stored id (e.g. "elogbook") into its human label for display.
+  // If we can't find it (unknown id), fall back to showing the id itself.
+  function nameFor(id) {
+    const match = options.find((o) => o.id === id);
+    return match ? match.name : id;
+  }
+
+  // Tick or untick one option BY ID, respecting the cap.
   function toggle(item) {
+    // `item` here is now a platform id (e.g. "turas"), passed from the row below.
     if (selected.includes(item)) {
       // already chosen -> remove it (keep everything except this one)
       onChange(selected.filter((s) => s !== item));
@@ -35,7 +43,7 @@ export default function MultiPickerField({
 
       <Pressable style={styles.field} onPress={() => setOpen(true)}>
         <Text style={[styles.fieldText, selected.length === 0 && styles.placeholder]}>
-          {selected.length > 0 ? selected.join(", ") : placeholder}
+          {selected.length > 0 ? selected.map(nameFor).join(", ") : placeholder}
         </Text>
         <Text style={styles.chevron}>▾</Text>
       </Pressable>
@@ -51,7 +59,7 @@ export default function MultiPickerField({
               keyExtractor={(item) => item.name}              
               style={styles.list}
               renderItem={({ item }) => {
-                const isSelected = selected.includes(item.name);
+                const isSelected = selected.includes(item.id);
                 // Disabled if: not available yet, OR we've hit the limit and this
                 // one isn't already chosen.
                 const atLimit = !isSelected && selected.length >= maxSelect;
@@ -59,7 +67,7 @@ export default function MultiPickerField({
                 return (
                   <Pressable
                     style={styles.option}
-                    onPress={() => toggle(item.name)}
+                    onPress={() => toggle(item.id)}
                     disabled={isDisabled}
                   >
                     <View style={[styles.checkbox, isSelected && styles.checkboxChecked]}>
