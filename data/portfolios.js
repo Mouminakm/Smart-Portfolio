@@ -9,7 +9,7 @@ export const UK_PORTFOLIOS = [
   { id: "elogbook",   name: "eLogbook", available: true },
   { id: "iscp",       name: "ISCP", available: true },
   { id: "horus",      name: "Horus (Foundation – England)", available: false },
-  { id: "turas",      name: "Turas (Foundation – Scotland & Wales)", available: true },
+  { id: "turas",      name: "Turas (Foundation – Scotland & Wales)", available: false },
   { id: "jrcptb",     name: "Physician ePortfolio (JRCPTB)", available: false },
   { id: "llp",        name: "Lifelong Learning Platform (Anaesthetics)", available: false },
   { id: "icm",        name: "ICM ePortfolio", available: false },

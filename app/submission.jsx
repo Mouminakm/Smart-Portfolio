@@ -22,6 +22,12 @@ import { colors, spacing } from "../theme/theme";
 const FORM_URL = "https://client.elogbook.org/eLogbook/Operations/OperationMaintain/Add";
 const BUILD_TAG = "diag-2026-06-29a";
 
+// Diagnostics switch. false for testers/production (no console spam, clean
+// status bar). Flip to true to get the full per-field submission report in the
+// Expo terminal again if you ever need to debug a submission. The injection
+// script is unchanged either way — this only gates the app-side logging.
+const DEBUG = false;
+
 function buildFullInjectionScript(plan) {
   return `
   (function() {
@@ -396,6 +402,7 @@ export default function SubmissionScreen() {
 
   // Pretty-print the full diagnostic report to the Expo terminal.
   function printReport(data) {
+    if (!DEBUG) return; // silent for testers; flip DEBUG to true to restore
     const lines = (data.fields || []).map((f) => {
       const mark = f.ok ? "  OK  " : "  XX  ";
       let extra = "";
@@ -417,7 +424,7 @@ export default function SubmissionScreen() {
       let typed = t.typed ? `  (typed "${t.typed}")` : "";
       return `  XX  ${name}: NOT matched — wanted "${t.wanted || t.matched}"${typed} — ${why}${sample}`;
     };
-    console.log(
+    (DEBUG ? console.log : () => {})(
       "\n===== SUBMISSION DIAGNOSTICS [" + data.tag + "] =====\n" +
       "specialty: " + userSpecialty + "\n" +
       "fields on page: " + data.pageFields + "\n" +
@@ -433,52 +440,66 @@ export default function SubmissionScreen() {
   }
 
   function handleMessage(event) {
+    // When not debugging, make console logging a no-op *inside this handler
+    // only*, so the per-stage diagnostic lines stay silent for testers. All the
+    // setStatusMsg / setFilled UI updates below still run normally.
+    const log = DEBUG ? console.log : () => {};
     try {
       const data = JSON.parse(event.nativeEvent.data);
 
-      if (data.type === "diag") {
-        if (data.stage === "report") {
-          printReport(data);
-          const labels = friendlyFailed(data.failed);
-          setFailedFields(labels);
-          setStatusMsg(
-            labels.length
-              ? `Filled ${data.filled} field(s). Couldn't fill: ${labels.join(", ")} — add these on eLogbook, then Save.`
-              : `Filled ${data.filled} field(s). Review everything, then Save on eLogbook.`
-          );
-          setFilled(true);
-        } else if (data.stage === "needs_login") {
-          setNeedsLogin(true);
-          setStatusMsg("Please log in to eLogbook below, then tap Refill.");
-          console.log(`[DIAG ${data.tag}] needs_login`, data.url);
-        } else if (data.stage === "start") {
-          console.log(`[DIAG ${data.tag}] script started — ${data.pageFields} fields, ${data.readyState}, ${data.url}`);
-        } else if (data.stage === "waiting") {
-          setStatusMsg(`Waiting for form… (${data.pageFields} fields)`);
-          console.log(`[DIAG ${data.tag}] waiting (try ${data.tries}) — ${data.pageFields} fields — ${data.url}`);
-        } else if (data.stage === "form_ready") {
-          setStatusMsg("Form ready — filling…");
-          console.log(`[DIAG ${data.tag}] form ready after ${data.tries} tries — ${data.pageFields} fields`);
-        } else if (data.stage === "form_never_appeared") {
-          console.log(`[DIAG ${data.tag}] FORM NEVER APPEARED after ${data.tries} tries — ${data.pageFields} fields on page`);
-        } else if (data.stage === "script_error") {
-          setStatusMsg(`Script error: ${data.message}`);
-          console.log(`[DIAG ${data.tag}] SCRIPT ERROR: ${data.message}\n${data.stack}`);
-        } else {
-          console.log(`[DIAG ${data.tag}] ${data.stage}`, JSON.stringify(data));
-        }
+      if (data.type !== "diag") return;
+
+      if (data.stage === "needs_login") {
+        log(`[DIAG ${BUILD_TAG}] needs login`);
+        setStatusMsg("Please sign in to eLogbook, then it will fill automatically.");
         return;
       }
 
-      // Back-compat: the plain "filled" message still drives the locked state.
-      if (data.type === "filled" && data.error) {
-        setStatusMsg("Couldn't fill the form automatically — you can fill it manually below.");
+      if (data.stage === "start") {
+        log(`[DIAG ${BUILD_TAG}] script started — ${data.fieldCount} fields, ${data.readyState}, ${data.url}`);
+        return;
       }
+
+      if (data.stage === "skip_duplicate") {
+        log(`[DIAG ${BUILD_TAG}] skip_duplicate`, JSON.stringify(data));
+        return;
+      }
+
+      if (data.stage === "waiting") {
+        log(`[DIAG ${BUILD_TAG}] waiting for form…`);
+        return;
+      }
+
+      if (data.stage === "form_ready") {
+        log(`[DIAG ${BUILD_TAG}] form ready after ${data.tries} tries — ${data.fieldCount} fields`);
+        return;
+      }
+
+      if (data.stage === "form_never_appeared") {
+        log(`[DIAG ${BUILD_TAG}] form never appeared`);
+        setStatusMsg("Couldn't find the eLogbook form. Please make sure you're on the Add Operation page.");
+        return;
+      }
+
+      if (data.stage === "script_error") {
+        log(`[DIAG ${BUILD_TAG}] script error`, data.message);
+        return;
+      }
+
+      if (data.stage === "report") {
+        printReport(data);
+        const filledCount = (data.fields || []).filter((f) => f.status === "OK").length;
+        setFilled(filledCount);
+        setStatusMsg(`Filled ${filledCount} fields. Review and Save on eLogbook.`);
+        return;
+      }
+
+      log(`[DIAG ${BUILD_TAG}]`, JSON.stringify(data));
     } catch (e) {
-      // ignore non-JSON messages
+      const log = DEBUG ? console.log : () => {};
+      log(`[DIAG ${BUILD_TAG}] handleMessage parse error`, e);
     }
   }
-
   function handleRetry() {
     setNeedsLogin(false);
     setFilled(false);

@@ -2,8 +2,9 @@
 // Initialises Firebase once for the whole app, using the config values from
 // your .env file, and sets up Authentication so other files can use it.
 
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getReactNativePersistence, initializeAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 // Read the config from the environment (.env). process.env is how code reads
@@ -20,7 +21,10 @@ const firebaseConfig = {
 // Start up Firebase with that config.
 const app = initializeApp(firebaseConfig);
 
-// Get the Authentication service and export it so other files (like our
-// AuthContext) can call sign-in / sign-out on it.
-export const auth = getAuth(app);
+// Set up Authentication with AsyncStorage persistence, so the user's login is
+// saved on the device and survives closing/reopening the app (without this,
+// Firebase defaults to memory-only and forgets the login on every restart).
+export const auth = initializeAuth(app, {
+  persistence: getReactNativePersistence(AsyncStorage),
+});
 export const db = getFirestore(app);
