@@ -22,7 +22,9 @@ export const ENTRY_TYPES_BY_PORTFOLIO = {
       label: "Case Based Discussion (CBD)",
       subtitle: "Foundation SLE",
       route: "/dictation?platform=turas&entryType=sle_cbd",
-      available: true,
+      // Hidden for the eLogbook-focused beta. The Turas pathway is built but not
+      // yet tested to the same level; flip back to true to re-enable it.
+      available: false,
     },
   ],
 };

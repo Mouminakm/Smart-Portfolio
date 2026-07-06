@@ -2,6 +2,7 @@
 // Onboarding — Sign in with email & password (spec S1). Restyled to the
 // navy/teal identity. Auth logic, checkbox state, and error mapping unchanged.
 
+import { sendPasswordResetEmail } from "firebase/auth";
 import { useState } from "react";
 import {
   KeyboardAvoidingView,
@@ -15,6 +16,7 @@ import {
 } from "react-native";
 import { PrimaryButton } from "../components/Buttons";
 import { useAuth } from "../contexts/AuthContext";
+import { auth } from "../firebase";
 import { colors, radius, spacing } from "../theme/theme";
 
 export default function EmailSignInScreen() {
@@ -24,6 +26,7 @@ export default function EmailSignInScreen() {
   const [password, setPassword] = useState("");
   const [keepSignedIn, setKeepSignedIn] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [infoMessage, setInfoMessage] = useState(""); // success/confirmation text
   const [isBusy, setIsBusy] = useState(false);
 
   async function handleSignIn() {
@@ -38,6 +41,24 @@ export default function EmailSignInScreen() {
     } catch (error) {
       setErrorMessage(friendlyError(error.code));
       setIsBusy(false);
+    }
+  }
+
+  // Emails a secure password-reset link to the address typed in the Email field.
+  // Firebase runs the whole reset flow (the link, the new-password page), so we
+  // store nothing and build no extra screen.
+  async function handleForgotPassword() {
+    setErrorMessage("");
+    setInfoMessage("");
+    if (!email) {
+      setErrorMessage("Enter your email above first, then tap “Forgot password?”.");
+      return;
+    }
+    try {
+      await sendPasswordResetEmail(auth, email);
+      setInfoMessage("Password reset email sent. Check your inbox (and spam folder).");
+    } catch (error) {
+      setErrorMessage(friendlyError(error.code));
     }
   }
 
@@ -80,11 +101,16 @@ export default function EmailSignInScreen() {
           <Text style={styles.rememberText}>Keep me signed in</Text>
         </Pressable>
 
+        {infoMessage ? <Text style={styles.info}>{infoMessage}</Text> : null}
         {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
 
         <PrimaryButton onPress={handleSignIn}>
           {isBusy ? "Signing in…" : "Sign in"}
         </PrimaryButton>
+
+        <Pressable onPress={handleForgotPassword} style={styles.forgotWrap}>
+          <Text style={styles.forgotText}>Forgot password?</Text>
+        </Pressable>
       </ScrollView>
     </KeyboardAvoidingView>
   );
@@ -138,4 +164,7 @@ const styles = StyleSheet.create({
   checkmark: { color: colors.onNavy, fontSize: 14, fontWeight: "700" },
   rememberText: { fontSize: 15, color: colors.text },
   error: { color: colors.error, fontSize: 14, marginBottom: spacing.lg, textAlign: "center" },
+  info: { color: colors.teal, fontSize: 14, marginBottom: spacing.lg, textAlign: "center" },
+  forgotWrap: { marginTop: spacing.lg, alignItems: "center" },
+  forgotText: { color: colors.teal, fontSize: 15, fontWeight: "600" },
 });

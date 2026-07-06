@@ -7,7 +7,7 @@
   "field": "procedure",
   "harvested_from": "eLogbook 'Add operation' page (Specialty = Otolaryngology)",
   "harvested_date": "2026-06-27",
-  "notes": "Each option's 'id' is the eLogbook data-nodeid used to select the procedure in the form (the value for WebView injection). 'name' is the display label / extraction target. A procedure may appear under several categories; the flat 'procedures' list is the authoritative deduplicated picklist, 'tree' preserves the on-site accordion structure for the picker UI and for giving the AI category context.",
+  "notes": "Each option's 'id' is the eLogbook data-nodeid used to select the procedure in the form (the value for WebView injection). 'name' is the display label / extraction target. A procedure may appear under several categories; the flat 'procedures' list is the authoritative deduplicated picklist, 'tree' preserves the on-site accordion structure for the picker UI and for giving the AI category context. | Curated spoken-form aliases added 2026-07-03 for 52 common operations (first ENT set), each validated against the live norm()/resolveProcedure() logic; zero collisions. Targets clean primary entries (tonsillectomy, adenotonsillectomy, grommets, FESS, septoplasty, stapedectomy, DCR, BAHA, cochlear implant, parotidectomy, neck dissection, tracheostomy, tongue tie); long tail matches on exact/substring.",
   "unique_procedure_count": 435,
   "procedures": [
     {
@@ -15,13 +15,17 @@
       "name": "# nose fracture reduction",
       "categories": [
         "Emergency procedures / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 86,
       "name": "Adenoidectomy",
       "categories": [
         "Elective procedures - core / Pharynx including nasopharynx"
+      ],
+      "aliases": [
+        "adenoidectomy"
       ]
     },
     {
@@ -29,6 +33,10 @@
       "name": "Adenoidectomy & Grommets",
       "categories": [
         "Elective procedures - core / Mastoid and middle ear"
+      ],
+      "aliases": [
+        "adenoidectomy and grommets",
+        "adenoids and grommets"
       ]
     },
     {
@@ -36,6 +44,11 @@
       "name": "Adenotonsillectomy",
       "categories": [
         "Elective procedures - core / Pharynx including nasopharynx"
+      ],
+      "aliases": [
+        "adenotonsillectomy",
+        "tonsils and adenoids",
+        "T's and A's"
       ]
     },
     {
@@ -43,104 +56,123 @@
       "name": "Admin test op (DO NOT USE)",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 117,
       "name": "Advanced External Ear other",
       "categories": [
         "Elective procedures - advanced / External ear and external auditory canal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 251,
       "name": "Anterior Ethmoid Artery Ligation (emergency)",
       "categories": [
         "Emergency procedures / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 204,
       "name": "Anterior ethmoidectomy (and bilateral)",
       "categories": [
         "Elective procedures - core / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 81,
       "name": "Antral washout (core)",
       "categories": [
         "Elective procedures - core / Sinus surgery - direct vision"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 22,
       "name": "Antral washout (emergency) (and bilateral)",
       "categories": [
         "Emergency procedures / Sinus surgery - direct vision"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 31,
       "name": "Arrest haemorrhage after adenoidectomy",
       "categories": [
         "Emergency procedures / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 161,
       "name": "Aryepiglottoplasty",
       "categories": [
         "Elective procedures - advanced / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 237,
       "name": "Atticoantrostomy",
       "categories": [
         "Elective procedures - advanced / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 122,
       "name": "Atticotomy",
       "categories": [
         "Elective procedures - advanced / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 487,
       "name": "Auditory Brainstem Implant",
       "categories": [
         "Elective procedures - advanced / Skull Base"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 233,
       "name": "Aural Polypectomy",
       "categories": [
         "Elective procedures - core / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 195,
       "name": "Axial local subcutaneous pedicle flap of skin to head or neck",
       "categories": [
         "Elective procedures - advanced / Skin - Head & Neck Flaps"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 191,
       "name": "Axial pattern distant flap of skin to head or neck",
       "categories": [
         "Elective procedures - advanced / Skin - Head & Neck Flaps"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 385,
       "name": "BAHA Single Stage",
       "categories": [
         "Elective procedures - advanced / External ear and external auditory canal"
+      ],
+      "aliases": [
+        "BAHA",
+        "bone anchored hearing aid",
+        "BAHA single stage"
       ]
     },
     {
@@ -148,76 +180,90 @@
       "name": "BAHA stage 1",
       "categories": [
         "Elective procedures - advanced / External ear and external auditory canal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 116,
       "name": "BAHA stage 2",
       "categories": [
         "Elective procedures - advanced / External ear and external auditory canal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 67,
       "name": "Biopsy - external nose",
       "categories": [
         "Elective procedures - core / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 68,
       "name": "Biopsy - internal nose",
       "categories": [
         "Elective procedures - core / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 57,
       "name": "Biopsy lesion middle ear",
       "categories": [
         "Elective procedures - core / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 429,
       "name": "Biopsy minor salivary gland",
       "categories": [
         "Elective procedures - core / Salivary glands"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 53,
       "name": "Biopsy of lesion of external ear",
       "categories": [
         "Elective procedures - core / External ear and external auditory canal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 468,
       "name": "Blepharoplasty",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 412,
       "name": "Blind Sac Closure of External Ear Canal",
       "categories": [
         "Elective procedures - advanced / External ear and external auditory canal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 463,
       "name": "Botox to cricopharyngeus",
       "categories": [
         "Elective procedures - advanced / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 177,
       "name": "Branchial cyst excision",
       "categories": [
         "Elective procedures - advanced / Neck"
+      ],
+      "aliases": [
+        "branchial cyst excision",
+        "excision of branchial cyst"
       ]
     },
     {
@@ -225,20 +271,26 @@
       "name": "Branchial Fistula Excision",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 262,
       "name": "Caldwell-Luc",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - direct vision"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 479,
       "name": "Canaliculo-dacryocystorhinostomy (CDCR)",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - endoscopic"
+      ],
+      "aliases": [
+        "CDCR",
+        "canaliculo-dacryocystorhinostomy"
       ]
     },
     {
@@ -246,97 +298,114 @@
       "name": "Canalplasty",
       "categories": [
         "Elective procedures - advanced / External ear and external auditory canal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 407,
       "name": "Canthopexy",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 408,
       "name": "Canthoplasty",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 234,
       "name": "Carotid Artery Blowout Repair",
       "categories": [
         "Emergency procedures / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 306,
       "name": "Carotid body tumour excision",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 125,
       "name": "CAT (Combined Approach Tympanoplasty)",
       "categories": [
         "Elective procedures - advanced / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 392,
       "name": "Cervical Approach to skull base",
       "categories": [
         "Elective procedures - advanced / Skull Base"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 393,
       "name": "Cervical-Parotid Approach to skull base",
       "categories": [
         "Elective procedures - advanced / Skull Base"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 139,
       "name": "Choanal atresia surgery",
       "categories": [
         "Elective procedures - advanced / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 310,
       "name": "Chylous Fistula Repair",
       "categories": [
         "Emergency procedures / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 140,
       "name": "Cleft palate surgery",
       "categories": [
         "Elective procedures - advanced / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 12,
       "name": "Closure of fistula inner ear",
       "categories": [
         "Emergency procedures / Inner ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 211,
       "name": "Closure of tracheal stoma",
       "categories": [
         "Elective procedures - core / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 129,
       "name": "Cochlear implant",
       "categories": [
         "Elective procedures - advanced / Inner ear"
+      ],
+      "aliases": [
+        "cochlear implant",
+        "cochlear implantation"
       ]
     },
     {
@@ -344,34 +413,42 @@
       "name": "Cochlear implant removal",
       "categories": [
         "Elective procedures - advanced / Inner ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 309,
       "name": "Cordectomy",
       "categories": [
         "Elective procedures - advanced / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 159,
       "name": "Cordoplexy",
       "categories": [
         "Elective procedures - advanced / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 397,
       "name": "Cordotomy +/- laser",
       "categories": [
         "Elective procedures - advanced / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 63,
       "name": "Cortical mastoidectomy (core)",
       "categories": [
         "Elective procedures - core / Mastoid and middle ear"
+      ],
+      "aliases": [
+        "cortical mastoidectomy",
+        "mastoidectomy"
       ]
     },
     {
@@ -379,69 +456,82 @@
       "name": "Cortical mastoidectomy (emergency)",
       "categories": [
         "Emergency procedures / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 401,
       "name": "Craniofacial resection",
       "categories": [
         "Elective procedures - advanced / Skull Base"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 292,
       "name": "Cricoid split - endoscopic",
       "categories": [
         "Elective procedures - advanced / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 291,
       "name": "Cricoid split - external",
       "categories": [
         "Elective procedures - advanced / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 152,
       "name": "Cricopharyngeal myotomy",
       "categories": [
         "Elective procedures - advanced / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 465,
       "name": "Cricothyroid approximation",
       "categories": [
         "Elective procedures - advanced / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 358,
       "name": "CSF Leak Repair - Middle Fossa",
       "categories": [
         "Elective procedures - advanced / Skull Base"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 357,
       "name": "CSF leak repair - Transmastoid",
       "categories": [
         "Elective procedures - advanced / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 361,
       "name": "Cystic Hygroma Excision",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 150,
       "name": "Dacryocystorhinostomy (DCR)",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - endoscopic"
+      ],
+      "aliases": [
+        "DCR",
+        "dacryocystorhinostomy"
       ]
     },
     {
@@ -449,20 +539,26 @@
       "name": "Diagnostic sinus endoscopy - any (core) (and bilateral)",
       "categories": [
         "Elective procedures - core / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 29,
       "name": "Diagnostic sinus endoscopy - any (emergency)",
       "categories": [
         "Emergency procedures / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 90,
       "name": "Direct laryngoscopy",
       "categories": [
         "Elective procedures - core / Larynx"
+      ],
+      "aliases": [
+        "direct laryngoscopy",
+        "DL"
       ]
     },
     {
@@ -470,146 +566,169 @@
       "name": "Distant fasciocutaneous subcutaneous pedicle flap to head or neck",
       "categories": [
         "Elective procedures - advanced / Skin - Head & Neck Flaps"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 188,
       "name": "Distant myocutaneous subcutaneous pedicle flap to head or neck",
       "categories": [
         "Elective procedures - advanced / Skin - Head & Neck Flaps"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 190,
       "name": "Distant tube pedicle flap of skin to head or neck",
       "categories": [
         "Elective procedures - advanced / Skin - Head & Neck Flaps"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 69,
       "name": "Division of nasal adhesions",
       "categories": [
         "Elective procedures - core / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 496,
       "name": "Draf 1 Frontal Sinus",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 497,
       "name": "Draf 2a Frontal Sinus",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 498,
       "name": "Draf 2b Frontal Sinus",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 499,
       "name": "Draf 3 Frontal Sinus",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 235,
       "name": "Drainage Neck Haematoma",
       "categories": [
         "Emergency procedures / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 2,
       "name": "Drainage of abscess external ear",
       "categories": [
         "Emergency procedures / External ear and external auditory canal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 1,
       "name": "Drainage of haematoma external ear",
       "categories": [
         "Emergency procedures / External ear and external auditory canal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 197,
       "name": "Drainage of neck abscess",
       "categories": [
         "Emergency procedures / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 250,
       "name": "Drainage of septal haematoma",
       "categories": [
         "Emergency procedures / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 47,
       "name": "Drainage of submandibular abscess",
       "categories": [
         "Emergency procedures / Salivary glands"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 436,
       "name": "Ear cartilage harvest",
       "categories": [
         "Elective procedures - advanced / External ear and external auditory canal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 130,
       "name": "Endolymphatic Sac Surgery ( Saccus )",
       "categories": [
         "Elective procedures - advanced / Inner ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 394,
       "name": "Endoscopic Approach to skull base",
       "categories": [
         "Elective procedures - advanced / Skull Base"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 254,
       "name": "Endoscopic drainage of orbital abscess (emergency)",
       "categories": [
         "Emergency procedures / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 399,
       "name": "Endoscopic Laryngeal cleft repair",
       "categories": [
         "Elective procedures - advanced / Paediatric"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 253,
       "name": "Endoscopic nasal cautery",
       "categories": [
         "Emergency procedures / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 201,
       "name": "Endoscopic nasal polypectomy (and bilateral)",
       "categories": [
         "Elective procedures - core / Sinus surgery - endoscopic"
+      ],
+      "aliases": [
+        "endoscopic nasal polypectomy"
       ]
     },
     {
@@ -617,20 +736,26 @@
       "name": "Endoscopic optic nerve decompression (emergency)",
       "categories": [
         "Emergency procedures / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 74,
       "name": "Ethmoid artery ligation",
       "categories": [
         "Elective procedures - core / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 295,
       "name": "EUA Ears (core) (and bilateral)",
       "categories": [
         "Elective procedures - core / External ear and external auditory canal"
+      ],
+      "aliases": [
+        "EUA ears",
+        "examination under anaesthesia ears"
       ]
     },
     {
@@ -638,195 +763,226 @@
       "name": "EUA PNS +/- biopsy",
       "categories": [
         "Elective procedures - core / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 491,
       "name": "Eustachian Tube Dilatation",
       "categories": [
         "Elective procedures - advanced / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 495,
       "name": "Eustachian Tube Dilatation",
       "categories": [
         "Elective procedures - advanced / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 66,
       "name": "Examination under anaesthesia of nose",
       "categories": [
         "Elective procedures - core / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 14,
       "name": "Examination under anaesthesia of nose (emergency)",
       "categories": [
         "Emergency procedures / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 375,
       "name": "Excision lesion facial nerve - middle fossa approach",
       "categories": [
         "Elective procedures - advanced / Skull Base"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 258,
       "name": "Excision lesion nose with reconstruction",
       "categories": [
         "Elective procedures - core / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 257,
       "name": "Excision lesion nose without reconstruction",
       "categories": [
         "Elective procedures - core / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 205,
       "name": "Excision lymph node neck for diagnosis",
       "categories": [
         "Elective procedures - core / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 246,
       "name": "Excision of benign neck lesion other",
       "categories": [
         "Elective procedures - core / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 469,
       "name": "Excision of intratympanic tumour",
       "categories": [
         "Elective procedures - advanced / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 51,
       "name": "Excision of lesion external ear",
       "categories": [
         "Elective procedures - core / External ear and external auditory canal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 506,
       "name": "Excision of neck lesion for diagnosis",
       "categories": [
         "Elective procedures - core / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 226,
       "name": "Excision skin lesion - primary closure",
       "categories": [
         "Elective procedures - core / Skin"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 425,
       "name": "EXIT procedure",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 359,
       "name": "Exploration of neck wound (traumatic)",
       "categories": [
         "Emergency procedures / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 305,
       "name": "Extended radical neck dissection",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 236,
       "name": "External Carotid Artery Ligation",
       "categories": [
         "Emergency procedures / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 55,
       "name": "External Ear & Ear Canal other (core)",
       "categories": [
         "Elective procedures - core / External ear and external auditory canal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 5,
       "name": "External Ear and Ear Canal other (emergency)",
       "categories": [
         "Emergency procedures / External ear and external auditory canal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 142,
       "name": "External ethmoidectomy",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - direct vision"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 25,
       "name": "External ethmoidectomy (emergency)",
       "categories": [
         "Emergency procedures / Sinus surgery - direct vision"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 143,
       "name": "External frontoethmoidectomy",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - direct vision"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 26,
       "name": "External frontoethmoidectomy (emergency)",
       "categories": [
         "Emergency procedures / Sinus surgery - direct vision"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 80,
       "name": "External Nose & Septum other (core)",
       "categories": [
         "Elective procedures - core / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 207,
       "name": "External Nose & Septum other (emergency)",
       "categories": [
         "Emergency procedures / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 241,
       "name": "External rhinoplasty",
       "categories": [
         "Elective procedures - advanced / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 242,
       "name": "External septorhinoplasty",
       "categories": [
         "Elective procedures - advanced / External nose and septum"
+      ],
+      "aliases": [
+        "external septorhinoplasty",
+        "open septorhinoplasty"
       ]
     },
     {
@@ -834,41 +990,51 @@
       "name": "Facial nerve decompression",
       "categories": [
         "Elective procedures - advanced / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 127,
       "name": "Facial nerve repair",
       "categories": [
         "Elective procedures - advanced / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 433,
       "name": "Facial reanimation - static procedure",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 432,
       "name": "Facio- hypoglossal anastomosis",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 486,
       "name": "Fascia lata graft",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 282,
       "name": "FESS (and bilateral)",
       "categories": [
         "Elective procedures - core / Sinus surgery - endoscopic"
+      ],
+      "aliases": [
+        "FESS",
+        "functional endoscopic sinus surgery",
+        "endoscopic sinus surgery"
       ]
     },
     {
@@ -876,6 +1042,9 @@
       "name": "FESS (revision) (and bilateral)",
       "categories": [
         "Elective procedures - core / Sinus surgery - endoscopic"
+      ],
+      "aliases": [
+        "revision FESS"
       ]
     },
     {
@@ -883,69 +1052,82 @@
       "name": "FESS + Nasal polypectomy",
       "categories": [
         "Elective procedures - core / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 482,
       "name": "Flexible nasendoscopy ( paediatric )",
       "categories": [
         "Elective procedures - core / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 380,
       "name": "Flexible Oesophagogastroduodenoscopy",
       "categories": [
         "Elective procedures - advanced / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 104,
       "name": "Floor of mouth biopsy",
       "categories": [
         "Elective procedures - core / Lip and oral cavity"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 263,
       "name": "Frontal recess surgery (and bilateral)",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 435,
       "name": "Frontal sinus surgery - endoscopic (and bilateral)",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 434,
       "name": "Frontal sinus surgery - open",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - direct vision"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 372,
       "name": "Frontal sinus trephine (elective)",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - direct vision"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 229,
       "name": "Full thickness skin graft",
       "categories": [
         "Elective procedures - core / Skin"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 168,
       "name": "Glossectomy partial",
       "categories": [
         "Elective procedures - advanced / Lip and oral cavity"
+      ],
+      "aliases": [
+        "partial glossectomy",
+        "glossectomy"
       ]
     },
     {
@@ -953,6 +1135,9 @@
       "name": "Glossectomy total",
       "categories": [
         "Elective procedures - advanced / Lip and oral cavity"
+      ],
+      "aliases": [
+        "total glossectomy"
       ]
     },
     {
@@ -960,181 +1145,210 @@
       "name": "Glossopharyngeal nerve neurectomy",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 417,
       "name": "Glottoplasty",
       "categories": [
         "Elective procedures - advanced / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 303,
       "name": "Hypophysectomy - Endoscopic",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 32,
       "name": "Incision of retropharyngeal abscess",
       "categories": [
         "Emergency procedures / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 337,
       "name": "Incisional biopsy neck lump",
       "categories": [
         "Elective procedures - core / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 199,
       "name": "Inferior meatal antrostomy (and bilateral)",
       "categories": [
         "Elective procedures - core / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 82,
       "name": "Inferior meatal antrostomy (core) (and bilateral)",
       "categories": [
         "Elective procedures - core / Sinus surgery - direct vision"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 23,
       "name": "Inferior meatal antrostomy (emergency) (and bilateral)",
       "categories": [
         "Emergency procedures / Sinus surgery - direct vision"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 388,
       "name": "Infratemporal Approach Fisch A",
       "categories": [
         "Elective procedures - advanced / Skull Base"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 389,
       "name": "Infratemporal Approach Fisch B",
       "categories": [
         "Elective procedures - advanced / Skull Base"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 390,
       "name": "Infratemporal Approach Fisch C",
       "categories": [
         "Elective procedures - advanced / Skull Base"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 391,
       "name": "Infratemporal Approach Fisch D",
       "categories": [
         "Elective procedures - advanced / Skull Base"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 133,
       "name": "Inner Ear other (advanced)",
       "categories": [
         "Elective procedures - advanced / Inner ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 65,
       "name": "Inner Ear other (core)",
       "categories": [
         "Elective procedures - core / Inner ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 13,
       "name": "Inner Ear other (emergency)",
       "categories": [
         "Emergency procedures / Inner ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 396,
       "name": "Insertion of indwelling voice prosthesis",
       "categories": [
         "Elective procedures - advanced / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 249,
       "name": "Internal maxillary artery ligation (emergency)",
       "categories": [
         "Emergency procedures / Sinus surgery - direct vision"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 84,
       "name": "Intranasal ethmoidectomy (and bilateral)",
       "categories": [
         "Elective procedures - core / Sinus surgery - direct vision"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 415,
       "name": "Intratympanic steroid administration",
       "categories": [
         "Elective procedures - advanced / Inner ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 131,
       "name": "Labyrinthectomy",
       "categories": [
         "Elective procedures - advanced / Inner ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 378,
       "name": "Labyrinthectomy - chemical",
       "categories": [
         "Elective procedures - advanced / Inner ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 379,
       "name": "Labyrinthectomy - surgical",
       "categories": [
         "Elective procedures - advanced / Inner ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 477,
       "name": "Lacrimal gland excision",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 480,
       "name": "Lacrimal intubation (and bilateral)",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 319,
       "name": "Laryngeal papilloma microdebriding",
       "categories": [
         "Elective procedures - core / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 165,
       "name": "Laryngectomy",
       "categories": [
         "Elective procedures - advanced / Larynx"
+      ],
+      "aliases": [
+        "laryngectomy",
+        "total laryngectomy"
       ]
     },
     {
@@ -1142,307 +1356,355 @@
       "name": "Laryngofissure +/- cordectomy",
       "categories": [
         "Elective procedures - advanced / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 35,
       "name": "Laryngoscopy +/- FB removal (emergency)",
       "categories": [
         "Emergency procedures / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 293,
       "name": "Laryngotracheal reconstruction",
       "categories": [
         "Elective procedures - advanced / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 338,
       "name": "Laryngotracheal reconstruction (paediatric)",
       "categories": [
         "Elective procedures - advanced / Paediatric"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 166,
       "name": "Larynx other (advanced)",
       "categories": [
         "Elective procedures - advanced / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 93,
       "name": "Larynx other (core)",
       "categories": [
         "Elective procedures - core / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 36,
       "name": "Larynx other (emergency)",
       "categories": [
         "Emergency procedures / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 364,
       "name": "Laser palatoplasty",
       "categories": [
         "Elective procedures - advanced / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 370,
       "name": "Laser resection larynx - transoral",
       "categories": [
         "Elective procedures - advanced / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 368,
       "name": "Laser resection oral cavity",
       "categories": [
         "Elective procedures - advanced / Lip and oral cavity"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 367,
       "name": "Laser resection oropharynx",
       "categories": [
         "Elective procedures - advanced / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 365,
       "name": "Laser to external nose",
       "categories": [
         "Elective procedures - advanced / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 366,
       "name": "Laser to nasal cavity",
       "categories": [
         "Elective procedures - advanced / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 369,
       "name": "Laser to skin of head & neck",
       "categories": [
         "Elective procedures - advanced / Skin - Head & Neck Flaps"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 322,
       "name": "Lateral Canthotomy for orbital haemorrhage (emergency)",
       "categories": [
         "Emergency procedures / Sinus surgery - direct vision"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 144,
       "name": "Lateral rhinotomy",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - direct vision"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 321,
       "name": "Lateral Temporal Bone Resection",
       "categories": [
         "Elective procedures - advanced / Skull Base"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 170,
       "name": "Lip & Oral Cavity other (advanced)",
       "categories": [
         "Elective procedures - advanced / Lip and oral cavity"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 108,
       "name": "Lip & Oral Cavity other (core)",
       "categories": [
         "Elective procedures - core / Lip and oral cavity"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 46,
       "name": "Lip & Oral Cavity other (emergency)",
       "categories": [
         "Emergency procedures / Lip and oral cavity"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 102,
       "name": "Lip biopsy",
       "categories": [
         "Elective procedures - core / Lip and oral cavity"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 194,
       "name": "Local fasciocutaneous subcutaneous pedicle flap to head or nack",
       "categories": [
         "Elective procedures - advanced / Skin - Head & Neck Flaps"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 193,
       "name": "Local myocutaneous subcutaneous pedicle flap to head or neck",
       "categories": [
         "Elective procedures - advanced / Skin - Head & Neck Flaps"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 227,
       "name": "Local skin flap",
       "categories": [
         "Elective procedures - core / Skin"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 349,
       "name": "Mandibular osteotomy",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 344,
       "name": "Mandibulectomy marginal",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 343,
       "name": "Mandibulectomy partial",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 410,
       "name": "Mandibulectomy segmental",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 345,
       "name": "Mandibulotomy",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 128,
       "name": "Mastoid & Middle Ear other (advanced)",
       "categories": [
         "Elective procedures - advanced / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 64,
       "name": "Mastoid & Middle Ear other (core)",
       "categories": [
         "Elective procedures - core / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 11,
       "name": "Mastoid & Middle Ear other (emergency)",
       "categories": [
         "Emergency procedures / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 317,
       "name": "Mastoid Obliteration",
       "categories": [
         "Elective procedures - advanced / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 126,
       "name": "Mastoidectomy other",
       "categories": [
         "Elective procedures - advanced / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 348,
       "name": "Maxillary osteotomy",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 346,
       "name": "Maxillectomy partial",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 347,
       "name": "Maxillectomy total",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 240,
       "name": "Meatoplasty Bony",
       "categories": [
         "Elective procedures - advanced / External ear and external auditory canal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 239,
       "name": "Meatoplasty of External Ear",
       "categories": [
         "Elective procedures - advanced / External ear and external auditory canal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 403,
       "name": "Microlaryngoscopy + Botox",
       "categories": [
         "Elective procedures - core / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 402,
       "name": "Microlaryngoscopy + excision of laryngeal lesion",
       "categories": [
         "Elective procedures - core / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 92,
       "name": "Microlaryngoscopy + laser",
       "categories": [
         "Elective procedures - core / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 404,
       "name": "Microlaryngoscopy + tracheoplasty",
       "categories": [
         "Elective procedures - advanced / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 91,
       "name": "Microlaryngoscopy +/- biopsy",
       "categories": [
         "Elective procedures - core / Larynx"
+      ],
+      "aliases": [
+        "microlaryngoscopy",
+        "microlaryngoscopy and biopsy",
+        "MLB"
       ]
     },
     {
@@ -1450,62 +1712,73 @@
       "name": "Microlaryngoscopy and bronchoscopy (paediatric)",
       "categories": [
         "Elective procedures - advanced / Paediatric"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 409,
       "name": "Mid facial lift",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 318,
       "name": "Middle Ear Implant ( Hearing device )",
       "categories": [
         "Elective procedures - advanced / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 200,
       "name": "Middle Meatal Antrostomy (and bilateral)",
       "categories": [
         "Elective procedures - core / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 355,
       "name": "Midfacial Degloving",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 304,
       "name": "Modified Lothrop Procedure",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 123,
       "name": "Modified radical mastoidectomy",
       "categories": [
         "Elective procedures - advanced / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 10,
       "name": "Modified radical mastoidectomy (emergency)",
       "categories": [
         "Emergency procedures / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 275,
       "name": "Modified Radical Neck Dissection",
       "categories": [
         "Elective procedures - advanced / Neck"
+      ],
+      "aliases": [
+        "modified radical neck dissection"
       ]
     },
     {
@@ -1513,6 +1786,9 @@
       "name": "Myringoplasty",
       "categories": [
         "Elective procedures - core / Mastoid and middle ear"
+      ],
+      "aliases": [
+        "myringoplasty"
       ]
     },
     {
@@ -1520,20 +1796,25 @@
       "name": "Myringoplasty (fat graft)",
       "categories": [
         "Elective procedures - core / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 118,
       "name": "Myringoplasty revision",
       "categories": [
         "Elective procedures - advanced / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 58,
       "name": "Myringotomy (and bilateral)",
       "categories": [
         "Elective procedures - core / Mastoid and middle ear"
+      ],
+      "aliases": [
+        "myringotomy"
       ]
     },
     {
@@ -1541,13 +1822,20 @@
       "name": "Myringotomy (emergency) (and bilateral)",
       "categories": [
         "Emergency procedures / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 59,
       "name": "Myringotomy and grommet (and bilateral)",
       "categories": [
         "Elective procedures - core / Mastoid and middle ear"
+      ],
+      "aliases": [
+        "grommets",
+        "myringotomy and grommets",
+        "grommet insertion",
+        "ventilation tube insertion"
       ]
     },
     {
@@ -1555,27 +1843,33 @@
       "name": "Myringotomy and grommet (emergency) (and bilateral)",
       "categories": [
         "Emergency procedures / External ear and external auditory canal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 73,
       "name": "Nasal Cautery (core)",
       "categories": [
         "Elective procedures - core / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 18,
       "name": "Nasal Cautery (emergency)",
       "categories": [
         "Emergency procedures / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 71,
       "name": "Nasal polypectomy (and bilateral)",
       "categories": [
         "Elective procedures - core / External nose and septum"
+      ],
+      "aliases": [
+        "nasal polypectomy"
       ]
     },
     {
@@ -1583,132 +1877,153 @@
       "name": "Nasal reconstruction",
       "categories": [
         "Elective procedures - advanced / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 460,
       "name": "Nasal valve surgery",
       "categories": [
         "Elective procedures - advanced / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 353,
       "name": "Naso lacrimal duct probing (and bilateral)",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 182,
       "name": "Neck advanced Other",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 181,
       "name": "Neck dissection partial",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 324,
       "name": "Oesophageal perforation repair (upper)",
       "categories": [
         "Elective procedures - advanced / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 218,
       "name": "Oesophageal stricture dilatation",
       "categories": [
         "Elective procedures - core / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 99,
       "name": "Oesophagoscopy fibreoptic",
       "categories": [
         "Elective procedures - core / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 98,
       "name": "Oesophagoscopy rigid",
       "categories": [
         "Elective procedures - core / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 184,
       "name": "Oesophagoscopy rigid + biopsy (emergency)",
       "categories": [
         "Emergency procedures / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 39,
       "name": "Oesophagoscopy Rigid + FB (emergency)",
       "categories": [
         "Emergency procedures / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 340,
       "name": "Oesophagotomy for removal of foreign body",
       "categories": [
         "Elective procedures - advanced / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 398,
       "name": "Open Laryngeal cleft repair",
       "categories": [
         "Elective procedures - advanced / Paediatric"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 265,
       "name": "Optic nerve decompression",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 230,
       "name": "Orbital Decompression (and bilateral)",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 352,
       "name": "Orbital exenteration",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 351,
       "name": "Oro-antral fistula closure",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 411,
       "name": "Oropharyngeal resection ( non laser )",
       "categories": [
         "Elective procedures - advanced / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 119,
       "name": "Ossiculoplasty",
       "categories": [
         "Elective procedures - advanced / Mastoid and middle ear"
+      ],
+      "aliases": [
+        "ossiculoplasty"
       ]
     },
     {
@@ -1716,62 +2031,73 @@
       "name": "Osteoplastic flap",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - direct vision"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 296,
       "name": "Outfracture inferior turbinates (and bilateral)",
       "categories": [
         "Elective procedures - core / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 17,
       "name": "Packing of nasopharynx",
       "categories": [
         "Emergency procedures / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 16,
       "name": "Packing of nose",
       "categories": [
         "Emergency procedures / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 45,
       "name": "Palate suture",
       "categories": [
         "Emergency procedures / Lip and oral cavity"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 105,
       "name": "Palatoplasty/U3P",
       "categories": [
         "Elective procedures - core / Lip and oral cavity"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 247,
       "name": "Pan endoscopy, EUA mouth and PNS (excluding broncoscopy)",
       "categories": [
         "Elective procedures - core / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 339,
       "name": "Panendoscopy + rigid bronchoscopy",
       "categories": [
         "Elective procedures - core / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 507,
       "name": "Panendoscopy without bronchoscopy",
       "categories": [
         "Elective procedures - core / Trachea, bronchus and oesophagus"
+      ],
+      "aliases": [
+        "panendoscopy"
       ]
     },
     {
@@ -1779,27 +2105,33 @@
       "name": "Parapharyngeal abscess drainage (external))",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 503,
       "name": "Parapharyngeal abscess drainage (transoral)",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 362,
       "name": "Parapharyngeal space tumour - transcervical excision",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 210,
       "name": "Parathyroidectomy",
       "categories": [
         "Elective procedures - advanced / Neck"
+      ],
+      "aliases": [
+        "parathyroidectomy"
       ]
     },
     {
@@ -1807,41 +2139,49 @@
       "name": "Parotid duct sialoscopy",
       "categories": [
         "Elective procedures - advanced / Salivary glands"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 459,
       "name": "Parotid lumpectomy",
       "categories": [
         "Elective procedures - advanced / Salivary glands"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 259,
       "name": "Partial excision middle turbinate (and bilateral)",
       "categories": [
         "Elective procedures - core / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 164,
       "name": "Partial laryngectomy - horizontal",
       "categories": [
         "Elective procedures - advanced / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 163,
       "name": "Partial laryngectomy - vertical",
       "categories": [
         "Elective procedures - advanced / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 483,
       "name": "Percutaneous tracheostomy",
       "categories": [
         "Elective procedures - advanced / Trachea, bronchus and oesophagus"
+      ],
+      "aliases": [
+        "percutaneous tracheostomy"
       ]
     },
     {
@@ -1849,13 +2189,18 @@
       "name": "Peri-orbital abscess drainage - external approach (emergency)",
       "categories": [
         "Emergency procedures / Sinus surgery - direct vision"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 269,
       "name": "Pharyngeal pouch - endoscopic stapling",
       "categories": [
         "Elective procedures - advanced / Pharynx including nasopharynx"
+      ],
+      "aliases": [
+        "endoscopic stapling pharyngeal pouch",
+        "pharyngeal pouch stapling"
       ]
     },
     {
@@ -1863,6 +2208,10 @@
       "name": "Pharyngeal pouch surgery - external",
       "categories": [
         "Elective procedures - advanced / Pharynx including nasopharynx"
+      ],
+      "aliases": [
+        "pharyngeal pouch external",
+        "external pharyngeal pouch surgery"
       ]
     },
     {
@@ -1870,90 +2219,107 @@
       "name": "Pharyngectomy + free flap",
       "categories": [
         "Elective procedures - advanced / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 271,
       "name": "Pharyngectomy + pull-up",
       "categories": [
         "Elective procedures - advanced / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 354,
       "name": "Pharyngectomy partial",
       "categories": [
         "Elective procedures - advanced / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 272,
       "name": "Pharyngolaryngectomy + free flap",
       "categories": [
         "Elective procedures - advanced / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 273,
       "name": "Pharyngolaryngectomy + pull up",
       "categories": [
         "Elective procedures - advanced / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 88,
       "name": "Pharyngoscopy +/- biopsy",
       "categories": [
         "Elective procedures - core / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 33,
       "name": "Pharyngoscopy +/- FB (emergency)",
       "categories": [
         "Emergency procedures / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 505,
       "name": "Pharyngoscopy and dilatation of cricopharyngeus",
       "categories": [
         "Elective procedures - core / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 158,
       "name": "Pharynx & nasopharynx other (advanced)",
       "categories": [
         "Elective procedures - advanced / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 89,
       "name": "Pharynx Incl nasopharynx other (core)",
       "categories": [
         "Elective procedures - core / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 34,
       "name": "Pharynx incl nasopharynx other (emergency)",
       "categories": [
         "Emergency procedures / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 418,
       "name": "Pinna reconstruction",
       "categories": [
         "Elective procedures - advanced / External ear and external auditory canal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 209,
       "name": "Pinnaplasty",
       "categories": [
         "Elective procedures - advanced / External ear and external auditory canal"
+      ],
+      "aliases": [
+        "pinnaplasty",
+        "otoplasty",
+        "bat ear correction"
       ]
     },
     {
@@ -1961,48 +2327,60 @@
       "name": "Pinnectomy",
       "categories": [
         "Elective procedures - advanced / External ear and external auditory canal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 252,
       "name": "Posterior Ethmoid Artery Ligation (emergency)",
       "categories": [
         "Emergency procedures / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 264,
       "name": "Posterior ethmoidectomy (and bilateral)",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 416,
       "name": "Posterior semicircular canal occlusion",
       "categories": [
         "Elective procedures - advanced / Inner ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 213,
       "name": "Preauricular sinus excision",
       "categories": [
         "Elective procedures - core / External ear and external auditory canal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 494,
       "name": "Pyriform aperture stenosis surgery",
       "categories": [
         "Elective procedures - advanced / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 42,
       "name": "Quinsy - drainage",
       "categories": [
         "Emergency procedures / Lip and oral cavity"
+      ],
+      "aliases": [
+        "quinsy drainage",
+        "drainage of quinsy",
+        "peritonsillar abscess drainage",
+        "quinsy"
       ]
     },
     {
@@ -2010,6 +2388,9 @@
       "name": "Radical Neck dissection",
       "categories": [
         "Elective procedures - advanced / Neck"
+      ],
+      "aliases": [
+        "radical neck dissection"
       ]
     },
     {
@@ -2017,223 +2398,257 @@
       "name": "Random local subcutaneous pedicle flap of skin to head or neck",
       "categories": [
         "Elective procedures - advanced / Skin - Head & Neck Flaps"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 192,
       "name": "Random pattern distant flap of skin to head or neck",
       "categories": [
         "Elective procedures - advanced / Skin - Head & Neck Flaps"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 300,
       "name": "Ranula excision (cervical/plunging)",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 301,
       "name": "Ranula excision (oral)",
       "categories": [
         "Elective procedures - advanced / Lip and oral cavity"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 341,
       "name": "Re-exploration of neck wound",
       "categories": [
         "Elective procedures - core / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 467,
       "name": "Recurrent laryngeal nerve section",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 4,
       "name": "Removal of foreign body external ear",
       "categories": [
         "Emergency procedures / External ear and external auditory canal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 61,
       "name": "Removal of grommet (core) (and bilateral)",
       "categories": [
         "Elective procedures - core / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 8,
       "name": "Removal of grommet (emergency)",
       "categories": [
         "Emergency procedures / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 15,
       "name": "Removal of nasal foreign body",
       "categories": [
         "Emergency procedures / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 72,
       "name": "Removal of nasal packing",
       "categories": [
         "Elective procedures - core / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 323,
       "name": "Resection of nasal tumour (endoscopic)",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 488,
       "name": "Resurfacing of superior semi-circular canal dehiscence via middle cranial fossa approach",
       "categories": [
         "Elective procedures - advanced / Skull Base"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 414,
       "name": "Retrolabyrinthine approach to skull base",
       "categories": [
         "Elective procedures - advanced / Skull Base"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 124,
       "name": "Revision mastoidectomy",
       "categories": [
         "Elective procedures - advanced / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 138,
       "name": "Revision rhinoplasty etc",
       "categories": [
         "Elective procedures - advanced / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 134,
       "name": "Revision septal surgery",
       "categories": [
         "Elective procedures - advanced / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 383,
       "name": "Rhinectomy Partial",
       "categories": [
         "Elective procedures - advanced / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 374,
       "name": "Rhinectomy Total",
       "categories": [
         "Elective procedures - advanced / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 325,
       "name": "Rhinophyma treatment",
       "categories": [
         "Elective procedures - advanced / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 136,
       "name": "Rhinoplasty",
       "categories": [
         "Elective procedures - advanced / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 137,
       "name": "Rhinoplasty - augmentation",
       "categories": [
         "Elective procedures - advanced / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 437,
       "name": "Rib cartilage harvest",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 94,
       "name": "Rigid bronchoscopy",
       "categories": [
         "Elective procedures - core / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 37,
       "name": "Rigid bronchoscopy + FB (emergency)",
       "categories": [
         "Emergency procedures / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 96,
       "name": "Rigid bronchoscopy + laser",
       "categories": [
         "Elective procedures - core / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 475,
       "name": "Robotic hypopharyngeal resection",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 474,
       "name": "Robotic laryngeal resection",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 473,
       "name": "Robotic nasopharyngeal resection",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 470,
       "name": "Robotic oral resection",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 471,
       "name": "Robotic oropharyngeal resection",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 478,
       "name": "Robotic thyroidectomy",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
+      ],
+      "aliases": [
+        "robotic thyroidectomy"
       ]
     },
     {
@@ -2241,34 +2656,42 @@
       "name": "Salivary Gland other (core)",
       "categories": [
         "Elective procedures - core / Salivary glands"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 175,
       "name": "Salivary glands other (advanced)",
       "categories": [
         "Elective procedures - advanced / Salivary glands"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 48,
       "name": "Salivary Glands other (emergency)",
       "categories": [
         "Emergency procedures / Salivary glands"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 413,
       "name": "Selective facial nerve neurectomy",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 320,
       "name": "Selective Neck Dissection ( level 1,2,3,4 )",
       "categories": [
         "Elective procedures - advanced / Neck"
+      ],
+      "aliases": [
+        "selective neck dissection",
+        "neck dissection"
       ]
     },
     {
@@ -2276,76 +2699,90 @@
       "name": "Selective Neck Dissection (level 1)",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 276,
       "name": "Selective Neck Dissection (level 2,3,4)",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 278,
       "name": "Selective Neck Dissection (level 5)",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 279,
       "name": "Selective Neck Dissection (level 6)",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 280,
       "name": "Selective Neck Dissection (level 7)",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 335,
       "name": "Selective Neck Dissection (levels 1,2,3 )",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 342,
       "name": "Septal button insertion",
       "categories": [
         "Elective procedures - core / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 476,
       "name": "Septal perforation enlargement",
       "categories": [
         "Elective procedures - advanced / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 261,
       "name": "Septal Perforation Repair",
       "categories": [
         "Elective procedures - advanced / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 462,
       "name": "Septodermoplasty",
       "categories": [
         "Elective procedures - advanced / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 79,
       "name": "Septoplasty",
       "categories": [
         "Elective procedures - core / External nose and septum"
+      ],
+      "aliases": [
+        "septoplasty",
+        "submucous resection of septum"
       ]
     },
     {
@@ -2353,6 +2790,9 @@
       "name": "Septorhinoplasty",
       "categories": [
         "Elective procedures - advanced / External nose and septum"
+      ],
+      "aliases": [
+        "septorhinoplasty"
       ]
     },
     {
@@ -2360,48 +2800,58 @@
       "name": "Shave biopsy skin lesion",
       "categories": [
         "Elective procedures - core / Skin"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 85,
       "name": "Sinus surgery direct vision Other (and bilateral)",
       "categories": [
         "Elective procedures - core / Sinus surgery - direct vision"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 371,
       "name": "Sleep nasendoscopy",
       "categories": [
         "Elective procedures - core / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 75,
       "name": "SMD (and bilateral)",
       "categories": [
         "Elective procedures - core / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 78,
       "name": "SMR",
       "categories": [
         "Elective procedures - core / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 148,
       "name": "Sphenoidotomy (and bilateral)",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 149,
       "name": "Sphenopalatine artery ligation",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - endoscopic"
+      ],
+      "aliases": [
+        "sphenopalatine artery ligation",
+        "SPA ligation"
       ]
     },
     {
@@ -2409,20 +2859,26 @@
       "name": "Sphenopalatine artery ligation (emergency)",
       "categories": [
         "Emergency procedures / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 228,
       "name": "Split skin graft",
       "categories": [
         "Elective procedures - core / Skin"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 120,
       "name": "Stapedectomy",
       "categories": [
         "Elective procedures - advanced / Mastoid and middle ear"
+      ],
+      "aliases": [
+        "stapedectomy",
+        "stapes surgery"
       ]
     },
     {
@@ -2430,34 +2886,42 @@
       "name": "Stomaplasty",
       "categories": [
         "Elective procedures - advanced / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 313,
       "name": "Styloid process excision ( transcervical )",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 314,
       "name": "Styloid process excision ( transoral)",
       "categories": [
         "Elective procedures - advanced / Lip and oral cavity"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 336,
       "name": "Subglottic haemangioma treatment",
       "categories": [
         "Elective procedures - advanced / Paediatric"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 109,
       "name": "Submandibular calculus removal",
       "categories": [
         "Elective procedures - core / Salivary glands"
+      ],
+      "aliases": [
+        "submandibular calculus removal",
+        "submandibular stone removal"
       ]
     },
     {
@@ -2465,6 +2929,11 @@
       "name": "Submandibular gland removal",
       "categories": [
         "Elective procedures - core / Salivary glands"
+      ],
+      "aliases": [
+        "submandibular gland removal",
+        "submandibular gland excision",
+        "excision of submandibular gland"
       ]
     },
     {
@@ -2472,34 +2941,42 @@
       "name": "Submandiular duct sialoscopy",
       "categories": [
         "Elective procedures - advanced / Salivary glands"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 290,
       "name": "Subtotal petrosectomy",
       "categories": [
         "Elective procedures - advanced / Skull Base"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 56,
       "name": "Suction clearance (and bilateral)",
       "categories": [
         "Elective procedures - core / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 54,
       "name": "Suction clearance of external ear (core) (and bilateral)",
       "categories": [
         "Elective procedures - core / External ear and external auditory canal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 172,
       "name": "Superficial parotidectomy",
       "categories": [
         "Elective procedures - advanced / Salivary glands"
+      ],
+      "aliases": [
+        "superficial parotidectomy",
+        "parotidectomy"
       ]
     },
     {
@@ -2507,62 +2984,75 @@
       "name": "Superior semicircular canal occlusion",
       "categories": [
         "Elective procedures - advanced / Inner ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 501,
       "name": "Supraglottoplasty",
       "categories": [
         "Elective procedures - advanced / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 3,
       "name": "Suture of external ear (emergency)",
       "categories": [
         "Emergency procedures / External ear and external auditory canal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 41,
       "name": "Suture of lip",
       "categories": [
         "Emergency procedures / Lip and oral cavity"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 49,
       "name": "Suture skin of neck",
       "categories": [
         "Emergency procedures / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 216,
       "name": "Suturing of laceration to nose",
       "categories": [
         "Emergency procedures / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 60,
       "name": "T-tube insertion (and bilateral)",
       "categories": [
         "Elective procedures - core / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 350,
       "name": "Temporal artery biopsy",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 176,
       "name": "Thyroglossal cyst excision",
       "categories": [
         "Elective procedures - advanced / Neck"
+      ],
+      "aliases": [
+        "thyroglossal cyst excision",
+        "sistrunk procedure",
+        "thyroglossal duct cyst excision"
       ]
     },
     {
@@ -2570,34 +3060,41 @@
       "name": "Thyroid - Open Biopsy",
       "categories": [
         "Elective procedures - core / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 464,
       "name": "Thyroid chondroplasty/ thryoid cartilage shave",
       "categories": [
         "Elective procedures - advanced / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 294,
       "name": "Thyroid isthmus excision",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 326,
       "name": "Thyroid lobectomy",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 419,
       "name": "Thyroidectomy completion",
       "categories": [
         "Elective procedures - advanced / Neck"
+      ],
+      "aliases": [
+        "completion thyroidectomy"
       ]
     },
     {
@@ -2605,69 +3102,83 @@
       "name": "Thyroidectomy Hemi",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 178,
       "name": "Thyroidectomy Subtotal",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 179,
       "name": "Thyroidectomy total",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 267,
       "name": "Thyroplasty - closed medialisation",
       "categories": [
         "Elective procedures - advanced / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 266,
       "name": "Thyroplasty - open medialisation",
       "categories": [
         "Elective procedures - advanced / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 386,
       "name": "Titanium Implant (other than BAHA)",
       "categories": [
         "Elective procedures - advanced / Non Standard ENT"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 508,
       "name": "TNO (transnasal oesophagoscopy)",
       "categories": [
         "Elective procedures - advanced / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 107,
       "name": "Tongue biopsy",
       "categories": [
         "Elective procedures - core / Lip and oral cavity"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 405,
       "name": "Tongue drop",
       "categories": [
         "Elective procedures - advanced / Lip and oral cavity"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 106,
       "name": "Tongue tie division",
       "categories": [
         "Elective procedures - core / Lip and oral cavity"
+      ],
+      "aliases": [
+        "tongue tie division",
+        "tongue tie release",
+        "frenotomy"
       ]
     },
     {
@@ -2675,20 +3186,26 @@
       "name": "Tonsil FB",
       "categories": [
         "Emergency procedures / Lip and oral cavity"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 44,
       "name": "Tonsil haemorrhage arrest",
       "categories": [
         "Emergency procedures / Lip and oral cavity"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 244,
       "name": "Tonsillectomy (and bilateral)",
       "categories": [
         "Elective procedures - core / Pharynx including nasopharynx"
+      ],
+      "aliases": [
+        "tonsillectomy",
+        "bilateral tonsillectomy"
       ]
     },
     {
@@ -2696,27 +3213,33 @@
       "name": "Tonsillectomy for Diagnosis (and bilateral)",
       "categories": [
         "Elective procedures - core / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 490,
       "name": "Tonsillotomy (and bilateral ) NOT tonsillectomy",
       "categories": [
         "Elective procedures - core / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 493,
       "name": "Tonsillotomy (intracapsular)",
       "categories": [
         "Elective procedures - core / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 173,
       "name": "Total parotidectomy",
       "categories": [
         "Elective procedures - advanced / Salivary glands"
+      ],
+      "aliases": [
+        "total parotidectomy"
       ]
     },
     {
@@ -2724,97 +3247,114 @@
       "name": "Total parotidectomy + facial nerve resection",
       "categories": [
         "Elective procedures - advanced / Salivary glands"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 289,
       "name": "Total Petrosectomy",
       "categories": [
         "Elective procedures - advanced / Skull Base"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 281,
       "name": "Total/partial excision of retrosternal thyroid with sternotomy",
       "categories": [
         "Elective procedures - advanced / Neck"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 167,
       "name": "Trachea Oesophagus Bronchus other (advanced)",
       "categories": [
         "Elective procedures - advanced / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 100,
       "name": "Trachea Oesophagus Bronchus other (core)",
       "categories": [
         "Elective procedures - core / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 40,
       "name": "Trachea Oesophagus Bronchus other (emergency)",
       "categories": [
         "Emergency procedures / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 311,
       "name": "Trachea Repair ( traumatic )",
       "categories": [
         "Emergency procedures / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 327,
       "name": "Tracheal / subglottic dilatation endoscopic",
       "categories": [
         "Elective procedures - advanced / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 329,
       "name": "Tracheal stent insertion",
       "categories": [
         "Elective procedures - advanced / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 330,
       "name": "Tracheal stent removal",
       "categories": [
         "Elective procedures - advanced / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 268,
       "name": "Tracheo-oesophageal fistula repair",
       "categories": [
         "Elective procedures - advanced / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 424,
       "name": "Tracheocutaneous fistula closure",
       "categories": [
         "Elective procedures - core / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 95,
       "name": "Tracheooesophageal puncture",
       "categories": [
         "Elective procedures - core / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 97,
       "name": "Tracheostomy",
       "categories": [
         "Elective procedures - core / Trachea, bronchus and oesophagus"
+      ],
+      "aliases": [
+        "tracheostomy",
+        "surgical tracheostomy"
       ]
     },
     {
@@ -2822,83 +3362,97 @@
       "name": "Tracheostomy (emergency)",
       "categories": [
         "Emergency procedures / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 248,
       "name": "Tracheostomy (Under LA)",
       "categories": [
         "Elective procedures - core / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 274,
       "name": "Tracheostomy under LA (emergency)",
       "categories": [
         "Emergency procedures / Trachea, bronchus and oesophagus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 395,
       "name": "Transfacial Approach to skull base",
       "categories": [
         "Elective procedures - advanced / Skull Base"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 485,
       "name": "Translabyrinthine approach to petrous apex",
       "categories": [
         "Elective procedures - advanced / Inner ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 502,
       "name": "Transmastoid treatment of superior semicircular canal dehiscence (SSCD)",
       "categories": [
         "Elective procedures - advanced / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 231,
       "name": "Transnasal Endoscopic Repair of CSF Leak",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 382,
       "name": "Transpalatal approach to nasopharynx",
       "categories": [
         "Elective procedures - advanced / Pharynx including nasopharynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 171,
       "name": "Transposition of submandibular duct",
       "categories": [
         "Elective procedures - advanced / Salivary glands"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 132,
       "name": "Transtympanic VII neuroma",
       "categories": [
         "Elective procedures - advanced / Inner ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 24,
       "name": "Trefine frontal sinus (emergency)",
       "categories": [
         "Emergency procedures / Sinus surgery - direct vision"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 76,
       "name": "Turbinate cautery (and bilateral)",
       "categories": [
         "Elective procedures - core / External nose and septum"
+      ],
+      "aliases": [
+        "turbinate cautery"
       ]
     },
     {
@@ -2906,13 +3460,19 @@
       "name": "Turbinate reduction (direct) (and bilateral)",
       "categories": [
         "Elective procedures - core / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 308,
       "name": "Turbinate reduction (endoscopic) (and bilateral)",
       "categories": [
         "Elective procedures - core / Sinus surgery - endoscopic"
+      ],
+      "aliases": [
+        "turbinate reduction",
+        "turbinoplasty",
+        "inferior turbinate reduction"
       ]
     },
     {
@@ -2920,27 +3480,33 @@
       "name": "Turbinectomy (and bilateral)",
       "categories": [
         "Elective procedures - core / External nose and septum"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 489,
       "name": "Tympanic neurectomy",
       "categories": [
         "Elective procedures - advanced / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 400,
       "name": "Tympanomastoidectomy",
       "categories": [
         "Elective procedures - advanced / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 238,
       "name": "Tympanoplasty",
       "categories": [
         "Elective procedures - advanced / Mastoid and middle ear"
+      ],
+      "aliases": [
+        "tympanoplasty"
       ]
     },
     {
@@ -2948,112 +3514,128 @@
       "name": "Tympanotomy",
       "categories": [
         "Elective procedures - core / Mastoid and middle ear"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 202,
       "name": "Uncinectomy (and bilateral)",
       "categories": [
         "Elective procedures - core / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 203,
       "name": "Uncinectomy + bulla (and bilateral)",
       "categories": [
         "Elective procedures - core / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 356,
       "name": "Uvulectomy",
       "categories": [
         "Elective procedures - core / Lip and oral cavity"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 422,
       "name": "Vestibular nerve section - retrosigmoid approach",
       "categories": [
         "Elective procedures - advanced / Skull Base"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 287,
       "name": "Vestibular schwannoma excision middle fossa approach",
       "categories": [
         "Elective procedures - advanced / Skull Base"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 286,
       "name": "Vestibular schwannoma excision retrosigmoid approach",
       "categories": [
         "Elective procedures - advanced / Skull Base"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 288,
       "name": "Vestibular schwannoma excision translabyrinthine approach",
       "categories": [
         "Elective procedures - advanced / Skull Base"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 500,
       "name": "Vidian Neurectomy",
       "categories": [
         "Elective procedures - advanced / Sinus surgery - endoscopic"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 381,
       "name": "Vocal cord injection - non-medialisation",
       "categories": [
         "Elective procedures - advanced / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 302,
       "name": "Vocal cord medialisation injection",
       "categories": [
         "Elective procedures - advanced / Larynx"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 50,
       "name": "Wedge excision external ear",
       "categories": [
         "Elective procedures - core / External ear and external auditory canal"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 284,
       "name": "Wedge resection of lip",
       "categories": [
         "Elective procedures - core / Lip and oral cavity"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 285,
       "name": "Wedge resection of tongue",
       "categories": [
         "Elective procedures - core / Lip and oral cavity"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 406,
       "name": "Wide local excision of facial skin lesion",
       "categories": [
         "Elective procedures - core / Skin"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 260,
       "name": "Young's Procedure",
       "categories": [
         "Elective procedures - advanced / External nose and septum"
-      ]
+      ],
+      "aliases": []
     }
   ],
   "tree": {

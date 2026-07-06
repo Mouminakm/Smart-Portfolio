@@ -7,7 +7,7 @@
   "field": "procedure",
   "harvested_from": "eLogbook 'Add operation' page (Specialty = Trauma and Orthopaedic Surgery)",
   "harvested_date": "2026-06-27",
-  "notes": "Each option's 'id' is the eLogbook data-nodeid used to select the procedure in the form (the value for WebView injection). 'name' is the display label / extraction target. A procedure may appear under several categories; the flat 'procedures' list is the authoritative deduplicated picklist, 'tree' preserves the on-site accordion structure for the picker UI and for giving the AI category context.",
+  "notes": "Each option's 'id' is the eLogbook data-nodeid used to select the procedure in the form (the value for WebView injection). 'name' is the display label / extraction target. A procedure may appear under several categories; the flat 'procedures' list is the authoritative deduplicated picklist, 'tree' preserves the on-site accordion structure for the picker UI and for giving the AI category context. | Curated spoken-form aliases rebuilt 2026-07-03 for 44 common operations (114 aliases), each validated against the live norm()/resolveProcedure() logic; zero collisions. This catalogue is highly granular with no clean 'primary THR' entry, so aliases target unambiguous clean primaries (TKR, DHS, carpal tunnel, trigger finger, ACL, rotator cuff, shoulder/knee replacements, the common fracture ORIFs and tendon repairs); the long tail matches on exact/substring. Bare 'dupuytren' defaults to dermofasciectomy (surgical) over collagenase.",
   "unique_procedure_count": 854,
   "procedures": [
     {
@@ -15,153 +15,180 @@
       "name": "1 stg of 2 stg rev infected THR - removal of prosthesis +_ insertion of cement spacer / antibiotic beads",
       "categories": [
         "Elective / Hip / Revision THR"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 423,
       "name": "1 stg of 2 stg rev infected TKR - removal of prosthesis +_ insertion of cement spacer / antibiotic beads",
       "categories": [
         "Elective / Knee / Revision Knee Arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 490,
       "name": "1st metacarpal fracture / dislocation - external fixation",
       "categories": [
         "Trauma / Hand / 1st metacarpal fracture / dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 57,
       "name": "1st metacarpal fracture / dislocation - MUA & percutaneous wires",
       "categories": [
         "Trauma / Hand / 1st metacarpal fracture / dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 56,
       "name": "1st metacarpal fracture / dislocation - MUA & POP",
       "categories": [
         "Trauma / Hand / 1st metacarpal fracture / dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 58,
       "name": "1st metacarpal fracture / dislocation - ORIF",
       "categories": [
         "Trauma / Hand / 1st metacarpal fracture / dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 652,
       "name": "1st Stage Revision Infected Shoulder Arthroplasty +/- Antibiotic Spacer",
       "categories": [
         "Elective / Shoulder / Revision Shoulder Arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 415,
       "name": "2 stg of 2 stg rev infected THR - removal of spacer/beads, insertion of prosthesis",
       "categories": [
         "Elective / Hip / Revision THR"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 424,
       "name": "2 stg of 2 stg rev infected TKR - removal of spacer/beads, insertion of prosthesis",
       "categories": [
         "Elective / Knee / Revision Knee Arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 653,
       "name": "2nd Stage Revision Infected shoulder Arthroplasty - Insertion of new prosthesis",
       "categories": [
         "Elective / Shoulder / Revision Shoulder Arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 491,
       "name": "5th metacarpal fracture / dislocation - external fixation",
       "categories": [
         "Trauma / Hand / 5th metacarpal fracture / dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 60,
       "name": "5th metacarpal fracture / dislocation - MUA & percutaneous wires",
       "categories": [
         "Trauma / Hand / 5th metacarpal fracture / dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 59,
       "name": "5th metacarpal fracture / dislocation - MUA & POP",
       "categories": [
         "Trauma / Hand / 5th metacarpal fracture / dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 61,
       "name": "5th metacarpal fracture / dislocation - ORIF",
       "categories": [
         "Trauma / Hand / 5th metacarpal fracture / dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 307,
       "name": "Above elbow amputation",
       "categories": [
         "Elective / Amputations"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 225,
       "name": "Above knee amputation",
       "categories": [
         "Elective / Amputations"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 661,
       "name": "Acetabular fracture - arthroplasty / no fixation",
       "categories": [
         "Trauma / Pelvis / Acetabular fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 662,
       "name": "Acetabular fracture - fixation with arthroplasty",
       "categories": [
         "Trauma / Pelvis / Acetabular fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 660,
       "name": "Acetabular fracture - ORIF",
       "categories": [
         "Trauma / Pelvis / Acetabular fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 659,
       "name": "Acetabular fracture - percutaneous fixation",
       "categories": [
         "Trauma / Pelvis / Acetabular fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 797,
       "name": "ACL reconstruction (open physes)",
       "categories": [
         "Elective / Knee / Soft tissue reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 227,
       "name": "ACL reconstruction - arthroscopic",
       "categories": [
         "Elective / Knee / Soft tissue reconstruction"
+      ],
+      "aliases": [
+        "ACL reconstruction",
+        "ACL repair",
+        "arthroscopic ACL reconstruction",
+        "anterior cruciate ligament reconstruction"
       ]
     },
     {
@@ -169,6 +196,9 @@
       "name": "ACL reconstruction - open",
       "categories": [
         "Elective / Knee / Soft tissue reconstruction"
+      ],
+      "aliases": [
+        "open ACL reconstruction"
       ]
     },
     {
@@ -176,181 +206,211 @@
       "name": "ACL thermal shrinkage",
       "categories": [
         "Elective / Knee / Soft tissue reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 16,
       "name": "Acromioclavicular joint dislocation - ORIF (acute)",
       "categories": [
         "Trauma / Shoulder"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 158,
       "name": "Acromioclavicular joint excision - arthroscopic / open",
       "categories": [
         "Elective / Shoulder / Shoulder girdle procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 159,
       "name": "Acromioclavicular joint reconstruction (eg Weaver Dunn)",
       "categories": [
         "Elective / Shoulder / Shoulder girdle procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 157,
       "name": "Acromioplasty open",
       "categories": [
         "Elective / Shoulder / Shoulder girdle procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 96,
       "name": "Acute knee ligament repair",
       "categories": [
         "Trauma / Knee / Soft tissue repair"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 749,
       "name": "Adult scoliosis correction - anterior release + posterior fusion +/- instrumentation +/- osteotomies",
       "categories": [
         "Elective / Thoracic spine / Scoliosis correction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 747,
       "name": "Adult scoliosis correction - anterior release +/- anterior fusion + instrumentation",
       "categories": [
         "Elective / Thoracic spine / Scoliosis correction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 340,
       "name": "Adult scoliosis correction - Cast application or casting for brace",
       "categories": [
         "Elective / Thoracic spine / Scoliosis correction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 748,
       "name": "Adult scoliosis correction - posterior fusion +/- instrumentation +/- osteotomies",
       "categories": [
         "Elective / Thoracic spine / Scoliosis correction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 596,
       "name": "Akin osteotomy of proximal phalanx great toe",
       "categories": [
         "Elective / Foot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 963,
       "name": "Amputation - Secondary procedure (Targeted Muscle Reinnervation, Regenerative Peripheral Nerve Interface etc)",
       "categories": [
         "Elective / Amputations"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 917,
       "name": "Amputation first ray (foot)",
       "categories": [
         "Elective / Foot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 704,
       "name": "Amputation of foot toe / ray for trauma",
       "categories": [
         "Trauma / Foot / Forefoot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 253,
       "name": "Amputation ray in foot (not first)",
       "categories": [
         "Elective / Foot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 122,
       "name": "Amputation toe / ray - elective procedure",
       "categories": [
         "Elective / Amputations"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 343,
       "name": "Ankle - lateral ligament reconstruction (Chrisman-Snook / Other non-anatomic)",
       "categories": [
         "Elective / Ankle / Ligament repair / reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 342,
       "name": "Ankle - lateral ligament repair (Bostrom's)",
       "categories": [
         "Elective / Ankle / Ligament repair / reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 583,
       "name": "Ankle - medial ligament repair",
       "categories": [
         "Elective / Ankle / Ligament repair / reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 823,
       "name": "Ankle arthrodesis - frame",
       "categories": [
         "Elective / Ankle"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 246,
       "name": "Ankle arthrodesis - other procedure",
       "categories": [
         "Elective / Ankle"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 920,
       "name": "Ankle arthrodesis - plate fixation",
       "categories": [
         "Elective / Ankle"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 249,
       "name": "Ankle arthrotomy",
       "categories": [
         "Elective / Ankle"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 701,
       "name": "Ankle fracture / dislocation - fibular nail",
       "categories": [
         "Trauma / Ankle / Ankle fracture/dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 898,
       "name": "Ankle fracture / dislocation - Hind foot nail",
       "categories": [
         "Trauma / Ankle / Ankle fracture/dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 112,
       "name": "Ankle fracture / dislocation - MUA & POP",
       "categories": [
         "Trauma / Ankle / Ankle fracture/dislocation"
+      ],
+      "aliases": [
+        "ankle fracture MUA",
+        "ankle MUA and POP",
+        "manipulation ankle fracture"
       ]
     },
     {
@@ -358,6 +418,12 @@
       "name": "Ankle fracture / dislocation - ORIF",
       "categories": [
         "Trauma / Ankle / Ankle fracture/dislocation"
+      ],
+      "aliases": [
+        "ankle fracture ORIF",
+        "ankle ORIF",
+        "ORIF ankle fracture",
+        "open reduction internal fixation ankle"
       ]
     },
     {
@@ -365,13 +431,17 @@
       "name": "Ankle fracture / dislocation - syndesmosis repair / reconstruction",
       "categories": [
         "Trauma / Ankle / Ankle fracture/dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 899,
       "name": "Ankle fracture / dislocation - Tension band wiring",
       "categories": [
         "Trauma / Ankle / Ankle fracture/dislocation"
+      ],
+      "aliases": [
+        "ankle tension band wiring"
       ]
     },
     {
@@ -379,307 +449,355 @@
       "name": "Ankle open cheilectomy",
       "categories": [
         "Elective / Ankle"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 613,
       "name": "Ankle operation - not listed",
       "categories": [
         "Elective / Ankle"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 730,
       "name": "Ankle osteochondral fragment - arthroscopic repair",
       "categories": [
         "Trauma / Ankle / Osteochondral fragment ankle"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 731,
       "name": "Ankle osteochondral fragment - ORIF",
       "categories": [
         "Trauma / Ankle / Osteochondral fragment ankle"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 322,
       "name": "Ankle pilon fracture - application of external-fixator",
       "categories": [
         "Trauma / Ankle / Pilon fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 929,
       "name": "Ankle pilon fracture - hind foot nail",
       "categories": [
         "Trauma / Ankle / Pilon fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 114,
       "name": "Ankle pilon fracture - ORIF",
       "categories": [
         "Trauma / Ankle / Pilon fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 115,
       "name": "Ankle pilon fracture - treatment with circular frame",
       "categories": [
         "Trauma / Ankle / Pilon fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 20,
       "name": "Anterior dislocation shoulder - closed reduction",
       "categories": [
         "Trauma / Shoulder / Anterior dislocation shoulder"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 21,
       "name": "Anterior dislocation shoulder - open reduction +/- fixation",
       "categories": [
         "Trauma / Shoulder / Anterior dislocation shoulder"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 852,
       "name": "Application limb external fixator for elective limb reconstruction",
       "categories": [
         "Elective / Limb reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 710,
       "name": "Application of External fixation and corticotomy for bone transport",
       "categories": [
         "Trauma / Trauma general / Metalware and frames"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 930,
       "name": "Application of external fixator (not Ilizarov / spanning) for limb reconstruction",
       "categories": [
         "Trauma / Trauma general / Metalware and frames"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 507,
       "name": "Application of external fixator (not spanning or Ilizarov)",
       "categories": [
         "Trauma / Trauma general / Metalware and frames"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 508,
       "name": "Application of Ilizarov frame / circular frame",
       "categories": [
         "Trauma / Trauma general / Metalware and frames"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 931,
       "name": "Application of Ilizarov frame / circular frame for limb reconstruction",
       "categories": [
         "Trauma / Trauma general / Metalware and frames"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 402,
       "name": "Application of skeletal traction",
       "categories": [
         "Trauma / Trauma general / Metalware and frames"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 464,
       "name": "Application of spanning external fixator",
       "categories": [
         "Trauma / Trauma general / Metalware and frames"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 712,
       "name": "Application of spanning external fixator - knee",
       "categories": [
         "Trauma / Trauma general / Metalware and frames"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 463,
       "name": "Application of spanning external fixator - wrist",
       "categories": [
         "Trauma / Trauma general / Metalware and frames"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 475,
       "name": "Arterial repair +/- graft hand / digit",
       "categories": [
         "Trauma / Hand / Neurovascular injuries"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 465,
       "name": "Arterial repair +/- graft not hand / wrist / digit",
       "categories": [
         "Trauma / Trauma general / Neurovascular injuries"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 469,
       "name": "Arterial repair - wrist",
       "categories": [
         "Trauma / Wrist / Neurovascular Injury"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 271,
       "name": "Arthrodesis (not listed elsewhere)",
       "categories": [
         "Elective / Elective site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 579,
       "name": "Arthrodesis ankle - arthroscopic",
       "categories": [
         "Elective / Ankle / Arthroscopic procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 767,
       "name": "Arthrodesis of wrist +/- PRC for neuromuscular conditions",
       "categories": [
         "Elective / Wrist"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 959,
       "name": "Arthrodesis using k-wires (any site)",
       "categories": [
         "Elective / Elective site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 182,
       "name": "Arthrodesis wrist (includes partial arthrodesis)",
       "categories": [
         "Elective / Wrist"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 862,
       "name": "Arthrodiastasis",
       "categories": [
         "Elective / Limb reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 171,
       "name": "Arthrolysis elbow - open / arthroscopic",
       "categories": [
         "Elective / Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 814,
       "name": "Arthroscopic arthrolysis of knee",
       "categories": [
         "Elective / Knee / Arthroscopic procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 407,
       "name": "Arthroscopic capsular release for capsulitis of shoulder",
       "categories": [
         "Elective / Shoulder / Arthroscopic shoulder procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 811,
       "name": "Arthroscopic chondroplasty (knee)",
       "categories": [
         "Elective / Knee / Arthroscopic procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 813,
       "name": "Arthroscopic harvest of knee articular cartilage for ACI procedure (1st stage)",
       "categories": [
         "Elective / Knee / Arthroscopic procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 231,
       "name": "Arthroscopic lateral release (knee)",
       "categories": [
         "Elective / Knee / Arthroscopic procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 543,
       "name": "Arthroscopic LHB tenodesis (shoulder)",
       "categories": [
         "Elective / Shoulder / Arthroscopic shoulder procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 650,
       "name": "Arthroscopic LHB tenotomy (shoulder)",
       "categories": [
         "Elective / Shoulder / Arthroscopic shoulder procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 936,
       "name": "Arthroscopic meniscal repair (Elective)",
       "categories": [
         "Elective / Knee / Arthroscopic procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 229,
       "name": "Arthroscopic menisectomy",
       "categories": [
         "Elective / Knee / Arthroscopic procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 810,
       "name": "Arthroscopic microfracture (knee)",
       "categories": [
         "Elective / Knee / Arthroscopic procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 230,
       "name": "Arthroscopic removal loose bodies (knee)",
       "categories": [
         "Elective / Knee / Arthroscopic procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 542,
       "name": "Arthroscopic removal loose body - shoulder",
       "categories": [
         "Elective / Shoulder / Arthroscopic shoulder procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 812,
       "name": "Arthroscopic repair of osteochondral fragment (knee)",
       "categories": [
         "Elective / Knee / Arthroscopic procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 409,
       "name": "Arthroscopic rotator cuff repair +/- acromioplasty",
       "categories": [
         "Elective / Shoulder / Arthroscopic shoulder procedures"
+      ],
+      "aliases": [
+        "rotator cuff repair",
+        "arthroscopic rotator cuff repair",
+        "cuff repair"
       ]
     },
     {
@@ -687,27 +805,35 @@
       "name": "Arthroscopic saucerisation +/- stabilisation discoid meniscus",
       "categories": [
         "Elective / Knee / Arthroscopic procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 958,
       "name": "Arthroscopic shoulder stabilisation / labral repair +/- remplissage",
       "categories": [
         "Elective / Shoulder / Arthroscopic shoulder procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 926,
       "name": "Arthroscopic SLAP repair (shoulder)",
       "categories": [
         "Elective / Shoulder / Arthroscopic shoulder procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 163,
       "name": "Arthroscopic subacromial decompression",
       "categories": [
         "Elective / Shoulder / Arthroscopic shoulder procedures"
+      ],
+      "aliases": [
+        "subacromial decompression",
+        "arthroscopic subacromial decompression",
+        "ASD shoulder"
       ]
     },
     {
@@ -715,342 +841,396 @@
       "name": "Arthroscopic synovectomy (knee)",
       "categories": [
         "Elective / Knee / Arthroscopic procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 164,
       "name": "Arthroscopic therapeutic shoulder procedure (other)",
       "categories": [
         "Elective / Shoulder / Arthroscopic shoulder procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 366,
       "name": "Arthroscopic thermal capsular shrinkage (shoulder)",
       "categories": [
         "Elective / Shoulder / Arthroscopic shoulder procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 843,
       "name": "Arthroscopy - 1st MTPJ therapeutic",
       "categories": [
         "Elective / Foot / Arthroscopic procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 842,
       "name": "Arthroscopy - subtalar joint (therapeutic)",
       "categories": [
         "Elective / Foot / Arthroscopic procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 830,
       "name": "Arthroscopy ankle - anterior cheilectomy",
       "categories": [
         "Elective / Ankle / Arthroscopic procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 247,
       "name": "Arthroscopy ankle - diagnostic",
       "categories": [
         "Elective / Ankle / Arthroscopic procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 832,
       "name": "Arthroscopy ankle - posterior",
       "categories": [
         "Elective / Ankle / Arthroscopic procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 248,
       "name": "Arthroscopy ankle - therapeutic",
       "categories": [
         "Elective / Ankle / Arthroscopic procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 831,
       "name": "Arthroscopy ankle - treatment osteochondral lesion",
       "categories": [
         "Elective / Ankle / Arthroscopic procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 162,
       "name": "Arthroscopy diagnostic - shoulder",
       "categories": [
         "Elective / Shoulder / Arthroscopic shoulder procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 172,
       "name": "Arthroscopy elbow - diagnostic",
       "categories": [
         "Elective / Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 173,
       "name": "Arthroscopy elbow -therapeutic",
       "categories": [
         "Elective / Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 228,
       "name": "Arthroscopy knee diagnostic",
       "categories": [
         "Elective / Knee / Arthroscopic procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 233,
       "name": "Arthroscopy knee other therapeutic procedure",
       "categories": [
         "Elective / Knee / Arthroscopic procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 181,
       "name": "Arthroscopy wrist",
       "categories": [
         "Elective / Wrist"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 272,
       "name": "Arthrotomy (not listed elsewhere)",
       "categories": [
         "Elective / Elective site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 174,
       "name": "Arthrotomy elbow",
       "categories": [
         "Elective / Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 611,
       "name": "Aspiration / injection ankle joint",
       "categories": [
         "Elective / Elective site non-specific / Aspirations / Injections"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 331,
       "name": "Aspiration / injection elbow joint",
       "categories": [
         "Elective / Elective site non-specific / Aspirations / Injections"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 612,
       "name": "Aspiration / injection foot joint",
       "categories": [
         "Elective / Elective site non-specific / Aspirations / Injections"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 332,
       "name": "Aspiration / injection hip joint",
       "categories": [
         "Elective / Elective site non-specific / Aspirations / Injections"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 273,
       "name": "Aspiration / injection joint - other",
       "categories": [
         "Elective / Elective site non-specific / Aspirations / Injections"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 333,
       "name": "Aspiration / injection knee joint",
       "categories": [
         "Elective / Elective site non-specific / Aspirations / Injections"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 617,
       "name": "Aspiration / injection Sacro-iliac joint",
       "categories": [
         "Elective / Elective site non-specific / Aspirations / Injections"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 330,
       "name": "Aspiration / injection shoulder joint",
       "categories": [
         "Elective / Elective site non-specific / Aspirations / Injections"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 308,
       "name": "Below elbow amputation",
       "categories": [
         "Elective / Amputations"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 243,
       "name": "Below knee amputation",
       "categories": [
         "Elective / Amputations"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 274,
       "name": "Benign tumour excision (not exostosis)",
       "categories": [
         "Elective / Elective site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 275,
       "name": "Biopsy bone - needle",
       "categories": [
         "Elective / Elective site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 276,
       "name": "Biopsy bone - open",
       "categories": [
         "Elective / Elective site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 603,
       "name": "Biopsy soft tissue",
       "categories": [
         "Elective / Elective site non-specific / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 278,
       "name": "Bone cyst curettage +/- bone graft",
       "categories": [
         "Elective / Elective site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 719,
       "name": "Bone graft / substitute +/- antibiotics",
       "categories": [
         "Trauma / Trauma general / Bone graft / substitute"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 320,
       "name": "Bone graft harvest from iliac crest",
       "categories": [
         "Trauma / Trauma general / Bone graft / substitute"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 724,
       "name": "Bone graft harvest from other sites excluding iliac crest (RIA etc)",
       "categories": [
         "Trauma / Trauma general / Bone graft / substitute"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 357,
       "name": "Botulinum toxin injection - musculoskeletal",
       "categories": [
         "Elective / Elective site non-specific / Aspirations / Injections"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 277,
       "name": "Bursa Excision",
       "categories": [
         "Elective / Elective site non-specific / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 300,
       "name": "Calcaneal fracture - application of external-fixator",
       "categories": [
         "Trauma / Foot / Hindfoot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 117,
       "name": "Calcaneal fracture - ORIF",
       "categories": [
         "Trauma / Foot / Hindfoot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 707,
       "name": "Calcaneal fracture - ORIF (limited open fixation and percutaneous screws)",
       "categories": [
         "Trauma / Foot / Hindfoot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 708,
       "name": "Calcaneal fracture - percutaneous screws +/- arthroscopically assisted",
       "categories": [
         "Trauma / Foot / Hindfoot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 254,
       "name": "Calcaneal osteotomy",
       "categories": [
         "Elective / Foot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 599,
       "name": "Calcaneo-cuboid arthrodesis",
       "categories": [
         "Elective / Foot / Arthrodesis procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 376,
       "name": "Capitellum - ORIF",
       "categories": [
         "Trauma / Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 54,
       "name": "Carpal fracture (incl scaphoid) / peri-lunate / lunate dislocation - MUA & percutaneous wires",
       "categories": [
         "Trauma / Wrist / Carpal fracture (incl scaphoid) / carpal ligament injury"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 53,
       "name": "Carpal fracture (incl scaphoid) / peri-lunate / lunate dislocation - MUA & POP",
       "categories": [
         "Trauma / Wrist / Carpal fracture (incl scaphoid) / carpal ligament injury"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 55,
       "name": "Carpal fracture (incl scaphoid) / peri-lunate / lunate dislocation - Open reduction / stabilisation / fixation",
       "categories": [
         "Trauma / Wrist / Carpal fracture (incl scaphoid) / carpal ligament injury"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 183,
       "name": "Carpal tunnel decompression",
       "categories": [
         "Elective / Wrist"
+      ],
+      "aliases": [
+        "carpal tunnel decompression",
+        "carpal tunnel release",
+        "carpal tunnel",
+        "median nerve decompression at wrist"
       ]
     },
     {
@@ -1058,174 +1238,204 @@
       "name": "Cervical spine - anterior column reconstruction (NOT trauma)",
       "categories": [
         "Elective / Cervical spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 436,
       "name": "Cervical Spine - anterior column reconstruction for trauma",
       "categories": [
         "Trauma / Cervical spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 138,
       "name": "Cervical spine - anterior decompression +/- fixation / fusion (C2 - C7)",
       "categories": [
         "Elective / Cervical spine / Fixation and fusion procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 658,
       "name": "Cervical Spine - anterior decompression +/- fixation / fusion (C2-C7) for trauma",
       "categories": [
         "Trauma / Cervical spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 1,
       "name": "Cervical Spine - application halo / tong traction",
       "categories": [
         "Trauma / Cervical spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 137,
       "name": "Cervical spine - atlantoaxial fixation +/- fusion",
       "categories": [
         "Elective / Cervical spine / Fixation and fusion procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 139,
       "name": "Cervical spine - biopsy",
       "categories": [
         "Elective / Cervical spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 521,
       "name": "Cervical spine - C1 pedical screws and C2 fusion",
       "categories": [
         "Elective / Cervical spine / Fixation and fusion procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 510,
       "name": "Cervical spine - disc replacement",
       "categories": [
         "Elective / Cervical spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 518,
       "name": "Cervical spine - laminectomy",
       "categories": [
         "Elective / Cervical spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 512,
       "name": "Cervical spine - laminoplasty",
       "categories": [
         "Elective / Cervical spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 2,
       "name": "Cervical Spine - MUA fracture / dislocation",
       "categories": [
         "Trauma / Cervical spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 522,
       "name": "Cervical spine - occipital / cervical / thoracic fusion",
       "categories": [
         "Elective / Cervical spine / Fixation and fusion procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 519,
       "name": "Cervical spine - occipito-cervical fusion",
       "categories": [
         "Elective / Cervical spine / Fixation and fusion procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 141,
       "name": "Cervical spine - occipito-cervical fusion +/- fixation",
       "categories": [
         "Elective / Cervical spine / Fixation and fusion procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 516,
       "name": "Cervical spine - osteotomy",
       "categories": [
         "Elective / Cervical spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 437,
       "name": "Cervical Spine - other procedure for trauma",
       "categories": [
         "Trauma / Cervical spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 742,
       "name": "Cervical spine - posterior column reconstruction (NOT trauma)",
       "categories": [
         "Elective / Cervical spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 435,
       "name": "Cervical Spine - posterior column reconstruction for trauma",
       "categories": [
         "Trauma / Cervical spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 142,
       "name": "Cervical spine - posterior decompression +/- fixation / fusion (C2 - C7)",
       "categories": [
         "Elective / Cervical spine / Fixation and fusion procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 523,
       "name": "Cervical spine - procedure not listed",
       "categories": [
         "Elective / Cervical spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 511,
       "name": "Cervical spine - revision disectomy +/- fusion",
       "categories": [
         "Elective / Cervical spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 520,
       "name": "Cervical spine - transarticular screws C1/C2",
       "categories": [
         "Elective / Cervical spine / Fixation and fusion procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 517,
       "name": "Cervical spine - vertebrectomy",
       "categories": [
         "Elective / Cervical spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 14,
       "name": "Clavicle fracture - ORIF",
       "categories": [
         "Trauma / Clavicle"
+      ],
+      "aliases": [
+        "clavicle ORIF",
+        "clavicle fixation",
+        "ORIF clavicle",
+        "clavicle plating"
       ]
     },
     {
@@ -1233,27 +1443,34 @@
       "name": "Clavicle fracture malunion - osteotomy",
       "categories": [
         "Elective / Clavicle"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 15,
       "name": "Clavicle fracture non-union - ORIF",
       "categories": [
         "Elective / Clavicle"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 536,
       "name": "Coccygectomy",
       "categories": [
         "Elective / Pelvis"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 783,
       "name": "Collaegnase injection for dupuytrens",
       "categories": [
         "Elective / Elective site non-specific / Aspirations / Injections"
+      ],
+      "aliases": [
+        "collagenase injection dupuytren",
+        "collagenase for dupuytrens"
       ]
     },
     {
@@ -1261,6 +1478,10 @@
       "name": "Complex primary TKR (hinge / stem etc)",
       "categories": [
         "Elective / Knee / Knee arthroplasty"
+      ],
+      "aliases": [
+        "complex primary knee replacement",
+        "hinged knee replacement"
       ]
     },
     {
@@ -1268,440 +1489,511 @@
       "name": "Complex reconstruction for diabetic foot",
       "categories": [
         "Elective / Foot / Diabetic foot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 565,
       "name": "Congenital hand operation - camptodactyly",
       "categories": [
         "Elective / Hand / Congenital hand operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 786,
       "name": "Congenital hand operation - clinodactyly excision (and fat graft)",
       "categories": [
         "Elective / Hand / Congenital hand operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 564,
       "name": "Congenital hand operation - clinodactyly osteotomy",
       "categories": [
         "Elective / Hand / Congenital hand operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 570,
       "name": "Congenital hand operation - complex reconstruction of congenital hand deformity",
       "categories": [
         "Elective / Hand / Congenital hand operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 568,
       "name": "Congenital hand operation - correction of radial club hand",
       "categories": [
         "Elective / Hand / Congenital hand operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 787,
       "name": "Congenital hand operation - correction radial club hand with frame",
       "categories": [
         "Elective / Hand / Congenital hand operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 566,
       "name": "Congenital hand operation - lengthening procedures",
       "categories": [
         "Elective / Hand / Congenital hand operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 569,
       "name": "Congenital hand operation - release congenital constriction band syndrome",
       "categories": [
         "Elective / Hand / Congenital hand operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 788,
       "name": "Congenital hand operation - separation of syndactyly with graft",
       "categories": [
         "Elective / Hand / Congenital hand operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 567,
       "name": "Congenital hand operation - separation of syndactyly without graft",
       "categories": [
         "Elective / Hand / Congenital hand operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 829,
       "name": "Conversion ankle arthroplasty to arthrodesis",
       "categories": [
         "Elective / Ankle / Arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 452,
       "name": "Coronoid fracture - closed reduction",
       "categories": [
         "Trauma / Elbow / Coronoid fractures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 453,
       "name": "Coronoid fracture - ORIF",
       "categories": [
         "Trauma / Elbow / Coronoid fractures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 778,
       "name": "Corrective osteotomy metacarpal",
       "categories": [
         "Elective / Hand"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 770,
       "name": "Corrective osteotomy of radius",
       "categories": [
         "Elective / Wrist"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 777,
       "name": "Corrective osteotomy phalanx (hand)",
       "categories": [
         "Elective / Hand"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 642,
       "name": "CTEV - Athrodesis for reccurence / resistant CTEV",
       "categories": [
         "Elective / Paediatrics / CTEV correction / clubfoot / congenital talipes equinovarus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 641,
       "name": "CTEV - Bony correction (osteotomy) for reccurence / resistant CTEV",
       "categories": [
         "Elective / Paediatrics / CTEV correction / clubfoot / congenital talipes equinovarus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 639,
       "name": "CTEV - Frame correction",
       "categories": [
         "Elective / Paediatrics / CTEV correction / clubfoot / congenital talipes equinovarus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 255,
       "name": "CTEV - Other correction",
       "categories": [
         "Elective / Paediatrics / CTEV correction / clubfoot / congenital talipes equinovarus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 635,
       "name": "CTEV - Percutaneous tendo-achilles release",
       "categories": [
         "Elective / Paediatrics / CTEV correction / clubfoot / congenital talipes equinovarus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 637,
       "name": "CTEV - Posterior release",
       "categories": [
         "Elective / Paediatrics / CTEV correction / clubfoot / congenital talipes equinovarus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 638,
       "name": "CTEV - Postero-medial release",
       "categories": [
         "Elective / Paediatrics / CTEV correction / clubfoot / congenital talipes equinovarus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 640,
       "name": "CTEV - Soft tissue release for reoccurence / resistant for CTEV",
       "categories": [
         "Elective / Paediatrics / CTEV correction / clubfoot / congenital talipes equinovarus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 636,
       "name": "CTEV - Tibialis anterior transfer",
       "categories": [
         "Elective / Paediatrics / CTEV correction / clubfoot / congenital talipes equinovarus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 358,
       "name": "DDH - Application of hip spica",
       "categories": [
         "Elective / Paediatrics / DDH"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 614,
       "name": "DDH - Hip MUA / closed reduction",
       "categories": [
         "Elective / Paediatrics / DDH"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 209,
       "name": "DDH - Open reduction",
       "categories": [
         "Elective / Paediatrics / DDH"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 210,
       "name": "DDH - Pelvic osteotomy",
       "categories": [
         "Elective / Paediatrics / DDH"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 211,
       "name": "DDH - Proximal femoral osteotomy",
       "categories": [
         "Elective / Paediatrics / DDH"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 185,
       "name": "De Quervain’s decompression",
       "categories": [
         "Elective / Wrist"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 918,
       "name": "Debridement of Necrotising fasciitis",
       "categories": [
         "Trauma / Trauma general / Wound management"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 721,
       "name": "Debridement of non-union",
       "categories": [
         "Trauma / Trauma general / Management of non union"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 184,
       "name": "Decompression / synovectomy wrist tendons",
       "categories": [
         "Elective / Wrist"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 250,
       "name": "Decompression tendons at ankle",
       "categories": [
         "Elective / Ankle / Tendon procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 646,
       "name": "Denervation wrist",
       "categories": [
         "Elective / Wrist"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 352,
       "name": "Diaphyseal femur fracture - application of external fixator",
       "categories": [
         "Trauma / Femur / Diaphyseal fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 363,
       "name": "Diaphyseal femur fracture - application of spica cast",
       "categories": [
         "Trauma / Femur / Diaphyseal fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 90,
       "name": "Diaphyseal femur fracture - intramedullary nailing",
       "categories": [
         "Trauma / Femur / Diaphyseal fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 91,
       "name": "Diaphyseal femur fracture - ORIF",
       "categories": [
         "Trauma / Femur / Diaphyseal fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 700,
       "name": "DIaphyseal tibial fracture - application of circular frame",
       "categories": [
         "Trauma / Tibia & fibula / Diaphyseal tibial fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 108,
       "name": "Diaphyseal tibial fracture - application of external fixation (NOT circular frame)",
       "categories": [
         "Trauma / Tibia & fibula / Diaphyseal tibial fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 107,
       "name": "Diaphyseal tibial fracture - intramedullary nailing",
       "categories": [
         "Trauma / Tibia & fibula / Diaphyseal tibial fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 106,
       "name": "Diaphyseal tibial fracture - MUA & POP",
       "categories": [
         "Trauma / Tibia & fibula / Diaphyseal tibial fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 294,
       "name": "Diaphyseal tibial fracture - ORIF",
       "categories": [
         "Trauma / Tibia & fibula / Diaphyseal tibial fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 784,
       "name": "Digital bone transfer non vascularised (hand or foot)",
       "categories": [
         "Elective / Hand / Congenital hand operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 39,
       "name": "Dislocated elbow +/- fracture - closed reduction",
       "categories": [
         "Trauma / Elbow / Dislocated elbow +/- fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 40,
       "name": "Dislocated elbow +/- fracture - open reduction +/- fixation",
       "categories": [
         "Trauma / Elbow / Dislocated elbow +/- fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 361,
       "name": "Dislocated hip (native hip) - closed reduction",
       "categories": [
         "Trauma / Hip / Dislocated hip"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 87,
       "name": "Dislocated hip (native hip) - open reduction +/- fixation",
       "categories": [
         "Trauma / Hip / Dislocated hip"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 389,
       "name": "Dislocated hip hemiarthroplasty - closed reduction",
       "categories": [
         "Trauma / Hip / Dislocated hip"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 390,
       "name": "Dislocated hip hemiarthroplasty - open reduction",
       "categories": [
         "Trauma / Hip / Dislocated hip"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 921,
       "name": "Dislocated hip resurfacing - closed reduction",
       "categories": [
         "Trauma / Hip / Dislocated hip"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 922,
       "name": "Dislocated hip resurfacing - open reduction",
       "categories": [
         "Trauma / Hip / Dislocated hip"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 86,
       "name": "Dislocated total hip replacement - closed reduction",
       "categories": [
         "Trauma / Hip / Dislocated hip"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 360,
       "name": "Dislocated total hip replacement - open reduction",
       "categories": [
         "Trauma / Hip / Dislocated hip"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 816,
       "name": "Distal femoral replacement",
       "categories": [
         "Elective / Knee / Knee arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 962,
       "name": "Distal Radio-Ulna Joint Arthroplasty (includes ulna head arthroplasty and constrained / unconstrained total DRUJ arthroplasty)",
       "categories": [
         "Elective / Wrist / Wrist Arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 703,
       "name": "Distal tibia physeal fracture (Triplane) - ORIF",
       "categories": [
         "Trauma / Ankle / Ankle fracture/dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 501,
       "name": "Distal tibia physeal fracture - MUA +/- ORIF",
       "categories": [
         "Trauma / Ankle / Ankle fracture/dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 781,
       "name": "Dupuytrens contracture manipulation after collagenase injection",
       "categories": [
         "Elective / Hand / Dupuytren's contracture operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 336,
       "name": "Dupuytrens contracture operation - dermofasciectomy",
       "categories": [
         "Elective / Hand / Dupuytren's contracture operation"
+      ],
+      "aliases": [
+        "dupuytren dermofasciectomy",
+        "dermofasciectomy",
+        "dupuytrens dermofasciectomy",
+        "dupuytren",
+        "dupuytrens",
+        "dupuytrens fasciectomy",
+        "dupuytren fasciectomy"
       ]
     },
     {
@@ -1709,83 +2001,98 @@
       "name": "Dupuytrens contracture operation - fasciotomy / percutaneous release",
       "categories": [
         "Elective / Hand / Dupuytren's contracture operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 560,
       "name": "Dupuytrens contracture operation - primary multiple digits",
       "categories": [
         "Elective / Hand / Dupuytren's contracture operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 559,
       "name": "Dupuytrens contracture operation - primary single digit",
       "categories": [
         "Elective / Hand / Dupuytren's contracture operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 562,
       "name": "Dupuytrens contracture operation - recurrent multiple digits",
       "categories": [
         "Elective / Hand / Dupuytren's contracture operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 561,
       "name": "Dupuytrens contracture operation - recurrent single digit",
       "categories": [
         "Elective / Hand / Dupuytren's contracture operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 191,
       "name": "Dupuytrens contracture operation -other",
       "categories": [
         "Elective / Hand / Dupuytren's contracture operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 547,
       "name": "Elbow operation not listed",
       "categories": [
         "Elective / Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 575,
       "name": "Endoprosthetic replacement for malignant bone tumour - femur",
       "categories": [
         "Elective / Femur"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 546,
       "name": "Endoprosthetic replacement for malignant bone tumour - humerus",
       "categories": [
         "Elective / Humerus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 606,
       "name": "Endoprosthetic replacement for malignant bone tumour - not femur / humerus / tibia",
       "categories": [
         "Elective / Elective site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 578,
       "name": "Endoprosthetic replacement for malignant bone tumour - tibia",
       "categories": [
         "Elective / Tibia & fibula"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 772,
       "name": "Endoscopic carpal tunnel decompression",
       "categories": [
         "Elective / Wrist"
+      ],
+      "aliases": [
+        "endoscopic carpal tunnel decompression",
+        "endoscopic carpal tunnel release"
       ]
     },
     {
@@ -1793,223 +2100,261 @@
       "name": "Endoscopic Ulna nerve decompression at wrist",
       "categories": [
         "Elective / Wrist"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 151,
       "name": "Epidural - caudal",
       "categories": [
         "Elective / Elective site non-specific / Spinal Investigations / Injections"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 938,
       "name": "Epidural - lumbar",
       "categories": [
         "Elective / Elective site non-specific / Spinal Investigations / Injections"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 515,
       "name": "Epidural -cervical",
       "categories": [
         "Elective / Elective site non-specific / Spinal Investigations / Injections"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 280,
       "name": "Epiphysiodesis",
       "categories": [
         "Elective / Elective site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 281,
       "name": "EUA (not listed elsewhere)",
       "categories": [
         "Elective / Elective site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 401,
       "name": "Evacuation of haematoma",
       "categories": [
         "Trauma / Trauma general"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 382,
       "name": "Excision / ablation of finger nail for ingrowing nail (old code)",
       "categories": [
         "Trauma / Hand"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 493,
       "name": "Excision / ablation of ingrowing nail",
       "categories": [
         "Trauma / Trauma general"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 790,
       "name": "Excision accessory digit toe or finger (complex)",
       "categories": [
         "Elective / Hand / Congenital hand operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 789,
       "name": "Excision accessory digit toe or finger (simple)",
       "categories": [
         "Elective / Hand / Congenital hand operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 791,
       "name": "Excision accessory thumb and reconstruction",
       "categories": [
         "Elective / Hand / Congenital hand operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 186,
       "name": "Excision distal ulna",
       "categories": [
         "Elective / Wrist"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 630,
       "name": "Excision Haglund's deformity",
       "categories": [
         "Elective / Foot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 865,
       "name": "Excision nerve tumour malignant",
       "categories": [
         "Elective / Elective site non-specific / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 595,
       "name": "Excision of accessory navicular",
       "categories": [
         "Elective / Foot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 866,
       "name": "Excision of cyst",
       "categories": [
         "Elective / Elective site non-specific / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 346,
       "name": "Excision of Morton's neuroma",
       "categories": [
         "Elective / Foot / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 605,
       "name": "Excision of neuroma (not Morton's) / benign nerve tumour",
       "categories": [
         "Elective / Elective site non-specific / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 345,
       "name": "Excision of tarsal coalition",
       "categories": [
         "Elective / Foot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 835,
       "name": "Excision os trigonum",
       "categories": [
         "Elective / Foot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 175,
       "name": "Excision radial head +/- synovectomy",
       "categories": [
         "Elective / Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 192,
       "name": "Excision synovial cyst (hand)",
       "categories": [
         "Elective / Hand"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 548,
       "name": "Excision TFCC - arthroscopic",
       "categories": [
         "Elective / Wrist / TFCC"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 549,
       "name": "Excision TFCC - open",
       "categories": [
         "Elective / Wrist / TFCC"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 846,
       "name": "Exostectomy for diabetic foot",
       "categories": [
         "Elective / Foot / Diabetic foot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 279,
       "name": "Exostosis / osteochondroma excision",
       "categories": [
         "Elective / Elective site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 6,
       "name": "Exploration brachial plexus",
       "categories": [
         "Trauma / Brachial plexus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 853,
       "name": "Exploration of docking site",
       "categories": [
         "Elective / Limb reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 854,
       "name": "External fixator and corticotomy for bone transport",
       "categories": [
         "Elective / Limb reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 803,
       "name": "Extra articular lateral tenodesis / reconstruction (knee)",
       "categories": [
         "Elective / Knee / Soft tissue reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 83,
       "name": "Extracapsular fracture - CHS / DHS",
       "categories": [
         "Trauma / Hip / Extracapsular fracture"
+      ],
+      "aliases": [
+        "DHS",
+        "dynamic hip screw",
+        "CHS",
+        "sliding hip screw",
+        "extracapsular hip fracture fixation"
       ]
     },
     {
@@ -2017,566 +2362,649 @@
       "name": "Extracapsular fracture - intramedullary fixation",
       "categories": [
         "Trauma / Hip / Extracapsular fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 85,
       "name": "Extracapsular fracture - other fixation",
       "categories": [
         "Trauma / Hip / Extracapsular fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 530,
       "name": "Facet joint injection - lumbar spine",
       "categories": [
         "Elective / Elective site non-specific / Spinal Investigations / Injections"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 94,
       "name": "Fasciotomy for compartment syndrome (Femur)",
       "categories": [
         "Trauma / Femur"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 49,
       "name": "Fasciotomy for compartment syndrome (Forearm)",
       "categories": [
         "Trauma / Forearm"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 111,
       "name": "Fasciotomy for compartment syndrome (Tibial Compartments)",
       "categories": [
         "Trauma / Tibia & fibula"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 505,
       "name": "Fasciotomy for compartment syndrome - not tibia & fibula / femur / forearm / hand",
       "categories": [
         "Trauma / Trauma general / Compartment Syndrome"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 628,
       "name": "Femeroacetabular impingement syndrome - arthroscopic debridement",
       "categories": [
         "Elective / Hip / Femeroacetabular impingement"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 627,
       "name": "Femeroacetabular impingement syndrome - Open debridement",
       "categories": [
         "Elective / Hip / Femeroacetabular impingement"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 223,
       "name": "Femoral corrective osteotomy (not for DDH)",
       "categories": [
         "Elective / Femur"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 412,
       "name": "Femoral head AVN - core decompression",
       "categories": [
         "Elective / Hip / Femoral head AVN"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 413,
       "name": "Femoral head AVN - vascular graft",
       "categories": [
         "Elective / Hip / Femoral head AVN"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 691,
       "name": "Femoral head fracture (Pipkin) - ORIF",
       "categories": [
         "Trauma / Hip / Intracapsular fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 793,
       "name": "Femoral lengthening - application of external frame",
       "categories": [
         "Elective / Femur"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 224,
       "name": "Femoral lengthening - intrameduallary device",
       "categories": [
         "Elective / Femur"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 855,
       "name": "Femoral malunion correction or other deformity with frame",
       "categories": [
         "Elective / Limb reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 369,
       "name": "Femoral non-union - application of frame +/- bone grafting",
       "categories": [
         "Trauma / Femur / Femoral non-union"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 370,
       "name": "Femoral non-union - management (without frame) +/- bone grafting",
       "categories": [
         "Trauma / Femur / Femoral non-union"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 577,
       "name": "Femoral operation - not listed",
       "categories": [
         "Elective / Femur"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 260,
       "name": "Fifth toe soft tissue correction (foot)",
       "categories": [
         "Elective / Foot / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 310,
       "name": "Finger amputation",
       "categories": [
         "Elective / Amputations"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 481,
       "name": "Finger tip reconstruction - advancement flap",
       "categories": [
         "Trauma / Hand / Finger tip reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 483,
       "name": "Finger tip reconstruction - cross finger flap",
       "categories": [
         "Trauma / Hand / Finger tip reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 482,
       "name": "Finger tip reconstruction - homodigital neurovascular island flap",
       "categories": [
         "Trauma / Hand / Finger tip reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 78,
       "name": "Finger tip terminalisation",
       "categories": [
         "Trauma / Hand / Finger tip reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 304,
       "name": "First metatarsal osteotomy - Basal",
       "categories": [
         "Elective / Foot / First metatarsal osteotomy"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 256,
       "name": "First metatarsal osteotomy - Chevron",
       "categories": [
         "Elective / Foot / First metatarsal osteotomy"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 305,
       "name": "First metatarsal osteotomy - Other",
       "categories": [
         "Elective / Foot / First metatarsal osteotomy"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 303,
       "name": "First metatarsal osteotomy - Scarf",
       "categories": [
         "Elective / Foot / First metatarsal osteotomy"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 257,
       "name": "First MTPJ arthrodesis",
       "categories": [
         "Elective / Foot / First MTPJ procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 602,
       "name": "First MTPJ cheilectomy",
       "categories": [
         "Elective / Foot / First MTPJ procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 258,
       "name": "First MTPJ excision arthroplasty",
       "categories": [
         "Elective / Foot / First MTPJ procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 347,
       "name": "First MTPJ replacement arthroplasty (sialastic or other)",
       "categories": [
         "Elective / Foot / First MTPJ procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 840,
       "name": "First MTPJ revision arthodesis",
       "categories": [
         "Elective / Foot / First MTPJ procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 259,
       "name": "First MTPJ soft tissue correction",
       "categories": [
         "Elective / Foot / First MTPJ procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 738,
       "name": "Fixation Failure - Removal of hardware and arthroplasty",
       "categories": [
         "Trauma / Trauma general / Management of fixation failure"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 739,
       "name": "Fixation Failure - Removal of hardware and endoprosthesis",
       "categories": [
         "Trauma / Trauma general / Management of fixation failure"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 737,
       "name": "Fixation Failure - Removal of hardware and revision fixation",
       "categories": [
         "Trauma / Trauma general / Management of fixation failure"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 919,
       "name": "Foot arthrodesis (other) using plate fixation",
       "categories": [
         "Elective / Foot / Arthrodesis procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 270,
       "name": "Foot operation not listed",
       "categories": [
         "Elective / Foot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 900,
       "name": "Foot phalangeal fracture - MUA + percutaneous wires",
       "categories": [
         "Trauma / Foot / Forefoot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 706,
       "name": "Foot phalangeal fracture - MUA +/- ORIF",
       "categories": [
         "Trauma / Foot / Forefoot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 344,
       "name": "Forefoot arthroplasty (Mann Thompson / Stainsby / Other",
       "categories": [
         "Elective / Foot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 306,
       "name": "Forequarter amputation",
       "categories": [
         "Elective / Amputations"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 351,
       "name": "Fracture diaphyseal humerus - application of external fixator",
       "categories": [
         "Trauma / Humerus / Fracture diaphysis humerus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 447,
       "name": "Fracture diaphyseal humerus non-union - ORIF +/- bone grafting",
       "categories": [
         "Trauma / Humerus / Fracture diaphysis humerus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 28,
       "name": "Fracture diaphysis humerus - IM nailing",
       "categories": [
         "Trauma / Humerus / Fracture diaphysis humerus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 26,
       "name": "Fracture diaphysis humerus - MUA +/- POP",
       "categories": [
         "Trauma / Humerus / Fracture diaphysis humerus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 27,
       "name": "Fracture diaphysis humerus - ORIF",
       "categories": [
         "Trauma / Humerus / Fracture diaphysis humerus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 48,
       "name": "Fracture distal radius - application of non-spanning external fixation",
       "categories": [
         "Trauma / Forearm / Fracture distal radius"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 46,
       "name": "Fracture distal radius - MUA & percutaneous wires",
       "categories": [
         "Trauma / Forearm / Fracture distal radius"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 45,
       "name": "Fracture distal radius - MUA & POP",
       "categories": [
         "Trauma / Forearm / Fracture distal radius"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 47,
       "name": "Fracture distal radius - ORIF",
       "categories": [
         "Trauma / Forearm / Fracture distal radius"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 462,
       "name": "Fracture distal ulna - application of non-spanning external fixation",
       "categories": [
         "Trauma / Forearm / Fracture distal ulna"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 460,
       "name": "Fracture distal ulna - MUA & percutaneous wires",
       "categories": [
         "Trauma / Forearm / Fracture distal ulna"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 459,
       "name": "Fracture distal ulna - MUA & POP",
       "categories": [
         "Trauma / Forearm / Fracture distal ulna"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 461,
       "name": "Fracture distal ulna - ORIF",
       "categories": [
         "Trauma / Forearm / Fracture distal ulna"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 446,
       "name": "Fracture proximal humerus - hemiarthroplasty",
       "categories": [
         "Trauma / Shoulder / Fracture proximal humerus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 371,
       "name": "Fracture proximal humerus - interlocking IM nail",
       "categories": [
         "Trauma / Shoulder / Fracture proximal humerus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 17,
       "name": "Fracture proximal humerus - MUA +/- percutaneous wires",
       "categories": [
         "Trauma / Shoulder / Fracture proximal humerus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 18,
       "name": "Fracture proximal humerus - ORIF",
       "categories": [
         "Trauma / Shoulder / Fracture proximal humerus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 668,
       "name": "Fracture proximal humerus - reverse total shoulder replacement",
       "categories": [
         "Trauma / Shoulder / Fracture proximal humerus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 667,
       "name": "Fracture proximal humerus - total shoulder replacement",
       "categories": [
         "Trauma / Shoulder / Fracture proximal humerus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 44,
       "name": "Fracture shaft radius - IM nailing",
       "categories": [
         "Trauma / Forearm / Fracture shaft radius"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 42,
       "name": "Fracture shaft radius - MUA & percutaneous wires",
       "categories": [
         "Trauma / Forearm / Fracture shaft radius"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 41,
       "name": "Fracture shaft radius - MUA & POP",
       "categories": [
         "Trauma / Forearm / Fracture shaft radius"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 43,
       "name": "Fracture shaft radius - ORIF",
       "categories": [
         "Trauma / Forearm / Fracture shaft radius"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 458,
       "name": "Fracture shaft ulna - IM nailing",
       "categories": [
         "Trauma / Forearm / Fracture shaft ulna"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 456,
       "name": "Fracture shaft ulna - MUA & percutaneous wires",
       "categories": [
         "Trauma / Forearm / Fracture shaft ulna"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 455,
       "name": "Fracture shaft ulna - MUA & POP",
       "categories": [
         "Trauma / Forearm / Fracture shaft ulna"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 457,
       "name": "Fracture shaft ulna - ORIF",
       "categories": [
         "Trauma / Forearm / Fracture shaft ulna"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 844,
       "name": "Frame correction for diabetic foot",
       "categories": [
         "Elective / Foot / Diabetic foot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 785,
       "name": "Free digit vascularised transfer",
       "categories": [
         "Elective / Hand / Congenital hand operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 135,
       "name": "Free flap",
       "categories": [
         "Trauma / Trauma general / Wound management"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 131,
       "name": "Full thickness skin graft",
       "categories": [
         "Trauma / Trauma general / Wound management"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 193,
       "name": "Fusion of MCPJ or IPJ (hand)",
       "categories": [
         "Elective / Hand"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 916,
       "name": "Fusion of MCPJ or IPJ (hand)with tension band wire",
       "categories": [
         "Elective / Hand"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 604,
       "name": "GA change of POP",
       "categories": [
         "Elective / Elective site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 622,
       "name": "Galeazzi fracture - MUA",
       "categories": [
         "Trauma / Forearm / Fracture dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 623,
       "name": "Galeazzi fracture - ORIF",
       "categories": [
         "Trauma / Forearm / Fracture dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 282,
       "name": "Ganglion excision (not wrist)",
       "categories": [
         "Elective / Elective site non-specific / Soft tissue procedures"
+      ],
+      "aliases": [
+        "ganglion excision not wrist"
       ]
     },
     {
@@ -2584,6 +3012,11 @@
       "name": "Ganglion excision at wrist",
       "categories": [
         "Elective / Wrist"
+      ],
+      "aliases": [
+        "wrist ganglion excision",
+        "ganglion excision at wrist",
+        "dorsal wrist ganglion excision"
       ]
     },
     {
@@ -2591,20 +3024,26 @@
       "name": "Gastrocnemius lengthening",
       "categories": [
         "Elective / Ankle / Tendon procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 24,
       "name": "Glenoid fracture - ORIF",
       "categories": [
         "Trauma / Shoulder"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 834,
       "name": "Hallux IPJ Arthrodesis",
       "categories": [
         "Elective / Foot"
+      ],
+      "aliases": [
+        "hallux IPJ arthrodesis",
+        "hallux IP fusion"
       ]
     },
     {
@@ -2612,195 +3051,227 @@
       "name": "Hamstring lengthening",
       "categories": [
         "Elective / Femur"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 383,
       "name": "Hand compartment syndrome - decompression",
       "categories": [
         "Trauma / Hand"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 485,
       "name": "Hand high pressure injection injury - Washout / Drainage",
       "categories": [
         "Trauma / Hand / Infection"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 74,
       "name": "Hand Infection (not tendon sheath) - Drainage",
       "categories": [
         "Trauma / Hand / Infection"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 75,
       "name": "Hand Infection (tendon sheath) - Drainage",
       "categories": [
         "Trauma / Hand / Infection"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 495,
       "name": "Hand IPJ fracture / dislocation - external fixator",
       "categories": [
         "Trauma / Hand / IPJ fracture / dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 72,
       "name": "Hand IPJ fracture / dislocation - MUA & percutaneous wires",
       "categories": [
         "Trauma / Hand / IPJ fracture / dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 71,
       "name": "Hand IPJ fracture / dislocation - MUA +/- POP",
       "categories": [
         "Trauma / Hand / IPJ fracture / dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 73,
       "name": "Hand IPJ fracture / dislocation - ORIF",
       "categories": [
         "Trauma / Hand / IPJ fracture / dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 558,
       "name": "Hand operation not listed",
       "categories": [
         "Elective / Hand"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 66,
       "name": "Hand phalangeal fracture - MUA & percutaneous wires",
       "categories": [
         "Trauma / Hand / Phalangeal fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 65,
       "name": "Hand phalangeal fracture - MUA +/- POP",
       "categories": [
         "Trauma / Hand / Phalangeal fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 67,
       "name": "Hand phalangeal fracture - ORIF",
       "categories": [
         "Trauma / Hand / Phalangeal fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 196,
       "name": "Hand tendon - graft",
       "categories": [
         "Elective / Hand / Tendon procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 780,
       "name": "Hand tendon - multiple transfers",
       "categories": [
         "Elective / Hand / Tendon procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 779,
       "name": "Hand tendon - release or lengthening",
       "categories": [
         "Elective / Hand / Tendon procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 198,
       "name": "Hand tendon - tenolysis",
       "categories": [
         "Elective / Hand / Tendon procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 197,
       "name": "Hand tendon - transfer",
       "categories": [
         "Elective / Hand / Tendon procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 799,
       "name": "Harvesting ligament / tendon graft (knee)",
       "categories": [
         "Elective / Knee / Soft tissue reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 316,
       "name": "Hindfoot amputation",
       "categories": [
         "Elective / Amputations"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 311,
       "name": "Hindquarter amputation",
       "categories": [
         "Elective / Amputations"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 572,
       "name": "Hip - adductor tenotomy",
       "categories": [
         "Elective / Hip"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 203,
       "name": "Hip - arthrodesis",
       "categories": [
         "Elective / Hip"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 204,
       "name": "Hip - arthrogram (adult)",
       "categories": [
         "Elective / Hip"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 205,
       "name": "Hip - arthroscopy (diagnostic)",
       "categories": [
         "Elective / Hip"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 206,
       "name": "Hip - arthroscopy (therapeutic)",
       "categories": [
         "Elective / Hip"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 207,
       "name": "Hip - arthrotomy",
       "categories": [
         "Elective / Hip"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 208,
       "name": "Hip - excision arthroplasty",
       "categories": [
         "Elective / Hip"
+      ],
+      "aliases": [
+        "girdlestone",
+        "excision arthroplasty hip",
+        "girdlestone procedure"
       ]
     },
     {
@@ -2808,1077 +3279,1233 @@
       "name": "Hip - Iliopsoas release / lengthening",
       "categories": [
         "Elective / Hip"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 574,
       "name": "Hip - operation not listed",
       "categories": [
         "Elective / Hip"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 923,
       "name": "Hip - Proximal femoral replacement",
       "categories": [
         "Elective / Hip"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 337,
       "name": "Incision and drainage of abscess",
       "categories": [
         "Trauma / Trauma general / Infection"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 722,
       "name": "Incision and drainage of subperiosteal abscess / collection",
       "categories": [
         "Trauma / Trauma general / Infection"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 262,
       "name": "Ingrowing toenail operation (elective procedure)",
       "categories": [
         "Elective / Foot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 643,
       "name": "Injection of bone cyst",
       "categories": [
         "Elective / Elective site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 720,
       "name": "Insertion of Cement spacer (Masquelet)",
       "categories": [
         "Trauma / Trauma general"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 633,
       "name": "Intercunieform arthrodesis",
       "categories": [
         "Elective / Foot / Arthrodesis procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 671,
       "name": "Intra-articular distal humerus fracture - hemiarthroplasty",
       "categories": [
         "Trauma / Elbow / Intraarticular distal humerus fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 670,
       "name": "Intra-articular distal humerus fracture - total elbow arthroplasty",
       "categories": [
         "Trauma / Elbow / Intraarticular distal humerus fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 669,
       "name": "Intra-articular distal humerus fracture / T condylar elbow fracture - ORIF",
       "categories": [
         "Trauma / Elbow / Intraarticular distal humerus fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 97,
       "name": "Intraarticular fracture distal femur - ORIF",
       "categories": [
         "Trauma / Knee"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 692,
       "name": "Intracapsular fracture - bipolar hemiarthroplasty (cemented)",
       "categories": [
         "Trauma / Hip / Intracapsular fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 693,
       "name": "Intracapsular fracture - bipolar hemiarthroplasty (uncemented)",
       "categories": [
         "Trauma / Hip / Intracapsular fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 695,
       "name": "Intracapsular fracture - hemiarthroplasty excluding bipolar (cemented)",
       "categories": [
         "Trauma / Hip / Intracapsular fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 694,
       "name": "Intracapsular fracture - hemiarthroplasty excluding bipolar (uncemented)",
       "categories": [
         "Trauma / Hip / Intracapsular fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 81,
       "name": "Intracapsular fracture - ORIF",
       "categories": [
         "Trauma / Hip / Intracapsular fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 696,
       "name": "Intracapsular fracture - THR cemented",
       "categories": [
         "Trauma / Hip / Intracapsular fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 698,
       "name": "Intracapsular fracture - THR hybrid",
       "categories": [
         "Trauma / Hip / Intracapsular fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 697,
       "name": "Intracapsular fracture - THR uncemented",
       "categories": [
         "Trauma / Hip / Intracapsular fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 890,
       "name": "Irrigation and debridement native joint for infection (arthroscopic) - ankle",
       "categories": [
         "Trauma / Ankle"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 888,
       "name": "Irrigation and debridement native joint for infection (arthroscopic) - knee",
       "categories": [
         "Trauma / Knee"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 892,
       "name": "Irrigation and debridement native joint for infection (arthroscopic) - shoulder",
       "categories": [
         "Trauma / Shoulder"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 894,
       "name": "Irrigation and debridement native joint for infection (arthroscopic) - wrist",
       "categories": [
         "Trauma / Wrist"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 400,
       "name": "Irrigation and debridement native joint for infection - (not shoulder/elbow/wrist/hip/knee/ankle)",
       "categories": [
         "Trauma / Trauma general / Infection"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 388,
       "name": "Irrigation and debridement native joint for infection - hip",
       "categories": [
         "Trauma / Hip"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 896,
       "name": "Irrigation and debridement of native joint for infection (arthroscopic) - elbow",
       "categories": [
         "Trauma / Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 908,
       "name": "Irrigation and debridement of native joint for infection (open) - ankle",
       "categories": [
         "Trauma / Ankle"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 914,
       "name": "Irrigation and debridement of native joint for infection (open) - elbow",
       "categories": [
         "Trauma / Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 906,
       "name": "Irrigation and debridement of native joint for infection (open) - knee",
       "categories": [
         "Trauma / Knee"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 912,
       "name": "Irrigation and debridement of native joint for infection (open) - shoulder",
       "categories": [
         "Trauma / Shoulder"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 910,
       "name": "Irrigation and debridement of native joint for infection (open) - wrist",
       "categories": [
         "Trauma / Wrist"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 909,
       "name": "Irrigation and debridement of prosthesis for infection (open) - ankle",
       "categories": [
         "Trauma / Ankle"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 915,
       "name": "Irrigation and debridement of prosthesis for infection (open) - elbow",
       "categories": [
         "Trauma / Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 907,
       "name": "Irrigation and debridement of prosthesis for infection (open) - knee",
       "categories": [
         "Trauma / Knee"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 913,
       "name": "Irrigation and debridement of prosthesis for infection (open) - shoulder",
       "categories": [
         "Trauma / Shoulder"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 911,
       "name": "Irrigation and debridement of prosthesis for infection (open) - wrist",
       "categories": [
         "Trauma / Wrist"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 897,
       "name": "Irrigation and debridement of prosthetic joint for infection (arthroscopic) - elbow",
       "categories": [
         "Trauma / Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 889,
       "name": "Irrigation and debridement prosthesis for infection (arthroscopic) - knee",
       "categories": [
         "Trauma / Knee"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 399,
       "name": "Irrigation and debridement prosthesis for infection - (not shoulder/elbow/wrist/hip/knee/ankle)",
       "categories": [
         "Trauma / Trauma general / Infection"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 387,
       "name": "Irrigation and debridement prosthesis for infection - hip",
       "categories": [
         "Trauma / Hip"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 891,
       "name": "Irrigation and debridement prosthetic joint for infection (arthroscopic) - ankle",
       "categories": [
         "Trauma / Ankle"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 893,
       "name": "Irrigation and debridement prosthetic joint for infection (arthroscopic) - shoulder",
       "categories": [
         "Trauma / Shoulder"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 895,
       "name": "Irrigation and debridement prosthetic joint for infection (arthroscopic) - wrist",
       "categories": [
         "Trauma / Wrist"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 839,
       "name": "Jones procedure - hallux IPJ arthrodesis and EHL transfer",
       "categories": [
         "Elective / Foot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 795,
       "name": "Knee - arthrodesis",
       "categories": [
         "Elective / Knee"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 95,
       "name": "Knee - arthroscopy for acute haemarthrosis",
       "categories": [
         "Trauma / Knee"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 420,
       "name": "Knee - autologous chondrocyte implantation",
       "categories": [
         "Elective / Knee / Cartilage regeneration procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 234,
       "name": "Knee - distal femoral osteotomy",
       "categories": [
         "Elective / Knee"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 805,
       "name": "Knee - exploration common peroneal nerve",
       "categories": [
         "Elective / Knee"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 808,
       "name": "Knee - meniscal allograft transplant",
       "categories": [
         "Elective / Knee / Cartilage regeneration procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 807,
       "name": "Knee - meniscal replacement",
       "categories": [
         "Elective / Knee / Cartilage regeneration procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 421,
       "name": "Knee - mosaicplasty",
       "categories": [
         "Elective / Knee / Cartilage regeneration procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 584,
       "name": "Knee - MUA",
       "categories": [
         "Elective / Knee"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 237,
       "name": "Knee - open arthrolysis",
       "categories": [
         "Elective / Knee"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 806,
       "name": "Knee - open microfracture + / application collagen matrix",
       "categories": [
         "Elective / Knee / Cartilage regeneration procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 588,
       "name": "Knee - open operation not listed",
       "categories": [
         "Elective / Knee"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 794,
       "name": "Knee - open synovectomy",
       "categories": [
         "Elective / Knee"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 419,
       "name": "Knee - osteochondral allografting",
       "categories": [
         "Elective / Knee / Cartilage regeneration procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 586,
       "name": "Knee - patella tendon decompression (open / arthroscopic)",
       "categories": [
         "Elective / Knee"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 235,
       "name": "Knee - proximal tibial osteotomy",
       "categories": [
         "Elective / Knee"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 105,
       "name": "Knee MUA +/- POP",
       "categories": [
         "Trauma / Knee"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 540,
       "name": "Latarjet / Bristow Helfet procedure",
       "categories": [
         "Elective / Shoulder"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 672,
       "name": "Lateral condyle elbow fracture - MUA",
       "categories": [
         "Trauma / Elbow / Lateral condyle fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 674,
       "name": "Lateral condyle elbow fracture - ORIF",
       "categories": [
         "Trauma / Elbow / Lateral condyle fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 673,
       "name": "Lateral condyle elbow fracture - percutaneous wires",
       "categories": [
         "Trauma / Elbow / Lateral condyle fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 678,
       "name": "Lateral epicondyle elbow fracture - MUA",
       "categories": [
         "Trauma / Elbow / Lateral epicondyle fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 680,
       "name": "Lateral epicondyle elbow fracture - ORIF",
       "categories": [
         "Trauma / Elbow / Lateral epicondyle fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 679,
       "name": "Lateral epicondyle elbow fracture - percutaneous wires",
       "categories": [
         "Trauma / Elbow / Lateral epicondyle fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 769,
       "name": "Lengthening radius / ulna with frame",
       "categories": [
         "Elective / Wrist"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 768,
       "name": "Lengthening radius / ulna without frame",
       "categories": [
         "Elective / Wrist"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 838,
       "name": "Lesser metatarsal osteotomy - basal",
       "categories": [
         "Elective / Foot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 837,
       "name": "Lesser metatarsal osteotomy - distal",
       "categories": [
         "Elective / Foot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 265,
       "name": "Lesser toe excision part/all phalanx",
       "categories": [
         "Elective / Foot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 264,
       "name": "Lesser toe interphalangeal joint arthrodesis (foot)",
       "categories": [
         "Elective / Foot / Arthrodesis procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 266,
       "name": "Lesser toe tenotomy",
       "categories": [
         "Elective / Foot / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 541,
       "name": "Levator Scapulae Transfer for Trapezius Palsy",
       "categories": [
         "Elective / Shoulder / Shoulder girdle procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 79,
       "name": "Ligament repair hand (excluding thumb MCPJ ulnar collateral ligament)",
       "categories": [
         "Trauma / Hand / Ligament repair"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 961,
       "name": "Liner exchange for Unicompartmental knee replacement",
       "categories": [
         "Elective / Knee / Revision Knee Arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 283,
       "name": "Lipoma excision",
       "categories": [
         "Elective / Elective site non-specific / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 503,
       "name": "Lisfranc fracture - ORIF",
       "categories": [
         "Trauma / Foot / Midfoot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 504,
       "name": "Lisfranc fracture - Tarsometatarsal arthrodesis",
       "categories": [
         "Trauma / Foot / Midfoot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 856,
       "name": "Long bone lengthening with IM nail",
       "categories": [
         "Elective / Limb reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 534,
       "name": "Lumbar spine - ALIF",
       "categories": [
         "Elective / Lumbar spine / Fixation and fusion procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 968,
       "name": "Lumbar spine - ALIF with Posterior Instrumentation",
       "categories": [
         "Elective / Lumbar spine / Fixation and fusion procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 751,
       "name": "Lumbar spine - anterior column reconstruction (NOT trauma)",
       "categories": [
         "Elective / Lumbar spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 445,
       "name": "Lumbar spine - anterior column reconstruction for trauma",
       "categories": [
         "Trauma / Lumbar spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 10,
       "name": "Lumbar spine - anterior decompression for trauma",
       "categories": [
         "Trauma / Lumbar spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 761,
       "name": "Lumbar spine - balloon kyphoplasty",
       "categories": [
         "Elective / Lumbar spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 154,
       "name": "Lumbar spine - decompression with fusion +/- fixation",
       "categories": [
         "Elective / Lumbar spine / Fixation and fusion procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 153,
       "name": "Lumbar spine - decompression without fusion (not discectomy alone)",
       "categories": [
         "Elective / Lumbar spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 531,
       "name": "Lumbar spine - disc replacement",
       "categories": [
         "Elective / Lumbar spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 755,
       "name": "Lumbar spine - discectomy (MIS / tubular / endoscopic)",
       "categories": [
         "Elective / Lumbar spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 152,
       "name": "Lumbar spine - discectomy open / micro",
       "categories": [
         "Elective / Lumbar spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 754,
       "name": "Lumbar spine - drainage and decompression of epidural abscess",
       "categories": [
         "Elective / Lumbar spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 753,
       "name": "Lumbar spine - insertion of interspinous spacer",
       "categories": [
         "Elective / Lumbar spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 764,
       "name": "Lumbar spine - lateral approach Interbody fusion (XLIF / DLIF etc) - MIS",
       "categories": [
         "Elective / Lumbar spine / Fixation and fusion procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 969,
       "name": "Lumbar spine - OLIF with Posterior Instrumentation",
       "categories": [
         "Elective / Lumbar spine / Fixation and fusion procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 535,
       "name": "Lumbar spine - operation not listed",
       "categories": [
         "Elective / Lumbar spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 935,
       "name": "Lumbar spine - osteotomy",
       "categories": [
         "Elective / Lumbar spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 533,
       "name": "Lumbar spine - PLIF",
       "categories": [
         "Elective / Lumbar spine / Fixation and fusion procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 752,
       "name": "Lumbar spine - posterior column reconstruction (NOT trauma)",
       "categories": [
         "Elective / Lumbar spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 442,
       "name": "Lumbar spine - posterior column reconstruction for trauma",
       "categories": [
         "Trauma / Lumbar spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 9,
       "name": "Lumbar spine - posterior decompression for trauma",
       "categories": [
         "Trauma / Lumbar spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 762,
       "name": "Lumbar spine - posterolateral fusion without decompression +/- instrumentation",
       "categories": [
         "Elective / Lumbar spine / Fixation and fusion procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 765,
       "name": "Lumbar spine - removal of metalware",
       "categories": [
         "Elective / Lumbar spine / Fixation and fusion procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 529,
       "name": "Lumbar spine - revision discectomy",
       "categories": [
         "Elective / Lumbar spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 756,
       "name": "Lumbar spine - selective dorsal Rhizotomy (open durotomy)",
       "categories": [
         "Elective / Lumbar spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 760,
       "name": "Lumbar spine - spondylolisthesis circumferential fusion (anterior and posterior approaches) +/- vertebrectomy",
       "categories": [
         "Elective / Lumbar spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 759,
       "name": "Lumbar spine - spondylolisthesis fusion +/- reduction +/- instrumentation",
       "categories": [
         "Elective / Lumbar spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 758,
       "name": "Lumbar spine - spondylosis repair",
       "categories": [
         "Elective / Lumbar spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 532,
       "name": "Lumbar spine - TLIF",
       "categories": [
         "Elective / Lumbar spine / Fixation and fusion procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 757,
       "name": "Lumbar spine - vertebrectomy",
       "categories": [
         "Elective / Lumbar spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 431,
       "name": "Lumbar spine - vertebroplasty",
       "categories": [
         "Elective / Lumbar spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 284,
       "name": "Malignant tumour excision",
       "categories": [
         "Elective / Elective site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 733,
       "name": "Management of malunion or other deformity long bone - application of circular frame",
       "categories": [
         "Trauma / Trauma general / Management of non union"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 732,
       "name": "Management of malunion or other deformity long bone - ORIF",
       "categories": [
         "Trauma / Trauma general / Management of non union"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 735,
       "name": "Management of non union long bone - application of circular frame",
       "categories": [
         "Trauma / Trauma general / Management of non union"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 736,
       "name": "Management of non union long bone - intramedullary nailing",
       "categories": [
         "Trauma / Trauma general / Management of non union"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 734,
       "name": "Management of non union long bone - ORIF",
       "categories": [
         "Trauma / Trauma general / Management of non union"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 494,
       "name": "MCPJ fracture / dislocation - external fixator",
       "categories": [
         "Trauma / Hand / MCPJ fracture / dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 69,
       "name": "MCPJ fracture / dislocation - MUA & percutaneous wires",
       "categories": [
         "Trauma / Hand / MCPJ fracture / dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 68,
       "name": "MCPJ fracture / dislocation - MUA +/- POP",
       "categories": [
         "Trauma / Hand / MCPJ fracture / dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 70,
       "name": "MCPJ fracture / dislocation - ORIF",
       "categories": [
         "Trauma / Hand / MCPJ fracture / dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 194,
       "name": "MCPJ replacement",
       "categories": [
         "Elective / Hand"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 675,
       "name": "Medial condyle elbow fracture - MUA",
       "categories": [
         "Trauma / Elbow / Medial condyle fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 677,
       "name": "Medial condyle elbow fracture - ORIF",
       "categories": [
         "Trauma / Elbow / Medial condyle fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 676,
       "name": "Medial condyle elbow fracture - percutaneous wires",
       "categories": [
         "Trauma / Elbow / Medial condyle fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 681,
       "name": "Medial epicondyle elbow fracture - MUA",
       "categories": [
         "Trauma / Elbow / Medial epicondyle fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 683,
       "name": "Medial epicondyle elbow fracture - ORIF",
       "categories": [
         "Trauma / Elbow / Medial epicondyle fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 682,
       "name": "Medial epicondyle elbow fracture - percutaneous wires",
       "categories": [
         "Trauma / Elbow / Medial epicondyle fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 392,
       "name": "Meniscal repair (arthroscopic)",
       "categories": [
         "Trauma / Knee / Soft tissue repair"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 391,
       "name": "Meniscal repair (open)",
       "categories": [
         "Trauma / Knee / Soft tissue repair"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 492,
       "name": "Metacarpal fracture (not 1st or 5th) - external fixation",
       "categories": [
         "Trauma / Hand / Metacarpal fracture (not 1st or 5th)"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 63,
       "name": "Metacarpal fracture (not 1st or 5th) - MUA & percutaneous wires",
       "categories": [
         "Trauma / Hand / Metacarpal fracture (not 1st or 5th)"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 62,
       "name": "Metacarpal fracture (not 1st or 5th) - MUA +/- POP",
       "categories": [
         "Trauma / Hand / Metacarpal fracture (not 1st or 5th)"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 64,
       "name": "Metacarpal fracture (not 1st or 5th) - ORIF",
       "categories": [
         "Trauma / Hand / Metacarpal fracture (not 1st or 5th)"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 705,
       "name": "Metatarsal fracture - ORIF",
       "categories": [
         "Trauma / Foot / Forefoot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 317,
       "name": "Midfoot amputation",
       "categories": [
         "Elective / Amputations"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 298,
       "name": "Midtarsal fracture / dislocation - ORIF",
       "categories": [
         "Trauma / Foot / Midfoot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 850,
       "name": "Minimally invasive 1st metatarsal osteotomy",
       "categories": [
         "Elective / Foot / Minimally invasive surgery"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 848,
       "name": "Minimally invasive 1st MTPJ cheilectomy",
       "categories": [
         "Elective / Foot / Minimally invasive surgery"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 849,
       "name": "Minimally invasive Akin osteotomy",
       "categories": [
         "Elective / Foot / Minimally invasive surgery"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 847,
       "name": "Minimally invasive calcaneal osteotomy",
       "categories": [
         "Elective / Foot / Minimally invasive surgery"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 851,
       "name": "Minimally invasive lesser metatarsal osteotomy",
       "categories": [
         "Elective / Foot / Minimally invasive surgery"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 620,
       "name": "Monteggia fracture - MUA",
       "categories": [
         "Trauma / Forearm / Fracture dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 621,
       "name": "Monteggia fracture - ORIF",
       "categories": [
         "Trauma / Forearm / Fracture dislocation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 819,
       "name": "MPFL Reconstruction (knee)",
       "categories": [
         "Elective / Knee / Patellofemoral Instability"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 601,
       "name": "MTPJ arthrodesis, excluding 1st",
       "categories": [
         "Elective / Foot / Arthrodesis procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 631,
       "name": "MTPJ cheilectomy - not 1st",
       "categories": [
         "Elective / Foot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 285,
       "name": "MUA joint (not listed elsewhere)",
       "categories": [
         "Elective / Elective site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 804,
       "name": "Multi Ligament knee repair and / or reconstruction for dislocation",
       "categories": [
         "Elective / Knee / Soft tissue reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 687,
       "name": "Multiple flexor tendon repair hand",
       "categories": [
         "Trauma / Hand / Tendon repair"
+      ],
+      "aliases": [
+        "multiple flexor tendon repair"
       ]
     },
     {
@@ -3886,90 +4513,107 @@
       "name": "Muscle biopsy",
       "categories": [
         "Elective / Elective site non-specific / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 134,
       "name": "Muscle flap",
       "categories": [
         "Trauma / Trauma general / Wound management"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 384,
       "name": "Nail bed repair",
       "categories": [
         "Trauma / Hand / Finger tip reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 632,
       "name": "Naviculocunieform arthrodesis",
       "categories": [
         "Elective / Foot / Arthrodesis procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 287,
       "name": "Nerve decompression / neurolysis (not listed elsewhere)",
       "categories": [
         "Elective / Elective site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 474,
       "name": "Nerve repair +/- graft hand / digit",
       "categories": [
         "Trauma / Hand / Neurovascular injuries"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 468,
       "name": "Nerve repair - wrist",
       "categories": [
         "Trauma / Wrist / Neurovascular Injury"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 136,
       "name": "Nerve repair not hand / wrist / digit",
       "categories": [
         "Trauma / Trauma general / Neurovascular injuries"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 140,
       "name": "Nerve root / facet joint injection - cervical spine",
       "categories": [
         "Elective / Elective site non-specific / Spinal Investigations / Injections"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 155,
       "name": "Nerve root injection - lumbar spine",
       "categories": [
         "Elective / Elective site non-specific / Spinal Investigations / Injections"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 29,
       "name": "Non-union ORIF +/- bone grafting",
       "categories": [
         "Trauma / Humerus / Fracture diaphysis humerus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 368,
       "name": "OK procedure (Elbow)",
       "categories": [
         "Elective / Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 684,
       "name": "Olecranon fracture - ORIF",
       "categories": [
         "Trauma / Elbow / Olecranon fracture"
+      ],
+      "aliases": [
+        "olecranon ORIF",
+        "olecranon fixation",
+        "ORIF olecranon"
       ]
     },
     {
@@ -3977,6 +4621,10 @@
       "name": "Olecranon fracture - tension band wiring",
       "categories": [
         "Trauma / Elbow / Olecranon fracture"
+      ],
+      "aliases": [
+        "olecranon tension band wiring",
+        "olecranon tension band"
       ]
     },
     {
@@ -3984,20 +4632,25 @@
       "name": "Open / arthroscopic posterior repair for instability including capsular shift",
       "categories": [
         "Elective / Shoulder / Open shoulder procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 160,
       "name": "Open anterior repair for instability including capsular shift",
       "categories": [
         "Elective / Shoulder / Open shoulder procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 408,
       "name": "Open anterior rotator cuff repair +/- acromioplasty",
       "categories": [
         "Elective / Shoulder / Open shoulder procedures"
+      ],
+      "aliases": [
+        "open rotator cuff repair"
       ]
     },
     {
@@ -4005,405 +4658,466 @@
       "name": "Open meniscal repair (Elective)",
       "categories": [
         "Elective / Knee / Soft tissue reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 927,
       "name": "Open SLAP repair (shoulder)",
       "categories": [
         "Elective / Shoulder / Open shoulder procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 367,
       "name": "Open tenodesis of proximal biceps tendon",
       "categories": [
         "Elective / Shoulder / Open shoulder procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 729,
       "name": "Osteochondral fragment (knee) - arthroscopic repair",
       "categories": [
         "Trauma / Knee / Osteochondral fragment knee"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 728,
       "name": "Osteochondral fragment (knee) - ORIF",
       "categories": [
         "Trauma / Knee / Osteochondral fragment knee"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 726,
       "name": "Osteochondral fragment (not knee or ankle) - arthroscopic repair",
       "categories": [
         "Trauma / Trauma general / Osteochondral fragment"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 727,
       "name": "Osteochondral fragment (not knee or ankle) - ORIF",
       "categories": [
         "Trauma / Trauma general / Osteochondral fragment"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 607,
       "name": "Osteomyelitis excision including sequestrectomy",
       "categories": [
         "Elective / Elective site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 288,
       "name": "Osteotomy (not listed elsewhere)",
       "categories": [
         "Elective / Elective site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 857,
       "name": "Osteotomy distal femur plus frame",
       "categories": [
         "Elective / Limb reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 858,
       "name": "Osteotomy proximal tibia plus frame",
       "categories": [
         "Elective / Limb reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 295,
       "name": "Other Amputation",
       "categories": [
         "Elective / Amputations"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 822,
       "name": "Other soft tissue patella realignment / release (knee)",
       "categories": [
         "Elective / Knee / Patellofemoral Instability"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 870,
       "name": "Paediatric - amputation / excision of accessory digit",
       "categories": [
         "Elective / Paediatrics / Upper limb"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 869,
       "name": "Paediatric - Arthroscopic treatment of osteochondral lesion / defect",
       "categories": [
         "Elective / Paediatrics / Site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 871,
       "name": "Paediatric - clavicle pseudoarthrosis ORIF",
       "categories": [
         "Elective / Paediatrics / Upper limb"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 634,
       "name": "Paediatric - Excision of physeal bar (Langenskjold procedure)",
       "categories": [
         "Elective / Paediatrics / Site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 939,
       "name": "Paediatric - Femoral lengthening intrameduallary device",
       "categories": [
         "Elective / Paediatrics / Lower limb"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 873,
       "name": "Paediatric - Frame / distraction lengthening humerus",
       "categories": [
         "Elective / Paediatrics / Upper limb"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 872,
       "name": "Paediatric - Frame / distraction lengthening radius / ulna",
       "categories": [
         "Elective / Paediatrics / Upper limb"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 879,
       "name": "Paediatric - Hip arthrogram",
       "categories": [
         "Elective / Paediatrics / Lower limb"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 878,
       "name": "Paediatric - Hip spica application",
       "categories": [
         "Elective / Paediatrics / Lower limb"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 868,
       "name": "Paediatric - Temporary hemi/epiphysiodesis",
       "categories": [
         "Elective / Paediatrics / Site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 940,
       "name": "Paediatric Cerebral Palsy - Adductor Tenotomy",
       "categories": [
         "Elective / Paediatrics / Cerebral Palsy"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 883,
       "name": "Paediatric Cerebral Palsy - Distal femoral extension osteotomy",
       "categories": [
         "Elective / Paediatrics / Cerebral Palsy"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 942,
       "name": "Paediatric Cerebral Palsy - Hamstring lengthening",
       "categories": [
         "Elective / Paediatrics / Cerebral Palsy"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 886,
       "name": "Paediatric Cerebral Palsy - Hand surgery for Cerebral Palsy (bony)",
       "categories": [
         "Elective / Paediatrics / Cerebral Palsy"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 943,
       "name": "Paediatric Cerebral Palsy - Iliopsoas release / lengthening",
       "categories": [
         "Elective / Paediatrics / Cerebral Palsy"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 947,
       "name": "Paediatric Cerebral Palsy - MTPJ arthrodesis, excluding 1st",
       "categories": [
         "Elective / Paediatrics / Cerebral Palsy"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 882,
       "name": "Paediatric Cerebral Palsy - Patellar advancement",
       "categories": [
         "Elective / Paediatrics / Cerebral Palsy"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 881,
       "name": "Paediatric Cerebral Palsy - selective dorsal rhizotomy (SDR)",
       "categories": [
         "Elective / Paediatrics / Cerebral Palsy"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 616,
       "name": "Paediatric Cerebral Palsy - Steindler's release",
       "categories": [
         "Elective / Paediatrics / Cerebral Palsy"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 944,
       "name": "Paediatric Cerebral Palsy - Tendoachilles lengthening",
       "categories": [
         "Elective / Paediatrics / Cerebral Palsy"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 945,
       "name": "Paediatric Cerebral Palsy - Tendon transfer foot",
       "categories": [
         "Elective / Paediatrics / Cerebral Palsy"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 946,
       "name": "Paediatric Cerebral Palsy - Tendon transfer not hand / foot",
       "categories": [
         "Elective / Paediatrics / Cerebral Palsy"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 885,
       "name": "Paediatric Cerebral Palsy - Tendon transfer upper limb (not wrist / hand)",
       "categories": [
         "Elective / Paediatrics / Cerebral Palsy"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 884,
       "name": "Paediatric Cerebral Palsy - Tendon transfer wrist",
       "categories": [
         "Elective / Paediatrics / Cerebral Palsy"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 876,
       "name": "Paediatric elbow - Lateral condylar fracture MUA +/- percutaneous wires",
       "categories": [
         "Trauma / Elbow / Paediatric Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 901,
       "name": "Paediatric elbow - Lateral condylar fracture ORIF",
       "categories": [
         "Trauma / Elbow / Paediatric Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 877,
       "name": "Paediatric elbow - Lateral epicondyle fracture MUA +/- percutaneous wires",
       "categories": [
         "Trauma / Elbow / Paediatric Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 902,
       "name": "Paediatric elbow - Lateral epicondyle fracture ORIF",
       "categories": [
         "Trauma / Elbow / Paediatric Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 874,
       "name": "Paediatric elbow - Medial condylar fracture MUA +/- percutaneous wires",
       "categories": [
         "Trauma / Elbow / Paediatric Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 903,
       "name": "Paediatric elbow - Medial condylar fracture ORIF",
       "categories": [
         "Trauma / Elbow / Paediatric Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 875,
       "name": "Paediatric elbow - Medial epicondyle fracture MUA +/- percutaneous wires",
       "categories": [
         "Trauma / Elbow / Paediatric Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 904,
       "name": "Paediatric elbow - Medial epicondyle fracture ORIF",
       "categories": [
         "Trauma / Elbow / Paediatric Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 950,
       "name": "Paediatric long bone fracture - Elastic / Flexible nailing (TENS)",
       "categories": [
         "Trauma / Paediatric / Long bone fracture in children"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 951,
       "name": "Paediatric long bone fracture - plate fixation / ORIF",
       "categories": [
         "Trauma / Paediatric / Long bone fracture in children"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 429,
       "name": "Paediatric Scoliosis correction - Anterior release + posterior fusion and instrumentation",
       "categories": [
         "Elective / Paediatrics / Scoliosis correction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 148,
       "name": "Paediatric Scoliosis correction - anterior release +/- anterior fusion and instrumentation",
       "categories": [
         "Elective / Paediatrics / Scoliosis correction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 428,
       "name": "Paediatric Scoliosis correction - Insertion of growing rods",
       "categories": [
         "Elective / Paediatrics / Scoliosis correction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 430,
       "name": "Paediatric Scoliosis correction - Lengthening of growing rods",
       "categories": [
         "Elective / Paediatrics / Scoliosis correction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 149,
       "name": "Paediatric Scoliosis correction - posterior fusion +/- instrumentation",
       "categories": [
         "Elective / Paediatrics / Scoliosis correction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 952,
       "name": "Paediatric supracondylar humeral fracture - application of traction",
       "categories": [
         "Trauma / Paediatric / Supracondylar distal humerus fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 953,
       "name": "Paediatric supracondylar humeral fracture - MUA +/- percutaneous (including mini open) wires",
       "categories": [
         "Trauma / Paediatric / Supracondylar distal humerus fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 954,
       "name": "Paediatric supracondylar humeral fracture - ORIF",
       "categories": [
         "Trauma / Paediatric / Supracondylar distal humerus fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 580,
       "name": "Pantalar arthrodesis",
       "categories": [
         "Elective / Ankle"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 99,
       "name": "Patella dislocation - closed reduction +/- open repair MPFL",
       "categories": [
         "Trauma / Knee / Patella fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 98,
       "name": "Patella fracture - ORIF (not tension band wire)",
       "categories": [
         "Trauma / Knee / Patella fracture"
+      ],
+      "aliases": [
+        "patella fracture ORIF",
+        "patella ORIF"
       ]
     },
     {
@@ -4411,6 +5125,10 @@
       "name": "Patella fracture - tension band wire",
       "categories": [
         "Trauma / Knee / Patella fracture"
+      ],
+      "aliases": [
+        "patella tension band wiring",
+        "patella tension band"
       ]
     },
     {
@@ -4418,13 +5136,18 @@
       "name": "Patella resurfacing of existing knee replacement",
       "categories": [
         "Elective / Knee / Knee arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 103,
       "name": "Patella tendon repair",
       "categories": [
         "Trauma / Knee / Soft tissue repair"
+      ],
+      "aliases": [
+        "patella tendon repair",
+        "patellar tendon repair"
       ]
     },
     {
@@ -4432,188 +5155,218 @@
       "name": "Patellectomy",
       "categories": [
         "Trauma / Knee / Patella fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 418,
       "name": "Patello-femoral joint replacement",
       "categories": [
         "Elective / Knee / Knee arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 416,
       "name": "PCL reconstruction",
       "categories": [
         "Elective / Knee / Soft tissue reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 651,
       "name": "Pectoralis Major tear - open repair",
       "categories": [
         "Trauma / Shoulder"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 133,
       "name": "Pedicle flap",
       "categories": [
         "Trauma / Trauma general / Wound management"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 11,
       "name": "Pelvic fracture - application of external fixator",
       "categories": [
         "Trauma / Pelvis / Pelvic fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 663,
       "name": "Pelvic fracture - infix",
       "categories": [
         "Trauma / Pelvis / Pelvic fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 12,
       "name": "Pelvic fracture - ORIF",
       "categories": [
         "Trauma / Pelvis / Pelvic fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 212,
       "name": "Pelvic osteotomy - not for DDH",
       "categories": [
         "Elective / Pelvis"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 403,
       "name": "Periprosthetic fracture (other than hip, knee or shoulder) - ORIF",
       "categories": [
         "Trauma / Trauma general"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 385,
       "name": "Periprosthetic fracture of hip - ORIF",
       "categories": [
         "Trauma / Hip / Periprosthetic fracture of hip"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 924,
       "name": "Periprosthetic fracture of hip - Proximal femoral replacement",
       "categories": [
         "Trauma / Hip / Periprosthetic fracture of hip"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 386,
       "name": "Periprosthetic fracture of hip - Revision THR",
       "categories": [
         "Trauma / Hip / Periprosthetic fracture of hip"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 395,
       "name": "Periprosthetic fracture of knee - ORIF",
       "categories": [
         "Trauma / Knee / Periprosthetic fracture of knee"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 396,
       "name": "Periprosthetic fracture of knee - Revision TKR (including distal femoral replacement)",
       "categories": [
         "Trauma / Knee / Periprosthetic fracture of knee"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 557,
       "name": "PIPJ replacement - hand (other)",
       "categories": [
         "Elective / Hand"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 556,
       "name": "PIPJ replacement - hand (silastic)",
       "categories": [
         "Elective / Hand"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 594,
       "name": "Plantar fascia release",
       "categories": [
         "Elective / Foot / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 841,
       "name": "Plantar plate repair",
       "categories": [
         "Elective / Foot / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 22,
       "name": "Posterior dislocation shoulder - closed reduction",
       "categories": [
         "Trauma / Shoulder / Posterior dislocation shoulder"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 23,
       "name": "Posterior dislocation shoulder - open reduction +/- fixation",
       "categories": [
         "Trauma / Shoulder / Posterior dislocation shoulder"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 833,
       "name": "Posterior hindfoot arthroscopy - debridement Achilles insertion / retrocalcaneal bursa / Haglunds",
       "categories": [
         "Elective / Ankle / Arthroscopic procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 245,
       "name": "Primary ankle arthroplasty",
       "categories": [
         "Elective / Ankle / Arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 411,
       "name": "Proximal row carpectomy",
       "categories": [
         "Elective / Wrist"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 817,
       "name": "Proximal tibial replacement",
       "categories": [
         "Elective / Knee / Knee arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 665,
       "name": "Pubic ramus non union - ORIF",
       "categories": [
         "Trauma / Pelvis / Pelvic fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 104,
       "name": "Quadriceps tendon repair",
       "categories": [
         "Trauma / Knee / Soft tissue repair"
+      ],
+      "aliases": [
+        "quadriceps tendon repair",
+        "quads tendon repair"
       ]
     },
     {
@@ -4621,244 +5374,282 @@
       "name": "Radial head / neck fracture - MUA +/- K wire",
       "categories": [
         "Trauma / Elbow / Radial head / neck fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 37,
       "name": "Radial head / neck fracture - ORIF",
       "categories": [
         "Trauma / Elbow / Radial head / neck fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 451,
       "name": "Radial head excision",
       "categories": [
         "Trauma / Elbow / Radial head / neck fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 176,
       "name": "Radial head replacement",
       "categories": [
         "Elective / Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 38,
       "name": "Radial head replacement for fracture",
       "categories": [
         "Trauma / Elbow / Radial head / neck fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 553,
       "name": "Radial shortening",
       "categories": [
         "Elective / Wrist"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 410,
       "name": "Radio-Carpal (Total Wrist) Arthroplasty",
       "categories": [
         "Elective / Wrist / Wrist Arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 863,
       "name": "Radiofrequency ablation for osteoid osteoma",
       "categories": [
         "Elective / Elective site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 625,
       "name": "Reconstruction of avulsed proximal hamstrings",
       "categories": [
         "Trauma / Femur"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 792,
       "name": "Reduction procedure for macrodactyly (hand)",
       "categories": [
         "Elective / Hand / Congenital hand operation"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 289,
       "name": "Release contracture joint",
       "categories": [
         "Elective / Elective site non-specific / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 126,
       "name": "Removal external fixator or frame",
       "categories": [
         "Trauma / Trauma general / Metalware and frames"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 127,
       "name": "Removal foreign body from skin / subcutaneous tissue",
       "categories": [
         "Trauma / Trauma general"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 125,
       "name": "Removal metal",
       "categories": [
         "Trauma / Trauma general / Metalware and frames"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 290,
       "name": "Removal metal (elective procedure)",
       "categories": [
         "Trauma / Trauma general / Metalware and frames"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 715,
       "name": "Removal of external fixator or frame and assessment of fracture",
       "categories": [
         "Trauma / Trauma general / Metalware and frames"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 124,
       "name": "Removal skeletal traction",
       "categories": [
         "Trauma / Trauma general / Metalware and frames"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 438,
       "name": "Repair +/- nerve grafting brachial plexus",
       "categories": [
         "Trauma / Brachial plexus"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 802,
       "name": "Repair and / or reconstruction MCL (knee)",
       "categories": [
         "Elective / Knee / Soft tissue reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 800,
       "name": "Repair and / or reconstruction patella tendon rupture",
       "categories": [
         "Elective / Knee / Soft tissue reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 798,
       "name": "Repair and / or reconstruction Posterolateral corner (including LCL)",
       "categories": [
         "Elective / Knee / Soft tissue reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 801,
       "name": "Repair and / or reconstruction quads tendon rupture",
       "categories": [
         "Elective / Knee / Soft tissue reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 377,
       "name": "Repair of avulsed triceps tendon",
       "categories": [
         "Trauma / Elbow / Tendon repairs"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 499,
       "name": "Repair of avulsion of tibial eminence (child)",
       "categories": [
         "Trauma / Knee / Tibial plateau fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 378,
       "name": "Repair of distal biceps tendon rupture",
       "categories": [
         "Trauma / Elbow / Tendon repairs"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 426,
       "name": "Repair of fascial defect / muscle hernia",
       "categories": [
         "Elective / Elective site non-specific / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 500,
       "name": "Repair of tibial spine",
       "categories": [
         "Trauma / Knee / Tibial plateau fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 550,
       "name": "Repair TFCC - arthroscopic",
       "categories": [
         "Elective / Wrist / TFCC"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 551,
       "name": "Repair TFCC - open",
       "categories": [
         "Elective / Wrist / TFCC"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 478,
       "name": "Replantation finger",
       "categories": [
         "Trauma / Hand"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 472,
       "name": "Replantation of hand",
       "categories": [
         "Trauma / Hand"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 818,
       "name": "Resurfacing procedure of one side of joint e.g. hemicap",
       "categories": [
         "Elective / Knee / Knee arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 477,
       "name": "Revascularisation finger",
       "categories": [
         "Trauma / Hand / Neurovascular injuries"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 471,
       "name": "Revascularisation of hand",
       "categories": [
         "Trauma / Hand / Neurovascular injuries"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 589,
       "name": "Revision ACL reconstruction",
       "categories": [
         "Elective / Knee / Soft tissue reconstruction"
+      ],
+      "aliases": [
+        "revision ACL reconstruction",
+        "revision ACL"
       ]
     },
     {
@@ -4866,34 +5657,41 @@
       "name": "Revision ankle arthroplasty - all components",
       "categories": [
         "Elective / Ankle / Arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 828,
       "name": "Revision ankle arthroplasty - change of liner",
       "categories": [
         "Elective / Ankle / Arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 827,
       "name": "Revision ankle arthroplasty - talar component",
       "categories": [
         "Elective / Ankle / Arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 826,
       "name": "Revision ankle arthroplasty - tibial component",
       "categories": [
         "Elective / Ankle / Arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 771,
       "name": "Revision carpal tunnel decompression",
       "categories": [
         "Elective / Wrist"
+      ],
+      "aliases": [
+        "revision carpal tunnel"
       ]
     },
     {
@@ -4901,118 +5699,139 @@
       "name": "Revision of frame",
       "categories": [
         "Trauma / Trauma general / Metalware and frames"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 932,
       "name": "Revision of frame (elective procedure)",
       "categories": [
         "Elective / Limb reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 960,
       "name": "Revision of Unicompartmental knee replacement",
       "categories": [
         "Elective / Knee / Revision Knee Arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 655,
       "name": "Revision shoulder Arthroplasty for glenoid component loosening +/- bone graft",
       "categories": [
         "Elective / Shoulder / Revision Shoulder Arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 654,
       "name": "Revision shoulder Arthroplasty for Peri-Prosthetic fracture",
       "categories": [
         "Elective / Shoulder / Revision Shoulder Arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 725,
       "name": "Rib fracture fixation",
       "categories": [
         "Trauma / Trauma general"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 444,
       "name": "Sacral fracture - ORIF",
       "categories": [
         "Trauma / Pelvis / Pelvic fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 666,
       "name": "Sacral fracture non-union - ORIF",
       "categories": [
         "Trauma / Pelvis / Pelvic fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 537,
       "name": "Sacrococcygeal joint MUA +/- injection",
       "categories": [
         "Elective / Pelvis"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 443,
       "name": "Sacroiliac joint - percutaneous screw fixation",
       "categories": [
         "Trauma / Pelvis / Pelvic fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 766,
       "name": "Sacroiliac Joint Fusion +/- instrumentation",
       "categories": [
         "Elective / Pelvis"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 619,
       "name": "SC joint dislocation - closed / open reduction",
       "categories": [
         "Trauma / Clavicle"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 618,
       "name": "SC joint instability - open stabilisation",
       "categories": [
         "Trauma / Clavicle"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 948,
       "name": "Scapho-lunate ligament acute repair",
       "categories": [
         "Trauma / Wrist / Carpal fracture (incl scaphoid) / carpal ligament injury"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 381,
       "name": "Scapho-lunate ligament reconstruction",
       "categories": [
         "Trauma / Wrist / Carpal fracture (incl scaphoid) / carpal ligament injury"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 50,
       "name": "Scaphoid fracture - MUA & percutaneous wires",
       "categories": [
         "Trauma / Wrist / Scaphoid fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 51,
       "name": "Scaphoid fracture - ORIF",
       "categories": [
         "Trauma / Wrist / Scaphoid fracture"
+      ],
+      "aliases": [
+        "scaphoid ORIF",
+        "scaphoid fixation",
+        "ORIF scaphoid"
       ]
     },
     {
@@ -5020,6 +5839,10 @@
       "name": "Scaphoid fracture non-union - ORIF +/- graft (excluding vascularised graft)",
       "categories": [
         "Trauma / Wrist / Scaphoid fracture"
+      ],
+      "aliases": [
+        "scaphoid non-union ORIF",
+        "scaphoid nonunion fixation"
       ]
     },
     {
@@ -5027,97 +5850,115 @@
       "name": "Scaphoid fracture non-union - ORIF using vascularised graft",
       "categories": [
         "Trauma / Wrist / Scaphoid fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 25,
       "name": "Scapula fracture - ORIF",
       "categories": [
         "Trauma / Shoulder"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 364,
       "name": "Scapulothoracic fusion",
       "categories": [
         "Elective / Shoulder / Shoulder girdle procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 425,
       "name": "Scar revision / excision",
       "categories": [
         "Elective / Elective site non-specific / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 334,
       "name": "Shoulder arthrodesis",
       "categories": [
         "Elective / Shoulder / Shoulder girdle procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 165,
       "name": "Shoulder hemiarthroplasty (elective)",
       "categories": [
         "Elective / Shoulder / Primary Shoulder Arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 538,
       "name": "Shoulder MUA",
       "categories": [
         "Elective / Shoulder"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 545,
       "name": "Shoulder operation not listed",
       "categories": [
         "Elective / Shoulder"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 335,
       "name": "Shoulder replacement revision (unspecified)",
       "categories": [
         "Elective / Shoulder / Revision Shoulder Arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 406,
       "name": "Shoulder resurfacing hemiarthroplasty",
       "categories": [
         "Elective / Shoulder / Primary Shoulder Arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 214,
       "name": "Single stage revision - THR acetabular component",
       "categories": [
         "Elective / Hip / Revision THR"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 215,
       "name": "Single stage revision - THR both components",
       "categories": [
         "Elective / Hip / Revision THR"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 213,
       "name": "Single stage revision - THR femoral component",
       "categories": [
         "Elective / Hip / Revision THR"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 236,
       "name": "Single stage revision TKR",
       "categories": [
         "Elective / Knee / Revision Knee Arthroplasty"
+      ],
+      "aliases": [
+        "revision knee replacement",
+        "revision TKR",
+        "single stage revision knee replacement"
       ]
     },
     {
@@ -5125,230 +5966,266 @@
       "name": "Slipped upper femoral epiphysis - Dunn procedure",
       "categories": [
         "Trauma / Hip / Slipped upper femoral epiphysis"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 217,
       "name": "Slipped upper femoral epiphysis - ORIF",
       "categories": [
         "Trauma / Hip / Slipped upper femoral epiphysis"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 216,
       "name": "Slipped upper femoral epiphysis - percutaneous cannulated screw fixation",
       "categories": [
         "Trauma / Hip / Slipped upper femoral epiphysis"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 195,
       "name": "Soft tissue reconstruction hand",
       "categories": [
         "Elective / Hand"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 489,
       "name": "Spaghetti wrist (multiple tendon +/- nerve +/- vessel repair)",
       "categories": [
         "Trauma / Hand / Tendon repair"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 966,
       "name": "Spinal Facet Joint Radiofrequency Ablation (Cervical / Thoracic / Lumbar)",
       "categories": [
         "Elective / Elective site non-specific"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 967,
       "name": "Spino-Pelvic Fixation",
       "categories": [
         "Elective / Lumbar spine / Fixation and fusion procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 130,
       "name": "Split skin graft",
       "categories": [
         "Trauma / Trauma general / Wound management"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 168,
       "name": "Sternoclavicular joint operation",
       "categories": [
         "Elective / Shoulder / Shoulder girdle procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 615,
       "name": "Sternomastoid release (Torticollis)",
       "categories": [
         "Elective / Paediatrics"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 261,
       "name": "Subtalar arthrodesis",
       "categories": [
         "Elective / Foot / Arthrodesis procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 297,
       "name": "Subtalar fracture / dislocation - ORIF",
       "categories": [
         "Trauma / Foot / Hindfoot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 89,
       "name": "Subtrochanteric fracture - intramedullary fixation",
       "categories": [
         "Trauma / Femur / Subtrochanteric fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 88,
       "name": "Subtrochanteric fracture - ORIF",
       "categories": [
         "Trauma / Femur / Subtrochanteric fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 905,
       "name": "Supracondylar / extra articular distal humerus elbow fracture - application of formal traction",
       "categories": [
         "Trauma / Elbow / Supracondylar / extra articular distal humerus elbow fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 30,
       "name": "Supracondylar / extra articular distal humerus elbow fracture - MUA +/- percutaneous wires",
       "categories": [
         "Trauma / Elbow / Supracondylar / extra articular distal humerus elbow fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 31,
       "name": "Supracondylar / extra articular distal humerus elbow fracture - ORIF",
       "categories": [
         "Trauma / Elbow / Supracondylar / extra articular distal humerus elbow fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 717,
       "name": "Supracondylar femur fracture - frame (old code)",
       "categories": [
         "Trauma / Femur / Supracondylar fracture / extra articular distal femur fracture (NOT intra articular)"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 301,
       "name": "Supracondylar femur fracture / extra articular distal femur fracture (NOT intra articular) - application of external fixation",
       "categories": [
         "Trauma / Femur / Supracondylar fracture / extra articular distal femur fracture (NOT intra articular)"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 93,
       "name": "Supracondylar femur fracture / extra articular distal femur fracture (NOT intra articular) - Intramedullary fixation",
       "categories": [
         "Trauma / Femur / Supracondylar fracture / extra articular distal femur fracture (NOT intra articular)"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 497,
       "name": "Supracondylar femur fracture / extra articular distal femur fracture (NOT intra articular) - MUA & POP",
       "categories": [
         "Trauma / Femur / Supracondylar fracture / extra articular distal femur fracture (NOT intra articular)"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 92,
       "name": "Supracondylar femur fracture / extra articular distal femur fracture (NOT intra articular) - ORIF (DCS / blade plate etc)",
       "categories": [
         "Trauma / Femur / Supracondylar fracture / extra articular distal femur fracture (NOT intra articular)"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 552,
       "name": "Surgery for chronic carpal instability (Blatt capsulodesis, Brunelli capsulodesis, 3LT, internal brace)",
       "categories": [
         "Elective / Wrist"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 664,
       "name": "Symphyseal non-union - fusion",
       "categories": [
         "Trauma / Pelvis / Pelvic fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 291,
       "name": "Synovectomy (not elbow / wrist / hand / knee)",
       "categories": [
         "Elective / Elective site non-specific / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 119,
       "name": "Talar fracture / dislocation - ORIF",
       "categories": [
         "Trauma / Foot / Hindfoot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 709,
       "name": "Talar fracture / dislocation - percutaneous screw fixation",
       "categories": [
         "Trauma / Foot / Hindfoot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 502,
       "name": "Talectomy",
       "categories": [
         "Trauma / Foot / Hindfoot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 349,
       "name": "Talonavicular arthrodesis",
       "categories": [
         "Elective / Foot / Arthrodesis procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 479,
       "name": "Tangential excision of hand burns",
       "categories": [
         "Trauma / Hand"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 887,
       "name": "Tarsal tunnel decompression",
       "categories": [
         "Elective / Foot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 600,
       "name": "Tarso-metatarsal arthrodesis",
       "categories": [
         "Elective / Foot / Arthrodesis procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 251,
       "name": "Tendoachilles lengthening",
       "categories": [
         "Elective / Ankle / Tendon procedures"
+      ],
+      "aliases": [
+        "tendoachilles lengthening",
+        "achilles lengthening"
       ]
     },
     {
@@ -5356,6 +6233,10 @@
       "name": "Tendoachilles reconstruction for neglected rupture",
       "categories": [
         "Elective / Ankle / Tendon procedures"
+      ],
+      "aliases": [
+        "achilles reconstruction",
+        "neglected achilles rupture reconstruction"
       ]
     },
     {
@@ -5363,6 +6244,12 @@
       "name": "Tendoachilles repair",
       "categories": [
         "Trauma / Ankle"
+      ],
+      "aliases": [
+        "tendoachilles repair",
+        "achilles repair",
+        "achilles tendon repair",
+        "TA repair"
       ]
     },
     {
@@ -5370,27 +6257,34 @@
       "name": "Tendon decompression excluding patella tendon",
       "categories": [
         "Elective / Elective site non-specific / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 268,
       "name": "Tendon decompression or repair (foot)",
       "categories": [
         "Elective / Foot / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 609,
       "name": "Tendon lengthening not tendoachilles / gastrocnemius",
       "categories": [
         "Elective / Elective site non-specific / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 77,
       "name": "Tendon repair - extensor (hand)",
       "categories": [
         "Trauma / Hand / Tendon repair"
+      ],
+      "aliases": [
+        "extensor tendon repair hand",
+        "extensor tendon repair"
       ]
     },
     {
@@ -5398,6 +6292,9 @@
       "name": "Tendon repair - flexor zone 1",
       "categories": [
         "Trauma / Hand / Tendon repair"
+      ],
+      "aliases": [
+        "flexor tendon repair zone 1"
       ]
     },
     {
@@ -5405,6 +6302,10 @@
       "name": "Tendon repair - flexor zone 2",
       "categories": [
         "Trauma / Hand / Tendon repair"
+      ],
+      "aliases": [
+        "flexor tendon repair zone 2",
+        "zone 2 flexor tendon repair"
       ]
     },
     {
@@ -5412,6 +6313,11 @@
       "name": "Tendon repair - flexor zone 3-5",
       "categories": [
         "Trauma / Hand / Tendon repair"
+      ],
+      "aliases": [
+        "flexor tendon repair zone 3",
+        "flexor tendon repair zone 4",
+        "flexor tendon repair zone 5"
       ]
     },
     {
@@ -5419,363 +6325,420 @@
       "name": "Tendon repair in foot",
       "categories": [
         "Trauma / Foot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 454,
       "name": "Tendon repair not hand / wrist / foot",
       "categories": [
         "Trauma / Trauma general"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 267,
       "name": "Tendon transfer foot",
       "categories": [
         "Elective / Foot / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 608,
       "name": "Tendon transfer not hand / foot",
       "categories": [
         "Elective / Elective site non-specific / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 177,
       "name": "Tennis / Golfer elbow release",
       "categories": [
         "Elective / Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 293,
       "name": "Tenodesis (not listed elsewhere)",
       "categories": [
         "Elective / Elective site non-specific / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 555,
       "name": "Tenosynovectomy (hand)",
       "categories": [
         "Elective / Hand"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 143,
       "name": "Thoracic outlet obstruction - Excision cervical / 1st rib",
       "categories": [
         "Elective / Cervical spine / Thoracic outlet obstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 509,
       "name": "Thoracic outlet obstruction - release (not excision cervical / 1st rb)",
       "categories": [
         "Elective / Cervical spine / Thoracic outlet obstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 743,
       "name": "Thoracic spine - anterior column reconstruction (NOT trauma)",
       "categories": [
         "Elective / Thoracic spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 440,
       "name": "Thoracic Spine - anterior column reconstruction for trauma",
       "categories": [
         "Trauma / Thoracic spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 145,
       "name": "Thoracic spine - anterior decompression +/- fixation / fusion",
       "categories": [
         "Elective / Thoracic spine / Fixation or fusion procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 8,
       "name": "Thoracic Spine - anterior decompression for trauma",
       "categories": [
         "Trauma / Thoracic spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 746,
       "name": "Thoracic spine - balloon kyphoplasty",
       "categories": [
         "Elective / Thoracic spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 147,
       "name": "Thoracic spine - biopsy",
       "categories": [
         "Elective / Thoracic spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 341,
       "name": "Thoracic spine - costoplasty",
       "categories": [
         "Elective / Thoracic spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 524,
       "name": "Thoracic spine - disc replacement",
       "categories": [
         "Elective / Thoracic spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 528,
       "name": "Thoracic spine - operation not listed",
       "categories": [
         "Elective / Thoracic spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 934,
       "name": "Thoracic spine - osteotomy",
       "categories": [
         "Elective / Thoracic spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 744,
       "name": "Thoracic spine - posterior column reconstruction (NOT trauma)",
       "categories": [
         "Elective / Thoracic spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 439,
       "name": "Thoracic Spine - posterior column reconstruction for trauma",
       "categories": [
         "Trauma / Thoracic spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 146,
       "name": "Thoracic spine - posterior decompression +/- fixation / fusion",
       "categories": [
         "Elective / Thoracic spine / Fixation or fusion procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 7,
       "name": "Thoracic Spine - posterior decompression for trauma",
       "categories": [
         "Trauma / Thoracic spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 763,
       "name": "Thoracic spine - traction x-ray under GA",
       "categories": [
         "Elective / Thoracic spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 745,
       "name": "Thoracic spine - vertebrectomy",
       "categories": [
         "Elective / Thoracic spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 427,
       "name": "Thoracic spine - vertebroplasty",
       "categories": [
         "Elective / Thoracic spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 626,
       "name": "Thoracic spine - video assisted thorascopic spinal procedures +/- instrumentation",
       "categories": [
         "Elective / Thoracic spine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 526,
       "name": "Thoracic spine Kyphosis correction - anterior and posterior",
       "categories": [
         "Elective / Thoracic spine / Kyphosis correction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 525,
       "name": "Thoracic spine Kyphosis correction - anterior only",
       "categories": [
         "Elective / Thoracic spine / Kyphosis correction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 750,
       "name": "Thoracic spine Kyphosis correction - posterior only",
       "categories": [
         "Elective / Thoracic spine / Kyphosis correction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 218,
       "name": "THR - cemented",
       "categories": [
         "Elective / Hip / THR"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 220,
       "name": "THR - hybrid",
       "categories": [
         "Elective / Hip / THR"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 221,
       "name": "THR - surface replacement",
       "categories": [
         "Elective / Hip / THR"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 219,
       "name": "THR - uncemented",
       "categories": [
         "Elective / Hip / THR"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 315,
       "name": "Through ankle amputation (Syme's)",
       "categories": [
         "Elective / Amputations"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 309,
       "name": "Through hand amputation",
       "categories": [
         "Elective / Amputations"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 314,
       "name": "Through knee amputation",
       "categories": [
         "Elective / Amputations"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 775,
       "name": "Thumb CMCJ replacement",
       "categories": [
         "Elective / Hand / Trapezium procedures / Thumb CMCJ replacements"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 480,
       "name": "Thumb MCPJ ulnar collateral ligament repair",
       "categories": [
         "Trauma / Hand / Ligament repair"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 859,
       "name": "Tibia or fibula malunion correction or other deformity with frame",
       "categories": [
         "Elective / Limb reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 244,
       "name": "Tibial lengthening",
       "categories": [
         "Elective / Limb reconstruction"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 110,
       "name": "Tibial non-union - application of circular frame",
       "categories": [
         "Trauma / Tibia & fibula / Tibial non-union"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 109,
       "name": "Tibial non-union - intramedullary nailing +/- bone grafting",
       "categories": [
         "Trauma / Tibia & fibula / Tibial non-union"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 319,
       "name": "Tibial non-union - ORIF +/- bone grafting",
       "categories": [
         "Trauma / Tibia & fibula / Tibial non-union"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 101,
       "name": "Tibial plateau fracture - arthroscopically assisted fixation",
       "categories": [
         "Trauma / Knee / Tibial plateau fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 100,
       "name": "Tibial plateau fracture - ORIF",
       "categories": [
         "Trauma / Knee / Tibial plateau fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 925,
       "name": "Tibial plateau fracture - TKR",
       "categories": [
         "Trauma / Knee / Tibial plateau fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 102,
       "name": "Tibial plateau fracture - treatment with circular frame",
       "categories": [
         "Trauma / Knee / Tibial plateau fracture"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 820,
       "name": "Tibial tuberosity osteotomy",
       "categories": [
         "Elective / Knee / Patellofemoral Instability"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 591,
       "name": "Tibialis posterior reconstruction",
       "categories": [
         "Elective / Foot / Soft tissue procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 597,
       "name": "Tibio-talo-calcaneal arthrodesis / calcaneal-talo-tibial arthrodesis",
       "categories": [
         "Elective / Foot / Arthrodesis procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 240,
       "name": "TKR",
       "categories": [
         "Elective / Knee / Knee arthroplasty"
+      ],
+      "aliases": [
+        "total knee replacement",
+        "knee replacement",
+        "primary TKR",
+        "total knee arthroplasty"
       ]
     },
     {
@@ -5783,48 +6746,59 @@
       "name": "Toe amputation",
       "categories": [
         "Elective / Amputations"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 178,
       "name": "Total Elbow replacement",
       "categories": [
         "Elective / Elbow / Total elbow replacement"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 353,
       "name": "Total elbow replacement - aseptic revision",
       "categories": [
         "Elective / Elbow / Total elbow replacement"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 356,
       "name": "Total elbow replacement for trauma",
       "categories": [
         "Elective / Elbow / Total elbow replacement"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 354,
       "name": "Total elbow replacement revision 1st stage",
       "categories": [
         "Elective / Elbow / Total elbow replacement"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 355,
       "name": "Total elbow replacement revision 2nd stage",
       "categories": [
         "Elective / Elbow / Total elbow replacement"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 169,
       "name": "Total Shoulder Replacement - Anatomic",
       "categories": [
         "Elective / Shoulder / Primary Shoulder Arthroplasty"
+      ],
+      "aliases": [
+        "total shoulder replacement",
+        "anatomic total shoulder replacement",
+        "TSR"
       ]
     },
     {
@@ -5832,6 +6806,11 @@
       "name": "Total Shoulder Replacement - Reverse polarity (Inverse)",
       "categories": [
         "Elective / Shoulder / Primary Shoulder Arthroplasty"
+      ],
+      "aliases": [
+        "reverse total shoulder replacement",
+        "reverse shoulder replacement",
+        "reverse shoulder arthroplasty"
       ]
     },
     {
@@ -5839,27 +6818,34 @@
       "name": "Transposition flap",
       "categories": [
         "Trauma / Trauma general / Wound management"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 199,
       "name": "Trapezium excision",
       "categories": [
         "Elective / Hand / Trapezium procedures / Thumb CMCJ replacements"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 774,
       "name": "Trapezium excision with tendon transfer (LRTI)",
       "categories": [
         "Elective / Hand / Trapezium procedures / Thumb CMCJ replacements"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 200,
       "name": "Trigger finger release",
       "categories": [
         "Elective / Hand"
+      ],
+      "aliases": [
+        "trigger finger release",
+        "trigger finger"
       ]
     },
     {
@@ -5867,6 +6853,10 @@
       "name": "Trigger thumb release",
       "categories": [
         "Elective / Hand"
+      ],
+      "aliases": [
+        "trigger thumb release",
+        "trigger thumb"
       ]
     },
     {
@@ -5874,48 +6864,60 @@
       "name": "Trigger thumb release paediatric",
       "categories": [
         "Elective / Hand"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 598,
       "name": "Triple fusion (subtalar, talonavicular, calcaneocuboid)",
       "categories": [
         "Elective / Foot / Arthrodesis procedures"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 821,
       "name": "Trocleoplasty",
       "categories": [
         "Elective / Knee / Patellofemoral Instability"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 189,
       "name": "Ulna shortening",
       "categories": [
         "Elective / Wrist"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 179,
       "name": "Ulnar nerve decompression / transposition / epicondylectomy (Elbow)",
       "categories": [
         "Elective / Elbow"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 188,
       "name": "Ulnar nerve decompression at wrist",
       "categories": [
         "Elective / Wrist"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 241,
       "name": "Unicompartmental knee replacement",
       "categories": [
         "Elective / Knee / Knee arthroplasty"
+      ],
+      "aliases": [
+        "unicompartmental knee replacement",
+        "uni knee replacement",
+        "partial knee replacement",
+        "unicondylar knee replacement"
       ]
     },
     {
@@ -5923,70 +6925,80 @@
       "name": "Vein repair +/- graft hand / digit",
       "categories": [
         "Trauma / Hand / Neurovascular injuries"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 466,
       "name": "Vein repair +/- graft not hand / wrist / digit",
       "categories": [
         "Trauma / Trauma general / Neurovascular injuries"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 470,
       "name": "Vein repair - wrist",
       "categories": [
         "Trauma / Wrist / Neurovascular Injury"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 796,
       "name": "Washout and liner exchange for infected TKR",
       "categories": [
         "Elective / Knee / Revision Knee Arthroplasty"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 269,
       "name": "Wedge tarsectomy",
       "categories": [
         "Elective / Foot"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 129,
       "name": "Wound closure, early or delayed, primary or secondary",
       "categories": [
         "Trauma / Trauma general / Wound management"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 128,
       "name": "Wound debridement",
       "categories": [
         "Trauma / Trauma general / Wound management"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 740,
       "name": "Wound debridement and temporary fixation",
       "categories": [
         "Trauma / Trauma general / Wound management"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 554,
       "name": "Wrist operation not listed",
       "categories": [
         "Elective / Wrist"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": 690,
       "name": "Z plasty and local flap to hand for scar release",
       "categories": [
         "Trauma / Hand"
-      ]
+      ],
+      "aliases": []
     }
   ],
   "tree": {

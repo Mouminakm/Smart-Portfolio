@@ -5,13 +5,16 @@
 
 import {
   createUserWithEmailAndPassword,
+  deleteUser,
+  EmailAuthProvider,
   signOut as firebaseSignOut,
   onAuthStateChanged,
+  reauthenticateWithCredential,
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "../firebase";
-import { loadProfile, saveProfile } from "../profile";
+import { deleteProfile, loadProfile, saveProfile } from "../profile";
 
 const AuthContext = createContext(null);
 
@@ -57,6 +60,19 @@ export function AuthProvider({ children }) {
     await firebaseSignOut(auth);
   }
 
+  // Permanently delete the account. We first re-confirm identity with the
+  // password (Firebase requires a recent login for deletion), then delete the
+  // Firestore profile while still authenticated, then delete the auth account.
+  // The onAuthStateChanged listener above then fires with no user and routes
+  // back to the welcome screen automatically.
+  async function deleteAccount(password) {
+    if (!user || !user.email) return;
+    const credential = EmailAuthProvider.credential(user.email, password);
+    await reauthenticateWithCredential(user, credential); // throws if password wrong
+    await deleteProfile(user.uid); // remove their data first
+    await deleteUser(user); // then the account itself
+  }
+
   // Called when the user taps "Finish setup" — saves the flag, enters the app.
   async function completeOnboarding() {
     if (user) {
@@ -74,6 +90,7 @@ export function AuthProvider({ children }) {
     signIn,
     signOut,
     completeOnboarding,
+    deleteAccount,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

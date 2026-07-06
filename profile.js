@@ -3,7 +3,7 @@
 // Each profile lives at profiles/{uid}, so a user only ever touches their own
 // (matching the security rule we set). Screens call these, not Firestore directly.
 
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import { deleteDoc, doc, getDoc, setDoc } from "firebase/firestore";
 import { UK_PORTFOLIOS } from "./data/portfolios"; // the platform list (id + name)
 import { db } from "./firebase"; // the Firestore database we connected in Stage 2
 
@@ -13,6 +13,13 @@ export async function saveProfile(uid, profileData) {
   const ref = doc(db, "profiles", uid);
   // { merge: true } = update the fields I pass, leave the rest untouched.
   await setDoc(ref, profileData, { merge: true });
+}
+
+// Permanently delete a user's profile document (their specialty, hospitals,
+// consultants, and any GMC/training number). Used when they delete their account.
+export async function deleteProfile(uid) {
+  const ref = doc(db, "profiles", uid);
+  await deleteDoc(ref);
 }
 
 // Turn any stored portfolio value into its stable id.

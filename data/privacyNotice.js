@@ -13,7 +13,7 @@ export const PRIVACY_VERSION = "1.0";
 export const PRIVACY_EFFECTIVE_DATE = "[effective date, e.g. 2 July 2026]";
 
 export const COMPANY_NAME = "OCCIPRAE LTD";
-export const COMPANY_NUMBER = "[16819952]";
+export const COMPANY_NUMBER = "16819952";
 export const COMPANY_ADDRESS = "[ Cardiff]";
 export const CONTACT_EMAIL = "[development@occiprae.com]";
 

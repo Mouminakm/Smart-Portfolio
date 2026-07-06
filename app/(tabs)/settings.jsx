@@ -4,7 +4,7 @@
 
 import { useFocusEffect, useRouter } from "expo-router";
 import { useCallback, useState } from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { PrimaryButton, SecondaryButton } from "../../components/Buttons";
 import NavyHeader from "../../components/NavyHeader";
 import SettingsRow from "../../components/SettingsRow";
@@ -83,7 +83,10 @@ export default function SettingsScreen() {
         <Text style={styles.sectionHeading}>Privacy & data</Text>
         <SmartCard style={styles.sectionCard}>
           <SettingsRow label="Data consent" value="Granted" />
-          <SettingsRow label="Delete my data" value="" />
+          <Pressable onPress={() => router.push("/delete-account")} style={styles.deleteRow}>
+            <Text style={styles.deleteRowText}>Delete account</Text>
+            <Text style={styles.deleteRowChevron}>›</Text>
+          </Pressable>
         </SmartCard>
 
         <Text style={styles.sectionHeading}>Preferences</Text>
@@ -115,4 +118,12 @@ const styles = StyleSheet.create({
   },
   sectionCard: { padding: spacing.sm },
   signOutWrap: { marginTop: spacing.xxl },
+  deleteRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingVertical: 14,
+  },
+  deleteRowText: { fontSize: 15, color: colors.error, fontWeight: "600" },
+  deleteRowChevron: { fontSize: 18, color: colors.error },
 });
