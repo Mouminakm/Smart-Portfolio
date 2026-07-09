@@ -9,7 +9,11 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.occiprae.smartportfolio",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "Smart Portfolio uses the microphone so you can dictate your logbook entries."
+      }
     },
     "android": {
       "adaptiveIcon": {
