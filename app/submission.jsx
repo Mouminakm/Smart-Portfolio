@@ -16,11 +16,10 @@ import { useAuth } from "../contexts/AuthContext";
 import { useEntry } from "../contexts/EntryContext";
 import { getSpecialtyData } from "../data/specialtySchemas";
 import { buildInjectionPlan } from "../lib/buildInjectionPlan";
-import { buildFullInjectionScript } from "../lib/elogbookScript";
+import { buildFullInjectionScript, FORM_URL } from "../platforms/elogbook/adapter";
 import { loadProfile } from "../profile";
 import { colors, spacing } from "../theme/theme";
 
-const FORM_URL = "https://client.elogbook.org/eLogbook/Operations/OperationMaintain/Add";
 const BUILD_TAG = "diag-2026-06-29a";
 
 // Diagnostics switch. false for testers/production (no console spam, clean
