@@ -44,9 +44,8 @@ export const ENTRY_TYPES_BY_PORTFOLIO = {
       route: { pathname: "/dictation", params: { platform: "iscp", entryType: "iscp_cbd" } },
       available: true,
     },
-    // PBA is deliberately last: its form only renders after a procedure is
-    // chosen, and its competency items are per-procedure.
-    { label: "PBA — Procedure-Based Assessment", available: false },
+    // PBA deliberately NOT supported: its form is two-stage (it only renders
+    // after a procedure is chosen) and its competency items are per-procedure.
   ],
 
   turas: [
