@@ -15,7 +15,7 @@ import AppButton from "../components/AppButton";
 import { useAuth } from "../contexts/AuthContext";
 import { useEntry } from "../contexts/EntryContext";
 import { getSpecialtyData } from "../data/specialtySchemas";
-import { buildInjectionPlan } from "../lib/buildInjectionPlan";
+import { buildInjectionPlan } from "../platforms/elogbook/adapter";
 import { buildFullInjectionScript, FORM_URL } from "../platforms/elogbook/adapter";
 import { loadProfile } from "../profile";
 import { colors, spacing } from "../theme/theme";

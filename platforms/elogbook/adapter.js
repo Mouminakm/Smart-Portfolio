@@ -11,6 +11,8 @@
 // audit, the diagnostics protocol) comes from platforms/shared/injectionCore.js.
 
 import { composeScript } from "../shared/injectionCore";
+import { getSpecialtyData } from "../../data/specialtySchemas";
+import { buildPlan, norm, matchOption } from "../shared/planCore";
 
 export const FORM_URL =
   "https://client.elogbook.org/eLogbook/Operations/OperationMaintain/Add";
@@ -179,10 +181,135 @@ export function buildFullInjectionScript(plan) {
   });
 }
 
+
+// ===========================================================================
+// PLAN BUILDING (eLogbook-specific)
+// ===========================================================================
+
+// Resolve a procedure NAME (or a dictated abbreviation/alias) to its eLogbook
+// node-id. Aliases are curated and collision-checked (one alias -> one
+// procedure). Order matters: exact matches (name OR alias) win first, then
+// looser "contains" matches, so a precise abbreviation like "ETV" beats an
+// accidental substring hit.
+function resolveProcedure(rawValue, procedures) {
+  const v = norm(rawValue);
+  const list = procedures || [];
+
+  const aliasExact = (p) => (p.aliases || []).some((a) => norm(a) === v);
+  const aliasLoose = (p) =>
+    (p.aliases || []).some((a) => {
+      const na = norm(a);
+      return na && (v.includes(na) || na.includes(v));
+    });
+
+  const hit =
+    list.find((p) => norm(p.name) === v) ||        // 1. exact name
+    list.find(aliasExact) ||                        // 2. exact alias ("ETV")
+    list.find((p) => norm(p.name).includes(v)) ||   // 3. name contains, either way
+    list.find((p) => v.includes(norm(p.name))) ||
+    list.find(aliasLoose);                          // 4. alias contains (loosest)
+
+  return hit ? { nodeId: String(hit.id), searchText: hit.name } : null;
+}
+
+// Match a dictated hospital against the user's STORED hospitals. That list is
+// tiny (1-3), so we can match generously without the collision risk of matching
+// the national list. Each stored hospital carries its exact eLogbook id.
+function matchStoredHospital(dictated, userHospitals) {
+  if (!userHospitals || !userHospitals.length) return null;
+  const d = String(dictated).trim().toLowerCase().replace(/^the\s+/, "");
+  if (!d) return null;
+
+  const key = (h) =>
+    String(h.short || h.display || h.name || "")
+      .toLowerCase()
+      .replace(/^the\s+/, "")
+      .replace(/\s*\([^)]*\)\s*$/, "")
+      .trim();
+
+  let hit = userHospitals.find((h) => key(h) === d);                          // exact
+  if (hit) return hit;
+  hit = userHospitals.find((h) => key(h).includes(d) || d.includes(key(h)));  // contains
+  if (hit) return hit;
+  const words = d.split(/\s+/).filter((w) => w.length > 3);                   // shared word
+  hit = userHospitals.find((h) => {
+    const k = key(h);
+    return words.some((w) => k.includes(w));
+  });
+  return hit || null;
+}
+
+// The specialCase hook: planCore calls this for EVERY field, before its own
+// switch. Return true if we've handled the field ourselves.
+function elogbookSpecialCase(f, raw, plan, ctx) {
+  const { userHospitals = [], userSpecialty = "" } = ctx;
+  const isEmptyVal = raw === undefined || raw === null || String(raw).trim() === "";
+
+  // Specialty comes from the PROFILE, not dictation — so handle it even when
+  // nothing was dictated. eLogbook's option labels match our stored labels.
+  if (f.id === "operationspecialty") {
+    const opt = userSpecialty ? matchOption(userSpecialty, f.options) : null;
+    if (opt) plan.selects[f.selector] = opt.label;
+    else plan.skipped.push({ id: f.id, reason: "profile specialty '" + userSpecialty + "' not in eLogbook options" });
+    return true;
+  }
+
+  // The remaining specials only apply when something was actually dictated.
+  if (isEmptyVal) return false; // let planCore record it as "empty"
+
+  // Account-specific consultant list — matched by name at injection time.
+  if (f.id === "responsibleconsultant") {
+    plan.consultant = String(raw);
+    return true;
+  }
+
+  // Angular typeahead: procedure name/alias -> node-id.
+  if (f.id === "procedure") {
+    const specData = getSpecialtyData(userSpecialty);
+    const procList = specData && specData.procedures ? specData.procedures.procedures : [];
+    const p = resolveProcedure(raw, procList);
+    if (p) plan.procedure = p;
+    else plan.skipped.push({ id: f.id, reason: "procedure not found: '" + raw + "'" });
+    return true;
+  }
+
+  // Angular typeahead: hospital, matched against the user's stored list.
+  if (f.id === "hospitalsAccordion") {
+    const dictated = norm(raw).replace(/^the\s+/, "");
+    const hit = matchStoredHospital(dictated, userHospitals);
+    if (hit) {
+      plan.hospital = {
+        id: hit.id,
+        name: hit.name,
+        search: hit.short || hit.display || (hit.name || "").replace(/\s*\([^)]*\)\s*$/, "").trim(),
+      };
+    } else {
+      plan.skipped.push({
+        id: f.id,
+        reason: "no stored hospital matched '" + raw + "' — pick on site or add it in profile",
+      });
+    }
+    return true;
+  }
+
+  return false; // not special — let the generic engine handle it
+}
+
+// Build the eLogbook injection plan. Same signature as the old
+// buildInjectionPlan(), so submission.jsx barely changes.
+export function buildInjectionPlan(fieldValues, schema, userHospitals = [], userSpecialty = "") {
+  return buildPlan(fieldValues, schema, {
+    dateSep: "-", // eLogbook wants dd-mm-yyyy
+    specialCase: elogbookSpecialCase,
+    ctx: { userHospitals, userSpecialty },
+  });
+}
+
 // The adapter object — the contract every platform implements.
 export const adapter = {
   id: "elogbook",
   displayName: "eLogbook",
   formUrl: () => FORM_URL,
   buildScript: buildFullInjectionScript,
+  buildPlan: buildInjectionPlan,
 };
