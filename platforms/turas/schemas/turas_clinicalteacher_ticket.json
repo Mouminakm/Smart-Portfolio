@@ -1,0 +1,208 @@
+{
+  "id": "turas_clinicalteacher_ticket",
+  "label": "Developing the Clinical Teacher (ticket)",
+  "platform": "turas",
+  "formUrl": "https://turasportfoliowales.nes.digital/Tickets/SupervisedLearningEventTickets/Create?formType=ClinicalTeacher",
+  "notes": "Turas SLE TICKET for Developing the Clinical Teacher — the trainee REQUESTS the SLE; the assessor completes it later, so there are no ratings or assessor-feedback fields here. ASP.NET MVC. The ticket page hosts all four SLE types at once, each behind a SelectedForms_XxxFormTicketed checkbox with its own prefixed fields (ClinicalTeacherTitle, ClinicalTeacherHistory...), so we tick our form's box first and fill only its block. Yes/No radios share one id and differ only by value=True/False — matched by SELECTOR per option, never by id. The Recipient (assessor) list is ACCOUNT-SPECIFIC (real supervisor names + Turas ids), so it is reference-only in v1: the user picks it on the form. Dates are dd/mm/yyyy (the input carries data-val ukdateparser). REFLECTION: auto-filled from July 2026. Claude rewrites what the trainee dictated into polished, professional reflective prose — faithful tidying, NOT generation. Every fact, insight and learning point must trace back to what was actually said; nothing is invented; nothing dictated = empty box. The trainee reviews it on Turas before sending, as always.",
+  "fields": [
+    {
+      "id": "ticket_form",
+      "label": "Ticket a Developing the Clinical Teacher",
+      "type": "checkbox",
+      "required": true,
+      "selector": "#SelectedForms_ClinicalTeacherFormTicketed",
+      "inputType": "checkbox",
+      "defaultValue": true,
+      "extractionHints": "Always Yes — this ticket is for a Developing the Clinical Teacher."
+    },
+    {
+      "id": "date",
+      "label": "Date of event",
+      "type": "date",
+      "required": true,
+      "selector": "#ClinicalTeacherProcedureDate",
+      "inputType": "date",
+      "extractionHints": "The date the event took place. Accept spoken dates."
+    },
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "required": true,
+      "selector": "#ClinicalTeacherTitle",
+      "inputType": "text",
+      "extractionHints": "A short title for the case, e.g. 'Chest pain in a 60-year-old'. NO patient identifiers."
+    },
+    {
+      "id": "clinical_setting",
+      "label": "Setting",
+      "type": "single_select",
+      "required": true,
+      "inputType": "radioGroup",
+      "options": [
+        {
+          "label": "Ward based",
+          "selector": "#ClinicalTeacherClinicalSettingId_1400"
+        },
+        {
+          "label": "Journal club",
+          "selector": "#ClinicalTeacherClinicalSettingId_1401"
+        },
+        {
+          "label": "Lecture",
+          "selector": "#ClinicalTeacherClinicalSettingId_1402"
+        },
+        {
+          "label": "Tutorial",
+          "selector": "#ClinicalTeacherClinicalSettingId_1403"
+        },
+        {
+          "label": "Other",
+          "selector": "#ClinicalTeacherClinicalSettingId_1404"
+        }
+      ],
+      "extractionHints": "Ward based, Journal club, Lecture, Tutorial, or Other."
+    },
+    {
+      "id": "clinical_setting_other",
+      "label": "Other clinical setting",
+      "type": "text",
+      "required": false,
+      "selector": "#ClinicalTeacherClinicalSettingOther",
+      "inputType": "text",
+      "dependsOn": {
+        "field": "clinical_setting",
+        "value": "Other"
+      },
+      "extractionHints": "Only if the setting is Other."
+    },
+    {
+      "id": "clinical_setting_detail",
+      "label": "More detail of setting",
+      "type": "text",
+      "required": false,
+      "selector": "#ClinicalTeacherClinicalSettingDetail",
+      "inputType": "textarea",
+      "extractionHints": "Optional extra detail about where it happened."
+    },
+    {
+      "id": "simulated_learning",
+      "label": "Included simulated learning?",
+      "type": "single_select",
+      "required": true,
+      "inputType": "radioGroup",
+      "options": [
+        {
+          "label": "Yes",
+          "selector": "input[name=\"ClinicalTeacherSimulatedLearning\"][value=\"True\"]"
+        },
+        {
+          "label": "No",
+          "selector": "input[name=\"ClinicalTeacherSimulatedLearning\"][value=\"False\"]"
+        }
+      ],
+      "extractionHints": "Did this include simulated learning?"
+    },
+    {
+      "id": "virtual_teaching",
+      "label": "Virtual teaching event?",
+      "type": "single_select",
+      "required": true,
+      "inputType": "radioGroup",
+      "options": [
+        {
+          "label": "Yes",
+          "selector": "input[name=\"ClinicalTeacherVirtualTeachingEvent\"][value=\"True\"]"
+        },
+        {
+          "label": "No",
+          "selector": "input[name=\"ClinicalTeacherVirtualTeachingEvent\"][value=\"False\"]"
+        }
+      ],
+      "extractionHints": "Was this a virtual teaching event?"
+    },
+    {
+      "id": "audience",
+      "label": "Audience",
+      "type": "multi_select",
+      "required": true,
+      "selector": "#ClinicalTeacherSelectedClinicalProblemIds",
+      "inputType": "multicheck",
+      "options": [
+        {
+          "label": "Medical students",
+          "selector": "#ClinicalTeacherSelectedClinicalProblemIds100"
+        },
+        {
+          "label": "Foundation doctors",
+          "selector": "#ClinicalTeacherSelectedClinicalProblemIds101"
+        },
+        {
+          "label": "Mixed medical",
+          "selector": "#ClinicalTeacherSelectedClinicalProblemIds102"
+        },
+        {
+          "label": "Multidisciplinary team",
+          "selector": "#ClinicalTeacherSelectedClinicalProblemIds103"
+        },
+        {
+          "label": "Other",
+          "selector": "#ClinicalTeacherSelectedClinicalProblemIds104"
+        }
+      ],
+      "extractionHints": "Who you taught (several allowed): medical students, foundation doctors, mixed medical, MDT, other."
+    },
+    {
+      "id": "audience_other",
+      "label": "Other audience",
+      "type": "text",
+      "required": false,
+      "selector": "#ClinicalTeacherClinicalProblemOther",
+      "inputType": "text",
+      "dependsOn": {
+        "field": "audience",
+        "value": "Other"
+      },
+      "extractionHints": "Only if Other."
+    },
+    {
+      "id": "history",
+      "label": "Case history / summary",
+      "type": "text",
+      "required": true,
+      "selector": "#ClinicalTeacherHistory",
+      "inputType": "textarea",
+      "extractionHints": "The account of the case — what happened, what you did. This is the main narrative the assessor will discuss with you. NO patient identifiers (no names, hospital numbers, DOB)."
+    },
+    {
+      "id": "reflection",
+      "label": "Reflection",
+      "type": "text",
+      "required": false,
+      "selector": "#ClinicalTeacherReflection",
+      "inputType": "textarea",
+      "isReflection": true,
+      "submitsToPlatform": true,
+      "extractionHints": "Write the trainee's REFLECTION on this case, as a polished, professional piece of reflective writing in the FIRST PERSON — ready to submit.\n\nHOW TO WRITE IT:\n• Turn what the trainee said — however scrappy, hesitant or colloquial — into clear, well-structured prose.\n• Use professional reflective language and a natural structure: what happened, what you thought or felt, what you learnt, and what you would do differently.\n• Fix grammar, remove filler and false starts, and join fragments into proper sentences.\n• A few sentences is fine. Length must match what was actually said — do NOT pad.\n\nABSOLUTE RULE — NOTHING INVENTED:\nEvery fact, feeling, insight and learning point MUST come from what the trainee actually dictated. You are rewriting their thinking, not supplying it.\n• Do NOT add learning points, insights or conclusions they did not express.\n• Do NOT add clinical facts, outcomes, complications or figures they did not mention.\n• Do NOT invent feelings ('I felt anxious') unless they said so.\n• Do NOT bolt on generic reflective filler (human factors, situational awareness, team dynamics, 'this highlighted the importance of...') unless that is genuinely what they told you.\n• If they said nothing reflective at all, return an EMPTY string. An empty box is correct; an invented reflection is not.\n\nThis text goes into a training record under the trainee's name and is read as their own thinking. Rewrite it well — but only what they said."
+    },
+    {
+      "id": "assessor",
+      "label": "Assessor (recipient)",
+      "type": "text",
+      "required": true,
+      "selector": "input[name=\"RecipientId\"]",
+      "inputType": "text",
+      "submitsToPlatform": false,
+      "extractionHints": "Who you're sending the ticket to. The list is specific to your Turas account, so it's shown for reference only — you pick them on the form."
+    },
+    {
+      "id": "comments",
+      "label": "Comments to assessor",
+      "type": "text",
+      "required": false,
+      "selector": "#Comments",
+      "inputType": "textarea",
+      "extractionHints": "Any message to the assessor with the ticket."
+    }
+  ]
+}

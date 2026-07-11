@@ -1,215 +1,763 @@
 {
-    "id": "iscp_dops",
-    "label": "DOPS",
-    "platform": "iscp",
-    "formUrl": "https://www.iscp.ac.uk/forms/dops.aspx",
-    "notes": "Harvested from a live DOPS capture (July 2026). ASP.NET WebForms, same family as CEX-C. TRAINEE-OWNED fields only — rater-owned fields (summary rating Level 0-4b, strengths/development/actions/general feedback, per-competency rating comments 0-9, rater password, submit dropdown) are EXCLUDED. Procedure/rater/hospital use ISCP's AJAX picker widgets: captured for reference, submitsToPlatform=false in v1 (user picks on-site; driving pickers = adapter phase 2). Reflections isReflection=true, unfilled per Phase-6 rule. Date = jQuery datepicker, expected dd/mm/yyyy (confirm live).",
-    "fields": [
-      {
-        "id": "procedure",
-        "label": "Procedure",
-        "type": "text",
-        "required": true,
-        "selector": "#conplchldBodyControls_dopsEntry_DopsProcedureName_dopsTypePicker_dopsProcedurePicker_pickerSearchText",
-        "inputType": "text",
-        "submitsToPlatform": false,
-        "extractionHints": "The procedure observed (e.g. 'chest drain insertion'). Shown for reference — the user selects it in ISCP's picker on the form."
-      },
-      {
-        "id": "assessment_date",
-        "label": "Assessment date",
-        "type": "date",
-        "required": true,
-        "selector": "#conplchldBodyControls_dopsEntry_AboutTheAssessment_txtAssessmentDate",
-        "inputType": "date",
-        "extractionHints": "The date the procedure was observed. Accept spoken dates."
-      },
-      {
-        "id": "assessor",
-        "label": "Assessor (rater)",
-        "type": "text",
-        "required": true,
-        "selector": "#conplchldBodyControls_dopsEntry_AboutTheAssessment_raterPicker_pickerSearchText",
-        "inputType": "text",
-        "submitsToPlatform": false,
-        "extractionHints": "Name of the assessing consultant/senior. Reference only — picked on the form."
-      },
-      {
-        "id": "hospital",
-        "label": "Hospital",
-        "type": "text",
-        "required": true,
-        "selector": "#conplchldBodyControls_dopsEntry_AboutTheAssessment_hospitalPicker_pickerSearchText",
-        "inputType": "text",
-        "submitsToPlatform": false,
-        "extractionHints": "Hospital where it took place. Reference only — picked on the form."
-      },
-      {
-        "id": "emergency_elective",
-        "label": "Emergency or elective",
-        "type": "single_select",
-        "required": true,
-        "selector": "#conplchldBodyControls_dopsEntry_Details_ddlEmergencyElective",
-        "inputType": "select",
-        "options": [
-          {
-            "value": "1422",
-            "label": "Emergency"
-          },
-          {
-            "value": "1423",
-            "label": "Elective"
-          }
-        ],
-        "extractionHints": "Emergency or elective procedure."
-      },
-      {
-        "id": "simulated_environment",
-        "label": "Simulated environment",
-        "type": "single_select",
-        "required": false,
-        "selector": "#conplchldBodyControls_dopsEntry_Details_ddlSimulatedEnviroment",
-        "inputType": "select",
-        "options": [
-          {
-            "value": "1",
-            "label": "Yes"
-          },
-          {
-            "value": "0",
-            "label": "No"
-          }
-        ],
-        "extractionHints": "Usually No for a real patient. Default No if clearly a real case."
-      },
-      {
-        "id": "simulated_environment_other",
-        "label": "Simulation details",
-        "type": "text",
-        "required": false,
-        "selector": "#conplchldBodyControls_dopsEntry_Details_txtSimulatedEnviromentOther",
-        "inputType": "text",
-        "dependsOn": {
-          "field": "simulated_environment",
-          "value": "Yes"
+  "id": "iscp_dops",
+  "label": "DOPS",
+  "platform": "iscp",
+  "formUrl": "https://www.iscp.ac.uk/forms/dops.aspx",
+  "notes": "Harvested from a live DOPS (July 2026). ASP.NET WebForms. Rater-owned fields (competency ratings, global summary, feedback boxes) ARE included so the trainee can DRAFT the assessment for the assessor — common practice. The assessor reviews, edits and validates every field with THEIR OWN PASSWORD before submission; that password field is never touched by us. Extraction hints forbid inventing any rating or feedback that was not actually stated — unsaid items stay blank rather than being guessed. The 10 competency items are FIXED for every DOPS (data-rating-id 16-25); only the guidance notes vary by procedure. Ratings are <div class='rating' data-rating-id data-score-id> elements, NOT form controls — the adapter CLICKS them (inputType 'ratingGrid') so ISCP's own JS updates its hidden fields. The 10 competency items are shown as 10 individual rating rows, each with its own comment box directly below it. A separate 'ratings_all' field (inputType 'ratingDefault') captures a BLANKET assessor statement ('satisfactory for everything else') and is applied to every item not rated individually — a blanket statement IS a stated judgement, so it fills. Items covered by neither an individual rating nor a blanket stay UNSET; nothing is ever guessed.",
+  "fields": [
+    {
+      "id": "procedure",
+      "label": "Procedure",
+      "type": "text",
+      "required": true,
+      "selector": "#conplchldBodyControls_dopsEntry_DopsProcedureName_dopsTypePicker_dopsProcedurePicker_pickerSearchText",
+      "inputType": "text",
+      "submitsToPlatform": false,
+      "extractionHints": "The procedure observed. Reference only — the user picks it in ISCP's own picker."
+    },
+    {
+      "id": "assessment_date",
+      "label": "Assessment date",
+      "type": "date",
+      "required": true,
+      "selector": "#conplchldBodyControls_dopsEntry_AboutTheAssessment_txtAssessmentDate",
+      "inputType": "date",
+      "extractionHints": "Date the procedure was observed. Accept spoken dates."
+    },
+    {
+      "id": "assessor",
+      "label": "Assessor (rater)",
+      "type": "text",
+      "required": true,
+      "selector": "#conplchldBodyControls_dopsEntry_AboutTheAssessment_raterPicker_pickerSearchText",
+      "inputType": "text",
+      "submitsToPlatform": false,
+      "extractionHints": "Name of the assessing consultant. Reference only — picked on the form."
+    },
+    {
+      "id": "hospital",
+      "label": "Hospital",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_AboutTheAssessment_hospitalPicker_pickerSearchText",
+      "inputType": "text",
+      "submitsToPlatform": false,
+      "extractionHints": "Hospital. Reference only — picked on the form."
+    },
+    {
+      "id": "emergency_elective",
+      "label": "Emergency or elective",
+      "type": "single_select",
+      "required": true,
+      "selector": "#conplchldBodyControls_dopsEntry_Details_ddlEmergencyElective",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "1422",
+          "label": "Emergency"
         },
-        "extractionHints": "Only if simulated: what kind."
-      },
-      {
-        "id": "performed_on_course",
-        "label": "Performed on a course",
-        "type": "single_select",
-        "required": false,
-        "selector": "#conplchldBodyControls_dopsEntry_Details_ddlPerformedOnCourse",
-        "inputType": "select",
-        "options": [
-          {
-            "value": "1",
-            "label": "Yes"
-          },
-          {
-            "value": "0",
-            "label": "No"
-          }
-        ],
-        "extractionHints": "Usually No."
-      },
-      {
-        "id": "performed_on_course_text",
-        "label": "Course details",
-        "type": "text",
-        "required": false,
-        "selector": "#conplchldBodyControls_dopsEntry_Details_txtPerformedOnCourseText",
-        "inputType": "text",
-        "dependsOn": {
-          "field": "performed_on_course",
-          "value": "Yes"
+        {
+          "value": "1423",
+          "label": "Elective"
+        }
+      ],
+      "extractionHints": "Emergency or elective."
+    },
+    {
+      "id": "simulated_environment",
+      "label": "Simulated setting",
+      "type": "single_select",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_Details_ddlSimulatedEnviroment",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "1",
+          "label": "Yes"
         },
-        "extractionHints": "Only if on a course: which course."
+        {
+          "value": "0",
+          "label": "No"
+        }
+      ],
+      "extractionHints": "Usually No for a real patient."
+    },
+    {
+      "id": "simulated_environment_other",
+      "label": "Simulation details",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_Details_txtSimulatedEnviromentOther",
+      "inputType": "text",
+      "dependsOn": {
+        "field": "simulated_environment",
+        "value": "Yes"
       },
-      {
-        "id": "difficulty",
-        "label": "Difficulty of procedure",
-        "type": "single_select",
-        "required": true,
-        "selector": "#conplchldBodyControls_dopsEntry_Details_ddlDifficulty",
-        "inputType": "select",
-        "options": [
-          {
-            "value": "195",
-            "label": "Easier than usual"
-          },
-          {
-            "value": "196",
-            "label": "Average difficulty"
-          },
-          {
-            "value": "197",
-            "label": "More difficult than usual"
-          }
-        ],
-        "extractionHints": "How difficult vs usual: easier / average / more difficult ('straightforward' -> Easier than usual; 'difficult case' -> More difficult than usual)."
+      "extractionHints": "Only if simulated."
+    },
+    {
+      "id": "performed_on_course",
+      "label": "Performed on a course",
+      "type": "single_select",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_Details_ddlPerformedOnCourse",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "1",
+          "label": "Yes"
+        },
+        {
+          "value": "0",
+          "label": "No"
+        }
+      ],
+      "extractionHints": "Usually No."
+    },
+    {
+      "id": "performed_on_course_text",
+      "label": "Course details",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_Details_txtPerformedOnCourseText",
+      "inputType": "text",
+      "dependsOn": {
+        "field": "performed_on_course",
+        "value": "Yes"
       },
-      {
-        "id": "times_performed",
-        "label": "Times performed before",
-        "type": "number",
-        "required": false,
-        "selector": "#conplchldBodyControls_dopsEntry_Details_txtProcedurePerformedCount",
-        "inputType": "number",
-        "extractionHints": "How many times the trainee has performed this procedure before ('I've done about ten of these' -> 10)."
-      },
-      {
-        "id": "feedback_public_private",
-        "label": "Feedback visibility",
-        "type": "single_select",
-        "required": false,
-        "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_ddlFeedbackPublicPrivate",
-        "inputType": "select",
-        "options": [
-          {
-            "value": "1424",
-            "label": "Private"
-          },
-          {
-            "value": "1425",
-            "label": "Non Private"
-          }
-        ],
-        "extractionHints": "Only set if the user says so."
-      },
-      {
-        "id": "reflection_learnt",
-        "label": "Reflection: what I learnt",
-        "type": "text",
-        "required": false,
-        "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_txtFeedbackLearnt",
-        "inputType": "textarea",
-        "isReflection": true,
-        "submitsToPlatform": false,
-        "extractionHints": "Reflective. NOT auto-filled in v1 — reference only."
-      },
-      {
-        "id": "reflection_done_well",
-        "label": "Reflection: what went well",
-        "type": "text",
-        "required": false,
-        "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_txtFeedbackDoneWell",
-        "inputType": "textarea",
-        "isReflection": true,
-        "submitsToPlatform": false,
-        "extractionHints": "Reflective. NOT auto-filled in v1."
-      },
-      {
-        "id": "reflection_improve",
-        "label": "Reflection: what to improve",
-        "type": "text",
-        "required": false,
-        "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_txtFeedbackImprove",
-        "inputType": "textarea",
-        "isReflection": true,
-        "submitsToPlatform": false,
-        "extractionHints": "Reflective. NOT auto-filled in v1."
-      }
-    ]
-  }
+      "extractionHints": "Only if on a course."
+    },
+    {
+      "id": "times_performed",
+      "label": "Times performed before",
+      "type": "number",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_Details_txtProcedurePerformedCount",
+      "inputType": "number",
+      "extractionHints": "How many times the trainee has done this procedure before."
+    },
+    {
+      "id": "difficulty",
+      "label": "Difficulty on this occasion",
+      "type": "single_select",
+      "required": true,
+      "selector": "#conplchldBodyControls_dopsEntry_Details_ddlDifficulty",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "195",
+          "label": "Easier than usual"
+        },
+        {
+          "value": "196",
+          "label": "Average difficulty"
+        },
+        {
+          "value": "197",
+          "label": "More difficult than usual"
+        }
+      ],
+      "extractionHints": "Easier / average / more difficult than usual."
+    },
+    {
+      "id": "ratings_all",
+      "label": "Rating for all competencies (unless rated individually below)",
+      "type": "single_select",
+      "required": false,
+      "inputType": "ratingDefault",
+      "isRaterField": true,
+      "options": [
+        {
+          "value": "9",
+          "label": "Not assessed/observed",
+          "short": "N"
+        },
+        {
+          "value": "10",
+          "label": "Development required",
+          "short": "D"
+        },
+        {
+          "value": "11",
+          "label": "Satisfactory",
+          "short": "S"
+        },
+        {
+          "value": "32",
+          "label": "Outstanding",
+          "short": "O"
+        }
+      ],
+      "extractionHints": "A BLANKET rating the assessor gave covering the competencies they didn't single out — e.g. 'satisfactory for everything else', 'the rest were fine', 'all satisfactory'. Set this ONLY if such a general statement was actually made. It fills every item not rated individually. If the assessor rated items one by one with no general statement, leave this blank. N=Not assessed/observed, D=Development required, S=Satisfactory, O=Outstanding."
+    },
+    {
+      "id": "rating_1",
+      "label": "1. Describes indications, anatomy, procedure and complications to assessor",
+      "type": "single_select",
+      "required": false,
+      "inputType": "ratingGrid",
+      "ratingId": "16",
+      "isRaterField": true,
+      "options": [
+        {
+          "value": "9",
+          "label": "Not assessed/observed",
+          "short": "N"
+        },
+        {
+          "value": "10",
+          "label": "Development required",
+          "short": "D"
+        },
+        {
+          "value": "11",
+          "label": "Satisfactory",
+          "short": "S"
+        },
+        {
+          "value": "32",
+          "label": "Outstanding",
+          "short": "O"
+        }
+      ],
+      "extractionHints": "The ASSESSOR's rating for competency 1 ('Describes indications, anatomy, procedure and complications to assessor'). Set it ONLY if their judgement for THIS item was specifically stated. Do NOT copy a blanket 'everything else was satisfactory' into this field — that goes in 'Rating for all competencies' instead. Never guess. N / D / S / O."
+    },
+    {
+      "id": "rating_comment_1",
+      "label": "    ↳ Comment on 1",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_RatingsPicker_ratings_txtRatingComment_0",
+      "inputType": "textarea",
+      "isRaterField": true,
+      "extractionHints": "Any specific comment the assessor made about competency 1 ('Describes indications, anatomy, procedure and complications to assessor'). Record only what was actually said; leave blank otherwise."
+    },
+    {
+      "id": "rating_2",
+      "label": "2. Obtains consent, after explaining procedure and possible complications to patient",
+      "type": "single_select",
+      "required": false,
+      "inputType": "ratingGrid",
+      "ratingId": "17",
+      "isRaterField": true,
+      "options": [
+        {
+          "value": "9",
+          "label": "Not assessed/observed",
+          "short": "N"
+        },
+        {
+          "value": "10",
+          "label": "Development required",
+          "short": "D"
+        },
+        {
+          "value": "11",
+          "label": "Satisfactory",
+          "short": "S"
+        },
+        {
+          "value": "32",
+          "label": "Outstanding",
+          "short": "O"
+        }
+      ],
+      "extractionHints": "The ASSESSOR's rating for competency 2 ('Obtains consent, after explaining procedure and possible complications to patient'). Set it ONLY if their judgement for THIS item was specifically stated. Do NOT copy a blanket 'everything else was satisfactory' into this field — that goes in 'Rating for all competencies' instead. Never guess. N / D / S / O."
+    },
+    {
+      "id": "rating_comment_2",
+      "label": "    ↳ Comment on 2",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_RatingsPicker_ratings_txtRatingComment_1",
+      "inputType": "textarea",
+      "isRaterField": true,
+      "extractionHints": "Any specific comment the assessor made about competency 2 ('Obtains consent, after explaining procedure and possible complications to patient'). Record only what was actually said; leave blank otherwise."
+    },
+    {
+      "id": "rating_3",
+      "label": "3. Prepares for procedure according to an agreed protocol",
+      "type": "single_select",
+      "required": false,
+      "inputType": "ratingGrid",
+      "ratingId": "18",
+      "isRaterField": true,
+      "options": [
+        {
+          "value": "9",
+          "label": "Not assessed/observed",
+          "short": "N"
+        },
+        {
+          "value": "10",
+          "label": "Development required",
+          "short": "D"
+        },
+        {
+          "value": "11",
+          "label": "Satisfactory",
+          "short": "S"
+        },
+        {
+          "value": "32",
+          "label": "Outstanding",
+          "short": "O"
+        }
+      ],
+      "extractionHints": "The ASSESSOR's rating for competency 3 ('Prepares for procedure according to an agreed protocol'). Set it ONLY if their judgement for THIS item was specifically stated. Do NOT copy a blanket 'everything else was satisfactory' into this field — that goes in 'Rating for all competencies' instead. Never guess. N / D / S / O."
+    },
+    {
+      "id": "rating_comment_3",
+      "label": "    ↳ Comment on 3",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_RatingsPicker_ratings_txtRatingComment_2",
+      "inputType": "textarea",
+      "isRaterField": true,
+      "extractionHints": "Any specific comment the assessor made about competency 3 ('Prepares for procedure according to an agreed protocol'). Record only what was actually said; leave blank otherwise."
+    },
+    {
+      "id": "rating_4",
+      "label": "4. Administers effective analgesia or safe sedation (if no anaesthetist)",
+      "type": "single_select",
+      "required": false,
+      "inputType": "ratingGrid",
+      "ratingId": "19",
+      "isRaterField": true,
+      "options": [
+        {
+          "value": "9",
+          "label": "Not assessed/observed",
+          "short": "N"
+        },
+        {
+          "value": "10",
+          "label": "Development required",
+          "short": "D"
+        },
+        {
+          "value": "11",
+          "label": "Satisfactory",
+          "short": "S"
+        },
+        {
+          "value": "32",
+          "label": "Outstanding",
+          "short": "O"
+        }
+      ],
+      "extractionHints": "The ASSESSOR's rating for competency 4 ('Administers effective analgesia or safe sedation (if no anaesthetist)'). Set it ONLY if their judgement for THIS item was specifically stated. Do NOT copy a blanket 'everything else was satisfactory' into this field — that goes in 'Rating for all competencies' instead. Never guess. N / D / S / O."
+    },
+    {
+      "id": "rating_comment_4",
+      "label": "    ↳ Comment on 4",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_RatingsPicker_ratings_txtRatingComment_3",
+      "inputType": "textarea",
+      "isRaterField": true,
+      "extractionHints": "Any specific comment the assessor made about competency 4 ('Administers effective analgesia or safe sedation (if no anaesthetist)'). Record only what was actually said; leave blank otherwise."
+    },
+    {
+      "id": "rating_5",
+      "label": "5. Demonstrates good asepsis and safe use of instruments & sharps",
+      "type": "single_select",
+      "required": false,
+      "inputType": "ratingGrid",
+      "ratingId": "20",
+      "isRaterField": true,
+      "options": [
+        {
+          "value": "9",
+          "label": "Not assessed/observed",
+          "short": "N"
+        },
+        {
+          "value": "10",
+          "label": "Development required",
+          "short": "D"
+        },
+        {
+          "value": "11",
+          "label": "Satisfactory",
+          "short": "S"
+        },
+        {
+          "value": "32",
+          "label": "Outstanding",
+          "short": "O"
+        }
+      ],
+      "extractionHints": "The ASSESSOR's rating for competency 5 ('Demonstrates good asepsis and safe use of instruments & sharps'). Set it ONLY if their judgement for THIS item was specifically stated. Do NOT copy a blanket 'everything else was satisfactory' into this field — that goes in 'Rating for all competencies' instead. Never guess. N / D / S / O."
+    },
+    {
+      "id": "rating_comment_5",
+      "label": "    ↳ Comment on 5",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_RatingsPicker_ratings_txtRatingComment_4",
+      "inputType": "textarea",
+      "isRaterField": true,
+      "extractionHints": "Any specific comment the assessor made about competency 5 ('Demonstrates good asepsis and safe use of instruments & sharps'). Record only what was actually said; leave blank otherwise."
+    },
+    {
+      "id": "rating_6",
+      "label": "6. Performs the technical aspects in line with the Guidance Notes",
+      "type": "single_select",
+      "required": false,
+      "inputType": "ratingGrid",
+      "ratingId": "21",
+      "isRaterField": true,
+      "options": [
+        {
+          "value": "9",
+          "label": "Not assessed/observed",
+          "short": "N"
+        },
+        {
+          "value": "10",
+          "label": "Development required",
+          "short": "D"
+        },
+        {
+          "value": "11",
+          "label": "Satisfactory",
+          "short": "S"
+        },
+        {
+          "value": "32",
+          "label": "Outstanding",
+          "short": "O"
+        }
+      ],
+      "extractionHints": "The ASSESSOR's rating for competency 6 ('Performs the technical aspects in line with the Guidance Notes'). Set it ONLY if their judgement for THIS item was specifically stated. Do NOT copy a blanket 'everything else was satisfactory' into this field — that goes in 'Rating for all competencies' instead. Never guess. N / D / S / O."
+    },
+    {
+      "id": "rating_comment_6",
+      "label": "    ↳ Comment on 6",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_RatingsPicker_ratings_txtRatingComment_5",
+      "inputType": "textarea",
+      "isRaterField": true,
+      "extractionHints": "Any specific comment the assessor made about competency 6 ('Performs the technical aspects in line with the Guidance Notes'). Record only what was actually said; leave blank otherwise."
+    },
+    {
+      "id": "rating_7",
+      "label": "7. Deals with any unexpected event or seeks help when appropriate",
+      "type": "single_select",
+      "required": false,
+      "inputType": "ratingGrid",
+      "ratingId": "22",
+      "isRaterField": true,
+      "options": [
+        {
+          "value": "9",
+          "label": "Not assessed/observed",
+          "short": "N"
+        },
+        {
+          "value": "10",
+          "label": "Development required",
+          "short": "D"
+        },
+        {
+          "value": "11",
+          "label": "Satisfactory",
+          "short": "S"
+        },
+        {
+          "value": "32",
+          "label": "Outstanding",
+          "short": "O"
+        }
+      ],
+      "extractionHints": "The ASSESSOR's rating for competency 7 ('Deals with any unexpected event or seeks help when appropriate'). Set it ONLY if their judgement for THIS item was specifically stated. Do NOT copy a blanket 'everything else was satisfactory' into this field — that goes in 'Rating for all competencies' instead. Never guess. N / D / S / O."
+    },
+    {
+      "id": "rating_comment_7",
+      "label": "    ↳ Comment on 7",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_RatingsPicker_ratings_txtRatingComment_6",
+      "inputType": "textarea",
+      "isRaterField": true,
+      "extractionHints": "Any specific comment the assessor made about competency 7 ('Deals with any unexpected event or seeks help when appropriate'). Record only what was actually said; leave blank otherwise."
+    },
+    {
+      "id": "rating_8",
+      "label": "8. Completes required documentation (written or dictated)",
+      "type": "single_select",
+      "required": false,
+      "inputType": "ratingGrid",
+      "ratingId": "23",
+      "isRaterField": true,
+      "options": [
+        {
+          "value": "9",
+          "label": "Not assessed/observed",
+          "short": "N"
+        },
+        {
+          "value": "10",
+          "label": "Development required",
+          "short": "D"
+        },
+        {
+          "value": "11",
+          "label": "Satisfactory",
+          "short": "S"
+        },
+        {
+          "value": "32",
+          "label": "Outstanding",
+          "short": "O"
+        }
+      ],
+      "extractionHints": "The ASSESSOR's rating for competency 8 ('Completes required documentation (written or dictated)'). Set it ONLY if their judgement for THIS item was specifically stated. Do NOT copy a blanket 'everything else was satisfactory' into this field — that goes in 'Rating for all competencies' instead. Never guess. N / D / S / O."
+    },
+    {
+      "id": "rating_comment_8",
+      "label": "    ↳ Comment on 8",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_RatingsPicker_ratings_txtRatingComment_7",
+      "inputType": "textarea",
+      "isRaterField": true,
+      "extractionHints": "Any specific comment the assessor made about competency 8 ('Completes required documentation (written or dictated)'). Record only what was actually said; leave blank otherwise."
+    },
+    {
+      "id": "rating_9",
+      "label": "9. Communicates clearly with patient and staff throughout the procedure",
+      "type": "single_select",
+      "required": false,
+      "inputType": "ratingGrid",
+      "ratingId": "24",
+      "isRaterField": true,
+      "options": [
+        {
+          "value": "9",
+          "label": "Not assessed/observed",
+          "short": "N"
+        },
+        {
+          "value": "10",
+          "label": "Development required",
+          "short": "D"
+        },
+        {
+          "value": "11",
+          "label": "Satisfactory",
+          "short": "S"
+        },
+        {
+          "value": "32",
+          "label": "Outstanding",
+          "short": "O"
+        }
+      ],
+      "extractionHints": "The ASSESSOR's rating for competency 9 ('Communicates clearly with patient and staff throughout the procedure'). Set it ONLY if their judgement for THIS item was specifically stated. Do NOT copy a blanket 'everything else was satisfactory' into this field — that goes in 'Rating for all competencies' instead. Never guess. N / D / S / O."
+    },
+    {
+      "id": "rating_comment_9",
+      "label": "    ↳ Comment on 9",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_RatingsPicker_ratings_txtRatingComment_8",
+      "inputType": "textarea",
+      "isRaterField": true,
+      "extractionHints": "Any specific comment the assessor made about competency 9 ('Communicates clearly with patient and staff throughout the procedure'). Record only what was actually said; leave blank otherwise."
+    },
+    {
+      "id": "rating_10",
+      "label": "10. Demonstrates professional behaviour throughout the procedure",
+      "type": "single_select",
+      "required": false,
+      "inputType": "ratingGrid",
+      "ratingId": "25",
+      "isRaterField": true,
+      "options": [
+        {
+          "value": "9",
+          "label": "Not assessed/observed",
+          "short": "N"
+        },
+        {
+          "value": "10",
+          "label": "Development required",
+          "short": "D"
+        },
+        {
+          "value": "11",
+          "label": "Satisfactory",
+          "short": "S"
+        },
+        {
+          "value": "32",
+          "label": "Outstanding",
+          "short": "O"
+        }
+      ],
+      "extractionHints": "The ASSESSOR's rating for competency 10 ('Demonstrates professional behaviour throughout the procedure'). Set it ONLY if their judgement for THIS item was specifically stated. Do NOT copy a blanket 'everything else was satisfactory' into this field — that goes in 'Rating for all competencies' instead. Never guess. N / D / S / O."
+    },
+    {
+      "id": "rating_comment_10",
+      "label": "    ↳ Comment on 10",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_RatingsPicker_ratings_txtRatingComment_9",
+      "inputType": "textarea",
+      "isRaterField": true,
+      "extractionHints": "Any specific comment the assessor made about competency 10 ('Demonstrates professional behaviour throughout the procedure'). Record only what was actually said; leave blank otherwise."
+    },
+    {
+      "id": "global_summary",
+      "label": "Global summary (supervision level)",
+      "type": "single_select",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_Summary_ddlAssessmentRating",
+      "inputType": "select",
+      "isRaterField": true,
+      "options": [
+        {
+          "value": "198",
+          "label": "Level 0: Insufficient evidence observed to support a summary judgement"
+        },
+        {
+          "value": "199",
+          "label": "Level 1a: Able to assist with guidance (was not familiar with all steps of procedure)"
+        },
+        {
+          "value": "200",
+          "label": "Level 1b: Able to assist without guidance (knew all steps of procedure and anticipated next move)"
+        },
+        {
+          "value": "201",
+          "label": "Level 2a: Guidance required for most/all of the procedure (or part performed)"
+        },
+        {
+          "value": "202",
+          "label": "Level 2b: Guidance or intervention required for key steps only"
+        },
+        {
+          "value": "1450",
+          "label": "Level 3a: Procedure performed with minimal guidance or intervention (needed occasional help)"
+        },
+        {
+          "value": "1451",
+          "label": "Level 3b: Procedure performed competently without guidance or intervention but lacked fluency"
+        },
+        {
+          "value": "1452",
+          "label": "Level 4a: Procedure performed fluently without guidance or intervention"
+        },
+        {
+          "value": "1453",
+          "label": "Level 4b: As 4a and was able to anticipate, avoid and/or deal with common problems/complications"
+        }
+      ],
+      "extractionHints": "The assessor's overall supervision level, if stated ('he said level 3a', 'I was level two b'). Map to the matching Level. Leave blank if not said."
+    },
+    {
+      "id": "feedback_general",
+      "label": "Rater feedback: general",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_RaterAndTraineeFeedback_txtGeneral",
+      "inputType": "textarea",
+      "isRaterField": true,
+      "extractionHints": "General feedback the assessor gave. Record ONLY what was actually said — do not compose or embellish feedback."
+    },
+    {
+      "id": "feedback_strengths",
+      "label": "Rater feedback: strengths",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_RaterAndTraineeFeedback_txtStrengths",
+      "inputType": "textarea",
+      "isRaterField": true,
+      "extractionHints": "Strengths the assessor identified. Record only what was said; leave blank if none were stated."
+    },
+    {
+      "id": "feedback_development",
+      "label": "Rater feedback: development needs",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_RaterAndTraineeFeedback_txtDevelopmentNeeds",
+      "inputType": "textarea",
+      "isRaterField": true,
+      "extractionHints": "Development needs the assessor identified. Record only what was said; leave blank if none were stated."
+    },
+    {
+      "id": "feedback_actions",
+      "label": "Rater feedback: recommended actions",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_RaterAndTraineeFeedback_txtRecommendedActions",
+      "inputType": "textarea",
+      "isRaterField": true,
+      "extractionHints": "Actions the assessor recommended. Record only what was said; leave blank if none were stated."
+    },
+    {
+      "id": "trainee_comments",
+      "label": "Trainee comments",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_RaterAndTraineeFeedback_txtTraineeComments",
+      "inputType": "textarea",
+      "extractionHints": "The trainee's own comments on the assessment — your account, in your words."
+    },
+    {
+      "id": "feedback_public_private",
+      "label": "Reflection visibility",
+      "type": "single_select",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_ddlFeedbackPublicPrivate",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "1424",
+          "label": "Private"
+        },
+        {
+          "value": "1425",
+          "label": "Non Private"
+        }
+      ],
+      "extractionHints": "Only set if the user says so."
+    },
+    {
+      "id": "reflection_learnt",
+      "label": "Reflection: what I learnt",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_txtFeedbackLearnt",
+      "inputType": "textarea",
+      "isReflection": true,
+      "submitsToPlatform": false,
+      "extractionHints": "Reflective. Captured for reference; NOT auto-filled in v1 (guarded paraphrasing is a later phase)."
+    },
+    {
+      "id": "reflection_done_well",
+      "label": "Reflection: what I did well",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_txtFeedbackDoneWell",
+      "inputType": "textarea",
+      "isReflection": true,
+      "submitsToPlatform": false,
+      "extractionHints": "Reflective. Captured for reference; NOT auto-filled in v1 (guarded paraphrasing is a later phase)."
+    },
+    {
+      "id": "reflection_improve",
+      "label": "Reflection: what to improve",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_txtFeedbackImprove",
+      "inputType": "textarea",
+      "isReflection": true,
+      "submitsToPlatform": false,
+      "extractionHints": "Reflective. Captured for reference; NOT auto-filled in v1 (guarded paraphrasing is a later phase)."
+    }
+  ]
+}

@@ -21,9 +21,8 @@ import NavyHeader from "../components/NavyHeader";
 import SmartCard from "../components/SmartCard";
 import { useAuth } from "../contexts/AuthContext";
 import { useEntry } from "../contexts/EntryContext";
-import { getSpecialtyData } from "../data/specialtySchemas";
-import { getTurasSchema } from "../data/turasSchemas";
 import { PATIENT_IDENTIFIER_FIELDS } from "../lib/patientFields";
+import { getPlatformAdapter } from "../platforms";
 import { loadProfile } from "../profile";
 import { colors, radius, spacing, type } from "../theme/theme";
 
@@ -66,14 +65,11 @@ export default function DictationScreen() {
     load();
   }, [user]);
 
-  // If the URL asked for a Turas entry, load that schema. Otherwise fall back to
-  // the eLogbook specialty schema exactly as before — eLogbook is untouched.
-  const isTuras = platform === "turas";
-  const turasSchema = isTuras ? getTurasSchema(entryType) : null;
-
-  const specialtyData = getSpecialtyData(userSpecialty);
-  const schema = isTuras ? turasSchema : specialtyData ? specialtyData.schema : null;
-  const procedureData = specialtyData ? specialtyData.procedures : null;
+  // Ask the platform's adapter for the schema. Each adapter knows how ITS
+  // platform is keyed — eLogbook by specialty, ISCP/Turas by entry type — so
+  // this screen doesn't need to know. Missing platform falls back to eLogbook.
+  const adapter = getPlatformAdapter(platform);
+  const schema = adapter.getSchema({ specialty: userSpecialty, entryType });
 
   // ---- Recording pulse ----
   const pulse = useRef(new Animated.Value(0)).current;
@@ -172,7 +168,12 @@ export default function DictationScreen() {
       const fieldsForClaude = schema.fields
         .filter((f) => !f.appOnly && f.submitsToPlatform !== false && !PATIENT_IDENTIFIER_FIELDS.includes(f.id))
         .map((f) => ({ id: f.id, label: f.label, inputType: f.inputType, options: f.options || undefined }));
-      const procedureNames = (procedureData.procedures || []).map((p) => p.name);
+      // Procedure names help Claude match a spoken procedure to the real list.
+      // Only some platforms have a catalogue (eLogbook does; ISCP doesn't), so
+      // we ask the adapter and default to none.
+      const procedureNames = adapter.getProcedureNames
+        ? adapter.getProcedureNames({ specialty: userSpecialty })
+        : [];
       const pRes = await fetch(PARSE_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: "Bearer " + token },
@@ -241,7 +242,7 @@ export default function DictationScreen() {
 
   return (
     <View style={styles.container}>
-      <NavyHeader title="Dictation" pill={isTuras ? schema.label : "Operation log"} />
+      <NavyHeader title="Dictation" pill={schema.label || "Operation log"} />
 
       {/* ===== TOP: checklist ===== */}
       <View style={styles.checklistArea}>
@@ -251,7 +252,7 @@ export default function DictationScreen() {
             <Ionicons name="information-circle" size={18} color={colors.navy} style={{ marginRight: spacing.sm, marginTop: 1 }} />
             <Text style={styles.infoText}>
               Patient identifiers are never recorded. If your portfolio needs them, enter them
-              directly on {isTuras ? "Turas" : "eLogbook"} at the submission step.
+              directly on {adapter.displayName} at the submission step.
             </Text>
           </View>
 
@@ -279,13 +280,13 @@ export default function DictationScreen() {
           <>
             <View style={styles.readyRow}>
               <Ionicons name="checkmark-circle" size={20} color={colors.success} />
-              <Text style={styles.readyText}>Ready to fill {isTuras ? "Turas" : "eLogbook"}</Text>
+              <Text style={styles.readyText}>Ready to fill {adapter.displayName}</Text>
             </View>
             <PrimaryButton
              href={{ pathname: "/submission", params: { platform: platform || "elogbook", entryType: entryType || undefined } }}
             style={{ paddingHorizontal: 40 }}
             >
-              Open in {isTuras ? "Turas" : "eLogbook"}
+              Open in {adapter.displayName}
             </PrimaryButton>
           </>
         ) : (
@@ -314,7 +315,7 @@ export default function DictationScreen() {
               <Text style={styles.controlCaption}>
                 Speak naturally to fill the fields above. Items marked
                 <Text style={styles.required}> *</Text> are required. You'll review
-                and submit everything on {isTuras ? "Turas" : "eLogbook"}.
+                and submit everything on {adapter.displayName}.
               </Text>
             ) : null}
           </>

@@ -112,12 +112,19 @@ export function buildPlan(fieldValues, schema, options = {}) {
     checkboxes: {},  // selector -> true/false
     radios: [],      // { value: chosenLabel, options: [{label, selector}] }
     multichecks: [], // { selectors: [...] }  (Turas: tick several boxes)
+    clicks: [],      // [selector]  elements to .click() (ISCP rating divs)
     procedure: null, // platform-specific (eLogbook)
     hospital: null,  // platform-specific (eLogbook)
     consultant: null,// platform-specific (eLogbook)
     preClicks: [],   // selectors to .click() before filling (Turas section toggle)
     skipped: [],     // { id, reason } — transparency
   };
+
+  // Which competencies were rated individually, and any blanket rating. The
+  // blanket can only be applied once every individual rating is known, so it's
+  // resolved in a second pass after this loop.
+  const ratedIds = new Set();
+  let blanket = null;
 
   schema.fields.forEach((f) => {
     const raw = fieldValues[f.id];
@@ -185,6 +192,38 @@ export function buildPlan(fieldValues, schema, options = {}) {
         else plan.skipped.push({ id: f.id, reason: "no radio option for '" + raw + "'" });
         break;
       }
+      case "ratingGrid": {
+        // ISCP competency ratings. These are NOT form controls — they're
+        // <div class="rating" data-rating-id data-score-id> elements that you
+        // CLICK, and the page's own JS records the choice. So we record a click
+        // selector rather than a value.
+        //
+        // Accept the letter (N/D/S/O) or the full label ("Satisfactory").
+        const opt =
+          f.options.find((o) => o.short && norm(o.short) === norm(raw)) ||
+          matchOption(raw, f.options);
+        if (opt && f.ratingId) {
+          plan.clicks.push(
+            'div.rating[data-rating-id="' + f.ratingId + '"][data-score-id="' + opt.value + '"]'
+          );
+          ratedIds.add(String(f.ratingId)); // so the blanket below skips it
+        } else {
+          plan.skipped.push({ id: f.id, reason: "no rating matched '" + raw + "'" });
+        }
+        break;
+      }
+      case "ratingDefault": {
+        // A BLANKET rating the assessor gave ("satisfactory for everything
+        // else"). It's a real stated judgement, so it fills every competency
+        // that wasn't rated individually — but it can only be resolved once we
+        // know which those are, so we defer it to the second pass below.
+        const opt =
+          f.options.find((o) => o.short && norm(o.short) === norm(raw)) ||
+          matchOption(raw, f.options);
+        if (opt) blanket = { field: f, scoreId: opt.value };
+        else plan.skipped.push({ id: f.id, reason: "no rating matched '" + raw + "'" });
+        break;
+      }
       case "multicheck": {
         // Several checkboxes from one dictated value (Turas clinical problems).
         // Accept a list or a comma-separated string; tick every option matched.
@@ -204,6 +243,23 @@ export function buildPlan(fieldValues, schema, options = {}) {
       }
     }
   });
+
+
+  // Second pass: apply the blanket rating to every competency the assessor did
+  // not single out. A blanket statement ("satisfactory for everything else") IS
+  // a stated judgement, so it fills — but an individual rating always wins.
+  // Items covered by NEITHER stay unset: an unstated rating is left blank,
+  // never guessed.
+  if (blanket) {
+    schema.fields
+      .filter((f) => f.inputType === "ratingGrid" && f.ratingId)
+      .forEach((f) => {
+        if (ratedIds.has(String(f.ratingId))) return; // rated individually — wins
+        plan.clicks.push(
+          'div.rating[data-rating-id="' + f.ratingId + '"][data-score-id="' + blanket.scoreId + '"]'
+        );
+      });
+  }
 
   return plan;
 }

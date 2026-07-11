@@ -313,12 +313,23 @@ export function getSchema({ specialty } = {}) {
   return data ? data.schema : null;
 }
 
+// eLogbook has a per-specialty PROCEDURE CATALOGUE (hundreds of named
+// operations plus curated spoken aliases). Dictation passes these to Claude so
+// a spoken "lap chole" or "ETV" matches the real entry. Platforms without a
+// catalogue (ISCP, Turas) simply don't implement this.
+export function getProcedureNames({ specialty } = {}) {
+  const data = getSpecialtyData(specialty);
+  const list = data && data.procedures ? data.procedures.procedures : [];
+  return (list || []).map((p) => p.name);
+}
+
 // The adapter object — the contract every platform implements.
 export const adapter = {
   id: "elogbook",
   displayName: "eLogbook",
   formUrl: () => FORM_URL,
   getSchema,
+  getProcedureNames,
   buildScript: buildFullInjectionScript,
   buildPlan: buildInjectionPlan,
 };

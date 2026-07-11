@@ -1,0 +1,151 @@
+{
+  "id": "turas_dops_ticket",
+  "label": "DOPS (ticket)",
+  "platform": "turas",
+  "formUrl": "https://turasportfoliowales.nes.digital/Tickets/SupervisedLearningEventTickets/Create?formType=Dops",
+  "notes": "Turas SLE TICKET for DOPS — the trainee REQUESTS the SLE; the assessor completes it later, so there are no ratings or assessor-feedback fields here. ASP.NET MVC. The ticket page hosts all four SLE types at once, each behind a SelectedForms_XxxFormTicketed checkbox with its own prefixed fields (DopsTitle, DopsHistory...), so we tick our form's box first and fill only its block. Yes/No radios share one id and differ only by value=True/False — matched by SELECTOR per option, never by id. The Recipient (assessor) list is ACCOUNT-SPECIFIC (real supervisor names + Turas ids), so it is reference-only in v1: the user picks it on the form. Dates are dd/mm/yyyy (the input carries data-val ukdateparser). REFLECTION: auto-filled from July 2026. Claude rewrites what the trainee dictated into polished, professional reflective prose — faithful tidying, NOT generation. Every fact, insight and learning point must trace back to what was actually said; nothing is invented; nothing dictated = empty box. The trainee reviews it on Turas before sending, as always.",
+  "fields": [
+    {
+      "id": "ticket_form",
+      "label": "Ticket a DOPS",
+      "type": "checkbox",
+      "required": true,
+      "selector": "#SelectedForms_DopsFormTicketed",
+      "inputType": "checkbox",
+      "defaultValue": true,
+      "extractionHints": "Always Yes — this ticket is for a DOPS."
+    },
+    {
+      "id": "date",
+      "label": "Date of event",
+      "type": "date",
+      "required": true,
+      "selector": "#DopsProcedureDate",
+      "inputType": "date",
+      "extractionHints": "The date the event took place. Accept spoken dates."
+    },
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "required": true,
+      "selector": "#DopsTitle",
+      "inputType": "text",
+      "extractionHints": "A short title for the case, e.g. 'Chest pain in a 60-year-old'. NO patient identifiers."
+    },
+    {
+      "id": "clinical_setting",
+      "label": "Clinical setting",
+      "type": "single_select",
+      "required": true,
+      "inputType": "radioGroup",
+      "options": [
+        {
+          "label": "Acute (eg ED, theatre, admissions)",
+          "selector": "#DopsClinicalSettingId_1321"
+        },
+        {
+          "label": "Non-acute (eg OPD, ward)",
+          "selector": "#DopsClinicalSettingId_1322"
+        },
+        {
+          "label": "Community (eg GP surgery, home visits)",
+          "selector": "#DopsClinicalSettingId_1323"
+        },
+        {
+          "label": "Other",
+          "selector": "#DopsClinicalSettingId_1306"
+        }
+      ],
+      "extractionHints": "Acute (ED/theatre/admissions), Non-acute (OPD/ward), Community (GP/home visits), or Other."
+    },
+    {
+      "id": "clinical_setting_other",
+      "label": "Other clinical setting",
+      "type": "text",
+      "required": false,
+      "selector": "#DopsClinicalSettingOther",
+      "inputType": "text",
+      "dependsOn": {
+        "field": "clinical_setting",
+        "value": "Other"
+      },
+      "extractionHints": "Only if the setting is Other."
+    },
+    {
+      "id": "clinical_setting_detail",
+      "label": "More detail of setting",
+      "type": "text",
+      "required": false,
+      "selector": "#DopsClinicalSettingDetail",
+      "inputType": "textarea",
+      "extractionHints": "Optional extra detail about where it happened."
+    },
+    {
+      "id": "simulated",
+      "label": "Simulated setting?",
+      "type": "single_select",
+      "required": true,
+      "inputType": "radioGroup",
+      "options": [
+        {
+          "label": "Yes",
+          "selector": "input[name=\"DopsSimulatedSetting\"][value=\"True\"]"
+        },
+        {
+          "label": "No",
+          "selector": "input[name=\"DopsSimulatedSetting\"][value=\"False\"]"
+        }
+      ],
+      "extractionHints": "Was this in a simulated setting? Usually No for a real patient."
+    },
+    {
+      "id": "procedure",
+      "label": "Procedure",
+      "type": "text",
+      "required": true,
+      "selector": "#DopsProcedure",
+      "inputType": "text",
+      "extractionHints": "The procedure performed, e.g. 'cannulation', 'ascitic drain'."
+    },
+    {
+      "id": "history",
+      "label": "Case history / summary",
+      "type": "text",
+      "required": true,
+      "selector": "#DopsHistory",
+      "inputType": "textarea",
+      "extractionHints": "The account of the case — what happened, what you did. This is the main narrative the assessor will discuss with you. NO patient identifiers (no names, hospital numbers, DOB)."
+    },
+    {
+      "id": "reflection",
+      "label": "Reflection",
+      "type": "text",
+      "required": false,
+      "selector": "#DopsReflection",
+      "inputType": "textarea",
+      "isReflection": true,
+      "submitsToPlatform": true,
+      "extractionHints": "Write the trainee's REFLECTION on this case, as a polished, professional piece of reflective writing in the FIRST PERSON — ready to submit.\n\nHOW TO WRITE IT:\n• Turn what the trainee said — however scrappy, hesitant or colloquial — into clear, well-structured prose.\n• Use professional reflective language and a natural structure: what happened, what you thought or felt, what you learnt, and what you would do differently.\n• Fix grammar, remove filler and false starts, and join fragments into proper sentences.\n• A few sentences is fine. Length must match what was actually said — do NOT pad.\n\nABSOLUTE RULE — NOTHING INVENTED:\nEvery fact, feeling, insight and learning point MUST come from what the trainee actually dictated. You are rewriting their thinking, not supplying it.\n• Do NOT add learning points, insights or conclusions they did not express.\n• Do NOT add clinical facts, outcomes, complications or figures they did not mention.\n• Do NOT invent feelings ('I felt anxious') unless they said so.\n• Do NOT bolt on generic reflective filler (human factors, situational awareness, team dynamics, 'this highlighted the importance of...') unless that is genuinely what they told you.\n• If they said nothing reflective at all, return an EMPTY string. An empty box is correct; an invented reflection is not.\n\nThis text goes into a training record under the trainee's name and is read as their own thinking. Rewrite it well — but only what they said."
+    },
+    {
+      "id": "assessor",
+      "label": "Assessor (recipient)",
+      "type": "text",
+      "required": true,
+      "selector": "input[name=\"RecipientId\"]",
+      "inputType": "text",
+      "submitsToPlatform": false,
+      "extractionHints": "Who you're sending the ticket to. The list is specific to your Turas account, so it's shown for reference only — you pick them on the form."
+    },
+    {
+      "id": "comments",
+      "label": "Comments to assessor",
+      "type": "text",
+      "required": false,
+      "selector": "#Comments",
+      "inputType": "textarea",
+      "extractionHints": "Any message to the assessor with the ticket."
+    }
+  ]
+}
