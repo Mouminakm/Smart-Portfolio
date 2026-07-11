@@ -26,6 +26,8 @@
 import { composeScript } from "../shared/injectionCore";
 import { buildPlan } from "../shared/planCore";
 
+import cbdSchema from "./schemas/iscp_cbd.json";
+import cexSchema from "./schemas/iscp_cex.json";
 import cexcSchema from "./schemas/iscp_cexc.json";
 import dopsSchema from "./schemas/iscp_dops.json";
 
@@ -34,7 +36,8 @@ import dopsSchema from "./schemas/iscp_dops.json";
 const SCHEMAS = {
   iscp_cexc: cexcSchema,
   iscp_dops: dopsSchema,
-  // iscp_cbd, iscp_cex: added as each form is harvested
+  iscp_cex: cexSchema,
+  iscp_cbd: cbdSchema,
   // iscp_pba: last — PBA is two-stage (the form only renders after a procedure
   //           is chosen) and its competency items are per-procedure.
 };

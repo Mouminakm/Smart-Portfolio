@@ -71,6 +71,14 @@ export default function DictationScreen() {
   const adapter = getPlatformAdapter(platform);
   const schema = adapter.getSchema({ specialty: userSpecialty, entryType });
 
+  // TEMP DIAGNOSTIC — delete once fixed.
+  console.log("[DICT]",
+    "platform=", JSON.stringify(platform),
+    "entryType=", JSON.stringify(entryType),
+    "adapter=", adapter.id,
+    "schema=", schema ? (schema.label || schema.schemaId || "?") : "NULL",
+    "fields=", schema ? schema.fields.length : 0);
+
   // ---- Recording pulse ----
   const pulse = useRef(new Animated.Value(0)).current;
   useEffect(() => {

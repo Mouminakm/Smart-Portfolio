@@ -3,7 +3,7 @@
   "label": "DOPS",
   "platform": "iscp",
   "formUrl": "https://www.iscp.ac.uk/forms/dops.aspx",
-  "notes": "Harvested from a live DOPS (July 2026). ASP.NET WebForms. Rater-owned fields (competency ratings, global summary, feedback boxes) ARE included so the trainee can DRAFT the assessment for the assessor — common practice. The assessor reviews, edits and validates every field with THEIR OWN PASSWORD before submission; that password field is never touched by us. Extraction hints forbid inventing any rating or feedback that was not actually stated — unsaid items stay blank rather than being guessed. The 10 competency items are FIXED for every DOPS (data-rating-id 16-25); only the guidance notes vary by procedure. Ratings are <div class='rating' data-rating-id data-score-id> elements, NOT form controls — the adapter CLICKS them (inputType 'ratingGrid') so ISCP's own JS updates its hidden fields. The 10 competency items are shown as 10 individual rating rows, each with its own comment box directly below it. A separate 'ratings_all' field (inputType 'ratingDefault') captures a BLANKET assessor statement ('satisfactory for everything else') and is applied to every item not rated individually — a blanket statement IS a stated judgement, so it fills. Items covered by neither an individual rating nor a blanket stay UNSET; nothing is ever guessed.",
+  "notes": "Harvested from a live DOPS (July 2026). ASP.NET WebForms. Rater-owned fields (competency ratings, global summary, feedback boxes) ARE included so the trainee can DRAFT the assessment for the assessor — common practice. The assessor reviews, edits and validates every field with THEIR OWN PASSWORD before submission; that password field is never touched by us. Extraction hints forbid inventing any rating or feedback that was not actually stated — unsaid items stay blank rather than being guessed. The 10 competency items are FIXED for every DOPS (data-rating-id 16-25); only the guidance notes vary by procedure. Ratings are <div class='rating' data-rating-id data-score-id> elements, NOT form controls — the adapter CLICKS them (inputType 'ratingGrid') so ISCP's own JS updates its hidden fields. The 10 competency items are shown as 10 individual rating rows, each with its own comment box directly below it. A separate 'ratings_all' field (inputType 'ratingDefault') captures a BLANKET assessor statement ('satisfactory for everything else') and is applied to every item not rated individually — a blanket statement IS a stated judgement, so it fills. Items covered by neither an individual rating nor a blanket stay UNSET; nothing is ever guessed. REFLECTIONS: auto-filled from July 2026 (the earlier Phase-6 hold is lifted). Claude rewrites what the trainee dictated into polished, professional reflective prose — faithful tidying, NOT generation. Every fact, insight and learning point must trace back to what was actually said; nothing is invented; nothing dictated for a given question = empty box. The three prompts are distinct (learnt / did well / improve), so each is answered separately. The trainee reviews everything on ISCP before submitting.",
   "fields": [
     {
       "id": "procedure",
@@ -728,36 +728,36 @@
     },
     {
       "id": "reflection_learnt",
-      "label": "Reflection: what I learnt",
+      "label": "What did I learn from this experience?",
       "type": "text",
       "required": false,
       "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_txtFeedbackLearnt",
       "inputType": "textarea",
       "isReflection": true,
-      "submitsToPlatform": false,
-      "extractionHints": "Reflective. Captured for reference; NOT auto-filled in v1 (guarded paraphrasing is a later phase)."
+      "submitsToPlatform": true,
+      "extractionHints": "The trainee's reflection on: \"What did I learn from this experience?\"\nWrite a polished, professional piece of reflective writing in the FIRST PERSON, covering what the trainee LEARNT from the case — ready to submit.\n\nHOW TO WRITE IT:\n• Turn what the trainee said — however scrappy, hesitant or colloquial — into clear, well-structured prose.\n• Use professional reflective language.\n• Fix grammar, remove filler and false starts, join fragments into proper sentences.\n• A few sentences is fine. Length must match what was actually said — do NOT pad.\n\nABSOLUTE RULE — NOTHING INVENTED:\nEvery fact, feeling, insight and learning point MUST come from what the trainee actually dictated. You are rewriting their thinking, not supplying it.\n• Do NOT add learning points, insights or conclusions they did not express.\n• Do NOT add clinical facts, outcomes or complications they did not mention.\n• Do NOT invent feelings ('I felt anxious') unless they said so.\n• Do NOT bolt on generic reflective filler (human factors, situational awareness, 'this highlighted the importance of...') unless that is genuinely what they told you.\n• If they said nothing that answers THIS question, return an EMPTY string. An empty box is correct; an invented reflection is not.\n• Only put content here that answers THIS question — do not repeat the other reflection boxes.\n\nThis goes into a training record under the trainee's name and is read as their own thinking. Rewrite it well — but only what they said."
     },
     {
       "id": "reflection_done_well",
-      "label": "Reflection: what I did well",
+      "label": "What did I do well?",
       "type": "text",
       "required": false,
       "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_txtFeedbackDoneWell",
       "inputType": "textarea",
       "isReflection": true,
-      "submitsToPlatform": false,
-      "extractionHints": "Reflective. Captured for reference; NOT auto-filled in v1 (guarded paraphrasing is a later phase)."
+      "submitsToPlatform": true,
+      "extractionHints": "The trainee's reflection on: \"What did I do well?\"\nWrite a polished, professional piece of reflective writing in the FIRST PERSON, covering what the trainee felt they DID WELL — ready to submit.\n\nHOW TO WRITE IT:\n• Turn what the trainee said — however scrappy, hesitant or colloquial — into clear, well-structured prose.\n• Use professional reflective language.\n• Fix grammar, remove filler and false starts, join fragments into proper sentences.\n• A few sentences is fine. Length must match what was actually said — do NOT pad.\n\nABSOLUTE RULE — NOTHING INVENTED:\nEvery fact, feeling, insight and learning point MUST come from what the trainee actually dictated. You are rewriting their thinking, not supplying it.\n• Do NOT add learning points, insights or conclusions they did not express.\n• Do NOT add clinical facts, outcomes or complications they did not mention.\n• Do NOT invent feelings ('I felt anxious') unless they said so.\n• Do NOT bolt on generic reflective filler (human factors, situational awareness, 'this highlighted the importance of...') unless that is genuinely what they told you.\n• If they said nothing that answers THIS question, return an EMPTY string. An empty box is correct; an invented reflection is not.\n• Only put content here that answers THIS question — do not repeat the other reflection boxes.\n\nThis goes into a training record under the trainee's name and is read as their own thinking. Rewrite it well — but only what they said."
     },
     {
       "id": "reflection_improve",
-      "label": "Reflection: what to improve",
+      "label": "What do I need to improve or change? How will I achieve it?",
       "type": "text",
       "required": false,
       "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_txtFeedbackImprove",
       "inputType": "textarea",
       "isReflection": true,
-      "submitsToPlatform": false,
-      "extractionHints": "Reflective. Captured for reference; NOT auto-filled in v1 (guarded paraphrasing is a later phase)."
+      "submitsToPlatform": true,
+      "extractionHints": "The trainee's reflection on: \"What do I need to improve or change? How will I achieve it?\"\nWrite a polished, professional piece of reflective writing in the FIRST PERSON, covering what the trainee needs to IMPROVE or change, and how they will achieve it — ready to submit.\n\nHOW TO WRITE IT:\n• Turn what the trainee said — however scrappy, hesitant or colloquial — into clear, well-structured prose.\n• Use professional reflective language.\n• Fix grammar, remove filler and false starts, join fragments into proper sentences.\n• A few sentences is fine. Length must match what was actually said — do NOT pad.\n\nABSOLUTE RULE — NOTHING INVENTED:\nEvery fact, feeling, insight and learning point MUST come from what the trainee actually dictated. You are rewriting their thinking, not supplying it.\n• Do NOT add learning points, insights or conclusions they did not express.\n• Do NOT add clinical facts, outcomes or complications they did not mention.\n• Do NOT invent feelings ('I felt anxious') unless they said so.\n• Do NOT bolt on generic reflective filler (human factors, situational awareness, 'this highlighted the importance of...') unless that is genuinely what they told you.\n• If they said nothing that answers THIS question, return an EMPTY string. An empty box is correct; an invented reflection is not.\n• Only put content here that answers THIS question — do not repeat the other reflection boxes.\n\nThis goes into a training record under the trainee's name and is read as their own thinking. Rewrite it well — but only what they said."
     }
   ]
 }

@@ -1,9 +1,9 @@
 {
-  "id": "iscp_cexc",
-  "label": "CEX-C",
+  "id": "iscp_cex",
+  "label": "CEX",
   "platform": "iscp",
-  "formUrl": "https://www.iscp.ac.uk/forms/cexc.aspx",
-  "notes": "Harvested from a live CEX-C (July 2026). ASP.NET WebForms. Rater-owned fields (6 competency ratings, global summary, feedback boxes) ARE included so the trainee can DRAFT the assessment for the assessor to review, edit and validate with THEIR OWN PASSWORD (never touched by us). Extraction hints forbid inventing any rating or feedback not actually stated. CEX-C has SIX consent-focused competency items (data-rating-id 67-72) and its OWN score-ids (28=N, 29=D, 30=S, 31=O) — DIFFERENT from DOPS (16-25 / 9,10,11,32). Its global summary is by TRAINING STAGE (Level 0-4), not DOPS's supervision levels. Ratings are clicked divs (inputType 'ratingGrid'); 'ratings_all' (ratingDefault) applies a blanket assessor statement to items not rated individually. Pickers are AJAX widgets: reference only, user picks on-site. Dates dd/mm/yyyy. REFLECTIONS: auto-filled from July 2026 (the earlier Phase-6 hold is lifted). Claude rewrites what the trainee dictated into polished, professional reflective prose — faithful tidying, NOT generation. Every fact, insight and learning point must trace back to what was actually said; nothing is invented; nothing dictated for a given question = empty box. The three prompts are distinct (learnt / did well / improve), so each is answered separately. The trainee reviews everything on ISCP before submitting.",
+  "formUrl": "https://www.iscp.ac.uk/forms/cex.aspx",
+  "notes": "Harvested from a live CEX (July 2026). ASP.NET WebForms, same field family as CEX-C (identical cexEntry_ ids for the details/feedback/reflection sections) but with its OWN EIGHT competency items and its OWN score-ids: items are data-rating-id 9,10,11,12,13,14,15 then 66 for Professionalism (note the jump), and scores are 5=N, 6=D, 7=S, 8=O — DIFFERENT again from DOPS (16-25 / 9,10,11,32) and CEX-C (67-72 / 28-31). Three forms, three sets: never extrapolate ISCP rating ids between forms. Rater-owned fields are included so the trainee can DRAFT the assessment for the assessor, who reviews, edits and validates it with THEIR OWN PASSWORD (never touched by us). Extraction hints forbid inventing any rating or feedback not actually stated. Reflections are auto-filled by faithful rewriting (nothing invented). Pickers (rater/hospital) are AJAX widgets: reference only in v1, user picks on-site. Dates dd/mm/yyyy.",
   "fields": [
     {
       "id": "assessment_date",
@@ -41,7 +41,7 @@
       "required": true,
       "selector": "#conplchldBodyControls_cexEntry_Details_txtCEXSummary",
       "inputType": "text",
-      "extractionHints": "One-line summary, e.g. 'Consent for laparoscopic cholecystectomy'. NO patient identifiers."
+      "extractionHints": "One-line summary of the clinical encounter, e.g. 'Assessment of acute abdominal pain'. NO patient-identifiable details."
     },
     {
       "id": "clinical_setting",
@@ -288,7 +288,7 @@
           "selector": "#conplchldBodyControls_cexEntry_Details_chklstCEXFocusEncounter_5"
         }
       ],
-      "extractionHints": "Which aspects the encounter covered (several allowed). For a CEX-C, Consent and Explanation usually apply."
+      "extractionHints": "Which aspects the encounter covered (several allowed): history, exam, diagnosis, explanation, consent, management."
     },
     {
       "id": "ratings_all",
@@ -299,22 +299,22 @@
       "isRaterField": true,
       "options": [
         {
-          "value": "28",
+          "value": "5",
           "label": "Not assessed/observed",
           "short": "N"
         },
         {
-          "value": "29",
+          "value": "6",
           "label": "Development required",
           "short": "D"
         },
         {
-          "value": "30",
+          "value": "7",
           "label": "Satisfactory",
           "short": "S"
         },
         {
-          "value": "31",
+          "value": "8",
           "label": "Outstanding",
           "short": "O"
         }
@@ -323,35 +323,35 @@
     },
     {
       "id": "rating_1",
-      "label": "1. Demonstrates sound knowledge of indications and contraindications specific to the procedure under discussion, including alternatives to surgery",
+      "label": "1. History Taking",
       "type": "single_select",
       "required": false,
       "inputType": "ratingGrid",
-      "ratingId": "67",
+      "ratingId": "9",
       "isRaterField": true,
       "options": [
         {
-          "value": "28",
+          "value": "5",
           "label": "Not assessed/observed",
           "short": "N"
         },
         {
-          "value": "29",
+          "value": "6",
           "label": "Development required",
           "short": "D"
         },
         {
-          "value": "30",
+          "value": "7",
           "label": "Satisfactory",
           "short": "S"
         },
         {
-          "value": "31",
+          "value": "8",
           "label": "Outstanding",
           "short": "O"
         }
       ],
-      "extractionHints": "The ASSESSOR's rating for competency 1 ('Demonstrates sound knowledge of indications and contraindications specific to the procedure under discussion, including alternatives to surgery'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
+      "extractionHints": "The ASSESSOR's rating for competency 1 ('History Taking'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
     },
     {
       "id": "rating_comment_1",
@@ -361,39 +361,39 @@
       "selector": "#conplchldBodyControls_cexEntry_RatingsPicker_ratings_txtRatingComment_0",
       "inputType": "textarea",
       "isRaterField": true,
-      "extractionHints": "Any specific comment the assessor made about competency 1. Record only what was said."
+      "extractionHints": "Any specific comment the assessor made about competency 1 ('History Taking'). Record only what was said."
     },
     {
       "id": "rating_2",
-      "label": "2. Demonstrates awareness of sequelae of operative or non operative management",
+      "label": "2. Physical Examination Skills",
       "type": "single_select",
       "required": false,
       "inputType": "ratingGrid",
-      "ratingId": "68",
+      "ratingId": "10",
       "isRaterField": true,
       "options": [
         {
-          "value": "28",
+          "value": "5",
           "label": "Not assessed/observed",
           "short": "N"
         },
         {
-          "value": "29",
+          "value": "6",
           "label": "Development required",
           "short": "D"
         },
         {
-          "value": "30",
+          "value": "7",
           "label": "Satisfactory",
           "short": "S"
         },
         {
-          "value": "31",
+          "value": "8",
           "label": "Outstanding",
           "short": "O"
         }
       ],
-      "extractionHints": "The ASSESSOR's rating for competency 2 ('Demonstrates awareness of sequelae of operative or non operative management'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
+      "extractionHints": "The ASSESSOR's rating for competency 2 ('Physical Examination Skills'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
     },
     {
       "id": "rating_comment_2",
@@ -403,39 +403,39 @@
       "selector": "#conplchldBodyControls_cexEntry_RatingsPicker_ratings_txtRatingComment_1",
       "inputType": "textarea",
       "isRaterField": true,
-      "extractionHints": "Any specific comment the assessor made about competency 2. Record only what was said."
+      "extractionHints": "Any specific comment the assessor made about competency 2 ('Physical Examination Skills'). Record only what was said."
     },
     {
       "id": "rating_3",
-      "label": "3. Demonstrates sound knowledge of complications of surgery",
+      "label": "3. Diagnostic skills and underlying knowledge base",
       "type": "single_select",
       "required": false,
       "inputType": "ratingGrid",
-      "ratingId": "69",
+      "ratingId": "11",
       "isRaterField": true,
       "options": [
         {
-          "value": "28",
+          "value": "5",
           "label": "Not assessed/observed",
           "short": "N"
         },
         {
-          "value": "29",
+          "value": "6",
           "label": "Development required",
           "short": "D"
         },
         {
-          "value": "30",
+          "value": "7",
           "label": "Satisfactory",
           "short": "S"
         },
         {
-          "value": "31",
+          "value": "8",
           "label": "Outstanding",
           "short": "O"
         }
       ],
-      "extractionHints": "The ASSESSOR's rating for competency 3 ('Demonstrates sound knowledge of complications of surgery'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
+      "extractionHints": "The ASSESSOR's rating for competency 3 ('Diagnostic skills and underlying knowledge base'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
     },
     {
       "id": "rating_comment_3",
@@ -445,39 +445,39 @@
       "selector": "#conplchldBodyControls_cexEntry_RatingsPicker_ratings_txtRatingComment_2",
       "inputType": "textarea",
       "isRaterField": true,
-      "extractionHints": "Any specific comment the assessor made about competency 3. Record only what was said."
+      "extractionHints": "Any specific comment the assessor made about competency 3 ('Diagnostic skills and underlying knowledge base'). Record only what was said."
     },
     {
       "id": "rating_4",
-      "label": "4. Explains the surgery to the patient/relatives/carers and checks understanding",
+      "label": "4. Management and follow-up planning",
       "type": "single_select",
       "required": false,
       "inputType": "ratingGrid",
-      "ratingId": "70",
+      "ratingId": "12",
       "isRaterField": true,
       "options": [
         {
-          "value": "28",
+          "value": "5",
           "label": "Not assessed/observed",
           "short": "N"
         },
         {
-          "value": "29",
+          "value": "6",
           "label": "Development required",
           "short": "D"
         },
         {
-          "value": "30",
+          "value": "7",
           "label": "Satisfactory",
           "short": "S"
         },
         {
-          "value": "31",
+          "value": "8",
           "label": "Outstanding",
           "short": "O"
         }
       ],
-      "extractionHints": "The ASSESSOR's rating for competency 4 ('Explains the surgery to the patient/relatives/carers and checks understanding'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
+      "extractionHints": "The ASSESSOR's rating for competency 4 ('Management and follow-up planning'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
     },
     {
       "id": "rating_comment_4",
@@ -487,39 +487,39 @@
       "selector": "#conplchldBodyControls_cexEntry_RatingsPicker_ratings_txtRatingComment_3",
       "inputType": "textarea",
       "isRaterField": true,
-      "extractionHints": "Any specific comment the assessor made about competency 4. Record only what was said."
+      "extractionHints": "Any specific comment the assessor made about competency 4 ('Management and follow-up planning'). Record only what was said."
     },
     {
       "id": "rating_5",
-      "label": "5. Explains likely outcome and time to recovery and checks understanding",
+      "label": "5. Clinical judgement and decision making",
       "type": "single_select",
       "required": false,
       "inputType": "ratingGrid",
-      "ratingId": "71",
+      "ratingId": "13",
       "isRaterField": true,
       "options": [
         {
-          "value": "28",
+          "value": "5",
           "label": "Not assessed/observed",
           "short": "N"
         },
         {
-          "value": "29",
+          "value": "6",
           "label": "Development required",
           "short": "D"
         },
         {
-          "value": "30",
+          "value": "7",
           "label": "Satisfactory",
           "short": "S"
         },
         {
-          "value": "31",
+          "value": "8",
           "label": "Outstanding",
           "short": "O"
         }
       ],
-      "extractionHints": "The ASSESSOR's rating for competency 5 ('Explains likely outcome and time to recovery and checks understanding'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
+      "extractionHints": "The ASSESSOR's rating for competency 5 ('Clinical judgement and decision making'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
     },
     {
       "id": "rating_comment_5",
@@ -529,39 +529,39 @@
       "selector": "#conplchldBodyControls_cexEntry_RatingsPicker_ratings_txtRatingComment_4",
       "inputType": "textarea",
       "isRaterField": true,
-      "extractionHints": "Any specific comment the assessor made about competency 5. Record only what was said."
+      "extractionHints": "Any specific comment the assessor made about competency 5 ('Clinical judgement and decision making'). Record only what was said."
     },
     {
       "id": "rating_6",
-      "label": "6. Professionalism",
+      "label": "6. Communication and listening skills",
       "type": "single_select",
       "required": false,
       "inputType": "ratingGrid",
-      "ratingId": "72",
+      "ratingId": "14",
       "isRaterField": true,
       "options": [
         {
-          "value": "28",
+          "value": "5",
           "label": "Not assessed/observed",
           "short": "N"
         },
         {
-          "value": "29",
+          "value": "6",
           "label": "Development required",
           "short": "D"
         },
         {
-          "value": "30",
+          "value": "7",
           "label": "Satisfactory",
           "short": "S"
         },
         {
-          "value": "31",
+          "value": "8",
           "label": "Outstanding",
           "short": "O"
         }
       ],
-      "extractionHints": "The ASSESSOR's rating for competency 6 ('Professionalism'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
+      "extractionHints": "The ASSESSOR's rating for competency 6 ('Communication and listening skills'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
     },
     {
       "id": "rating_comment_6",
@@ -571,7 +571,91 @@
       "selector": "#conplchldBodyControls_cexEntry_RatingsPicker_ratings_txtRatingComment_5",
       "inputType": "textarea",
       "isRaterField": true,
-      "extractionHints": "Any specific comment the assessor made about competency 6. Record only what was said."
+      "extractionHints": "Any specific comment the assessor made about competency 6 ('Communication and listening skills'). Record only what was said."
+    },
+    {
+      "id": "rating_7",
+      "label": "7. Organisation and time management",
+      "type": "single_select",
+      "required": false,
+      "inputType": "ratingGrid",
+      "ratingId": "15",
+      "isRaterField": true,
+      "options": [
+        {
+          "value": "5",
+          "label": "Not assessed/observed",
+          "short": "N"
+        },
+        {
+          "value": "6",
+          "label": "Development required",
+          "short": "D"
+        },
+        {
+          "value": "7",
+          "label": "Satisfactory",
+          "short": "S"
+        },
+        {
+          "value": "8",
+          "label": "Outstanding",
+          "short": "O"
+        }
+      ],
+      "extractionHints": "The ASSESSOR's rating for competency 7 ('Organisation and time management'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
+    },
+    {
+      "id": "rating_comment_7",
+      "label": "    ↳ Comment on 7",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_cexEntry_RatingsPicker_ratings_txtRatingComment_6",
+      "inputType": "textarea",
+      "isRaterField": true,
+      "extractionHints": "Any specific comment the assessor made about competency 7 ('Organisation and time management'). Record only what was said."
+    },
+    {
+      "id": "rating_8",
+      "label": "8. Professionalism",
+      "type": "single_select",
+      "required": false,
+      "inputType": "ratingGrid",
+      "ratingId": "66",
+      "isRaterField": true,
+      "options": [
+        {
+          "value": "5",
+          "label": "Not assessed/observed",
+          "short": "N"
+        },
+        {
+          "value": "6",
+          "label": "Development required",
+          "short": "D"
+        },
+        {
+          "value": "7",
+          "label": "Satisfactory",
+          "short": "S"
+        },
+        {
+          "value": "8",
+          "label": "Outstanding",
+          "short": "O"
+        }
+      ],
+      "extractionHints": "The ASSESSOR's rating for competency 8 ('Professionalism'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
+    },
+    {
+      "id": "rating_comment_8",
+      "label": "    ↳ Comment on 8",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_cexEntry_RatingsPicker_ratings_txtRatingComment_7",
+      "inputType": "textarea",
+      "isRaterField": true,
+      "extractionHints": "Any specific comment the assessor made about competency 8 ('Professionalism'). Record only what was said."
     },
     {
       "id": "global_summary",
