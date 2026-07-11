@@ -12,7 +12,8 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.occiprae.smartportfolio",
       "infoPlist": {
-        "NSMicrophoneUsageDescription": "Smart Portfolio uses the microphone so you can dictate your logbook entries."
+        "NSMicrophoneUsageDescription": "Smart Portfolio uses the microphone so you can dictate your logbook entries.",
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
