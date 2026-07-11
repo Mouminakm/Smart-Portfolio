@@ -1,22 +1,22 @@
 // app/submission.jsx
 // Core loop screen — Submission via WebView (spec F8).
-// Loads the real eLogbook Add Operation form, builds an injection plan from the
-// dictated entry (EntryContext), waits for the Angular form to render, then
-// auto-fills every field. The user reviews and submits on eLogbook itself.
+// PLATFORM-AGNOSTIC: reads which platform this entry is for from the route
+// params, looks up that platform's adapter, and lets the adapter supply the form
+// URL, the schema, the fill plan and the injected script. The user always
+// reviews and submits on the portfolio site itself — we never auto-submit.
 //
 // This build carries a DIAGNOSTICS layer: every stage and every field posts a
 // labelled message (tag "diag-2026-06-29a") to the Expo terminal so failures are visible.
 
 import { Ionicons } from "@expo/vector-icons";
+import { useLocalSearchParams } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 import { WebView } from "react-native-webview";
 import AppButton from "../components/AppButton";
 import { useAuth } from "../contexts/AuthContext";
 import { useEntry } from "../contexts/EntryContext";
-import { getSpecialtyData } from "../data/specialtySchemas";
-import { buildInjectionPlan } from "../platforms/elogbook/adapter";
-import { buildFullInjectionScript, FORM_URL } from "../platforms/elogbook/adapter";
+import { getPlatformAdapter } from "../platforms";
 import { loadProfile } from "../profile";
 import { colors, spacing } from "../theme/theme";
 
@@ -32,7 +32,14 @@ export default function SubmissionScreen() {
   const { fieldValues } = useEntry();
   const { user } = useAuth();
   const webRef = useRef(null);
-  const [statusMsg, setStatusMsg] = useState("Opening eLogbook…");
+
+  // Which platform is this entry for? Dictation passes it through the route.
+  // If it's missing we fall back to eLogbook, so nothing changes for existing
+  // entries — but a Turas/ISCP entry now reaches the RIGHT adapter.
+  const { platform, entryType } = useLocalSearchParams();
+  const adapter = getPlatformAdapter(platform);
+
+  const [statusMsg, setStatusMsg] = useState(`Opening ${adapter.displayName}…`);
   const [filled, setFilled] = useState(false);
   const [needsLogin, setNeedsLogin] = useState(false);
   const [failedFields, setFailedFields] = useState([]);
@@ -50,13 +57,15 @@ export default function SubmissionScreen() {
     load();
   }, [user]);
 
-  const specialtyData = getSpecialtyData(userSpecialty);
-  const schema = specialtyData ? specialtyData.schema : null;
+  // The adapter decides how its schema is keyed — eLogbook by SPECIALTY,
+  // Turas/ISCP by ENTRY TYPE — so this screen doesn't need to know.
+  const schema = adapter.getSchema({ specialty: userSpecialty, entryType });
+  const formUrl = adapter.formUrl({ entryType, schema });
 
   const plan =
     userHospitals === null || !schema
       ? null
-      : buildInjectionPlan(fieldValues, schema, userHospitals, userSpecialty);
+      : adapter.buildPlan(fieldValues, schema, userHospitals, userSpecialty);
 
   // Map a selector or name to a friendly field label using the schema.
   function labelFor(idOrSel) {
@@ -123,7 +132,7 @@ export default function SubmissionScreen() {
 
       if (data.stage === "needs_login") {
         log(`[DIAG ${BUILD_TAG}] needs login`);
-        setStatusMsg("Please sign in to eLogbook, then it will fill automatically.");
+        setStatusMsg(`Please sign in to ${adapter.displayName}, then it will fill automatically.`);
         return;
       }
 
@@ -149,7 +158,7 @@ export default function SubmissionScreen() {
 
       if (data.stage === "form_never_appeared") {
         log(`[DIAG ${BUILD_TAG}] form never appeared`);
-        setStatusMsg("Couldn't find the eLogbook form. Please make sure you're on the Add Operation page.");
+        setStatusMsg(`Couldn't find the ${adapter.displayName} form. Please check you're on the right page.`);
         return;
       }
 
@@ -162,7 +171,7 @@ export default function SubmissionScreen() {
         printReport(data);
         const filledCount = (data.fields || []).filter((f) => f.status === "OK").length;
         setFilled(filledCount);
-        setStatusMsg(`Filled ${filledCount} fields. Review and Save on eLogbook.`);
+        setStatusMsg(`Filled ${filledCount} fields. Review and Save on ${adapter.displayName}.`);
         return;
       }
 
@@ -178,7 +187,7 @@ export default function SubmissionScreen() {
     setFailedFields([]);
     setStatusMsg("Filling your entry…");
     if (webRef.current) {
-      webRef.current.injectJavaScript(buildFullInjectionScript(plan));
+      webRef.current.injectJavaScript(adapter.buildScript(plan));
     }
   }
 
@@ -197,11 +206,11 @@ export default function SubmissionScreen() {
       {plan ? (
         <WebView
           ref={webRef}
-          source={{ uri: FORM_URL }}
+          source={{ uri: formUrl }}
           style={styles.web}
           sharedCookiesEnabled
           thirdPartyCookiesEnabled
-          injectedJavaScript={buildFullInjectionScript(plan)}
+          injectedJavaScript={adapter.buildScript(plan)}
           onMessage={handleMessage}
         />
       ) : (
@@ -212,8 +221,8 @@ export default function SubmissionScreen() {
         <View style={styles.footerNoteRow}>
           <Ionicons name="shield-checkmark" size={16} color={colors.tealDeep} style={{ marginRight: spacing.sm, marginTop: 1 }} />
           <Text style={styles.footerNote}>
-            Review on eLogbook and submit there — Smart Portfolio never submits for you.
-            Patient details are never auto-filled.
+            Review on {adapter.displayName} and submit there — Smart Portfolio
+            never submits for you. Patient details are never auto-filled.
           </Text>
         </View>
         <AppButton href="/home">Done — back to home</AppButton>

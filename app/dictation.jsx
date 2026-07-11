@@ -281,7 +281,10 @@ export default function DictationScreen() {
               <Ionicons name="checkmark-circle" size={20} color={colors.success} />
               <Text style={styles.readyText}>Ready to fill {isTuras ? "Turas" : "eLogbook"}</Text>
             </View>
-            <PrimaryButton href="/submission" style={{ paddingHorizontal: 40 }}>
+            <PrimaryButton
+             href={{ pathname: "/submission", params: { platform: platform || "elogbook", entryType: entryType || undefined } }}
+            style={{ paddingHorizontal: 40 }}
+            >
               Open in {isTuras ? "Turas" : "eLogbook"}
             </PrimaryButton>
           </>

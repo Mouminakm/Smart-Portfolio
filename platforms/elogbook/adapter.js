@@ -10,9 +10,9 @@
 // Everything site-agnostic (fill primitives, the settle-fill loop, the end-state
 // audit, the diagnostics protocol) comes from platforms/shared/injectionCore.js.
 
-import { composeScript } from "../shared/injectionCore";
 import { getSpecialtyData } from "../../data/specialtySchemas";
-import { buildPlan, norm, matchOption } from "../shared/planCore";
+import { composeScript } from "../shared/injectionCore";
+import { buildPlan, matchOption, norm } from "../shared/planCore";
 
 export const FORM_URL =
   "https://client.elogbook.org/eLogbook/Operations/OperationMaintain/Add";
@@ -305,11 +305,20 @@ export function buildInjectionPlan(fieldValues, schema, userHospitals = [], user
   });
 }
 
+// eLogbook picks its schema by the user's SPECIALTY (Turas/ISCP will pick by
+// entryType instead). Keeping this inside the adapter is what stops the screens
+// having to know how each platform is keyed.
+export function getSchema({ specialty } = {}) {
+  const data = getSpecialtyData(specialty);
+  return data ? data.schema : null;
+}
+
 // The adapter object — the contract every platform implements.
 export const adapter = {
   id: "elogbook",
   displayName: "eLogbook",
   formUrl: () => FORM_URL,
+  getSchema,
   buildScript: buildFullInjectionScript,
   buildPlan: buildInjectionPlan,
 };
