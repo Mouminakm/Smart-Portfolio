@@ -25,6 +25,8 @@
       "predictiveBackGestureEnabled": false,
       "permissions": [
         "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.RECORD_AUDIO",
         "android.permission.MODIFY_AUDIO_SETTINGS"
       ],
       "package": "com.occiprae.smartportfolio"
@@ -66,6 +68,12 @@
       "eas": {
         "projectId": "db3d2003-416e-420e-9fdf-4105f6e1a7fa"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/db3d2003-416e-420e-9fdf-4105f6e1a7fa"
     }
   }
 }
