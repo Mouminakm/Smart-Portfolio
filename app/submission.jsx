@@ -32,6 +32,9 @@ export default function SubmissionScreen() {
   const { fieldValues } = useEntry();
   const { user } = useAuth();
   const webRef = useRef(null);
+  // True while we're waiting for the user to sign in to the portfolio site, so
+  // we know to send them back to the form once they're through.
+  const awaitingLogin = useRef(false);
 
   // Which platform is this entry for? Dictation passes it through the route.
   // If it's missing we fall back to eLogbook, so nothing changes for existing
@@ -132,7 +135,9 @@ export default function SubmissionScreen() {
 
       if (data.stage === "needs_login") {
         log(`[DIAG ${BUILD_TAG}] needs login`);
-        setStatusMsg(`Please sign in to ${adapter.displayName}, then it will fill automatically.`);
+        setNeedsLogin(true);
+        awaitingLogin.current = true; // so onNavigationStateChange sends us back
+        setStatusMsg(`Please sign in to ${adapter.displayName} — we'll bring you back to the form.`);
         return;
       }
 
@@ -181,7 +186,44 @@ export default function SubmissionScreen() {
       log(`[DIAG ${BUILD_TAG}] handleMessage parse error`, e);
     }
   }
+  // The portfolio sites bounce you to their login page, and then — after you
+  // sign in — land you on their DASHBOARD, not the form we asked for. So watch
+  // navigation: once we're clearly past the login page, send the WebView back
+  // to the form. The injected script then runs again and fills as normal.
+  function handleNavChange(navState) {
+    const url = String(navState.url || "").toLowerCase();
+    if (!awaitingLogin.current || navState.loading) return;
+
+    const stillOnLogin =
+      url.includes("/login") ||
+      url.includes("signin") ||
+      url.includes("account/login") ||
+      url.includes("identity") ||
+      url.includes("auth");
+    if (stillOnLogin) return; // still signing in — leave them alone
+
+    // We've left the login page. If we're not on the form, go there.
+    const onForm = url.split("?")[0] === String(formUrl).toLowerCase().split("?")[0];
+    if (onForm) {
+      awaitingLogin.current = false;
+      setNeedsLogin(false);
+      return; // the injected script will run on this load and fill
+    }
+
+    awaitingLogin.current = false;
+    setNeedsLogin(false);
+    setStatusMsg("Signed in — opening your form…");
+    if (webRef.current) {
+      // Send them to the form. redirectTo is a full page load, so the script
+      // is injected fresh and fills automatically.
+      webRef.current.injectJavaScript(
+        `window.location.href = ${JSON.stringify(formUrl)}; true;`
+      );
+    }
+  }
+
   function handleRetry() {
+    awaitingLogin.current = false;
     setNeedsLogin(false);
     setFilled(false);
     setFailedFields([]);
@@ -212,6 +254,7 @@ export default function SubmissionScreen() {
           thirdPartyCookiesEnabled
           injectedJavaScript={adapter.buildScript(plan)}
           onMessage={handleMessage}
+          onNavigationStateChange={handleNavChange}
         />
       ) : (
         <View style={styles.web} />
