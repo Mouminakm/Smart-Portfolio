@@ -1,0 +1,215 @@
+{
+    "id": "iscp_dops",
+    "label": "DOPS",
+    "platform": "iscp",
+    "formUrl": "https://www.iscp.ac.uk/forms/dops.aspx",
+    "notes": "Harvested from a live DOPS capture (July 2026). ASP.NET WebForms, same family as CEX-C. TRAINEE-OWNED fields only — rater-owned fields (summary rating Level 0-4b, strengths/development/actions/general feedback, per-competency rating comments 0-9, rater password, submit dropdown) are EXCLUDED. Procedure/rater/hospital use ISCP's AJAX picker widgets: captured for reference, submitsToPlatform=false in v1 (user picks on-site; driving pickers = adapter phase 2). Reflections isReflection=true, unfilled per Phase-6 rule. Date = jQuery datepicker, expected dd/mm/yyyy (confirm live).",
+    "fields": [
+      {
+        "id": "procedure",
+        "label": "Procedure",
+        "type": "text",
+        "required": true,
+        "selector": "#conplchldBodyControls_dopsEntry_DopsProcedureName_dopsTypePicker_dopsProcedurePicker_pickerSearchText",
+        "inputType": "text",
+        "submitsToPlatform": false,
+        "extractionHints": "The procedure observed (e.g. 'chest drain insertion'). Shown for reference — the user selects it in ISCP's picker on the form."
+      },
+      {
+        "id": "assessment_date",
+        "label": "Assessment date",
+        "type": "date",
+        "required": true,
+        "selector": "#conplchldBodyControls_dopsEntry_AboutTheAssessment_txtAssessmentDate",
+        "inputType": "date",
+        "extractionHints": "The date the procedure was observed. Accept spoken dates."
+      },
+      {
+        "id": "assessor",
+        "label": "Assessor (rater)",
+        "type": "text",
+        "required": true,
+        "selector": "#conplchldBodyControls_dopsEntry_AboutTheAssessment_raterPicker_pickerSearchText",
+        "inputType": "text",
+        "submitsToPlatform": false,
+        "extractionHints": "Name of the assessing consultant/senior. Reference only — picked on the form."
+      },
+      {
+        "id": "hospital",
+        "label": "Hospital",
+        "type": "text",
+        "required": true,
+        "selector": "#conplchldBodyControls_dopsEntry_AboutTheAssessment_hospitalPicker_pickerSearchText",
+        "inputType": "text",
+        "submitsToPlatform": false,
+        "extractionHints": "Hospital where it took place. Reference only — picked on the form."
+      },
+      {
+        "id": "emergency_elective",
+        "label": "Emergency or elective",
+        "type": "single_select",
+        "required": true,
+        "selector": "#conplchldBodyControls_dopsEntry_Details_ddlEmergencyElective",
+        "inputType": "select",
+        "options": [
+          {
+            "value": "1422",
+            "label": "Emergency"
+          },
+          {
+            "value": "1423",
+            "label": "Elective"
+          }
+        ],
+        "extractionHints": "Emergency or elective procedure."
+      },
+      {
+        "id": "simulated_environment",
+        "label": "Simulated environment",
+        "type": "single_select",
+        "required": false,
+        "selector": "#conplchldBodyControls_dopsEntry_Details_ddlSimulatedEnviroment",
+        "inputType": "select",
+        "options": [
+          {
+            "value": "1",
+            "label": "Yes"
+          },
+          {
+            "value": "0",
+            "label": "No"
+          }
+        ],
+        "extractionHints": "Usually No for a real patient. Default No if clearly a real case."
+      },
+      {
+        "id": "simulated_environment_other",
+        "label": "Simulation details",
+        "type": "text",
+        "required": false,
+        "selector": "#conplchldBodyControls_dopsEntry_Details_txtSimulatedEnviromentOther",
+        "inputType": "text",
+        "dependsOn": {
+          "field": "simulated_environment",
+          "value": "Yes"
+        },
+        "extractionHints": "Only if simulated: what kind."
+      },
+      {
+        "id": "performed_on_course",
+        "label": "Performed on a course",
+        "type": "single_select",
+        "required": false,
+        "selector": "#conplchldBodyControls_dopsEntry_Details_ddlPerformedOnCourse",
+        "inputType": "select",
+        "options": [
+          {
+            "value": "1",
+            "label": "Yes"
+          },
+          {
+            "value": "0",
+            "label": "No"
+          }
+        ],
+        "extractionHints": "Usually No."
+      },
+      {
+        "id": "performed_on_course_text",
+        "label": "Course details",
+        "type": "text",
+        "required": false,
+        "selector": "#conplchldBodyControls_dopsEntry_Details_txtPerformedOnCourseText",
+        "inputType": "text",
+        "dependsOn": {
+          "field": "performed_on_course",
+          "value": "Yes"
+        },
+        "extractionHints": "Only if on a course: which course."
+      },
+      {
+        "id": "difficulty",
+        "label": "Difficulty of procedure",
+        "type": "single_select",
+        "required": true,
+        "selector": "#conplchldBodyControls_dopsEntry_Details_ddlDifficulty",
+        "inputType": "select",
+        "options": [
+          {
+            "value": "195",
+            "label": "Easier than usual"
+          },
+          {
+            "value": "196",
+            "label": "Average difficulty"
+          },
+          {
+            "value": "197",
+            "label": "More difficult than usual"
+          }
+        ],
+        "extractionHints": "How difficult vs usual: easier / average / more difficult ('straightforward' -> Easier than usual; 'difficult case' -> More difficult than usual)."
+      },
+      {
+        "id": "times_performed",
+        "label": "Times performed before",
+        "type": "number",
+        "required": false,
+        "selector": "#conplchldBodyControls_dopsEntry_Details_txtProcedurePerformedCount",
+        "inputType": "number",
+        "extractionHints": "How many times the trainee has performed this procedure before ('I've done about ten of these' -> 10)."
+      },
+      {
+        "id": "feedback_public_private",
+        "label": "Feedback visibility",
+        "type": "single_select",
+        "required": false,
+        "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_ddlFeedbackPublicPrivate",
+        "inputType": "select",
+        "options": [
+          {
+            "value": "1424",
+            "label": "Private"
+          },
+          {
+            "value": "1425",
+            "label": "Non Private"
+          }
+        ],
+        "extractionHints": "Only set if the user says so."
+      },
+      {
+        "id": "reflection_learnt",
+        "label": "Reflection: what I learnt",
+        "type": "text",
+        "required": false,
+        "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_txtFeedbackLearnt",
+        "inputType": "textarea",
+        "isReflection": true,
+        "submitsToPlatform": false,
+        "extractionHints": "Reflective. NOT auto-filled in v1 — reference only."
+      },
+      {
+        "id": "reflection_done_well",
+        "label": "Reflection: what went well",
+        "type": "text",
+        "required": false,
+        "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_txtFeedbackDoneWell",
+        "inputType": "textarea",
+        "isReflection": true,
+        "submitsToPlatform": false,
+        "extractionHints": "Reflective. NOT auto-filled in v1."
+      },
+      {
+        "id": "reflection_improve",
+        "label": "Reflection: what to improve",
+        "type": "text",
+        "required": false,
+        "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_txtFeedbackImprove",
+        "inputType": "textarea",
+        "isReflection": true,
+        "submitsToPlatform": false,
+        "extractionHints": "Reflective. NOT auto-filled in v1."
+      }
+    ]
+  }

@@ -1,0 +1,346 @@
+{
+  "id": "iscp_cexc",
+  "label": "CEX for Consent (CEX-C)",
+  "platform": "iscp",
+  "formUrl": "https://www.iscp.ac.uk/forms/cexc.aspx",
+  "notes": "Harvested from a live CEX-C capture (July 2026). ASP.NET WebForms. TRAINEE-OWNED fields only: rater-owned fields (assessment rating, strengths/development/recommended-actions/general feedback, rater password validation, submit dropdown, ratings picker) are deliberately EXCLUDED — they are the assessor's voice and validation, and must never be auto-filled. Rater + hospital use ISCP's custom AJAX picker widgets (ISCP.Pickers.*.js): captured in dictation for the user's reference but submitsToPlatform=false in v1 — the user picks them on-site; driving the pickers is adapter phase 2 after live testing. Reflection textareas are isReflection=true and left unfilled per the Phase-6 rule. Date input is a jQuery datepicker, expected dd/mm/yyyy (confirm live).",
+  "fields": [
+    {
+      "id": "assessment_date",
+      "label": "Assessment date",
+      "type": "date",
+      "required": true,
+      "selector": "#conplchldBodyControls_cexEntry_AboutTheAssessment_txtAssessmentDate",
+      "inputType": "date",
+      "extractionHints": "The date the assessment/consent encounter took place. Accept spoken dates ('the ninth of July')."
+    },
+    {
+      "id": "assessor",
+      "label": "Assessor (rater)",
+      "type": "text",
+      "required": true,
+      "selector": "#conplchldBodyControls_cexEntry_AboutTheAssessment_raterPicker_pickerSearchText",
+      "inputType": "text",
+      "submitsToPlatform": false,
+      "extractionHints": "Name of the assessing consultant/senior ('assessed by Mr Jones'). Shown for reference — the user selects the assessor in ISCP's picker on the form."
+    },
+    {
+      "id": "hospital",
+      "label": "Hospital",
+      "type": "text",
+      "required": true,
+      "selector": "#conplchldBodyControls_cexEntry_AboutTheAssessment_hospitalPicker_pickerSearchText",
+      "inputType": "text",
+      "submitsToPlatform": false,
+      "extractionHints": "Hospital where the encounter took place. Shown for reference — the user selects it in ISCP's picker on the form."
+    },
+    {
+      "id": "clinical_setting",
+      "label": "Clinical setting",
+      "type": "single_select",
+      "required": true,
+      "selector": "#conplchldBodyControls_cexEntry_Details_ddlWBAClinicalSetting",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "158",
+          "label": "A&E"
+        },
+        {
+          "value": "159",
+          "label": "Clinic"
+        },
+        {
+          "value": "160",
+          "label": "Community"
+        },
+        {
+          "value": "161",
+          "label": "Theatre"
+        },
+        {
+          "value": "162",
+          "label": "Ward"
+        },
+        {
+          "value": "1459",
+          "label": "Primary care"
+        },
+        {
+          "value": "1461",
+          "label": "Hospital - Critical care"
+        },
+        {
+          "value": "1462",
+          "label": "Hospital - MDT"
+        },
+        {
+          "value": "1467",
+          "label": "Specialist practice"
+        },
+        {
+          "value": "163",
+          "label": "Other"
+        }
+      ],
+      "extractionHints": "Where it happened: clinic, ward, theatre, A&E ('in clinic' -> Clinic; 'on the ward' -> Ward; ITU/ICU -> Hospital - Critical care)."
+    },
+    {
+      "id": "clinical_setting_other",
+      "label": "Clinical setting (other)",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_cexEntry_Details_txtWBAClinicalSettingOther",
+      "inputType": "text",
+      "dependsOn": {
+        "field": "clinical_setting",
+        "value": "Other"
+      },
+      "extractionHints": "Only if the setting is none of the listed ones."
+    },
+    {
+      "id": "emergency_elective",
+      "label": "Emergency or elective",
+      "type": "single_select",
+      "required": true,
+      "selector": "#conplchldBodyControls_cexEntry_Details_ddlEmergencyElective",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "1422",
+          "label": "Emergency"
+        },
+        {
+          "value": "1423",
+          "label": "Elective"
+        }
+      ],
+      "extractionHints": "Emergency or elective encounter."
+    },
+    {
+      "id": "simulated_environment",
+      "label": "Simulated environment",
+      "type": "single_select",
+      "required": false,
+      "selector": "#conplchldBodyControls_cexEntry_Details_ddlSimulatedEnviroment",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "1",
+          "label": "Yes"
+        },
+        {
+          "value": "0",
+          "label": "No"
+        }
+      ],
+      "extractionHints": "Was this in a simulated environment? Usually No for real patient encounters. Default No if the dictation clearly describes a real patient."
+    },
+    {
+      "id": "simulated_environment_other",
+      "label": "Simulation details",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_cexEntry_Details_txtSimulatedEnviromentOther",
+      "inputType": "text",
+      "dependsOn": {
+        "field": "simulated_environment",
+        "value": "Yes"
+      },
+      "extractionHints": "Only if simulated: what kind of simulation."
+    },
+    {
+      "id": "performed_on_course",
+      "label": "Performed on a course",
+      "type": "single_select",
+      "required": false,
+      "selector": "#conplchldBodyControls_cexEntry_Details_ddlPerformedOnCourse",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "1",
+          "label": "Yes"
+        },
+        {
+          "value": "0",
+          "label": "No"
+        }
+      ],
+      "extractionHints": "Was this on a course? Usually No."
+    },
+    {
+      "id": "performed_on_course_text",
+      "label": "Course details",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_cexEntry_Details_txtPerformedOnCourseText",
+      "inputType": "text",
+      "dependsOn": {
+        "field": "performed_on_course",
+        "value": "Yes"
+      },
+      "extractionHints": "Only if on a course: which course."
+    },
+    {
+      "id": "critical_condition",
+      "label": "Critically ill patient",
+      "type": "single_select",
+      "required": false,
+      "selector": "#conplchldBodyControls_cexEntry_Details_ddlCriticalCondition",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "1",
+          "label": "Yes"
+        },
+        {
+          "value": "0",
+          "label": "No"
+        }
+      ],
+      "extractionHints": "Was the patient critically ill/unstable?"
+    },
+    {
+      "id": "complexity",
+      "label": "Case complexity",
+      "type": "single_select",
+      "required": true,
+      "selector": "#conplchldBodyControls_cexEntry_Details_ddlWBAComplexity",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "168",
+          "label": "1. Appropriate for early years training"
+        },
+        {
+          "value": "169",
+          "label": "2. Appropriate for the completion of early years training or early specialty training"
+        },
+        {
+          "value": "170",
+          "label": "3. Appropriate for the central period of specialty training"
+        },
+        {
+          "value": "171",
+          "label": "4. Appropriate for Certification"
+        }
+      ],
+      "extractionHints": "Complexity level 1-4. Map spoken 'level one/two/three/four' or 'complexity 3' to the numbered option."
+    },
+    {
+      "id": "new_or_followup",
+      "label": "New or follow-up",
+      "type": "single_select",
+      "required": true,
+      "selector": "#conplchldBodyControls_cexEntry_Details_ddlNewOrFollowUp",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "238",
+          "label": "New"
+        },
+        {
+          "value": "239",
+          "label": "Follow up"
+        }
+      ],
+      "extractionHints": "New patient or follow-up."
+    },
+    {
+      "id": "case_summary",
+      "label": "Brief summary of case",
+      "type": "text",
+      "required": true,
+      "selector": "#conplchldBodyControls_cexEntry_Details_txtCEXSummary",
+      "inputType": "text",
+      "extractionHints": "One-line summary of the consent encounter, e.g. 'Consent for laparoscopic cholecystectomy'. NO patient-identifiable details."
+    },
+    {
+      "id": "focus",
+      "label": "Focus of encounter",
+      "type": "multi_select",
+      "required": true,
+      "selector": "#conplchldBodyControls_cexEntry_Details_chklstCEXFocusEncounter",
+      "inputType": "multicheck",
+      "options": [
+        {
+          "label": "History",
+          "selector": "#conplchldBodyControls_cexEntry_Details_chklstCEXFocusEncounter_0"
+        },
+        {
+          "label": "Exam",
+          "selector": "#conplchldBodyControls_cexEntry_Details_chklstCEXFocusEncounter_1"
+        },
+        {
+          "label": "Diagnosis",
+          "selector": "#conplchldBodyControls_cexEntry_Details_chklstCEXFocusEncounter_2"
+        },
+        {
+          "label": "Explanation",
+          "selector": "#conplchldBodyControls_cexEntry_Details_chklstCEXFocusEncounter_3"
+        },
+        {
+          "label": "Consent",
+          "selector": "#conplchldBodyControls_cexEntry_Details_chklstCEXFocusEncounter_4"
+        },
+        {
+          "label": "Management",
+          "selector": "#conplchldBodyControls_cexEntry_Details_chklstCEXFocusEncounter_5"
+        }
+      ],
+      "extractionHints": "Which aspects the encounter focused on (several allowed): history, exam, diagnosis, explanation, consent, management. For a CEX-C, Consent and Explanation are usually included."
+    },
+    {
+      "id": "feedback_public_private",
+      "label": "Feedback visibility",
+      "type": "single_select",
+      "required": false,
+      "selector": "#conplchldBodyControls_cexEntry_TraineeReflections_ddlFeedbackPublicPrivate",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "1424",
+          "label": "Private"
+        },
+        {
+          "value": "1425",
+          "label": "Non Private"
+        }
+      ],
+      "extractionHints": "Whether the reflection is private. Only set if the user says so."
+    },
+    {
+      "id": "reflection_learnt",
+      "label": "Reflection: what I learnt",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_cexEntry_TraineeReflections_txtFeedbackLearnt",
+      "inputType": "textarea",
+      "isReflection": true,
+      "submitsToPlatform": false,
+      "extractionHints": "Reflective: what was learnt. NOT auto-filled in v1 (guarded reflection is a later phase) — captured for the user's reference only."
+    },
+    {
+      "id": "reflection_done_well",
+      "label": "Reflection: what went well",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_cexEntry_TraineeReflections_txtFeedbackDoneWell",
+      "inputType": "textarea",
+      "isReflection": true,
+      "submitsToPlatform": false,
+      "extractionHints": "Reflective: what went well. NOT auto-filled in v1."
+    },
+    {
+      "id": "reflection_improve",
+      "label": "Reflection: what to improve",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_cexEntry_TraineeReflections_txtFeedbackImprove",
+      "inputType": "textarea",
+      "isReflection": true,
+      "submitsToPlatform": false,
+      "extractionHints": "Reflective: what to improve. NOT auto-filled in v1."
+    }
+  ]
+}
