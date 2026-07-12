@@ -3,7 +3,7 @@
   "label": "CEX-C",
   "platform": "iscp",
   "formUrl": "https://www.iscp.ac.uk/forms/cexc.aspx",
-  "notes": "Harvested from a live CEX-C (July 2026). ASP.NET WebForms. Rater-owned fields (6 competency ratings, global summary, feedback boxes) ARE included so the trainee can DRAFT the assessment for the assessor to review, edit and validate with THEIR OWN PASSWORD (never touched by us). Extraction hints forbid inventing any rating or feedback not actually stated. CEX-C has SIX consent-focused competency items (data-rating-id 67-72) and its OWN score-ids (28=N, 29=D, 30=S, 31=O) — DIFFERENT from DOPS (16-25 / 9,10,11,32). Its global summary is by TRAINING STAGE (Level 0-4), not DOPS's supervision levels. Ratings are clicked divs (inputType 'ratingGrid'); 'ratings_all' (ratingDefault) applies a blanket assessor statement to items not rated individually. Pickers are AJAX widgets: reference only, user picks on-site. Dates dd/mm/yyyy. REFLECTIONS: auto-filled from July 2026 (the earlier Phase-6 hold is lifted). Claude rewrites what the trainee dictated into polished, professional reflective prose — faithful tidying, NOT generation. Every fact, insight and learning point must trace back to what was actually said; nothing is invented; nothing dictated for a given question = empty box. The three prompts are distinct (learnt / did well / improve), so each is answered separately. The trainee reviews everything on ISCP before submitting.",
+  "notes": "Harvested from a live CEX-C (July 2026). ASP.NET WebForms. Rater-owned fields (6 competency ratings, global summary, feedback boxes) ARE included so the trainee can DRAFT the assessment for the assessor to review, edit and validate with THEIR OWN PASSWORD (never touched by us). Extraction hints forbid inventing any rating or feedback not actually stated. CEX-C has SIX consent-focused competency items (data-rating-id 67-72) and its OWN score-ids (28=N, 29=D, 30=S, 31=O) — DIFFERENT from DOPS (16-25 / 9,10,11,32). Its global summary is by TRAINING STAGE (Level 0-4), not DOPS's supervision levels. Ratings are clicked divs (inputType 'ratingGrid'); 'ratings_all' (ratingDefault) applies a blanket assessor statement to items not rated individually. Pickers are AJAX widgets: reference only, user picks on-site. Dates dd/mm/yyyy. REFLECTIONS: auto-filled from July 2026 (the earlier Phase-6 hold is lifted). Claude rewrites what the trainee dictated into polished, professional reflective prose — faithful tidying, NOT generation. Every fact, insight and learning point must trace back to what was actually said; nothing is invented; nothing dictated for a given question = empty box. The three prompts are distinct (learnt / did well / improve), so each is answered separately. The trainee reviews everything on ISCP before submitting. FIELD ORDER now follows the live CEX-C page top-to-bottom (about the assessment -> rater feedback -> trainee comments -> trainee reflections -> ratings -> CEXC details -> global summary). VERIFIED against the live form: CEX-C has NO per-rating comment boxes (only DOPS has those — 6 phantom ones were removed here) and NO GMC domains; it DOES have New/Follow-up, Critical condition, and the 'relates to a reflective journal entry' checkbox (now added).",
   "fields": [
     {
       "id": "assessment_date",
@@ -33,577 +33,6 @@
       "inputType": "text",
       "submitsToPlatform": false,
       "extractionHints": "Hospital. Reference only — picked on the form."
-    },
-    {
-      "id": "case_summary",
-      "label": "Brief summary of case",
-      "type": "text",
-      "required": true,
-      "selector": "#conplchldBodyControls_cexEntry_Details_txtCEXSummary",
-      "inputType": "text",
-      "extractionHints": "One-line summary, e.g. 'Consent for laparoscopic cholecystectomy'. NO patient identifiers."
-    },
-    {
-      "id": "clinical_setting",
-      "label": "Clinical setting",
-      "type": "single_select",
-      "required": true,
-      "selector": "#conplchldBodyControls_cexEntry_Details_ddlWBAClinicalSetting",
-      "inputType": "select",
-      "options": [
-        {
-          "value": "158",
-          "label": "A&E"
-        },
-        {
-          "value": "159",
-          "label": "Clinic"
-        },
-        {
-          "value": "160",
-          "label": "Community"
-        },
-        {
-          "value": "161",
-          "label": "Theatre"
-        },
-        {
-          "value": "162",
-          "label": "Ward"
-        },
-        {
-          "value": "1459",
-          "label": "Primary care"
-        },
-        {
-          "value": "1461",
-          "label": "Hospital - Critical care"
-        },
-        {
-          "value": "1462",
-          "label": "Hospital - MDT"
-        },
-        {
-          "value": "1467",
-          "label": "Specialist practice"
-        },
-        {
-          "value": "163",
-          "label": "Other"
-        }
-      ],
-      "extractionHints": "Where it happened ('in clinic' -> Clinic; 'on the ward' -> Ward; ITU -> Hospital - Critical care)."
-    },
-    {
-      "id": "clinical_setting_other",
-      "label": "Clinical setting (other)",
-      "type": "text",
-      "required": false,
-      "selector": "#conplchldBodyControls_cexEntry_Details_txtWBAClinicalSettingOther",
-      "inputType": "text",
-      "dependsOn": {
-        "field": "clinical_setting",
-        "value": "Other"
-      },
-      "extractionHints": "Only if 'Other'."
-    },
-    {
-      "id": "emergency_elective",
-      "label": "Emergency or elective",
-      "type": "single_select",
-      "required": true,
-      "selector": "#conplchldBodyControls_cexEntry_Details_ddlEmergencyElective",
-      "inputType": "select",
-      "options": [
-        {
-          "value": "1422",
-          "label": "Emergency"
-        },
-        {
-          "value": "1423",
-          "label": "Elective"
-        }
-      ],
-      "extractionHints": "Emergency or elective."
-    },
-    {
-      "id": "new_or_followup",
-      "label": "New or follow-up",
-      "type": "single_select",
-      "required": true,
-      "selector": "#conplchldBodyControls_cexEntry_Details_ddlNewOrFollowUp",
-      "inputType": "select",
-      "options": [
-        {
-          "value": "238",
-          "label": "New"
-        },
-        {
-          "value": "239",
-          "label": "Follow up"
-        }
-      ],
-      "extractionHints": "New patient or follow-up."
-    },
-    {
-      "id": "complexity",
-      "label": "Case complexity",
-      "type": "single_select",
-      "required": true,
-      "selector": "#conplchldBodyControls_cexEntry_Details_ddlWBAComplexity",
-      "inputType": "select",
-      "options": [
-        {
-          "value": "168",
-          "label": "1. Appropriate for early years training"
-        },
-        {
-          "value": "169",
-          "label": "2. Appropriate for the completion of early years training or early specialty training"
-        },
-        {
-          "value": "170",
-          "label": "3. Appropriate for the central period of specialty training"
-        },
-        {
-          "value": "171",
-          "label": "4. Appropriate for Certification"
-        }
-      ],
-      "extractionHints": "Complexity 1-4. Map 'level three'/'complexity 3' to the numbered option."
-    },
-    {
-      "id": "critical_condition",
-      "label": "Critically ill patient",
-      "type": "single_select",
-      "required": false,
-      "selector": "#conplchldBodyControls_cexEntry_Details_ddlCriticalCondition",
-      "inputType": "select",
-      "options": [
-        {
-          "value": "1",
-          "label": "Yes"
-        },
-        {
-          "value": "0",
-          "label": "No"
-        }
-      ],
-      "extractionHints": "Was the patient critically ill/unstable?"
-    },
-    {
-      "id": "simulated_environment",
-      "label": "Simulated setting",
-      "type": "single_select",
-      "required": false,
-      "selector": "#conplchldBodyControls_cexEntry_Details_ddlSimulatedEnviroment",
-      "inputType": "select",
-      "options": [
-        {
-          "value": "1",
-          "label": "Yes"
-        },
-        {
-          "value": "0",
-          "label": "No"
-        }
-      ],
-      "extractionHints": "Usually No for a real patient."
-    },
-    {
-      "id": "simulated_environment_other",
-      "label": "Simulation details",
-      "type": "text",
-      "required": false,
-      "selector": "#conplchldBodyControls_cexEntry_Details_txtSimulatedEnviromentOther",
-      "inputType": "text",
-      "dependsOn": {
-        "field": "simulated_environment",
-        "value": "Yes"
-      },
-      "extractionHints": "Only if simulated."
-    },
-    {
-      "id": "performed_on_course",
-      "label": "Performed on a course",
-      "type": "single_select",
-      "required": false,
-      "selector": "#conplchldBodyControls_cexEntry_Details_ddlPerformedOnCourse",
-      "inputType": "select",
-      "options": [
-        {
-          "value": "1",
-          "label": "Yes"
-        },
-        {
-          "value": "0",
-          "label": "No"
-        }
-      ],
-      "extractionHints": "Usually No."
-    },
-    {
-      "id": "performed_on_course_text",
-      "label": "Course details",
-      "type": "text",
-      "required": false,
-      "selector": "#conplchldBodyControls_cexEntry_Details_txtPerformedOnCourseText",
-      "inputType": "text",
-      "dependsOn": {
-        "field": "performed_on_course",
-        "value": "Yes"
-      },
-      "extractionHints": "Only if on a course."
-    },
-    {
-      "id": "focus",
-      "label": "Focus of encounter",
-      "type": "multi_select",
-      "required": true,
-      "selector": "#conplchldBodyControls_cexEntry_Details_chklstCEXFocusEncounter",
-      "inputType": "multicheck",
-      "options": [
-        {
-          "label": "History",
-          "selector": "#conplchldBodyControls_cexEntry_Details_chklstCEXFocusEncounter_0"
-        },
-        {
-          "label": "Exam",
-          "selector": "#conplchldBodyControls_cexEntry_Details_chklstCEXFocusEncounter_1"
-        },
-        {
-          "label": "Diagnosis",
-          "selector": "#conplchldBodyControls_cexEntry_Details_chklstCEXFocusEncounter_2"
-        },
-        {
-          "label": "Explanation",
-          "selector": "#conplchldBodyControls_cexEntry_Details_chklstCEXFocusEncounter_3"
-        },
-        {
-          "label": "Consent",
-          "selector": "#conplchldBodyControls_cexEntry_Details_chklstCEXFocusEncounter_4"
-        },
-        {
-          "label": "Management",
-          "selector": "#conplchldBodyControls_cexEntry_Details_chklstCEXFocusEncounter_5"
-        }
-      ],
-      "extractionHints": "Which aspects the encounter covered (several allowed). For a CEX-C, Consent and Explanation usually apply."
-    },
-    {
-      "id": "ratings_all",
-      "label": "Rating for all competencies (unless rated individually below)",
-      "type": "single_select",
-      "required": false,
-      "inputType": "ratingDefault",
-      "isRaterField": true,
-      "options": [
-        {
-          "value": "28",
-          "label": "Not assessed/observed",
-          "short": "N"
-        },
-        {
-          "value": "29",
-          "label": "Development required",
-          "short": "D"
-        },
-        {
-          "value": "30",
-          "label": "Satisfactory",
-          "short": "S"
-        },
-        {
-          "value": "31",
-          "label": "Outstanding",
-          "short": "O"
-        }
-      ],
-      "extractionHints": "A BLANKET rating the assessor gave covering the competencies they didn't single out — 'satisfactory for everything else', 'the rest were fine'. Set ONLY if such a general statement was actually made; it fills every item not rated individually. N/D/S/O."
-    },
-    {
-      "id": "rating_1",
-      "label": "1. Demonstrates sound knowledge of indications and contraindications specific to the procedure under discussion, including alternatives to surgery",
-      "type": "single_select",
-      "required": false,
-      "inputType": "ratingGrid",
-      "ratingId": "67",
-      "isRaterField": true,
-      "options": [
-        {
-          "value": "28",
-          "label": "Not assessed/observed",
-          "short": "N"
-        },
-        {
-          "value": "29",
-          "label": "Development required",
-          "short": "D"
-        },
-        {
-          "value": "30",
-          "label": "Satisfactory",
-          "short": "S"
-        },
-        {
-          "value": "31",
-          "label": "Outstanding",
-          "short": "O"
-        }
-      ],
-      "extractionHints": "The ASSESSOR's rating for competency 1 ('Demonstrates sound knowledge of indications and contraindications specific to the procedure under discussion, including alternatives to surgery'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
-    },
-    {
-      "id": "rating_comment_1",
-      "label": "    ↳ Comment on 1",
-      "type": "text",
-      "required": false,
-      "selector": "#conplchldBodyControls_cexEntry_RatingsPicker_ratings_txtRatingComment_0",
-      "inputType": "textarea",
-      "isRaterField": true,
-      "extractionHints": "Any specific comment the assessor made about competency 1. Record only what was said."
-    },
-    {
-      "id": "rating_2",
-      "label": "2. Demonstrates awareness of sequelae of operative or non operative management",
-      "type": "single_select",
-      "required": false,
-      "inputType": "ratingGrid",
-      "ratingId": "68",
-      "isRaterField": true,
-      "options": [
-        {
-          "value": "28",
-          "label": "Not assessed/observed",
-          "short": "N"
-        },
-        {
-          "value": "29",
-          "label": "Development required",
-          "short": "D"
-        },
-        {
-          "value": "30",
-          "label": "Satisfactory",
-          "short": "S"
-        },
-        {
-          "value": "31",
-          "label": "Outstanding",
-          "short": "O"
-        }
-      ],
-      "extractionHints": "The ASSESSOR's rating for competency 2 ('Demonstrates awareness of sequelae of operative or non operative management'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
-    },
-    {
-      "id": "rating_comment_2",
-      "label": "    ↳ Comment on 2",
-      "type": "text",
-      "required": false,
-      "selector": "#conplchldBodyControls_cexEntry_RatingsPicker_ratings_txtRatingComment_1",
-      "inputType": "textarea",
-      "isRaterField": true,
-      "extractionHints": "Any specific comment the assessor made about competency 2. Record only what was said."
-    },
-    {
-      "id": "rating_3",
-      "label": "3. Demonstrates sound knowledge of complications of surgery",
-      "type": "single_select",
-      "required": false,
-      "inputType": "ratingGrid",
-      "ratingId": "69",
-      "isRaterField": true,
-      "options": [
-        {
-          "value": "28",
-          "label": "Not assessed/observed",
-          "short": "N"
-        },
-        {
-          "value": "29",
-          "label": "Development required",
-          "short": "D"
-        },
-        {
-          "value": "30",
-          "label": "Satisfactory",
-          "short": "S"
-        },
-        {
-          "value": "31",
-          "label": "Outstanding",
-          "short": "O"
-        }
-      ],
-      "extractionHints": "The ASSESSOR's rating for competency 3 ('Demonstrates sound knowledge of complications of surgery'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
-    },
-    {
-      "id": "rating_comment_3",
-      "label": "    ↳ Comment on 3",
-      "type": "text",
-      "required": false,
-      "selector": "#conplchldBodyControls_cexEntry_RatingsPicker_ratings_txtRatingComment_2",
-      "inputType": "textarea",
-      "isRaterField": true,
-      "extractionHints": "Any specific comment the assessor made about competency 3. Record only what was said."
-    },
-    {
-      "id": "rating_4",
-      "label": "4. Explains the surgery to the patient/relatives/carers and checks understanding",
-      "type": "single_select",
-      "required": false,
-      "inputType": "ratingGrid",
-      "ratingId": "70",
-      "isRaterField": true,
-      "options": [
-        {
-          "value": "28",
-          "label": "Not assessed/observed",
-          "short": "N"
-        },
-        {
-          "value": "29",
-          "label": "Development required",
-          "short": "D"
-        },
-        {
-          "value": "30",
-          "label": "Satisfactory",
-          "short": "S"
-        },
-        {
-          "value": "31",
-          "label": "Outstanding",
-          "short": "O"
-        }
-      ],
-      "extractionHints": "The ASSESSOR's rating for competency 4 ('Explains the surgery to the patient/relatives/carers and checks understanding'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
-    },
-    {
-      "id": "rating_comment_4",
-      "label": "    ↳ Comment on 4",
-      "type": "text",
-      "required": false,
-      "selector": "#conplchldBodyControls_cexEntry_RatingsPicker_ratings_txtRatingComment_3",
-      "inputType": "textarea",
-      "isRaterField": true,
-      "extractionHints": "Any specific comment the assessor made about competency 4. Record only what was said."
-    },
-    {
-      "id": "rating_5",
-      "label": "5. Explains likely outcome and time to recovery and checks understanding",
-      "type": "single_select",
-      "required": false,
-      "inputType": "ratingGrid",
-      "ratingId": "71",
-      "isRaterField": true,
-      "options": [
-        {
-          "value": "28",
-          "label": "Not assessed/observed",
-          "short": "N"
-        },
-        {
-          "value": "29",
-          "label": "Development required",
-          "short": "D"
-        },
-        {
-          "value": "30",
-          "label": "Satisfactory",
-          "short": "S"
-        },
-        {
-          "value": "31",
-          "label": "Outstanding",
-          "short": "O"
-        }
-      ],
-      "extractionHints": "The ASSESSOR's rating for competency 5 ('Explains likely outcome and time to recovery and checks understanding'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
-    },
-    {
-      "id": "rating_comment_5",
-      "label": "    ↳ Comment on 5",
-      "type": "text",
-      "required": false,
-      "selector": "#conplchldBodyControls_cexEntry_RatingsPicker_ratings_txtRatingComment_4",
-      "inputType": "textarea",
-      "isRaterField": true,
-      "extractionHints": "Any specific comment the assessor made about competency 5. Record only what was said."
-    },
-    {
-      "id": "rating_6",
-      "label": "6. Professionalism",
-      "type": "single_select",
-      "required": false,
-      "inputType": "ratingGrid",
-      "ratingId": "72",
-      "isRaterField": true,
-      "options": [
-        {
-          "value": "28",
-          "label": "Not assessed/observed",
-          "short": "N"
-        },
-        {
-          "value": "29",
-          "label": "Development required",
-          "short": "D"
-        },
-        {
-          "value": "30",
-          "label": "Satisfactory",
-          "short": "S"
-        },
-        {
-          "value": "31",
-          "label": "Outstanding",
-          "short": "O"
-        }
-      ],
-      "extractionHints": "The ASSESSOR's rating for competency 6 ('Professionalism'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
-    },
-    {
-      "id": "rating_comment_6",
-      "label": "    ↳ Comment on 6",
-      "type": "text",
-      "required": false,
-      "selector": "#conplchldBodyControls_cexEntry_RatingsPicker_ratings_txtRatingComment_5",
-      "inputType": "textarea",
-      "isRaterField": true,
-      "extractionHints": "Any specific comment the assessor made about competency 6. Record only what was said."
-    },
-    {
-      "id": "global_summary",
-      "label": "Global summary",
-      "type": "single_select",
-      "required": false,
-      "selector": "#conplchldBodyControls_cexEntry_Summary_ddlAssessmentRating",
-      "inputType": "select",
-      "isRaterField": true,
-      "options": [
-        {
-          "value": "172",
-          "label": "Level 0: Below that expected for early years training"
-        },
-        {
-          "value": "173",
-          "label": "Level 1: Appropriate for early years training"
-        },
-        {
-          "value": "174",
-          "label": "Level 2: Appropriate for completion of early years training or early specialty training"
-        },
-        {
-          "value": "175",
-          "label": "Level 3: Appropriate for central period of specialty training"
-        },
-        {
-          "value": "176",
-          "label": "Level 4: Appropriate for Certification"
-        }
-      ],
-      "extractionHints": "The assessor's overall level, if stated ('he said level 3'). Leave blank if not said."
     },
     {
       "id": "feedback_general",
@@ -705,6 +134,526 @@
       "isReflection": true,
       "submitsToPlatform": true,
       "extractionHints": "The trainee's reflection answering: \"What do I need to improve or change? How will I achieve it?\"\nThis box should cover what the trainee needs to IMPROVE or change, and the concrete action they will take.\n\nYou are writing up the trainee's reflection so it reads as a strong, professional piece of reflective writing — the standard expected in a UK surgical training portfolio.\n\nWRITE IT WELL. This is the main task.\n• Use the GMC's reflective arc: WHAT happened that mattered · SO WHAT it meant (why it was significant, what you recognised) · WHAT NOW (what you take forward, what you will do differently).\n• Focus on the LEARNING, not the story. GMC guidance is explicit: a reflective note should set out what you learnt and what you will do, not re-narrate the case. Keep case description to the minimum needed to make the learning make sense.\n• Write in connected, considered prose — first person, past tense for events, professional register. Not bullet points, not tidied speech, not a transcript with the \"um\"s removed.\n• Develop the trainee's thinking properly: draw out the insight they expressed, make its significance explicit, and state the consequence for their practice. Give each idea the sentences it deserves.\n• Be specific. \"I will use ultrasound guidance at first review\" is reflection; \"I will be more careful\" is not.\n• Structure is a scaffold, not a straitjacket — if the material doesn't fit the arc neatly, write it in whatever shape serves the thinking best.\n\nTHE ONE BOUNDARY — EVERY IDEA MUST BE THEIRS.\nYou are expressing the trainee's thinking fully and well. You are not supplying it. This note goes into a training record under their name and is read by an ARCP panel as evidence of THEIR reflective practice.\n• Every learning point, insight, judgement, feeling and clinical fact must trace back to something the trainee actually said. Elaborate their idea; never introduce a new one.\n• You may develop, sharpen and articulate a thought they expressed — that is the job. You may not conclude something they did not conclude.\n• Do NOT add clinical facts, outcomes or complications they did not mention.\n• Do NOT attribute feelings they did not express.\n• Do NOT reach for stock reflective themes (human factors, situational awareness, team dynamics, \"this highlighted the importance of communication\") unless that is genuinely what they told you.\n• If they said nothing that answers this question, return an EMPTY string. An empty box is honest; a fabricated reflection is not.\n\nSo: take what they gave you, however scrappy, and write the best, sharpest, most professional version of THAT.\n\nOnly answer THIS question here — do not duplicate the other reflection boxes."
+    },
+    {
+      "id": "relates_to_journal",
+      "label": "This relates to a reflective journal entry",
+      "type": "checkbox",
+      "required": false,
+      "selector": "#conplchldBodyControls_cexEntry_TraineeReflections_chkRelatesToJournalEntry",
+      "inputType": "checkbox",
+      "extractionHints": "Tick only if the trainee says they have written a journal entry about this case."
+    },
+    {
+      "id": "ratings_all",
+      "label": "Rating for all competencies (unless rated individually below)",
+      "type": "single_select",
+      "required": false,
+      "inputType": "ratingDefault",
+      "isRaterField": true,
+      "options": [
+        {
+          "value": "28",
+          "label": "Not assessed/observed",
+          "short": "N"
+        },
+        {
+          "value": "29",
+          "label": "Development required",
+          "short": "D"
+        },
+        {
+          "value": "30",
+          "label": "Satisfactory",
+          "short": "S"
+        },
+        {
+          "value": "31",
+          "label": "Outstanding",
+          "short": "O"
+        }
+      ],
+      "extractionHints": "A BLANKET rating the assessor gave covering the competencies they didn't single out — 'satisfactory for everything else', 'the rest were fine'. Set ONLY if such a general statement was actually made; it fills every item not rated individually. N/D/S/O."
+    },
+    {
+      "id": "rating_1",
+      "label": "1. Demonstrates sound knowledge of indications and contraindications specific to the procedure under discussion, including alternatives to surgery",
+      "type": "single_select",
+      "required": false,
+      "inputType": "ratingGrid",
+      "ratingId": "67",
+      "isRaterField": true,
+      "options": [
+        {
+          "value": "28",
+          "label": "Not assessed/observed",
+          "short": "N"
+        },
+        {
+          "value": "29",
+          "label": "Development required",
+          "short": "D"
+        },
+        {
+          "value": "30",
+          "label": "Satisfactory",
+          "short": "S"
+        },
+        {
+          "value": "31",
+          "label": "Outstanding",
+          "short": "O"
+        }
+      ],
+      "extractionHints": "The ASSESSOR's rating for competency 1 ('Demonstrates sound knowledge of indications and contraindications specific to the procedure under discussion, including alternatives to surgery'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
+    },
+    {
+      "id": "rating_2",
+      "label": "2. Demonstrates awareness of sequelae of operative or non operative management",
+      "type": "single_select",
+      "required": false,
+      "inputType": "ratingGrid",
+      "ratingId": "68",
+      "isRaterField": true,
+      "options": [
+        {
+          "value": "28",
+          "label": "Not assessed/observed",
+          "short": "N"
+        },
+        {
+          "value": "29",
+          "label": "Development required",
+          "short": "D"
+        },
+        {
+          "value": "30",
+          "label": "Satisfactory",
+          "short": "S"
+        },
+        {
+          "value": "31",
+          "label": "Outstanding",
+          "short": "O"
+        }
+      ],
+      "extractionHints": "The ASSESSOR's rating for competency 2 ('Demonstrates awareness of sequelae of operative or non operative management'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
+    },
+    {
+      "id": "rating_3",
+      "label": "3. Demonstrates sound knowledge of complications of surgery",
+      "type": "single_select",
+      "required": false,
+      "inputType": "ratingGrid",
+      "ratingId": "69",
+      "isRaterField": true,
+      "options": [
+        {
+          "value": "28",
+          "label": "Not assessed/observed",
+          "short": "N"
+        },
+        {
+          "value": "29",
+          "label": "Development required",
+          "short": "D"
+        },
+        {
+          "value": "30",
+          "label": "Satisfactory",
+          "short": "S"
+        },
+        {
+          "value": "31",
+          "label": "Outstanding",
+          "short": "O"
+        }
+      ],
+      "extractionHints": "The ASSESSOR's rating for competency 3 ('Demonstrates sound knowledge of complications of surgery'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
+    },
+    {
+      "id": "rating_4",
+      "label": "4. Explains the surgery to the patient/relatives/carers and checks understanding",
+      "type": "single_select",
+      "required": false,
+      "inputType": "ratingGrid",
+      "ratingId": "70",
+      "isRaterField": true,
+      "options": [
+        {
+          "value": "28",
+          "label": "Not assessed/observed",
+          "short": "N"
+        },
+        {
+          "value": "29",
+          "label": "Development required",
+          "short": "D"
+        },
+        {
+          "value": "30",
+          "label": "Satisfactory",
+          "short": "S"
+        },
+        {
+          "value": "31",
+          "label": "Outstanding",
+          "short": "O"
+        }
+      ],
+      "extractionHints": "The ASSESSOR's rating for competency 4 ('Explains the surgery to the patient/relatives/carers and checks understanding'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
+    },
+    {
+      "id": "rating_5",
+      "label": "5. Explains likely outcome and time to recovery and checks understanding",
+      "type": "single_select",
+      "required": false,
+      "inputType": "ratingGrid",
+      "ratingId": "71",
+      "isRaterField": true,
+      "options": [
+        {
+          "value": "28",
+          "label": "Not assessed/observed",
+          "short": "N"
+        },
+        {
+          "value": "29",
+          "label": "Development required",
+          "short": "D"
+        },
+        {
+          "value": "30",
+          "label": "Satisfactory",
+          "short": "S"
+        },
+        {
+          "value": "31",
+          "label": "Outstanding",
+          "short": "O"
+        }
+      ],
+      "extractionHints": "The ASSESSOR's rating for competency 5 ('Explains likely outcome and time to recovery and checks understanding'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
+    },
+    {
+      "id": "rating_6",
+      "label": "6. Professionalism",
+      "type": "single_select",
+      "required": false,
+      "inputType": "ratingGrid",
+      "ratingId": "72",
+      "isRaterField": true,
+      "options": [
+        {
+          "value": "28",
+          "label": "Not assessed/observed",
+          "short": "N"
+        },
+        {
+          "value": "29",
+          "label": "Development required",
+          "short": "D"
+        },
+        {
+          "value": "30",
+          "label": "Satisfactory",
+          "short": "S"
+        },
+        {
+          "value": "31",
+          "label": "Outstanding",
+          "short": "O"
+        }
+      ],
+      "extractionHints": "The ASSESSOR's rating for competency 6 ('Professionalism'). Set ONLY if their judgement for THIS item was specifically stated. Do NOT put a blanket 'everything else' rating here — that goes in 'Rating for all competencies'. Never guess. N/D/S/O."
+    },
+    {
+      "id": "clinical_setting",
+      "label": "Clinical setting",
+      "type": "single_select",
+      "required": true,
+      "selector": "#conplchldBodyControls_cexEntry_Details_ddlWBAClinicalSetting",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "158",
+          "label": "A&E"
+        },
+        {
+          "value": "159",
+          "label": "Clinic"
+        },
+        {
+          "value": "160",
+          "label": "Community"
+        },
+        {
+          "value": "161",
+          "label": "Theatre"
+        },
+        {
+          "value": "162",
+          "label": "Ward"
+        },
+        {
+          "value": "1459",
+          "label": "Primary care"
+        },
+        {
+          "value": "1461",
+          "label": "Hospital - Critical care"
+        },
+        {
+          "value": "1462",
+          "label": "Hospital - MDT"
+        },
+        {
+          "value": "1467",
+          "label": "Specialist practice"
+        },
+        {
+          "value": "163",
+          "label": "Other"
+        }
+      ],
+      "extractionHints": "Where it happened ('in clinic' -> Clinic; 'on the ward' -> Ward; ITU -> Hospital - Critical care)."
+    },
+    {
+      "id": "clinical_setting_other",
+      "label": "Clinical setting (other)",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_cexEntry_Details_txtWBAClinicalSettingOther",
+      "inputType": "text",
+      "dependsOn": {
+        "field": "clinical_setting",
+        "value": "Other"
+      },
+      "extractionHints": "Only if 'Other'."
+    },
+    {
+      "id": "emergency_elective",
+      "label": "Emergency or elective",
+      "type": "single_select",
+      "required": true,
+      "selector": "#conplchldBodyControls_cexEntry_Details_ddlEmergencyElective",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "1422",
+          "label": "Emergency"
+        },
+        {
+          "value": "1423",
+          "label": "Elective"
+        }
+      ],
+      "extractionHints": "Emergency or elective."
+    },
+    {
+      "id": "simulated_environment",
+      "label": "Simulated setting",
+      "type": "single_select",
+      "required": false,
+      "selector": "#conplchldBodyControls_cexEntry_Details_ddlSimulatedEnviroment",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "1",
+          "label": "Yes"
+        },
+        {
+          "value": "0",
+          "label": "No"
+        }
+      ],
+      "extractionHints": "Usually No for a real patient."
+    },
+    {
+      "id": "simulated_environment_other",
+      "label": "Simulation details",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_cexEntry_Details_txtSimulatedEnviromentOther",
+      "inputType": "text",
+      "dependsOn": {
+        "field": "simulated_environment",
+        "value": "Yes"
+      },
+      "extractionHints": "Only if simulated."
+    },
+    {
+      "id": "performed_on_course",
+      "label": "Performed on a course",
+      "type": "single_select",
+      "required": false,
+      "selector": "#conplchldBodyControls_cexEntry_Details_ddlPerformedOnCourse",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "1",
+          "label": "Yes"
+        },
+        {
+          "value": "0",
+          "label": "No"
+        }
+      ],
+      "extractionHints": "Usually No."
+    },
+    {
+      "id": "performed_on_course_text",
+      "label": "Course details",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_cexEntry_Details_txtPerformedOnCourseText",
+      "inputType": "text",
+      "dependsOn": {
+        "field": "performed_on_course",
+        "value": "Yes"
+      },
+      "extractionHints": "Only if on a course."
+    },
+    {
+      "id": "case_summary",
+      "label": "Brief summary of case",
+      "type": "text",
+      "required": true,
+      "selector": "#conplchldBodyControls_cexEntry_Details_txtCEXSummary",
+      "inputType": "text",
+      "extractionHints": "One-line summary, e.g. 'Consent for laparoscopic cholecystectomy'. NO patient identifiers."
+    },
+    {
+      "id": "critical_condition",
+      "label": "Critically ill patient",
+      "type": "single_select",
+      "required": false,
+      "selector": "#conplchldBodyControls_cexEntry_Details_ddlCriticalCondition",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "1",
+          "label": "Yes"
+        },
+        {
+          "value": "0",
+          "label": "No"
+        }
+      ],
+      "extractionHints": "Was the patient critically ill/unstable?"
+    },
+    {
+      "id": "complexity",
+      "label": "Case complexity",
+      "type": "single_select",
+      "required": true,
+      "selector": "#conplchldBodyControls_cexEntry_Details_ddlWBAComplexity",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "168",
+          "label": "1. Appropriate for early years training"
+        },
+        {
+          "value": "169",
+          "label": "2. Appropriate for the completion of early years training or early specialty training"
+        },
+        {
+          "value": "170",
+          "label": "3. Appropriate for the central period of specialty training"
+        },
+        {
+          "value": "171",
+          "label": "4. Appropriate for Certification"
+        }
+      ],
+      "extractionHints": "Complexity 1-4. Map 'level three'/'complexity 3' to the numbered option."
+    },
+    {
+      "id": "focus",
+      "label": "Focus of encounter",
+      "type": "multi_select",
+      "required": true,
+      "selector": "#conplchldBodyControls_cexEntry_Details_chklstCEXFocusEncounter",
+      "inputType": "multicheck",
+      "options": [
+        {
+          "label": "History",
+          "selector": "#conplchldBodyControls_cexEntry_Details_chklstCEXFocusEncounter_0"
+        },
+        {
+          "label": "Exam",
+          "selector": "#conplchldBodyControls_cexEntry_Details_chklstCEXFocusEncounter_1"
+        },
+        {
+          "label": "Diagnosis",
+          "selector": "#conplchldBodyControls_cexEntry_Details_chklstCEXFocusEncounter_2"
+        },
+        {
+          "label": "Explanation",
+          "selector": "#conplchldBodyControls_cexEntry_Details_chklstCEXFocusEncounter_3"
+        },
+        {
+          "label": "Consent",
+          "selector": "#conplchldBodyControls_cexEntry_Details_chklstCEXFocusEncounter_4"
+        },
+        {
+          "label": "Management",
+          "selector": "#conplchldBodyControls_cexEntry_Details_chklstCEXFocusEncounter_5"
+        }
+      ],
+      "extractionHints": "Which aspects the encounter covered (several allowed). For a CEX-C, Consent and Explanation usually apply."
+    },
+    {
+      "id": "new_or_followup",
+      "label": "New or follow-up",
+      "type": "single_select",
+      "required": true,
+      "selector": "#conplchldBodyControls_cexEntry_Details_ddlNewOrFollowUp",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "238",
+          "label": "New"
+        },
+        {
+          "value": "239",
+          "label": "Follow up"
+        }
+      ],
+      "extractionHints": "New patient or follow-up."
+    },
+    {
+      "id": "global_summary",
+      "label": "Global summary",
+      "type": "single_select",
+      "required": false,
+      "selector": "#conplchldBodyControls_cexEntry_Summary_ddlAssessmentRating",
+      "inputType": "select",
+      "isRaterField": true,
+      "options": [
+        {
+          "value": "172",
+          "label": "Level 0: Below that expected for early years training"
+        },
+        {
+          "value": "173",
+          "label": "Level 1: Appropriate for early years training"
+        },
+        {
+          "value": "174",
+          "label": "Level 2: Appropriate for completion of early years training or early specialty training"
+        },
+        {
+          "value": "175",
+          "label": "Level 3: Appropriate for central period of specialty training"
+        },
+        {
+          "value": "176",
+          "label": "Level 4: Appropriate for Certification"
+        }
+      ],
+      "extractionHints": "The assessor's overall level, if stated ('he said level 3'). Leave blank if not said."
     }
   ]
 }

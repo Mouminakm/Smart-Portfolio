@@ -56,11 +56,23 @@ function readyProbe(schema) {
 // form legitimately CONTAINS password inputs (the rater's validation box). That
 // rule would make ISCP think it was permanently on a login page and never fill.
 // So ISCP detects login by URL only.
+// ...AND by its ERROR PAGE. This one was found by a real tester: if you open an
+// assessment form COLD (no ISCP session), ISCP does NOT redirect you to a login
+// URL — it serves a "We're sorry... There's been a problem displaying this page"
+// error AT THE FORM'S OWN URL. So a URL-only check sees nothing wrong, the form
+// never appears, and the user is left watching a spinner over an error page with
+// nowhere to sign in. We detect that page and report it as "needs login", which
+// lets submission.jsx send them to ISCP to log in and bring them back.
 const LOGIN_EXPR = `(function(){
               var lh = String(window.location.href).toLowerCase();
-              return lh.indexOf('/login') !== -1 ||
-                     lh.indexOf('signin') !== -1 ||
-                     lh.indexOf('account/login') !== -1;
+              if (lh.indexOf('/login') !== -1 ||
+                  lh.indexOf('signin') !== -1 ||
+                  lh.indexOf('account/login') !== -1) return true;
+              // Match ISCP's error page by its body text. NO regex literals —
+              // they collapse when this script is stringified.
+              var body = document.body ? String(document.body.innerText || "").toLowerCase() : "";
+              if (body.indexOf("problem displaying this page") !== -1) return true;
+              return false;
             })()`;
 
 // ISCP has no special fields to drive in v1 (the pickers are skipped), so
@@ -112,8 +124,14 @@ export function buildInjectionPlan(fieldValues, schema) {
   return plan;
 }
 
+// Where to send someone who needs to sign in. An assessment form opened cold
+// gives ISCP's error page, not a login box — so the user has nothing to log in
+// to. ISCP's home page DOES lead into the sign-in flow.
+export const LOGIN_URL = "https://www.iscp.ac.uk/";
+
 export const adapter = {
   id: "iscp",
+  loginUrl: () => LOGIN_URL,
   displayName: "ISCP",
   formUrl: ({ schema }) => (schema && schema.formUrl) || "https://www.iscp.ac.uk/",
   getSchema,

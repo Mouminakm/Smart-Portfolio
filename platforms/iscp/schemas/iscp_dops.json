@@ -3,7 +3,7 @@
   "label": "DOPS",
   "platform": "iscp",
   "formUrl": "https://www.iscp.ac.uk/forms/dops.aspx",
-  "notes": "Harvested from a live DOPS (July 2026). ASP.NET WebForms. Rater-owned fields (competency ratings, global summary, feedback boxes) ARE included so the trainee can DRAFT the assessment for the assessor — common practice. The assessor reviews, edits and validates every field with THEIR OWN PASSWORD before submission; that password field is never touched by us. Extraction hints forbid inventing any rating or feedback that was not actually stated — unsaid items stay blank rather than being guessed. The 10 competency items are FIXED for every DOPS (data-rating-id 16-25); only the guidance notes vary by procedure. Ratings are <div class='rating' data-rating-id data-score-id> elements, NOT form controls — the adapter CLICKS them (inputType 'ratingGrid') so ISCP's own JS updates its hidden fields. The 10 competency items are shown as 10 individual rating rows, each with its own comment box directly below it. A separate 'ratings_all' field (inputType 'ratingDefault') captures a BLANKET assessor statement ('satisfactory for everything else') and is applied to every item not rated individually — a blanket statement IS a stated judgement, so it fills. Items covered by neither an individual rating nor a blanket stay UNSET; nothing is ever guessed. REFLECTIONS: auto-filled from July 2026 (the earlier Phase-6 hold is lifted). Claude rewrites what the trainee dictated into polished, professional reflective prose — faithful tidying, NOT generation. Every fact, insight and learning point must trace back to what was actually said; nothing is invented; nothing dictated for a given question = empty box. The three prompts are distinct (learnt / did well / improve), so each is answered separately. The trainee reviews everything on ISCP before submitting.",
+  "notes": "Harvested from a live DOPS (July 2026). ASP.NET WebForms. Rater-owned fields (competency ratings, global summary, feedback boxes) ARE included so the trainee can DRAFT the assessment for the assessor — common practice. The assessor reviews, edits and validates every field with THEIR OWN PASSWORD before submission; that password field is never touched by us. Extraction hints forbid inventing any rating or feedback that was not actually stated — unsaid items stay blank rather than being guessed. The 10 competency items are FIXED for every DOPS (data-rating-id 16-25); only the guidance notes vary by procedure. Ratings are <div class='rating' data-rating-id data-score-id> elements, NOT form controls — the adapter CLICKS them (inputType 'ratingGrid') so ISCP's own JS updates its hidden fields. The 10 competency items are shown as 10 individual rating rows, each with its own comment box directly below it. A separate 'ratings_all' field (inputType 'ratingDefault') captures a BLANKET assessor statement ('satisfactory for everything else') and is applied to every item not rated individually — a blanket statement IS a stated judgement, so it fills. Items covered by neither an individual rating nor a blanket stay UNSET; nothing is ever guessed. REFLECTIONS: auto-filled from July 2026 (the earlier Phase-6 hold is lifted). Claude rewrites what the trainee dictated into polished, professional reflective prose — faithful tidying, NOT generation. Every fact, insight and learning point must trace back to what was actually said; nothing is invented; nothing dictated for a given question = empty box. The three prompts are distinct (learnt / did well / improve), so each is answered separately. The trainee reviews everything on ISCP before submitting. FIELD ORDER now follows the live DOPS page top-to-bottom (procedure -> about the assessment -> rater feedback -> trainee comments -> trainee reflections -> ratings (each with its comment box) -> DOPS details -> global summary). VERIFIED against the live form: DOPS is the ONLY ISCP form with per-rating comment boxes (10). It has the 'relates to a reflective journal entry' checkbox (now added) and NO GMC domains, NO New/Follow-up, NO critical-condition field.",
   "fields": [
     {
       "id": "procedure",
@@ -45,119 +45,114 @@
       "extractionHints": "Hospital. Reference only — picked on the form."
     },
     {
-      "id": "emergency_elective",
-      "label": "Emergency or elective",
-      "type": "single_select",
-      "required": true,
-      "selector": "#conplchldBodyControls_dopsEntry_Details_ddlEmergencyElective",
-      "inputType": "select",
-      "options": [
-        {
-          "value": "1422",
-          "label": "Emergency"
-        },
-        {
-          "value": "1423",
-          "label": "Elective"
-        }
-      ],
-      "extractionHints": "Emergency or elective."
-    },
-    {
-      "id": "simulated_environment",
-      "label": "Simulated setting",
-      "type": "single_select",
-      "required": false,
-      "selector": "#conplchldBodyControls_dopsEntry_Details_ddlSimulatedEnviroment",
-      "inputType": "select",
-      "options": [
-        {
-          "value": "1",
-          "label": "Yes"
-        },
-        {
-          "value": "0",
-          "label": "No"
-        }
-      ],
-      "extractionHints": "Usually No for a real patient."
-    },
-    {
-      "id": "simulated_environment_other",
-      "label": "Simulation details",
+      "id": "feedback_general",
+      "label": "Rater feedback: general",
       "type": "text",
       "required": false,
-      "selector": "#conplchldBodyControls_dopsEntry_Details_txtSimulatedEnviromentOther",
-      "inputType": "text",
-      "dependsOn": {
-        "field": "simulated_environment",
-        "value": "Yes"
-      },
-      "extractionHints": "Only if simulated."
+      "selector": "#conplchldBodyControls_dopsEntry_RaterAndTraineeFeedback_txtGeneral",
+      "inputType": "textarea",
+      "isRaterField": true,
+      "extractionHints": "General feedback the assessor gave. Record ONLY what was actually said — do not compose or embellish feedback."
     },
     {
-      "id": "performed_on_course",
-      "label": "Performed on a course",
-      "type": "single_select",
-      "required": false,
-      "selector": "#conplchldBodyControls_dopsEntry_Details_ddlPerformedOnCourse",
-      "inputType": "select",
-      "options": [
-        {
-          "value": "1",
-          "label": "Yes"
-        },
-        {
-          "value": "0",
-          "label": "No"
-        }
-      ],
-      "extractionHints": "Usually No."
-    },
-    {
-      "id": "performed_on_course_text",
-      "label": "Course details",
+      "id": "feedback_strengths",
+      "label": "Rater feedback: strengths",
       "type": "text",
       "required": false,
-      "selector": "#conplchldBodyControls_dopsEntry_Details_txtPerformedOnCourseText",
-      "inputType": "text",
-      "dependsOn": {
-        "field": "performed_on_course",
-        "value": "Yes"
-      },
-      "extractionHints": "Only if on a course."
+      "selector": "#conplchldBodyControls_dopsEntry_RaterAndTraineeFeedback_txtStrengths",
+      "inputType": "textarea",
+      "isRaterField": true,
+      "extractionHints": "Strengths the assessor identified. Record only what was said; leave blank if none were stated."
     },
     {
-      "id": "times_performed",
-      "label": "Times performed before",
-      "type": "number",
+      "id": "feedback_development",
+      "label": "Rater feedback: development needs",
+      "type": "text",
       "required": false,
-      "selector": "#conplchldBodyControls_dopsEntry_Details_txtProcedurePerformedCount",
-      "inputType": "number",
-      "extractionHints": "How many times the trainee has done this procedure before."
+      "selector": "#conplchldBodyControls_dopsEntry_RaterAndTraineeFeedback_txtDevelopmentNeeds",
+      "inputType": "textarea",
+      "isRaterField": true,
+      "extractionHints": "Development needs the assessor identified. Record only what was said; leave blank if none were stated."
     },
     {
-      "id": "difficulty",
-      "label": "Difficulty on this occasion",
+      "id": "feedback_actions",
+      "label": "Rater feedback: recommended actions",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_RaterAndTraineeFeedback_txtRecommendedActions",
+      "inputType": "textarea",
+      "isRaterField": true,
+      "extractionHints": "Actions the assessor recommended. Record only what was said; leave blank if none were stated."
+    },
+    {
+      "id": "trainee_comments",
+      "label": "Trainee comments",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_RaterAndTraineeFeedback_txtTraineeComments",
+      "inputType": "textarea",
+      "extractionHints": "The trainee's own comments on the assessment — your account, in your words."
+    },
+    {
+      "id": "feedback_public_private",
+      "label": "Reflection visibility",
       "type": "single_select",
-      "required": true,
-      "selector": "#conplchldBodyControls_dopsEntry_Details_ddlDifficulty",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_ddlFeedbackPublicPrivate",
       "inputType": "select",
       "options": [
         {
-          "value": "195",
-          "label": "Easier than usual"
+          "value": "1424",
+          "label": "Private"
         },
         {
-          "value": "196",
-          "label": "Average difficulty"
-        },
-        {
-          "value": "197",
-          "label": "More difficult than usual"
+          "value": "1425",
+          "label": "Non Private"
         }
       ],
-      "extractionHints": "Easier / average / more difficult than usual."
+      "extractionHints": "Only set if the user says so."
+    },
+    {
+      "id": "reflection_learnt",
+      "label": "What did I learn from this experience?",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_txtFeedbackLearnt",
+      "inputType": "textarea",
+      "isReflection": true,
+      "submitsToPlatform": true,
+      "extractionHints": "The trainee's reflection answering: \"What did I learn from this experience?\"\nThis box should cover what the trainee LEARNT — the insight or knowledge they took from the case.\n\nYou are writing up the trainee's reflection so it reads as a strong, professional piece of reflective writing — the standard expected in a UK surgical training portfolio.\n\nWRITE IT WELL. This is the main task.\n• Use the GMC's reflective arc: WHAT happened that mattered · SO WHAT it meant (why it was significant, what you recognised) · WHAT NOW (what you take forward, what you will do differently).\n• Focus on the LEARNING, not the story. GMC guidance is explicit: a reflective note should set out what you learnt and what you will do, not re-narrate the case. Keep case description to the minimum needed to make the learning make sense.\n• Write in connected, considered prose — first person, past tense for events, professional register. Not bullet points, not tidied speech, not a transcript with the \"um\"s removed.\n• Develop the trainee's thinking properly: draw out the insight they expressed, make its significance explicit, and state the consequence for their practice. Give each idea the sentences it deserves.\n• Be specific. \"I will use ultrasound guidance at first review\" is reflection; \"I will be more careful\" is not.\n• Structure is a scaffold, not a straitjacket — if the material doesn't fit the arc neatly, write it in whatever shape serves the thinking best.\n\nTHE ONE BOUNDARY — EVERY IDEA MUST BE THEIRS.\nYou are expressing the trainee's thinking fully and well. You are not supplying it. This note goes into a training record under their name and is read by an ARCP panel as evidence of THEIR reflective practice.\n• Every learning point, insight, judgement, feeling and clinical fact must trace back to something the trainee actually said. Elaborate their idea; never introduce a new one.\n• You may develop, sharpen and articulate a thought they expressed — that is the job. You may not conclude something they did not conclude.\n• Do NOT add clinical facts, outcomes or complications they did not mention.\n• Do NOT attribute feelings they did not express.\n• Do NOT reach for stock reflective themes (human factors, situational awareness, team dynamics, \"this highlighted the importance of communication\") unless that is genuinely what they told you.\n• If they said nothing that answers this question, return an EMPTY string. An empty box is honest; a fabricated reflection is not.\n\nSo: take what they gave you, however scrappy, and write the best, sharpest, most professional version of THAT.\n\nOnly answer THIS question here — do not duplicate the other reflection boxes."
+    },
+    {
+      "id": "reflection_done_well",
+      "label": "What did I do well?",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_txtFeedbackDoneWell",
+      "inputType": "textarea",
+      "isReflection": true,
+      "submitsToPlatform": true,
+      "extractionHints": "The trainee's reflection answering: \"What did I do well?\"\nThis box should cover what the trainee felt they DID WELL, and why it mattered.\n\nYou are writing up the trainee's reflection so it reads as a strong, professional piece of reflective writing — the standard expected in a UK surgical training portfolio.\n\nWRITE IT WELL. This is the main task.\n• Use the GMC's reflective arc: WHAT happened that mattered · SO WHAT it meant (why it was significant, what you recognised) · WHAT NOW (what you take forward, what you will do differently).\n• Focus on the LEARNING, not the story. GMC guidance is explicit: a reflective note should set out what you learnt and what you will do, not re-narrate the case. Keep case description to the minimum needed to make the learning make sense.\n• Write in connected, considered prose — first person, past tense for events, professional register. Not bullet points, not tidied speech, not a transcript with the \"um\"s removed.\n• Develop the trainee's thinking properly: draw out the insight they expressed, make its significance explicit, and state the consequence for their practice. Give each idea the sentences it deserves.\n• Be specific. \"I will use ultrasound guidance at first review\" is reflection; \"I will be more careful\" is not.\n• Structure is a scaffold, not a straitjacket — if the material doesn't fit the arc neatly, write it in whatever shape serves the thinking best.\n\nTHE ONE BOUNDARY — EVERY IDEA MUST BE THEIRS.\nYou are expressing the trainee's thinking fully and well. You are not supplying it. This note goes into a training record under their name and is read by an ARCP panel as evidence of THEIR reflective practice.\n• Every learning point, insight, judgement, feeling and clinical fact must trace back to something the trainee actually said. Elaborate their idea; never introduce a new one.\n• You may develop, sharpen and articulate a thought they expressed — that is the job. You may not conclude something they did not conclude.\n• Do NOT add clinical facts, outcomes or complications they did not mention.\n• Do NOT attribute feelings they did not express.\n• Do NOT reach for stock reflective themes (human factors, situational awareness, team dynamics, \"this highlighted the importance of communication\") unless that is genuinely what they told you.\n• If they said nothing that answers this question, return an EMPTY string. An empty box is honest; a fabricated reflection is not.\n\nSo: take what they gave you, however scrappy, and write the best, sharpest, most professional version of THAT.\n\nOnly answer THIS question here — do not duplicate the other reflection boxes."
+    },
+    {
+      "id": "reflection_improve",
+      "label": "What do I need to improve or change? How will I achieve it?",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_txtFeedbackImprove",
+      "inputType": "textarea",
+      "isReflection": true,
+      "submitsToPlatform": true,
+      "extractionHints": "The trainee's reflection answering: \"What do I need to improve or change? How will I achieve it?\"\nThis box should cover what the trainee needs to IMPROVE or change, and the concrete action they will take.\n\nYou are writing up the trainee's reflection so it reads as a strong, professional piece of reflective writing — the standard expected in a UK surgical training portfolio.\n\nWRITE IT WELL. This is the main task.\n• Use the GMC's reflective arc: WHAT happened that mattered · SO WHAT it meant (why it was significant, what you recognised) · WHAT NOW (what you take forward, what you will do differently).\n• Focus on the LEARNING, not the story. GMC guidance is explicit: a reflective note should set out what you learnt and what you will do, not re-narrate the case. Keep case description to the minimum needed to make the learning make sense.\n• Write in connected, considered prose — first person, past tense for events, professional register. Not bullet points, not tidied speech, not a transcript with the \"um\"s removed.\n• Develop the trainee's thinking properly: draw out the insight they expressed, make its significance explicit, and state the consequence for their practice. Give each idea the sentences it deserves.\n• Be specific. \"I will use ultrasound guidance at first review\" is reflection; \"I will be more careful\" is not.\n• Structure is a scaffold, not a straitjacket — if the material doesn't fit the arc neatly, write it in whatever shape serves the thinking best.\n\nTHE ONE BOUNDARY — EVERY IDEA MUST BE THEIRS.\nYou are expressing the trainee's thinking fully and well. You are not supplying it. This note goes into a training record under their name and is read by an ARCP panel as evidence of THEIR reflective practice.\n• Every learning point, insight, judgement, feeling and clinical fact must trace back to something the trainee actually said. Elaborate their idea; never introduce a new one.\n• You may develop, sharpen and articulate a thought they expressed — that is the job. You may not conclude something they did not conclude.\n• Do NOT add clinical facts, outcomes or complications they did not mention.\n• Do NOT attribute feelings they did not express.\n• Do NOT reach for stock reflective themes (human factors, situational awareness, team dynamics, \"this highlighted the importance of communication\") unless that is genuinely what they told you.\n• If they said nothing that answers this question, return an EMPTY string. An empty box is honest; a fabricated reflection is not.\n\nSo: take what they gave you, however scrappy, and write the best, sharpest, most professional version of THAT.\n\nOnly answer THIS question here — do not duplicate the other reflection boxes."
+    },
+    {
+      "id": "relates_to_journal",
+      "label": "This relates to a reflective journal entry",
+      "type": "checkbox",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_chkRelatesToJournalEntry",
+      "inputType": "checkbox",
+      "extractionHints": "Tick only if the trainee says they have written a journal entry about this case."
     },
     {
       "id": "ratings_all",
@@ -611,6 +606,121 @@
       "extractionHints": "Any specific comment the assessor made about competency 10 ('Demonstrates professional behaviour throughout the procedure'). Record only what was actually said; leave blank otherwise."
     },
     {
+      "id": "emergency_elective",
+      "label": "Emergency or elective",
+      "type": "single_select",
+      "required": true,
+      "selector": "#conplchldBodyControls_dopsEntry_Details_ddlEmergencyElective",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "1422",
+          "label": "Emergency"
+        },
+        {
+          "value": "1423",
+          "label": "Elective"
+        }
+      ],
+      "extractionHints": "Emergency or elective."
+    },
+    {
+      "id": "simulated_environment",
+      "label": "Simulated setting",
+      "type": "single_select",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_Details_ddlSimulatedEnviroment",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "1",
+          "label": "Yes"
+        },
+        {
+          "value": "0",
+          "label": "No"
+        }
+      ],
+      "extractionHints": "Usually No for a real patient."
+    },
+    {
+      "id": "simulated_environment_other",
+      "label": "Simulation details",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_Details_txtSimulatedEnviromentOther",
+      "inputType": "text",
+      "dependsOn": {
+        "field": "simulated_environment",
+        "value": "Yes"
+      },
+      "extractionHints": "Only if simulated."
+    },
+    {
+      "id": "performed_on_course",
+      "label": "Performed on a course",
+      "type": "single_select",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_Details_ddlPerformedOnCourse",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "1",
+          "label": "Yes"
+        },
+        {
+          "value": "0",
+          "label": "No"
+        }
+      ],
+      "extractionHints": "Usually No."
+    },
+    {
+      "id": "performed_on_course_text",
+      "label": "Course details",
+      "type": "text",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_Details_txtPerformedOnCourseText",
+      "inputType": "text",
+      "dependsOn": {
+        "field": "performed_on_course",
+        "value": "Yes"
+      },
+      "extractionHints": "Only if on a course."
+    },
+    {
+      "id": "times_performed",
+      "label": "Times performed before",
+      "type": "number",
+      "required": false,
+      "selector": "#conplchldBodyControls_dopsEntry_Details_txtProcedurePerformedCount",
+      "inputType": "number",
+      "extractionHints": "How many times the trainee has done this procedure before."
+    },
+    {
+      "id": "difficulty",
+      "label": "Difficulty on this occasion",
+      "type": "single_select",
+      "required": true,
+      "selector": "#conplchldBodyControls_dopsEntry_Details_ddlDifficulty",
+      "inputType": "select",
+      "options": [
+        {
+          "value": "195",
+          "label": "Easier than usual"
+        },
+        {
+          "value": "196",
+          "label": "Average difficulty"
+        },
+        {
+          "value": "197",
+          "label": "More difficult than usual"
+        }
+      ],
+      "extractionHints": "Easier / average / more difficult than usual."
+    },
+    {
       "id": "global_summary",
       "label": "Global summary (supervision level)",
       "type": "single_select",
@@ -657,107 +767,6 @@
         }
       ],
       "extractionHints": "The assessor's overall supervision level, if stated ('he said level 3a', 'I was level two b'). Map to the matching Level. Leave blank if not said."
-    },
-    {
-      "id": "feedback_general",
-      "label": "Rater feedback: general",
-      "type": "text",
-      "required": false,
-      "selector": "#conplchldBodyControls_dopsEntry_RaterAndTraineeFeedback_txtGeneral",
-      "inputType": "textarea",
-      "isRaterField": true,
-      "extractionHints": "General feedback the assessor gave. Record ONLY what was actually said — do not compose or embellish feedback."
-    },
-    {
-      "id": "feedback_strengths",
-      "label": "Rater feedback: strengths",
-      "type": "text",
-      "required": false,
-      "selector": "#conplchldBodyControls_dopsEntry_RaterAndTraineeFeedback_txtStrengths",
-      "inputType": "textarea",
-      "isRaterField": true,
-      "extractionHints": "Strengths the assessor identified. Record only what was said; leave blank if none were stated."
-    },
-    {
-      "id": "feedback_development",
-      "label": "Rater feedback: development needs",
-      "type": "text",
-      "required": false,
-      "selector": "#conplchldBodyControls_dopsEntry_RaterAndTraineeFeedback_txtDevelopmentNeeds",
-      "inputType": "textarea",
-      "isRaterField": true,
-      "extractionHints": "Development needs the assessor identified. Record only what was said; leave blank if none were stated."
-    },
-    {
-      "id": "feedback_actions",
-      "label": "Rater feedback: recommended actions",
-      "type": "text",
-      "required": false,
-      "selector": "#conplchldBodyControls_dopsEntry_RaterAndTraineeFeedback_txtRecommendedActions",
-      "inputType": "textarea",
-      "isRaterField": true,
-      "extractionHints": "Actions the assessor recommended. Record only what was said; leave blank if none were stated."
-    },
-    {
-      "id": "trainee_comments",
-      "label": "Trainee comments",
-      "type": "text",
-      "required": false,
-      "selector": "#conplchldBodyControls_dopsEntry_RaterAndTraineeFeedback_txtTraineeComments",
-      "inputType": "textarea",
-      "extractionHints": "The trainee's own comments on the assessment — your account, in your words."
-    },
-    {
-      "id": "feedback_public_private",
-      "label": "Reflection visibility",
-      "type": "single_select",
-      "required": false,
-      "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_ddlFeedbackPublicPrivate",
-      "inputType": "select",
-      "options": [
-        {
-          "value": "1424",
-          "label": "Private"
-        },
-        {
-          "value": "1425",
-          "label": "Non Private"
-        }
-      ],
-      "extractionHints": "Only set if the user says so."
-    },
-    {
-      "id": "reflection_learnt",
-      "label": "What did I learn from this experience?",
-      "type": "text",
-      "required": false,
-      "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_txtFeedbackLearnt",
-      "inputType": "textarea",
-      "isReflection": true,
-      "submitsToPlatform": true,
-      "extractionHints": "The trainee's reflection answering: \"What did I learn from this experience?\"\nThis box should cover what the trainee LEARNT — the insight or knowledge they took from the case.\n\nYou are writing up the trainee's reflection so it reads as a strong, professional piece of reflective writing — the standard expected in a UK surgical training portfolio.\n\nWRITE IT WELL. This is the main task.\n• Use the GMC's reflective arc: WHAT happened that mattered · SO WHAT it meant (why it was significant, what you recognised) · WHAT NOW (what you take forward, what you will do differently).\n• Focus on the LEARNING, not the story. GMC guidance is explicit: a reflective note should set out what you learnt and what you will do, not re-narrate the case. Keep case description to the minimum needed to make the learning make sense.\n• Write in connected, considered prose — first person, past tense for events, professional register. Not bullet points, not tidied speech, not a transcript with the \"um\"s removed.\n• Develop the trainee's thinking properly: draw out the insight they expressed, make its significance explicit, and state the consequence for their practice. Give each idea the sentences it deserves.\n• Be specific. \"I will use ultrasound guidance at first review\" is reflection; \"I will be more careful\" is not.\n• Structure is a scaffold, not a straitjacket — if the material doesn't fit the arc neatly, write it in whatever shape serves the thinking best.\n\nTHE ONE BOUNDARY — EVERY IDEA MUST BE THEIRS.\nYou are expressing the trainee's thinking fully and well. You are not supplying it. This note goes into a training record under their name and is read by an ARCP panel as evidence of THEIR reflective practice.\n• Every learning point, insight, judgement, feeling and clinical fact must trace back to something the trainee actually said. Elaborate their idea; never introduce a new one.\n• You may develop, sharpen and articulate a thought they expressed — that is the job. You may not conclude something they did not conclude.\n• Do NOT add clinical facts, outcomes or complications they did not mention.\n• Do NOT attribute feelings they did not express.\n• Do NOT reach for stock reflective themes (human factors, situational awareness, team dynamics, \"this highlighted the importance of communication\") unless that is genuinely what they told you.\n• If they said nothing that answers this question, return an EMPTY string. An empty box is honest; a fabricated reflection is not.\n\nSo: take what they gave you, however scrappy, and write the best, sharpest, most professional version of THAT.\n\nOnly answer THIS question here — do not duplicate the other reflection boxes."
-    },
-    {
-      "id": "reflection_done_well",
-      "label": "What did I do well?",
-      "type": "text",
-      "required": false,
-      "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_txtFeedbackDoneWell",
-      "inputType": "textarea",
-      "isReflection": true,
-      "submitsToPlatform": true,
-      "extractionHints": "The trainee's reflection answering: \"What did I do well?\"\nThis box should cover what the trainee felt they DID WELL, and why it mattered.\n\nYou are writing up the trainee's reflection so it reads as a strong, professional piece of reflective writing — the standard expected in a UK surgical training portfolio.\n\nWRITE IT WELL. This is the main task.\n• Use the GMC's reflective arc: WHAT happened that mattered · SO WHAT it meant (why it was significant, what you recognised) · WHAT NOW (what you take forward, what you will do differently).\n• Focus on the LEARNING, not the story. GMC guidance is explicit: a reflective note should set out what you learnt and what you will do, not re-narrate the case. Keep case description to the minimum needed to make the learning make sense.\n• Write in connected, considered prose — first person, past tense for events, professional register. Not bullet points, not tidied speech, not a transcript with the \"um\"s removed.\n• Develop the trainee's thinking properly: draw out the insight they expressed, make its significance explicit, and state the consequence for their practice. Give each idea the sentences it deserves.\n• Be specific. \"I will use ultrasound guidance at first review\" is reflection; \"I will be more careful\" is not.\n• Structure is a scaffold, not a straitjacket — if the material doesn't fit the arc neatly, write it in whatever shape serves the thinking best.\n\nTHE ONE BOUNDARY — EVERY IDEA MUST BE THEIRS.\nYou are expressing the trainee's thinking fully and well. You are not supplying it. This note goes into a training record under their name and is read by an ARCP panel as evidence of THEIR reflective practice.\n• Every learning point, insight, judgement, feeling and clinical fact must trace back to something the trainee actually said. Elaborate their idea; never introduce a new one.\n• You may develop, sharpen and articulate a thought they expressed — that is the job. You may not conclude something they did not conclude.\n• Do NOT add clinical facts, outcomes or complications they did not mention.\n• Do NOT attribute feelings they did not express.\n• Do NOT reach for stock reflective themes (human factors, situational awareness, team dynamics, \"this highlighted the importance of communication\") unless that is genuinely what they told you.\n• If they said nothing that answers this question, return an EMPTY string. An empty box is honest; a fabricated reflection is not.\n\nSo: take what they gave you, however scrappy, and write the best, sharpest, most professional version of THAT.\n\nOnly answer THIS question here — do not duplicate the other reflection boxes."
-    },
-    {
-      "id": "reflection_improve",
-      "label": "What do I need to improve or change? How will I achieve it?",
-      "type": "text",
-      "required": false,
-      "selector": "#conplchldBodyControls_dopsEntry_TraineeReflections_txtFeedbackImprove",
-      "inputType": "textarea",
-      "isReflection": true,
-      "submitsToPlatform": true,
-      "extractionHints": "The trainee's reflection answering: \"What do I need to improve or change? How will I achieve it?\"\nThis box should cover what the trainee needs to IMPROVE or change, and the concrete action they will take.\n\nYou are writing up the trainee's reflection so it reads as a strong, professional piece of reflective writing — the standard expected in a UK surgical training portfolio.\n\nWRITE IT WELL. This is the main task.\n• Use the GMC's reflective arc: WHAT happened that mattered · SO WHAT it meant (why it was significant, what you recognised) · WHAT NOW (what you take forward, what you will do differently).\n• Focus on the LEARNING, not the story. GMC guidance is explicit: a reflective note should set out what you learnt and what you will do, not re-narrate the case. Keep case description to the minimum needed to make the learning make sense.\n• Write in connected, considered prose — first person, past tense for events, professional register. Not bullet points, not tidied speech, not a transcript with the \"um\"s removed.\n• Develop the trainee's thinking properly: draw out the insight they expressed, make its significance explicit, and state the consequence for their practice. Give each idea the sentences it deserves.\n• Be specific. \"I will use ultrasound guidance at first review\" is reflection; \"I will be more careful\" is not.\n• Structure is a scaffold, not a straitjacket — if the material doesn't fit the arc neatly, write it in whatever shape serves the thinking best.\n\nTHE ONE BOUNDARY — EVERY IDEA MUST BE THEIRS.\nYou are expressing the trainee's thinking fully and well. You are not supplying it. This note goes into a training record under their name and is read by an ARCP panel as evidence of THEIR reflective practice.\n• Every learning point, insight, judgement, feeling and clinical fact must trace back to something the trainee actually said. Elaborate their idea; never introduce a new one.\n• You may develop, sharpen and articulate a thought they expressed — that is the job. You may not conclude something they did not conclude.\n• Do NOT add clinical facts, outcomes or complications they did not mention.\n• Do NOT attribute feelings they did not express.\n• Do NOT reach for stock reflective themes (human factors, situational awareness, team dynamics, \"this highlighted the importance of communication\") unless that is genuinely what they told you.\n• If they said nothing that answers this question, return an EMPTY string. An empty box is honest; a fabricated reflection is not.\n\nSo: take what they gave you, however scrappy, and write the best, sharpest, most professional version of THAT.\n\nOnly answer THIS question here — do not duplicate the other reflection boxes."
     }
   ]
 }

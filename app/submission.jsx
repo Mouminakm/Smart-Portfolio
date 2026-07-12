@@ -35,6 +35,9 @@ export default function SubmissionScreen() {
   // True while we're waiting for the user to sign in to the portfolio site, so
   // we know to send them back to the form once they're through.
   const awaitingLogin = useRef(false);
+  // Guard: only send the user to the login page ONCE, so a login page that also
+  // trips the detector can't put us in a redirect loop.
+  const sentToLogin = useRef(false);
 
   // Which platform is this entry for? Dictation passes it through the route.
   // If it's missing we fall back to eLogbook, so nothing changes for existing
@@ -138,6 +141,19 @@ export default function SubmissionScreen() {
         setNeedsLogin(true);
         awaitingLogin.current = true; // so onNavigationStateChange sends us back
         setStatusMsg(`Please sign in to ${adapter.displayName} — we'll bring you back to the form.`);
+        // Some sites don't show a login page when you open a form without a
+        // session — ISCP just serves an ERROR at the form's own URL, leaving the
+        // user stranded with nothing to sign in to. If the adapter knows where
+        // its login lives, take them there. handleNavChange below brings them
+        // back to the form once they're through.
+        if (adapter.loginUrl && webRef.current && !sentToLogin.current) {
+          sentToLogin.current = true;
+          const loginUrl = adapter.loginUrl();
+          log(`[DIAG ${BUILD_TAG}] sending user to login: ${loginUrl}`);
+          webRef.current.injectJavaScript(
+            `window.location.href = ${JSON.stringify(loginUrl)}; true;`
+          );
+        }
         return;
       }
 
@@ -206,11 +222,13 @@ export default function SubmissionScreen() {
     const onForm = url.split("?")[0] === String(formUrl).toLowerCase().split("?")[0];
     if (onForm) {
       awaitingLogin.current = false;
+      sentToLogin.current = false;
       setNeedsLogin(false);
       return; // the injected script will run on this load and fill
     }
 
     awaitingLogin.current = false;
+    sentToLogin.current = false;
     setNeedsLogin(false);
     setStatusMsg("Signed in — opening your form…");
     if (webRef.current) {
@@ -224,6 +242,7 @@ export default function SubmissionScreen() {
 
   function handleRetry() {
     awaitingLogin.current = false;
+    sentToLogin.current = false;
     setNeedsLogin(false);
     setFilled(false);
     setFailedFields([]);
