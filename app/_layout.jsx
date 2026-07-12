@@ -35,10 +35,7 @@ function RootNavigator() {
       <Stack.Protected guard={!isLoading && isSignedIn && hasCompletedOnboarding}>
         <Stack.Screen name="(tabs)" />
         <Stack.Screen name="edit-profile" />
-        <Stack.Screen name="record-test" />
-        <Stack.Screen name="webview-test" />
         <Stack.Screen name="dictation" />
-        <Stack.Screen name="review" />
         <Stack.Screen name="submission" />
       </Stack.Protected>
 
