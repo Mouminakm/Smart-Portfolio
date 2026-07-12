@@ -46,3 +46,4 @@ app-example
 .env
 .env.*
 !.env.example.agents/
+.agents/
