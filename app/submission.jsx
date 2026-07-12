@@ -35,8 +35,10 @@ export default function SubmissionScreen() {
   // True while we're waiting for the user to sign in to the portfolio site, so
   // we know to send them back to the form once they're through.
   const awaitingLogin = useRef(false);
-  // Guard: only send the user to the login page ONCE, so a login page that also
-  // trips the detector can't put us in a redirect loop.
+  // Guard: once we've sent the user off to sign in, don't touch the WebView
+  // again until they tap Refill. Without this we fight the user's own login
+  // navigation and end up in a redirect loop between the error page and the
+  // login page.
   const sentToLogin = useRef(false);
 
   // Which platform is this entry for? Dictation passes it through the route.
@@ -139,13 +141,13 @@ export default function SubmissionScreen() {
       if (data.stage === "needs_login") {
         log(`[DIAG ${BUILD_TAG}] needs login`);
         setNeedsLogin(true);
-        awaitingLogin.current = true; // so onNavigationStateChange sends us back
-        setStatusMsg(`Please sign in to ${adapter.displayName} — we'll bring you back to the form.`);
+        awaitingLogin.current = true;
+        setStatusMsg(`Sign in to ${adapter.displayName} below, then tap Refill.`);
+
         // Some sites don't show a login page when you open a form without a
         // session — ISCP just serves an ERROR at the form's own URL, leaving the
         // user stranded with nothing to sign in to. If the adapter knows where
-        // its login lives, take them there. handleNavChange below brings them
-        // back to the form once they're through.
+        // its login lives, take them there ONCE.
         if (adapter.loginUrl && webRef.current && !sentToLogin.current) {
           sentToLogin.current = true;
           const loginUrl = adapter.loginUrl();
@@ -210,30 +212,30 @@ export default function SubmissionScreen() {
     const url = String(navState.url || "").toLowerCase();
     if (!awaitingLogin.current || navState.loading) return;
 
-    const stillOnLogin =
-      url.includes("/login") ||
-      url.includes("signin") ||
-      url.includes("account/login") ||
-      url.includes("identity") ||
-      url.includes("auth");
-    if (stillOnLogin) return; // still signing in — leave them alone
-
-    // We've left the login page. If we're not on the form, go there.
+    // Back on the form? The injected script runs on this load and fills.
     const onForm = url.split("?")[0] === String(formUrl).toLowerCase().split("?")[0];
     if (onForm) {
       awaitingLogin.current = false;
       sentToLogin.current = false;
       setNeedsLogin(false);
-      return; // the injected script will run on this load and fill
+      return;
     }
 
+    // Anywhere else — and this is the subtle bit that caused a redirect loop:
+    // if WE sent them to the login page, they are still signing in. Bouncing
+    // them back to the form now would hit the same "not logged in" error, which
+    // would send them to login again, and round and round. So once we've sent
+    // someone to sign in, we leave the WebView alone. They sign in, then tap
+    // Refill (the status bar tells them to).
+    if (sentToLogin.current) return;
+
+    // Otherwise the SITE bounced them to login of its own accord and they've
+    // now landed somewhere that isn't the form (a dashboard, typically) — so
+    // take them to the form.
     awaitingLogin.current = false;
-    sentToLogin.current = false;
     setNeedsLogin(false);
     setStatusMsg("Signed in — opening your form…");
     if (webRef.current) {
-      // Send them to the form. redirectTo is a full page load, so the script
-      // is injected fresh and fills automatically.
       webRef.current.injectJavaScript(
         `window.location.href = ${JSON.stringify(formUrl)}; true;`
       );
@@ -247,8 +249,16 @@ export default function SubmissionScreen() {
     setFilled(false);
     setFailedFields([]);
     setStatusMsg("Filling your entry…");
+
+    // Refill always NAVIGATES to the form rather than re-running the script in
+    // place. After signing in, the user is on the portfolio's dashboard, not the
+    // form — and re-injecting there would do nothing. Navigating is a fresh page
+    // load, so the script is injected automatically and fills. If we're already
+    // on the form, this simply reloads it, which is harmless.
     if (webRef.current) {
-      webRef.current.injectJavaScript(adapter.buildScript(plan));
+      webRef.current.injectJavaScript(
+        `window.location.href = ${JSON.stringify(formUrl)}; true;`
+      );
     }
   }
 
